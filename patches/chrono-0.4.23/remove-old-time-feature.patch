@@ -1,0 +1,20 @@
+Remove the oldtime feature. This opens up a version of time suceptible to
+https://rustsec.org/advisories/RUSTSEC-2020-0071.html
+
+diff --git a/vendor/chrono-0.4.23/Cargo.toml b/vendor/chrono-0.4.23/Cargo.toml
+index 1472f851..d49875e1 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -125,11 +125,10 @@ clock = [
+ default = [
+     "clock",
+     "std",
+-    "oldtime",
+     "wasmbind",
+ ]
+ libc = []
+-oldtime = ["time"]
++#oldtime = []
+ std = []
+ unstable-locales = [
+     "pure-rust-locales",

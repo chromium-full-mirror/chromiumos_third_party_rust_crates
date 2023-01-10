@@ -794,11 +794,19 @@ class CrateDestroyer:
         # Since we're asking for _all_ metadata packages, we may see
         # duplication.
         for package_desc in metadata:
-            # Skip used packages
-            if package_desc in used_packages:
-                continue
-
             package_name, package_version = package_desc
+            if package_desc in used_packages:
+                # b/239449434: Due to RUSTSEC-2020-0071, we manually empty this
+                # crate. It's present in the depgraph because chrono brings it
+                # in by default under the `oldtime` feature. Nothing in our
+                # depgraph actually makes use of this.
+                is_vulnerable_time_version = (
+                    package_name == "time" and package_version.startswith("0.1")
+                )
+                if not is_vulnerable_time_version:
+                    continue
+                print(f"Forcibly emptying {package_name}@{package_version}")
+
             # Detect the correct package path to destroy
             pkg_path = os.path.join(
                 self.vendor_dir,

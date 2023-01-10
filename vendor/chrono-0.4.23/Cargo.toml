@@ -125,11 +125,10 @@ clock = [
 default = [
     "clock",
     "std",
-    "oldtime",
     "wasmbind",
 ]
 libc = []
-oldtime = ["time"]
+#oldtime = []
 std = []
 unstable-locales = [
     "pure-rust-locales",
