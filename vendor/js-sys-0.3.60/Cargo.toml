@@ -1,0 +1,16 @@
+[package]
+edition = "2018"
+name = "js-sys"
+version = "0.3.60"
+authors = [ "The wasm-bindgen Developers",]
+description = "Empty crate that should not build."
+homepage = "https://rustwasm.github.io/wasm-bindgen/"
+documentation = "https://docs.rs/js-sys"
+readme = "./README.md"
+categories = [ "wasm",]
+license = "Apache-2.0"
+repository = "https://github.com/rustwasm/wasm-bindgen/tree/master/crates/js-sys"
+
+[lib]
+test = false
+doctest = false

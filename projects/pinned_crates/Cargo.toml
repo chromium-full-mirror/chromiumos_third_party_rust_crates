@@ -11,7 +11,3 @@ license = "BSD-Google"
 # dev-rust/png has a local patch upgrading png from 0.3.5 to 0.4.1 with the
 # no_extern_crate_alloc feature. Hold 0.4.1 here to respect this.
 miniz_oxide = { version = "0.4.1", features = ["no_extern_crate_alloc"] }
-
-# b/257987535: Newer versions seemingly break crosvm. Force this to the version
-# from chromiumos-overlay for now.
-chrono = "=0.4.19"
