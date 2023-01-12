@@ -1100,7 +1100,6 @@ dependencies = [
  "smallvec",
  "syn 1.0.101",
  "tempfile",
- "terminal_size",
  "thiserror",
  "userfaultfd",
  "uuid",

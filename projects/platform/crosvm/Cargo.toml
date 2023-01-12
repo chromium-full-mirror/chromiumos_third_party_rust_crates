@@ -63,7 +63,6 @@ slab = "0.4"
 smallvec = "1.6.1"
 syn = { version = "1", features = ["extra-traits"] }
 tempfile = "3"
-terminal_size = "0.1.17"
 thiserror = "1.0.20"
 userfaultfd = "0.5.0"
 uuid = { version = "0.8.2", features = ["v4", "serde"] }
