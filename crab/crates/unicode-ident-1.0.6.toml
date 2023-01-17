@@ -1,0 +1,9 @@
+crate_name = "unicode-ident"
+version = "1.0.6"
+reviewed-by-team = "ChromeOS"
+
+[common]
+code_is_not_malicious = true
+# Uses `get_unchecked` with static arrays.
+has_unsafe_code = false
+implements_crypto = false

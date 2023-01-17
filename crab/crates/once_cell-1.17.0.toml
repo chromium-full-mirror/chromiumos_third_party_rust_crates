@@ -4,7 +4,8 @@ reviewed-by-team = "crosvm"
 
 [common]
 code_is_not_malicious = true
-has_unsafe_code = true # provides unsafe version of API
+# provides unsafe version of API, some pointers are dereferenced & Send/Sync are
+# implemented manually.
+has_unsafe_code = true
 build_script = false
 proc_macro = false
-implements_crypto = false

@@ -1,0 +1,8 @@
+crate_name = "axum-core"
+version = "0.2.9"
+reviewed-by-team = "ChromeOS"
+
+[common]
+code_is_not_malicious = true
+has_unsafe_code = false
+implements_crypto = false
