@@ -50,5 +50,1188 @@ macros), reasonable usage of the crate should output code which meets the above
 criteria."""
 implies = "safe-to-deploy"
 
-[audits]
+[[audits.aho-corasick]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.7.18"
+
+[[audits.anyhow]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.68"
+
+[[audits.arbitrary]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.6"
+
+[[audits.arbitrary]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.2.2"
+
+[[audits.argh]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.10"
+
+[[audits.argh_derive]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.10"
+
+[[audits.argh_shared]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.10"
+
+[[audits.ascii]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.0"
+
+[[audits.assert_matches]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.5.0"
+
+[[audits.async-stream]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.3"
+
+[[audits.async-stream-impl]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.3"
+
+[[audits.async-trait]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.48"
+
+[[audits.async-trait]]
+who = "Android Legacy"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.61"
+
+[[audits.atomic-polyfill]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.11"
+
+[[audits.atty]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.14"
+
+[[audits.autocfg]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.8"
+
+[[audits.axum]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.5.16"
+
+[[audits.axum]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.17"
+
+[[audits.axum-core]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.8"
+
+[[audits.axum-core]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.9"
+
+[[audits.base64]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.13.0"
+
+[[audits.bindgen]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.57.0"
+
+[[audits.bindgen]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.60.1"
+
+[[audits.bindgen]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.63.0"
+
+[[audits.bitflags]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.2.1"
+
+[[audits.bitreader]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.6"
+
+[[audits.bitvec]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.19.5"
+
+[[audits.bytes]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.6"
+
+[[audits.bytes]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.1"
+
+[[audits.capnp]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.14.11"
+
+[[audits.cexpr]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.0"
+
+[[audits.cexpr]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.5.0"
+
+[[audits.cfg-if]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.0"
+
+[[audits.chrono]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.23"
+
+[[audits.clang-sys]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.2.0"
+
+[[audits.clap]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "2.33.3"
+
+[[audits.clap]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.22"
+
+[[audits.clap_derive]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.18"
+
+[[audits.clap_lex]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.4"
+
+[[audits.cmake]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.45"
+
+[[audits.cmake]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.48"
+
+[[audits.configparser]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "3.0.0"
+
+[[audits.critical-section]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.1"
+
+[[audits.cstr_core]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.6"
+
+[[audits.cty]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.2"
+
+[[audits.cxx]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.42"
+
+[[audits.cxxbridge-flags]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.42"
+
+[[audits.cxxbridge-macro]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.42"
+
+[[audits.dbus]]
+who = "ChromeOS Legacy"
+criteria = "safe-to-run"
+version = "0.9.5"
+
+[[audits.dbus-crossroads]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.4.0"
+
+[[audits.dbus-tokio]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.7.3"
+
+[[audits.dbus-tokio]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.7.5"
+
+[[audits.document-features]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.6"
+
+[[audits.endian-type]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.2"
+
+[[audits.env_logger]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.8.3"
+
+[[audits.error-chain]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.11.0"
+
+[[audits.euclid]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.22.7"
+
+[[audits.fd-lock]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "2.0.0"
+
+[[audits.fixedbitset]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.2"
+
+[[audits.funty]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.1.0"
+
+[[audits.futures]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+
+[[audits.futures-channel]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+
+[[audits.futures-core]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+
+[[audits.futures-executor]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+
+[[audits.futures-io]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+
+[[audits.futures-macro]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+
+[[audits.futures-sink]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+
+[[audits.futures-task]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+
+[[audits.futures-util]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.14"
+
+[[audits.getrandom]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.2"
+
+[[audits.getrandom]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.7"
+
+[[audits.glob]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.0"
+
+[[audits.grpcio]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.8.2"
+
+[[audits.grpcio]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.9.1"
+
+[[audits.grpcio-compiler]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.6.0"
+
+[[audits.grpcio-sys]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.8.1"
+
+[[audits.grpcio-sys]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.9.1+1.38.0"
+
+[[audits.h2]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.14"
+
+[[audits.heck]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.0"
+
+[[audits.hex]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.3"
+
+[[audits.http]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.8"
+
+[[audits.http-body]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.4.5"
+
+[[audits.http-range-header]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.0"
+
+[[audits.httpdate]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.0.2"
+
+[[audits.hyper]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.14.20"
+
+[[audits.hyper-timeout]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.4.1"
+
+[[audits.iana-time-zone]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.53"
+
+[[audits.inotify]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.9.3"
+
+[[audits.inotify-sys]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.5"
+
+[[audits.instant]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.9"
+
+[[audits.itertools]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.9.0"
+
+[[audits.itertools]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.10.5"
+
+[[audits.itoa]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.7"
+
+[[audits.itoa]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.5"
+
+[[audits.lazy_static]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.4.0"
+
+[[audits.lazycell]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.3.0"
+
+[[audits.libc]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.86"
+
+[[audits.libdbus-sys]]
+who = "ChromeOS Legacy"
+criteria = "safe-to-run"
+version = "0.2.2"
+
+[[audits.libfuzzer-sys]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.4"
+
+[[audits.libloading]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.7.0"
+
+[[audits.libz-sys]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.1.2"
+
+[[audits.libz-sys]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.1.3"
+
+[[audits.libz-sys]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.1.8"
+
+[[audits.link-cplusplus]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.0.5"
+
+[[audits.litrs]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.3"
+
+[[audits.lock_api]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.2"
+
+[[audits.lock_api]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.9"
+
+[[audits.log]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.14"
+
+[[audits.log]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.17"
+
+[[audits.matchit]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.5.0"
+
+[[audits.memchr]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "2.4.0"
+
+[[audits.memchr]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.4.1"
+
+[[audits.merge]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.0"
+
+[[audits.merge_derive]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.0"
+
+[[audits.mime]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.16"
+
+[[audits.mio]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.7.7"
+
+[[audits.mio]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.7.14"
+
+[[audits.named-lock]]
+who = "crosvm"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.0"
+
+[[audits.nibble_vec]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.0"
+
+[[audits.nix]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.19.1"
+
+[[audits.nix]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.20.0"
+
+[[audits.nix]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.24.2"
+
+[[audits.nom]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "5.1.2"
+
+[[audits.nom]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "6.1.2"
+
+[[audits.num-derive]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.3"
+
+[[audits.num-traits]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.14"
+
+[[audits.num_cpus]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.13.0"
+
+[[audits.once_cell]]
+who = "crosvm"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.17.0"
+
+[[audits.os_str_bytes]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "6.3.0"
+
+[[audits.owning_ref]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.1"
+
+[[audits.parking_lot]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.11.1"
+
+[[audits.parking_lot_core]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.8.3"
+
+[[audits.paste]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.4"
+
+[[audits.peeking_take_while]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.2"
+
+[[audits.percent-encoding]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.2.0"
+
+[[audits.petgraph]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.2"
+
+[[audits.pin-project]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.0.12"
+
+[[audits.pin-project-internal]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.0.12"
+
+[[audits.pin-project-lite]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.4"
+
+[[audits.pin-project-lite]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.9"
+
+[[audits.pin-utils]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.0"
+
+[[audits.ppv-lite86]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.10"
+
+[[audits.prettyplease]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.20"
+
+[[audits.printf-compat]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.1"
+
+[[audits.proc-macro-hack]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.5.19"
+
+[[audits.proc-macro-nested]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.7"
+
+[[audits.proc-macro2]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.26"
+
+[[audits.proc-macro2]]
+who = "Chrome OS Toolchain"
+criteria = "safe-to-run"
+version = "1.0.29"
+
+[[audits.proc-macro2]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.49"
+
+[[audits.prost]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.11.0"
+
+[[audits.prost-build]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.1"
+
+[[audits.prost-derive]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.11.0"
+
+[[audits.prost-types]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.1"
+
+[[audits.protobuf]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "2.22.0"
+
+[[audits.protobuf]]
+who = "ChromeOS Audio"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.0"
+
+[[audits.protobuf-codegen]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "2.22.0"
+
+[[audits.protobuf-codegen]]
+who = "ChromeOS Audio"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.0"
+
+[[audits.protobuf-parse]]
+who = "ChromeOS Audio"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.0"
+
+[[audits.protobuf-support]]
+who = "ChromeOS Audio"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.2.0"
+
+[[audits.ptr_meta]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.0"
+
+[[audits.ptr_meta_derive]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.0"
+
+[[audits.quote]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.9"
+
+[[audits.quote]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.23"
+
+[[audits.radium]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.5.3"
+
+[[audits.radix_trie]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.1"
+
+[[audits.rand]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.8.3"
+
+[[audits.rand_chacha]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.0"
+
+[[audits.rand_chacha]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.3.1"
+
+[[audits.rand_core]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.6.1"
+
+[[audits.rand_core]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.6.4"
+
+[[audits.rand_pcg]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.1"
+
+[[audits.regex]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.5.4"
+
+[[audits.regex-syntax]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.6.25"
+
+[[audits.rustc-demangle]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.18"
+
+[[audits.rustc-hash]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.1.0"
+
+[[audits.rustyline]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "10.0.0"
+
+[[audits.rustyline-derive]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.0"
+
+[[audits.ryu]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.5"
+
+[[audits.same-file]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.6"
+
+[[audits.scopeguard]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.1.0"
+
+[[audits.serde]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.126"
+
+[[audits.serde]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.152"
+
+[[audits.serde_derive]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.152"
+
+[[audits.serde_json]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.64"
+
+[[audits.serde_urlencoded]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.7.1"
+
+[[audits.shlex]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.1"
+
+[[audits.shlex]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.0"
+
+[[audits.slab]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.2"
+
+[[audits.slab]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.4.7"
+
+[[audits.smallvec]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.6.1"
+
+[[audits.static_assertions]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.0"
+
+[[audits.syn]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.69"
+
+[[audits.syn]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.0.80"
+
+[[audits.syn]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.107"
+
+[[audits.sync_wrapper]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.1"
+
+[[audits.termcolor]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.1.2"
+
+[[audits.textwrap]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.11.0"
+
+[[audits.textwrap]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.15.1"
+
+[[audits.textwrap]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.15.2"
+
+[[audits.thiserror]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.23"
+
+[[audits.thiserror-impl]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.0.23"
+
+[[audits.tokio]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.2.0"
+
+[[audits.tokio-io-timeout]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "1.2.0"
+
+[[audits.tokio-macros]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.1.0"
+
+[[audits.tokio-stream]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.3"
+
+[[audits.tokio-util]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.7.3"
+
+[[audits.tonic]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.8.1"
+
+[[audits.tonic-build]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.2"
+
+[[audits.tower]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.4.13"
+
+[[audits.tower-http]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.4"
+
+[[audits.tower-layer]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.1"
+
+[[audits.tower-service]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.2"
+
+[[audits.tracing]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.35"
+
+[[audits.tracing-attributes]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.22"
+
+[[audits.tracing-core]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.1.29"
+
+[[audits.tracing-futures]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.5"
+
+[[audits.try-lock]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.3"
+
+[[audits.ucs2]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.2"
+
+[[audits.uefi]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.19.0"
+
+[[audits.uefi-macros]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.10.0"
+
+[[audits.uefi-services]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.16.0"
+
+[[audits.uguid]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.2.1"
+
+[[audits.unicode-ident]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.6"
+
+[[audits.unicode-segmentation]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "1.7.1"
+
+[[audits.unicode-segmentation]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.8.0"
+
+[[audits.unicode-width]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.1.8"
+
+[[audits.unicode-xid]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "0.2.1"
+
+[[audits.userfaultfd]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.0"
+
+[[audits.userfaultfd-sys]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.2"
+
+[[audits.walkdir]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "2.3.1"
+
+[[audits.walkdir]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "2.3.2"
+
+[[audits.want]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.3.0"
+
+[[audits.which]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "3.1.1"
+
+[[audits.which]]
+who = "Android Legacy"
+criteria = "safe-to-run"
+version = "4.0.2"
+
+[[audits.wyz]]
+who = "ChromeOS"
+criteria = "safe-to-run"
+version = "0.2.0"
+
+[[audits.zerocopy]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.0-alpha.1"
+
+[[audits.zerocopy-derive]]
+who = "ChromeOS"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.2"
 
