@@ -30,6 +30,8 @@ import tempfile
 from pathlib import Path
 from typing import Any, List, NamedTuple, Set, Union
 
+import cargo
+
 # The CPU arches that we care about.
 SUPPORTED_ARCHES = (
     "aarch64",
@@ -206,99 +208,33 @@ def determine_empty_crates(rust_crates: Path) -> Set[Crate]:
     return empty
 
 
-def ensure_cargo_bin_is_in_path():
-    """Ensures that .cargo/bin is in $PATH for this process."""
-    cargo_bin = str(Path.home() / ".cargo" / "bin")
-    path = os.getenv("PATH", "")
-    path_has_cargo_bin = path.endswith(cargo_bin) or cargo_bin + ":" in path
-    if not path_has_cargo_bin:
-        os.environ["PATH"] = cargo_bin + ":" + path
-
-
+# Instructions on how to generate a `cargo audit` tarball:
+#   1. `git clone` the rustsec repo here:
+#       https://github.com/rustsec/rustsec
+#   2. `checkout` the tag you're interested in, e.g.,
+#      `git checkout cargo-audit/v0.17.4`
+#   3. `rm -rf .git` in the repo.
+#   4. tweak the version number in rustsec/cargo-audit/Cargo.toml to
+#      include `+cros`, so we always autosync to the hermetic ChromeOS
+#      version.
+#   5. `cargo vendor` in rustsec/cargo-audit, and follow the instructions
+#      that it prints out RE "To use vendored sources, ...".
+#   6. `cargo build --offline --locked && rm -rf ../target` in
+#      rustsec/cargo-audit, to ensure it builds.
+#   7. `tar cf rustsec-${version}.tar.bz2 rustsec \
+#           --use-compress-program="bzip2 -9"`
+#      in the parent of your `rustsec` directory.
+#   8. Upload to gs://; don't forget the `-a public-read`.
 def ensure_cargo_audit_is_installed():
-    """Ensures the proper version of cargo-audit is installed and usable."""
+    """Ensures that `cargo-audit` is installed."""
     want_version = "0.17.4+cros"
-
-    # Unfortunately, `cargo audit --version` simply prints `cargo-audit-audit`.
-    # Call the cargo-audit binary directly to get the version.
-    version = subprocess.run(
-        ["cargo", "install", "--list"],
-        check=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        encoding="utf-8",
+    cargo.ensure_cargo_utility_is_installed(
+        utility_name="cargo-audit",
+        want_version=want_version,
+        gs_path=f"gs://chromeos-localmirror/distfiles/rustsec-{want_version}.tar.bz2",
+        sha256="dd9137486b850d30febc84340d9f6aa3964c06a6e786434ca99477d147bd68ae",
+        build_subdir=Path("rustsec") / "cargo-audit",
     )
-    # Since we do local installations, cargo-install will list this as
-    # `cargo-audit v{want_version} ({tempdir_it_was_installed_in}):`.
-    want_version_string = f"cargo-audit v{want_version} "
-    has_version = any(
-        x.startswith(want_version_string) for x in version.stdout.splitlines()
-    )
-    if has_version:
-        return
-
-    # Instructions on how to generate a `cargo audit` tarball:
-    #   1. `git clone` the rustsec repo here:
-    #       https://github.com/rustsec/rustsec
-    #   2. `checkout` the tag you're interested in, e.g.,
-    #      `git checkout cargo-audit/v0.17.4`
-    #   3. `rm -rf .git` in the repo.
-    #   4. tweak the version number in rustsec/cargo-audit/Cargo.toml to
-    #      include `+cros`, so we always autosync to the hermetic ChromeOS
-    #      version.
-    #   5. `cargo vendor` in rustsec/cargo-audit, and follow the instructions
-    #      that it prints out RE "To use vendored sources, ...".
-    #   6. `cargo build --offline --locked && rm -rf ../target` in
-    #      rustsec/cargo-audit, to ensure it builds.
-    #   7. `tar cf rustsec-${version}.tar.bz2 rustsec \
-    #           --use-compress-program="bzip2 -9"`
-    #      in the parent of your `rustsec` directory.
-    #   8. Upload to gs://; don't forget the `-a public-read`.
-    logging.info("Auto-installing cargo-audit version %s", want_version)
-    gs_path = (
-        "gs://chromeos-localmirror/distfiles/" f"rustsec-{want_version}.tar.bz2"
-    )
-    sha256 = "dd9137486b850d30febc84340d9f6aa3964c06a6e786434ca99477d147bd68ae"
-
-    tempdir = Path(tempfile.mkdtemp(prefix="cargo-audit-install"))
-    logging.info(
-        "Using %s as a tempdir. This will not be cleaned up on failures.",
-        tempdir,
-    )
-    logging.info("Downloading cargo-audit...")
-    tbz2_name = "cargo-audit.tar.bz2"
-    subprocess.run(
-        ["gsutil.py", "cp", gs_path, tbz2_name],
-        check=True,
-        cwd=tempdir,
-    )
-
-    logging.info("Verifying SHA...")
-    with (tempdir / tbz2_name).open("rb") as f:
-        got_sha256 = hashlib.sha256()
-        for block in iter(lambda: f.read(32 * 1024), b""):
-            got_sha256.update(block)
-        got_sha256 = got_sha256.hexdigest()
-        if got_sha256 != sha256:
-            raise ValueError(
-                f"SHA256 mismatch for {gs_path}. Got {got_sha256}, want "
-                f"{sha256}"
-            )
-
-    logging.info("Unpacking...")
-    subprocess.run(
-        ["tar", "xaf", tbz2_name],
-        check=True,
-        cwd=tempdir,
-    )
-    logging.info("Installing...")
-    subprocess.run(
-        ["cargo", "install", "--locked", "--offline", "--path=."],
-        check=True,
-        cwd=tempdir / "rustsec" / "cargo-audit",
-    )
-    logging.info("`cargo-audit` installed successfully.")
-    shutil.rmtree(tempdir)
 
 
 def main(argv: List[str]):
@@ -315,7 +251,7 @@ def main(argv: List[str]):
         "--rust-crates",
         type=Path,
         help="Path to rust_crates.",
-        default=Path(__file__).resolve().parent,
+        default=Path(__file__).resolve().parent.parent,
     )
     parser.add_argument(
         "--skip-install",
@@ -330,7 +266,7 @@ def main(argv: List[str]):
         level=logging.DEBUG if opts.debug else logging.INFO,
     )
 
-    ensure_cargo_bin_is_in_path()
+    cargo.ensure_cargo_bin_is_in_path()
     if not opts.skip_install:
         ensure_cargo_audit_is_installed()
 
