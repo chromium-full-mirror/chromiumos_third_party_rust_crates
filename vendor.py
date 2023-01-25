@@ -15,6 +15,7 @@ import pathlib
 import re
 import shutil
 import subprocess
+import sys
 import textwrap
 import toml
 
@@ -652,77 +653,6 @@ class LicenseManager:
             f.write("\n".join(sorted_licenses))
 
 
-# TODO(abps) - This needs to be replaced with datalog later. We should compile
-#              all crab files into datalog and query it with our requirements
-#              instead.
-class CrabManager:
-    """Manage audit files."""
-
-    def __init__(self, working_dir, crab_dir):
-        self.working_dir = working_dir
-        self.crab_dir = crab_dir
-
-    def _check_bad_traits(self, crabdata):
-        """Checks that a package's crab audit meets our requirements.
-
-        Args:
-            crabdata: Dict with crab keys in standard templated format.
-        """
-        common = crabdata["common"]
-        # TODO(b/200578411) - Figure out what conditions we should enforce as
-        #                     part of the audit.
-        conditions = [
-            common.get("deny", None),
-        ]
-
-        # If any conditions are true, this crate is not acceptable.
-        return any(conditions)
-
-    def verify_traits(self):
-        """Verify that all required CRAB traits for this repository are met."""
-        metadata = load_all_package_metadata(self.working_dir)
-
-        failing_crates = {}
-
-        # Verify all packages have a CRAB file associated with it and they meet
-        # all our required traits
-        for package in metadata:
-            # Skip the synthesized Cargo.toml packages that exist solely to
-            # list dependencies.
-            if "path+file:///" in package["id"]:
-                continue
-
-            crabname = "{}-{}".format(package["name"], package["version"])
-            filename = os.path.join(self.crab_dir, "{}.toml".format(crabname))
-
-            # If crab file doesn't exist, the crate fails
-            if not os.path.isfile(filename):
-                failing_crates[crabname] = "No crab file".format(filename)
-                continue
-
-            with open(filename, "r") as f:
-                crabdata = toml.loads(f.read())
-
-            # If crab file's crate_name and version keys don't match this
-            # package, it also fails. This is just housekeeping...
-            if (
-                package["name"] != crabdata["crate_name"]
-                or package["version"] != crabdata["version"]
-            ):
-                failing_crates[crabname] = "Crate name or version don't match"
-                continue
-
-            if self._check_bad_traits(crabdata):
-                failing_crates[crabname] = "Failed bad traits check"
-
-        # If we had any failing crates, list them now, and exit with an error.
-        if failing_crates:
-            print("Failed CRAB audit:")
-            for k, v in failing_crates.items():
-                print(f"  {k}: {v}")
-            raise ValueError("CRAB audit did not complete successfully.")
-
-
 def clean_source_related_lines_in_place(cargo_toml):
     """Removes all [[bin]] (and similar) sections in `cargo_toml`."""
     cargo_toml.pop("bench", None)
@@ -901,6 +831,7 @@ def main(args):
     vendor = os.path.join(current_path, "vendor")
     crab_dir = os.path.join(current_path, "crab", "crates")
     vendor_artifacts = current_path / "vendor_artifacts"
+    scripts_dir = current_path / "scripts"
     license_shorthand_file = os.path.join(vendor_artifacts, "licenses_used.txt")
     destroyed_crates_file = vendor_artifacts / "destroyed_crates.txt"
 
@@ -923,9 +854,15 @@ def main(args):
         args.skip_license_check, args.license_map, license_shorthand_file
     )
 
-    # Run crab audit on all packages
-    crab = CrabManager(current_path, crab_dir)
-    crab.verify_traits()
+    # audit all packages
+    rc = subprocess.run([scripts_dir / "cargo-vet.py"]).returncode
+    if not rc:
+        return
+
+    sys.exit(
+        "cargo-vet audit failed. Please audit new packages. See "
+        "cargo-vet/README.md if you need help."
+    )
 
 
 if __name__ == "__main__":

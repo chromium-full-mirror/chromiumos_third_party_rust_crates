@@ -160,15 +160,14 @@ Due to the nature of `rust_crates`, patches can get massive (tens-hundreds of
 thousands of lines of diff over thousands of files). For ease of review, it's
 requested that large changes are split into a few logically independent pieces:
 
-1. All changes outside of `vendor/`, `crab/`, and `projects/Cargo.lock`.
-2. Changes to `crab/`.
-3. Changes to `vendor/` and `projects/Cargo.lock`.
+1. All changes outside of `vendor/`.
+2. Changes to `vendor/` as a result of running `./vendor.py`.
 
-The following patch stack roughly serves as an example of this:
-
-1. [The addition of new projects](https://chromium-review.googlesource.com/c/chromiumos/third_party/rust_crates/+/3913965)
-2. [The addition of CRAB reviews](https://chromium-review.googlesource.com/c/chromiumos/third_party/rust_crates/+/3913966)
-3. [The results of running `vendor.py`](https://chromium-review.googlesource.com/c/chromiumos/third_party/rust_crates/+/3913967/2)
+Note that `Cargo.lock` changes may land in either the first or second CLs. Use
+your judgment to determine whether `Cargo.lock` changes are noise (e.g., "I
+added a new package, and `Cargo.lock` now reflects that.") or signal (e.g., "I
+ran `cargo update` on a few packages, and `Cargo.lock` is the _only_ thing
+outside of `vendor/` that can reflect that.").
 
 These patches should all be *landed* at the same time. The split is meant to
 help increase reviewability. If you're unfamiliar with Gerrit's `Relation chain`
@@ -179,16 +178,13 @@ If you have one large patch that you'd like to split out into three, `git
 checkout` may be helpful to you:
 
 ```sh
-## Assuming you currently have the full change you want to commit (e.g.,
-## CRAB changes, vendor/ changes, and all other changes all in one commit)
+## Assuming you currently have the full change you want to commit
 ## checked out, and `git status` says your repo is clean:
 $ all_changes=$(git rev-parse HEAD)
-$ git checkout HEAD~ -- vendor crab projects/Cargo.lock
+$ git checkout HEAD~ -- vendor/ projects/Cargo.lock
 $ git commit --amend --no-edit
-$ git checkout "${all_changes}" -- crab
-$ git commit crab    # This commits crab/ changes.
 $ git checkout "${all_changes}" -- vendor projects/Cargo.lock
-$ git commit vendor  # This commits vendor changes.
+$ git commit -a # This commits vendor changes.
 
 ## NOTE: if any part of this fails, you can always get back to your original
 ## state by running `git reset --hard ${all_changes}`.
@@ -204,9 +200,9 @@ combined with `git rebase -i --autosquash` might be helpful to you. Please see
 
 # FAQ
 
-## Why is `vendor.py` complaining about CRAB audits?
+## Why is `vendor.py` complaining about `cargo-vet` audits?
 
-Please see [the CRAB readme](crab/README.md).
+Please see [the cargo-vet readme](cargo-vet/README.md).
 
 ## How do I make my changes go live in `dev-rust/third-party-crates-src`?
 
