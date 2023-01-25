@@ -716,6 +716,11 @@ criteria = "safe-to-run"
 version = "1.0.4"
 
 [[audits.peeking_take_while]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "does-not-implement-crypto"
+version = "0.1.2"
+
+[[audits.peeking_take_while]]
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.1.2"
