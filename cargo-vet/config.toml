@@ -278,3 +278,1795 @@ criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Using relaxed target criteria to help with migration."
 
+[[exemptions.addr2line]]
+version = "0.17.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.adler]]
+version = "1.0.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.adler32]]
+version = "1.2.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ahash]]
+version = "0.7.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.aho-corasick]]
+version = "0.7.18"
+criteria = "crypto-safe"
+
+[[exemptions.alsa-sys]]
+version = "0.2.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ansi_term]]
+version = "0.11.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.async-task]]
+version = "4.3.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.atty]]
+version = "0.2.14"
+criteria = "crypto-safe"
+
+[[exemptions.autocfg]]
+version = "1.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.backtrace]]
+version = "0.3.66"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bare-metal]]
+version = "0.2.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bare-metal]]
+version = "1.0.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.base64]]
+version = "0.10.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.base64]]
+version = "0.13.0"
+criteria = "crypto-safe"
+
+[[exemptions.bayer]]
+version = "0.1.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bincode]]
+version = "1.0.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bindgen]]
+version = "0.57.0"
+criteria = "crypto-safe"
+
+[[exemptions.bindgen]]
+version = "0.59.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bit-set]]
+version = "0.5.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bit-vec]]
+version = "0.6.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bit_field]]
+version = "0.10.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bitfield]]
+version = "0.13.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bitflags]]
+version = "1.3.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bitreader]]
+version = "0.3.6"
+criteria = "crypto-safe"
+
+[[exemptions.boringssl-src]]
+version = "0.3.0+688fc5c"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.built]]
+version = "0.5.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bytecount]]
+version = "0.6.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bytemuck]]
+version = "1.12.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.byteorder]]
+version = "1.4.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.bytes]]
+version = "1.2.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.capnpc]]
+version = "0.14.9"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cargo-lock]]
+version = "7.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cast]]
+version = "0.3.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cbindgen]]
+version = "0.24.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cc]]
+version = "1.0.73"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cexpr]]
+version = "0.4.0"
+criteria = "crypto-safe"
+
+[[exemptions.cexpr]]
+version = "0.6.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cfg-if]]
+version = "1.0.0"
+criteria = "crypto-safe"
+
+[[exemptions.chunked_transfer]]
+version = "1.4.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.clang-sys]]
+version = "1.2.0"
+criteria = "crypto-safe"
+
+[[exemptions.clap]]
+version = "2.33.3"
+criteria = "crypto-safe"
+
+[[exemptions.clap]]
+version = "4.0.18"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.clap_conf]]
+version = "0.1.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.clap_lex]]
+version = "0.2.4"
+criteria = "crypto-safe"
+
+[[exemptions.clap_lex]]
+version = "0.3.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cmake]]
+version = "0.1.48"
+criteria = "crypto-safe"
+
+[[exemptions.codespan-reporting]]
+version = "0.11.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.color_quant]]
+version = "1.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.colored]]
+version = "2.0.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.com_logger]]
+version = "0.1.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.configparser]]
+version = "3.0.0"
+criteria = "crypto-safe"
+
+[[exemptions.console]]
+version = "0.15.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.const-sha1]]
+version = "0.2.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cortex-m]]
+version = "0.7.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cortex-m-rt]]
+version = "0.6.15"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cortex-m-rt-macros]]
+version = "0.6.15"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cortex-m-rtic]]
+version = "1.1.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cortex-m-rtic-macros]]
+version = "1.1.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.crc]]
+version = "2.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.crc-catalog]]
+version = "1.1.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.crc32fast]]
+version = "1.3.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.crossbeam-channel]]
+version = "0.5.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.crossbeam-deque]]
+version = "0.8.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.crossbeam-epoch]]
+version = "0.9.10"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.crossbeam-utils]]
+version = "0.8.11"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ct-codecs]]
+version = "1.1.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ctor]]
+version = "0.1.22"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ctrlc]]
+version = "3.2.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cxx]]
+version = "1.0.42"
+criteria = "crypto-safe"
+
+[[exemptions.cxxbridge-cmd]]
+version = "1.0.80"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.cxxbridge-flags]]
+version = "1.0.42"
+criteria = "crypto-safe"
+
+[[exemptions.cxxbridge-macro]]
+version = "1.0.42"
+criteria = "crypto-safe"
+
+[[exemptions.dasp_sample]]
+version = "0.11.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.dbus]]
+version = "0.6.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.dbus]]
+version = "0.8.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.dbus]]
+version = "0.9.5"
+criteria = "crypto-safe"
+
+[[exemptions.dbus-codegen]]
+version = "0.10.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.dbus-crossroads]]
+version = "0.4.0"
+criteria = "crypto-safe"
+
+[[exemptions.dbus-crossroads]]
+version = "0.5.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.dbus-tokio]]
+version = "0.7.5"
+criteria = "crypto-safe"
+
+[[exemptions.dbus-tree]]
+version = "0.9.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.deflate]]
+version = "0.8.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.defmt]]
+version = "0.2.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.defmt-macros]]
+version = "0.2.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.defmt-parser]]
+version = "0.2.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.deqp-runner]]
+version = "0.13.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.derive-getters]]
+version = "0.1.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.derive-into-owned]]
+version = "0.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.diff]]
+version = "0.1.13"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.dirs-next]]
+version = "2.0.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.dirs-sys-next]]
+version = "0.1.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.document-features]]
+version = "0.2.6"
+criteria = "crypto-safe"
+
+[[exemptions.downcast-rs]]
+version = "1.2.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ed25519-compact]]
+version = "1.0.11"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.either]]
+version = "1.8.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.embedded-hal]]
+version = "0.2.7"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.embedded-hal-mock]]
+version = "0.8.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.endian-type]]
+version = "0.1.2"
+criteria = "crypto-safe"
+
+[[exemptions.enumn]]
+version = "0.1.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.env_logger]]
+version = "0.8.3"
+criteria = "crypto-safe"
+
+[[exemptions.env_logger]]
+version = "0.9.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.error-chain]]
+version = "0.11.0"
+criteria = "crypto-safe"
+
+[[exemptions.error-chain]]
+version = "0.12.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.euclid]]
+version = "0.22.7"
+criteria = "crypto-safe"
+
+[[exemptions.failure]]
+version = "0.1.8"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.failure_derive]]
+version = "0.1.8"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.fancy-regex]]
+version = "0.8.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.fd-lock]]
+version = "2.0.0"
+criteria = "crypto-safe"
+
+[[exemptions.fd-lock]]
+version = "3.0.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.filedescriptor]]
+version = "0.8.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.flate2]]
+version = "1.0.24"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.flexbuffers]]
+version = "2.0.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.fnv]]
+version = "1.0.7"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.foreign-types]]
+version = "0.3.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.foreign-types-shared]]
+version = "0.1.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.form_urlencoded]]
+version = "1.0.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.fraction]]
+version = "0.10.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ftdi]]
+version = "0.1.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ftdi-mpsse]]
+version = "0.1.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.futures]]
+version = "0.3.14"
+criteria = "crypto-safe"
+
+[[exemptions.futures-channel]]
+version = "0.3.14"
+criteria = "crypto-safe"
+
+[[exemptions.futures-core]]
+version = "0.3.14"
+criteria = "crypto-safe"
+
+[[exemptions.futures-executor]]
+version = "0.3.14"
+criteria = "crypto-safe"
+
+[[exemptions.futures-io]]
+version = "0.3.14"
+criteria = "crypto-safe"
+
+[[exemptions.futures-macro]]
+version = "0.3.14"
+criteria = "crypto-safe"
+
+[[exemptions.futures-sink]]
+version = "0.3.14"
+criteria = "crypto-safe"
+
+[[exemptions.futures-task]]
+version = "0.3.14"
+criteria = "crypto-safe"
+
+[[exemptions.futures-util]]
+version = "0.3.14"
+criteria = "crypto-safe"
+
+[[exemptions.gag]]
+version = "1.0.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.gdbstub]]
+version = "0.6.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.gdbstub_arch]]
+version = "0.2.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.getopts]]
+version = "0.2.21"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.getrandom]]
+version = "0.1.16"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.getrandom]]
+version = "0.2.7"
+criteria = "crypto-safe"
+
+[[exemptions.ghost]]
+version = "0.1.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.gimli]]
+version = "0.26.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.glob]]
+version = "0.3.0"
+criteria = "crypto-safe"
+
+[[exemptions.gpio-cdev]]
+version = "0.5.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.grpcio]]
+version = "0.9.1"
+criteria = "crypto-safe"
+
+[[exemptions.grpcio-compiler]]
+version = "0.6.0"
+criteria = "crypto-safe"
+
+[[exemptions.grpcio-sys]]
+version = "0.9.1+1.38.0"
+criteria = "crypto-safe"
+
+[[exemptions.h2]]
+version = "0.3.14"
+criteria = "crypto-safe"
+
+[[exemptions.hash32]]
+version = "0.2.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.hashbrown]]
+version = "0.12.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.heapless]]
+version = "0.7.16"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.heck]]
+version = "0.3.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.hmac-sha256]]
+version = "0.1.7"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.hostname]]
+version = "0.3.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.hound]]
+version = "3.5.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.http]]
+version = "0.2.8"
+criteria = "crypto-safe"
+
+[[exemptions.http-body]]
+version = "0.4.5"
+criteria = "crypto-safe"
+
+[[exemptions.http-range-header]]
+version = "0.3.0"
+criteria = "crypto-safe"
+
+[[exemptions.httparse]]
+version = "1.7.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.httpdate]]
+version = "1.0.2"
+criteria = "crypto-safe"
+
+[[exemptions.humantime]]
+version = "2.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.hyper]]
+version = "0.14.20"
+criteria = "crypto-safe"
+
+[[exemptions.hyper-timeout]]
+version = "0.4.1"
+criteria = "crypto-safe"
+
+[[exemptions.i2cdev]]
+version = "0.5.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.idna]]
+version = "0.2.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.image]]
+version = "0.23.14"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.include_dir]]
+version = "0.6.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.include_dir_impl]]
+version = "0.6.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.indexmap]]
+version = "1.9.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.indicatif]]
+version = "0.16.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.indoc]]
+version = "0.3.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.indoc-impl]]
+version = "0.3.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.inflections]]
+version = "1.1.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.inotify]]
+version = "0.9.3"
+criteria = "crypto-safe"
+
+[[exemptions.inotify-sys]]
+version = "0.1.5"
+criteria = "crypto-safe"
+
+[[exemptions.instant]]
+version = "0.1.9"
+criteria = "crypto-safe"
+
+[[exemptions.intrusive-collections]]
+version = "0.9.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.inventory]]
+version = "0.1.11"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.inventory-impl]]
+version = "0.1.11"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.io-lifetimes]]
+version = "0.7.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.io-uring]]
+version = "0.5.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ioctl-rs]]
+version = "0.1.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.iso8601]]
+version = "0.4.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.itertools]]
+version = "0.8.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.itertools]]
+version = "0.9.0"
+criteria = "crypto-safe"
+
+[[exemptions.itertools]]
+version = "0.10.5"
+criteria = "crypto-safe"
+
+[[exemptions.jobserver]]
+version = "0.1.24"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.jsonschema]]
+version = "0.15.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.junit-report]]
+version = "0.4.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.lazy_static]]
+version = "1.4.0"
+criteria = "crypto-safe"
+
+[[exemptions.lazycell]]
+version = "1.3.0"
+criteria = "crypto-safe"
+
+[[exemptions.libc]]
+version = "0.2.139"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.libdbus-sys]]
+version = "0.2.2"
+criteria = "crypto-safe"
+
+[[exemptions.libftdi1-sys]]
+version = "1.1.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.libloading]]
+version = "0.7.0"
+criteria = "crypto-safe"
+
+[[exemptions.libslirp-sys]]
+version = "4.2.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.libusb1-sys]]
+version = "0.5.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.libz-sys]]
+version = "1.1.8"
+criteria = "crypto-safe"
+
+[[exemptions.link-cplusplus]]
+version = "1.0.5"
+criteria = "crypto-safe"
+
+[[exemptions.linked-hash-map]]
+version = "0.5.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.linux-embedded-hal]]
+version = "0.3.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.linux-raw-sys]]
+version = "0.0.46"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.litrs]]
+version = "0.2.3"
+criteria = "crypto-safe"
+
+[[exemptions.lock_api]]
+version = "0.4.9"
+criteria = "crypto-safe"
+
+[[exemptions.managed]]
+version = "0.8.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.match_cfg]]
+version = "0.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.matches]]
+version = "0.1.9"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.matchit]]
+version = "0.5.0"
+criteria = "crypto-safe"
+
+[[exemptions.memoffset]]
+version = "0.5.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.memoffset]]
+version = "0.6.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.merge]]
+version = "0.1.0"
+criteria = "crypto-safe"
+
+[[exemptions.merge_derive]]
+version = "0.1.0"
+criteria = "crypto-safe"
+
+[[exemptions.mime]]
+version = "0.3.16"
+criteria = "crypto-safe"
+
+[[exemptions.minimal-lexical]]
+version = "0.2.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.miniz_oxide]]
+version = "0.3.7"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.miniz_oxide]]
+version = "0.4.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.miniz_oxide]]
+version = "0.5.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.mio]]
+version = "0.7.14"
+criteria = "crypto-safe"
+
+[[exemptions.mio]]
+version = "0.8.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.multi_log]]
+version = "0.1.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.multimap]]
+version = "0.8.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.nb]]
+version = "0.1.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.nb]]
+version = "1.0.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.nibble_vec]]
+version = "0.1.0"
+criteria = "crypto-safe"
+
+[[exemptions.nix]]
+version = "0.20.0"
+criteria = "crypto-safe"
+
+[[exemptions.nix]]
+version = "0.23.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.nix]]
+version = "0.25.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.nom]]
+version = "5.1.2"
+criteria = "crypto-safe"
+
+[[exemptions.nom]]
+version = "7.1.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.num]]
+version = "0.2.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.num-bigint]]
+version = "0.2.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.num-bigint]]
+version = "0.4.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.num-cmp]]
+version = "0.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.num-complex]]
+version = "0.2.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.num-derive]]
+version = "0.3.3"
+criteria = "crypto-safe"
+
+[[exemptions.num-integer]]
+version = "0.1.45"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.num-iter]]
+version = "0.1.43"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.num-rational]]
+version = "0.2.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.num-rational]]
+version = "0.3.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.num-traits]]
+version = "0.2.14"
+criteria = "crypto-safe"
+
+[[exemptions.num_cpus]]
+version = "1.13.0"
+criteria = "crypto-safe"
+
+[[exemptions.num_enum]]
+version = "0.5.7"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.num_enum_derive]]
+version = "0.5.7"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.num_threads]]
+version = "0.1.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.number_prefix]]
+version = "0.4.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.object]]
+version = "0.29.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.openssl]]
+version = "0.10.41"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.openssl-macros]]
+version = "0.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.openssl-sys]]
+version = "0.9.75"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.panic-halt]]
+version = "0.2.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.parking_lot]]
+version = "0.11.1"
+criteria = "crypto-safe"
+
+[[exemptions.parking_lot]]
+version = "0.12.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.parking_lot_core]]
+version = "0.8.3"
+criteria = "crypto-safe"
+
+[[exemptions.parking_lot_core]]
+version = "0.9.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.paste]]
+version = "0.1.18"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.paste]]
+version = "1.0.4"
+criteria = "crypto-safe"
+
+[[exemptions.paste-impl]]
+version = "0.1.18"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.pcap-file]]
+version = "1.1.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.peeking_take_while]]
+version = "0.1.2"
+criteria = "crypto-safe"
+
+[[exemptions.pin-project]]
+version = "1.0.12"
+criteria = "crypto-safe"
+
+[[exemptions.pin-project-internal]]
+version = "1.0.12"
+criteria = "crypto-safe"
+
+[[exemptions.pin-project-lite]]
+version = "0.2.9"
+criteria = "crypto-safe"
+
+[[exemptions.pin-utils]]
+version = "0.1.0"
+criteria = "crypto-safe"
+
+[[exemptions.pkg-config]]
+version = "0.3.19"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.png]]
+version = "0.16.8"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ppv-lite86]]
+version = "0.2.10"
+criteria = "crypto-safe"
+
+[[exemptions.proc-macro-crate]]
+version = "1.2.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.proc-macro-error]]
+version = "1.0.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.proc-macro-error-attr]]
+version = "1.0.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.proc-macro-hack]]
+version = "0.5.19"
+criteria = "crypto-safe"
+
+[[exemptions.proc-macro-nested]]
+version = "0.1.7"
+criteria = "crypto-safe"
+
+[[exemptions.proc-macro2]]
+version = "0.4.30"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.prost]]
+version = "0.11.0"
+criteria = "crypto-safe"
+
+[[exemptions.prost-derive]]
+version = "0.11.0"
+criteria = "crypto-safe"
+
+[[exemptions.protobuf]]
+version = "2.27.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.protobuf-codegen]]
+version = "2.27.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.protoc]]
+version = "2.27.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.protoc-grpcio]]
+version = "2.0.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.protoc-rust]]
+version = "2.27.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.pulldown-cmark]]
+version = "0.6.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.pyo3]]
+version = "0.13.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.pyo3-macros]]
+version = "0.13.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.pyo3-macros-backend]]
+version = "0.13.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.quick-error]]
+version = "1.2.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.quote]]
+version = "0.3.15"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.quote]]
+version = "0.6.13"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.r0]]
+version = "0.2.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.r0]]
+version = "1.0.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.radix_trie]]
+version = "0.2.1"
+criteria = "crypto-safe"
+
+[[exemptions.rand]]
+version = "0.4.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand]]
+version = "0.5.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand]]
+version = "0.6.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand]]
+version = "0.7.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand]]
+version = "0.8.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand_chacha]]
+version = "0.1.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand_chacha]]
+version = "0.2.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand_chacha]]
+version = "0.3.1"
+criteria = "crypto-safe"
+
+[[exemptions.rand_core]]
+version = "0.3.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand_core]]
+version = "0.4.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand_core]]
+version = "0.5.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand_core]]
+version = "0.6.4"
+criteria = "crypto-safe"
+
+[[exemptions.rand_hc]]
+version = "0.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand_isaac]]
+version = "0.1.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand_jitter]]
+version = "0.1.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand_os]]
+version = "0.1.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand_pcg]]
+version = "0.1.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rand_pcg]]
+version = "0.2.1"
+criteria = "crypto-safe"
+
+[[exemptions.rand_xorshift]]
+version = "0.1.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rayon]]
+version = "0.8.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rayon]]
+version = "1.5.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rayon-core]]
+version = "1.9.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.regex]]
+version = "1.6.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.regex-syntax]]
+version = "0.6.27"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.remain]]
+version = "0.2.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.remove_dir_all]]
+version = "0.5.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.riscv]]
+version = "0.6.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.riscv]]
+version = "0.7.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.riscv-rt]]
+version = "0.8.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.riscv-rt-macros]]
+version = "0.1.6"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.riscv-target]]
+version = "0.1.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ron]]
+version = "0.5.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.roxmltree]]
+version = "0.13.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.roxmltree]]
+version = "0.14.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rtic-core]]
+version = "1.0.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rtic-monotonic]]
+version = "1.0.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rtic-syntax]]
+version = "1.0.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rtt-target]]
+version = "0.3.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rusb]]
+version = "0.8.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rustc-demangle]]
+version = "0.1.21"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rustc-demangle-capi]]
+version = "0.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rustc-hash]]
+version = "1.1.0"
+criteria = "crypto-safe"
+
+[[exemptions.rustc_version]]
+version = "0.2.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rustc_version]]
+version = "0.4.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rustix]]
+version = "0.35.9"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rustversion]]
+version = "1.0.9"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rusty-fork]]
+version = "0.3.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rustyline]]
+version = "8.2.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rustyline]]
+version = "9.1.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.rustyline-derive]]
+version = "0.4.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ryu]]
+version = "1.0.5"
+criteria = "crypto-safe"
+
+[[exemptions.same-file]]
+version = "1.0.6"
+criteria = "crypto-safe"
+
+[[exemptions.scoped-tls]]
+version = "1.0.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.scopeguard]]
+version = "1.1.0"
+criteria = "crypto-safe"
+
+[[exemptions.scudo]]
+version = "0.1.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.scudo-sys]]
+version = "0.2.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.semver]]
+version = "0.9.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.semver]]
+version = "1.0.13"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.semver-parser]]
+version = "0.7.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.serde-tuple-vec-map]]
+version = "1.0.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.serde_bytes]]
+version = "0.10.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.serde_json]]
+version = "1.0.85"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.serde_yaml]]
+version = "0.8.26"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.serial-core]]
+version = "0.4.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.serial-unix]]
+version = "0.4.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.shell-words]]
+version = "1.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.shlex]]
+version = "0.1.1"
+criteria = "crypto-safe"
+
+[[exemptions.shlex]]
+version = "1.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.signal-hook-registry]]
+version = "1.4.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.simple_logger]]
+version = "1.16.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.slab]]
+version = "0.4.7"
+criteria = "crypto-safe"
+
+[[exemptions.smallvec]]
+version = "1.10.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.socket2]]
+version = "0.4.7"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.spi-memory]]
+version = "0.2.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.spidev]]
+version = "0.5.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.spin]]
+version = "0.9.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.stable_deref_trait]]
+version = "1.2.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.stderrlog]]
+version = "0.5.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.stm32g0]]
+version = "0.13.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.stm32g0xx-hal]]
+version = "0.1.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.strsim]]
+version = "0.8.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.strsim]]
+version = "0.10.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.structopt]]
+version = "0.3.26"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.structopt-derive]]
+version = "0.4.18"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.svd-parser]]
+version = "0.12.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.svd-rs]]
+version = "0.12.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.svd2rust]]
+version = "0.20.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.syn]]
+version = "0.11.11"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.syn]]
+version = "0.15.44"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.sync_wrapper]]
+version = "0.1.1"
+criteria = "crypto-safe"
+
+[[exemptions.synom]]
+version = "0.11.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.synstructure]]
+version = "0.12.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.sys-info]]
+version = "0.9.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.sysfs_gpio]]
+version = "0.6.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.syslog]]
+version = "4.0.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.syslog]]
+version = "6.0.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.tempdir]]
+version = "0.3.7"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.tempfile]]
+version = "3.2.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.termcolor]]
+version = "1.1.2"
+criteria = "crypto-safe"
+
+[[exemptions.terminal_size]]
+version = "0.1.17"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.termios]]
+version = "0.2.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.textwrap]]
+version = "0.11.0"
+criteria = "crypto-safe"
+
+[[exemptions.thiserror]]
+version = "1.0.38"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.thiserror-impl]]
+version = "1.0.38"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.thread_local]]
+version = "1.1.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.time]]
+version = "0.1.43"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.time]]
+version = "0.3.14"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.time-macros]]
+version = "0.2.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.timeout-readwrite]]
+version = "0.3.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.tiny_http]]
+version = "0.8.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.tinyvec]]
+version = "1.6.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.tinyvec_macros]]
+version = "0.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.tokio]]
+version = "1.19.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.tokio-io-timeout]]
+version = "1.2.0"
+criteria = "crypto-safe"
+
+[[exemptions.tokio-macros]]
+version = "1.8.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.tokio-stream]]
+version = "0.1.3"
+criteria = "crypto-safe"
+
+[[exemptions.tokio-util]]
+version = "0.7.3"
+criteria = "crypto-safe"
+
+[[exemptions.toml]]
+version = "0.5.9"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.tonic]]
+version = "0.8.1"
+criteria = "crypto-safe"
+
+[[exemptions.tower]]
+version = "0.4.13"
+criteria = "crypto-safe"
+
+[[exemptions.tower-http]]
+version = "0.3.4"
+criteria = "crypto-safe"
+
+[[exemptions.tower-layer]]
+version = "0.3.1"
+criteria = "crypto-safe"
+
+[[exemptions.tower-service]]
+version = "0.3.2"
+criteria = "crypto-safe"
+
+[[exemptions.tracing]]
+version = "0.1.35"
+criteria = "crypto-safe"
+
+[[exemptions.tracing-attributes]]
+version = "0.1.22"
+criteria = "crypto-safe"
+
+[[exemptions.tracing-core]]
+version = "0.1.29"
+criteria = "crypto-safe"
+
+[[exemptions.tracing-futures]]
+version = "0.2.5"
+criteria = "crypto-safe"
+
+[[exemptions.try-lock]]
+version = "0.2.3"
+criteria = "crypto-safe"
+
+[[exemptions.uart_16550]]
+version = "0.2.18"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.ufmt-write]]
+version = "0.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.unicase]]
+version = "2.6.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.unicode-bidi]]
+version = "0.3.8"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.unicode-normalization]]
+version = "0.1.21"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.unicode-width]]
+version = "0.1.10"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.unicode-xid]]
+version = "0.0.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.unicode-xid]]
+version = "0.1.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.unicode-xid]]
+version = "0.2.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.unindent]]
+version = "0.1.10"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.url]]
+version = "2.2.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.utf8parse]]
+version = "0.2.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.uuid]]
+version = "0.8.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.vcell]]
+version = "0.1.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.vec_map]]
+version = "0.8.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.version_check]]
+version = "0.9.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.void]]
+version = "1.0.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.volatile]]
+version = "0.4.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.volatile-register]]
+version = "0.2.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.wait-timeout]]
+version = "0.2.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.walkdir]]
+version = "2.3.2"
+criteria = "crypto-safe"
+
+[[exemptions.want]]
+version = "0.3.0"
+criteria = "crypto-safe"
+
+[[exemptions.which]]
+version = "3.1.1"
+criteria = "crypto-safe"
+
+[[exemptions.which]]
+version = "4.3.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.winapi]]
+version = "0.3.9"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.windows]]
+version = "0.10.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.windows_gen]]
+version = "0.10.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.windows_macros]]
+version = "0.10.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.wio]]
+version = "0.2.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.wmi]]
+version = "0.9.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.x86_64]]
+version = "0.14.10"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.xml-rs]]
+version = "0.8.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.xmlparser]]
+version = "0.13.3"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.yaml-rust]]
+version = "0.4.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.zeroize]]
+version = "1.5.7"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.zeroize_derive]]
+version = "1.3.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
