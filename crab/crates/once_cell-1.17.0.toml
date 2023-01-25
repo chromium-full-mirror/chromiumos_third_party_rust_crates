@@ -1,0 +1,10 @@
+crate_name = "once_cell"
+version = "1.17.0"
+reviewed-by-team = "crosvm"
+
+[common]
+code_is_not_malicious = true
+has_unsafe_code = true # provides unsafe version of API
+build_script = false
+proc_macro = false
+implements_crypto = false
