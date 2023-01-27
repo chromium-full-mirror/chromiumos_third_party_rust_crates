@@ -1,8 +1,8 @@
 [package]
-name = "rustc-demangle-capi"
+name = "cxxbridge-cmd-deps"
 version = "0.1.0"
 authors = ["The ChromiumOS Authors"]
 edition = "2018"
 
 [dependencies]
-rustc-demangle-capi = "0.1"
+cxxbridge-cmd = "1.0.42"

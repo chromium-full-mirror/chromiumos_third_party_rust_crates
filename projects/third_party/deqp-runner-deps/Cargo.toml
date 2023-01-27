@@ -1,7 +1,7 @@
 # Matches media-gfx/deqp-runner
 
 [package]
-name = "deqp-runner"
+name = "deqp-runner-deps"
 version = "0.1.0"
 authors = []
 edition = "2018"

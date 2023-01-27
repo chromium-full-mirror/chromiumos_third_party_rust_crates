@@ -2,7 +2,7 @@
 # `diff` isn't otherwise present (at least at the time of writing).
 [package]
 edition = "2018"
-name = "bindgen"
+name = "bindgen-deps"
 version = "0.59.2"
 
 [dev-dependencies]

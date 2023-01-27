@@ -1,5 +1,5 @@
 [package]
-name = "cras-sys"
+name = "adhd-deps"
 version = "0.1.0"
 authors = ["The ChromiumOS Authors"]
 edition = "2018"

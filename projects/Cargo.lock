@@ -12,6 +12,33 @@ dependencies = [
 ]
 
 [[package]]
+name = "adhd-deps"
+version = "0.1.0"
+dependencies = [
+ "alsa-sys",
+ "anyhow",
+ "async-trait",
+ "clap 3.2.22",
+ "dasp_sample",
+ "dbus 0.9.5",
+ "futures",
+ "getopts",
+ "hound",
+ "libc",
+ "log",
+ "proc-macro2 1.0.49",
+ "protobuf 3.2.0",
+ "protobuf-codegen 3.2.0",
+ "quote 1.0.23",
+ "remain",
+ "serde",
+ "serde_json",
+ "serde_yaml",
+ "syn 1.0.107",
+ "thiserror",
+]
+
+[[package]]
 name = "adler"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -335,16 +362,6 @@ dependencies = [
 [[package]]
 name = "bindgen"
 version = "0.59.2"
-dependencies = [
- "clap 2.33.3",
- "diff",
- "shlex 1.1.0",
- "tempfile",
-]
-
-[[package]]
-name = "bindgen"
-version = "0.59.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2bd2a9a458e8f4304c52c43ebb0cfbd520289f8379a52e329a38afda99bf8eb8"
 dependencies = [
@@ -408,6 +425,16 @@ dependencies = [
  "shlex 1.1.0",
  "syn 1.0.107",
  "which 4.3.0",
+]
+
+[[package]]
+name = "bindgen-deps"
+version = "0.59.2"
+dependencies = [
+ "clap 2.33.3",
+ "diff",
+ "shlex 1.1.0",
+ "tempfile",
 ]
 
 [[package]]
@@ -887,33 +914,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "cras-sys"
-version = "0.1.0"
-dependencies = [
- "alsa-sys",
- "anyhow",
- "async-trait",
- "clap 3.2.22",
- "dasp_sample",
- "dbus 0.9.5",
- "futures",
- "getopts",
- "hound",
- "libc",
- "log",
- "proc-macro2 1.0.49",
- "protobuf 3.2.0",
- "protobuf-codegen 3.2.0",
- "quote 1.0.23",
- "remain",
- "serde",
- "serde_json",
- "serde_yaml",
- "syn 1.0.107",
- "thiserror",
-]
-
-[[package]]
 name = "crash_rust_panic"
 version = "0.1.0"
 
@@ -1206,13 +1206,6 @@ dependencies = [
 
 [[package]]
 name = "cxxbridge-cmd"
-version = "0.1.0"
-dependencies = [
- "cxxbridge-cmd 1.0.80",
-]
-
-[[package]]
-name = "cxxbridge-cmd"
 version = "1.0.80"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c421d13ce9f8ff2ad3b5503ee39b0bee490cfb22994db292ed3f3a6bd49fb999"
@@ -1222,6 +1215,13 @@ dependencies = [
  "proc-macro2 1.0.49",
  "quote 1.0.23",
  "syn 1.0.107",
+]
+
+[[package]]
+name = "cxxbridge-cmd-deps"
+version = "0.1.0"
+dependencies = [
+ "cxxbridge-cmd",
 ]
 
 [[package]]
@@ -1282,13 +1282,6 @@ dependencies = [
 
 [[package]]
 name = "dbus-codegen"
-version = "0.1.0"
-dependencies = [
- "dbus-codegen 0.10.0",
-]
-
-[[package]]
-name = "dbus-codegen"
 version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a76dc35ce83e4e9fa089b4fabe66c757b27bd504dc2179c97a01b36d3e874fb0"
@@ -1296,6 +1289,13 @@ dependencies = [
  "clap 2.33.3",
  "dbus 0.9.5",
  "xml-rs",
+]
+
+[[package]]
+name = "dbus-codegen-deps"
+version = "0.1.0"
+dependencies = [
+ "dbus-codegen",
 ]
 
 [[package]]
@@ -1376,13 +1376,6 @@ checksum = "bc621c2b4f5f5635e34021c38af2ccb0c1dae38ba11ebee25258de8bb1cee9fe"
 
 [[package]]
 name = "deqp-runner"
-version = "0.1.0"
-dependencies = [
- "deqp-runner 0.13.1",
-]
-
-[[package]]
-name = "deqp-runner"
 version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1d166822eb96b5f168ecdd0cefd5da38db23455c2feb172eba4886a6f7b59c7f"
@@ -1403,6 +1396,13 @@ dependencies = [
  "structopt",
  "timeout-readwrite",
  "toml",
+]
+
+[[package]]
+name = "deqp-runner-deps"
+version = "0.1.0"
+dependencies = [
+ "deqp-runner",
 ]
 
 [[package]]
@@ -1702,7 +1702,7 @@ dependencies = [
 name = "featured"
 version = "0.1.0"
 dependencies = [
- "bindgen 0.59.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "bindgen 0.59.2",
  "log",
  "thiserror",
 ]
@@ -1725,7 +1725,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0ce7134b9999ecaf8bcd65542e436736ef32ddca1b3e06094cb6ec5755203b80"
 
 [[package]]
-name = "flashrom_tester"
+name = "flashrom_tester-deps"
 version = "1.6.0"
 dependencies = [
  "built",
@@ -1768,7 +1768,7 @@ dependencies = [
  "async-trait",
  "base64 0.13.0",
  "bindgen 0.57.0",
- "bindgen 0.59.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "bindgen 0.59.2",
  "bytes",
  "configparser",
  "cxx",
@@ -2234,7 +2234,7 @@ dependencies = [
  "anyhow",
  "bare-metal 1.0.0",
  "bayer",
- "bindgen 0.59.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "bindgen 0.59.2",
  "bitflags",
  "clap 3.2.22",
  "clap_derive",
@@ -2709,7 +2709,7 @@ name = "lego-controller"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "bindgen 0.59.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "bindgen 0.59.2",
  "chrono",
  "clap 3.2.22",
  "env_logger 0.9.0",
@@ -2766,7 +2766,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "libflashrom"
+name = "libflashrom-deps"
 version = "0.1.0"
 dependencies = [
  "cc",
@@ -2779,10 +2779,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "libflashrom-sys"
+name = "libflashrom-sys-deps"
 version = "0.1.0"
 dependencies = [
- "bindgen 0.59.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "bindgen 0.59.2",
  "pkg-config",
 ]
 
@@ -3721,7 +3721,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "prjoxide"
+name = "prjoxide-deps"
 version = "0.1.0"
 dependencies = [
  "capnp",
@@ -4037,7 +4037,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "pyprjoxide"
+name = "pyprjoxide-deps"
 version = "0.1.0"
 dependencies = [
  "pyo3",
@@ -4564,17 +4564,17 @@ checksum = "7ef03e0a2b150c7a90d01faf6254c9c48a41e95fb2a8c2ac1c6f0d2b9aefc342"
 [[package]]
 name = "rustc-demangle-capi"
 version = "0.1.0"
-dependencies = [
- "rustc-demangle-capi 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "rustc-demangle-capi"
-version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "db0fd3421ec63f68efc971ed1242ca54f4a1750aedd68909ed3ac0ecc3274fe8"
 dependencies = [
  "rustc-demangle",
+]
+
+[[package]]
+name = "rustc-demangle-capi-deps"
+version = "0.1.0"
+dependencies = [
+ "rustc-demangle-capi",
 ]
 
 [[package]]

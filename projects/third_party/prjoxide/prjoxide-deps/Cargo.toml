@@ -1,5 +1,5 @@
 [package]
-name = "prjoxide"
+name = "prjoxide-deps"
 version = "0.1.0"
 authors = ["gatecat <gatecat@ds0.me>"]
 edition = "2018"

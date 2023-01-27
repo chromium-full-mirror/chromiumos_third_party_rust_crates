@@ -1,5 +1,5 @@
 [package]
-name = "flashrom_tester"
+name = "flashrom_tester-deps"
 version = "1.6.0"
 authors = ["Edward O'Callaghan <quasisec@chromium.org>",
            "Peter Marheine <pmarheine@chromium.org>"]
