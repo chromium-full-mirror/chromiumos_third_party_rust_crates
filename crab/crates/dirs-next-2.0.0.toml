@@ -1,5 +1,0 @@
-crate_name = "dirs-next"
-version = "2.0.0"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

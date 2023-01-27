@@ -1,5 +1,0 @@
-crate_name = "libdbus-sys"
-version = "0.2.1"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

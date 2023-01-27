@@ -1,5 +1,0 @@
-crate_name = "winapi"
-version = "0.3.9"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

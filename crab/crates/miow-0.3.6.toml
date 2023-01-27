@@ -1,5 +1,0 @@
-crate_name = "miow"
-version = "0.3.6"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

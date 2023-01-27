@@ -1,5 +1,0 @@
-crate_name = "dbus"
-version = "0.9.3"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

@@ -1,5 +1,0 @@
-crate_name = "protoc"
-version = "2.22.0"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

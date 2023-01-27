@@ -1,5 +1,0 @@
-crate_name = "autocfg"
-version = "1.0.1"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

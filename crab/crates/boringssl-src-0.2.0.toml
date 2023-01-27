@@ -1,5 +1,0 @@
-crate_name = "boringssl-src"
-version = "0.2.0"
-reviewed-by-team = "ChromeOS"
-
-[common]

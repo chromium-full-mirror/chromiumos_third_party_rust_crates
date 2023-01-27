@@ -1,5 +1,0 @@
-crate_name = "cc"
-version = "1.0.66"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

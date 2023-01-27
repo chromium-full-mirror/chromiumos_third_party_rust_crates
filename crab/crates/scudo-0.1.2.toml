@@ -1,5 +1,0 @@
-crate_name = "scudo"
-version = "0.1.2"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

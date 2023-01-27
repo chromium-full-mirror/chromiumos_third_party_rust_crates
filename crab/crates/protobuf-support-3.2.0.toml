@@ -1,8 +1,0 @@
-crate_name = "protobuf-support"
-version = "3.2.0"
-reviewed-by-team = "ChromeOS Audio"
-
-[common]
-code_is_not_malicious = true
-has_unsafe_code = false
-implements_crypto = false

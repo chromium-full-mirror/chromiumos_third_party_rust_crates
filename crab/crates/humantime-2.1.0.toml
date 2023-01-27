@@ -1,5 +1,0 @@
-crate_name = "humantime"
-version = "2.1.0"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

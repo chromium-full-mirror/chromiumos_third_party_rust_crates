@@ -1,5 +1,0 @@
-crate_name = "time"
-version = "0.1.43"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

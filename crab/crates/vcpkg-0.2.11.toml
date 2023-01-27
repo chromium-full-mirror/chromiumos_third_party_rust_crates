@@ -1,5 +1,0 @@
-crate_name = "vcpkg"
-version = "0.2.11"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

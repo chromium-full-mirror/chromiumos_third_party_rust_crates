@@ -1,5 +1,0 @@
-crate_name = "object"
-version = "0.23.0"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

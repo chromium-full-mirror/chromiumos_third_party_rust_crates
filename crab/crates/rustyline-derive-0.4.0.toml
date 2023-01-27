@@ -1,5 +1,0 @@
-crate_name = "rustyline-derive"
-version = "0.4.0"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

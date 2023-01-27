@@ -1,5 +1,0 @@
-crate_name = "vec_map"
-version = "0.8.2"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

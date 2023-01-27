@@ -1,5 +1,0 @@
-crate_name = "strsim"
-version = "0.8.0"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

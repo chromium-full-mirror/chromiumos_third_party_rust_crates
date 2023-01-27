@@ -1,5 +1,0 @@
-crate_name = "addr2line"
-version = "0.14.1"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

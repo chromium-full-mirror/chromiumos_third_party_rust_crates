@@ -1,5 +1,0 @@
-crate_name = "remove_dir_all"
-version = "0.5.3"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

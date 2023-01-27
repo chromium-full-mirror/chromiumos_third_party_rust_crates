@@ -1,5 +1,0 @@
-crate_name = "utf8parse"
-version = "0.2.0"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

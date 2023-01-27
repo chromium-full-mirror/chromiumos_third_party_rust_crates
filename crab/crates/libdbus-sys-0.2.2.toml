@@ -1,6 +1,0 @@
-crate_name = "libdbus-sys"
-version = "0.2.2"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]
-code_is_not_malicious = true

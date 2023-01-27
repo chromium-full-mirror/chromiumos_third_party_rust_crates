@@ -1,6 +1,0 @@
-crate_name = "dbus"
-version = "0.9.5"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]
-code_is_not_malicious = true

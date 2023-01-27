@@ -1,5 +1,0 @@
-crate_name = "failure"
-version = "0.1.8"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

@@ -1,9 +1,0 @@
-crate_name = "cmake"
-version = "0.1.45"
-reviewed-by-team = "ChromeOS"
-
-[common]
-code_is_not_malicious = true
-maintainable_code = 2
-good_docs = true
-reasonably_maintained = true

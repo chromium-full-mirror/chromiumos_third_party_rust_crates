@@ -1,5 +1,0 @@
-crate_name = "redox_syscall"
-version = "0.2.4"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

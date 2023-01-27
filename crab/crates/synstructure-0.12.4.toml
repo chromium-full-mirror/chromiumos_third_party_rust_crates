@@ -1,5 +1,0 @@
-crate_name = "synstructure"
-version = "0.12.4"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]

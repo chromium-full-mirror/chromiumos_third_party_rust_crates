@@ -1,5 +1,0 @@
-crate_name = "pkg-config"
-version = "0.3.19"
-reviewed-by-team = "ChromeOS Legacy"
-
-[common]
