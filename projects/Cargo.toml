@@ -52,6 +52,7 @@ members = [
     "platform2/vm_tools/chunnel/system_api",
     "platform2/vm_tools/crostini_client",
     "third_party/adhd-deps",
+    "third_party/bindgen-cli",
     "third_party/bindgen-deps",
     "third_party/cxxbridge-cmd-deps",
     "third_party/dbus-codegen-deps",

@@ -1,0 +1,7 @@
+[package]
+edition = "2018"
+name = "bindgen-cli"
+version = "0.63.0"
+
+[dependencies]
+bindgen-cli = "0.63.0"
