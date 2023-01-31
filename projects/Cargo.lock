@@ -1672,16 +1672,6 @@ dependencies = [
 
 [[package]]
 name = "fd-lock"
-version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0010f02effd88c702318c5dde0463206be67495d0b4d906ba7c0a8f166cc7f06"
-dependencies = [
- "libc",
- "winapi",
-]
-
-[[package]]
-name = "fd-lock"
 version = "3.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e11dcc7e4d79a8c89b9ab4c6f5c30b1fc4a83c420792da3542fd31179ed5f517"
@@ -1790,7 +1780,7 @@ dependencies = [
  "quote 1.0.23",
  "rand 0.8.5",
  "regex",
- "rustyline 8.2.0",
+ "rustyline 10.0.0",
  "rustyline-derive 0.4.0",
  "serde_json",
  "shell-words",
@@ -3187,18 +3177,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "77a5d83df9f36fe23f0c3648c6bbb8b0298bb5f1939c8f2704431371f4b84d43"
 dependencies = [
  "smallvec",
-]
-
-[[package]]
-name = "nix"
-version = "0.20.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fa9b4819da1bc61c0ea48b63b7bc8604064dd43013e7cc325df098d49cd7c18a"
-dependencies = [
- "bitflags",
- "cc",
- "cfg-if",
- "libc",
 ]
 
 [[package]]
@@ -4628,30 +4606,6 @@ dependencies = [
 
 [[package]]
 name = "rustyline"
-version = "8.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fbd4eaf7a7738f76c98e4f0395253ae853be3eb018f7b0bb57fe1b6c17e31874"
-dependencies = [
- "bitflags",
- "cfg-if",
- "clipboard-win",
- "dirs-next",
- "fd-lock 2.0.0",
- "libc",
- "log",
- "memchr",
- "nix 0.20.0",
- "radix_trie",
- "scopeguard",
- "smallvec",
- "unicode-segmentation",
- "unicode-width",
- "utf8parse",
- "winapi",
-]
-
-[[package]]
-name = "rustyline"
 version = "9.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "db7826789c0e25614b03e5a54a0717a86f9ff6e6e5247f92b369472869320039"
@@ -4660,7 +4614,7 @@ dependencies = [
  "cfg-if",
  "clipboard-win",
  "dirs-next",
- "fd-lock 3.0.6",
+ "fd-lock",
  "libc",
  "log",
  "memchr",
@@ -4684,7 +4638,7 @@ dependencies = [
  "cfg-if",
  "clipboard-win",
  "dirs-next",
- "fd-lock 3.0.6",
+ "fd-lock",
  "libc",
  "log",
  "memchr",

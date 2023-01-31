@@ -711,10 +711,6 @@ version = "0.8.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.fd-lock]]
-version = "2.0.0"
-criteria = "crypto-safe"
-
-[[exemptions.fd-lock]]
 version = "3.0.6"
 criteria = ["safe-to-run", "crypto-safe"]
 
@@ -1155,10 +1151,6 @@ version = "0.1.0"
 criteria = "crypto-safe"
 
 [[exemptions.nix]]
-version = "0.20.0"
-criteria = "crypto-safe"
-
-[[exemptions.nix]]
 version = "0.23.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
@@ -1596,10 +1588,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.rusty-fork]]
 version = "0.3.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.rustyline]]
-version = "8.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.rustyline]]
