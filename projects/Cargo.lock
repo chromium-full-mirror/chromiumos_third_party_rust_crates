@@ -1591,15 +1591,6 @@ dependencies = [
 
 [[package]]
 name = "error-chain"
-version = "0.11.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ff511d5dc435d703f4971bc399647c9bc38e20cb41452e3b9feb4765419ed3f3"
-dependencies = [
- "backtrace",
-]
-
-[[package]]
-name = "error-chain"
 version = "0.12.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2d2f06b9cac1506ece98fe3231e3cc9c4410ec3d5b1f24ae1c8946f0742cdefc"
@@ -1804,7 +1795,7 @@ dependencies = [
  "serde_json",
  "shell-words",
  "syn 1.0.107",
- "syslog 4.0.1",
+ "syslog",
  "thiserror",
  "tokio",
  "tokio-stream",
@@ -2201,7 +2192,7 @@ dependencies = [
  "protobuf 2.27.1",
  "serde",
  "serde_json",
- "syslog 6.0.1",
+ "syslog",
  "thiserror",
  "zeroize",
 ]
@@ -2753,7 +2744,7 @@ dependencies = [
  "pkg-config",
  "serde",
  "stderrlog",
- "syslog 6.0.1",
+ "syslog",
  "thiserror",
  "zeroize",
 ]
@@ -3005,7 +2996,7 @@ dependencies = [
  "log",
  "protobuf 2.27.1",
  "protoc-rust",
- "syslog 4.0.1",
+ "syslog",
  "tempfile",
  "time 0.3.14",
 ]
@@ -5238,23 +5229,11 @@ dependencies = [
 
 [[package]]
 name = "syslog"
-version = "4.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a0641142b4081d3d44beffa4eefd7346a228cdf91ed70186db2ca2cef762d327"
-dependencies = [
- "error-chain 0.11.0",
- "libc",
- "log",
- "time 0.1.43",
-]
-
-[[package]]
-name = "syslog"
 version = "6.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "978044cc68150ad5e40083c9f6a725e6fd02d7ba1bcf691ec2ff0d66c0b41acc"
 dependencies = [
- "error-chain 0.12.4",
+ "error-chain",
  "hostname",
  "libc",
  "log",
@@ -5863,7 +5842,7 @@ dependencies = [
  "log",
  "protobuf 2.27.1",
  "protoc-rust",
- "syslog 6.0.1",
+ "syslog",
 ]
 
 [[package]]
