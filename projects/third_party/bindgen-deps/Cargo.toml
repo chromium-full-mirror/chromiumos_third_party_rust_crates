@@ -3,7 +3,10 @@
 [package]
 edition = "2018"
 name = "bindgen-deps"
-version = "0.59.2"
+version = "0.63.0"
+
+[dependencies]
+bindgen = "0.63"
 
 [dev-dependencies]
 clap = "2"
