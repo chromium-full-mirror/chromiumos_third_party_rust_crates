@@ -1,6 +1,6 @@
 
 [package]
-name = "vendor_libs"
+name = "floss"
 version = "0.0.1"
 edition = "2018"
 license = "BSD-Google"
