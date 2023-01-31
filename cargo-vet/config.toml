@@ -348,6 +348,10 @@ criteria = "crypto-safe"
 version = "0.59.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
+[[exemptions.bindgen]]
+version = "0.59.2"
+criteria = ["safe-to-run", "crypto-safe"]
+
 [[exemptions.bit-set]]
 version = "0.5.3"
 criteria = ["safe-to-run", "crypto-safe"]

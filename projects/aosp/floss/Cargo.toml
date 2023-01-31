@@ -8,8 +8,8 @@ license = "BSD-Google"
 [dependencies]
 async-trait = "0.1.42"
 base64 = "0.13.0"
-bindgen-057 = { package = "bindgen", version = "0.57" }
 bindgen-059 = { package = "bindgen", version = "0.59" }
+bindgen-063 = { package = "bindgen", version = "0.63" }
 bytes = "1.0"
 configparser = "3.0.0"
 cxx = { version = "1.0.42", features = ["c++17"] }
