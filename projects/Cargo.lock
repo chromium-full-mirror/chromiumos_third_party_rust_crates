@@ -429,8 +429,9 @@ dependencies = [
 
 [[package]]
 name = "bindgen-deps"
-version = "0.59.2"
+version = "0.63.0"
 dependencies = [
+ "bindgen 0.63.0",
  "clap 2.33.3",
  "diff",
  "shlex 1.1.0",
