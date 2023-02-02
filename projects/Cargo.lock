@@ -1133,6 +1133,7 @@ dependencies = [
  "windows",
  "wio",
  "wmi",
+ "zerocopy 0.6.1",
 ]
 
 [[package]]
@@ -2730,7 +2731,7 @@ dependencies = [
  "tonic",
  "tonic-build",
  "url",
- "zerocopy",
+ "zerocopy 0.7.0-alpha.1",
 ]
 
 [[package]]
@@ -6299,6 +6300,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "56c1936c4cc7a1c9ab21a1ebb602eb942ba868cbd44a99cb7cdc5892335e1c85"
 dependencies = [
  "linked-hash-map",
+]
+
+[[package]]
+name = "zerocopy"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "332f188cc1bcf1fe1064b8c58d150f497e697f49774aa846f2dc949d9a25f236"
+dependencies = [
+ "byteorder",
+ "zerocopy-derive",
 ]
 
 [[package]]
