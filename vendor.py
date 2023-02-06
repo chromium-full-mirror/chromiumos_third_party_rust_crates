@@ -17,7 +17,9 @@ import shutil
 import subprocess
 import sys
 import textwrap
+
 import toml
+
 
 # We only care about crates we're actually going to use and that's usually
 # limited to ones with cfg(linux). For running `cargo metadata`, limit results
@@ -825,7 +827,20 @@ class CrateDestroyer:
         )
 
 
-def main(args):
+def main():
+    if not pathlib.Path("/etc/cros_chroot_version").exists():
+        sys.exit("This script can only be run within the chroot.")
+
+    parser = argparse.ArgumentParser(description="Vendor packages properly")
+    parser.add_argument(
+        "--skip-license-check",
+        "-s",
+        help="Skip the license check on a specific package",
+        action="append",
+    )
+    parser.add_argument("--license-map", help="Write license map to this file")
+    args = parser.parse_args()
+
     current_path = pathlib.Path(__file__).parent.absolute()
     patches = os.path.join(current_path, "patches")
     vendor = os.path.join(current_path, "vendor")
@@ -866,14 +881,4 @@ def main(args):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Vendor packages properly")
-    parser.add_argument(
-        "--skip-license-check",
-        "-s",
-        help="Skip the license check on a specific package",
-        action="append",
-    )
-    parser.add_argument("--license-map", help="Write license map to this file")
-    args = parser.parse_args()
-
-    main(args)
+    main()
