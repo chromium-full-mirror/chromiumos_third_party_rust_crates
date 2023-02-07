@@ -1,0 +1,20 @@
+[package]
+name = "shadercached"
+version = "0.2.0"
+authors = ["The ChromiumOS Authors"]
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.56"
+dbus = "0.9.3"
+dbus-crossroads = "0.5.0"
+dbus-tokio = "0.7.5"
+lazy_static = "1.4.0"
+protobuf = "2.24.1"
+regex = "1.6.0"
+tokio = { version = "1.19.2", features = [
+  "macros",
+  "rt-multi-thread",
+  "signal",
+  "sync",
+] }

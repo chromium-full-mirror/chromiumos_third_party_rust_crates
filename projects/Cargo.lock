@@ -4831,6 +4831,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "shadercached"
+version = "0.2.0"
+dependencies = [
+ "anyhow",
+ "dbus 0.9.5",
+ "dbus-crossroads 0.5.1",
+ "dbus-tokio",
+ "lazy_static",
+ "protobuf 2.27.1",
+ "regex",
+ "tokio",
+]
+
+[[package]]
 name = "shell-words"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
