@@ -687,10 +687,6 @@ version = "0.9.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.error-chain]]
-version = "0.11.0"
-criteria = "crypto-safe"
-
-[[exemptions.error-chain]]
 version = "0.12.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
@@ -1775,10 +1771,6 @@ version = "0.6.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.syslog]]
-version = "4.0.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.syslog]]
 version = "6.0.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
@@ -1816,10 +1808,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.thread_local]]
 version = "1.1.4"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.time]]
-version = "0.1.43"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.time]]
