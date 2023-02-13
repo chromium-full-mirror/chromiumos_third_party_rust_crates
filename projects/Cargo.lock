@@ -2736,6 +2736,7 @@ dependencies = [
  "stderrlog",
  "syslog",
  "thiserror",
+ "zerocopy 0.6.1",
  "zeroize",
 ]
 
