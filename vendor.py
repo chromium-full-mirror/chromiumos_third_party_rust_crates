@@ -3,6 +3,7 @@
 # Copyright 2021 The ChromiumOS Authors
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
+
 """ This script cleans up the vendor directory.
 """
 import argparse
@@ -17,6 +18,15 @@ import shutil
 import subprocess
 import sys
 import textwrap
+
+
+sys.path.append(str(pathlib.Path(__file__).resolve().parent / "scripts"))
+
+import rust_crates
+
+
+rust_crates.die_if_not_running_in_chroot()
+rust_crates.emerge_toml_if_unavailable()
 
 import toml
 
@@ -836,9 +846,6 @@ class CrateDestroyer:
 
 
 def main():
-    if not pathlib.Path("/etc/cros_chroot_version").exists():
-        sys.exit("This script can only be run within the chroot.")
-
     parser = argparse.ArgumentParser(description="Vendor packages properly")
     parser.add_argument(
         "--skip-license-check",

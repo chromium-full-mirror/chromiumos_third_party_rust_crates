@@ -2,6 +2,7 @@
 # Copyright 2022 The ChromiumOS Authors
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
+
 """Populates the top-level Cargo.toml with all necessary workspace entries.
 
 Also updates cargo-vet's policy information with all of the crates discovered
@@ -11,13 +12,22 @@ in the tree.
 import argparse
 import logging
 import os
+from pathlib import Path
 import subprocess
 import sys
 import textwrap
-from pathlib import Path
 from typing import List
 
+
+sys.path.append(str(Path(__file__).resolve().parent.parent / "scripts"))
+import rust_crates
+
+
+rust_crates.die_if_not_running_in_chroot()
+rust_crates.emerge_toml_if_unavailable()
+
 import toml
+
 
 WORKSPACE_FILE_HEADER = """\
 # Copyright 2022 The ChromiumOS Authors.
