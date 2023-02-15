@@ -854,9 +854,19 @@ def main():
         action="append",
     )
     parser.add_argument("--license-map", help="Write license map to this file")
+    parser.add_argument(
+        "--skip-version-check",
+        action="store_true",
+        help="Don't exit if our repo isn't up-to-date.",
+    )
     args = parser.parse_args()
 
     current_path = pathlib.Path(__file__).parent.absolute()
+    if not args.skip_version_check:
+        rust_crates.exit_if_head_is_not_up_to_date(
+            current_path, disable_check_flag="--skip-version-check"
+        )
+
     patches = os.path.join(current_path, "patches")
     vendor = os.path.join(current_path, "vendor")
     crab_dir = os.path.join(current_path, "crab", "crates")

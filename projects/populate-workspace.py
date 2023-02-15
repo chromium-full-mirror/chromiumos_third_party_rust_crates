@@ -189,12 +189,18 @@ def get_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Require rule-of-two-safe-to-deploy for target crates.",
     )
+    parser.add_argument(
+        "--skip-version-check",
+        action="store_true",
+        help="Don't exit if our repo isn't up-to-date.",
+    )
     return parser
 
 
 def main(argv: List[str]):
     """Main function."""
     opts = get_parser().parse_args(argv)
+
     logging.basicConfig(
         format=">> %(asctime)s: %(levelname)s: %(filename)s:%(lineno)d: "
         "%(message)s",
@@ -202,6 +208,10 @@ def main(argv: List[str]):
     )
 
     projects_dir = Path(__file__).resolve().parent
+    if not opts.skip_version_check:
+        rust_crates.exit_if_head_is_not_up_to_date(
+            projects_dir.parent, disable_check_flag="--skip-version-check"
+        )
     projects = find_projects(projects_dir)
     assert projects, f"No projects found under {projects_dir}"
     logging.info("Identified %d projects", len(projects))
