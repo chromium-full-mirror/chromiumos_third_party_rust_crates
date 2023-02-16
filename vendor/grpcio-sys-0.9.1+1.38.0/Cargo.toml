@@ -37,7 +37,7 @@ version = "0.9"
 features = ["vendored"]
 optional = true
 [build-dependencies.bindgen]
-version = "0.57.0"
+version = "0.63"
 features = ["runtime"]
 optional = true
 default-features = false

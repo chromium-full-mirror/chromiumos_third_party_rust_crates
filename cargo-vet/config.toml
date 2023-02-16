@@ -344,10 +344,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.59.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.bindgen]]
-version = "0.59.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.bit-set]]
 version = "0.5.3"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1850,10 +1846,6 @@ criteria = "crypto-safe"
 
 [[exemptions.want]]
 version = "0.3.0"
-criteria = "crypto-safe"
-
-[[exemptions.which]]
-version = "3.1.1"
 criteria = "crypto-safe"
 
 [[exemptions.which]]
