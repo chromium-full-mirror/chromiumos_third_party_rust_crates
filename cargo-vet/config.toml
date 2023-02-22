@@ -289,10 +289,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Using relaxed target criteria to help with migration."
 
-[[exemptions.addr2line]]
-version = "0.17.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.adler]]
 version = "1.0.2"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -329,10 +325,6 @@ criteria = "crypto-safe"
 version = "1.1.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.backtrace]]
-version = "0.3.66"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.bare-metal]]
 version = "0.2.5"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -344,10 +336,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 [[exemptions.base64]]
 version = "0.10.1"
 criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.base64]]
-version = "0.13.0"
-criteria = "crypto-safe"
 
 [[exemptions.bayer]]
 version = "0.1.5"
@@ -393,10 +381,6 @@ criteria = "crypto-safe"
 version = "0.3.0+688fc5c"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.built]]
-version = "0.5.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.bytecount]]
 version = "0.6.3"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -415,10 +399,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.capnpc]]
 version = "0.14.9"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.cargo-lock]]
-version = "7.1.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.cast]]
@@ -745,10 +725,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.1.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.form_urlencoded]]
-version = "1.0.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.fraction]]
 version = "0.10.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -823,10 +799,6 @@ criteria = "crypto-safe"
 
 [[exemptions.ghost]]
 version = "0.1.6"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.gimli]]
-version = "0.26.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.glob]]
@@ -915,10 +887,6 @@ criteria = "crypto-safe"
 
 [[exemptions.i2cdev]]
 version = "0.5.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.idna]]
-version = "0.2.3"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.image]]
@@ -1083,10 +1051,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.match_cfg]]
 version = "0.1.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.matches]]
-version = "0.1.9"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.matchit]]
@@ -1633,10 +1597,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.9.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.semver]]
-version = "1.0.13"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.semver-parser]]
 version = "0.7.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1793,10 +1753,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "3.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.termcolor]]
-version = "1.1.2"
-criteria = "crypto-safe"
-
 [[exemptions.terminal_size]]
 version = "0.1.17"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1865,10 +1821,6 @@ criteria = "crypto-safe"
 version = "0.7.3"
 criteria = "crypto-safe"
 
-[[exemptions.toml]]
-version = "0.5.9"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.tonic]]
 version = "0.8.1"
 criteria = "crypto-safe"
@@ -1925,14 +1877,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.3.8"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.unicode-normalization]]
-version = "0.1.21"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.unicode-width]]
-version = "0.1.10"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.unicode-xid]]
 version = "0.0.4"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1947,10 +1891,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.unindent]]
 version = "0.1.10"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.url]]
-version = "2.2.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.utf8parse]]

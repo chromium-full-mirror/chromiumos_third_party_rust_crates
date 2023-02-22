@@ -50,6 +50,11 @@ macros), reasonable usage of the crate should output code which meets the above
 criteria."""
 implies = "safe-to-deploy"
 
+[[audits.addr2line]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.19.0"
+
 [[audits.aho-corasick]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -69,6 +74,11 @@ version = "1.1.6"
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.2.2"
+
+[[audits.arbitrary]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.2.3"
 
 [[audits.argh]]
 who = "ChromeOS"
@@ -100,10 +110,20 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.3"
 
+[[audits.async-stream]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.4"
+
 [[audits.async-stream-impl]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.3"
+
+[[audits.async-stream-impl]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.4"
 
 [[audits.async-trait]]
 who = "Android Legacy"
@@ -114,6 +134,11 @@ version = "0.1.48"
 who = "Android Legacy"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.61"
+
+[[audits.async-trait]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.64"
 
 [[audits.atomic-polyfill]]
 who = "ChromeOS"
@@ -150,10 +175,20 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.9"
 
+[[audits.backtrace]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.67"
+
 [[audits.base64]]
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.13.0"
+
+[[audits.base64]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.13.1"
 
 [[audits.bindgen]]
 who = "Android Legacy"
@@ -185,6 +220,11 @@ who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.19.5"
 
+[[audits.built]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.2"
+
 [[audits.bytes]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -199,6 +239,11 @@ version = "1.0.1"
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.14.11"
+
+[[audits.cargo-lock]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "8.0.3"
 
 [[audits.cexpr]]
 who = "Android Legacy"
@@ -345,6 +390,11 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.2"
 
+[[audits.form_urlencoded]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.0"
+
 [[audits.funty]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -404,6 +454,11 @@ version = "0.2.2"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.2.7"
+
+[[audits.gimli]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.27.2"
 
 [[audits.glob]]
 who = "Android Legacy"
@@ -484,6 +539,11 @@ version = "0.4.1"
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.53"
+
+[[audits.idna]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.0"
 
 [[audits.inotify]]
 who = "ChromeOS"
@@ -625,6 +685,11 @@ who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.3.16"
 
+[[audits.miniz_oxide]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.2"
+
 [[audits.mio]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -684,6 +749,12 @@ version = "0.2.14"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.13.0"
+
+[[audits.object]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.30.3"
+notes = "I'm not counting the code related to the GNU Hash section as crypto for the sake of this review."
 
 [[audits.once_cell]]
 who = "crosvm"
@@ -955,6 +1026,11 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.1.0"
 
+[[audits.semver]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.16"
+
 [[audits.serde]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -1035,6 +1111,11 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.1.2"
 
+[[audits.termcolor]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.3"
+
 [[audits.textwrap]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -1084,6 +1165,11 @@ version = "0.1.3"
 who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.7.3"
+
+[[audits.toml]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.10"
 
 [[audits.tonic]]
 who = "ChromeOS"
@@ -1170,6 +1256,11 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.6"
 
+[[audits.unicode-normalization]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.22"
+
 [[audits.unicode-segmentation]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -1185,10 +1276,20 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.1.8"
 
+[[audits.unicode-width]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.9"
+
 [[audits.unicode-xid]]
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.2.1"
+
+[[audits.url]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.3.1"
 
 [[audits.userfaultfd]]
 who = "ChromeOS"
