@@ -469,10 +469,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "2.0.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.com_logger]]
-version = "0.1.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.configparser]]
 version = "3.0.0"
 criteria = "crypto-safe"
@@ -893,10 +889,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.23.14"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.include_dir]]
-version = "0.6.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.include_dir_impl]]
 version = "0.6.2"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1009,10 +1001,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.7.0"
 criteria = "crypto-safe"
 
-[[exemptions.libslirp-sys]]
-version = "4.2.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.libusb1-sys]]
 version = "0.5.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1099,10 +1087,6 @@ criteria = "crypto-safe"
 
 [[exemptions.mio]]
 version = "0.8.4"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.multi_log]]
-version = "0.1.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.multimap]]
@@ -1215,10 +1199,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.openssl-sys]]
 version = "0.9.75"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.panic-halt]]
-version = "0.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.parking_lot]]
@@ -1533,10 +1513,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.1.21"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.rustc-demangle-capi]]
-version = "0.1.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.rustc-hash]]
 version = "1.1.0"
 criteria = "crypto-safe"
@@ -1585,10 +1561,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.1.0"
 criteria = "crypto-safe"
 
-[[exemptions.scudo]]
-version = "0.1.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.scudo-sys]]
 version = "0.2.1"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1632,10 +1604,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 [[exemptions.shlex]]
 version = "0.1.1"
 criteria = "crypto-safe"
-
-[[exemptions.shlex]]
-version = "1.1.0"
-criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.signal-hook-registry]]
 version = "1.4.0"
@@ -1899,10 +1867,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.uuid]]
 version = "0.8.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.vcell]]
-version = "0.1.3"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.vec_map]]
