@@ -18,7 +18,7 @@ dependencies = [
  "alsa-sys",
  "anyhow",
  "async-trait",
- "clap 3.2.22",
+ "clap 3.2.23",
  "dasp_sample",
  "dbus 0.9.5",
  "futures",
@@ -92,9 +92,9 @@ dependencies = [
 
 [[package]]
 name = "ansi_term"
-version = "0.11.0"
+version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b"
+checksum = "d52a9bb7ec0cf484c551830a7ce27bd20d67eac647e1befb56b0be4ee39a55d2"
 dependencies = [
  "winapi",
 ]
@@ -346,7 +346,7 @@ dependencies = [
  "bitflags",
  "cexpr 0.4.0",
  "clang-sys",
- "clap 2.33.3",
+ "clap 2.34.0",
  "env_logger 0.8.3",
  "lazy_static",
  "lazycell",
@@ -369,7 +369,7 @@ dependencies = [
  "bitflags",
  "cexpr 0.6.0",
  "clang-sys",
- "clap 2.33.3",
+ "clap 2.34.0",
  "env_logger 0.9.0",
  "lazy_static",
  "lazycell",
@@ -392,7 +392,7 @@ dependencies = [
  "bitflags",
  "cexpr 0.6.0",
  "clang-sys",
- "clap 3.2.22",
+ "clap 3.2.23",
  "env_logger 0.9.0",
  "lazy_static",
  "lazycell",
@@ -442,7 +442,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "12f11c4f6f099f66039fdf7de3595e6fcb7eabaa2e2a4d3483cbe80f410aa787"
 dependencies = [
  "bindgen 0.63.0",
- "clap 3.2.22",
+ "clap 3.2.23",
  "env_logger 0.9.0",
  "log",
  "shlex 1.1.0",
@@ -453,7 +453,7 @@ name = "bindgen-deps"
 version = "0.63.0"
 dependencies = [
  "bindgen 0.63.0",
- "clap 2.33.3",
+ "clap 2.34.0",
  "diff",
  "shlex 1.1.0",
  "tempfile",
@@ -476,9 +476,9 @@ checksum = "349f9b6a179ed607305526ca489b34ad0a41aed5f7980fa90eb03160b69598fb"
 
 [[package]]
 name = "bit_field"
-version = "0.10.1"
+version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dcb6dd1c2376d2e096796e234a70e17e94cc2d5d54ff8ce42b28cef1d0d359a4"
+checksum = "dc827186963e592360843fb5ba4b973e145841266c1357f7180c43526f2e5b61"
 
 [[package]]
 name = "bitfield"
@@ -522,9 +522,9 @@ dependencies = [
 
 [[package]]
 name = "bumpalo"
-version = "3.11.1"
+version = "3.12.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "572f695136211188308f16ad2ca5c851a712c464060ae6974944458eb83880ba"
+checksum = "0d261e256854913907f67ed06efbc3338dfe6179796deefc1ff763fc1aee5535"
 
 [[package]]
 name = "bytecount"
@@ -534,9 +534,9 @@ checksum = "2c676a478f63e9fa2dd5368a42f28bba0d6c560b775f38583c8bbaa7fcd67c9c"
 
 [[package]]
 name = "bytemuck"
-version = "1.12.1"
+version = "1.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2f5715e491b5a1598fc2bef5a606847b5dc1d48ea625bd3c02c00de8285591da"
+checksum = "c041d3eab048880cb0b86b256447da3f18859a163c3b8d8893f4e6368abe6393"
 
 [[package]]
 name = "byteorder"
@@ -546,9 +546,9 @@ checksum = "14c189c53d098945499cdfa7ecc63567cf3886b3332b312a5b4585d8d3a6a610"
 
 [[package]]
 name = "bytes"
-version = "1.2.1"
+version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ec8a7b6a70fde80372154c65702f00a0f56f3e1c36abbc6c440484be248856db"
+checksum = "89b2fd2a0dcf38d7971e2194b6b6eebab45ae01067456a7fd93d5547a61b70be"
 
 [[package]]
 name = "capnp"
@@ -589,7 +589,7 @@ version = "0.24.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a6358dedf60f4d9b8db43ad187391afe959746101346fe51bb978126bec61dfb"
 dependencies = [
- "clap 3.2.22",
+ "clap 3.2.23",
  "heck 0.4.0",
  "indexmap",
  "log",
@@ -604,9 +604,9 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.0.73"
+version = "1.0.79"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2fff2a6927b3bb87f9595d67196a70493f627687a71d87a0d692242c33f58c11"
+checksum = "50d30906286121d95be3d479533b458f87493b30a4b5f79a607db8f5d11aa91f"
 dependencies = [
  "jobserver",
 ]
@@ -660,9 +660,9 @@ dependencies = [
 
 [[package]]
 name = "chunked_transfer"
-version = "1.4.0"
+version = "1.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fff857943da45f546682664a79488be82e69e43c1a7a2307679ab9afb3a66d2e"
+checksum = "cca491388666e04d7248af3f60f0c40cfb0991c72205595d7c396e3510207d1a"
 
 [[package]]
 name = "chunnel"
@@ -692,9 +692,9 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "2.33.3"
+version = "2.34.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "37e58ac78573c40708d45522f0d80fa2f01cc4f9b4e2bf749807255454312002"
+checksum = "a0610544180c38b88101fecf2dd634b174a62eef6946f84dfc6a7127512b381c"
 dependencies = [
  "ansi_term",
  "atty",
@@ -707,9 +707,9 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "3.2.22"
+version = "3.2.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "86447ad904c7fb335a790c9d7fe3d0d971dc523b8ccd1561a520de9a85302750"
+checksum = "71655c45cb9845d3270c9d6df84ebe72b4dad3c2ba3f7023ad47c144e4e473a5"
 dependencies = [
  "atty",
  "bitflags",
@@ -719,7 +719,7 @@ dependencies = [
  "once_cell",
  "strsim 0.10.0",
  "termcolor",
- "textwrap 0.15.2",
+ "textwrap 0.16.0",
 ]
 
 [[package]]
@@ -744,7 +744,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "56039deda04adbf9af4e5595c199572dc276f4fe60b03a4c84c0186d4de649d8"
 dependencies = [
  "anyhow",
- "clap 2.33.3",
+ "clap 2.34.0",
  "serde",
  "thiserror",
  "toml",
@@ -796,9 +796,9 @@ dependencies = [
 
 [[package]]
 name = "clipboard-win"
-version = "4.2.1"
+version = "4.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4e4ea1881992efc993e4dc50a324cdbd03216e41bdc8385720ff47efc9bd2ca8"
+checksum = "7191c27c2357d9b7ef96baac1773290d4ca63b24205b82a3fd8a0637afcf0362"
 dependencies = [
  "error-code",
  "str-buf",
@@ -816,9 +816,9 @@ dependencies = [
 
 [[package]]
 name = "cmake"
-version = "0.1.48"
+version = "0.1.49"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e8ad8cef104ac57b68b89df3208164d228503abbdce70f6880ffa3d970e7443a"
+checksum = "db34956e100b30725f2eb215f90d4871051239535632f84fea3bc92722c66b7c"
 dependencies = [
  "cc",
 ]
@@ -1327,7 +1327,7 @@ version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a76dc35ce83e4e9fa089b4fabe66c757b27bd504dc2179c97a01b36d3e874fb0"
 dependencies = [
- "clap 2.33.3",
+ "clap 2.34.0",
  "dbus 0.9.5",
  "xml-rs",
 ]
@@ -1663,7 +1663,7 @@ dependencies = [
  "anyhow",
  "bincode",
  "byteorder",
- "clap 3.2.22",
+ "clap 3.2.23",
  "glob",
  "hmac-sha256",
  "libc",
@@ -1752,7 +1752,7 @@ version = "1.6.0"
 dependencies = [
  "built",
  "chrono",
- "clap 2.33.3",
+ "clap 2.34.0",
  "libc",
  "log",
  "rand 0.6.5",
@@ -2257,7 +2257,7 @@ dependencies = [
  "bayer",
  "bindgen 0.59.2",
  "bitflags",
- "clap 3.2.22",
+ "clap 3.2.23",
  "clap_derive 3.2.18",
  "colored",
  "cortex-m",
@@ -2731,7 +2731,7 @@ dependencies = [
  "anyhow",
  "bindgen 0.59.2",
  "chrono",
- "clap 3.2.22",
+ "clap 3.2.23",
  "env_logger 0.9.0",
  "glob",
  "include_dir",
@@ -3542,9 +3542,9 @@ dependencies = [
 
 [[package]]
 name = "os_str_bytes"
-version = "6.3.0"
+version = "6.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9ff7415e9ae3fff1225851df9e0d9e4e5479f947619774677a63572e55e80eff"
+checksum = "9b7820b9daea5457c9f21c69448905d723fbd21136ccf521748f23fd49e723ee"
 
 [[package]]
 name = "p9s"
@@ -3758,7 +3758,7 @@ version = "0.1.0"
 dependencies = [
  "capnp",
  "capnpc",
- "clap 3.2.22",
+ "clap 3.2.23",
  "flate2",
  "include_dir",
  "itertools 0.8.2",
@@ -5116,7 +5116,7 @@ version = "0.3.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0c6b5c64445ba8094a6ab0c3cd2ad323e07171012d9c98b0b15651daf1787a10"
 dependencies = [
- "clap 2.33.3",
+ "clap 2.34.0",
  "lazy_static",
  "structopt-derive",
 ]
@@ -5165,7 +5165,7 @@ checksum = "d41115c7a744c520968b4f31742ef9f1e8e0b0ef1e8d46c4c9153fed85056750"
 dependencies = [
  "anyhow",
  "cast",
- "clap 2.33.3",
+ "clap 2.34.0",
  "clap_conf",
  "env_logger 0.9.0",
  "inflections",
@@ -5349,9 +5349,9 @@ dependencies = [
 
 [[package]]
 name = "textwrap"
-version = "0.15.2"
+version = "0.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b7b3e525a49ec206798b40326a44121291b530c963cfb01018f63e135bac543d"
+checksum = "222a222a5bfe1bba4a77b45ec488a741b3cb8872e5e499451fd7d0129c9c7c3d"
 
 [[package]]
 name = "thiserror"
