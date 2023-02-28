@@ -37,6 +37,7 @@ io-uring = { version = "0.5", features = ["unstable"] }
 libc = "0.2.93"
 libfuzzer-sys = "0.4.4"
 libslirp-sys = "4.2.1"
+libtest-mimic = "0.6.0"
 log = "0.4"
 memoffset = "0.6"
 merge = "0.1.0"
