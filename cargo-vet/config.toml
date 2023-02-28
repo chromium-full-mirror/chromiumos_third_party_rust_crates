@@ -309,10 +309,6 @@ criteria = "crypto-safe"
 version = "0.2.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.ansi_term]]
-version = "0.11.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.async-task]]
 version = "4.3.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -361,10 +357,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.6.3"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.bit_field]]
-version = "0.10.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.bitfield]]
 version = "0.13.2"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -385,16 +377,8 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.6.3"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.bytemuck]]
-version = "1.12.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.byteorder]]
 version = "1.4.3"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.bytes]]
-version = "1.2.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.capnpc]]
@@ -409,10 +393,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.24.3"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.cc]]
-version = "1.0.73"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.cexpr]]
 version = "0.4.0"
 criteria = "crypto-safe"
@@ -425,16 +405,8 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.0.0"
 criteria = "crypto-safe"
 
-[[exemptions.chunked_transfer]]
-version = "1.4.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.clang-sys]]
 version = "1.2.0"
-criteria = "crypto-safe"
-
-[[exemptions.clap]]
-version = "2.33.3"
 criteria = "crypto-safe"
 
 [[exemptions.clap]]
@@ -453,9 +425,9 @@ criteria = "crypto-safe"
 version = "0.3.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.cmake]]
-version = "0.1.48"
-criteria = "crypto-safe"
+[[exemptions.clipboard-win]]
+version = "4.5.0"
+criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.codespan-reporting]]
 version = "0.11.1"
