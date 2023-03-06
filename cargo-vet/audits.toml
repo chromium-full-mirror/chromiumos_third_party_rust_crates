@@ -441,6 +441,15 @@ who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.22.7"
 
+[[audits.fastrand]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "1.9.0"
+notes = """
+`does-not-implement-crypto` is certified because this crate explicitly says
+that the RNG here is not cryptographically secure.
+"""
+
 [[audits.fd-lock]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -625,6 +634,11 @@ version = "0.1.5"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.1.9"
+
+[[audits.io-lifetimes]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.4"
 
 [[audits.itertools]]
 who = "ChromeOS"
@@ -1099,6 +1113,18 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.1.0"
 
+[[audits.rustix]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.36.7"
+notes = """
+Precompiled files in `src/backend/linux_raw/arch/outline` were not audited. I'm
+also at all familiar with PowerPC asm, but the instructions seemed inoffensive.
+
+This crate provides random functions, but they simply proxy libc's, so no
+crypto is truly implemented here.
+"""
+
 [[audits.rustyline]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -1214,6 +1240,11 @@ version = "1.0.107"
 who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.1.1"
+
+[[audits.tempfile]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "3.4.0"
 
 [[audits.termcolor]]
 who = "Android Legacy"

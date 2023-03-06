@@ -993,6 +993,10 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.0.46"
 criteria = ["safe-to-run", "crypto-safe"]
 
+[[exemptions.linux-raw-sys]]
+version = "0.1.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
 [[exemptions.litrs]]
 version = "0.2.3"
 criteria = "crypto-safe"
@@ -1683,10 +1687,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.tempdir]]
 version = "0.3.7"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.tempfile]]
-version = "3.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.terminal_size]]
