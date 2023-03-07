@@ -1326,10 +1326,6 @@ version = "0.2.1"
 criteria = "crypto-safe"
 
 [[exemptions.rand]]
-version = "0.4.6"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.rand]]
 version = "0.5.6"
 criteria = ["safe-to-run", "crypto-safe"]
 
@@ -1423,10 +1419,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.remain]]
 version = "0.2.4"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.remove_dir_all]]
-version = "0.5.3"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.riscv]]
@@ -1683,10 +1675,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.syslog]]
 version = "6.0.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.tempdir]]
-version = "0.3.7"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.terminal_size]]
