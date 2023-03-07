@@ -312,6 +312,12 @@ def load_single_metadata(working_dir, filter_platform):
         "cargo",
         "metadata",
         "--format-version=1",
+        # Use `--quiet` here, since cargo may warn about dependencies which
+        # don't strictly make sense (e.g., some third-party packages depend on
+        # things like bindgen-cli, which doesn't have a library target).
+        #
+        # We don't care. :)
+        "--quiet",
         "--manifest-path=projects/Cargo.toml",
     ]
     # Conditionally add platform filter
