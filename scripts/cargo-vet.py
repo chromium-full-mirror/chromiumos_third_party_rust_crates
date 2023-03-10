@@ -2,6 +2,7 @@
 # Copyright 2023 The ChromiumOS Authors
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
+
 """Ensures `cargo vet` is installed, and runs it.
 
 Moreover, this ensures that any `cargo vet` commands ignore our "destroyed"
@@ -23,10 +24,10 @@ custom exemptions for destroyed crates, so tread lightly if you're using e.g.,
 import argparse
 import logging
 import os
+from pathlib import Path
 import shlex
 import subprocess
 import sys
-from pathlib import Path
 from typing import List, Tuple
 
 import cargo
@@ -105,12 +106,12 @@ def run_cargo_vet(
 #   8. Upload to gs://; don't forget the `-a public-read`.
 def ensure_cargo_vet_is_installed():
     """Ensures that `cargo-vet` is installed."""
-    want_version = "0.3.1+cros"
+    want_version = "0.4.0+cros"
     cargo.ensure_cargo_utility_is_installed(
         utility_name="cargo-vet",
         want_version=want_version,
         gs_path=f"gs://chromeos-localmirror/distfiles/cargo-vet-{want_version}.tar.bz2",
-        sha256="6a01d3ec940f9c724dbbc88e9835679e0205c94c239c0e73a5c387cd78a9b963",
+        sha256="e173025d8b8f2d8160a415adf9ae8e606b8d9e171e1714f8495a8383e5beefc6",
         build_subdir=Path("cargo-vet"),
     )
 

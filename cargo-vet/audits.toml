@@ -1500,4 +1500,3 @@ delta = "0.7.0-alpha.1 -> 0.6.1"
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.2"
-
