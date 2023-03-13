@@ -416,6 +416,11 @@ who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.7.5"
 
+[[audits.dbus-tokio]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.6"
+
 [[audits.document-features]]
 who = "ChromeOS"
 criteria = "safe-to-run"
