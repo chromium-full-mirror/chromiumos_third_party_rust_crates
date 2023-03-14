@@ -468,7 +468,11 @@ class LicenseManager:
         return ""
 
     def generate_license(
-        self, skip_license_check, print_map_to_file, license_shorthand_file
+        self,
+        skip_license_check,
+        print_map_to_file,
+        license_shorthand_file,
+        destroyed_crates,
     ):
         """Generate single massive license file from metadata."""
         metadata = load_all_package_metadata(self.working_dir)
@@ -489,12 +493,17 @@ class LicenseManager:
                 continue
 
             pkg_name = package["name"]
+            pkg_version = package["version"]
             if pkg_name in skip_license_check:
                 print(
                     "Skipped license check on {}. Reason: Skipped from command line".format(
                         pkg_name
                     )
                 )
+                continue
+
+            # Skip the license check for packages we have destroyed.
+            if (pkg_name, pkg_version) in destroyed_crates:
                 continue
 
             if pkg_name in self.MAP_LICENSE_TO_OTHER:
@@ -522,7 +531,6 @@ class LicenseManager:
 
             # We ignore the metadata for license file because most crates don't
             # have it set. Just scan the source for licenses.
-            pkg_version = package["version"]
             license_files = list(
                 self._find_license_in_dir(
                     os.path.join(self.vendor_dir, f"{pkg_name}-{pkg_version}")
@@ -812,14 +820,22 @@ class CrateDestroyer:
         for package_desc in metadata:
             package_name, package_version = package_desc
             if package_desc in used_packages:
-                # b/239449434: Due to RUSTSEC-2020-0071, we manually empty this
-                # crate. It's present in the depgraph because chrono brings it
+                # b/239449434: Due to RUSTSEC-2020-0071, we manually empty
+                # time-0.1. It's present in the depgraph because chrono brings it
                 # in by default under the `oldtime` feature. Nothing in our
                 # depgraph actually makes use of this.
-                is_vulnerable_time_version = (
+                #
+                # b/271837931: bindgen versons before 0.63 do not work correctly
+                # with newer versions of LLVM. We patch grpcio-sys to depend on
+                # bindgen-0.63, but vendoring happens before that, so bindgen-0.57
+                # is still pulled in. This causes build errors, so remove it.
+                force_destroy_crate = (
                     package_name == "time" and package_version.startswith("0.1")
+                ) or (
+                    package_name == "bindgen"
+                    and package_version.startswith("0.57")
                 )
-                if not is_vulnerable_time_version:
+                if not force_destroy_crate:
                     continue
                 print(f"Forcibly emptying {package_name}@{package_version}")
 
@@ -849,6 +865,7 @@ class CrateDestroyer:
         destroyed_crates_file.write_text(
             "\n".join([file_header] + file_lines), encoding="utf-8"
         )
+        return cleaned_packages
 
 
 def main():
@@ -892,12 +909,15 @@ def main():
     apply_patches(patches, vendor)
     cleanup_owners(vendor)
     destroyer = CrateDestroyer(current_path, vendor)
-    destroyer.destroy_unused_crates(destroyed_crates_file)
+    destroyed_crates = destroyer.destroy_unused_crates(destroyed_crates_file)
 
     # Combine license file and check for any bad licenses
     lm = LicenseManager(current_path, vendor)
     lm.generate_license(
-        args.skip_license_check, args.license_map, license_shorthand_file
+        args.skip_license_check,
+        args.license_map,
+        license_shorthand_file,
+        set(destroyed_crates),
     )
 
     # audit all packages

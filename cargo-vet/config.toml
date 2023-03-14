@@ -341,10 +341,6 @@ version = "1.0.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.bindgen]]
-version = "0.57.0"
-criteria = "crypto-safe"
-
-[[exemptions.bindgen]]
 version = "0.59.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
