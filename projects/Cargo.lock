@@ -4927,9 +4927,12 @@ dependencies = [
  "dbus 0.9.5",
  "dbus-crossroads 0.5.1",
  "dbus-tokio",
+ "hex",
  "lazy_static",
+ "openssl",
  "protobuf 2.27.1",
  "regex",
+ "sys-info",
  "tokio",
 ]
 
