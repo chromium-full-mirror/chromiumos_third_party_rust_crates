@@ -220,6 +220,11 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.63.0"
 
+[[audits.bindgen]]
+who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.63.0 -> 0.64.0"
+
 [[audits.bit_field]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]

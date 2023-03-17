@@ -421,6 +421,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "bindgen"
+version = "0.64.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c4243e6031260db77ede97ad86c27e501d646a27ab57b59a574f725d98ab1fb4"
+dependencies = [
+ "bitflags",
+ "cexpr 0.6.0",
+ "clang-sys",
+ "lazy_static",
+ "lazycell",
+ "log",
+ "peeking_take_while",
+ "proc-macro2 1.0.49",
+ "quote 1.0.23",
+ "regex",
+ "rustc-hash",
+ "shlex 1.1.0",
+ "syn 1.0.107",
+ "which",
+]
+
+[[package]]
 name = "bindgen-cli"
 version = "0.63.0"
 dependencies = [
@@ -1789,7 +1811,7 @@ dependencies = [
  "async-trait",
  "base64 0.13.1",
  "bindgen 0.59.2",
- "bindgen 0.63.0",
+ "bindgen 0.64.0",
  "bytes",
  "configparser",
  "cxx",
