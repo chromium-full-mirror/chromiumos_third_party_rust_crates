@@ -2,6 +2,9 @@
 # cargo-vet config file
 default-criteria = "safe-to-run"
 
+[cargo-vet]
+version = "0.5"
+
 [policy.adhd-deps]
 criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
