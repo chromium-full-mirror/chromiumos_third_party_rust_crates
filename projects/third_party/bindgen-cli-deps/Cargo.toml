@@ -1,6 +1,6 @@
 [package]
 edition = "2018"
-name = "bindgen-cli"
+name = "bindgen-cli-deps"
 version = "0.63.0"
 
 [dependencies]
