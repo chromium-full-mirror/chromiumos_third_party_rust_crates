@@ -97,7 +97,8 @@ def update_cargo_vet_info(
 
     # As ugly as it is to hand-update a toml file, our toml implementation has
     # known bugs that lead to invalid toml in quite a few cases (b/242668603).
-    # Stick stuff at the end and have `cargo-vet` handle making it pretty.
+    # Stick stuff at the end and have `cargo-vet` handle making it pretty
+    # during `vendor.py`.
     with cargo_vet_config.open("a", encoding="utf-8") as f:
         for project_path, project_name in add_projects:
             if project_path:
@@ -140,9 +141,11 @@ def update_cargo_vet_info(
             if project_name in NON_CRATES_IO_DEPS:
                 f.write(f"audit-as-crates-io = false\n")
 
-    subprocess.check_call(
-        ["scripts/cargo-vet.py", "fmt"], cwd=projects_dir.parent
-    )
+    # NOTE(b/274643706): as referenced, we defer formatting to `vendor.py`. For
+    # some reason, `cargo-vet` will run `cargo manifest` even if it's only
+    # asked to format files. Cargo.lock may be out of date, and we don't want
+    # to modify that here, so we cannot format here.
+
     logging.info("Cargo vet info updated.")
 
 

@@ -921,8 +921,14 @@ def main():
     )
 
     # audit all packages
-    rc = subprocess.run([scripts_dir / "cargo-vet.py"]).returncode
+    cargo_vet_py = scripts_dir / "cargo-vet.py"
+    rc = subprocess.run([cargo_vet_py]).returncode
     if not rc:
+        # If the audit is successful, make sure all files are cleanly
+        # formatted. In particular, `projects/populate-workspace.py` may leave
+        # us with ugly cargo-vet state. It cannot format this itself due to
+        # b/274643706.
+        subprocess.check_call([cargo_vet_py, "fmt"])
         return
 
     sys.exit(
