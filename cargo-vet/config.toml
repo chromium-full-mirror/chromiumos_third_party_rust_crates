@@ -10,12 +10,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Using relaxed target criteria to help with migration."
 
-[policy.bindgen-cli]
-audit-as-crates-io = false
-criteria = ["safe-to-run", "crypto-safe"]
-dev-criteria = ["safe-to-run", "crypto-safe"]
-notes = "Only safe-to-run is required, as this is a host tool."
-
 [policy.bindgen-cli-deps]
 criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
@@ -391,10 +385,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 [[exemptions.cbindgen]]
 version = "0.24.3"
 criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.cexpr]]
-version = "0.4.0"
-criteria = "crypto-safe"
 
 [[exemptions.cexpr]]
 version = "0.6.0"
@@ -1053,10 +1043,6 @@ version = "0.25.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.nom]]
-version = "5.1.2"
-criteria = "crypto-safe"
-
-[[exemptions.nom]]
 version = "7.1.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
@@ -1527,10 +1513,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 [[exemptions.shell-words]]
 version = "1.1.0"
 criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.shlex]]
-version = "0.1.1"
-criteria = "crypto-safe"
 
 [[exemptions.signal-hook-registry]]
 version = "1.4.0"
