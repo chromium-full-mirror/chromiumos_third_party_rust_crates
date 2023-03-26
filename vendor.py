@@ -18,6 +18,7 @@ import shutil
 import subprocess
 import sys
 import textwrap
+from typing import Any, Dict, List
 
 
 sys.path.append(str(pathlib.Path(__file__).resolve().parent / "scripts"))
@@ -30,6 +31,9 @@ rust_crates.emerge_toml_if_unavailable()
 
 import toml
 
+
+# Eg. crate(-1.2.3+blah)?
+_PATCH_VERSION_REGEX = re.compile(r"^(.*?)(?:-(\d+\.\d+\.\d+(?:\+.*)?)?)?$")
 
 # We only care about crates we're actually going to use and that's usually
 # limited to ones with cfg(linux). For running `cargo metadata`, limit results
@@ -263,6 +267,34 @@ def apply_patches(patches_path, vendor_path):
     # Re-run checksums for all modified packages since we applied patches.
     for key in checksums_for.keys():
         _rerun_checksums(os.path.join(vendor_path, key))
+
+
+def generate_patches_manifest(
+    patch_dir: pathlib.Path,
+) -> Dict[str, List[Dict[str, Any]]]:
+    """Returns a dictionary containing json configuration of the patch file."""
+    patches = collections.defaultdict(list)
+    for d in patch_dir.iterdir():
+        if d.is_dir():
+            crate, version = _PATCH_VERSION_REGEX.match(d.name).groups()
+            version = version or "*"
+            patch_files = [p.relative_to(patch_dir) for p in d.glob("*.patch")]
+            # Some directories instead have shell scripts to remove the
+            # executable bit from files. We don't care about these ones,
+            # since we're not vendoring with bazel, which won't let you
+            # execute them anyway.
+            if patch_files:
+                patches[crate].append(
+                    dict(
+                        version=version,
+                        patch_args=["-p1"],
+                        patches=[
+                            f"@@//third_party/rust_crates/patches:{patch}"
+                            for patch in patch_files
+                        ],
+                    )
+                )
+    return patches
 
 
 def get_workspace_cargo_toml(working_dir):
@@ -897,6 +929,12 @@ def main():
     scripts_dir = current_path / "scripts"
     license_shorthand_file = os.path.join(vendor_artifacts, "licenses_used.txt")
     destroyed_crates_file = vendor_artifacts / "destroyed_crates.txt"
+
+    patches_manifest = generate_patches_manifest(pathlib.Path(patches))
+    with (vendor_artifacts / "patch_manifest.json").open(
+        "w", encoding="utf-8"
+    ) as f:
+        json.dump(patches_manifest, f, indent=2, sort_keys=True)
 
     # First, actually run cargo vendor
     run_cargo_vendor(current_path)
