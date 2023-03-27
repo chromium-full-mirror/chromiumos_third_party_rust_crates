@@ -842,6 +842,11 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "2.4.1"
 
+[[audits.memoffset]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.6.5 -> 0.7.1"
+
 [[audits.merge]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -901,6 +906,11 @@ version = "0.20.0"
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.24.2"
+
+[[audits.nix]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.25.0 -> 0.26.2"
 
 [[audits.nom]]
 who = "Android Legacy"
