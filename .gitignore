@@ -1,4 +1,7 @@
-__pycache__/
 /scripts/*/target/
 /vendor/**/OWNERS
 /vendor/**/OWNERS.*
+
+# When cargo commands run, they generate many files we don't care about.
+projects/target/**
+vendor_artifacts/target/**
