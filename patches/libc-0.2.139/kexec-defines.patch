@@ -1,0 +1,58 @@
+From e1f48361a5fca04fbd7e6440a1ae56730d9db6cb Mon Sep 17 00:00:00 2001
+From: Ricardo Ribalda <ribalda@chromium.org>
+Date: Mon, 20 Mar 2023 09:49:36 +0100
+Subject: [PATCH] linux: add kexec flags
+
+This adds `KEXEC_ARCH_MASK`, `KEXEC_FILE_NO_INITRAMFS`,
+`KEXEC_FILE_ON_CRASH`, `KEXEC_FILE_UNLOAD`, `KEXEC_ON_CRASH`,
+and `KEXEC_PRESERVE_CONTEXT` constants on Linux and Android.
+
+Those are used by `kexec` and `kexec_file_load` syscalls, and they are
+defined at:
+ * https://github.com/torvalds/linux/blob/v6.2/include/uapi/linux/kexec.h#L12-L26
+---
+ libc-test/build.rs                 | 3 +++
+ libc-test/semver/android.txt       | 6 ++++++
+ libc-test/semver/linux.txt         | 6 ++++++
+ src/unix/linux_like/android/mod.rs | 8 ++++++++
+ src/unix/linux_like/linux/mod.rs   | 8 ++++++++
+ 5 files changed, 31 insertions(+)
+
+diff --git a/src/unix/linux_like/android/mod.rs b/src/unix/linux_like/android/mod.rs
+index ca2938ac2224..e2fa0826f242 100644
+--- a/src/unix/linux_like/android/mod.rs
++++ b/src/unix/linux_like/android/mod.rs
+@@ -1606,6 +1606,14 @@ pub const AI_ADDRCONFIG: ::c_int = 0x00000400;
+ pub const AI_V4MAPPED: ::c_int = 0x00000800;
+ pub const AI_DEFAULT: ::c_int = AI_V4MAPPED_CFG | AI_ADDRCONFIG;
+ 
++// linux/kexec.h
++pub const KEXEC_ON_CRASH: ::c_int = 0x00000001;
++pub const KEXEC_PRESERVE_CONTEXT: ::c_int = 0x00000002;
++pub const KEXEC_ARCH_MASK: ::c_int = 0xffff0000;
++pub const KEXEC_FILE_UNLOAD: ::c_int = 0x00000001;
++pub const KEXEC_FILE_ON_CRASH: ::c_int = 0x00000002;
++pub const KEXEC_FILE_NO_INITRAMFS: ::c_int = 0x00000004;
++
+ pub const LINUX_REBOOT_MAGIC1: ::c_int = 0xfee1dead;
+ pub const LINUX_REBOOT_MAGIC2: ::c_int = 672274793;
+ pub const LINUX_REBOOT_MAGIC2A: ::c_int = 85072278;
+diff --git a/src/unix/linux_like/linux/mod.rs b/src/unix/linux_like/linux/mod.rs
+index 1d272d601d6f..36b2d7878e6e 100644
+--- a/src/unix/linux_like/linux/mod.rs
++++ b/src/unix/linux_like/linux/mod.rs
+@@ -3550,6 +3550,14 @@ pub fn FUTEX_OP(op: ::c_int, oparg: ::c_int, cmp: ::c_int, cmparg: ::c_int) -> :
+     ((op & 0xf) << 28) | ((cmp & 0xf) << 24) | ((oparg & 0xfff) << 12) | (cmparg & 0xfff)
+ }
+ 
++// linux/kexec.h
++pub const KEXEC_ON_CRASH: ::c_int = 0x00000001;
++pub const KEXEC_PRESERVE_CONTEXT: ::c_int = 0x00000002;
++pub const KEXEC_ARCH_MASK: ::c_int = 0xffff0000;
++pub const KEXEC_FILE_UNLOAD: ::c_int = 0x00000001;
++pub const KEXEC_FILE_ON_CRASH: ::c_int = 0x00000002;
++pub const KEXEC_FILE_NO_INITRAMFS: ::c_int = 0x00000004;
++
+ // linux/reboot.h
+ pub const LINUX_REBOOT_MAGIC1: ::c_int = 0xfee1dead;
+ pub const LINUX_REBOOT_MAGIC2: ::c_int = 672274793;
