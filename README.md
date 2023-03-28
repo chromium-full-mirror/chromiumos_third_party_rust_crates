@@ -18,7 +18,7 @@ In order to update or add any package, follow these steps:
   like to update. If it does not exist, please see the "Adding a first-party
   package," section.
 * Modify its `Cargo.toml` to add, remove or upgrade packages.
-* Run `python vendor.py`
+* Run `python vendor.py` inside chroot.
     * This runs `cargo vendor` first, which updates `Cargo.lock` and puts
       downloaded crates into the `vendor` directory
     * It applies any patches in the `patches` directory. It also regenerates
