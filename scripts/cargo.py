@@ -2,17 +2,18 @@
 # Copyright 2023 The ChromiumOS Authors
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
+
 """Utilities to help interact with cargo."""
 
 import argparse
 import hashlib
 import logging
 import os
+from pathlib import Path
 import shutil
 import subprocess
 import sys
 import tempfile
-from pathlib import Path
 
 
 def ensure_cargo_bin_is_in_path():
@@ -70,7 +71,7 @@ def ensure_cargo_utility_is_installed(
     logging.info("Downloading %s...", gs_path)
     tbz2_name = "cargo-utility.tar.bz2"
     subprocess.run(
-        ["gsutil.py", "cp", gs_path, tbz2_name],
+        ["gsutil", "cp", gs_path, tbz2_name],
         check=True,
         cwd=tempdir,
     )
