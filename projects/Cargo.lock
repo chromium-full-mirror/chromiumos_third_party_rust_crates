@@ -17,6 +17,7 @@ version = "0.1.0"
 dependencies = [
  "alsa-sys",
  "anyhow",
+ "assert_matches",
  "async-trait",
  "clap 3.2.23",
  "dasp_sample",
@@ -26,6 +27,7 @@ dependencies = [
  "hound",
  "libc",
  "log",
+ "nix 0.26.2",
  "proc-macro2 1.0.49",
  "protobuf 3.2.0",
  "protobuf-codegen 3.2.0",
@@ -35,6 +37,7 @@ dependencies = [
  "serde_json",
  "serde_yaml",
  "syn 1.0.107",
+ "syslog",
  "thiserror",
 ]
 
