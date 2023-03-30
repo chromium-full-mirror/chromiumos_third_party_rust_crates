@@ -25,18 +25,18 @@
         "-p1"
       ],
       "patches": [
-        "@@//third_party/rust_crates/patches:bindgen-0.57.0/a04acc684e136505f926739a0a89d797309857eb.patch"
+        "@@//third_party/rust_crates/patches:bindgen-0.59.2/a04acc684e136505f926739a0a89d797309857eb.patch"
       ],
-      "version": "0.57.0"
+      "version": "0.59.2"
     },
     {
       "patch_args": [
         "-p1"
       ],
       "patches": [
-        "@@//third_party/rust_crates/patches:bindgen-0.59.2/a04acc684e136505f926739a0a89d797309857eb.patch"
+        "@@//third_party/rust_crates/patches:bindgen-0.57.0/a04acc684e136505f926739a0a89d797309857eb.patch"
       ],
-      "version": "0.59.2"
+      "version": "0.57.0"
     }
   ],
   "chrono": [
@@ -111,19 +111,19 @@
         "-p1"
       ],
       "patches": [
-        "@@//third_party/rust_crates/patches:grpcio-sys/0001-patch-yaml-load.patch",
-        "@@//third_party/rust_crates/patches:grpcio-sys/0002-use-bindgen-0.63.patch"
+        "@@//third_party/rust_crates/patches:grpcio-sys-0.9.1+1.38.0/001-grpc-vsock-support.patch"
       ],
-      "version": "*"
+      "version": "0.9.1+1.38.0"
     },
     {
       "patch_args": [
         "-p1"
       ],
       "patches": [
-        "@@//third_party/rust_crates/patches:grpcio-sys-0.9.1+1.38.0/001-grpc-vsock-support.patch"
+        "@@//third_party/rust_crates/patches:grpcio-sys/0001-patch-yaml-load.patch",
+        "@@//third_party/rust_crates/patches:grpcio-sys/0002-use-bindgen-0.63.patch"
       ],
-      "version": "0.9.1+1.38.0"
+      "version": "*"
     }
   ],
   "hmac-sha256": [
@@ -179,6 +179,17 @@
         "@@//third_party/rust_crates/patches:jsonschema/add-license.patch"
       ],
       "version": "*"
+    }
+  ],
+  "libc": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patches": [
+        "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines.patch"
+      ],
+      "version": "0.2.139"
     }
   ],
   "number_prefix": [
@@ -275,8 +286,8 @@
         "-p1"
       ],
       "patches": [
-        "@@//third_party/rust_crates/patches:tiny_http/tiny_http-0.8.0-0001-unix-socket-support.patch",
-        "@@//third_party/rust_crates/patches:tiny_http/tiny_http-0.7.0-0002-remove-ssl-dependency.patch"
+        "@@//third_party/rust_crates/patches:tiny_http/tiny_http-0.7.0-0002-remove-ssl-dependency.patch",
+        "@@//third_party/rust_crates/patches:tiny_http/tiny_http-0.8.0-0001-unix-socket-support.patch"
       ],
       "version": "*"
     }
