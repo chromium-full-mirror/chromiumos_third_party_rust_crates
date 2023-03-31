@@ -16,9 +16,9 @@
         "-p1"
       ],
       "patches": [
-        "@@//third_party/rust_crates/patches:bindgen-0.60.1/a04acc684e136505f926739a0a89d797309857eb.patch"
+        "@@//third_party/rust_crates/patches:bindgen-0.57.0/a04acc684e136505f926739a0a89d797309857eb.patch"
       ],
-      "version": "0.60.1"
+      "version": "0.57.0"
     },
     {
       "patch_args": [
@@ -34,9 +34,9 @@
         "-p1"
       ],
       "patches": [
-        "@@//third_party/rust_crates/patches:bindgen-0.57.0/a04acc684e136505f926739a0a89d797309857eb.patch"
+        "@@//third_party/rust_crates/patches:bindgen-0.60.1/a04acc684e136505f926739a0a89d797309857eb.patch"
       ],
-      "version": "0.57.0"
+      "version": "0.60.1"
     }
   ],
   "chrono": [
@@ -111,19 +111,19 @@
         "-p1"
       ],
       "patches": [
-        "@@//third_party/rust_crates/patches:grpcio-sys-0.9.1+1.38.0/001-grpc-vsock-support.patch"
+        "@@//third_party/rust_crates/patches:grpcio-sys/0001-patch-yaml-load.patch",
+        "@@//third_party/rust_crates/patches:grpcio-sys/0002-use-bindgen-0.63.patch"
       ],
-      "version": "0.9.1+1.38.0"
+      "version": "*"
     },
     {
       "patch_args": [
         "-p1"
       ],
       "patches": [
-        "@@//third_party/rust_crates/patches:grpcio-sys/0001-patch-yaml-load.patch",
-        "@@//third_party/rust_crates/patches:grpcio-sys/0002-use-bindgen-0.63.patch"
+        "@@//third_party/rust_crates/patches:grpcio-sys-0.9.1+1.38.0/001-grpc-vsock-support.patch"
       ],
-      "version": "*"
+      "version": "0.9.1+1.38.0"
     }
   ],
   "hmac-sha256": [

@@ -274,11 +274,13 @@ def generate_patches_manifest(
 ) -> Dict[str, List[Dict[str, Any]]]:
     """Returns a dictionary containing json configuration of the patch file."""
     patches = collections.defaultdict(list)
-    for d in patch_dir.iterdir():
+    for d in sorted(patch_dir.iterdir()):
         if d.is_dir():
             crate, version = _PATCH_VERSION_REGEX.match(d.name).groups()
             version = version or "*"
-            patch_files = [p.relative_to(patch_dir) for p in d.glob("*.patch")]
+            patch_files = [
+                p.relative_to(patch_dir) for p in sorted(d.glob("*.patch"))
+            ]
             # Some directories instead have shell scripts to remove the
             # executable bit from files. We don't care about these ones,
             # since we're not vendoring with bazel, which won't let you
