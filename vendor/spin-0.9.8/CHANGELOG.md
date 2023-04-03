@@ -13,6 +13,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+# [0.9.8] - 2023-04-03
+
+### Fixed
+
+- Unsoundness in `Once::try_call_once` caused by an `Err(_)` result
+
+# [0.9.7] - 2023-03-27
+
+### Fixed
+
+- Relaxed accidentally restricted `Send`/`Sync` bounds for `Mutex` guards
+
+# [0.9.6] - 2023-03-13
+
+### Fixed
+
+- Relaxed accidentally restricted `Send`/`Sync` bounds for `RwLock` guards
+
+# [0.9.5] - 2023-02-07
+
+### Added
+
+- `FairMutex`, a new mutex implementation that reduces writer starvation.
+- A MSRV policy: Rust 1.38 is currently required
+
+### Changed
+
+- The crate's CI now has full MIRI integration, further improving the confidence you can have in the implementation.
+
+### Fixed
+
+- Ensured that the crate's abstractions comply with stacked borrows rules.
+- Unsoundness in the `RwLock` that could be triggered via a reader overflow
+- Relaxed various `Send`/`Sync` bound requirements to make the crate more flexible
+
 # [0.9.4] - 2022-07-14
 
 ### Fixed
