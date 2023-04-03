@@ -1311,6 +1311,11 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.6.1"
 
+[[audits.spin]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.9.8"
+
 [[audits.static_assertions]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]

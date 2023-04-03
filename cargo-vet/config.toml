@@ -1542,10 +1542,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.5.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.spin]]
-version = "0.9.4"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.stable_deref_trait]]
 version = "1.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
