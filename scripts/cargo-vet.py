@@ -106,12 +106,12 @@ def run_cargo_vet(
 #   8. Upload to gs://; don't forget the `-a public-read`.
 def ensure_cargo_vet_is_installed():
     """Ensures that `cargo-vet` is installed."""
-    want_version = "0.5.1+cros"
+    want_version = "0.6.1+cros"
     cargo.ensure_cargo_utility_is_installed(
         utility_name="cargo-vet",
         want_version=want_version,
         gs_path=f"gs://chromeos-localmirror/distfiles/cargo-vet-{want_version}.tar.bz2",
-        sha256="3e31929625b86640d608f38d5c0820994eb908a5f40fa9e9967b97dae003c12c",
+        sha256="31f556fa5a6d19dbe315d8ca1ab0e73cfa94aaf54bb860f70cdfd6a1f8ef6fe0",
         build_subdir=Path("cargo-vet"),
     )
 

@@ -3,7 +3,7 @@
 default-criteria = "safe-to-run"
 
 [cargo-vet]
-version = "0.5"
+version = "0.6"
 
 [policy.adhd-deps]
 criteria = ["safe-to-run", "crypto-safe"]
