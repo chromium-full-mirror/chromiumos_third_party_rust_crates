@@ -309,10 +309,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.2.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.async-task]]
-version = "4.3.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.atty]]
 version = "0.2.14"
 criteria = "crypto-safe"
@@ -445,45 +441,13 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.3.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.crossbeam-deque]]
-version = "0.8.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.crossbeam-epoch]]
-version = "0.9.10"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.crossbeam-utils]]
-version = "0.8.11"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.ct-codecs]]
 version = "1.1.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.ctor]]
-version = "0.1.22"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.ctrlc]]
-version = "3.2.3"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.cxx]]
-version = "1.0.42"
-criteria = "crypto-safe"
-
 [[exemptions.cxxbridge-cmd]]
 version = "1.0.80"
 criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.cxxbridge-flags]]
-version = "1.0.42"
-criteria = "crypto-safe"
-
-[[exemptions.cxxbridge-macro]]
-version = "1.0.42"
-criteria = "crypto-safe"
 
 [[exemptions.dasp_sample]]
 version = "0.11.0"
@@ -1039,7 +1003,7 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.nix]]
 version = "0.25.0"
-criteria = ["safe-to-run", "crypto-safe"]
+criteria = "crypto-safe"
 
 [[exemptions.nom]]
 version = "7.1.1"
