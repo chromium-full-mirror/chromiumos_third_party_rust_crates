@@ -436,6 +436,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.5.7"
 
+[[audits.crossbeam-channel]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.5.7 -> 0.5.8"
+
 [[audits.cstr_core]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
