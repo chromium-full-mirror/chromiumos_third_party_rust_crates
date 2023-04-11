@@ -226,3 +226,32 @@ $ while ! rust_crates_does_what_i_want; do
    sudo emerge dev-rust/third-party-crates-src
  done
 ```
+
+## How do I depend on two versions of the same crate?
+
+Use the `package` field:
+
+```
+# Depend on both wasi 0.10.0 and 0.9.0.
+[dependencies]
+wasi-0-10 = { package = "wasi", version = "0.10.0" }
+wasi-0-9 = { package = "wasi", version = "0.9.0" }
+```
+
+## How do I depend on packages that I won't actually use?
+
+`vendor.py` will automatically clean up packages that aren't used for ChromeOS
+triples, so if you just need to placate Cargo by having e.g., a Windows-only
+package available, you can put your dependencies in a `cfg(windows)` dependency
+block:
+
+```
+# By putting this in a cfg(windows) block, a package for wasi-0.10.* will be
+# installed in the registry, but it won't actually contain any code from the
+# package.
+#
+# As a side-effect from the above, this package will be exempt from audit
+# requirements.
+[target.'cfg(windows)'.dependencies]
+wasi = "0.10"
+```
