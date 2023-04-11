@@ -309,10 +309,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.2.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.atty]]
-version = "0.2.14"
-criteria = "crypto-safe"
-
 [[exemptions.autocfg]]
 version = "1.1.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -544,10 +540,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 [[exemptions.embedded-hal-mock]]
 version = "0.8.0"
 criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.endian-type]]
-version = "0.1.2"
-criteria = "crypto-safe"
 
 [[exemptions.enumn]]
 version = "0.1.5"
@@ -949,10 +941,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.1.0"
 criteria = "crypto-safe"
 
-[[exemptions.merge_derive]]
-version = "0.1.0"
-criteria = "crypto-safe"
-
 [[exemptions.mime]]
 version = "0.3.16"
 criteria = "crypto-safe"
@@ -1163,10 +1151,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.proc-macro-hack]]
 version = "0.5.19"
-criteria = "crypto-safe"
-
-[[exemptions.proc-macro-nested]]
-version = "0.1.7"
 criteria = "crypto-safe"
 
 [[exemptions.proc-macro2]]
@@ -1557,10 +1541,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.15.44"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.sync_wrapper]]
-version = "0.1.1"
-criteria = "crypto-safe"
-
 [[exemptions.synom]]
 version = "0.11.3"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1679,10 +1659,6 @@ criteria = "crypto-safe"
 
 [[exemptions.tracing-futures]]
 version = "0.2.5"
-criteria = "crypto-safe"
-
-[[exemptions.try-lock]]
-version = "0.2.3"
 criteria = "crypto-safe"
 
 [[exemptions.uart_16550]]

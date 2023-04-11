@@ -175,6 +175,11 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.2.14"
 
+[[audits.atty]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.14"
+
 [[audits.autocfg]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -509,7 +514,7 @@ notes = """
 There is an implementation of SipHash in cxx/ at src/sip.rs. This hash is not
 considered cryptographically secure, and is not used within a context where
 cryptographic security is critical. Hence, it's not considered to be an
-"implementation of crypto".
+\"implementation of crypto\".
 
 More directly, its current usage is just in HashMap, and its purposes are:
 - randomness and speed suitable for use as a HashMap hasher
@@ -571,6 +576,11 @@ version = "0.2.6"
 [[audits.endian-type]]
 who = "ChromeOS"
 criteria = "safe-to-run"
+version = "0.1.2"
+
+[[audits.endian-type]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.2"
 
 [[audits.env_logger]]
@@ -940,6 +950,11 @@ criteria = "safe-to-run"
 version = "0.1.0"
 
 [[audits.merge_derive]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "0.1.0"
+
+[[audits.merge_derive]]
 who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.1.0"
@@ -1134,6 +1149,11 @@ version = "0.1.1"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.5.19"
+
+[[audits.proc-macro-nested]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "0.1.7"
 
 [[audits.proc-macro-nested]]
 who = "Android Legacy"
@@ -1428,6 +1448,11 @@ who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.1.1"
 
+[[audits.sync_wrapper]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.1"
+
 [[audits.tempfile]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -1561,6 +1586,11 @@ version = "0.2.5"
 [[audits.try-lock]]
 who = "ChromeOS"
 criteria = "safe-to-run"
+version = "0.2.3"
+
+[[audits.try-lock]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.3"
 
 [[audits.ucs2]]
