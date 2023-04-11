@@ -6,7 +6,7 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.32"
-argh = "0.1.9"
+argh = "0.1.10"
 async-task = "4"
 async-trait = "0.1.36"
 bitflags = "1.0.1"
