@@ -43,7 +43,9 @@ rustyline-derive = "0.4.0"
 thiserror = "1.0.23"
 serde_json = "1.0"
 shell-words = "1.1.0"
-syn = { version = "1.0.58", features = ['default', 'full'] }
+# TODO(abhishekpandit) Remove syn-1 once the dependency is gone
+syn-1 = { package = "syn", version = "1.0.58", features = ['default', 'full'] }
+syn-2 = { package = "syn", version = "2.0.1", features = ['default', 'full'] }
 syslog = "6"
 tokio = { version = "1.0", features = ['bytes', 'fs', 'io-util', 'libc', 'macros', 'memchr', 'mio', 'net', 'num_cpus', 'rt', 'rt-multi-thread', 'sync', 'time', 'tokio-macros'] }
 tokio-stream = "0.1"
