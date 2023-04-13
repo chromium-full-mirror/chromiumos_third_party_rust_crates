@@ -902,6 +902,34 @@ class CrateDestroyer:
         return cleaned_packages
 
 
+class InProgressStamp:
+    """Class that represents an 'in-progress' file.
+
+    This file helps make it more obvious when vendor.py has not completed
+    successfully: b/278073343. It's intended to stick around until vendor.py
+    terminates successfully, so this isn't phrased as a contextmanager or
+    similar.
+    """
+
+    def __init__(self, vendor_artifacts: pathlib.Path):
+        in_progress_stamp = vendor_artifacts / "vendor_script_in_progress"
+        message = "\n".join(
+            (
+                "# Stamp file that's created when vendor.py started running,",
+                "# and removed when vendor.py completes successfully.",
+                "# If this file is hanging around, vendor.py did not terminate",
+                "# successfully. Please try not to land a change that leaves",
+                "# vendor.py broken.",
+            )
+        )
+        in_progress_stamp.write_text(message, encoding="utf-8")
+        self._in_progress_stamp = in_progress_stamp
+
+    def note_successful_termination(self):
+        """Called when vendor.py is about to exit successfully."""
+        self._in_progress_stamp.unlink()
+
+
 def main():
     parser = argparse.ArgumentParser(description="Vendor packages properly")
     parser.add_argument(
@@ -931,6 +959,7 @@ def main():
     scripts_dir = current_path / "scripts"
     license_shorthand_file = os.path.join(vendor_artifacts, "licenses_used.txt")
     destroyed_crates_file = vendor_artifacts / "destroyed_crates.txt"
+    in_progress_stamp = InProgressStamp(vendor_artifacts)
 
     patches_manifest = generate_patches_manifest(pathlib.Path(patches))
     with (vendor_artifacts / "patch_manifest.json").open(
@@ -969,6 +998,7 @@ def main():
         # us with ugly cargo-vet state. It cannot format this itself due to
         # b/274643706.
         subprocess.check_call([cargo_vet_py, "fmt"])
+        in_progress_stamp.note_successful_termination()
         return
 
     sys.exit(
