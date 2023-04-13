@@ -1175,6 +1175,11 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.49"
 
+[[audits.proc-macro2]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.49 -> 1.0.56"
+
 [[audits.prost]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -1244,6 +1249,11 @@ version = "1.0.9"
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.23"
+
+[[audits.quote]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.23 -> 1.0.26"
 
 [[audits.radium]]
 who = "ChromeOS"
@@ -1442,6 +1452,11 @@ version = "1.0.80"
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.107"
+
+[[audits.syn]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.107 -> 2.0.14"
 
 [[audits.sync_wrapper]]
 who = "ChromeOS"
