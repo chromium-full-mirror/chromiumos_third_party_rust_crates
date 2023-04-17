@@ -21,7 +21,7 @@ dependencies = [
  "async-trait",
  "clap 3.2.23",
  "dasp_sample",
- "dbus 0.9.5",
+ "dbus 0.9.7",
  "futures",
  "getopts",
  "hound",
@@ -104,9 +104,9 @@ dependencies = [
 
 [[package]]
 name = "anyhow"
-version = "1.0.68"
+version = "1.0.70"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2cb2f989d18dd141ab8ae82f64d1a8cdd37e0840f73a406896cf5e99502fab61"
+checksum = "7de8ce5e0f9f8d88245311066a578d72b7af3e7088f32783804676302df237e4"
 
 [[package]]
 name = "arbitrary"
@@ -156,9 +156,9 @@ checksum = "9b34d609dfbaf33d6889b2b7106d3ca345eacad44200913df5ba02bfd31d2ba9"
 
 [[package]]
 name = "async-stream"
-version = "0.3.4"
+version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ad445822218ce64be7a341abfb0b1ea43b5c23aa83902542a4542e78309d8e5e"
+checksum = "cd56dd203fef61ac097dd65721a419ddccb106b2d2b70ba60a6b529f03961a51"
 dependencies = [
  "async-stream-impl",
  "futures-core",
@@ -167,13 +167,13 @@ dependencies = [
 
 [[package]]
 name = "async-stream-impl"
-version = "0.3.4"
+version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e4655ae1a7b0cdf149156f780c5bf3f1352bc53cbd9e0a361a7ef7b22947e965"
+checksum = "16e62a023e7c117e27523144c5d2459f4397fcc3cab0085af8e2224f643a0193"
 dependencies = [
  "proc-macro2 1.0.56",
  "quote 1.0.26",
- "syn 1.0.107",
+ "syn 2.0.14",
 ]
 
 [[package]]
@@ -184,13 +184,13 @@ checksum = "ecc7ab41815b3c653ccd2978ec3255c81349336702dfdf62ee6f7069b12a3aae"
 
 [[package]]
 name = "async-trait"
-version = "0.1.66"
+version = "0.1.68"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b84f9ebcc6c1f5b8cb160f6990096a5c127f423fcb6e1ccc46c370cbdfb75dfc"
+checksum = "b9ccdd8f2a161be9bd5c023df56f1b2a0bd1d83872ae53b71a84a12c9bf6e842"
 dependencies = [
  "proc-macro2 1.0.56",
  "quote 1.0.26",
- "syn 1.0.107",
+ "syn 2.0.14",
 ]
 
 [[package]]
@@ -685,7 +685,7 @@ checksum = "cca491388666e04d7248af3f60f0c40cfb0991c72205595d7c396e3510207d1a"
 name = "chunnel"
 version = "0.1.0"
 dependencies = [
- "dbus 0.9.5",
+ "dbus 0.9.7",
  "dbus-tree",
  "getopts",
  "libc",
@@ -741,15 +741,24 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "4.0.32"
+version = "4.1.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a7db700bc935f9e43e88d00b0850dae18a63773cfbec6d8e070fccf7fef89a39"
+checksum = "906f7fe1da4185b7a282b2bc90172a496f9def1aca4545fe7526810741591e14"
+dependencies = [
+ "clap_builder",
+ "clap_derive 4.1.14",
+ "once_cell",
+]
+
+[[package]]
+name = "clap_builder"
+version = "4.1.14"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "351f9ad9688141ed83dfd8f5fb998a06225ef444b48ff4dc43de6d409b7fd10b"
 dependencies = [
  "bitflags",
- "clap_derive 4.0.21",
- "clap_lex 0.3.0",
+ "clap_lex 0.4.1",
  "is-terminal",
- "once_cell",
  "strsim 0.10.0",
  "termcolor",
 ]
@@ -782,15 +791,14 @@ dependencies = [
 
 [[package]]
 name = "clap_derive"
-version = "4.0.21"
+version = "4.1.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0177313f9f02afc995627906bbd8967e2be069f5261954222dac78290c2b9014"
+checksum = "81d7dc0031c3a59a04fc2ba395c8e2dd463cba1859275f065d225f6122221b45"
 dependencies = [
  "heck 0.4.0",
- "proc-macro-error",
  "proc-macro2 1.0.56",
  "quote 1.0.26",
- "syn 1.0.107",
+ "syn 2.0.14",
 ]
 
 [[package]]
@@ -804,12 +812,9 @@ dependencies = [
 
 [[package]]
 name = "clap_lex"
-version = "0.3.0"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0d4198f73e42b4936b35b5bb248d81d2b595ecb170da0bac7655c54eedfa8da8"
-dependencies = [
- "os_str_bytes",
-]
+checksum = "8a2dd5a6fe8c6e3502f568a6353e5273bbb15193ad9a89e457b9970798efbea1"
 
 [[package]]
 name = "clipboard-win"
@@ -1035,7 +1040,7 @@ dependencies = [
  "env_logger 0.9.0",
  "jobserver",
  "log",
- "nix 0.26.2",
+ "nix 0.23.1",
  "pkg-config",
  "rayon 1.5.3",
  "structopt",
@@ -1049,7 +1054,7 @@ version = "0.24.52"
 dependencies = [
  "bitflags",
  "chrono",
- "dbus 0.9.5",
+ "dbus 0.9.7",
  "getopts",
  "lazy_static",
  "libc",
@@ -1135,7 +1140,7 @@ dependencies = [
  "crc32fast",
  "crossbeam-utils",
  "ctrlc",
- "dbus 0.9.5",
+ "dbus 0.9.7",
  "document-features",
  "downcast-rs",
  "enumn",
@@ -1236,9 +1241,9 @@ checksum = "b365fabc795046672053e29c954733ec3b05e4be654ab130fe8f1f94d7051f35"
 
 [[package]]
 name = "cxx"
-version = "1.0.92"
+version = "1.0.94"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9a140f260e6f3f79013b8bfc65e7ce630c9ab4388c6a89c71e07226f49487b72"
+checksum = "f61f1b6389c3fe1c316bf8a4dccc90a38208354b330925bce1f74a6c4756eb93"
 dependencies = [
  "cc",
  "cxxbridge-flags",
@@ -1248,9 +1253,9 @@ dependencies = [
 
 [[package]]
 name = "cxx-build"
-version = "1.0.86"
+version = "1.0.94"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5044281f61b27bc598f2f6647d480aed48d2bf52d6eb0b627d84c0361b17aa70"
+checksum = "12cee708e8962df2aeb38f594aae5d827c022b6460ac71a7a3e2c3c2aae5a07b"
 dependencies = [
  "cc",
  "codespan-reporting",
@@ -1258,20 +1263,20 @@ dependencies = [
  "proc-macro2 1.0.56",
  "quote 1.0.26",
  "scratch",
- "syn 1.0.107",
+ "syn 2.0.14",
 ]
 
 [[package]]
 name = "cxxbridge-cmd"
-version = "1.0.80"
+version = "1.0.94"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c421d13ce9f8ff2ad3b5503ee39b0bee490cfb22994db292ed3f3a6bd49fb999"
+checksum = "b20c2a31fb5a2e2aeebced19e35d78a974301171391b39e36d5ebb00bea2aa93"
 dependencies = [
- "clap 4.0.32",
+ "clap 4.1.14",
  "codespan-reporting",
  "proc-macro2 1.0.56",
  "quote 1.0.26",
- "syn 1.0.107",
+ "syn 2.0.14",
 ]
 
 [[package]]
@@ -1283,19 +1288,19 @@ dependencies = [
 
 [[package]]
 name = "cxxbridge-flags"
-version = "1.0.92"
+version = "1.0.94"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "90201c1a650e95ccff1c8c0bb5a343213bdd317c6e600a93075bca2eff54ec97"
+checksum = "7944172ae7e4068c533afbb984114a56c46e9ccddda550499caa222902c7f7bb"
 
 [[package]]
 name = "cxxbridge-macro"
-version = "1.0.92"
+version = "1.0.94"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0b75aed41bb2e6367cae39e6326ef817a851db13c13e4f3263714ca3cfb8de56"
+checksum = "2345488264226bf682893e25de0769f3360aac9957980ec49361b083ddaa5bc5"
 dependencies = [
  "proc-macro2 1.0.56",
  "quote 1.0.26",
- "syn 1.0.107",
+ "syn 2.0.14",
 ]
 
 [[package]]
@@ -1326,9 +1331,9 @@ dependencies = [
 
 [[package]]
 name = "dbus"
-version = "0.9.5"
+version = "0.9.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "de0a745c25b32caa56b82a3950f5fec7893a960f4c10ca3b02060b0c38d8c2ce"
+checksum = "1bb21987b9fb1613058ba3843121dd18b163b254d8a6e797e144cbac14d96d1b"
 dependencies = [
  "futures-channel",
  "futures-util",
@@ -1344,7 +1349,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a76dc35ce83e4e9fa089b4fabe66c757b27bd504dc2179c97a01b36d3e874fb0"
 dependencies = [
  "clap 2.34.0",
- "dbus 0.9.5",
+ "dbus 0.9.7",
  "xml-rs",
 ]
 
@@ -1361,16 +1366,16 @@ version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c4581bbfd99f34e6864049adbe099e07c0d55c40760b23bb8e1e5d1c2ae68ca3"
 dependencies = [
- "dbus 0.9.5",
+ "dbus 0.9.7",
 ]
 
 [[package]]
 name = "dbus-crossroads"
-version = "0.5.1"
+version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "554114296d012b33fdaf362a733db6dc5f73c4c9348b8b620ddd42e61b406e30"
+checksum = "3a4c83437187544ba5142427746835061b330446ca8902eabd70e4afb8f76de0"
 dependencies = [
- "dbus 0.9.5",
+ "dbus 0.9.7",
 ]
 
 [[package]]
@@ -1379,7 +1384,7 @@ version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "007688d459bc677131c063a3a77fb899526e17b7980f390b69644bdbc41fad13"
 dependencies = [
- "dbus 0.9.5",
+ "dbus 0.9.7",
  "libc",
  "tokio",
 ]
@@ -1390,7 +1395,7 @@ version = "0.9.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f456e698ae8e54575e19ddb1f9b7bce2298568524f215496b248eb9498b4f508"
 dependencies = [
- "dbus 0.9.5",
+ "dbus 0.9.7",
 ]
 
 [[package]]
@@ -1818,7 +1823,7 @@ dependencies = [
  "bytes",
  "configparser",
  "cxx",
- "dbus 0.9.5",
+ "dbus 0.9.7",
  "dbus-crossroads 0.4.0",
  "dbus-tokio",
  "env_logger 0.8.3",
@@ -2250,8 +2255,8 @@ name = "hiberman"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "dbus 0.9.5",
- "dbus-crossroads 0.5.1",
+ "dbus 0.9.7",
+ "dbus-crossroads 0.5.2",
  "getopts",
  "libc",
  "log",
@@ -2826,7 +2831,7 @@ checksum = "201de327520df007757c1f0adce6e827fe8562fbc28bfd9c15571c66ca1f5f79"
 name = "libchromeos"
 version = "0.1.0"
 dependencies = [
- "dbus 0.9.5",
+ "dbus 0.9.7",
  "lazy_static",
  "libc",
  "log",
@@ -2842,9 +2847,9 @@ dependencies = [
 
 [[package]]
 name = "libdbus-sys"
-version = "0.2.2"
+version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c185b5b7ad900923ef3a8ff594083d4d9b5aea80bb4f32b8342363138c0d456b"
+checksum = "06085512b750d640299b79be4bad3d2fa90a9c00b1fd9e1b46364f66f0485c72"
 dependencies = [
  "pkg-config",
 ]
@@ -2937,7 +2942,7 @@ version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d7b603516767d1ab23d0de09d023e62966c3322f7148297c35cf3d97aa8b37fa"
 dependencies = [
- "clap 4.0.32",
+ "clap 4.1.14",
  "termcolor",
  "threadpool",
 ]
@@ -3048,7 +3053,7 @@ name = "manatee-client"
 version = "0.24.52"
 dependencies = [
  "anyhow",
- "dbus 0.9.5",
+ "dbus 0.9.7",
  "getopts",
  "log",
  "stderrlog",
@@ -4504,7 +4509,7 @@ name = "resourced"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "dbus 0.9.5",
+ "dbus 0.9.7",
  "dbus-tree",
  "glob",
  "libc",
@@ -4975,8 +4980,8 @@ name = "shadercached"
 version = "0.2.0"
 dependencies = [
  "anyhow",
- "dbus 0.9.5",
- "dbus-crossroads 0.5.1",
+ "dbus 0.9.7",
+ "dbus-crossroads 0.5.2",
  "dbus-tokio",
  "hex",
  "lazy_static",
@@ -5031,8 +5036,8 @@ version = "0.24.52"
 dependencies = [
  "anyhow",
  "assert_matches",
- "dbus 0.9.5",
- "dbus-crossroads 0.5.1",
+ "dbus 0.9.7",
+ "dbus-crossroads 0.5.2",
  "flexbuffers",
  "getopts",
  "libc",
@@ -5366,7 +5371,7 @@ dependencies = [
 name = "system_api"
 version = "0.24.53"
 dependencies = [
- "dbus 0.9.5",
+ "dbus 0.9.7",
  "protobuf 2.27.1",
  "protoc-rust",
 ]
@@ -5951,8 +5956,8 @@ dependencies = [
 name = "uwbd"
 version = "0.0.1"
 dependencies = [
- "dbus 0.9.5",
- "dbus-crossroads 0.5.1",
+ "dbus 0.9.7",
+ "dbus-crossroads 0.5.2",
  "futures",
  "log",
  "protobuf 2.27.1",
