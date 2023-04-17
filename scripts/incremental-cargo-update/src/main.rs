@@ -92,7 +92,7 @@ fn ensure_repo_is_clean(repo: &Path) -> Result<()> {
     let has_changes = output.stdout.iter().any(|x| !x.is_ascii_whitespace());
     if has_changes {
         bail!(
-            "uncommitted changes found in git repo at {}",
+            "uncommitted changes found in git repo at {}; see --help for how to skip this check",
             repo.display()
         );
     }
@@ -188,6 +188,7 @@ fn cargo_update_packages(lock_file: &Path, package: PackageSpec<'_>, ty: UpdateT
         cmd.arg("--offline");
     }
 
+    debug!("Running cargo-update command {cmd:?}");
     cmd.status()
         .status_to_result(|| format!("running cargo-update for {}", lock_file.display()))?;
     Ok(())
@@ -270,7 +271,6 @@ fn perform_cargo_update(cargo_lock: &Path, max_updates: usize) -> Result<usize> 
         }
 
         info!("Updating {package} on its own...");
-        // Use offline updates, since we should've updated crates.io with the online update above.
         cargo_update_packages(cargo_lock, PackageSpec::Only(package), UpdateType::Offline)?;
         current_cargo_lock = parse_cargo_lock_packages(cargo_lock)?;
         let newly_updated = find_updated_packages(&initial_cargo_lock, &current_cargo_lock);
@@ -357,6 +357,10 @@ struct Args {
     #[clap(long)]
     debug: bool,
 
+    /// Run even if there are committed changes.
+    #[clap(long)]
+    skip_uncommitted_changes_check: bool,
+
     /// The Cargo.lock file to update.
     #[clap(long)]
     cargo_lock: PathBuf,
@@ -410,7 +414,9 @@ fn main() -> Result<()> {
             Ok(())
         }
         (None, None) => {
-            ensure_repo_is_clean(&non_worktree_git_root)?;
+            if !args.skip_uncommitted_changes_check {
+                ensure_repo_is_clean(&non_worktree_git_root)?;
+            }
             let num_updates = perform_cargo_update(&args.cargo_lock, args.max_updates)?;
             info!("{num_updates} packages updated successfully.");
             Ok(())
