@@ -271,7 +271,16 @@ fn perform_cargo_update(cargo_lock: &Path, max_updates: usize) -> Result<usize> 
         }
 
         info!("Updating {package} on its own...");
-        cargo_update_packages(cargo_lock, PackageSpec::Only(package), UpdateType::Offline)?;
+        // NOTE(b/278513039): offline updates would be preferred here for consistency's sake, but
+        // `cargo update --offline` can lead to packages not being updated properly. Use an `if
+        // false` block around `Offline` so cargo doesn't complain about Offline never being
+        // constructed.
+        let update_type = if false {
+            UpdateType::Offline
+        } else {
+            UpdateType::Online
+        };
+        cargo_update_packages(cargo_lock, PackageSpec::Only(package), update_type)?;
         current_cargo_lock = parse_cargo_lock_packages(cargo_lock)?;
         let newly_updated = find_updated_packages(&initial_cargo_lock, &current_cargo_lock);
         // `> max_updates` is OK, since `max_updates` is a soft limit: one update may require
