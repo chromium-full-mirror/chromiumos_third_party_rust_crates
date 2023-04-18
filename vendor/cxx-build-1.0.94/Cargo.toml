@@ -1,0 +1,24 @@
+[package]
+edition = "2018"
+rust-version = "1.60"
+name = "cxx-build"
+version = "1.0.94"
+authors = [ "David Tolnay <dtolnay@gmail.com>",]
+exclude = [ "build.rs",]
+description = "Empty crate that should not build."
+homepage = "https://cxx.rs"
+documentation = "https://docs.rs/cxx-build"
+keywords = [ "ffi", "build-dependencies",]
+categories = [ "development-tools::build-utils", "development-tools::ffi",]
+license = "Apache-2.0"
+repository = "https://github.com/dtolnay/cxx"
+
+[lib]
+doc-scrape-examples = false
+
+[features]
+experimental-async-fn = []
+parallel = []
+
+[package.metadata.docs.rs]
+targets = [ "x86_64-unknown-linux-gnu",]
