@@ -187,6 +187,7 @@
         "-p1"
       ],
       "patches": [
+        "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines-arm32.patch",
         "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines.patch"
       ],
       "version": "0.2.139"

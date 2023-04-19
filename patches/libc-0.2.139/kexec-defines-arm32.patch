@@ -1,0 +1,26 @@
+From 133e4b13c90996e1e1da6afcad26226b85fdf42a Mon Sep 17 00:00:00 2001
+From: Ricardo Ribalda <ribalda@chromium.org>
+Date: Fri, 14 Apr 2023 08:38:11 +0200
+Subject: [PATCH] Add kexec_file_load system call for arm linux
+
+This syscall was introduced in Linux 5.0. References:
+
+- torvalds/linux@4ab65ba7a5cbad47520274d88d066bf8eb83f161
+
+Signed-off-by: Ricardo Ribalda <ribalda@chromium.org>
+---
+ src/unix/linux_like/linux/gnu/b32/arm/mod.rs | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/unix/linux_like/linux/gnu/b32/arm/mod.rs b/src/unix/linux_like/linux/gnu/b32/arm/mod.rs
+index ea905eb7ca3a..fd690a17e158 100644
+--- a/src/unix/linux_like/linux/gnu/b32/arm/mod.rs
++++ b/src/unix/linux_like/linux/gnu/b32/arm/mod.rs
+@@ -837,6 +837,7 @@ pub const SYS_pkey_alloc: ::c_long = 395;
+ pub const SYS_pkey_free: ::c_long = 396;
+ pub const SYS_statx: ::c_long = 397;
+ pub const SYS_rseq: ::c_long = 398;
++pub const SYS_kexec_file_load: ::c_long = 401;
+ pub const SYS_pidfd_send_signal: ::c_long = 424;
+ pub const SYS_io_uring_setup: ::c_long = 425;
+ pub const SYS_io_uring_enter: ::c_long = 426;
