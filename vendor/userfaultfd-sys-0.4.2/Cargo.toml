@@ -23,7 +23,7 @@ repository = "https://github.com/fastly/userfaultfd-rs"
 version = "^1.0.0"
 
 [build-dependencies.bindgen]
-version = "^0.60.1"
+version = "^0.64.0"
 features = ["runtime"]
 default-features = false
 
