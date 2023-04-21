@@ -75,6 +75,11 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.68"
 
+[[audits.anyhow]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.68 -> 1.0.70"
+
 [[audits.arbitrary]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -130,6 +135,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.4"
 
+[[audits.async-stream]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.4 -> 0.3.5"
+
 [[audits.async-stream-impl]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -139,6 +149,11 @@ version = "0.3.3"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.4"
+
+[[audits.async-stream-impl]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.4 -> 0.3.5"
 
 [[audits.async-task]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -164,6 +179,11 @@ version = "0.1.64"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.66"
+
+[[audits.async-trait]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.1.66 -> 0.1.68"
 
 [[audits.atomic-polyfill]]
 who = "ChromeOS"
@@ -376,6 +396,20 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "4.0.32"
 
+[[audits.clap]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "4.0.32 -> 4.1.14"
+
+[[audits.clap_builder]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "4.1.14"
+notes = """
+This was a diff audit between clap 4.0.32 sources, and sources in clap_builder
+4.1.14. clap_builder is primarily stuff refactored out of `clap`.
+"""
+
 [[audits.clap_derive]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -391,10 +425,20 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "4.0.18 -> 4.0.21"
 
+[[audits.clap_derive]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "4.0.21 -> 4.1.14"
+
 [[audits.clap_lex]]
 who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.2.4"
+
+[[audits.clap_lex]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.1"
 
 [[audits.cmake]]
 who = "ChromeOS"
@@ -523,6 +567,11 @@ More directly, its current usage is just in HashMap, and its purposes are:
 For more, see comments on https://crrev.com/c/4411368 .
 """
 
+[[audits.cxx]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.92 -> 1.0.94"
+
 [[audits.cxxbridge-flags]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -532,6 +581,11 @@ version = "1.0.42"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
 version = "1.0.92"
+
+[[audits.cxxbridge-flags]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+delta = "1.0.92 -> 1.0.94"
 
 [[audits.cxxbridge-macro]]
 who = "Android Legacy"
@@ -543,15 +597,30 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.92"
 
+[[audits.cxxbridge-macro]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.92 -> 1.0.94"
+
 [[audits.dbus]]
 who = "ChromeOS Legacy"
 criteria = "safe-to-run"
 version = "0.9.5"
 
+[[audits.dbus]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.9.7"
+
 [[audits.dbus-crossroads]]
 who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.4.0"
+
+[[audits.dbus-crossroads]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.2"
 
 [[audits.dbus-tokio]]
 who = "ChromeOS"
@@ -856,6 +925,15 @@ version = "0.2.86"
 who = "ChromeOS Legacy"
 criteria = "safe-to-run"
 version = "0.2.2"
+
+[[audits.libdbus-sys]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.5"
+notes = """
+This audit does **not** include an audit of the `vendor/` directory, which
+contains a full copy of dbus, but is only built when the `vendored` feature is enabled.
+"""
 
 [[audits.libfuzzer-sys]]
 who = "ChromeOS"
