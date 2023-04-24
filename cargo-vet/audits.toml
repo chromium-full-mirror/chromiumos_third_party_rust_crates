@@ -727,6 +727,11 @@ who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.3.14"
 
+[[audits.h2]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.18"
+
 [[audits.heck]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
