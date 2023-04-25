@@ -581,10 +581,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.3.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.foreign-types-shared]]
-version = "0.1.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.fraction]]
 version = "0.10.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -632,10 +628,6 @@ criteria = "crypto-safe"
 [[exemptions.futures-util]]
 version = "0.3.14"
 criteria = "crypto-safe"
-
-[[exemptions.gag]]
-version = "1.0.0"
-criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.gdbstub]]
 version = "0.6.3"
@@ -749,10 +741,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.23.14"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.include_dir_impl]]
-version = "0.6.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.indexmap]]
 version = "1.9.1"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -762,10 +750,6 @@ version = "0.16.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.indoc]]
-version = "0.3.6"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.indoc-impl]]
 version = "0.3.6"
 criteria = ["safe-to-run", "crypto-safe"]
 
@@ -790,10 +774,6 @@ version = "0.9.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.inventory]]
-version = "0.1.11"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.inventory-impl]]
 version = "0.1.11"
 criteria = ["safe-to-run", "crypto-safe"]
 
@@ -933,10 +913,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.4.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.miniz_oxide]]
-version = "0.5.4"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.mio]]
 version = "0.7.14"
 criteria = "crypto-safe"
@@ -1029,10 +1005,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.5.7"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.num_threads]]
-version = "0.1.6"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.number_prefix]]
 version = "0.4.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1043,10 +1015,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.openssl]]
 version = "0.10.48"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.openssl-macros]]
-version = "0.1.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.openssl-sys]]
@@ -1166,10 +1134,6 @@ version = "0.6.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.pyo3]]
-version = "0.13.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.pyo3-macros]]
 version = "0.13.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
@@ -1309,10 +1273,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.8.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.riscv-rt-macros]]
-version = "0.1.6"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.riscv-target]]
 version = "0.1.2"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1377,10 +1337,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "9.1.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.rustyline-derive]]
-version = "0.4.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.ryu]]
 version = "1.0.5"
 criteria = "crypto-safe"
@@ -1407,10 +1363,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.semver-parser]]
 version = "0.7.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.serde-tuple-vec-map]]
-version = "1.0.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.serde_bytes]]
@@ -1463,10 +1415,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.spidev]]
 version = "0.5.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.stable_deref_trait]]
-version = "1.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.stderrlog]]
@@ -1577,10 +1525,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.6.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.tinyvec_macros]]
-version = "0.1.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.tokio]]
 version = "1.19.2"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1641,10 +1585,6 @@ criteria = "crypto-safe"
 version = "0.2.18"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.ufmt-write]]
-version = "0.1.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.unicase]]
 version = "2.6.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1679,10 +1619,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.vec_map]]
 version = "0.8.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.void]]
-version = "1.0.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.volatile]]
