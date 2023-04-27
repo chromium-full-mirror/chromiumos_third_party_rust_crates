@@ -54,8 +54,8 @@ pcap-file = "1.1"
 pin-utils = "0.1.0-alpha.4"
 pkg-config = "0.3.11"
 proc-macro2 = "1"
-protobuf = { version = "2.24", features = [ "with-serde" ] }
-protoc-rust = "2.24"
+protobuf = "3.2"
+protobuf-codegen = "3.2"
 quote = "1"
 rand = "0.8"
 rand_core = { version = "0.6", features = ["std"] }

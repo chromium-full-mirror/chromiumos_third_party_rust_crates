@@ -10,10 +10,10 @@ dbus = "0.6.1"
 env_logger = { version = "0.9", default-features = false }
 libc = "0.2.40"
 log = "0.4.1"
-protobuf = "2.3"
+protobuf = "3.2"
 syslog = "6"
 tempfile = "3.0"
 time = "0.3"
 
 [build-dependencies]
-protoc-rust = "2.3"
+protobuf-codegen = "3.2"

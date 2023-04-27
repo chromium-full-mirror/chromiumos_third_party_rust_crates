@@ -696,8 +696,8 @@ dependencies = [
  "getopts",
  "libc",
  "log",
- "protobuf 2.27.1",
- "protoc-rust",
+ "protobuf 3.2.0",
+ "protobuf-codegen 3.2.0",
  "remain",
  "tempfile",
 ]
@@ -1145,8 +1145,8 @@ dependencies = [
  "dbus 0.8.4",
  "getopts",
  "libc",
- "protobuf 2.27.1",
- "protoc-rust",
+ "protobuf 3.2.0",
+ "protobuf-codegen 3.2.0",
 ]
 
 [[package]]
@@ -1202,8 +1202,8 @@ dependencies = [
  "pin-utils",
  "pkg-config",
  "proc-macro2 1.0.56",
- "protobuf 2.27.1",
- "protoc-rust",
+ "protobuf 3.2.0",
+ "protobuf-codegen 3.2.0",
  "quote 1.0.26",
  "rand 0.8.5",
  "rand_core 0.6.4",
@@ -2295,7 +2295,7 @@ dependencies = [
  "log",
  "once_cell",
  "openssl",
- "protobuf 2.27.1",
+ "protobuf 3.2.0",
  "serde",
  "serde_json",
  "syslog",
@@ -3134,8 +3134,8 @@ dependencies = [
  "env_logger 0.9.0",
  "libc",
  "log",
- "protobuf 2.27.1",
- "protoc-rust",
+ "protobuf 3.2.0",
+ "protobuf-codegen 3.2.0",
  "syslog",
  "tempfile",
  "time 0.3.14",
@@ -4021,10 +4021,6 @@ name = "protobuf"
 version = "2.27.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf7e6d18738ecd0902d30d1ad232c9125985a3422929b16c65517b38adc14f96"
-dependencies = [
- "serde",
- "serde_derive",
-]
 
 [[package]]
 name = "protobuf"
@@ -5021,7 +5017,7 @@ dependencies = [
  "lazy_static",
  "libc",
  "openssl",
- "protobuf 2.27.1",
+ "protobuf 3.2.0",
  "regex",
  "sys-info",
  "tokio",
@@ -5407,16 +5403,16 @@ name = "system_api"
 version = "0.24.53"
 dependencies = [
  "dbus 0.9.7",
- "protobuf 2.27.1",
- "protoc-rust",
+ "protobuf 3.2.0",
+ "protobuf-codegen 3.2.0",
 ]
 
 [[package]]
 name = "system_api_chunnel"
 version = "0.1.0"
 dependencies = [
- "protobuf 2.27.1",
- "protoc-rust",
+ "protobuf 3.2.0",
+ "protobuf-codegen 3.2.0",
 ]
 
 [[package]]

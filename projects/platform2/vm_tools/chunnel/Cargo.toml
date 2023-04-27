@@ -10,11 +10,11 @@ dbus-tree = "0.9"
 getopts = "0.2"
 libc = "0.2"
 log = "0.4"
-protobuf = "2.16.2"
+protobuf = "3.2"
 remain = "0.2"
 
 [build-dependencies]
-protoc-rust = "2"
+protobuf-codegen = "3.2"
 
 [dev-dependencies]
 tempfile = "3"
