@@ -2694,6 +2694,7 @@ dependencies = [
 name = "ippusb_bridge"
 version = "0.1.0"
 dependencies = [
+ "ascii",
  "chunked_transfer",
  "getopts",
  "httparse",
