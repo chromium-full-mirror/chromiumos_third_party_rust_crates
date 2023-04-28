@@ -313,14 +313,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.1.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.bare-metal]]
-version = "0.2.5"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.bare-metal]]
-version = "1.0.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.base64]]
 version = "0.10.1"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -401,16 +393,8 @@ criteria = "crypto-safe"
 version = "0.11.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.color_quant]]
-version = "1.1.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.colored]]
 version = "2.0.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.const-sha1]]
-version = "0.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.cortex-m-rt]]
@@ -577,10 +561,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.0.7"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.foreign-types]]
-version = "0.3.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.fraction]]
 version = "0.10.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -683,10 +663,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.heapless]]
 version = "0.7.16"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.heck]]
-version = "0.3.3"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.hmac-sha256]]
@@ -875,10 +851,6 @@ criteria = "crypto-safe"
 
 [[exemptions.managed]]
 version = "0.8.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.match_cfg]]
-version = "0.1.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.matchit]]
@@ -1089,10 +1061,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.0.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.proc-macro-error-attr]]
-version = "1.0.4"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.proc-macro-hack]]
 version = "0.5.19"
 criteria = "crypto-safe"
@@ -1114,18 +1082,6 @@ version = "2.27.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.protobuf-codegen]]
-version = "2.27.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.protoc]]
-version = "2.27.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.protoc-grpcio]]
-version = "2.0.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.protoc-rust]]
 version = "2.27.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
@@ -1151,14 +1107,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.quote]]
 version = "0.6.13"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.r0]]
-version = "0.2.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.r0]]
-version = "1.0.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.radix_trie]]
@@ -1233,10 +1181,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.2.1"
 criteria = "crypto-safe"
 
-[[exemptions.rand_xorshift]]
-version = "0.1.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.rayon]]
 version = "0.8.2"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1293,10 +1237,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.0.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.rtic-monotonic]]
-version = "1.0.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.rtt-target]]
 version = "0.3.1"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1344,10 +1284,6 @@ criteria = "crypto-safe"
 [[exemptions.same-file]]
 version = "1.0.6"
 criteria = "crypto-safe"
-
-[[exemptions.scoped-tls]]
-version = "1.0.0"
-criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.scopeguard]]
 version = "1.1.0"
@@ -1605,10 +1541,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.2.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.unindent]]
-version = "0.1.10"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.utf8parse]]
 version = "0.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1625,10 +1557,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.4.5"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.volatile-register]]
-version = "0.2.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.wait-timeout]]
 version = "0.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1643,30 +1571,6 @@ criteria = "crypto-safe"
 
 [[exemptions.which]]
 version = "4.3.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.winapi]]
-version = "0.3.9"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.windows]]
-version = "0.10.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.windows_gen]]
-version = "0.10.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.windows_macros]]
-version = "0.10.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.wio]]
-version = "0.2.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.wmi]]
-version = "0.9.3"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.x86_64]]
