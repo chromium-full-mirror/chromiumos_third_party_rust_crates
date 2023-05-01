@@ -345,10 +345,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.3.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.bitreader]]
-version = "0.3.6"
-criteria = "crypto-safe"
-
 [[exemptions.boringssl-src]]
 version = "0.3.0+688fc5c"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -485,21 +481,13 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.1.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.document-features]]
-version = "0.2.6"
-criteria = "crypto-safe"
-
 [[exemptions.downcast-rs]]
 version = "1.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.ed25519-compact]]
-version = "1.0.11"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.either]]
-version = "1.8.0"
-criteria = ["safe-to-run", "crypto-safe"]
+version = "1.0.16"
+criteria = "crypto-safe"
 
 [[exemptions.embedded-hal]]
 version = "0.2.7"
@@ -509,25 +497,9 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.8.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.enumn]]
-version = "0.1.5"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.env_logger]]
-version = "0.8.3"
-criteria = "crypto-safe"
-
-[[exemptions.env_logger]]
-version = "0.9.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.error-chain]]
 version = "0.12.4"
 criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.euclid]]
-version = "0.22.7"
-criteria = "crypto-safe"
 
 [[exemptions.failure]]
 version = "0.1.8"
@@ -541,16 +513,8 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.8.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.fd-lock]]
-version = "3.0.6"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.filedescriptor]]
 version = "0.8.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.flate2]]
-version = "1.0.24"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.flexbuffers]]
@@ -574,38 +538,6 @@ version = "0.1.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.futures]]
-version = "0.3.14"
-criteria = "crypto-safe"
-
-[[exemptions.futures-channel]]
-version = "0.3.14"
-criteria = "crypto-safe"
-
-[[exemptions.futures-core]]
-version = "0.3.14"
-criteria = "crypto-safe"
-
-[[exemptions.futures-executor]]
-version = "0.3.14"
-criteria = "crypto-safe"
-
-[[exemptions.futures-io]]
-version = "0.3.14"
-criteria = "crypto-safe"
-
-[[exemptions.futures-macro]]
-version = "0.3.14"
-criteria = "crypto-safe"
-
-[[exemptions.futures-sink]]
-version = "0.3.14"
-criteria = "crypto-safe"
-
-[[exemptions.futures-task]]
-version = "0.3.14"
-criteria = "crypto-safe"
-
-[[exemptions.futures-util]]
 version = "0.3.14"
 criteria = "crypto-safe"
 
@@ -753,10 +685,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.1.11"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.io-lifetimes]]
-version = "0.7.3"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.io-uring]]
 version = "0.5.4"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -831,10 +759,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.linux-embedded-hal]]
 version = "0.3.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.linux-raw-sys]]
-version = "0.0.46"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.linux-raw-sys]]
@@ -960,10 +884,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 [[exemptions.num-rational]]
 version = "0.3.2"
 criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.num-traits]]
-version = "0.2.14"
-criteria = "crypto-safe"
 
 [[exemptions.num_cpus]]
 version = "1.13.0"
@@ -1255,10 +1175,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.rustc_version]]
 version = "0.4.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.rustix]]
-version = "0.35.9"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.rustversion]]
