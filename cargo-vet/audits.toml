@@ -1288,6 +1288,16 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.1.0"
 
+[[audits.pkg-config]]
+who = "Alexandre Courbot <acourbot@chromium.org>"
+criteria = "does-not-implement-crypto"
+version = "0.3.26"
+
+[[audits.pkg-config]]
+who = "Alexandre Courbot <acourbot@chromium.org>"
+criteria = "safe-to-run"
+version = "0.3.26"
+
 [[audits.ppv-lite86]]
 who = "Android Legacy"
 criteria = "safe-to-run"
