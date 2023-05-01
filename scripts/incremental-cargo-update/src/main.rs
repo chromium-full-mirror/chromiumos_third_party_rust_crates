@@ -120,6 +120,8 @@ fn find_git_repo_root(dir: &Path) -> Option<PathBuf> {
 struct PackageInfo {
     name: String,
     version: String,
+    /// Cache of the `(major, minor, patch)` of the `version` string.
+    version_pieces: (u64, u64, u64),
 }
 
 impl std::fmt::Display for PackageInfo {
@@ -143,9 +145,11 @@ fn parse_cargo_lock_packages(path: &Path) -> Result<Vec<PackageInfo>> {
         .into_iter()
         .filter_map(|package| {
             if package.source?.is_default_registry() {
+                let v = &package.version;
                 Some(PackageInfo {
                     name: package.name.to_string(),
                     version: package.version.to_string(),
+                    version_pieces: (v.major, v.minor, v.patch),
                 })
             } else {
                 None
@@ -194,16 +198,67 @@ fn cargo_update_packages(lock_file: &Path, package: PackageSpec<'_>, ty: UpdateT
     Ok(())
 }
 
-/// Returns a list of packages from `initial_listing` which no longer exist in `new_listing`.
-fn find_updated_packages<'a>(
+struct PackageUpdateCounts {
+    /// Small package updates. Usually just 1 or 2 patch versions of diff.
+    small: usize,
+    /// Any updates that aren't "small."
+    large: usize,
+}
+
+fn count_package_updates<'a>(
     initial_listing: &'a [PackageInfo],
     new_listing: &[PackageInfo],
-) -> Vec<&'a PackageInfo> {
-    let new_listing: HashSet<_> = new_listing.iter().collect();
-    initial_listing
+) -> (PackageUpdateCounts, Vec<&'a PackageInfo>) {
+    let new_listing_set = new_listing.iter().collect::<HashSet<_>>();
+    // Theoretically, it may be better to keep a HashMap of package_name to sorted `version_pieces`
+    // and query that, but the code is simpler and less edge-casey if a set is just queried
+    // repeatedly.
+    let new_listing_by_versions = new_listing
         .iter()
-        .filter(|x| !new_listing.contains(x))
-        .collect()
+        .map(|x| (x.name.as_str(), x.version_pieces))
+        .collect::<HashSet<_>>();
+
+    let mut updated_packages = Vec::new();
+    let mut counts = PackageUpdateCounts { small: 0, large: 0 };
+    for package in initial_listing {
+        if new_listing_set.contains(package) {
+            continue;
+        }
+
+        updated_packages.push(package);
+
+        let patch_version = package.version_pieces.2;
+        let patch_versions_to_query = [
+            // Check backwards in time because maybe this is a `cargo-update` downgrade (e.g.,
+            // another update somewhere, somehow requires a lower version of something)
+            patch_version.checked_sub(2),
+            patch_version.checked_sub(1),
+            // We need to check against the patch version itself, since this may be a simple
+            // difference in build metadata.
+            Some(patch_version),
+            Some(patch_version + 1),
+            Some(patch_version + 2),
+        ];
+
+        let is_small_update = patch_versions_to_query.iter().copied().any(|x| {
+            let Some(patch_version) = x else { return false; };
+            let ver = (
+                package.version_pieces.0,
+                package.version_pieces.1,
+                patch_version,
+            );
+            let key = (package.name.as_str(), ver);
+            new_listing_by_versions.contains(&key)
+        });
+
+        if is_small_update {
+            counts.small += 1;
+        } else {
+            counts.large += 1;
+        }
+    }
+
+    (counts, updated_packages)
 }
 
 /// Runs `git checkout ${file}`.
@@ -231,23 +286,35 @@ fn revert_file_to_head(file: &Path) -> Result<()> {
 /// and it's assumed that the git repo this is being run in is clean of updates.
 ///
 /// Returns the number of packages that were ultimately updated.
-fn perform_cargo_update(cargo_lock: &Path, max_updates: usize) -> Result<usize> {
+fn perform_cargo_update(
+    cargo_lock: &Path,
+    max_updates: usize,
+    small_updates_are_updates: bool,
+) -> Result<usize> {
     let initial_cargo_lock = parse_cargo_lock_packages(cargo_lock)?;
     debug!("Parsed {} Cargo.lock packages.", initial_cargo_lock.len());
 
     info!("Running initial `cargo update`...");
     cargo_update_packages(cargo_lock, PackageSpec::All, UpdateType::Online)?;
 
-    let fully_updated_cargo_lock = parse_cargo_lock_packages(cargo_lock)?;
-    let fully_updated_packages =
-        find_updated_packages(&initial_cargo_lock, &fully_updated_cargo_lock);
-    info!(
-        "Found a total of {} possible package update(s).",
-        fully_updated_packages.len()
-    );
-    if fully_updated_packages.len() <= max_updates {
-        return Ok(fully_updated_packages.len());
-    }
+    let newly_updated_packages: Vec<&PackageInfo> = {
+        let fully_updated_cargo_lock = parse_cargo_lock_packages(cargo_lock)?;
+        let (update_counts, updated) =
+            count_package_updates(&initial_cargo_lock, &fully_updated_cargo_lock);
+        let total_updates = if small_updates_are_updates {
+            update_counts.small + update_counts.large
+        } else {
+            update_counts.large
+        };
+        info!(
+            "Found a total of {} possible package update(s) ({} are small).",
+            total_updates, update_counts.small
+        );
+        if total_updates <= max_updates {
+            return Ok(total_updates);
+        }
+        updated
+    };
 
     // We have more updates than we'd like. A solution that makes these updates happen should:
     // - Be deterministic (if we assume crates.io doesn't change, which is fine for our purposes
@@ -262,7 +329,7 @@ fn perform_cargo_update(cargo_lock: &Path, max_updates: usize) -> Result<usize> 
     revert_file_to_head(cargo_lock)?;
 
     let mut current_cargo_lock = parse_cargo_lock_packages(cargo_lock)?;
-    for package in &fully_updated_packages {
+    for package in &newly_updated_packages {
         // Crates may disappear if an update of a prior crate required an update of `package`.
         // `cargo-update` will fail if `package` is not in `Cargo.lock`.
         if !current_cargo_lock.contains(package) {
@@ -282,17 +349,32 @@ fn perform_cargo_update(cargo_lock: &Path, max_updates: usize) -> Result<usize> 
         };
         cargo_update_packages(cargo_lock, PackageSpec::Only(package), update_type)?;
         current_cargo_lock = parse_cargo_lock_packages(cargo_lock)?;
-        let newly_updated = find_updated_packages(&initial_cargo_lock, &current_cargo_lock);
+        let (update_counts, _) = count_package_updates(&initial_cargo_lock, &current_cargo_lock);
+        let total_updates = if small_updates_are_updates {
+            update_counts.small + update_counts.large
+        } else {
+            update_counts.large
+        };
+
         // `> max_updates` is OK, since `max_updates` is a soft limit: one update may require
         // others.
-        if newly_updated.len() >= max_updates {
-            debug!("Update limit hit; stopping update attempts");
-            return Ok(newly_updated.len());
+        if total_updates >= max_updates {
+            info!(
+                "Update limit hit ({} large, {} small); stopping update attempts",
+                update_counts.large, update_counts.small
+            );
+            return Ok(total_updates);
         }
         debug!(
-            "{} package{} updated so far; trying again.",
-            newly_updated.len(),
-            if newly_updated.len() == 1 { "" } else { "s" },
+            "{} package{} updated so far ({} small{}); trying again.",
+            total_updates,
+            if total_updates == 1 { "" } else { "s" },
+            update_counts.small,
+            if small_updates_are_updates {
+                ""
+            } else {
+                ", which aren't included in the count"
+            },
         );
     }
     unreachable!("somehow `cargo update` updated more things than updating one-by-one?");
@@ -370,6 +452,11 @@ struct Args {
     #[clap(long)]
     skip_uncommitted_changes_check: bool,
 
+    /// Count small package updates (e.g., anyhow 1.0.70 -> 1.0.71) against the `--max-updates`
+    /// limit. By default, these are ignored.
+    #[clap(long)]
+    small_updates_are_updates: bool,
+
     /// The Cargo.lock file to update.
     #[clap(long)]
     cargo_lock: PathBuf,
@@ -415,7 +502,11 @@ fn main() -> Result<()> {
                 );
             };
 
-            let num_updates = perform_cargo_update(&worktree.join(cargo_lock), args.max_updates)?;
+            let num_updates = perform_cargo_update(
+                &worktree.join(cargo_lock),
+                args.max_updates,
+                args.small_updates_are_updates,
+            )?;
             info!("{num_updates} packages updated successfully.");
             if num_updates != 0 {
                 commit_all_changes(worktree, &commit_message)?;
@@ -426,7 +517,11 @@ fn main() -> Result<()> {
             if !args.skip_uncommitted_changes_check {
                 ensure_repo_is_clean(&non_worktree_git_root)?;
             }
-            let num_updates = perform_cargo_update(&args.cargo_lock, args.max_updates)?;
+            let num_updates = perform_cargo_update(
+                &args.cargo_lock,
+                args.max_updates,
+                args.small_updates_are_updates,
+            )?;
             info!("{num_updates} packages updated successfully.");
             Ok(())
         }
