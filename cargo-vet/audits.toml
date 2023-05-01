@@ -520,6 +520,26 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.1.1"
 
+[[audits.cros-codecs]]
+who = "Alexandre Courbot <acourbot@chromium.org>"
+criteria = "does-not-implement-crypto"
+version = "0.0.2"
+
+[[audits.cros-codecs]]
+who = "Alexandre Courbot <acourbot@chromium.org>"
+criteria = "safe-to-run"
+version = "0.0.2"
+
+[[audits.cros-libva]]
+who = "Alexandre Courbot <acourbot@chromium.org>"
+criteria = "does-not-implement-crypto"
+version = "0.0.3"
+
+[[audits.cros-libva]]
+who = "Alexandre Courbot <acourbot@chromium.org>"
+criteria = "safe-to-run"
+version = "0.0.3"
+
 [[audits.crossbeam-channel]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
