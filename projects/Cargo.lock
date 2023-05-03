@@ -4984,11 +4984,13 @@ name = "shadercached"
 version = "0.2.0"
 dependencies = [
  "anyhow",
+ "base64 0.13.1",
  "dbus 0.9.7",
  "dbus-crossroads 0.5.2",
  "dbus-tokio",
  "hex",
  "lazy_static",
+ "libc",
  "openssl",
  "protobuf 2.27.1",
  "regex",
