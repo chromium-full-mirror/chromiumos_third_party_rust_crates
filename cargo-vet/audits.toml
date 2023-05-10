@@ -642,6 +642,21 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.92 -> 1.0.94"
 
+[[audits.dasp_frame]]
+who = "Li-Yu Yu <aaronyu@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.0"
+
+[[audits.dasp_interpolate]]
+who = "Li-Yu Yu <aaronyu@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.0"
+
+[[audits.dasp_ring_buffer]]
+who = "Li-Yu Yu <aaronyu@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.0"
+
 [[audits.dbus]]
 who = "ChromeOS Legacy"
 criteria = "safe-to-run"
