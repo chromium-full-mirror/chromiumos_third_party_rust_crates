@@ -944,6 +944,12 @@ def main():
         action="store_true",
         help="Don't exit if our repo isn't up-to-date.",
     )
+    parser.add_argument(
+        "--skip-cargo-vet",
+        action="store_true",
+        help="Don't run cargo-vet. Please don't upload changes that skip "
+        "this check. This flag is for local development use only.",
+    )
     args = parser.parse_args()
 
     current_path = pathlib.Path(__file__).parent.absolute()
@@ -988,6 +994,12 @@ def main():
         license_shorthand_file,
         set(destroyed_crates),
     )
+
+    if args.skip_cargo_vet:
+        print("Skipping cargo-vet checks. This is for local dev only.")
+        # Don't remove `in_progress_stamp`; it should hopefully serve as an
+        # extra reminder to rerun this without skipping cargo-vet.
+        return
 
     # audit all packages
     cargo_vet_py = scripts_dir / "cargo-vet.py"
