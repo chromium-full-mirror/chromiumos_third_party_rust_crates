@@ -565,10 +565,6 @@ criteria = "crypto-safe"
 version = "0.1.6"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.glob]]
-version = "0.3.0"
-criteria = "crypto-safe"
-
 [[exemptions.gpio-cdev]]
 version = "0.5.1"
 criteria = ["safe-to-run", "crypto-safe"]
