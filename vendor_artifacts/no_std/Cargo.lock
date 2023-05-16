@@ -2096,6 +2096,7 @@ checksum = "97b66919e47e1507c8411e9693ce5f4040b3204601f7c8f349951e565a0640a2"
 dependencies = [
  "bare-metal 0.2.5",
  "cortex-m",
+ "cortex-m-rt",
  "vcell",
 ]
 

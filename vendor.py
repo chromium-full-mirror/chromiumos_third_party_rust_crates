@@ -1041,9 +1041,6 @@ class Package:
                 self.no_std_features.add(disable_std_flag)
             elif enable_std_flag:
                 self.no_std_features.discard(enable_std_flag)
-            else:
-                # Assume we can only run in no-std mode.
-                self.features = None
         else:
             self.no_std_features = None
 

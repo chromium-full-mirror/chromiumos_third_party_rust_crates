@@ -135,8 +135,8 @@
       ],
       "patch_tool": "patch",
       "patches": [
-        "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines-arm32.patch",
-        "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines.patch"
+        "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines.patch",
+        "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines-arm32.patch"
       ],
       "version": "0.2.139"
     }
@@ -163,6 +163,18 @@
         "@@//third_party/rust_crates/patches:png-0.16.8/png-0.16.8-update-to-miniz_oxide-0.4.1.patch"
       ],
       "version": "0.16.8"
+    }
+  ],
+  "riscv-rt-macros": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:riscv-rt-macros/riscv-rt-macros-0.1.6-update-dependencies.patch"
+      ],
+      "version": "*"
     }
   ],
   "rustix": [
