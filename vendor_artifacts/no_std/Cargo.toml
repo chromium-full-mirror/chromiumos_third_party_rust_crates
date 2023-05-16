@@ -73,7 +73,6 @@ bit_field = "0.10.2"
 # Used by x86_64-0.14.10
 bitflags-1-3-2 = { package = "bitflags", "version" = "1.3.2" }
 bitreader = { "version" = "0.3.6", "default-features" = false, features = [] }
-bumpalo = "3.12.0"
 bytecount = { "version" = "0.6.3", features = ['runtime-dispatch-simd'] }
 bytemuck = "1.13.1"
 byteorder = { "version" = "1.4.3", "default-features" = false, features = [] }
@@ -90,7 +89,6 @@ chrono = { "version" = "0.4.24", "default-features" = false, features = ['clock'
 clap-3-2-23 = { package = "clap", "version" = "3.2.23", "default-features" = false, features = ['atty', 'clap_derive', 'color', 'derive', 'once_cell', 'strsim', 'suggestions', 'termcolor'] }
 clap = { "version" = "4.1.14", "default-features" = false, features = ['color', 'derive', 'error-context', 'help', 'suggestions', 'usage'] }
 clap_builder = { "version" = "4.1.14", "default-features" = false, features = ['color', 'error-context', 'help', 'suggestions', 'usage'] }
-clipboard-win = "4.5.0"
 cortex-m = "0.7.7"
 cortex-m-rt = { "version" = "0.6.15", features = ['device'] }
 cortex-m-rt-macros = "0.6.15"
@@ -111,10 +109,8 @@ dasp_ring_buffer = { "version" = "0.11.0", "default-features" = false, features 
 dasp_sample = { "version" = "0.11.0", "default-features" = false, features = [] }
 either = { "version" = "1.8.0", "default-features" = false, features = [] }
 embedded-hal = { "version" = "0.2.7", features = ['unproven'] }
-encode_unicode = { "version" = "0.3.6", "default-features" = false, features = [] }
 enumn = "0.1.5"
 errno = { "version" = "0.2.8", "default-features" = false }
-error-code = "2.3.0"
 failure = { "version" = "0.1.8", "default-features" = false, features = ['backtrace', 'derive', 'failure_derive'] }
 failure_derive = "0.1.8"
 fixedbitset = { "version" = "0.4.2", "default-features" = false }
@@ -173,7 +169,6 @@ nb = "1.0.0"
 # Used by cexpr-0.4.0
 nom-5-1-2 = { package = "nom", "version" = "5.1.2", "default-features" = false, features = ['alloc'] }
 nom = { "version" = "7.1.1", "default-features" = false, features = ['alloc'] }
-ntapi = "0.3.6"
 num-complex = { "version" = "0.2.4", "default-features" = false, features = [] }
 num-integer = { "version" = "0.1.45", "default-features" = false, features = ['i128'] }
 num-iter = { "version" = "0.1.43", "default-features" = false, features = [] }
@@ -225,14 +220,12 @@ rand_core-0-5-1 = { package = "rand_core", "version" = "0.5.1", features = ['all
 rand_core = { "version" = "0.6.4", features = ['alloc', 'getrandom'] }
 # Used by rand-0.6.5
 rand_hc-0-1-0 = { package = "rand_hc", "version" = "0.1.0" }
-rand_hc = "0.2.0"
 rand_isaac = "0.1.1"
 rand_jitter = "0.1.4"
 # Used by rand-0.6.5
 rand_pcg-0-1-2 = { package = "rand_pcg", "version" = "0.1.2" }
 rand_pcg = "0.2.1"
 rand_xorshift = "0.1.1"
-rdrand = { "version" = "0.4.0", "default-features" = false, features = [] }
 regex = { "version" = "1.6.0", "default-features" = false, features = ['aho-corasick', 'memchr', 'perf', 'perf-cache', 'perf-dfa', 'perf-inline', 'perf-literal', 'unicode', 'unicode-age', 'unicode-bool', 'unicode-case', 'unicode-gencat', 'unicode-perl', 'unicode-script', 'unicode-segment'] }
 # Used by riscv-rt-0.8.0
 riscv-0-6-0 = { package = "riscv", "version" = "0.6.0" }
@@ -259,7 +252,6 @@ spin = { "version" = "0.9.8", features = ['lock_api_crate'] }
 stable_deref_trait = { "version" = "1.2.0", "default-features" = false }
 static_assertions = "1.1.0"
 stm32g0 = { "version" = "0.13.0", features = ['cortex-m-rt', 'rt', 'stm32g071'] }
-str-buf = "1.0.5"
 time = { "version" = "0.3.14", "default-features" = false, features = ['alloc', 'formatting', 'itoa', 'local-offset', 'macros', 'parsing', 'time-macros'] }
 tinyvec = { "version" = "1.6.0", features = ['alloc', 'tinyvec_macros'] }
 tracing = { "version" = "0.1.35", "default-features" = false, features = ['attributes', 'log', 'tracing-attributes'] }
@@ -289,14 +281,6 @@ uuid-0-8-2 = { package = "uuid", "version" = "0.8.2", "default-features" = false
 vcell = "0.1.3"
 void = { "version" = "1.0.2", "default-features" = false, features = [] }
 volatile-register = "0.2.1"
-# Used by getrandom-0.1.16
-wasi-0-9-0-wasi-snapshot-preview1 = { package = "wasi", "version" = "0.9.0+wasi-snapshot-preview1", "default-features" = false, features = [] }
-wasi = { "version" = "0.11.0+wasi-snapshot-preview1", "default-features" = false, features = [] }
-wasm-bindgen = { "version" = "0.2.83", "default-features" = false, features = ['spans'] }
-# Used by wmi-0.9.3
-widestring-0-5-1 = { package = "widestring", "version" = "0.5.1", "default-features" = false, features = ['alloc'] }
-widestring = { "version" = "1.0.2", "default-features" = false, features = ['alloc'] }
-winapi = { "version" = "0.3.9", features = ['activation', 'basetsd', 'cfg', 'combaseapi', 'consoleapi', 'errhandlingapi', 'evntrace', 'fileapi', 'handleapi', 'in6addr', 'inaddr', 'ioapiset', 'knownfolders', 'libloaderapi', 'minwinbase', 'minwindef', 'mstcpip', 'mswsock', 'namedpipeapi', 'ntdef', 'ntsecapi', 'ntstatus', 'oaidl', 'objbase', 'objidlbase', 'oleauto', 'processenv', 'processthreadsapi', 'profileapi', 'roapi', 'shellapi', 'shlobj', 'stringapiset', 'synchapi', 'sysinfoapi', 'timezoneapi', 'unknwnbase', 'wbemcli', 'winbase', 'wincon', 'windef', 'winerror', 'winioctl', 'winnt', 'winsock2', 'winstring', 'winuser', 'ws2def', 'ws2ipdef', 'ws2tcpip', 'wtypes', 'wtypesbase'] }
 x86_64 = { "version" = "0.14.10", "default-features" = false, features = ['instructions'] }
 xmlparser = { "version" = "0.13.3", "default-features" = false, features = [] }
 zeroize_derive = "1.3.2"

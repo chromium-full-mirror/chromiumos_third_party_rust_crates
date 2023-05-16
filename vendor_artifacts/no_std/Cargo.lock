@@ -341,17 +341,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8a2dd5a6fe8c6e3502f568a6353e5273bbb15193ad9a89e457b9970798efbea1"
 
 [[package]]
-name = "clipboard-win"
-version = "4.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7191c27c2357d9b7ef96baac1773290d4ca63b24205b82a3fd8a0637afcf0362"
-dependencies = [
- "error-code",
- "str-buf",
- "winapi",
-]
-
-[[package]]
 name = "codespan-reporting"
 version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -581,12 +570,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "encode_unicode"
-version = "0.3.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a357d28ed41a50f9c765dbfe56cbc04a64e53e5fc58ba79fbc34c10ef3df831f"
-
-[[package]]
 name = "enumn"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -616,16 +599,6 @@ checksum = "aa68f1b12764fab894d2755d2518754e71b4fd80ecfb822714a1206c2aab39bf"
 dependencies = [
  "cc",
  "libc",
-]
-
-[[package]]
-name = "error-code"
-version = "2.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b5115567ac25674e0043e472be13d14e537f37ea8aa4bdc4aef0c89add1db1ff"
-dependencies = [
- "libc",
- "str-buf",
 ]
 
 [[package]]
@@ -1109,7 +1082,6 @@ dependencies = [
  "bit_field",
  "bitflags",
  "bitreader",
- "bumpalo",
  "bytecount",
  "bytemuck",
  "byteorder",
@@ -1120,7 +1092,6 @@ dependencies = [
  "clap 3.2.23",
  "clap 4.1.14",
  "clap_builder",
- "clipboard-win",
  "cortex-m",
  "cortex-m-rt",
  "cortex-m-rt-macros",
@@ -1141,10 +1112,8 @@ dependencies = [
  "dasp_sample",
  "either",
  "embedded-hal",
- "encode_unicode",
  "enumn",
  "errno",
- "error-code",
  "failure",
  "failure_derive",
  "fixedbitset",
@@ -1190,7 +1159,6 @@ dependencies = [
  "nb 1.0.0",
  "nom 5.1.2",
  "nom 7.1.1",
- "ntapi",
  "num-complex",
  "num-integer",
  "num-iter",
@@ -1220,13 +1188,11 @@ dependencies = [
  "rand_core 0.5.1",
  "rand_core 0.6.4",
  "rand_hc 0.1.0",
- "rand_hc 0.2.0",
  "rand_isaac",
  "rand_jitter",
  "rand_pcg 0.1.2",
  "rand_pcg 0.2.1",
  "rand_xorshift",
- "rdrand",
  "regex",
  "riscv",
  "riscv-rt-macros",
@@ -1251,7 +1217,6 @@ dependencies = [
  "stable_deref_trait",
  "static_assertions",
  "stm32g0",
- "str-buf",
  "time 0.3.14",
  "tinyvec",
  "tracing",
@@ -1276,12 +1241,6 @@ dependencies = [
  "vcell",
  "void",
  "volatile-register",
- "wasi 0.11.0+wasi-snapshot-preview1",
- "wasi 0.9.0+wasi-snapshot-preview1",
- "wasm-bindgen",
- "widestring 0.5.1",
- "widestring 1.0.2",
- "winapi",
  "x86_64",
  "xmlparser",
  "zeroize_derive",
@@ -1335,15 +1294,6 @@ checksum = "a8903e5a29a317527874d0402f867152a3d21c908bb0b933e416c65e301d4c36"
 dependencies = [
  "memchr",
  "minimal-lexical",
-]
-
-[[package]]
-name = "ntapi"
-version = "0.3.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3f6bb902e437b6d86e03cce10a7e2af662292c5dfef23b65899ea3ac9354ad44"
-dependencies = [
- "winapi",
 ]
 
 [[package]]
@@ -1809,15 +1759,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "rdrand"
-version = "0.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "678054eb77286b51581ba43620cc911abf02758c91f93f479767aed0f90458b2"
-dependencies = [
- "rand_core 0.3.1",
-]
-
-[[package]]
 name = "regex"
 version = "1.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2099,12 +2040,6 @@ dependencies = [
  "cortex-m-rt",
  "vcell",
 ]
-
-[[package]]
-name = "str-buf"
-version = "1.0.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d44a3643b4ff9caf57abcee9c2c621d6c03d9135e0d8b589bd9afb5992cb176a"
 
 [[package]]
 name = "strsim"
@@ -2502,18 +2437,6 @@ name = "wasm-bindgen-shared"
 version = "0.2.83"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1c38c045535d93ec4f0b4defec448e4291638ee608530863b1e2ba115d4fff7f"
-
-[[package]]
-name = "widestring"
-version = "0.5.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "17882f045410753661207383517a6f62ec3dbeb6a4ed2acce01f0728238d1983"
-
-[[package]]
-name = "widestring"
-version = "1.0.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "653f141f39ec16bba3c5abe400a0c60da7468261cc2cbf36805022876bc721a8"
 
 [[package]]
 name = "winapi"

@@ -19,7 +19,7 @@ import shutil
 import subprocess
 import sys
 import textwrap
-from typing import Any, Dict, List, Optional, Set
+from typing import Any, Dict, List, Optional, Set, Tuple
 
 
 sys.path.append(str(pathlib.Path(__file__).resolve().parent / "scripts"))
@@ -875,7 +875,9 @@ class CrateDestroyer:
         with open(checksum_file, "w") as csum:
             json.dump(checksum_contents, csum)
 
-    def destroy_unused_crates(self, destroyed_crates_file: pathlib.Path):
+    def destroy_unused_crates(
+        self, destroyed_crates_file: pathlib.Path
+    ) -> List[Tuple[str, str]]:
         metadata = [
             (x["name"], x["version"])
             for x in load_single_metadata(
@@ -1104,6 +1106,7 @@ def generate_metallurgy_crates(
     projects_dir: pathlib.Path,
     vendor_artifacts_dir: pathlib.Path,
     available_patches: Dict[str, BazelPatchSet],
+    destroyed_crates: Set[Tuple[str, str]],
 ):
     print(
         "Ensuring metallurgy crates are in sync with non-metallurgy crates..."
@@ -1117,6 +1120,8 @@ def generate_metallurgy_crates(
         with metallurgy_crates.open("w", encoding="utf-8") as f:
             f.write(_METALLURGY_CARGO_TOML_HEADER)
             for crate in crates:
+                if (crate.name, crate.version) in destroyed_crates:
+                    continue
                 features = crate.features if std else crate.no_std_features
                 if features is not None:
                     f.write(crate.format(features))
@@ -1186,11 +1191,6 @@ def main():
     destroyed_crates_file = vendor_artifacts / "destroyed_crates.txt"
     in_progress_stamp = InProgressStamp(vendor_artifacts)
 
-    patches_manifest = generate_patches_manifest(pathlib.Path(patches))
-    generate_metallurgy_crates(
-        current_path / "projects", vendor_artifacts, patches_manifest
-    )
-
     # First, actually run cargo vendor
     run_cargo_vendor(current_path)
 
@@ -1203,6 +1203,15 @@ def main():
     cleanup_owners(vendor)
     destroyer = CrateDestroyer(current_path, vendor)
     destroyed_crates = destroyer.destroy_unused_crates(destroyed_crates_file)
+    destroyed_crates = set(destroyed_crates)
+
+    patches_manifest = generate_patches_manifest(pathlib.Path(patches))
+    generate_metallurgy_crates(
+        current_path / "projects",
+        vendor_artifacts,
+        patches_manifest,
+        destroyed_crates,
+    )
 
     # Combine license file and check for any bad licenses
     lm = LicenseManager(current_path, vendor)
@@ -1210,7 +1219,7 @@ def main():
         args.skip_license_check,
         args.license_map,
         license_shorthand_file,
-        set(destroyed_crates),
+        destroyed_crates,
     )
 
     if args.skip_cargo_vet:
