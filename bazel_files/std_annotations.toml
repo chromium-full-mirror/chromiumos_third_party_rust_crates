@@ -8,3 +8,12 @@
 # into the form bazel expects (read: JSON). They're maintained as toml so
 # comments can be used, and for consistency with all of the other toml files
 # here.
+
+[[libusb1-sys]]
+# libusb1-sys has a build script that tries to locate and arrange a link to
+# libusb-1.0.
+# TODO: This depends on system libraries, and won't work for boards. Need to
+# wire up data dependencies properly & deal with e.g., the board root.
+gen_build_script = false
+rustc_flags = ["-l", "usb-1.0", "-L", "native=/usr/lib64"]
+version = "*"

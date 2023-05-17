@@ -1,1 +1,14 @@
-{}
+{
+  "libusb1-sys": [
+    {
+      "gen_build_script": false,
+      "rustc_flags": [
+        "-l",
+        "usb-1.0",
+        "-L",
+        "native=/usr/lib64"
+      ],
+      "version": "*"
+    }
+  ]
+}
