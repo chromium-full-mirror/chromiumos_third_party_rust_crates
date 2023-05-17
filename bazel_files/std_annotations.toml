@@ -9,6 +9,19 @@
 # comments can be used, and for consistency with all of the other toml files
 # here.
 
+[[clang-sys]]
+# We have a custom patch at
+# patches/clang-sys/add_libclang_path_override_env_var.patch that allows us to
+# specify a 'default' place to look for libclang. That has to be specified for
+# both the build script's build _and_ the library's build, since the `env!()`
+# expression that relies on it may be built at either stage.
+# TODO: This depends on system libraries (which should only be the hosts, at
+# least). wire up data dependencies properly once these files make their way
+# into bazel.
+build_script_rustc_env = {LIBCLANG_PATH_OVERRIDE = "/usr/lib64"}
+rustc_env = {LIBCLANG_PATH_OVERRIDE = "/usr/lib64"}
+version = "*"
+
 [[libusb1-sys]]
 # libusb1-sys has a build script that tries to locate and arrange a link to
 # libusb-1.0.

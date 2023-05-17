@@ -47,6 +47,9 @@
   ],
   "clang-sys": [
     {
+      "build_script_rustc_env": {
+        "LIBCLANG_PATH_OVERRIDE": "/usr/lib64"
+      },
       "patch_args": [
         "-p1"
       ],
@@ -54,6 +57,9 @@
       "patches": [
         "@@//third_party/rust_crates/patches:clang-sys/add_libclang_path_override_env_var.patch"
       ],
+      "rustc_env": {
+        "LIBCLANG_PATH_OVERRIDE": "/usr/lib64"
+      },
       "version": "*"
     }
   ],
