@@ -1,12 +1,16 @@
 {
-    "serde_json": [
-        {
-            "crate_features": ["alloc"] 
-        }
-    ],
-    "regex-syntax": [
-        {
-            "crate_features": ["unicode"] 
-        }
-    ]
+  "regex-syntax": [
+    {
+      "crate_features": [
+        "unicode"
+      ]
+    }
+  ],
+  "serde_json": [
+    {
+      "crate_features": [
+        "alloc"
+      ]
+    }
+  ]
 }

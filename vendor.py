@@ -1105,6 +1105,7 @@ class Package:
 def generate_metallurgy_crates(
     projects_dir: pathlib.Path,
     vendor_artifacts_dir: pathlib.Path,
+    bazel_artifacts_dir: pathlib.Path,
     available_patches: Dict[str, BazelPatchSet],
     destroyed_crates: Set[Tuple[str, str]],
 ):
@@ -1146,6 +1147,17 @@ def generate_metallurgy_crates(
             for version, patches in sorted(patchset.versioned.items()):
                 if version in locked_packages[crate]:
                     used_patches[crate].extend(patches)
+
+        annotations_name = (
+            "std_annotations.toml" if std else "no_std_annotations.toml"
+        )
+        with (bazel_artifacts_dir / annotations_name).open(
+            encoding="utf-8"
+        ) as f:
+            annotations = toml.load(f)
+
+        with (cargo_dir / "annotations.json").open("w", encoding="utf-8") as f:
+            json.dump(annotations, f, indent=2, sort_keys=True)
 
         with (cargo_dir / "patch_manifest.json").open(
             "w", encoding="utf-8"
@@ -1209,6 +1221,7 @@ def main():
     generate_metallurgy_crates(
         current_path / "projects",
         vendor_artifacts,
+        current_path / "bazel_files",
         patches_manifest,
         destroyed_crates,
     )

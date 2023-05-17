@@ -1,0 +1,10 @@
+# Annotations for crates specifically outside of no_std mode.
+# For more information on annotations, see crates_universe's docs:
+# https://bazelbuild.github.io/rules_rust/crate_universe.html#crateannotation
+#
+# Mechanically speaking, these annotations are represented as a
+# `Map<CrateName, List<AnnotationsObject>>`. Each `AnnotationsObject` is fed
+# directly into `crate.annotation` by `rules_rust`. `./vendor.py` turns these
+# into the form bazel expects (read: JSON). They're maintained as toml so
+# comments can be used, and for consistency with all of the other toml files
+# here.
