@@ -11,6 +11,7 @@ import collections
 import dataclasses
 import functools
 import hashlib
+import itertools
 import json
 import os
 import pathlib
@@ -1102,6 +1103,61 @@ class Package:
         return self._key() < other._key()
 
 
+# This ends up being a JSON-y map that provides data for
+# https://bazelbuild.github.io/rules_rust/crate_universe.html#crateannotation
+BazelAnnotation = Dict[str, Any]
+
+
+def merge_annotations(a: Any, b: Any):
+    """Merges two BazelAnnotations together, if possible."""
+    if a is None:
+        return b
+
+    if b is None:
+        return a
+
+    if isinstance(a, list) and isinstance(b, list):
+        return a + b
+
+    if isinstance(a, dict) and isinstance(b, dict):
+        result = {}
+        for key in set(itertools.chain(a.keys(), b.keys())):
+            result[key] = merge_annotations(a.get(key), b.get(key))
+        return result
+
+    # Merging strings may be doable in some cases (e.g., rustflags), but not
+    # all (e.g., patch program names). Also catch merging of different types.
+    raise TypeError(f"Can't merge values {a} and {b} of types {type(a)} and {type(b)}")
+
+
+def merge_annotation_maps(
+    map_a: Dict[str, List[BazelAnnotation]],
+    map_b: Dict[str, List[BazelAnnotation]],
+) -> Dict[str, List[BazelAnnotation]]:
+    """Merges two bazel annotation maps into one."""
+    # {crate_name: {crate_version: BazelAnnotation}}
+    annotations_by_version = collections.defaultdict(
+        lambda: collections.defaultdict(dict)
+    )
+    for crate_name, annotations in itertools.chain(
+        map_a.items(), map_b.items()
+    ):
+        crate_annotations = annotations_by_version[crate_name]
+        for a in annotations:
+            version = a.get("version", "*")
+            existing = crate_annotations[version]
+            # `merge_annotations` can't merge the version field; handle that
+            # manually.
+            existing.pop("version", None)
+            crate_annotations[version] = merge_annotations(a, existing)
+            existing["version"] = version
+
+    return {
+        crate_name: [v for k, v in sorted(annotations.items())]
+        for crate_name, annotations in annotations_by_version.items()
+    }
+
+
 def generate_metallurgy_crates(
     projects_dir: pathlib.Path,
     vendor_artifacts_dir: pathlib.Path,
@@ -1154,15 +1210,11 @@ def generate_metallurgy_crates(
         with (bazel_artifacts_dir / annotations_name).open(
             encoding="utf-8"
         ) as f:
-            annotations = toml.load(f)
+            user_annotations = toml.load(f)
 
+        annotations = merge_annotation_maps(used_patches, user_annotations)
         with (cargo_dir / "annotations.json").open("w", encoding="utf-8") as f:
             json.dump(annotations, f, indent=2, sort_keys=True)
-
-        with (cargo_dir / "patch_manifest.json").open(
-            "w", encoding="utf-8"
-        ) as f:
-            json.dump(used_patches, f, indent=2, sort_keys=True)
 
     print("Crates in sync.")
 

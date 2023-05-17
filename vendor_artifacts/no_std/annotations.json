@@ -1,4 +1,53 @@
 {
+  "ahash": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:ahash-0.7.6/ahash-0.7.6-rm-features.patch"
+      ],
+      "version": "0.7.6"
+    }
+  ],
+  "chrono": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:chrono-0.4.24/remove-old-time-feature.patch"
+      ],
+      "version": "0.4.24"
+    }
+  ],
+  "libc": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines.patch",
+        "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines-arm32.patch"
+      ],
+      "version": "0.2.139"
+    }
+  ],
+  "number_prefix": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:number_prefix/add-license.patch"
+      ],
+      "version": "*"
+    }
+  ],
   "regex-syntax": [
     {
       "crate_features": [
@@ -6,11 +55,47 @@
       ]
     }
   ],
+  "riscv-rt-macros": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:riscv-rt-macros/riscv-rt-macros-0.1.6-update-dependencies.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "rustix": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:rustix/disable-features.patch"
+      ],
+      "version": "*"
+    }
+  ],
   "serde_json": [
     {
       "crate_features": [
         "alloc"
       ]
+    }
+  ],
+  "void": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:void/relicense-to-dual-mit-apache.patch"
+      ],
+      "version": "*"
     }
   ]
 }

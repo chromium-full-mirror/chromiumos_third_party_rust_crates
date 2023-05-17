@@ -1,4 +1,146 @@
 {
+  "ahash": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:ahash-0.7.6/ahash-0.7.6-rm-features.patch"
+      ],
+      "version": "0.7.6"
+    }
+  ],
+  "bindgen": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:bindgen-0.57.0/a04acc684e136505f926739a0a89d797309857eb.patch"
+      ],
+      "version": "0.57.0"
+    },
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:bindgen-0.60.1/a04acc684e136505f926739a0a89d797309857eb.patch"
+      ],
+      "version": "0.60.1"
+    }
+  ],
+  "chrono": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:chrono-0.4.24/remove-old-time-feature.patch"
+      ],
+      "version": "0.4.24"
+    }
+  ],
+  "clang-sys": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:clang-sys/add_libclang_path_override_env_var.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "clap_conf": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:clap_conf/add-license.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "derive-into-owned": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:derive-into-owned/0001-add-license.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "filedescriptor": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:filedescriptor/0001-add-license.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "grpcio-sys": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:grpcio-sys/0001-patch-yaml-load.patch",
+        "@@//third_party/rust_crates/patches:grpcio-sys/0002-use-bindgen-0.63.patch"
+      ],
+      "version": "*"
+    },
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:grpcio-sys-0.9.1+1.38.0/001-grpc-vsock-support.patch"
+      ],
+      "version": "0.9.1+1.38.0"
+    }
+  ],
+  "include_dir_impl": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:include_dir_impl/0001-add-license.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "libc": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines.patch",
+        "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines-arm32.patch"
+      ],
+      "version": "0.2.139"
+    }
+  ],
   "libusb1-sys": [
     {
       "gen_build_script": false,
@@ -7,6 +149,90 @@
         "usb-1.0",
         "-L",
         "native=/usr/lib64"
+      ],
+      "version": "*"
+    }
+  ],
+  "number_prefix": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:number_prefix/add-license.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "png": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:png-0.16.8/png-0.16.8-update-to-miniz_oxide-0.4.1.patch"
+      ],
+      "version": "0.16.8"
+    }
+  ],
+  "riscv-rt-macros": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:riscv-rt-macros/riscv-rt-macros-0.1.6-update-dependencies.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "rustix": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:rustix/disable-features.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "stderrlog": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:stderrlog-0.5.3/0001-Do-not-panic-in-the-log-statement-when-the-tty-close.patch"
+      ],
+      "version": "0.5.3"
+    }
+  ],
+  "structopt": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:structopt-0.3.26/structopt-dont-use-lint.patch"
+      ],
+      "version": "0.3.26"
+    }
+  ],
+  "void": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:void/relicense-to-dual-mit-apache.patch"
       ],
       "version": "*"
     }
