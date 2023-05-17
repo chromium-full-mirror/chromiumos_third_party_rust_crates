@@ -45,6 +45,18 @@
       "version": "0.4.24"
     }
   ],
+  "clang-sys": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:clang-sys/add_libclang_path_override_env_var.patch"
+      ],
+      "version": "*"
+    }
+  ],
   "clap_conf": [
     {
       "patch_args": [

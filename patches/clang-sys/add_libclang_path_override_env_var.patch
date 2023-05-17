@@ -1,0 +1,21 @@
+This patch allows us to set `LIBCLANG_PATH_OVERRIDE` at build-time to suppress
+this crate's usual "search system paths rooted at / for libclang" behavior,
+regardless of which linking mode the crate uses.
+
+This is important when clang-sys is built for bazel.
+
+diff --git a/build/common.rs b/build/common.rs
+index 3005a8a..52eebc4 100644
+--- a/build/common.rs
++++ b/build/common.rs
+@@ -266,7 +266,9 @@ fn search_directories(directory: &Path, filenames: &[String]) -> Vec<(PathBuf, S
+ pub fn search_libclang_directories(filenames: &[String], variable: &str) -> Vec<(PathBuf, String)> {
+     // Search only the path indicated by the relevant environment variable
+     // (e.g., `LIBCLANG_PATH`) if it is set.
+-    if let Ok(path) = env::var(variable).map(|d| Path::new(&d).to_path_buf()) {
++    if let Some(path) = env::var(variable).map(|d| Path::new(&d).to_path_buf()).ok().or_else(|| {
++        option_env!("LIBCLANG_PATH_OVERRIDE").map(|x| x.into())
++    }) {
+         // Check if the path is a matching file.
+         if let Some(parent) = path.parent() {
+             let filename = path.file_name().unwrap().to_str().unwrap();
