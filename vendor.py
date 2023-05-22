@@ -20,7 +20,7 @@ import shutil
 import subprocess
 import sys
 import textwrap
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Set, Tuple
 
 
 sys.path.append(str(pathlib.Path(__file__).resolve().parent / "scripts"))
@@ -1127,7 +1127,9 @@ def merge_annotations(a: Any, b: Any):
 
     # Merging strings may be doable in some cases (e.g., rustflags), but not
     # all (e.g., patch program names). Also catch merging of different types.
-    raise TypeError(f"Can't merge values {a} and {b} of types {type(a)} and {type(b)}")
+    raise TypeError(
+        f"Can't merge values {a} and {b} of types {type(a)} and {type(b)}"
+    )
 
 
 def merge_annotation_maps(
@@ -1156,6 +1158,20 @@ def merge_annotation_maps(
         crate_name: [v for k, v in sorted(annotations.items())]
         for crate_name, annotations in annotations_by_version.items()
     }
+
+
+def generate_annotations_file(
+    annotations: Dict[str, List[BazelAnnotation]],
+    extra_annotations: Sequence[pathlib.Path],
+    output: pathlib.Path,
+):
+    for path in extra_annotations:
+        with path.open(encoding="utf-8") as f:
+            extra = toml.load(f)
+        annotations = merge_annotation_maps(annotations, extra)
+
+    with output.open("w", encoding="utf-8") as f:
+        json.dump(annotations, f, indent=2, sort_keys=True)
 
 
 def generate_metallurgy_crates(
@@ -1204,17 +1220,30 @@ def generate_metallurgy_crates(
                 if version in locked_packages[crate]:
                     used_patches[crate].extend(patches)
 
-        annotations_name = (
-            "std_annotations.toml" if std else "no_std_annotations.toml"
-        )
-        with (bazel_artifacts_dir / annotations_name).open(
-            encoding="utf-8"
-        ) as f:
-            user_annotations = toml.load(f)
-
-        annotations = merge_annotation_maps(used_patches, user_annotations)
-        with (cargo_dir / "annotations.json").open("w", encoding="utf-8") as f:
-            json.dump(annotations, f, indent=2, sort_keys=True)
+        if std:
+            generate_annotations_file(
+                annotations=used_patches,
+                extra_annotations=[
+                    bazel_artifacts_dir / "std_annotations.toml",
+                    bazel_artifacts_dir / "std_and_alchemy_annotations.toml",
+                ],
+                output=cargo_dir / "annotations.json",
+            )
+        else:
+            generate_annotations_file(
+                annotations=used_patches,
+                extra_annotations=[
+                    bazel_artifacts_dir / "no_std_annotations.toml",
+                ],
+                output=cargo_dir / "annotations.json",
+            )
+    generate_annotations_file(
+        annotations={},
+        extra_annotations=[
+            bazel_artifacts_dir / "std_and_alchemy_annotations.toml",
+        ],
+        output=vendor_artifacts_dir / "alchemy/annotations.json",
+    )
 
     print("Crates in sync.")
 
