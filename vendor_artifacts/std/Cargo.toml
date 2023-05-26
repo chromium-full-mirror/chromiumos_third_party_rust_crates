@@ -84,6 +84,7 @@ bitfield = "0.13.2"
 # Used by openssl-0.10.48
 # Used by png-0.16.8
 # Used by printf-compat-0.1.1
+# Used by procfs-0.15.1
 # Used by pulldown-cmark-0.6.1
 # Used by redox_syscall-0.2.16
 # Used by ron-0.5.1
@@ -104,7 +105,7 @@ block-buffer = "0.10.4"
 boringssl-src = "0.3.0+688fc5c"
 bytecount = { "version" = "0.6.3", features = ['runtime-dispatch-simd'] }
 bytemuck = "1.13.1"
-byteorder = "1.4.3"
+byteorder = { "version" = "1.4.3", features = ['i128'] }
 bytes = "1.4.0"
 capnp = "0.14.11"
 cargo-lock = "8.0.3"
@@ -233,6 +234,7 @@ heapless = { "version" = "0.7.16", features = ['atomic-polyfill'] }
 # Used by structopt-derive-0.4.18
 heck-0-3-3 = { package = "heck", "version" = "0.3.3" }
 heck = "0.4.1"
+hex = { "version" = "0.4.3", features = ['alloc'] }
 hostname = "0.3.1"
 http = "0.2.8"
 http-body = "0.4.5"
@@ -486,7 +488,7 @@ rustc-hash = "1.1.0"
 # Used by bare-metal-0.2.5
 rustc_version-0-2-3 = { package = "rustc_version", "version" = "0.2.3" }
 rustc_version = "0.4.0"
-rustix = { "version" = "0.36.7", features = ['fs', 'io-lifetimes', 'libc', 'termios'] }
+rustix = { "version" = "0.36.7", features = ['fs', 'io-lifetimes', 'libc', 'param', 'process', 'termios', 'thread'] }
 rustversion = "1.0.9"
 ryu = "1.0.5"
 same-file = "1.0.6"

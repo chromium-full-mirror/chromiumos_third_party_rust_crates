@@ -1625,6 +1625,16 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.49 -> 1.0.56"
 
+[[audits.procfs]]
+who = "Youssef Esmat <youssefesmat@chromium.org>"
+criteria = "does-not-implement-crypto"
+version = "0.15.1"
+
+[[audits.procfs]]
+who = "Youssef Esmat <youssefesmat@chromium.org>"
+criteria = "safe-to-run"
+version = "0.15.1"
+
 [[audits.prost]]
 who = "ChromeOS"
 criteria = "safe-to-run"
