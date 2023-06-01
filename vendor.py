@@ -8,6 +8,7 @@
 """
 import argparse
 import collections
+import copy
 import dataclasses
 import functools
 import hashlib
@@ -92,13 +93,11 @@ compile_error!("This crate cannot be built for this configuration.");
 """
 NOP_EMPTY_CRATE_BODY = "// " + EMPTY_CRATE_BODY
 
+_ALL_MODES = {"alchemy", "std", "no_std"}
 
-@dataclasses.dataclass(frozen=True)
-class BazelPatchSet:
-    unversioned: List[Dict[str, Any]] = dataclasses.field(default_factory=list)
-    versioned: Dict[str, List[Dict[str, Any]]] = dataclasses.field(
-        default_factory=lambda: collections.defaultdict(list)
-    )
+# This ends up being a JSON-y map that provides data for
+# https://bazelbuild.github.io/rules_rust/crate_universe.html#crateannotation
+BazelAnnotation = Dict[str, Any]
 
 
 def _rerun_checksums(package_path):
@@ -309,9 +308,9 @@ def apply_patches(patches_path, vendor_path):
 
 def generate_patches_manifest(
     patch_dir: pathlib.Path,
-) -> Dict[str, BazelPatchSet]:
+) -> Dict[str, List[BazelAnnotation]]:
     """Returns a dictionary containing json configuration of the patch file."""
-    patches = collections.defaultdict(BazelPatchSet)
+    patches = collections.defaultdict(list)
     for d in sorted(patch_dir.iterdir()):
         if d.is_dir():
             crate, version = _PATCH_VERSION_REGEX.match(d.name).groups()
@@ -336,10 +335,7 @@ def generate_patches_manifest(
                         for patch in patch_files
                     ],
                 )
-                if version:
-                    patches[crate].versioned[version].append(patch)
-                else:
-                    patches[crate].unversioned.append(patch)
+                patches[crate].append(patch)
     return patches
 
 
@@ -1115,11 +1111,6 @@ class Package:
         return self._key() < other._key()
 
 
-# This ends up being a JSON-y map that provides data for
-# https://bazelbuild.github.io/rules_rust/crate_universe.html#crateannotation
-BazelAnnotation = Dict[str, Any]
-
-
 def merge_annotations(a: Any, b: Any):
     """Merges two BazelAnnotations together, if possible."""
     if a is None:
@@ -1147,6 +1138,7 @@ def merge_annotations(a: Any, b: Any):
 def merge_annotation_maps(
     map_a: Dict[str, List[BazelAnnotation]],
     map_b: Dict[str, List[BazelAnnotation]],
+    mode: str,
 ) -> Dict[str, List[BazelAnnotation]]:
     """Merges two bazel annotation maps into one."""
     # {crate_name: {crate_version: BazelAnnotation}}
@@ -1158,13 +1150,21 @@ def merge_annotation_maps(
     ):
         crate_annotations = annotations_by_version[crate_name]
         for a in annotations:
-            version = a.get("version", "*")
-            existing = crate_annotations[version]
-            # `merge_annotations` can't merge the version field; handle that
-            # manually.
-            existing.pop("version", None)
-            crate_annotations[version] = merge_annotations(a, existing)
-            existing["version"] = version
+            a = copy.deepcopy(a)
+            modes = set(a.pop("modes", _ALL_MODES))
+            if not modes.issubset(_ALL_MODES):
+                raise ValueError(
+                    f"Invalid modes {modes}. Modes must be a subset of {_ALL_MODES}"
+                )
+
+            if mode in modes:
+                version = a.get("version", "*")
+                existing = crate_annotations[version]
+                # `merge_annotations` can't merge the version field; handle that
+                # manually.
+                existing.pop("version", None)
+                crate_annotations[version] = merge_annotations(a, existing)
+                existing["version"] = version
 
     return {
         crate_name: [v for k, v in sorted(annotations.items())]
@@ -1173,29 +1173,54 @@ def merge_annotation_maps(
 
 
 def generate_annotations_file(
-    annotations: Dict[str, List[BazelAnnotation]],
-    extra_annotations: Sequence[pathlib.Path],
-    output: pathlib.Path,
+    cargo_dir: pathlib.Path,
+    mode,
+    all_annotations: Sequence[Dict[str, List[BazelAnnotation]]],
 ):
-    for path in extra_annotations:
-        with path.open(encoding="utf-8") as f:
-            extra = toml.load(f)
-        annotations = merge_annotation_maps(annotations, extra)
+    merged_annotations = {}
+    for annotation in all_annotations:
+        merged_annotations = merge_annotation_maps(
+            merged_annotations, annotation, mode=mode
+        )
 
-    with output.open("w", encoding="utf-8") as f:
-        json.dump(annotations, f, indent=2, sort_keys=True)
+    package_versions = collections.defaultdict(set)
+    with (cargo_dir / "Cargo.lock").open() as f:
+        for package in toml.load(f)["package"]:
+            package_versions[package["name"]].add(package["version"])
+    for package, versions in package_versions.items():
+        # All of these versions are treated as "*" and are always valid
+        versions.update(["*", "", None])
+
+    filtered_annotations = collections.defaultdict(list)
+    for package, annotations in merged_annotations.items():
+        for annotation in annotations:
+            if annotation.get("version") in package_versions[package]:
+                filtered_annotations[package].append(annotation)
+
+    with (cargo_dir / "annotations.json").open("w", encoding="utf-8") as f:
+        json.dump(filtered_annotations, f, indent=2, sort_keys=True)
+        f.write("\n")
 
 
 def generate_metallurgy_crates(
     projects_dir: pathlib.Path,
     vendor_artifacts_dir: pathlib.Path,
     bazel_artifacts_dir: pathlib.Path,
-    available_patches: Dict[str, BazelPatchSet],
+    available_patches: Dict[str, List[BazelAnnotation]],
     destroyed_crates: Set[Tuple[str, str]],
 ):
     print(
         "Ensuring metallurgy crates are in sync with non-metallurgy crates..."
     )
+    with (bazel_artifacts_dir / "annotations.toml").open(encoding="utf-8") as f:
+        annotations = toml.load(f)
+
+    generate_annotations_file(
+        cargo_dir=vendor_artifacts_dir / "alchemy",
+        mode="alchemy",
+        all_annotations=[annotations],
+    )
+
     metadata = load_single_metadata(projects_dir.parent, filter_platform=None)
     crates = Package.from_metadata(metadata)
     for subdir, std in [("std", True), ("no_std", False)]:
@@ -1220,42 +1245,11 @@ def generate_metallurgy_crates(
             ["cargo", "update", "--workspace"], cwd=cargo_dir, check=True
         )
 
-        locked_packages = collections.defaultdict(list)
-        for package in toml.load(new_lockfile)["package"]:
-            locked_packages[package["name"]].append(package["version"])
-
-        used_patches = collections.defaultdict(list)
-        for crate, patchset in sorted(available_patches.items()):
-            if crate in locked_packages:
-                used_patches[crate].extend(patchset.unversioned)
-            for version, patches in sorted(patchset.versioned.items()):
-                if version in locked_packages[crate]:
-                    used_patches[crate].extend(patches)
-
-        if std:
-            generate_annotations_file(
-                annotations=used_patches,
-                extra_annotations=[
-                    bazel_artifacts_dir / "std_annotations.toml",
-                    bazel_artifacts_dir / "std_and_alchemy_annotations.toml",
-                ],
-                output=cargo_dir / "annotations.json",
-            )
-        else:
-            generate_annotations_file(
-                annotations=used_patches,
-                extra_annotations=[
-                    bazel_artifacts_dir / "no_std_annotations.toml",
-                ],
-                output=cargo_dir / "annotations.json",
-            )
-    generate_annotations_file(
-        annotations={},
-        extra_annotations=[
-            bazel_artifacts_dir / "std_and_alchemy_annotations.toml",
-        ],
-        output=vendor_artifacts_dir / "alchemy/annotations.json",
-    )
+        generate_annotations_file(
+            cargo_dir=cargo_dir,
+            mode=subdir,
+            all_annotations=[available_patches, annotations],
+        )
 
     print("Crates in sync.")
 
@@ -1280,6 +1274,12 @@ def main():
         help="Don't run cargo-vet. Please don't upload changes that skip "
         "this check. This flag is for local development use only.",
     )
+    parser.add_argument(
+        "--skip-cargo-vendor",
+        action="store_true",
+        help="Don't run cargo-vendor. Please don't upload changes that skip "
+        "this check. This flag is for local development use only.",
+    )
     args = parser.parse_args()
 
     current_path = pathlib.Path(__file__).parent.absolute()
@@ -1297,18 +1297,24 @@ def main():
     in_progress_stamp = InProgressStamp(vendor_artifacts)
 
     # First, actually run cargo vendor
-    run_cargo_vendor(current_path)
+    if args.skip_cargo_vendor:
+        # Since this is for dev only, this is fine.
+        destroyed_crates = set()
+    else:
+        run_cargo_vendor(current_path)
 
-    # Order matters here:
-    # - Apply patches (also re-calculates checksums)
-    # - Cleanup any owners files (otherwise, git check-in or checksums are
-    #   unhappy)
-    # - Destroy unused crates
-    apply_patches(patches, vendor)
-    cleanup_owners(vendor)
-    destroyer = CrateDestroyer(current_path, vendor)
-    destroyed_crates = destroyer.destroy_unused_crates(destroyed_crates_file)
-    destroyed_crates = set(destroyed_crates)
+        # Order matters here:
+        # - Apply patches (also re-calculates checksums)
+        # - Cleanup any owners files (otherwise, git check-in or checksums are
+        #   unhappy)
+        # - Destroy unused crates
+        apply_patches(patches, vendor)
+        cleanup_owners(vendor)
+        destroyer = CrateDestroyer(current_path, vendor)
+        destroyed_crates = destroyer.destroy_unused_crates(
+            destroyed_crates_file
+        )
+        destroyed_crates = set(destroyed_crates)
 
     patches_manifest = generate_patches_manifest(pathlib.Path(patches))
     generate_metallurgy_crates(
@@ -1319,16 +1325,17 @@ def main():
         destroyed_crates,
     )
 
-    # Combine license file and check for any bad licenses
-    lm = LicenseManager(current_path, vendor)
-    lm.generate_license(
-        args.skip_license_check,
-        args.license_map,
-        license_shorthand_file,
-        destroyed_crates,
-    )
+    if not args.skip_cargo_vendor:
+        # Combine license file and check for any bad licenses
+        lm = LicenseManager(current_path, vendor)
+        lm.generate_license(
+            args.skip_license_check,
+            args.license_map,
+            license_shorthand_file,
+            destroyed_crates,
+        )
 
-    if args.skip_cargo_vet:
+    if args.skip_cargo_vet or args.skip_cargo_vendor:
         print("Skipping cargo-vet checks. This is for local dev only.")
         # Don't remove `in_progress_stamp`; it should hopefully serve as an
         # extra reminder to rerun this without skipping cargo-vet.

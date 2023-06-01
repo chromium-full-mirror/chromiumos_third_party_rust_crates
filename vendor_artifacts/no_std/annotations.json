@@ -56,6 +56,10 @@
   ],
   "rustix": [
     {
+      "additive_build_file_content": "load(\"@@//bazel/module_extensions/private:symlink.bzl\", \"symlink_without_target\")\n\nconfig_setting(\n  name = \"is_release\",\n  values = {\"compilation_mode\": \"opt\"}\n)\n\nsymlink_without_target(\n    name = \"static_libs\",\n    actual = select({\n        \":is_release\": \"src/backend/linux_raw/arch/outline/release\",\n        \"//conditions:default\": \"src/backend/linux_raw/arch/outline/debug\",\n    }),\n    out = \"static_libs\",\n)\n",
+      "data": [
+        ":static_libs"
+      ],
       "patch_args": [
         "-p1"
       ],
@@ -63,7 +67,9 @@
       "patches": [
         "@@//third_party/rust_crates/patches:rustix/disable-features.patch"
       ],
-      "version": "*"
+      "rustc_flags": [
+        "-L$(location :static_libs)"
+      ]
     }
   ],
   "serde_json": [

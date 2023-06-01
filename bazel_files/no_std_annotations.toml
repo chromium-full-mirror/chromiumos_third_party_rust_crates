@@ -1,9 +1,0 @@
-# Annotations for crates specifically in no_std mode.
-# For more information on this file's purpose and format, see
-# std_annotations.toml.
-
-[[serde_json]]
-crate_features = ["alloc"]
-
-[[regex-syntax]]
-crate_features = ["unicode"]

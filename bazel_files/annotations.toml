@@ -1,4 +1,4 @@
-# Annotations for crates specifically outside of no_std mode.
+# Annotations for crates.
 # For more information on annotations, see crates_universe's docs:
 # https://bazelbuild.github.io/rules_rust/crate_universe.html#crateannotation
 #
@@ -8,6 +8,16 @@
 # into the form bazel expects (read: JSON). They're maintained as toml so
 # comments can be used, and for consistency with all of the other toml files
 # here.
+
+# Entries here should be sorted by crate name. We also support the special
+# option "modes", which is a list of modes.
+# Valid modes are "alchemy", "std", and "no_std".
+
+[[bzip2-sys]]
+# bzip is C code, not C++ code. We get warnings if we use clang++ instead of
+# clang.
+build_script_env = { "FORCE_C_COMPILER" = "1" }
+
 
 [[clang-sys]]
 # We have a custom patch at
@@ -22,6 +32,7 @@ build_script_rustc_env = {LIBCLANG_PATH_OVERRIDE = "/usr/lib64"}
 rustc_env = {LIBCLANG_PATH_OVERRIDE = "/usr/lib64"}
 version = "*"
 
+
 [[libusb1-sys]]
 # libusb1-sys has a build script that tries to locate and arrange a link to
 # libusb-1.0.
@@ -30,3 +41,44 @@ version = "*"
 gen_build_script = false
 rustc_flags = ["-l", "usb-1.0", "-L", "native=/usr/lib64"]
 version = "*"
+
+
+[[regex-syntax]]
+modes = ["no_std"]
+crate_features = ["unicode"]
+
+
+[[rustix]]
+# Rustix has a custom build.rs which adds "-Lsrc/backend/linux_raw/arch/outline".
+# (see https://github.com/bytecodealliance/rustix/blob/main/build.rs#L7)
+# However, in bazel, the working directory is different.
+additive_build_file_content = """
+load("@@//bazel/module_extensions/private:symlink.bzl", "symlink_without_target")
+
+config_setting(
+  name = "is_release",
+  values = {"compilation_mode": "opt"}
+)
+
+symlink_without_target(
+    name = "static_libs",
+    actual = select({
+        ":is_release": "src/backend/linux_raw/arch/outline/release",
+        "//conditions:default": "src/backend/linux_raw/arch/outline/debug",
+    }),
+    out = "static_libs",
+)
+"""
+data = [":static_libs"]
+rustc_flags = ["-L$(location :static_libs)"]
+
+
+[[serde_json]]
+modes = ["no_std"]
+crate_features = ["alloc"]
+
+
+[[zstd-sys]]
+# zstd is C code, not C++ code. We get warnings if we use clang++ instead of
+# clang.
+build_script_env = { "FORCE_C_COMPILER" = "1" }
