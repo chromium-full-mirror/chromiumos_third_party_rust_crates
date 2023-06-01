@@ -237,6 +237,18 @@
       "version": "0.3.26"
     }
   ],
+  "uhidrs-sys": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:uhidrs-sys/add-license.patch"
+      ],
+      "version": "*"
+    }
+  ],
   "void": [
     {
       "patch_args": [

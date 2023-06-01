@@ -45,6 +45,15 @@ base64-0-10-1 = { package = "base64", "version" = "0.10.1" }
 base64 = "0.13.1"
 # Used by userfaultfd-sys-0.4.2
 bindgen-0-60-1 = { package = "bindgen", "version" = "0.60.1", "default-features" = false, features = ['runtime'] }
+# Used by bindgen-deps-0.63.0
+# Used by crdyboot-1.0.0
+# Used by featured-0.1.0
+# Used by hps-firmware-0.1.0
+# Used by lego-controller-0.1.0
+# Used by libflashrom-sys-deps-0.1.0
+# Used by minijail-sys-0.0.13
+# Used by uhidrs-sys-1.0.2
+bindgen-0-63-0 = { package = "bindgen", "version" = "0.63.0", features = ['log', 'which'] }
 bit-set = "0.5.3"
 bit-vec = "0.6.3"
 bit_field = "0.10.2"
@@ -173,6 +182,8 @@ downcast = "0.11.0"
 either = "1.8.1"
 embedded-hal = { "version" = "0.2.7", features = ['unproven'] }
 endian-type = "0.1.2"
+enumflags2 = "0.7.7"
+enumflags2_derive = "0.7.7"
 enumn = "0.1.8"
 env_logger = "0.9.3"
 errno = { "version" = "0.2.8", "default-features" = false }
@@ -607,6 +618,7 @@ ucs2 = "0.3.2"
 uefi = { "version" = "0.20.0", features = ['alloc', 'global_allocator', 'logger'] }
 uefi-macros = "0.11.0"
 ufmt-write = "0.1.0"
+uhidrs-sys = "1.0.2"
 unicase = "2.6.0"
 unicode-bidi = "0.3.8"
 unicode-ident = "1.0.6"
