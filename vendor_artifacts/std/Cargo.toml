@@ -91,6 +91,7 @@ bitfield = "0.13.2"
 # Used by x86_64-0.14.10
 bitflags-1-3-2 = { package = "bitflags", "version" = "1.3.2" }
 bitreader = "0.3.7"
+block-buffer = "0.10.4"
 boringssl-src = "0.3.0+688fc5c"
 bytecount = { "version" = "0.6.3", features = ['runtime-dispatch-simd'] }
 bytemuck = "1.13.1"
@@ -139,6 +140,7 @@ cortex-m = "0.7.7"
 cortex-m-rt = { "version" = "0.6.15", features = ['device'] }
 cortex-m-rt-macros = "0.6.15"
 cortex-m-rtic-macros = "1.1.6"
+cpufeatures = "0.2.7"
 crc-catalog = "1.1.1"
 crc32fast = "1.3.2"
 critical-section = "1.1.1"
@@ -147,6 +149,7 @@ crossbeam-channel = { "version" = "0.5.8", features = ['crossbeam-utils'] }
 crossbeam-deque = { "version" = "0.8.3", features = ['crossbeam-epoch', 'crossbeam-utils'] }
 crossbeam-epoch = { "version" = "0.9.14", features = ['alloc'] }
 crossbeam-utils = "0.8.15"
+crypto-common = "0.1.6"
 cstr_core = "0.2.6"
 ct-codecs = "1.1.1"
 ctor = "0.1.26"
@@ -162,6 +165,7 @@ defmt-macros = "0.2.3"
 defmt-parser = { "version" = "0.2.2", features = ['unstable'] }
 derive-getters = "0.1.1"
 derive-into-owned = "0.1.0"
+digest = { "version" = "0.10.7", features = ['block-buffer'] }
 dirs-next = "2.0.0"
 dirs-sys-next = "0.1.2"
 either = "1.8.1"
@@ -195,6 +199,7 @@ futures-sink = { "version" = "0.3.28", features = ['alloc'] }
 futures-task = { "version" = "0.3.28", features = ['alloc'] }
 futures-util = { "version" = "0.3.28", features = ['alloc', 'channel', 'futures-channel', 'futures-io', 'futures-macro', 'futures-sink', 'io', 'memchr', 'sink', 'slab'] }
 gdbstub = { "version" = "0.6.3", features = ['alloc'] }
+generic-array = { "version" = "0.14.7", features = ['more_lengths'] }
 getopts = "0.2.21"
 # Used by rand-0.7.3
 # Used by rand_core-0.5.1
@@ -287,7 +292,6 @@ multimap = { "version" = "0.8.3", features = ['serde'] }
 nb-0-1-3 = { package = "nb", "version" = "0.1.3", features = ['unstable'] }
 nb = "1.0.0"
 nibble_vec = "0.1.0"
-# Used by croscomp-0.1.0
 # Used by factory_installer-0.1.0
 # Used by floss-0.0.1
 # Used by gpio-cdev-0.5.1
@@ -343,6 +347,9 @@ paste = "1.0.4"
 paste-impl = "0.1.18"
 peeking_take_while = "0.1.2"
 percent-encoding = "2.2.0"
+pest = { "version" = "2.6.0", features = ['thiserror'] }
+pest_generator = "2.6.0"
+pest_meta = "2.6.0"
 petgraph = { "version" = "0.6.2", "default-features" = false }
 pin-project = "1.0.12"
 pin-project-internal = "1.0.12"
@@ -351,7 +358,8 @@ pin-utils = "0.1.0"
 pkg-config = "0.3.26"
 png = { "version" = "0.16.8", features = ['deflate'] }
 ppv-lite86 = { "version" = "0.2.10", features = ['simd'] }
-prettyplease = "0.1.20"
+# Used by tonic-build-0.8.2
+prettyplease-0-1-25 = { package = "prettyplease", "version" = "0.1.25" }
 proc-macro-crate = "1.2.1"
 proc-macro-error = { "version" = "1.0.4", features = ['syn'] }
 proc-macro-error-attr = "1.0.4"
@@ -360,7 +368,7 @@ proc-macro-hack = "0.5.19"
 # Used by riscv-rt-macros-0.1.6
 # Used by syn-0.15.44
 proc-macro2-0-4-30 = { package = "proc-macro2", "version" = "0.4.30", features = [] }
-proc-macro2 = { "version" = "1.0.56", features = ['span-locations'] }
+proc-macro2 = { "version" = "1.0.59", features = ['span-locations'] }
 prost = "0.11.0"
 prost-build = "0.11.1"
 prost-derive = "0.11.0"
@@ -391,7 +399,7 @@ quote-0-3-15 = { package = "quote", "version" = "0.3.15" }
 # Used by riscv-rt-macros-0.1.6
 # Used by syn-0.15.44
 quote-0-6-13 = { package = "quote", "version" = "0.6.13", features = [] }
-quote = "1.0.26"
+quote = "1.0.28"
 # Used by cortex-m-rt-0.6.15
 r0-0-2-2 = { package = "r0", "version" = "0.2.2" }
 r0 = "1.0.0"
@@ -467,12 +475,13 @@ scudo-sys = "0.2.1"
 semver-0-9-0 = { package = "semver", "version" = "0.9.0" }
 semver = { "version" = "1.0.16", features = ['serde'] }
 semver-parser = "0.7.0"
-serde = { "version" = "1.0.152", features = ['derive', 'serde_derive'] }
+serde = { "version" = "1.0.152", features = ['derive', 'rc', 'serde_derive'] }
 serde-tuple-vec-map = "1.0.1"
 serde_derive = "1.0.152"
-serde_json = "1.0.85"
+serde_json = "1.0.96"
 serial-core = "0.4.0"
 serial-unix = "0.4.0"
+sha2 = { "version" = "0.10.6", "default-features" = false }
 # Used by bindgen-0.57.0
 shlex-0-1-1 = { package = "shlex", "version" = "0.1.1" }
 shlex = "1.1.0"
@@ -520,7 +529,7 @@ syn-0-15-44 = { package = "syn", "version" = "0.15.44", features = ['extra-trait
 # Used by num_enum_derive-0.5.7
 # Used by openssl-macros-0.1.0
 # Used by pin-project-internal-1.0.12
-# Used by prettyplease-0.1.20
+# Used by prettyplease-0.1.25
 # Used by proc-macro-error-1.0.4
 # Used by prost-derive-0.11.0
 # Used by ptr_meta_derive-0.2.0
@@ -544,7 +553,7 @@ syn-0-15-44 = { package = "syn", "version" = "0.15.44", features = ['extra-trait
 # Used by zerocopy-derive-0.3.2
 # Used by zeroize_derive-1.3.2
 syn-1-0-107 = { package = "syn", "version" = "1.0.107", features = ['extra-traits', 'full', 'quote', 'visit', 'visit-mut'] }
-syn = { "version" = "2.0.14", features = ['full', 'quote', 'visit', 'visit-mut'] }
+syn = { "version" = "2.0.18", features = ['full', 'quote', 'visit', 'visit-mut'] }
 sync_wrapper = "0.1.1"
 synom = "0.11.3"
 synstructure = "0.12.4"
@@ -580,7 +589,9 @@ tracing-attributes = "0.1.22"
 tracing-core = { "version" = "0.1.29", features = ['once_cell'] }
 tracing-futures = { "version" = "0.2.5", features = ['pin-project'] }
 try-lock = "0.2.3"
+typenum = "1.16.0"
 uart_16550 = "0.2.18"
+ucd-trie = "0.1.5"
 ucs2 = "0.3.2"
 uefi = { "version" = "0.20.0", features = ['alloc', 'global_allocator', 'logger'] }
 uefi-macros = "0.11.0"

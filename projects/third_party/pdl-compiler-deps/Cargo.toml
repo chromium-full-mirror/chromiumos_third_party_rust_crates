@@ -1,0 +1,45 @@
+[package]
+edition = "2021"
+name = "pdl-compiler-deps"
+version = "0.1.1"
+
+[dependencies.argh]
+version = "0.1.7"
+
+[dependencies.codespan-reporting]
+version = "0.11.1"
+
+[dependencies.heck]
+version = "0.4.0"
+
+[dependencies.pest]
+version = "2.5.5"
+
+[dependencies.pest_derive]
+version = "2.5.5"
+
+[dependencies.prettyplease]
+version = "0.2.6"
+
+[dependencies.proc-macro2]
+version = "1.0.46"
+
+[dependencies.quote]
+version = "1.0.21"
+
+[dependencies.serde]
+version = "1.0.145"
+features = [
+    "default",
+    "derive",
+    "serde_derive",
+    "std",
+    "rc",
+]
+optional = true
+
+[dependencies.serde_json]
+version = "1.0.86"
+
+[dependencies.syn]
+version = "2.0.16"
