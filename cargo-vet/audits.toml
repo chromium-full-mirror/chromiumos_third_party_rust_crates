@@ -712,6 +712,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.7.6"
 
+[[audits.difflib]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.0"
+
 [[audits.document-features]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -721,6 +726,11 @@ version = "0.2.6"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
 version = "0.2.7"
+
+[[audits.downcast]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.0"
 
 [[audits.ed25519-compact]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -811,6 +821,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.26"
 
+[[audits.float-cmp]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.9.0"
+
 [[audits.foreign-types]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -825,6 +840,11 @@ version = "0.1.1"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.1.0"
+
+[[audits.fragile]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.0.0"
 
 [[audits.funty]]
 who = "ChromeOS"
@@ -1304,6 +1324,16 @@ who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.7.14"
 
+[[audits.mockall]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.4"
+
+[[audits.mockall_derive]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.4"
+
 [[audits.multi_log]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -1348,6 +1378,11 @@ version = "5.1.2"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "6.1.2"
+
+[[audits.normalize-line-endings]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.0"
 
 [[audits.num-derive]]
 who = "Android Legacy"
@@ -1484,6 +1519,21 @@ version = "0.3.26"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.2.10"
+
+[[audits.predicates]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.1.5"
+
+[[audits.predicates-core]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.6"
+
+[[audits.predicates-tree]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.9"
 
 [[audits.prettyplease]]
 who = "ChromeOS"
@@ -1926,6 +1976,11 @@ version = "1.1.2"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.1.3"
+
+[[audits.termtree]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.1"
 
 [[audits.textwrap]]
 who = "Android Legacy"

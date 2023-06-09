@@ -498,6 +498,8 @@ class LicenseManager:
         "libslirp-sys": ("MIT", "LICENSE"),
         # https://gitlab.freedesktop.org/anholt/deqp-runner/-/merge_requests/48
         "deqp-runner": ("MIT", "LICENSE"),
+        # https://github.com/DimaKudosh/difflib/blob/master/LICENSE
+        "difflib": ("MIT", "LICENSE"),
         # Upstream prefers to embed license text inside README.md:
         "riscv": ("ISC", "README.md"),
         "riscv-rt": ("ISC", "README.md"),
