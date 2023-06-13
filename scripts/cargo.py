@@ -94,9 +94,11 @@ def ensure_cargo_utility_is_installed(
         check=True,
         cwd=tempdir,
     )
-    logging.info("Installing...")
+    logging.info(
+        "Building and installing %s (this may take a bit)...", utility_name
+    )
     subprocess.run(
-        ["cargo", "install", "--locked", "--offline", "--path=."],
+        ["cargo", "install", "--locked", "--offline", "--path=.", "--quiet"],
         check=True,
         cwd=tempdir / build_subdir,
     )
