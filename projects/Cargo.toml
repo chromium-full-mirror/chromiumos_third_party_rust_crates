@@ -25,6 +25,7 @@ members = [
     "platform/lego-controller",
     "platform/minijail/rust/minijail",
     "platform/minijail/rust/minijail-sys",
+    "platform/spdm",
     "platform/tast-tests/helpers/local",
     "platform/vboot_reference/rust/vboot_reference-sys",
     "platform2/chromeos-dbus-bindings",

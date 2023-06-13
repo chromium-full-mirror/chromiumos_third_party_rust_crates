@@ -106,8 +106,8 @@
       ],
       "patch_tool": "patch",
       "patches": [
-        "@@//third_party/rust_crates/patches:grpcio-sys/0002-use-bindgen-0.63.patch",
-        "@@//third_party/rust_crates/patches:grpcio-sys/0001-patch-yaml-load.patch"
+        "@@//third_party/rust_crates/patches:grpcio-sys/0001-patch-yaml-load.patch",
+        "@@//third_party/rust_crates/patches:grpcio-sys/0002-use-bindgen-0.63.patch"
       ],
       "version": "*"
     },
