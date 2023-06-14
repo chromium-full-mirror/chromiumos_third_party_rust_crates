@@ -347,6 +347,7 @@ num_threads = "0.1.6"
 number_prefix = "0.4.0"
 object = { "version" = "0.30.3", "default-features" = false, features = ['archive', 'coff', 'elf', 'macho', 'pe', 'read_core', 'unaligned'] }
 once_cell = { "version" = "1.17.0", features = ['alloc', 'race'] }
+open-enum-derive = "0.3.0"
 openssl-macros = "0.1.0"
 openssl-sys = "0.9.83"
 os_str_bytes = { "version" = "6.4.1", "default-features" = false, features = ['raw_os_str'] }
@@ -548,6 +549,7 @@ syn-0-15-44 = { package = "syn", "version" = "0.15.44", features = ['extra-trait
 # Used by mockall_derive-0.11.4
 # Used by num-derive-0.3.3
 # Used by num_enum_derive-0.5.7
+# Used by open-enum-derive-0.3.0
 # Used by openssl-macros-0.1.0
 # Used by pin-project-internal-1.0.12
 # Used by prettyplease-0.1.25

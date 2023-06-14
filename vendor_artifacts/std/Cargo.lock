@@ -2257,6 +2257,7 @@ dependencies = [
  "number_prefix",
  "object",
  "once_cell",
+ "open-enum-derive",
  "openssl-macros",
  "openssl-sys",
  "os_str_bytes",
@@ -2771,6 +2772,17 @@ name = "once_cell"
 version = "1.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6f61fba1741ea2b3d6a1e3178721804bb716a68a6aeba1149b5d52e3d464ea66"
+
+[[package]]
+name = "open-enum-derive"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "894ae443e59fecf7173ab3b963473f44193fa71b3c8953c61a5bd5f30880bb88"
+dependencies = [
+ "proc-macro2 1.0.59",
+ "quote 1.0.28",
+ "syn 1.0.107",
+]
 
 [[package]]
 name = "openssl-macros"

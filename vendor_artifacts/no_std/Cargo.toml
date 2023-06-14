@@ -184,6 +184,7 @@ num_enum_derive = { "version" = "0.5.7", "default-features" = false, features = 
 number_prefix = { "version" = "0.4.0", "default-features" = false, features = [] }
 object = { "version" = "0.30.3", "default-features" = false, features = ['archive', 'coff', 'elf', 'macho', 'pe', 'read_core', 'unaligned'] }
 once_cell = { "version" = "1.17.0", "default-features" = false, features = ['alloc', 'race'] }
+open-enum-derive = "0.3.0"
 paste = "1.0.4"
 pest = { "version" = "2.6.0", "default-features" = false, features = ['thiserror'] }
 pest_generator = { "version" = "2.6.0", "default-features" = false, features = [] }
