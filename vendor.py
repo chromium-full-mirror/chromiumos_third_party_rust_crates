@@ -322,6 +322,9 @@ def generate_patches_manifest(
             # since we're not vendoring with bazel, which won't let you
             # execute them anyway.
             if patch_files:
+                # `glob` has no ordering guarantees, so sort to ensure output
+                # independent of dirent ordering.
+                patch_files.sort()
                 patch = dict(
                     version=version or "*",
                     # The default bazel patch tool doesn't support fuzzing,
