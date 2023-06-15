@@ -95,11 +95,11 @@ bitfield = "0.13.2"
 # Used by spidev-0.5.1
 # Used by tower-http-0.3.4
 # Used by uart_16550-0.2.18
-# Used by uefi-0.20.0
 # Used by userfaultfd-0.5.0
 # Used by wayland-server-0.29.0
 # Used by x86_64-0.14.10
 bitflags-1-3-2 = { package = "bitflags", "version" = "1.3.2" }
+bitflags = "2.3.1"
 bitreader = "0.3.7"
 block-buffer = "0.10.4"
 boringssl-src = "0.3.0+688fc5c"
@@ -574,7 +574,6 @@ syn-0-15-44 = { package = "syn", "version" = "0.15.44", features = ['extra-trait
 # Used by tokio-macros-1.8.0
 # Used by tonic-build-0.8.2
 # Used by tracing-attributes-0.1.22
-# Used by uefi-macros-0.11.0
 # Used by zerocopy-derive-0.3.2
 # Used by zeroize_derive-1.3.2
 syn-1-0-107 = { package = "syn", "version" = "1.0.107", features = ['extra-traits', 'full', 'quote', 'visit', 'visit-mut'] }
@@ -619,9 +618,11 @@ typenum = "1.16.0"
 uart_16550 = "0.2.18"
 ucd-trie = "0.1.5"
 ucs2 = "0.3.2"
-uefi = { "version" = "0.20.0", features = ['alloc', 'global_allocator', 'logger'] }
-uefi-macros = "0.11.0"
+uefi = { "version" = "0.23.0", features = ['alloc', 'global_allocator', 'logger'] }
+uefi-macros = "0.12.0"
+uefi-raw = "0.2.0"
 ufmt-write = "0.1.0"
+uguid = "2.0.0"
 uhidrs-sys = "1.0.2"
 unicase = "2.6.0"
 unicode-bidi = "0.3.8"
