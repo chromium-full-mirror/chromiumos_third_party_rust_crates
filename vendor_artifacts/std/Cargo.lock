@@ -850,6 +850,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "dashmap"
+version = "5.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "907076dfda823b0b36d2a1bb5f90c96660a5bbcd7729e10727f07858f22c4edc"
+dependencies = [
+ "cfg-if",
+ "hashbrown",
+ "lock_api",
+ "once_cell",
+ "parking_lot_core 0.9.4",
+]
+
+[[package]]
 name = "dasp_frame"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2144,6 +2157,7 @@ dependencies = [
  "cty",
  "cxxbridge-flags",
  "cxxbridge-macro",
+ "dashmap",
  "dasp_frame",
  "dasp_ring_buffer",
  "dasp_sample",
@@ -2402,6 +2416,7 @@ dependencies = [
  "serde_json",
  "serial-core",
  "serial-unix",
+ "serial_test_derive",
  "sha2",
  "shlex 0.1.1",
  "shlex 1.1.0",
@@ -3842,6 +3857,17 @@ dependencies = [
  "libc",
  "serial-core",
  "termios",
+]
+
+[[package]]
+name = "serial_test_derive"
+version = "2.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "91d129178576168c589c9ec973feedf7d3126c01ac2bf08795109aa35b69fb8f"
+dependencies = [
+ "proc-macro2 1.0.59",
+ "quote 1.0.28",
+ "syn 2.0.18",
 ]
 
 [[package]]

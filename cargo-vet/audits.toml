@@ -712,6 +712,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.94 -> 1.0.97"
 
+[[audits.dashmap]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "5.4.0"
+
 [[audits.dasp_frame]]
 who = "Li-Yu Yu <aaronyu@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2078,6 +2083,16 @@ version = "1.0.96"
 who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.7.1"
+
+[[audits.serial_test]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.0.0"
+
+[[audits.serial_test_derive]]
+who = "Max Lee <endlesspring@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.0.0"
 
 [[audits.shlex]]
 who = "Android Legacy"

@@ -166,6 +166,7 @@ ctor = "0.1.26"
 cty = "0.2.2"
 cxxbridge-flags = { "version" = "1.0.97", features = ['c++17'] }
 cxxbridge-macro = "1.0.97"
+dashmap = "5.4.0"
 dasp_frame = "0.11.0"
 dasp_ring_buffer = "0.11.0"
 dasp_sample = "0.11.0"
@@ -507,6 +508,7 @@ serde_derive = "1.0.152"
 serde_json = "1.0.96"
 serial-core = "0.4.0"
 serial-unix = "0.4.0"
+serial_test_derive = { "version" = "2.0.0", features = ['async'] }
 sha2 = { "version" = "0.10.6", "default-features" = false }
 # Used by bindgen-0.57.0
 shlex-0-1-1 = { package = "shlex", "version" = "0.1.1" }
