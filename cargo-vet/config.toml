@@ -927,10 +927,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.4.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.object]]
-version = "0.29.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.openssl]]
 version = "0.10.48"
 criteria = ["safe-to-run", "crypto-safe"]

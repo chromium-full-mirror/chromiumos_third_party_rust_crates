@@ -6,5 +6,6 @@ edition = "2021"
 
 [dependencies]
 open-enum = "0.3.0"
+uninit = "0.5"
 
 [dev-dependencies]

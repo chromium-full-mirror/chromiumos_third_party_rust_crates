@@ -812,6 +812,21 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.22.9"
 
+[[audits.ext-trait]]
+who = "Howard Yang <hcyang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.1"
+
+[[audits.ext-trait-proc_macros]]
+who = "Howard Yang <hcyang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.1"
+
+[[audits.extension-traits]]
+who = "Howard Yang <hcyang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.1"
+
 [[audits.fastrand]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
@@ -2281,6 +2296,11 @@ version = "0.2.1"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
 version = "0.1.10"
+
+[[audits.uninit]]
+who = "Howard Yang <hcyang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.1"
 
 [[audits.url]]
 who = "George Burgess IV <gbiv@google.com>"

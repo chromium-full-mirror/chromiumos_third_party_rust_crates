@@ -189,6 +189,9 @@ enumn = "0.1.8"
 env_logger = "0.9.3"
 errno = { "version" = "0.2.8", "default-features" = false }
 error-chain = { "version" = "0.12.4", "default-features" = false }
+ext-trait = "1.0.1"
+ext-trait-proc_macros = "1.0.1"
+extension-traits = "1.0.1"
 failure = { "version" = "0.1.8", features = ['backtrace', 'failure_derive'] }
 failure_derive = "0.1.8"
 fancy-regex = "0.8.0"
@@ -541,6 +544,7 @@ syn-0-15-44 = { package = "syn", "version" = "0.15.44", features = ['extra-trait
 # Used by ctor-0.1.26
 # Used by defmt-macros-0.2.3
 # Used by derive-getters-0.1.1
+# Used by ext-trait-proc_macros-1.0.1
 # Used by failure_derive-0.1.8
 # Used by floss-0.0.1
 # Used by ghost-0.1.6
