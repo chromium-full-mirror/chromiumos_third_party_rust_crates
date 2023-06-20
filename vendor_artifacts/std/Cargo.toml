@@ -72,7 +72,7 @@ bitfield = "0.13.2"
 # Used by croscomp-0.1.0
 # Used by crosh-0.24.52
 # Used by flexbuffers-2.0.0
-# Used by gdbstub-0.6.3
+# Used by gdbstub-0.6.6
 # Used by gpio-cdev-0.5.1
 # Used by hps-firmware-0.1.0
 # Used by i2cdev-0.5.1
@@ -99,7 +99,7 @@ bitfield = "0.13.2"
 # Used by wayland-server-0.29.0
 # Used by x86_64-0.14.10
 bitflags-1-3-2 = { package = "bitflags", "version" = "1.3.2" }
-bitflags = "2.3.1"
+bitflags = "2.3.2"
 bitreader = "0.3.7"
 block-buffer = "0.10.4"
 boringssl-src = "0.3.0+688fc5c"
@@ -115,7 +115,7 @@ cc = { "version" = "1.0.79", features = ['jobserver', 'parallel'] }
 cexpr-0-4-0 = { package = "cexpr", "version" = "0.4.0" }
 cexpr = "0.6.0"
 cfg-if = "1.0.0"
-chrono = { "version" = "0.4.24", features = ['iana-time-zone', 'js-sys', 'serde', 'time', 'wasm-bindgen', 'winapi'] }
+chrono = { "version" = "0.4.26", features = ['iana-time-zone', 'js-sys', 'serde', 'time', 'wasm-bindgen', 'winapi'] }
 chunked_transfer = "1.4.1"
 clang-sys = { "version" = "1.6.1", features = ['clang_3_5', 'clang_3_6', 'clang_3_7', 'clang_3_8', 'clang_3_9', 'clang_4_0', 'clang_5_0', 'clang_6_0', 'libloading', 'runtime'] }
 # Used by bindgen-0.59.2
@@ -127,7 +127,7 @@ clang-sys = { "version" = "1.6.1", features = ['clang_3_5', 'clang_3_6', 'clang_
 # Used by svd2rust-0.20.0
 clap-2-34-0 = { package = "clap", "version" = "2.34.0", features = ['ansi_term', 'atty', 'strsim'] }
 # Used by adhd-deps-0.1.0
-# Used by cbindgen-0.24.3
+# Used by cbindgen-0.24.5
 # Used by factory_installer-0.1.0
 # Used by hps-firmware-0.1.0
 # Used by lego-controller-0.1.0
@@ -150,22 +150,22 @@ cortex-m = "0.7.7"
 cortex-m-rt = { "version" = "0.6.15", features = ['device'] }
 cortex-m-rt-macros = "0.6.15"
 cortex-m-rtic-macros = "1.1.6"
-cpufeatures = "0.2.7"
+cpufeatures = "0.2.8"
 crc-catalog = "1.1.1"
 crc32fast = "1.3.2"
 critical-section = "1.1.1"
 cros-libva = "0.0.3"
 crossbeam-channel = { "version" = "0.5.8", features = ['crossbeam-utils'] }
 crossbeam-deque = { "version" = "0.8.3", features = ['crossbeam-epoch', 'crossbeam-utils'] }
-crossbeam-epoch = { "version" = "0.9.14", features = ['alloc'] }
-crossbeam-utils = "0.8.15"
+crossbeam-epoch = { "version" = "0.9.15", features = ['alloc'] }
+crossbeam-utils = "0.8.16"
 crypto-common = "0.1.6"
 cstr_core = "0.2.6"
 ct-codecs = "1.1.1"
 ctor = "0.1.26"
 cty = "0.2.2"
-cxxbridge-flags = { "version" = "1.0.94", features = ['c++17'] }
-cxxbridge-macro = "1.0.94"
+cxxbridge-flags = { "version" = "1.0.97", features = ['c++17'] }
+cxxbridge-macro = "1.0.97"
 dasp_frame = "0.11.0"
 dasp_ring_buffer = "0.11.0"
 dasp_sample = "0.11.0"
@@ -204,11 +204,11 @@ float-cmp = { "version" = "0.9.0", features = ['num-traits'] }
 fnv = "1.0.7"
 foreign-types = "0.3.2"
 foreign-types-shared = "0.1.1"
-form_urlencoded = "1.1.0"
+form_urlencoded = { "version" = "1.2.0", features = ['alloc'] }
 fraction = { "version" = "0.10.0", "default-features" = false, features = ['lazy_static', 'with-bigint'] }
 fragile = "2.0.0"
 ftdi-mpsse = "0.1.1"
-futures = { "version" = "0.3.14", features = ['alloc', 'futures-executor'] }
+futures = { "version" = "0.3.28", features = ['alloc', 'futures-executor'] }
 futures-channel = { "version" = "0.3.28", features = ['alloc', 'futures-sink', 'sink'] }
 futures-core = { "version" = "0.3.28", features = ['alloc'] }
 futures-executor = { "version" = "0.3.28", features = ['num_cpus', 'thread-pool'] }
@@ -217,15 +217,15 @@ futures-macro = "0.3.28"
 futures-sink = { "version" = "0.3.28", features = ['alloc'] }
 futures-task = { "version" = "0.3.28", features = ['alloc'] }
 futures-util = { "version" = "0.3.28", features = ['alloc', 'channel', 'futures-channel', 'futures-io', 'futures-macro', 'futures-sink', 'io', 'memchr', 'sink', 'slab'] }
-gdbstub = { "version" = "0.6.3", features = ['alloc'] }
+gdbstub = { "version" = "0.6.6", features = ['alloc'] }
 generic-array = { "version" = "0.14.7", features = ['more_lengths'] }
 getopts = "0.2.21"
 # Used by rand-0.7.3
 # Used by rand_core-0.5.1
 getrandom-0-1-16 = { package = "getrandom", "version" = "0.1.16", features = ['std'] }
-getrandom = { "version" = "0.2.7", features = ['std'] }
-ghost = "0.1.6"
-gimli = { "version" = "0.27.2", "default-features" = false, features = ['read', 'read-core'] }
+getrandom = { "version" = "0.2.10", features = ['std'] }
+ghost = "0.1.9"
+gimli = { "version" = "0.27.3", "default-features" = false, features = ['read', 'read-core'] }
 glob = "0.3.1"
 gpio-cdev = "0.5.1"
 grpcio-compiler = { "version" = "0.6.0", features = ['protobuf'] }
@@ -239,10 +239,10 @@ heck-0-3-3 = { package = "heck", "version" = "0.3.3" }
 heck = "0.4.1"
 hex = { "version" = "0.4.3", features = ['alloc'] }
 hostname = "0.3.1"
-http = "0.2.8"
+http = "0.2.9"
 http-body = "0.4.5"
 http-range-header = "0.3.0"
-httparse = "1.7.1"
+httparse = "1.8.0"
 httpdate = "1.0.2"
 humantime = "2.1.0"
 hyper = { "version" = "0.14.20", features = ['client', 'full', 'h2', 'http1', 'http2', 'runtime', 'server', 'socket2', 'stream', 'tcp'] }
@@ -271,7 +271,7 @@ jobserver = "0.1.24"
 junit-report = "0.4.0"
 lazy_static = "1.4.0"
 lazycell = "1.3.0"
-libc = { "version" = "0.2.139", features = ['align', 'extra_traits'] }
+libc = { "version" = "0.2.146", features = ['align', 'extra_traits'] }
 libdbus-sys = "0.2.5"
 libftdi1-sys = "1.1.2"
 libloading = "0.7.0"
@@ -295,7 +295,7 @@ memoffset-0-5-6 = { package = "memoffset", "version" = "0.5.6" }
 memoffset-0-6-5 = { package = "memoffset", "version" = "0.6.5" }
 # Used by nix-0.26.2
 memoffset-0-7-1 = { package = "memoffset", "version" = "0.7.1" }
-memoffset = "0.8.0"
+memoffset = "0.9.0"
 merge_derive = "0.1.0"
 mime = "0.3.16"
 minimal-lexical = "0.2.1"
@@ -313,6 +313,7 @@ multimap = { "version" = "0.8.3", features = ['serde'] }
 nb-0-1-3 = { package = "nb", "version" = "0.1.3", features = ['unstable'] }
 nb = "1.0.0"
 nibble_vec = "0.1.0"
+# Used by croscomp-0.1.0
 # Used by factory_installer-0.1.0
 # Used by floss-0.0.1
 # Used by gpio-cdev-0.5.1
@@ -369,7 +370,7 @@ paste-0-1-18 = { package = "paste", "version" = "0.1.18" }
 paste = "1.0.4"
 paste-impl = "0.1.18"
 peeking_take_while = "0.1.2"
-percent-encoding = "2.2.0"
+percent-encoding = { "version" = "2.3.0", features = ['alloc'] }
 pest = { "version" = "2.6.0", features = ['thiserror'] }
 pest_generator = "2.6.0"
 pest_meta = "2.6.0"
@@ -536,7 +537,7 @@ syn-0-15-44 = { package = "syn", "version" = "0.15.44", features = ['extra-trait
 # Used by argh_derive-0.1.10
 # Used by bindgen-0.63.0
 # Used by bindgen-0.64.0
-# Used by cbindgen-0.24.3
+# Used by cbindgen-0.24.5
 # Used by clap_derive-3.2.18
 # Used by cortex-m-rt-macros-0.6.15
 # Used by cortex-m-rtic-macros-1.1.6
@@ -547,7 +548,6 @@ syn-0-15-44 = { package = "syn", "version" = "0.15.44", features = ['extra-trait
 # Used by ext-trait-proc_macros-1.0.1
 # Used by failure_derive-0.1.8
 # Used by floss-0.0.1
-# Used by ghost-0.1.6
 # Used by include_dir_impl-0.6.2
 # Used by indoc-impl-0.3.6
 # Used by inventory-impl-0.1.11

@@ -40,9 +40,9 @@
       ],
       "patch_tool": "patch",
       "patches": [
-        "@@//third_party/rust_crates/patches:chrono-0.4.24/remove-old-time-feature.patch"
+        "@@//third_party/rust_crates/patches:chrono/remove-old-time-feature.patch"
       ],
-      "version": "0.4.24"
+      "version": "*"
     }
   ],
   "clang-sys": [
@@ -132,19 +132,6 @@
         "@@//third_party/rust_crates/patches:include_dir_impl/0001-add-license.patch"
       ],
       "version": "*"
-    }
-  ],
-  "libc": [
-    {
-      "patch_args": [
-        "-p1"
-      ],
-      "patch_tool": "patch",
-      "patches": [
-        "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines-arm32.patch",
-        "@@//third_party/rust_crates/patches:libc-0.2.139/kexec-defines.patch"
-      ],
-      "version": "0.2.139"
     }
   ],
   "libusb1-sys": [
