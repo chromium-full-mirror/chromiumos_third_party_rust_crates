@@ -379,10 +379,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.3.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.cbindgen]]
-version = "0.24.3"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.cexpr]]
 version = "0.6.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -413,10 +409,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.cortex-m-rt-macros]]
 version = "0.6.15"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.cpufeatures]]
-version = "0.2.7"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.crc]]
@@ -563,14 +555,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.1.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.futures]]
-version = "0.3.14"
-criteria = "crypto-safe"
-
-[[exemptions.gdbstub]]
-version = "0.6.3"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.gdbstub_arch]]
 version = "0.2.4"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -585,14 +569,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.getrandom]]
 version = "0.1.16"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.getrandom]]
-version = "0.2.7"
-criteria = "crypto-safe"
-
-[[exemptions.ghost]]
-version = "0.1.6"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.gpio-cdev]]
@@ -635,10 +611,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "3.5.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.http]]
-version = "0.2.8"
-criteria = "crypto-safe"
-
 [[exemptions.http-body]]
 version = "0.4.5"
 criteria = "crypto-safe"
@@ -646,10 +618,6 @@ criteria = "crypto-safe"
 [[exemptions.http-range-header]]
 version = "0.3.0"
 criteria = "crypto-safe"
-
-[[exemptions.httparse]]
-version = "1.7.1"
-criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.httpdate]]
 version = "1.0.2"
@@ -754,10 +722,6 @@ criteria = "crypto-safe"
 [[exemptions.lazycell]]
 version = "1.3.0"
 criteria = "crypto-safe"
-
-[[exemptions.libc]]
-version = "0.2.139"
-criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.libftdi1-sys]]
 version = "1.1.2"
