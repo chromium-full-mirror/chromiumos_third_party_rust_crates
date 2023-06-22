@@ -192,7 +192,6 @@ error-chain = { "version" = "0.12.4", "default-features" = false }
 ext-trait = "1.0.1"
 ext-trait-proc_macros = "1.0.1"
 extension-traits = "1.0.1"
-failure = { "version" = "0.1.8", features = ['backtrace', 'failure_derive'] }
 failure_derive = "0.1.8"
 fancy-regex = "0.8.0"
 fastrand = "1.9.0"

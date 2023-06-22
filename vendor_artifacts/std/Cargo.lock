@@ -1107,16 +1107,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "failure"
-version = "0.1.8"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d32e9bd16cc02eae7db7ef620b392808b89f6a5e16bb3497d159c6b92a0f4f86"
-dependencies = [
- "backtrace",
- "failure_derive",
-]
-
-[[package]]
 name = "failure_derive"
 version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2180,7 +2170,6 @@ dependencies = [
  "ext-trait",
  "ext-trait-proc_macros",
  "extension-traits",
- "failure",
  "failure_derive",
  "fancy-regex",
  "fastrand",

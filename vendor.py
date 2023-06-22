@@ -910,11 +910,20 @@ class CrateDestroyer:
                 # with newer versions of LLVM. We patch grpcio-sys to depend on
                 # bindgen-0.63, but vendoring happens before that, so bindgen-0.57
                 # is still pulled in. This causes build errors, so remove it.
+                #
+                # b/288421251: The failure crate is no longer maintained and
+                # has an open CVE, so we patched the only user while we wait
+                # for a pull requrest to be accepted upstream.
                 force_destroy_crate = (
-                    package_name == "time" and package_version.startswith("0.1")
-                ) or (
-                    package_name == "bindgen"
-                    and package_version.startswith("0.57")
+                    (
+                        package_name == "time"
+                        and package_version.startswith("0.1")
+                    )
+                    or (
+                        package_name == "bindgen"
+                        and package_version.startswith("0.57")
+                    )
+                    or (package_name == "failure")
                 )
                 if not force_destroy_crate:
                     continue

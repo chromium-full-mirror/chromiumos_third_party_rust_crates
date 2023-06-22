@@ -19,8 +19,8 @@ documentation = "https://docs.rs/protoc-grpcio"
 keywords = ["compiler", "grpc", "protobuf", "grpc-rs"]
 license = "Apache-2.0"
 repository = "https://github.com/mtp401/protoc-grpcio"
-[dependencies.failure]
-version = "0.1"
+[dependencies.anyhow]
+version = "1"
 
 [dependencies.grpcio-compiler]
 version = "0.6"
