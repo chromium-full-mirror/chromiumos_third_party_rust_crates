@@ -931,22 +931,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.1.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.pest]]
-version = "2.6.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.pest_derive]]
-version = "2.6.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.pest_generator]]
-version = "2.6.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.pest_meta]]
-version = "2.6.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.pin-project]]
 version = "1.0.12"
 criteria = "crypto-safe"

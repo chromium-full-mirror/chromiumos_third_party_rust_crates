@@ -1637,6 +1637,26 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "2.2.0 -> 2.3.0"
 
+[[audits.pest]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.7.0"
+
+[[audits.pest_derive]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.7.0"
+
+[[audits.pest_generator]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.7.0"
+
+[[audits.pest_meta]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.7.0"
+
 [[audits.petgraph]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
