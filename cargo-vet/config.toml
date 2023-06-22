@@ -892,11 +892,11 @@ version = "0.4.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.openssl]]
-version = "0.10.48"
+version = "0.10.55"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.openssl-sys]]
-version = "0.9.83"
+version = "0.9.90"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.parking_lot]]
