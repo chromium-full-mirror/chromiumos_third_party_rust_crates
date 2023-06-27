@@ -3,7 +3,7 @@
 default-criteria = "safe-to-run"
 
 [cargo-vet]
-version = "0.7"
+version = "0.8"
 
 [imports.fuchsia]
 url = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
@@ -517,14 +517,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.error-chain]]
 version = "0.12.4"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.failure]]
-version = "0.1.8"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.failure_derive]]
-version = "0.1.8"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.fancy-regex]]
