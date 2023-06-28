@@ -5473,6 +5473,7 @@ version = "0.1.0"
 dependencies = [
  "open-enum",
  "uninit",
+ "zerocopy 0.6.1",
 ]
 
 [[package]]

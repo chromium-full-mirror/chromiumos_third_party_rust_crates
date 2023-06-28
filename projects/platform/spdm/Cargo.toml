@@ -7,5 +7,6 @@ edition = "2021"
 [dependencies]
 open-enum = "0.3.0"
 uninit = "0.5"
+zerocopy = "0.6.1"
 
 [dev-dependencies]
