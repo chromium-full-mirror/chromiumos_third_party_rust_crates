@@ -26,6 +26,7 @@ bincode = "1.0.1"
 bindgen-0-59-2 = { package = "bindgen", "version" = "0.59.2", features = ['env_logger', 'log', 'which'] }
 # Used by bindgen-deps-0.63.0
 # Used by crdyboot-1.0.0
+# Used by crosvm-0.1.0
 # Used by featured-0.1.0
 # Used by hps-firmware-0.1.0
 # Used by lego-controller-0.1.0
@@ -223,6 +224,7 @@ num-bigint = "0.4.3"
 num-derive = "0.3.3"
 num-integer = { "version" = "0.1.45", features = ['i128'] }
 num-traits = { "version" = "0.2.15", features = ['i128'] }
+num_cpus = "1.13.0"
 num_enum = "0.5.7"
 object = { "version" = "0.30.3", "default-features" = false, features = ['archive', 'coff', 'elf', 'macho', 'pe', 'read_core', 'unaligned'] }
 once_cell = { "version" = "1.17.0", features = ['alloc', 'race'] }
@@ -296,6 +298,7 @@ simple_logger = { "version" = "1.16.0", "default-features" = false }
 slab = "0.4.7"
 smallvec = "1.10.0"
 spi-memory = "0.2.0"
+static_assertions = "1.1.0"
 stderrlog = { "version" = "0.5.3", features = ['chrono'] }
 stm32g0 = { "version" = "0.13.0", features = ['cortex-m-rt', 'rt', 'stm32g071'] }
 stm32g0xx-hal = { "version" = "0.1.5", features = ['device-selected', 'rt', 'stm32g071', 'stm32g0x1'] }
