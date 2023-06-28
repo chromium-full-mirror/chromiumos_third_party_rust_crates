@@ -1,16 +1,4 @@
 {
-  "ahash": [
-    {
-      "patch_args": [
-        "-p1"
-      ],
-      "patch_tool": "patch",
-      "patches": [
-        "@@//third_party/rust_crates/patches:ahash-0.7.6/ahash-0.7.6-rm-features.patch"
-      ],
-      "version": "0.7.6"
-    }
-  ],
   "chrono": [
     {
       "patch_args": [
@@ -23,16 +11,16 @@
       "version": "*"
     }
   ],
-  "number_prefix": [
+  "hmac-sha256": [
     {
       "patch_args": [
         "-p1"
       ],
       "patch_tool": "patch",
       "patches": [
-        "@@//third_party/rust_crates/patches:number_prefix/add-license.patch"
+        "@@//third_party/rust_crates/patches:hmac-sha256-0.1.7/add-license.patch"
       ],
-      "version": "*"
+      "version": "0.1.7"
     }
   ],
   "regex-syntax": [
@@ -50,6 +38,18 @@
       "patch_tool": "patch",
       "patches": [
         "@@//third_party/rust_crates/patches:riscv-rt-macros/riscv-rt-macros-0.1.6-update-dependencies.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "rtt-target": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:rtt-target/add-license.patch"
       ],
       "version": "*"
     }

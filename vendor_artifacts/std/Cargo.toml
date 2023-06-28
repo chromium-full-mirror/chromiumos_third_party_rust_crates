@@ -11,40 +11,19 @@ version = "0.0.1"
 [workspace]
 
 [dependencies]
-addr2line = { "version" = "0.19.0", "default-features" = false }
-adler = { "version" = "1.0.2", "default-features" = false }
-adler32 = "1.2.0"
-ahash = { "version" = "0.7.6", features = ['serde'] }
-aho-corasick = "0.7.20"
-ansi_term = "0.12.1"
+alsa-sys = "0.2.1"
 anyhow = "1.0.71"
-arbitrary = "1.3.0"
-argh_derive = "0.1.10"
-argh_shared = "0.1.10"
+argh = "0.1.10"
 ascii = { "version" = "1.1.0", features = ['alloc'] }
-async-stream = "0.3.5"
-async-stream-impl = "0.3.5"
+assert_matches = "1.5.0"
+async-task = "4.4.0"
 async-trait = "0.1.68"
-atomic-polyfill = "0.1.11"
-atty = "0.2.14"
-# Used by rand-0.6.5
-# Used by rand_chacha-0.1.1
-# Used by rand_pcg-0.1.2
-autocfg-0-1-8 = { package = "autocfg", "version" = "0.1.8" }
-autocfg = "1.1.0"
-axum = { "version" = "0.5.17", "default-features" = false }
-axum-core = "0.2.9"
-backtrace = "0.3.67"
-# Used by cortex-m-0.7.7
-# Used by riscv-0.6.0
-# Used by stm32g0-0.13.0
-bare-metal-0-2-5 = { package = "bare-metal", "version" = "0.2.5", features = ['const-fn'] }
 bare-metal = "1.0.0"
-# Used by ron-0.5.1
-base64-0-10-1 = { package = "base64", "version" = "0.10.1" }
 base64 = "0.13.1"
-# Used by userfaultfd-sys-0.4.2
-bindgen-0-60-1 = { package = "bindgen", "version" = "0.60.1", "default-features" = false, features = ['runtime'] }
+bayer = "0.1.5"
+bincode = "1.0.1"
+# Used by floss-0.0.1
+bindgen-0-59-2 = { package = "bindgen", "version" = "0.59.2", features = ['env_logger', 'log', 'which'] }
 # Used by bindgen-deps-0.63.0
 # Used by crdyboot-1.0.0
 # Used by featured-0.1.0
@@ -54,10 +33,7 @@ bindgen-0-60-1 = { package = "bindgen", "version" = "0.60.1", "default-features"
 # Used by minijail-sys-0.0.13
 # Used by uhidrs-sys-1.0.2
 bindgen-0-63-0 = { package = "bindgen", "version" = "0.63.0", features = ['log', 'which'] }
-bit-set = "0.5.3"
-bit-vec = "0.6.3"
-bit_field = "0.10.2"
-bitfield = "0.13.2"
+bindgen = { "version" = "0.64.0", features = ['log', 'which'] }
 # Used by axum-0.5.17
 # Used by bindgen-0.57.0
 # Used by bindgen-0.59.2
@@ -101,23 +77,16 @@ bitfield = "0.13.2"
 bitflags-1-3-2 = { package = "bitflags", "version" = "1.3.2" }
 bitflags = "2.3.2"
 bitreader = "0.3.7"
-block-buffer = "0.10.4"
-boringssl-src = "0.3.0+688fc5c"
-bytecount = { "version" = "0.6.3", features = ['runtime-dispatch-simd'] }
-bytemuck = "1.13.1"
+built = { "version" = "0.5.2", features = ['chrono'] }
 byteorder = { "version" = "1.4.3", features = ['i128'] }
 bytes = "1.4.0"
 capnp = "0.14.11"
-cargo-lock = "8.0.3"
-cast = "0.3.0"
+capnpc = "0.14.9"
+cbindgen = "0.24.5"
 cc = { "version" = "1.0.79", features = ['jobserver', 'parallel'] }
-# Used by bindgen-0.57.0
-cexpr-0-4-0 = { package = "cexpr", "version" = "0.4.0" }
-cexpr = "0.6.0"
 cfg-if = "1.0.0"
 chrono = { "version" = "0.4.26", features = ['iana-time-zone', 'js-sys', 'serde', 'time', 'wasm-bindgen', 'winapi'] }
 chunked_transfer = "1.4.1"
-clang-sys = { "version" = "1.6.1", features = ['clang_3_5', 'clang_3_6', 'clang_3_7', 'clang_3_8', 'clang_3_9', 'clang_4_0', 'clang_5_0', 'clang_6_0', 'libloading', 'runtime'] }
 # Used by bindgen-0.59.2
 # Used by bindgen-deps-0.63.0
 # Used by clap_conf-0.1.5
@@ -134,185 +103,105 @@ clap-2-34-0 = { package = "clap", "version" = "2.34.0", features = ['ansi_term',
 # Used by prjoxide-deps-0.1.0
 clap-3-2-23 = { package = "clap", "version" = "3.2.23", features = ['atty', 'clap_derive', 'derive', 'once_cell', 'strsim', 'termcolor'] }
 clap = { "version" = "4.1.14", features = ['derive'] }
-clap_builder = "4.1.14"
-clap_conf = "0.1.5"
 # Used by clap-3.2.23
 # Used by hps-firmware-0.1.0
 clap_derive-3-2-18 = { package = "clap_derive", "version" = "3.2.18" }
-clap_derive = "4.1.14"
-# Used by clap-3.2.23
-clap_lex-0-2-4 = { package = "clap_lex", "version" = "0.2.4" }
-clap_lex = "0.4.1"
-cmake = "0.1.50"
-color_quant = "1.1.0"
-console = { "version" = "0.15.5", "default-features" = false }
+codespan-reporting = "0.11.1"
+colored = "2.0.0"
+com_logger = "0.1.1"
+configparser = "3.0.2"
 cortex-m = "0.7.7"
 cortex-m-rt = { "version" = "0.6.15", features = ['device'] }
-cortex-m-rt-macros = "0.6.15"
-cortex-m-rtic-macros = "1.1.6"
-cpufeatures = "0.2.8"
-crc-catalog = "1.1.1"
+cortex-m-rtic = "1.1.4"
+crc = "2.1.0"
 crc32fast = "1.3.2"
-critical-section = "1.1.1"
-cros-libva = "0.0.3"
+cros-codecs = { "version" = "0.0.2", features = ['libva', 'vaapi'] }
 crossbeam-channel = { "version" = "0.5.8", features = ['crossbeam-utils'] }
-crossbeam-deque = { "version" = "0.8.3", features = ['crossbeam-epoch', 'crossbeam-utils'] }
-crossbeam-epoch = { "version" = "0.9.15", features = ['alloc'] }
 crossbeam-utils = "0.8.16"
-crypto-common = "0.1.6"
-cstr_core = "0.2.6"
-ct-codecs = "1.1.1"
 ctor = "0.1.26"
-cty = "0.2.2"
-cxxbridge-flags = { "version" = "1.0.97", features = ['c++17'] }
-cxxbridge-macro = "1.0.97"
-dashmap = "5.4.0"
+ctrlc = "3.4.0"
+cxx = { "version" = "1.0.97", features = ['alloc', 'c++17'] }
 dasp_frame = "0.11.0"
-dasp_ring_buffer = "0.11.0"
+dasp_interpolate = "0.11.0"
 dasp_sample = "0.11.0"
+# Used by memd-0.1.0
+dbus-0-6-5 = { package = "dbus", "version" = "0.6.5" }
+# Used by crostini_client-0.1.0
+# Used by os_install_service-1.0.0
+dbus-0-8-4 = { package = "dbus", "version" = "0.8.4" }
 dbus = { "version" = "0.9.7", features = ['futures', 'futures-channel', 'futures-util'] }
-deflate = "0.8.6"
-defmt-macros = "0.2.3"
-defmt-parser = { "version" = "0.2.2", features = ['unstable'] }
-derive-getters = "0.1.1"
-derive-into-owned = "0.1.0"
-difflib = "0.4.0"
-digest = { "version" = "0.10.7", features = ['block-buffer'] }
-dirs-next = "2.0.0"
-dirs-sys-next = "0.1.2"
-downcast = "0.11.0"
-either = "1.8.1"
+dbus-codegen = "0.10.0"
+# Used by floss-0.0.1
+dbus-crossroads-0-4-0 = { package = "dbus-crossroads", "version" = "0.4.0" }
+dbus-crossroads = "0.5.2"
+dbus-tokio = "0.7.6"
+dbus-tree = "0.9.2"
+defmt = "0.2.3"
+deqp-runner = "0.13.1"
+diff = "0.1.13"
+document-features = "0.2.7"
+downcast-rs = "1.2.0"
+ed25519-compact = { "version" = "1.0.16", "default-features" = false, features = ['ct-codecs', 'pem', 'std'] }
 embedded-hal = { "version" = "0.2.7", features = ['unproven'] }
-endian-type = "0.1.2"
-enumflags2 = "0.7.7"
-enumflags2_derive = "0.7.7"
+embedded-hal-mock = "0.8.0"
 enumn = "0.1.8"
+# Used by floss-0.0.1
+env_logger-0-8-4 = { package = "env_logger", "version" = "0.8.4", features = [] }
 env_logger = "0.9.3"
-errno = { "version" = "0.2.8", "default-features" = false }
-error-chain = { "version" = "0.12.4", "default-features" = false }
-ext-trait = "1.0.1"
-ext-trait-proc_macros = "1.0.1"
-extension-traits = "1.0.1"
-failure_derive = "0.1.8"
-fancy-regex = "0.8.0"
-fastrand = "1.9.0"
-fd-lock = "3.0.9"
-filedescriptor = "0.8.2"
-fixedbitset = { "version" = "0.4.2", "default-features" = false }
+euclid = "0.22.9"
 flate2 = { "version" = "1.0.26", features = ['miniz_oxide'] }
-float-cmp = { "version" = "0.9.0", features = ['num-traits'] }
+flexbuffers = "2.0.0"
 fnv = "1.0.7"
-foreign-types = "0.3.2"
-foreign-types-shared = "0.1.1"
-form_urlencoded = { "version" = "1.2.0", features = ['alloc'] }
-fraction = { "version" = "0.10.0", "default-features" = false, features = ['lazy_static', 'with-bigint'] }
-fragile = "2.0.0"
-ftdi-mpsse = "0.1.1"
+ftdi = "0.1.3"
 futures = { "version" = "0.3.28", features = ['alloc', 'futures-executor'] }
-futures-channel = { "version" = "0.3.28", features = ['alloc', 'futures-sink', 'sink'] }
-futures-core = { "version" = "0.3.28", features = ['alloc'] }
 futures-executor = { "version" = "0.3.28", features = ['num_cpus', 'thread-pool'] }
-futures-io = "0.3.28"
-futures-macro = "0.3.28"
-futures-sink = { "version" = "0.3.28", features = ['alloc'] }
-futures-task = { "version" = "0.3.28", features = ['alloc'] }
 futures-util = { "version" = "0.3.28", features = ['alloc', 'channel', 'futures-channel', 'futures-io', 'futures-macro', 'futures-sink', 'io', 'memchr', 'sink', 'slab'] }
+gag = "1.0.0"
 gdbstub = { "version" = "0.6.6", features = ['alloc'] }
-generic-array = { "version" = "0.14.7", features = ['more_lengths'] }
+gdbstub_arch = "0.2.4"
 getopts = "0.2.21"
-# Used by rand-0.7.3
-# Used by rand_core-0.5.1
-getrandom-0-1-16 = { package = "getrandom", "version" = "0.1.16", features = ['std'] }
 getrandom = { "version" = "0.2.10", features = ['std'] }
-ghost = "0.1.9"
-gimli = { "version" = "0.27.3", "default-features" = false, features = ['read', 'read-core'] }
 glob = "0.3.1"
 gpio-cdev = "0.5.1"
-grpcio-compiler = { "version" = "0.6.0", features = ['protobuf'] }
+grpcio = { "version" = "0.9.1", features = ['openssl', 'protobuf'] }
 grpcio-sys = { "version" = "0.9.1+1.38.0", features = ['bindgen', 'boringssl-src', 'openssl', 'secure'] }
-h2 = "0.3.19"
-hash32 = "0.2.1"
-hashbrown = { "version" = "0.12.3", "default-features" = false, features = ['raw'] }
-heapless = { "version" = "0.7.16", features = ['atomic-polyfill'] }
-# Used by structopt-derive-0.4.18
-heck-0-3-3 = { package = "heck", "version" = "0.3.3" }
 heck = "0.4.1"
 hex = { "version" = "0.4.3", features = ['alloc'] }
-hostname = "0.3.1"
-http = "0.2.9"
-http-body = "0.4.5"
-http-range-header = "0.3.0"
+hmac-sha256 = "0.1.7"
+hound = "3.5.0"
 httparse = "1.8.0"
-httpdate = "1.0.2"
-humantime = "2.1.0"
-hyper = { "version" = "0.14.20", features = ['client', 'full', 'h2', 'http1', 'http2', 'runtime', 'server', 'socket2', 'stream', 'tcp'] }
-hyper-timeout = "0.4.1"
-i2cdev = "0.5.1"
-iana-time-zone = { "version" = "0.1.56", features = ['fallback'] }
-idna = "0.3.0"
-include_dir_impl = "0.6.2"
-indexmap = { "version" = "1.9.1", features = ['std'] }
-indoc = "0.3.6"
-indoc-impl = "0.3.6"
-inflections = "1.1.1"
-inotify-sys = "0.1.5"
-instant = "0.1.9"
-inventory = "0.1.11"
-inventory-impl = "0.1.11"
-io-lifetimes = { "version" = "1.0.10", features = ['hermit-abi', 'libc', 'windows-sys'] }
-ioctl-rs = "0.1.6"
-is-terminal = "0.4.2"
-iso8601 = "0.4.2"
-# Used by printf-compat-0.1.1
-itertools-0-9-0 = { package = "itertools", "version" = "0.9.0", "default-features" = false }
-itertools = { "version" = "0.10.5", features = ['use_alloc'] }
-itoa = "1.0.6"
+image = { "version" = "0.23.14", "default-features" = false, features = ['png'] }
+include_dir = { "version" = "0.6.2", features = ['glob'] }
+indicatif = "0.16.2"
+inotify = { "version" = "0.9.3", features = ['futures-core', 'tokio'] }
+intrusive-collections = "0.9.4"
+io-uring = { "version" = "0.5.4", features = ['unstable'] }
+# Used by prjoxide-deps-0.1.0
+itertools-0-8-2 = { package = "itertools", "version" = "0.8.2", features = [] }
 jobserver = "0.1.24"
-junit-report = "0.4.0"
+jsonschema = { "version" = "0.15.2", "default-features" = false }
 lazy_static = "1.4.0"
-lazycell = "1.3.0"
 libc = { "version" = "0.2.146", features = ['align', 'extra_traits'] }
-libdbus-sys = "0.2.5"
-libftdi1-sys = "1.1.2"
+libfuzzer-sys = "0.4.4"
 libloading = "0.7.0"
-libusb1-sys = "0.5.0"
-libz-sys = { "version" = "1.1.8", "default-features" = false, features = ['libc', 'static'] }
-link-cplusplus = "1.0.5"
-linked-hash-map = "0.5.6"
-linux-raw-sys = { "version" = "0.1.4", "default-features" = false, features = ['errno', 'general', 'ioctl', 'no_std'] }
-litrs = { "version" = "0.2.3", "default-features" = false }
-lock_api = "0.4.9"
+libslirp-sys = "4.2.1"
+libtest-mimic = "0.6.0"
+linux-embedded-hal = { "version" = "0.3.2", features = ['gpio-cdev', 'sysfs_gpio'] }
 log = { "version" = "0.4.17", features = ['release_max_level_debug', 'serde', 'std'] }
-managed = { "version" = "0.8.0", "default-features" = false, features = ['alloc'] }
-match_cfg = "0.1.0"
-matchit = "0.5.0"
-memchr = { "version" = "2.4.1", features = ['use_std'] }
-# Used by intrusive-collections-0.9.4
-memoffset-0-5-6 = { package = "memoffset", "version" = "0.5.6" }
 # Used by crosvm-0.1.0
 # Used by nix-0.23.1
 # Used by wayland-sys-0.29.0
 memoffset-0-6-5 = { package = "memoffset", "version" = "0.6.5" }
-# Used by nix-0.26.2
-memoffset-0-7-1 = { package = "memoffset", "version" = "0.7.1" }
-memoffset = "0.9.0"
-merge_derive = "0.1.0"
-mime = "0.3.16"
-minimal-lexical = "0.2.1"
-# Used by png-0.16.8
-miniz_oxide-0-3-7 = { package = "miniz_oxide", "version" = "0.3.7" }
-# Used by backtrace-0.3.67
-miniz_oxide-0-6-2 = { package = "miniz_oxide", "version" = "0.6.2", "default-features" = false }
-miniz_oxide = "0.7.1"
-mio = { "version" = "0.8.4", features = ['net', 'os-ext', 'os-poll'] }
-mockall_derive = "0.11.4"
+merge = { "version" = "0.1.0", features = ['merge_derive', 'num-traits'] }
+# Used by pinned_crates-0.0.1
+miniz_oxide-0-4-4 = { package = "miniz_oxide", "version" = "0.4.4", features = ['no_extern_crate_alloc'] }
+# Used by crosvm-0.1.0
+mio-0-7-14 = { package = "mio", "version" = "0.7.14", features = ['os-ext', 'os-poll'] }
+mockall = "0.11.4"
+multi_log = "0.1.2"
 multimap = { "version" = "0.8.3", features = ['serde'] }
-# Used by embedded-hal-0.2.7
-# Used by embedded-hal-mock-0.8.0
-# Used by linux-embedded-hal-0.3.2
-nb-0-1-3 = { package = "nb", "version" = "0.1.3", features = ['unstable'] }
+named-lock = "0.3.0"
 nb = "1.0.0"
-nibble_vec = "0.1.0"
 # Used by croscomp-0.1.0
 # Used by factory_installer-0.1.0
 # Used by floss-0.0.1
@@ -327,79 +216,33 @@ nibble_vec = "0.1.0"
 # Used by wayland-commons-0.29.0
 # Used by wayland-server-0.29.0
 nix-0-23-1 = { package = "nix", "version" = "0.23.1" }
-# Used by rustyline-10.0.0
-nix-0-24-2 = { package = "nix", "version" = "0.24.2", "default-features" = false, features = ['fs', 'ioctl', 'poll', 'process', 'signal', 'term'] }
 nix = { "version" = "0.26.2", features = ['memoffset', 'pin-utils'] }
-# Used by cexpr-0.4.0
-nom-5-1-2 = { package = "nom", "version" = "5.1.2", "default-features" = false, features = ['alloc', 'std'] }
 nom = { "version" = "7.1.1", features = ['alloc'] }
-normalize-line-endings = "0.3.0"
 num = { "version" = "0.2.1", features = ['num-bigint'] }
-# Used by num-0.2.1
-# Used by num-rational-0.2.4
-num-bigint-0-2-6 = { package = "num-bigint", "version" = "0.2.6", features = [] }
-num-cmp = "0.1.0"
-num-complex = "0.2.4"
+num-bigint = "0.4.3"
+num-derive = "0.3.3"
 num-integer = { "version" = "0.1.45", features = ['i128'] }
-num-iter = "0.1.43"
-# Used by num-0.2.1
-num-rational-0-2-4 = { package = "num-rational", "version" = "0.2.4", "default-features" = false, features = ['bigint', 'num-bigint', 'std'] }
-num-rational = { "version" = "0.3.2", "default-features" = false }
 num-traits = { "version" = "0.2.15", features = ['i128'] }
-num_cpus = "1.13.0"
 num_enum = "0.5.7"
-num_enum_derive = { "version" = "0.5.7", features = ['proc-macro-crate'] }
-num_threads = "0.1.6"
-number_prefix = "0.4.0"
 object = { "version" = "0.30.3", "default-features" = false, features = ['archive', 'coff', 'elf', 'macho', 'pe', 'read_core', 'unaligned'] }
 once_cell = { "version" = "1.17.0", features = ['alloc', 'race'] }
-open-enum-derive = "0.3.0"
-openssl-macros = "0.1.0"
-openssl-sys = "0.9.90"
-os_str_bytes = { "version" = "6.4.1", "default-features" = false, features = ['raw_os_str'] }
+open-enum = "0.3.0"
+openssl = "0.10.55"
+panic-halt = "0.2.0"
 # Used by grpcio-0.9.1
 # Used by pyo3-0.13.2
 # Used by wayland-server-0.29.0
 parking_lot-0-11-1 = { package = "parking_lot", "version" = "0.11.1" }
-parking_lot = "0.12.1"
-# Used by parking_lot-0.11.1
-parking_lot_core-0-8-3 = { package = "parking_lot_core", "version" = "0.8.3" }
-parking_lot_core = "0.9.4"
-# Used by pyo3-0.13.2
-paste-0-1-18 = { package = "paste", "version" = "0.1.18" }
 paste = "1.0.4"
-paste-impl = "0.1.18"
-peeking_take_while = "0.1.2"
-percent-encoding = { "version" = "2.3.0", features = ['alloc'] }
+pcap-file = "1.1.1"
 pest = "2.7.0"
-pest_generator = "2.7.0"
-pest_meta = "2.7.0"
-petgraph = { "version" = "0.6.2", "default-features" = false }
-pin-project = "1.0.12"
-pin-project-internal = "1.0.12"
-pin-project-lite = "0.2.9"
+pest_derive = "2.7.0"
 pin-utils = "0.1.0"
 pkg-config = "0.3.26"
-png = { "version" = "0.16.8", features = ['deflate'] }
-ppv-lite86 = { "version" = "0.2.10", features = ['simd'] }
-predicates = "2.1.5"
-predicates-core = "1.0.6"
-predicates-tree = "1.0.9"
-# Used by tonic-build-0.8.2
-prettyplease-0-1-25 = { package = "prettyplease", "version" = "0.1.25" }
-proc-macro-crate = "1.2.1"
-proc-macro-error = { "version" = "1.0.4", features = ['syn'] }
-proc-macro-error-attr = "1.0.4"
-proc-macro-hack = "0.5.19"
-# Used by quote-0.6.13
-# Used by riscv-rt-macros-0.1.6
-# Used by syn-0.15.44
-proc-macro2-0-4-30 = { package = "proc-macro2", "version" = "0.4.30", features = [] }
+prettyplease = "0.2.6"
+printf-compat = { "version" = "0.1.1", "default-features" = false }
 proc-macro2 = { "version" = "1.0.59", features = ['span-locations'] }
-prost = "0.11.0"
-prost-build = "0.11.1"
-prost-derive = "0.11.0"
-prost-types = { "version" = "0.11.1", "default-features" = false }
+procfs = "0.15.1"
 # Used by floss-0.0.1
 # Used by grpcio-0.9.1
 # Used by grpcio-compiler-0.6.0
@@ -409,131 +252,55 @@ prost-types = { "version" = "0.11.1", "default-features" = false }
 # Used by uwbd-0.0.1
 protobuf-2-27-1 = { package = "protobuf", "version" = "2.27.1" }
 protobuf = "3.2.0"
-# Used by protoc-grpcio-2.0.0
-# Used by protoc-rust-2.27.1
-protobuf-codegen-2-27-1 = { package = "protobuf-codegen", "version" = "2.27.1" }
-protobuf-parse = "3.2.0"
-protobuf-support = "3.2.0"
-protoc = "2.27.1"
-ptr_meta = { "version" = "0.2.0", "default-features" = false }
-ptr_meta_derive = "0.2.0"
-pyo3-macros = "0.13.2"
-pyo3-macros-backend = "0.13.2"
-quick-error = "1.2.3"
-# Used by derive-into-owned-0.1.0
-# Used by syn-0.11.11
-quote-0-3-15 = { package = "quote", "version" = "0.3.15" }
-# Used by riscv-rt-macros-0.1.6
-# Used by syn-0.15.44
-quote-0-6-13 = { package = "quote", "version" = "0.6.13", features = [] }
+protobuf-codegen = "3.2.0"
+protoc-grpcio = "2.0.0"
+protoc-rust = "2.27.1"
+pulldown-cmark = "0.6.1"
+pyo3 = { "version" = "0.13.2", features = ['ctor', 'extension-module', 'indoc', 'inventory', 'paste', 'pyo3-macros', 'unindent'] }
 quote = "1.0.28"
-# Used by cortex-m-rt-0.6.15
-r0-0-2-2 = { package = "r0", "version" = "0.2.2" }
-r0 = "1.0.0"
-radix_trie = "0.2.1"
-# Used by riscv-rt-macros-0.1.6
-rand-0-5-6 = { package = "rand", "version" = "0.5.6", "default-features" = false }
+# Used by flashrom_tester-deps-1.6.0
+rand-0-6-5 = { package = "rand", "version" = "0.6.5", features = ['alloc', 'rand_os'] }
 # Used by crosh-0.24.52
 # Used by deqp-runner-0.13.1
 # Used by riscv-rt-macros-deps-0.1.0
 rand-0-7-3 = { package = "rand", "version" = "0.7.3", features = ['alloc', 'getrandom', 'getrandom_package', 'libc', 'rand_pcg', 'small_rng'] }
 rand = { "version" = "0.8.5", features = ['alloc', 'getrandom', 'libc', 'rand_chacha', 'small_rng'] }
-# Used by rand-0.6.5
-rand_chacha-0-1-1 = { package = "rand_chacha", "version" = "0.1.1" }
-# Used by rand-0.7.3
-rand_chacha-0-2-2 = { package = "rand_chacha", "version" = "0.2.2", "default-features" = false, features = ['std'] }
-rand_chacha = "0.3.1"
-# Used by rand-0.5.6
-# Used by rand_chacha-0.1.1
-# Used by rand_hc-0.1.0
-# Used by rand_isaac-0.1.1
-# Used by rand_xorshift-0.1.1
-# Used by rdrand-0.4.0
-rand_core-0-3-1 = { package = "rand_core", "version" = "0.3.1", "default-features" = false }
-# Used by rand-0.6.5
-# Used by rand_core-0.3.1
-# Used by rand_jitter-0.1.4
-# Used by rand_os-0.1.3
-# Used by rand_pcg-0.1.2
-rand_core-0-4-2 = { package = "rand_core", "version" = "0.4.2", features = ['alloc', 'std'] }
-# Used by rand-0.7.3
-# Used by rand_chacha-0.2.2
-# Used by rand_hc-0.2.0
-# Used by rand_pcg-0.2.1
-rand_core-0-5-1 = { package = "rand_core", "version" = "0.5.1", features = ['alloc', 'getrandom', 'std'] }
 rand_core = { "version" = "0.6.4", features = ['alloc', 'getrandom', 'std'] }
-# Used by rand-0.6.5
-rand_hc-0-1-0 = { package = "rand_hc", "version" = "0.1.0" }
-rand_isaac = "0.1.1"
-rand_jitter = { "version" = "0.1.4", features = ['std'] }
-rand_os = "0.1.3"
-# Used by rand-0.6.5
-rand_pcg-0-1-2 = { package = "rand_pcg", "version" = "0.1.2" }
-rand_pcg = "0.2.1"
-rand_xorshift = "0.1.1"
-# Used by bayer-0.1.5
-rayon-0-8-2 = { package = "rayon", "version" = "0.8.2" }
 rayon = "1.5.3"
-rayon-core = "1.9.3"
 regex = { "version" = "1.6.0", features = ['aho-corasick', 'memchr', 'perf-cache', 'perf-dfa', 'perf-inline', 'perf-literal', 'unicode-age', 'unicode-bool', 'unicode-case', 'unicode-gencat', 'unicode-perl', 'unicode-script', 'unicode-segment'] }
-regex-syntax = { "version" = "0.6.27", features = ['unicode-age', 'unicode-bool', 'unicode-case', 'unicode-gencat', 'unicode-perl', 'unicode-script', 'unicode-segment'] }
-# Used by riscv-rt-0.8.0
-riscv-0-6-0 = { package = "riscv", "version" = "0.6.0" }
-riscv-rt-macros = "0.1.6"
-riscv-target = "0.1.2"
-# Used by deqp-runner-0.13.1
-roxmltree-0-13-1 = { package = "roxmltree", "version" = "0.13.1" }
-roxmltree = "0.14.1"
-rtic-core = "1.0.0"
-rtic-monotonic = "1.0.0"
-rtic-syntax = "1.0.3"
-rustc-demangle = "0.1.21"
-rustc-hash = "1.1.0"
-# Used by bare-metal-0.2.5
-rustc_version-0-2-3 = { package = "rustc_version", "version" = "0.2.3" }
-rustc_version = "0.4.0"
-rustix = { "version" = "0.36.7", features = ['fs', 'io-lifetimes', 'libc', 'param', 'process', 'termios', 'thread'] }
-rustversion = "1.0.9"
-ryu = "1.0.5"
-same-file = "1.0.6"
-scopeguard = "1.1.0"
-scudo-sys = "0.2.1"
-# Used by rustc_version-0.2.3
-semver-0-9-0 = { package = "semver", "version" = "0.9.0" }
-semver = { "version" = "1.0.16", features = ['serde'] }
-semver-parser = "0.7.0"
+remain = "0.2.4"
+riscv = "0.7.0"
+riscv-rt = "0.8.0"
+ron = "0.5.1"
+rtt-target = { "version" = "0.3.1", features = ['cortex-m'] }
+rusb = "0.8.1"
+rustc-demangle-capi = "0.1.0"
+rusty-fork = { "version" = "0.3.0", features = ['wait-timeout'] }
+# Used by crosh-0.24.52
+# Used by lego-controller-0.1.0
+rustyline-9-1-2 = { package = "rustyline", "version" = "9.1.2", features = ['dirs-next'] }
+rustyline = { "version" = "10.0.0", features = ['dirs-next', 'radix_trie'] }
+# Used by floss-0.0.1
+rustyline-derive-0-4-0 = { package = "rustyline-derive", "version" = "0.4.0" }
+rustyline-derive = "0.6.0"
+scoped-tls = "1.0.0"
+scudo = "0.1.2"
 serde = { "version" = "1.0.152", features = ['derive', 'rc', 'serde_derive'] }
-serde-tuple-vec-map = "1.0.1"
-serde_derive = "1.0.152"
+serde_bytes = "0.10.5"
 serde_json = "1.0.96"
-serial-core = "0.4.0"
-serial-unix = "0.4.0"
-serial_test_derive = { "version" = "2.0.0", features = ['async'] }
-sha2 = { "version" = "0.10.6", "default-features" = false }
-# Used by bindgen-0.57.0
-shlex-0-1-1 = { package = "shlex", "version" = "0.1.1" }
+serde_yaml = "0.8.26"
+serial_test = { "version" = "2.0.0", features = ['futures', 'log'] }
+shell-words = "1.1.0"
 shlex = "1.1.0"
-signal-hook-registry = "1.4.0"
+simple_logger = { "version" = "1.16.0", "default-features" = false }
 slab = "0.4.7"
 smallvec = "1.10.0"
-socket2 = { "version" = "0.4.7", features = ['all'] }
-spidev = "0.5.1"
-spin = { "version" = "0.9.8", features = ['lock_api_crate'] }
-stable_deref_trait = { "version" = "1.2.0", "default-features" = false }
-static_assertions = "1.1.0"
+spi-memory = "0.2.0"
 stderrlog = { "version" = "0.5.3", features = ['chrono'] }
 stm32g0 = { "version" = "0.13.0", features = ['cortex-m-rt', 'rt', 'stm32g071'] }
-# Used by clap-2.34.0
-strsim-0-8-0 = { package = "strsim", "version" = "0.8.0" }
-strsim = "0.10.0"
+stm32g0xx-hal = { "version" = "0.1.5", features = ['device-selected', 'rt', 'stm32g071', 'stm32g0x1'] }
 structopt = "0.3.26"
-structopt-derive = "0.4.18"
-svd-parser = { "version" = "0.12.0", features = ['derive-from'] }
-svd-rs = { "version" = "0.12.1", features = ['derive-from'] }
-# Used by derive-into-owned-0.1.0
-syn-0-11-11 = { package = "syn", "version" = "0.11.11", features = ['quote', 'synom', 'unicode-xid'] }
-# Used by riscv-rt-macros-0.1.6
-syn-0-15-44 = { package = "syn", "version" = "0.15.44", features = ['extra-traits', 'full', 'quote'] }
+svd2rust = "0.20.0"
 # Used by adhd-deps-0.1.0
 # Used by argh_derive-0.1.10
 # Used by bindgen-0.63.0
@@ -583,84 +350,35 @@ syn-0-15-44 = { package = "syn", "version" = "0.15.44", features = ['extra-trait
 # Used by zeroize_derive-1.3.2
 syn-1-0-107 = { package = "syn", "version" = "1.0.107", features = ['extra-traits', 'full', 'quote', 'visit', 'visit-mut'] }
 syn = { "version" = "2.0.18", features = ['full', 'quote', 'visit', 'visit-mut'] }
-sync_wrapper = "0.1.1"
-synom = "0.11.3"
-synstructure = "0.12.4"
-sysfs_gpio = "0.6.1"
+sys-info = "0.9.1"
+syslog = "6.0.1"
 tempfile = "3.4.0"
-termcolor = "1.1.3"
-termios = "0.2.2"
-termtree = "0.4.1"
 # Used by clap-2.34.0
 # Used by crosh-0.24.52
 textwrap-0-11-0 = { package = "textwrap", "version" = "0.11.0" }
-textwrap = { "version" = "0.16.0", "default-features" = false }
 thiserror = "1.0.38"
-thiserror-impl = "1.0.38"
-thread_local = "1.1.4"
-threadpool = "1.8.1"
 time = { "version" = "0.3.14", features = ['alloc', 'formatting', 'itoa', 'local-offset', 'macros', 'parsing', 'time-macros'] }
-time-macros = "0.2.4"
-timeout-readwrite = "0.3.2"
-tinyvec = { "version" = "1.6.0", features = ['alloc', 'tinyvec_macros'] }
-tinyvec_macros = "0.1.0"
+tiny_http = "0.8.2"
 tokio = { "version" = "1.19.2", features = ['bytes', 'fs', 'io-std', 'io-util', 'libc', 'macros', 'memchr', 'mio', 'net', 'num_cpus', 'once_cell', 'rt', 'rt-multi-thread', 'signal', 'signal-hook-registry', 'socket2', 'sync', 'time', 'tokio-macros', 'winapi'] }
-tokio-io-timeout = "1.2.0"
 tokio-macros = "1.8.0"
 tokio-stream = "0.1.3"
-tokio-util = { "version" = "0.7.3", features = ['codec', 'tracing'] }
-toml = "0.5.10"
-tower = { "version" = "0.4.13", features = ['__common', 'balance', 'buffer', 'discover', 'futures-core', 'futures-util', 'indexmap', 'limit', 'load', 'make', 'pin-project', 'pin-project-lite', 'rand', 'ready-cache', 'slab', 'timeout', 'tokio', 'tokio-util', 'tracing', 'util'] }
-tower-http = { "version" = "0.3.4", features = ['map-response-body', 'tower', 'util'] }
-tower-layer = "0.3.1"
-tower-service = "0.3.2"
-tracing = { "version" = "0.1.35", features = ['log', 'tracing-attributes'] }
-tracing-attributes = "0.1.22"
-tracing-core = { "version" = "0.1.29", features = ['once_cell'] }
-tracing-futures = { "version" = "0.2.5", features = ['pin-project'] }
-try-lock = "0.2.3"
-typenum = "1.16.0"
-uart_16550 = "0.2.18"
-ucd-trie = "0.1.5"
-ucs2 = "0.3.2"
+tonic = { "version" = "0.8.1", features = ['async-trait', 'axum', 'channel', 'h2', 'hyper', 'hyper-timeout', 'prost-derive', 'prost1', 'tokio', 'tower', 'tracing-futures'] }
+tonic-build = { "version" = "0.8.2", features = ['prost-build'] }
 uefi = { "version" = "0.23.0", features = ['alloc', 'global_allocator', 'logger'] }
-uefi-macros = "0.12.0"
-uefi-raw = "0.2.0"
-ufmt-write = "0.1.0"
+uefi-services = "0.20.0"
 uguid = "2.0.0"
-uhidrs-sys = "1.0.2"
-unicase = "2.6.0"
-unicode-bidi = "0.3.8"
-unicode-ident = "1.0.6"
-unicode-normalization = "0.1.22"
-unicode-segmentation = "1.8.0"
-unicode-width = "0.1.9"
-# Used by syn-0.11.11
-# Used by synom-0.11.3
-unicode-xid-0-0-4 = { package = "unicode-xid", "version" = "0.0.4" }
-# Used by proc-macro2-0.4.30
-# Used by syn-0.15.44
-unicode-xid-0-1-0 = { package = "unicode-xid", "version" = "0.1.0" }
-unicode-xid = "0.2.4"
-unindent = "0.1.10"
+uhid-virt = "0.0.6"
+uninit = { "version" = "0.5.1", features = ['alloc'] }
 url = "2.3.1"
-userfaultfd-sys = "0.4.2"
-utf8parse = "0.2.0"
-# Used by jsonschema-0.15.2
-uuid-0-8-2 = { package = "uuid", "version" = "0.8.2", features = [] }
+userfaultfd = "0.5.0"
+uuid = { "version" = "1.3.0", features = ['getrandom', 'rng', 'serde', 'v4'] }
 vcell = "0.1.3"
-vec_map = "0.8.2"
-version_check = "0.9.4"
-void = "1.0.2"
-volatile = "0.4.5"
-volatile-register = "0.2.1"
-wait-timeout = "0.2.0"
 walkdir = "2.3.2"
-want = "0.3.0"
 which = "4.3.0"
-x86_64 = { "version" = "0.14.10", "default-features" = false, features = ['instructions'] }
 xml-rs = "0.8.4"
-xmlparser = "0.13.3"
-yaml-rust = "0.4.5"
-zerocopy-derive = "0.3.2"
-zeroize_derive = "1.3.2"
+# Used by crosvm-0.1.0
+# Used by libchromeos-0.1.0
+# Used by spdm-core-0.1.0
+zerocopy-0-6-1 = { package = "zerocopy", "version" = "0.6.1" }
+zerocopy = "0.7.0-alpha.1"
+zeroize = { "version" = "1.5.7", features = ['zeroize_derive'] }

@@ -28,6 +28,16 @@
       ],
       "patch_tool": "patch",
       "patches": [
+        "@@//third_party/rust_crates/patches:bindgen-0.59.2/a04acc684e136505f926739a0a89d797309857eb.patch"
+      ],
+      "version": "0.59.2"
+    },
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
         "@@//third_party/rust_crates/patches:bindgen-0.60.1/a04acc684e136505f926739a0a89d797309857eb.patch"
       ],
       "version": "0.60.1"
@@ -75,6 +85,18 @@
       "version": "*"
     }
   ],
+  "dbus-crossroads": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:dbus-crossroads-0.4.0/0001-crossroads-Remove-requirement-of-having-properties-f.patch"
+      ],
+      "version": "0.4.0"
+    }
+  ],
   "derive-into-owned": [
     {
       "patch_args": [
@@ -95,6 +117,18 @@
       "patch_tool": "patch",
       "patches": [
         "@@//third_party/rust_crates/patches:filedescriptor/0001-add-license.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "ftdi": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:ftdi/add-license-file.patch"
       ],
       "version": "*"
     }
@@ -122,6 +156,30 @@
       "version": "0.9.1+1.38.0"
     }
   ],
+  "hmac-sha256": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:hmac-sha256-0.1.7/add-license.patch"
+      ],
+      "version": "0.1.7"
+    }
+  ],
+  "include_dir": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:include_dir/0001-add-license.patch"
+      ],
+      "version": "*"
+    }
+  ],
   "include_dir_impl": [
     {
       "patch_args": [
@@ -130,6 +188,18 @@
       "patch_tool": "patch",
       "patches": [
         "@@//third_party/rust_crates/patches:include_dir_impl/0001-add-license.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "jsonschema": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:jsonschema/add-license.patch"
       ],
       "version": "*"
     }
@@ -170,6 +240,18 @@
       "version": "0.16.8"
     }
   ],
+  "protoc-grpcio": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:protoc-grpcio/remove-failures-crate.patch"
+      ],
+      "version": "*"
+    }
+  ],
   "riscv-rt-macros": [
     {
       "patch_args": [
@@ -178,6 +260,18 @@
       "patch_tool": "patch",
       "patches": [
         "@@//third_party/rust_crates/patches:riscv-rt-macros/riscv-rt-macros-0.1.6-update-dependencies.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "rtt-target": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:rtt-target/add-license.patch"
       ],
       "version": "*"
     }
@@ -198,6 +292,18 @@
       "rustc_flags": [
         "-L$(location :static_libs)"
       ]
+    }
+  ],
+  "simple_logger": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:simple_logger/simple_logger-1.13.0-use-colored-2.patch"
+      ],
+      "version": "*"
     }
   ],
   "stderrlog": [
@@ -222,6 +328,19 @@
         "@@//third_party/rust_crates/patches:structopt-0.3.26/structopt-dont-use-lint.patch"
       ],
       "version": "0.3.26"
+    }
+  ],
+  "tiny_http": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:tiny_http/tiny_http-0.7.0-0002-remove-ssl-dependency.patch",
+        "@@//third_party/rust_crates/patches:tiny_http/tiny_http-0.8.0-0001-unix-socket-support.patch"
+      ],
+      "version": "*"
     }
   ],
   "uhidrs-sys": [

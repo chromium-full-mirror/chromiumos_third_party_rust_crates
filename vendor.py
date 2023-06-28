@@ -1063,9 +1063,7 @@ class Package:
 
     def format(self, features: Set[str]) -> str:
         # Only bother outputting 3pp crates that we directly depend on.
-        if not self.is_external or not any(
-            dep.is_external for dep in self.reverse_deps
-        ):
+        if not self.is_external or all(dep.is_external for dep in self.reverse_deps):
             return ""
         default_features = self.default_features.issubset(features)
         if default_features:
