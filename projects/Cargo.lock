@@ -4864,13 +4864,17 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "dbus 0.9.7",
- "dbus-tree",
+ "dbus-crossroads 0.5.2",
+ "dbus-tokio",
  "glob",
  "libc",
+ "log",
  "once_cell",
  "procfs",
+ "protobuf 3.2.0",
  "regex",
  "tempfile",
+ "tokio",
 ]
 
 [[package]]
