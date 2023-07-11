@@ -19,4 +19,4 @@ procfs = "0.15"
 protobuf = "3.2"
 regex = "1.5"
 tempfile = "3.0.2"
-tokio = { version = "1.19.2", features = ["macros", "rt", "time"] }
+tokio = { version = "1.29.1", features = ["macros", "rt", "time"] }
