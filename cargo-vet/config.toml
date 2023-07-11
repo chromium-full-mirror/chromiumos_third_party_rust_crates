@@ -795,10 +795,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.7.14"
 criteria = "crypto-safe"
 
-[[exemptions.mio]]
-version = "0.8.4"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.multimap]]
 version = "0.8.3"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1243,10 +1239,6 @@ criteria = "crypto-safe"
 version = "1.10.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.socket2]]
-version = "0.4.7"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.spi-memory]]
 version = "0.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1365,10 +1357,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.tinyvec]]
 version = "1.6.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.tokio]]
-version = "1.19.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.tokio-io-timeout]]

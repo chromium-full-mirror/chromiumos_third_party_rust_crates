@@ -1476,6 +1476,11 @@ who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.7.14"
 
+[[audits.mio]]
+who = "Vovo Yang <vovoy@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.8"
+
 [[audits.mockall]]
 who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2124,6 +2129,11 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.6.1"
 
+[[audits.socket2]]
+who = "Vovo Yang <vovoy@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.9"
+
 [[audits.spin]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2234,6 +2244,11 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.2.0"
 
+[[audits.tokio]]
+who = "Vovo Yang <vovoy@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.29.1"
+
 [[audits.tokio-io-timeout]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -2243,6 +2258,11 @@ version = "1.2.0"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.1.0"
+
+[[audits.tokio-macros]]
+who = "Vovo Yang <vovoy@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.1.0"
 
 [[audits.tokio-stream]]
 who = "Android Legacy"
