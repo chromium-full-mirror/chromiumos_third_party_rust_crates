@@ -307,35 +307,37 @@ def apply_patches(patches_path, vendor_path):
 
 
 def generate_patches_manifest(
-    patch_dir: pathlib.Path,
+    patch_dirs: Dict[str, pathlib.Path],
 ) -> Dict[str, List[BazelAnnotation]]:
     """Returns a dictionary containing json configuration of the patch file."""
     patches = collections.defaultdict(list)
-    for d in sorted(patch_dir.iterdir()):
-        if d.is_dir():
-            crate, version = _PATCH_VERSION_REGEX.match(d.name).groups()
+    for label, patch_dir in patch_dirs.items():
+        for d in sorted(patch_dir.iterdir()):
+            if d.is_dir():
+                crate, version = _PATCH_VERSION_REGEX.match(d.name).groups()
 
-            patch_files = [p.relative_to(patch_dir) for p in d.glob("*.patch")]
-            # Some directories instead have shell scripts to remove the
-            # executable bit from files. We don't care about these ones,
-            # since we're not vendoring with bazel, which won't let you
-            # execute them anyway.
-            if patch_files:
-                # `glob` has no ordering guarantees, so sort to ensure output
-                # independent of dirent ordering.
-                patch_files.sort()
-                patch = dict(
-                    version=version or "*",
-                    # The default bazel patch tool doesn't support fuzzing,
-                    # which vendor relies on.
-                    patch_tool="patch",
-                    patch_args=["-p1"],
-                    patches=[
-                        f"@@//third_party/rust_crates/patches:{patch}"
-                        for patch in patch_files
-                    ],
-                )
-                patches[crate].append(patch)
+                patch_files = [
+                    p.relative_to(patch_dir) for p in d.glob("*.patch")
+                ]
+                # Some directories instead have shell scripts to remove the
+                # executable bit from files. We don't care about these ones,
+                # since we're not vendoring with bazel, which won't let you
+                # execute them anyway.
+                if patch_files:
+                    # `glob` has no ordering guarantees, so sort to ensure output
+                    # independent of dirent ordering.
+                    patch_files.sort()
+                    patch = dict(
+                        version=version or "*",
+                        # The default bazel patch tool doesn't support fuzzing,
+                        # which vendor relies on.
+                        patch_tool="patch",
+                        patch_args=["-p1"],
+                        patches=[
+                            label.format(patch=patch) for patch in patch_files
+                        ],
+                    )
+                    patches[crate].append(patch)
     return patches
 
 
@@ -1059,7 +1061,9 @@ class Package:
 
     def format(self, features: Set[str]) -> str:
         # Only bother outputting 3pp crates that we directly depend on.
-        if not self.is_external or all(dep.is_external for dep in self.reverse_deps):
+        if not self.is_external or all(
+            dep.is_external for dep in self.reverse_deps
+        ):
             return ""
         default_features = self.default_features.issubset(features)
         if default_features:
@@ -1218,7 +1222,7 @@ def generate_metallurgy_crates(
     generate_annotations_file(
         cargo_dir=vendor_artifacts_dir / "alchemy",
         mode="alchemy",
-        all_annotations=[annotations],
+        all_annotations=[available_patches, annotations],
     )
 
     metadata = load_single_metadata(projects_dir.parent, filter_platform=None)
@@ -1316,7 +1320,16 @@ def main():
         )
         destroyed_crates = set(destroyed_crates)
 
-    patches_manifest = generate_patches_manifest(pathlib.Path(patches))
+    patches_manifest = generate_patches_manifest(
+        {
+            "@@//third_party/rust_crates/patches:{patch}": pathlib.Path(
+                patches
+            ),
+            "@@//bazel/rust/alchemy_crates/patches:{patch}": (
+                vendor_artifacts / "alchemy/patches"
+            ),
+        }
+    )
     generate_metallurgy_crates(
         current_path / "projects",
         vendor_artifacts,
