@@ -480,6 +480,7 @@ class LicenseManager:
         "failure_derive": "failure",
         "grpcio-compiler": "grpcio",
         "grpcio-sys": "grpcio",
+        "mocktopus_macros": "mocktopus",
         "protobuf-codegen": "protobuf",
         "protobuf-parse": "protobuf",
         "protobuf-support": "protobuf",

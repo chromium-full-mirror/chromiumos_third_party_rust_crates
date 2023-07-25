@@ -2865,6 +2865,7 @@ dependencies = [
  "miniz_oxide 0.4.4",
  "mio 0.7.14",
  "mockall",
+ "mocktopus",
  "multi_log",
  "multimap",
  "named-lock",
@@ -2950,7 +2951,7 @@ dependencies = [
  "time 0.3.14",
  "tiny_http",
  "tokio",
- "tokio-macros 1.8.0",
+ "tokio-macros",
  "tokio-stream",
  "tonic",
  "tonic-build",
@@ -3076,6 +3077,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "22ce75669015c4f47b289fd4d4f56e894e4c96003ffdf3ac51313126f94c6cbb"
 dependencies = [
  "cfg-if",
+ "proc-macro2 1.0.59",
+ "quote 1.0.28",
+ "syn 1.0.107",
+]
+
+[[package]]
+name = "mocktopus"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1e4f0d5a1621fea252541cf67533c4b9c32ee892d790768f4ad48f1063059537"
+dependencies = [
+ "mocktopus_macros",
+]
+
+[[package]]
+name = "mocktopus_macros"
+version = "0.7.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3048ef3680533a27f9f8e7d6a0bce44dc61e4895ea0f42709337fa1c8616fefe"
+dependencies = [
  "proc-macro2 1.0.59",
  "quote 1.0.28",
  "syn 1.0.107",
@@ -5331,7 +5352,7 @@ dependencies = [
  "pin-project-lite",
  "signal-hook-registry",
  "socket2 0.4.9",
- "tokio-macros 2.1.0",
+ "tokio-macros",
  "windows-sys 0.48.0",
 ]
 
@@ -5343,17 +5364,6 @@ checksum = "30b74022ada614a1b4834de765f9bb43877f910cc8ce4be40e89042c9223a8bf"
 dependencies = [
  "pin-project-lite",
  "tokio",
-]
-
-[[package]]
-name = "tokio-macros"
-version = "1.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9724f9a975fb987ef7a3cd9be0350edcbe130698af5b8f7a631e23d42d052484"
-dependencies = [
- "proc-macro2 1.0.59",
- "quote 1.0.28",
- "syn 1.0.107",
 ]
 
 [[package]]

@@ -1491,6 +1491,16 @@ who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.11.4"
 
+[[audits.mocktopus]]
+who = "Howard Yang <hcyang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.0"
+
+[[audits.mocktopus_macros]]
+who = "Howard Yang <hcyang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.11"
+
 [[audits.multi_log]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
