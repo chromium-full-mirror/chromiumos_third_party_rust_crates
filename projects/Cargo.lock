@@ -1069,7 +1069,24 @@ dependencies = [
  "bitreader",
  "bytes",
  "crc32fast",
- "cros-libva",
+ "cros-libva 0.0.3",
+ "enumn",
+ "log",
+ "thiserror",
+]
+
+[[package]]
+name = "cros-codecs"
+version = "0.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6d889d7965a93f29d4a6c4d1a4569d0bc27fcea80959c1206f63d8454a8d2981"
+dependencies = [
+ "anyhow",
+ "bitreader",
+ "byteorder",
+ "bytes",
+ "crc32fast",
+ "cros-libva 0.0.4",
  "enumn",
  "log",
  "thiserror",
@@ -1085,6 +1102,18 @@ dependencies = [
  "bitflags 1.3.2",
  "log",
  "pkg-config",
+]
+
+[[package]]
+name = "cros-libva"
+version = "0.0.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dc78ee9952d72572d126ef28338857d12c08a013ba39b77fd8e20201837def3e"
+dependencies = [
+ "bitflags 1.3.2",
+ "log",
+ "pkg-config",
+ "thiserror",
 ]
 
 [[package]]
@@ -1195,7 +1224,8 @@ dependencies = [
  "chrono",
  "com_logger",
  "crc32fast",
- "cros-codecs",
+ "cros-codecs 0.0.2",
+ "cros-codecs 0.0.3",
  "crossbeam-utils",
  "ctrlc",
  "dbus 0.9.7",
