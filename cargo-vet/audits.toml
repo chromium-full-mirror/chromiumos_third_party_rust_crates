@@ -1627,6 +1627,16 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.1"
 
+[[audits.p9]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto"]
+version = "0.2.3"
+
+[[audits.p9_wire_format_derive]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto"]
+version = "0.2.3"
+
 [[audits.panic-halt]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]

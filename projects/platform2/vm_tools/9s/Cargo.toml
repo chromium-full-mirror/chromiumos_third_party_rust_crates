@@ -7,3 +7,4 @@ authors = ["The Chromium OS Authors"]
 getopts = "0.2"
 libc = "0.2"
 log = "0.4"
+p9 = "0.2.3"

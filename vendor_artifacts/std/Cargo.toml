@@ -233,6 +233,7 @@ object = { "version" = "0.30.3", "default-features" = false, features = ['archiv
 once_cell = { "version" = "1.17.0", features = ['alloc', 'race'] }
 open-enum = "0.3.0"
 openssl = "0.10.55"
+p9 = "0.2.3"
 panic-halt = "0.2.0"
 # Used by grpcio-0.9.1
 # Used by pyo3-0.13.2
@@ -332,6 +333,7 @@ svd2rust = "0.20.0"
 # Used by num_enum_derive-0.5.7
 # Used by open-enum-derive-0.3.0
 # Used by openssl-macros-0.1.0
+# Used by p9_wire_format_derive-0.2.3
 # Used by pin-project-internal-1.0.12
 # Used by prettyplease-0.1.25
 # Used by proc-macro-error-1.0.4

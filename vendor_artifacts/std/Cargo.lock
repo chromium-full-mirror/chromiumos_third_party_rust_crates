@@ -2914,6 +2914,7 @@ dependencies = [
  "once_cell",
  "open-enum",
  "openssl",
+ "p9",
  "panic-halt",
  "parking_lot 0.11.1",
  "paste 1.0.4",
@@ -3501,6 +3502,28 @@ name = "os_str_bytes"
 version = "6.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b7820b9daea5457c9f21c69448905d723fbd21136ccf521748f23fd49e723ee"
+
+[[package]]
+name = "p9"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4838a2d89bdcbcad051f18347ed6cbe3e5b9b09fb0019e1a6ec4bb2bb1d29481"
+dependencies = [
+ "libc",
+ "p9_wire_format_derive",
+ "serde",
+]
+
+[[package]]
+name = "p9_wire_format_derive"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e6085210d8ec9bcbdf38b5c8e97bccef1877f3f291eae48b65388ca979f5314e"
+dependencies = [
+ "proc-macro2 1.0.59",
+ "quote 1.0.28",
+ "syn 1.0.107",
+]
 
 [[package]]
 name = "panic-halt"
