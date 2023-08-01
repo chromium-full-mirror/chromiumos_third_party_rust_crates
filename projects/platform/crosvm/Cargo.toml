@@ -20,7 +20,7 @@ chrono = "0.4"
 com_logger = "0.1"
 crc32fast = "1.2"
 cros-codecs-0-0-2 = { package = "cros-codecs", version = "0.0.2", features = ["vaapi"] }
-cros-codecs-0-0-3 = { package = "cros-codecs", version = "0.0.3", features = ["vaapi"] }
+cros-codecs-0-0-4 = { package = "cros-codecs", version = "0.0.4", features = ["vaapi"] }
 crossbeam-utils = "0.8"
 ctrlc = "3.2"
 dbus = "0.9"

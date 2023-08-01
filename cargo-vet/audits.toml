@@ -570,6 +570,11 @@ who = "Alexandre Courbot <acourbot@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.0.2 -> 0.0.3"
 
+[[audits.cros-codecs]]
+who = "Alexandre Courbot <acourbot@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.0.3 -> 0.0.4"
+
 [[audits.cros-libva]]
 who = "Alexandre Courbot <acourbot@chromium.org>"
 criteria = "does-not-implement-crypto"

@@ -1077,9 +1077,9 @@ dependencies = [
 
 [[package]]
 name = "cros-codecs"
-version = "0.0.3"
+version = "0.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6d889d7965a93f29d4a6c4d1a4569d0bc27fcea80959c1206f63d8454a8d2981"
+checksum = "277a30a0ddadfa014380ee30cc60330d260369855417c492fa94421d7c7e9229"
 dependencies = [
  "anyhow",
  "bitreader",
@@ -1225,7 +1225,7 @@ dependencies = [
  "com_logger",
  "crc32fast",
  "cros-codecs 0.0.2",
- "cros-codecs 0.0.3",
+ "cros-codecs 0.0.4",
  "crossbeam-utils",
  "ctrlc",
  "dbus 0.9.7",
