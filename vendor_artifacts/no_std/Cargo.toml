@@ -110,6 +110,7 @@ libc = { "version" = "0.2.146", "default-features" = false, features = ['align',
 log = { "version" = "0.4.17", features = ['release_max_level_debug', 'serde'] }
 # Used by crosvm-0.1.0
 # Used by nix-0.23.1
+# Used by nix-0.24.2
 # Used by wayland-sys-0.29.0
 memoffset-0-6-5 = { package = "memoffset", "version" = "0.6.5" }
 merge = { "version" = "0.1.0", "default-features" = false, features = ['derive', 'merge_derive', 'num', 'num-traits'] }

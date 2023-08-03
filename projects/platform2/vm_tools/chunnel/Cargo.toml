@@ -12,6 +12,7 @@ libc = "0.2"
 log = "0.4"
 protobuf = "3.2"
 remain = "0.2"
+vsock = "0.3"
 
 [build-dependencies]
 protobuf-codegen = "3.2"
