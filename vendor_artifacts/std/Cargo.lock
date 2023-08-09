@@ -2697,6 +2697,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "log-panics"
+version = "2.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "68f9dd8546191c1850ecf67d22f5ff00a935b890d0e84713159a55495cc2ac5f"
+dependencies = [
+ "backtrace",
+ "log",
+]
+
+[[package]]
 name = "managed"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2890,6 +2900,7 @@ dependencies = [
  "libtest-mimic",
  "linux-embedded-hal",
  "log",
+ "log-panics",
  "memoffset 0.6.5",
  "merge",
  "miniz_oxide 0.4.4",

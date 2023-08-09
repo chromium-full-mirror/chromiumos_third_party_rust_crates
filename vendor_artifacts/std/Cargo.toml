@@ -192,6 +192,7 @@ libslirp-sys = "4.2.1"
 libtest-mimic = "0.6.0"
 linux-embedded-hal = { "version" = "0.3.2", features = ['gpio-cdev', 'sysfs_gpio'] }
 log = { "version" = "0.4.17", features = ['release_max_level_debug', 'serde', 'std'] }
+log-panics = { "version" = "2.1.0", features = ['backtrace', 'with-backtrace'] }
 # Used by crosvm-0.1.0
 # Used by nix-0.23.1
 # Used by nix-0.24.2

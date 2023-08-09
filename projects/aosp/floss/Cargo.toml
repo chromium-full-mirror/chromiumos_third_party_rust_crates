@@ -25,6 +25,7 @@ hex = "0.4.3"
 inotify = "0.9"
 lazy_static = "1.4"
 log = "0.4"
+log-panics = { version = "2", features = ["with-backtrace"]}
 nix = "0.23"
 num-bigint = "0.4.3"
 num-derive = "0.3"

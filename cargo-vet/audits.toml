@@ -1471,6 +1471,11 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.17"
 
+[[audits.log-panics]]
+who = "Howard Chung <howardchung@google.com>"
+criteria = ["safe-to-run", "crypto-safe"]
+version = "2.1.0"
+
 [[audits.match_cfg]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
