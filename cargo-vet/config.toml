@@ -399,10 +399,6 @@ criteria = "crypto-safe"
 version = "0.11.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.colored]]
-version = "2.0.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.cortex-m-rt]]
 version = "0.6.15"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -607,21 +603,9 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.4.5"
 criteria = "crypto-safe"
 
-[[exemptions.http-range-header]]
-version = "0.3.0"
-criteria = "crypto-safe"
-
-[[exemptions.httpdate]]
-version = "1.0.2"
-criteria = "crypto-safe"
-
 [[exemptions.humantime]]
 version = "2.1.0"
 criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.hyper]]
-version = "0.14.20"
-criteria = "crypto-safe"
 
 [[exemptions.hyper-timeout]]
 version = "0.4.1"
@@ -633,10 +617,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.image]]
 version = "0.23.14"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.indexmap]]
-version = "1.9.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.indicatif]]
@@ -651,16 +631,8 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.1.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.inotify]]
-version = "0.9.3"
-criteria = "crypto-safe"
-
 [[exemptions.inotify-sys]]
 version = "0.1.5"
-criteria = "crypto-safe"
-
-[[exemptions.instant]]
-version = "0.1.9"
 criteria = "crypto-safe"
 
 [[exemptions.intrusive-collections]]
