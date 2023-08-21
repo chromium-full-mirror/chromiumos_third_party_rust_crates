@@ -51,6 +51,7 @@ stm32g0xx-hal = { version = "=0.1.5", features = ["rt", "stm32g071"] }
 tempfile = "3.2.0"
 vcell = "0.1.0"
 
-# TODO(b/245450197): Newer versions of `fd-lock` pull in deps that have an MSRV
+# TODO(b/245450197): Newer versions of these pull in deps that have an MSRV
 # > hps-sdk's rustc.
 fd-lock = "=3.0.10"
+linux-raw-sys = "=0.1.4"
