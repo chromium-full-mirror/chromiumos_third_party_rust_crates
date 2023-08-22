@@ -30,7 +30,7 @@ import rust_crates
 
 
 rust_crates.die_if_not_running_in_chroot()
-rust_crates.emerge_toml_if_unavailable()
+rust_crates.install_toml_if_unavailable()
 
 import toml
 

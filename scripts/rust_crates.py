@@ -6,10 +6,12 @@
 """General utilities for `rust_crates`."""
 
 import dataclasses
+import hashlib
 from pathlib import Path
 import shutil
 import subprocess
 import sys
+import tempfile
 
 
 def die_if_not_running_in_chroot():
@@ -18,8 +20,8 @@ def die_if_not_running_in_chroot():
         sys.exit("This script can only be run within the chroot.")
 
 
-def emerge_toml_if_unavailable():
-    """`emerge`s the toml module if it is not available."""
+def install_toml_if_unavailable():
+    """`pip install`s the toml module if it is not available."""
     try:
         import toml
 
@@ -27,16 +29,52 @@ def emerge_toml_if_unavailable():
     except ImportError:
         pass
 
-    print("dev-python/toml isn't available; autoinstalling...")
+    try:
+        import pip
+
+        has_pip = True
+    except ImportError:
+        has_pip = False
+
+    print("toml module isn't available; autoinstalling...")
+    if not has_pip:
+        print("ensuring pip is available.")
+        # The pip version is bundled with python, so we don't need to worry
+        # about version checks there.
+        subprocess.run(
+            [
+                "python",
+                "-m",
+                "ensurepip",
+            ],
+            check=True,
+        )
+
+    tempdir = Path(tempfile.mkdtemp(prefix="pip-install-toml"))
+    bz2_whl_name = Path("toml-0.10.2-py2.py3-none-any.whl.bz2")
+    download_gs_file_to(
+        target_path=tempdir / bz2_whl_name,
+        gs_path=f"gs://chromeos-localmirror/distfiles/{bz2_whl_name}",
+        sha256="551b18190d11c683bdbda020c007792e80dcc2665e454f67c325aec9c6e9efbf",
+    )
+
+    subprocess.run(["bzip2", "-d", bz2_whl_name], check=True, cwd=tempdir)
     subprocess.run(
         [
-            "sudo",
-            "emerge",
-            "-g",
-            "dev-python/toml",
+            "python",
+            "-m",
+            "pip",
+            "--disable-pip-version-check",
+            "install",
+            "--user",
+            tempdir / bz2_whl_name.stem,
         ],
         check=True,
     )
+
+    # Only clean this up on successful installs. It's useful for debugging, and
+    # lands in /tmp anyway.
+    shutil.rmtree(tempdir)
 
 
 @dataclasses.dataclass(frozen=True)
@@ -134,3 +172,34 @@ def exit_if_head_is_not_up_to_date(rust_crates: Path, disable_check_flag: str):
         f"Note: pass {disable_check_flag} to disable this check."
     )
     sys.exit("\n".join(exit_message_lines))
+
+
+def download_gs_file_to(
+    target_path: Path,
+    gs_path: str,
+    sha256: str,
+):
+    """Downloads a file from gs://, checking its SHA against `sha256`.
+
+    Args:
+        target_path: the path to download the file to.
+        gs_path: the gs:// path to download from.
+        sha256: the expected sha256 of the file, in hex.
+    """
+    print(f"Downloading {gs_path}...")
+    subprocess.run(
+        ["gsutil", "cp", gs_path, target_path],
+        check=True,
+    )
+
+    print("Verifying SHA...")
+    with target_path.open("rb") as f:
+        got_sha256 = hashlib.sha256()
+        for block in iter(lambda: f.read(32 * 1024), b""):
+            got_sha256.update(block)
+        got_sha256 = got_sha256.hexdigest()
+        if got_sha256 != sha256:
+            raise ValueError(
+                f"SHA256 mismatch for {gs_path}. Got {got_sha256}, want "
+                f"{sha256}"
+            )

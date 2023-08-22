@@ -15,6 +15,8 @@ import subprocess
 import sys
 import tempfile
 
+import rust_crates
+
 
 def ensure_cargo_bin_is_in_path():
     """Ensures that .cargo/bin is in $PATH for this process."""
@@ -68,25 +70,12 @@ def ensure_cargo_utility_is_installed(
         "Using %s as a tempdir. This will not be cleaned up on failures.",
         tempdir,
     )
-    logging.info("Downloading %s...", gs_path)
     tbz2_name = "cargo-utility.tar.bz2"
-    subprocess.run(
-        ["gsutil", "cp", gs_path, tbz2_name],
-        check=True,
-        cwd=tempdir,
+    rust_crates.download_gs_file_to(
+        target_path=tempdir / tbz2_name,
+        gs_path=gs_path,
+        sha256=sha256,
     )
-
-    logging.info("Verifying SHA...")
-    with (tempdir / tbz2_name).open("rb") as f:
-        got_sha256 = hashlib.sha256()
-        for block in iter(lambda: f.read(32 * 1024), b""):
-            got_sha256.update(block)
-        got_sha256 = got_sha256.hexdigest()
-        if got_sha256 != sha256:
-            raise ValueError(
-                f"SHA256 mismatch for {gs_path}. Got {got_sha256}, want "
-                f"{sha256}"
-            )
 
     logging.info("Unpacking...")
     subprocess.run(
