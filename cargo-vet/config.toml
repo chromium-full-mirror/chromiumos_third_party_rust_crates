@@ -635,16 +635,8 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.1.5"
 criteria = "crypto-safe"
 
-[[exemptions.intrusive-collections]]
-version = "0.9.4"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.inventory]]
 version = "0.1.11"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.io-uring]]
-version = "0.5.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.ioctl-rs]]
@@ -667,10 +659,6 @@ criteria = "crypto-safe"
 version = "0.10.5"
 criteria = "crypto-safe"
 
-[[exemptions.jobserver]]
-version = "0.1.24"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.jsonschema]]
 version = "0.15.2"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -691,21 +679,9 @@ criteria = "crypto-safe"
 version = "1.1.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.libloading]]
-version = "0.7.0"
-criteria = "crypto-safe"
-
 [[exemptions.libusb1-sys]]
 version = "0.5.0"
 criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.libz-sys]]
-version = "1.1.8"
-criteria = "crypto-safe"
-
-[[exemptions.link-cplusplus]]
-version = "1.0.5"
-criteria = "crypto-safe"
 
 [[exemptions.linked-hash-map]]
 version = "0.5.6"
@@ -719,12 +695,12 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.1.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
+[[exemptions.linux-raw-sys]]
+version = "0.4.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
 [[exemptions.litrs]]
 version = "0.2.3"
-criteria = "crypto-safe"
-
-[[exemptions.lock_api]]
-version = "0.4.9"
 criteria = "crypto-safe"
 
 [[exemptions.managed]]
@@ -734,10 +710,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 [[exemptions.matchit]]
 version = "0.5.0"
 criteria = "crypto-safe"
-
-[[exemptions.memoffset]]
-version = "0.5.6"
-criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.memoffset]]
 version = "0.6.5"
