@@ -2740,6 +2740,11 @@ who = "Chih-Yao Chuang <jasonchuang@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.13.0"
 
+[[audits.quick-xml]]
+who = "Matthew DeVore <matvore@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.30.0"
+
 [[audits.quote]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
