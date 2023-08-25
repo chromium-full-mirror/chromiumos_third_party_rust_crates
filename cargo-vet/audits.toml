@@ -436,6 +436,11 @@ criteria = "safe-to-run"
 version = "0.5.0"
 
 [[audits.cfg-if]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "1.0.0"
+
+[[audits.cfg-if]]
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.0"
@@ -1335,6 +1340,11 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.3"
 
+[[audits.hostname]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.1"
+
 [[audits.http]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -1484,6 +1494,11 @@ delta = "1.0.10 -> 1.0.11"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.5.13"
+
+[[audits.ioctl-rs]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.6"
 
 [[audits.is-terminal]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -1852,6 +1867,12 @@ who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.0"
 
+[[audits.num]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "0.2.1"
+notes = "This crate just reexports subcrates, so it's trivially safe in isolation."
+
 [[audits.num-derive]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -2021,6 +2042,11 @@ version = "0.2.9"
 [[audits.pin-utils]]
 who = "Android Legacy"
 criteria = "safe-to-run"
+version = "0.1.0"
+
+[[audits.pin-utils]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.0"
 
 [[audits.pkg-config]]
@@ -2690,6 +2716,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.3"
 
+[[audits.uart_16550]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.18"
+
 [[audits.ucs2]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2839,6 +2870,11 @@ version = "0.5.0"
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.2"
+
+[[audits.utf8parse]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.0"
 
 [[audits.uuid]]
 who = "George Burgess IV <gbiv@google.com>"

@@ -383,10 +383,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.6.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.cfg-if]]
-version = "1.0.0"
-criteria = "crypto-safe"
-
 [[exemptions.clap_conf]]
 version = "0.1.5"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -591,10 +587,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.1.7"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.hostname]]
-version = "0.3.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.hound]]
 version = "3.5.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -637,10 +629,6 @@ criteria = "crypto-safe"
 
 [[exemptions.inventory]]
 version = "0.1.11"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.ioctl-rs]]
-version = "0.1.6"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.iso8601]]
@@ -767,10 +755,6 @@ criteria = "crypto-safe"
 version = "7.1.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.num]]
-version = "0.2.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.num-bigint]]
 version = "0.2.6"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -873,10 +857,6 @@ criteria = "crypto-safe"
 
 [[exemptions.pin-project-lite]]
 version = "0.2.9"
-criteria = "crypto-safe"
-
-[[exemptions.pin-utils]]
-version = "0.1.0"
 criteria = "crypto-safe"
 
 [[exemptions.png]]
@@ -1355,10 +1335,6 @@ criteria = "crypto-safe"
 version = "1.16.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.uart_16550]]
-version = "0.2.18"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.ucd-trie]]
 version = "0.1.5"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1381,10 +1357,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.unicode-xid]]
 version = "0.2.4"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.utf8parse]]
-version = "0.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.uuid]]
