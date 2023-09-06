@@ -60,6 +60,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.19.0 -> 0.20.0"
 
+[[audits.addr2line]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.20.0 -> 0.21.0"
+
 [[audits.aho-corasick]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -279,6 +284,11 @@ version = "0.3.67"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.3.67 -> 0.3.68"
+
+[[audits.backtrace]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.68 -> 0.3.69"
 
 [[audits.bare-metal]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -740,6 +750,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "3.3.0 -> 3.4.0"
 
+[[audits.ctrlc]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "3.4.0 -> 3.4.1"
+
 [[audits.cty]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -782,6 +797,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.97 -> 1.0.106"
 
+[[audits.cxx]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.106 -> 1.0.107"
+
 [[audits.cxxbridge-flags]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -807,6 +827,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.97 -> 1.0.106"
 
+[[audits.cxxbridge-flags]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+delta = "1.0.106 -> 1.0.107"
+
 [[audits.cxxbridge-macro]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -831,6 +856,11 @@ delta = "1.0.94 -> 1.0.97"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.97 -> 1.0.106"
+
+[[audits.cxxbridge-macro]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.106 -> 1.0.107"
 
 [[audits.dashmap]]
 who = "Max Lee <endlesspring@google.com>"
@@ -959,13 +989,18 @@ version = "0.1.8"
 
 [[audits.enumn]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["safe-to-run", "does-not-implement-crypto"]
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
 delta = "0.1.8 -> 0.1.10"
 
 [[audits.enumn]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["safe-to-run", "does-not-implement-crypto"]
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
 delta = "0.1.10 -> 0.1.11"
+
+[[audits.enumn]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+delta = "0.1.11 -> 0.1.12"
 
 [[audits.env_logger]]
 who = "Android Legacy"
@@ -996,6 +1031,11 @@ delta = "0.2.8 -> 0.3.1"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.3.1 -> 0.3.2"
+
+[[audits.errno]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.2 -> 0.3.3"
 
 [[audits.error-chain]]
 who = "ChromeOS"
@@ -1265,6 +1305,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.27.3"
 
+[[audits.gimli]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.27.3 -> 0.28.0"
+
 [[audits.glob]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -1319,6 +1364,11 @@ delta = "0.3.18 -> 0.3.19"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.3.19 -> 0.3.20"
+
+[[audits.h2]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.20 -> 0.3.21"
 
 [[audits.heck]]
 who = "ChromeOS"
@@ -1732,6 +1782,11 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "2.4.1"
 
+[[audits.memchr]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.6.3"
+
 [[audits.memoffset]]
 who = "Dennis Kempin <denniskempin@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -1847,6 +1902,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
 delta = "1.0.0 -> 0.1.3"
 
+[[audits.nb]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+delta = "1.0.0 -> 1.1.0"
+
 [[audits.nibble_vec]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -1868,9 +1928,19 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.24.2"
 
 [[audits.nix]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.23.1 -> 0.23.2"
+
+[[audits.nix]]
 who = "Dennis Kempin <denniskempin@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.25.0 -> 0.26.2"
+
+[[audits.nix]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.26.2 -> 0.27.1"
 
 [[audits.nom]]
 who = "Android Legacy"
@@ -1908,6 +1978,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.15"
 
+[[audits.num-traits]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.2.15 -> 0.2.16"
+
 [[audits.num_cpus]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -1927,12 +2002,27 @@ notes = "I'm not counting the code related to the GNU Hash section as crypto for
 [[audits.object]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.30.3 -> 0.30.4"
+
+[[audits.object]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.30.3 -> 0.31.1"
+
+[[audits.object]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.31.1 -> 0.32.1"
 
 [[audits.once_cell]]
 who = "crosvm"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.17.0"
+
+[[audits.once_cell]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.17.0 -> 1.18.0"
 
 [[audits.open-enum]]
 who = "Howard Yang <hcyang@google.com>"
@@ -1949,6 +2039,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
 version = "0.1.0"
 
+[[audits.openssl-macros]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+delta = "0.1.0 -> 0.1.1"
+
 [[audits.os_str_bytes]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -1958,6 +2053,11 @@ version = "6.3.0"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "6.4.1"
+
+[[audits.os_str_bytes]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "6.4.1 -> 6.5.1"
 
 [[audits.owning_ref]]
 who = "ChromeOS"
@@ -1983,6 +2083,16 @@ version = "0.2.0"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.11.1"
+
+[[audits.parking_lot]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.2"
+
+[[audits.parking_lot]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "does-not-implement-crypto"
+delta = "0.11.2 -> 0.11.1"
 
 [[audits.parking_lot_core]]
 who = "Android Legacy"

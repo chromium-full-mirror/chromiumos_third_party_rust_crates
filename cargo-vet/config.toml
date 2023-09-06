@@ -800,10 +800,6 @@ version = "0.9.90"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.parking_lot]]
-version = "0.11.1"
-criteria = "crypto-safe"
-
-[[exemptions.parking_lot]]
 version = "0.12.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
