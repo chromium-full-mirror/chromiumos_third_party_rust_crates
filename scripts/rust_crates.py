@@ -188,8 +188,9 @@ def download_gs_file_to(
     """
     print(f"Downloading {gs_path}...")
     subprocess.run(
-        ["gsutil", "cp", gs_path, target_path],
+        ["gsutil", "-q", "cp", gs_path, target_path],
         check=True,
+        stdin=subprocess.DEVNULL,
     )
 
     print("Verifying SHA...")
