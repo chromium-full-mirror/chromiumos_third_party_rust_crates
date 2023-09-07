@@ -6,6 +6,7 @@
 
 """ This script cleans up the vendor directory.
 """
+
 import argparse
 import collections
 import copy
@@ -30,7 +31,7 @@ import rust_crates
 
 
 rust_crates.die_if_not_running_in_chroot()
-rust_crates.install_toml_if_unavailable()
+rust_crates.install_toml_and_reexec_if_unavailable()
 
 import toml
 

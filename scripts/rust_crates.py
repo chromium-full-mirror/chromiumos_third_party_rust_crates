@@ -7,6 +7,7 @@
 
 import dataclasses
 import hashlib
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -20,8 +21,8 @@ def die_if_not_running_in_chroot():
         sys.exit("This script can only be run within the chroot.")
 
 
-def install_toml_if_unavailable():
-    """`pip install`s the toml module if it is not available."""
+def install_toml_and_reexec_if_unavailable():
+    """Installs the toml module & restarts the program if necessary."""
     try:
         import toml
 
@@ -75,6 +76,13 @@ def install_toml_if_unavailable():
     # Only clean this up on successful installs. It's useful for debugging, and
     # lands in /tmp anyway.
     shutil.rmtree(tempdir)
+
+    # Now restart from scratch. This is necessary if pip had to be installed,
+    # since pip adds superpowers to Python's module loader. It's not super
+    # clear how to dynamically add those, and this function is intended to be
+    # called _very_ early, so re-exec'ing isn't much of an issue.
+    if not has_pip:
+        os.execvp(sys.argv[0], sys.argv)
 
 
 @dataclasses.dataclass(frozen=True)
