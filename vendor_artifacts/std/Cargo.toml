@@ -24,6 +24,7 @@ bayer = "0.1.5"
 bincode = "1.0.1"
 # Used by floss-0.0.1
 bindgen-0-59-2 = { package = "bindgen", "version" = "0.59.2", features = ['env_logger', 'log', 'which'] }
+# Used by adhd-deps-0.1.0
 # Used by bindgen-deps-0.63.0
 # Used by crdyboot-1.0.0
 # Used by crosvm-0.1.0
@@ -154,6 +155,7 @@ env_logger-0-8-4 = { package = "env_logger", "version" = "0.8.4", features = [] 
 env_logger = "0.9.3"
 euclid = "0.22.9"
 fd-lock = "3.0.10"
+fixedbitset = "0.4.2"
 flate2 = { "version" = "1.0.27", features = ['any_impl', 'miniz_oxide'] }
 flexbuffers = "2.0.0"
 fnv = "1.0.7"
