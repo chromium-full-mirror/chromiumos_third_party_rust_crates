@@ -308,7 +308,7 @@ dependencies = [
  "cfg-if",
  "libc",
  "miniz_oxide 0.7.1",
- "object 0.31.1",
+ "object",
  "rustc-demangle",
 ]
 
@@ -1051,7 +1051,7 @@ version = "1.0.0"
 dependencies = [
  "bindgen 0.64.0",
  "log",
- "object 0.30.3",
+ "object",
  "printf-compat",
  "regex",
  "uefi",
@@ -3846,15 +3846,6 @@ name = "number_prefix"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "830b246a0e5f20af87141b25c173cd1b609bd7779a4617d6ec582abaf90870f3"
-
-[[package]]
-name = "object"
-version = "0.30.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ea86265d3d3dcb6a27fc51bd29a4bf387fae9d2986b823079d4986af253eb439"
-dependencies = [
- "memchr",
-]
 
 [[package]]
 name = "object"

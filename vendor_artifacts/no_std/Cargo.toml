@@ -123,8 +123,7 @@ nom = { "version" = "7.1.1", "default-features" = false, features = ['alloc'] }
 num-integer = { "version" = "0.1.45", "default-features" = false, features = ['i128'] }
 num-traits = { "version" = "0.2.15", "default-features" = false, features = ['i128'] }
 num_enum = { "version" = "0.5.7", "default-features" = false, features = [] }
-# Used by crdyboot-1.0.0
-object-0-30-3 = { package = "object", "version" = "0.30.3", "default-features" = false, features = ['coff', 'pe', 'read_core', 'unaligned'] }
+object = { "version" = "0.31.1", "default-features" = false, features = ['archive', 'coff', 'elf', 'macho', 'pe', 'read_core', 'unaligned'] }
 once_cell = { "version" = "1.17.0", "default-features" = false, features = ['alloc', 'race'] }
 open-enum = "0.3.0"
 panic-halt = "0.2.0"

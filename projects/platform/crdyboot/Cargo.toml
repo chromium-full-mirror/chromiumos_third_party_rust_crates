@@ -6,7 +6,7 @@ edition = "2021"
 
 [dependencies]
 log = "0.4"
-object = { version = "0.30.0", default-features = false, features = ["pe", "read_core", "unaligned"] }
+object = { version = "0.31.1", default-features = false, features = ["pe", "read_core", "unaligned"] }
 printf-compat = { version = "0.1", default-features = false }
 uefi = { version = "0.23", default-features = false, features = ["alloc"] }
 uefi-services = "0.20"
