@@ -1049,7 +1049,7 @@ dependencies = [
 name = "crdyboot"
 version = "1.0.0"
 dependencies = [
- "bindgen 0.63.0",
+ "bindgen 0.64.0",
  "log",
  "object 0.30.3",
  "printf-compat",

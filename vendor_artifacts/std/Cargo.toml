@@ -26,7 +26,6 @@ bincode = "1.0.1"
 bindgen-0-59-2 = { package = "bindgen", "version" = "0.59.2", features = ['env_logger', 'log', 'which'] }
 # Used by adhd-deps-0.1.0
 # Used by bindgen-deps-0.63.0
-# Used by crdyboot-1.0.0
 # Used by crosvm-0.1.0
 # Used by featured-0.1.0
 # Used by hps-firmware-0.1.0
