@@ -27,6 +27,7 @@ rust_crates.die_if_not_running_in_chroot()
 rust_crates.install_tomli_and_reexec_if_unavailable()
 
 import tomli
+import tomli_w
 
 
 WORKSPACE_FILE_HEADER = """\
@@ -95,11 +96,9 @@ def update_cargo_vet_info(
     host_safety_criteria = "safe-to-run"
     target_safety_criteria = "rule-of-two-safe-to-deploy"
 
-    # As ugly as it is to hand-update a toml file, our toml implementation has
-    # known bugs that lead to invalid toml in quite a few cases (b/242668603).
-    # Stick stuff at the end and have `cargo-vet` handle making it pretty
-    # during `vendor.py`.
-    with cargo_vet_config.open("a", encoding="utf-8") as f:
+    # Stick stuff at the end and have `cargo-vet` handle making it
+    # pretty/sorting it during `vendor.py`.
+    with cargo_vet_config.open("ab") as f:
         for project_path, project_name in add_projects:
             if project_path:
                 logging.info(
@@ -123,23 +122,25 @@ def update_cargo_vet_info(
                 safety_criteria = target_safety_criteria
                 note = None
 
-            f.write("\n")
-            f.write(
-                textwrap.dedent(
-                    f"""\
-                    [policy."{project_name}"]
-                    criteria = ["{safety_criteria}", "crypto-safe"]
-                    dev-criteria = ["{host_safety_criteria}", "crypto-safe"]
-                    """
-                )
-            )
+            toml_project_policy = {
+                "criteria": [safety_criteria, "crypto-safe"],
+                "dev-criteria": [host_safety_criteria, "crypto-safe"],
+            }
+
             if note:
-                # Only handle these if we have to.
-                assert "\\" not in note and '"' not in note, note
-                f.write(f'notes = "{note}"\n')
+                toml_project_policy["notes"] = note
 
             if project_name in NON_CRATES_IO_DEPS:
-                f.write(f"audit-as-crates-io = false\n")
+                toml_project_policy["audit-as-crates-io"] = False
+
+            toml_to_write = {
+                "policy": {
+                    project_name: toml_project_policy,
+                }
+            }
+
+            f.write(b"\n")
+            tomli_w.dump(toml_to_write, f)
 
     # NOTE(b/274643706): as referenced, we defer formatting to `vendor.py`. For
     # some reason, `cargo-vet` will run `cargo manifest` even if it's only
@@ -220,17 +221,14 @@ def main(argv: List[str]):
     logging.info("Identified %d projects", len(projects))
 
     workspace_toml_file = projects_dir / "Cargo.toml"
-    with workspace_toml_file.open("w", encoding="utf-8") as f:
-        f.write(WORKSPACE_FILE_HEADER)
-        # The `toml` crate writes this as a massive line, which is hard to
-        # read. Since this is simple to write, write it directly.
-        # TODO(b/242668603): find a toml crate with prettier formatting
-        f.write("[workspace]\nmembers = [\n")
-        for project in projects:
-            project = str(project)
-            assert '"' not in project and "\\" not in project, project
-            f.write(f'    "{project}",\n')
-        f.write("]")
+    with workspace_toml_file.open("wb") as f:
+        f.write(WORKSPACE_FILE_HEADER.encode(encoding="utf-8"))
+        toml_to_write = {
+            "workspace": {
+                "members": [str(x) for x in projects],
+            },
+        }
+        tomli_w.dump(toml_to_write, f)
 
     logging.info("Workspace Cargo.toml successfully written.")
     update_cargo_vet_info(
