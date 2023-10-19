@@ -8,8 +8,8 @@ edition = "2021"
 log = "0.4"
 object = { version = "0.31.1", default-features = false, features = ["pe", "read_core", "unaligned"] }
 printf-compat = { version = "0.1", default-features = false }
-uefi = { version = "0.23", default-features = false, features = ["alloc"] }
-uefi-services = "0.20"
+uefi = { version = "0.25", default-features = false, features = ["alloc"] }
+uefi-services = "0.22"
 uguid = "2.0"
 
 [dev-dependencies]
