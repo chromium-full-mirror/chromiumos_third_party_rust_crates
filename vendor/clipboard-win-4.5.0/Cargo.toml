@@ -2,17 +2,25 @@
 edition = "2018"
 name = "clipboard-win"
 version = "4.5.0"
-authors = [ "Douman <douman@gmx.se>",]
+authors = [
+    "Douman <douman@gmx.se>",
+]
 description = "Empty crate that should not build."
 documentation = "https://docs.rs/crate/clipboard-win"
 readme = "README.md"
-keywords = [ "Windows", "winapi", "clipboard",]
-categories = [ "os::windows-apis",]
+keywords = [
+    "Windows",
+    "winapi",
+    "clipboard",
+]
+categories = [
+    "os::windows-apis",
+]
 license = "Apache-2.0"
 repository = "https://github.com/DoumanAsh/clipboard-win"
 
-[features]
-std = []
-
 [package.metadata.docs.rs]
 default-target = "x86_64-pc-windows-msvc"
+
+[features]
+std = []

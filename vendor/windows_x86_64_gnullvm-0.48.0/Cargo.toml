@@ -2,7 +2,9 @@
 edition = "2018"
 name = "windows_x86_64_gnullvm"
 version = "0.48.0"
-authors = [ "Microsoft",]
+authors = [
+    "Microsoft",
+]
 description = "Empty crate that should not build."
 license = "Apache-2.0"
 repository = "https://github.com/microsoft/windows-rs"

@@ -2,7 +2,9 @@
 edition = "2018"
 name = "windows_i686_gnu"
 version = "0.42.2"
-authors = [ "Microsoft",]
+authors = [
+    "Microsoft",
+]
 description = "Empty crate that should not build."
 license = "Apache-2.0"
 repository = "https://github.com/microsoft/windows-rs"

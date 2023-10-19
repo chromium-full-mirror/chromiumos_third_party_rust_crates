@@ -3,12 +3,18 @@ edition = "2018"
 rust-version = "1.59"
 name = "windows"
 version = "0.39.0"
-authors = [ "Microsoft",]
+authors = [
+    "Microsoft",
+]
 description = "Empty crate that should not build."
 documentation = "https://microsoft.github.io/windows-docs-rs/"
 readme = "readme.md"
 license = "Apache-2.0"
 repository = "https://github.com/microsoft/windows-rs"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+targets = []
 
 [features]
 AI = []
@@ -683,7 +689,3 @@ default = []
 deprecated = []
 implement = []
 interface = []
-
-[package.metadata.docs.rs]
-default-target = "x86_64-pc-windows-msvc"
-targets = []

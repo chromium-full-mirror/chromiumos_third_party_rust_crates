@@ -2,8 +2,12 @@
 edition = "2018"
 name = "errno-dragonfly"
 version = "0.1.2"
-authors = [ "Michael Neumann <mneumann@ntecs.de>",]
+authors = [
+    "Michael Neumann <mneumann@ntecs.de>",
+]
 description = "Empty crate that should not build."
-keywords = [ "dragonfly",]
+keywords = [
+    "dragonfly",
+]
 license = "Apache-2.0"
 repository = "https://github.com/mneumann/errno-dragonfly-rs"

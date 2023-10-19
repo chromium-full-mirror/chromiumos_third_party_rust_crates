@@ -3,11 +3,18 @@ edition = "2018"
 rust-version = "1.48"
 name = "windows-sys"
 version = "0.45.0"
-authors = [ "Microsoft",]
+authors = [
+    "Microsoft",
+]
 description = "Empty crate that should not build."
 readme = "readme.md"
 license = "Apache-2.0"
 repository = "https://github.com/microsoft/windows-rs"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+targets = []
+all-features = true
 
 [features]
 Win32 = []
@@ -279,8 +286,3 @@ Win32_UI_TextServices = []
 Win32_UI_WindowsAndMessaging = []
 Win32_UI_Wpf = []
 default = []
-
-[package.metadata.docs.rs]
-default-target = "x86_64-pc-windows-msvc"
-targets = []
-all-features = true

@@ -3,12 +3,21 @@ edition = "2018"
 rust-version = "1.48"
 name = "windows-sys"
 version = "0.48.0"
-authors = [ "Microsoft",]
+authors = [
+    "Microsoft",
+]
 description = "Empty crate that should not build."
 readme = "readme.md"
-categories = [ "os::windows-apis",]
+categories = [
+    "os::windows-apis",
+]
 license = "Apache-2.0"
 repository = "https://github.com/microsoft/windows-rs"
+
+[package.metadata.docs.rs]
+all-features = true
+default-target = "x86_64-pc-windows-msvc"
+targets = []
 
 [features]
 Wdk = []
@@ -289,8 +298,3 @@ Win32_UI_Wpf = []
 Win32_Web = []
 Win32_Web_InternetExplorer = []
 default = []
-
-[package.metadata.docs.rs]
-all-features = true
-default-target = "x86_64-pc-windows-msvc"
-targets = []

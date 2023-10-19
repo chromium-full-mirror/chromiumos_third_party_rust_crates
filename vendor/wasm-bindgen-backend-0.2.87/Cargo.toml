@@ -3,7 +3,9 @@ edition = "2018"
 rust-version = "1.56"
 name = "wasm-bindgen-backend"
 version = "0.2.87"
-authors = [ "The wasm-bindgen Developers",]
+authors = [
+    "The wasm-bindgen Developers",
+]
 description = "Empty crate that should not build."
 homepage = "https://rustwasm.github.io/wasm-bindgen/"
 documentation = "https://docs.rs/wasm-bindgen-backend"

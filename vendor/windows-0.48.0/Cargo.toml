@@ -3,13 +3,25 @@ edition = "2018"
 rust-version = "1.48"
 name = "windows"
 version = "0.48.0"
-authors = [ "Microsoft",]
+authors = [
+    "Microsoft",
+]
 description = "Empty crate that should not build."
 documentation = "https://microsoft.github.io/windows-docs-rs/"
 readme = "readme.md"
-categories = [ "os::windows-apis",]
+categories = [
+    "os::windows-apis",
+]
 license = "Apache-2.0"
 repository = "https://github.com/microsoft/windows-rs"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+rustc-args = [
+    "--cfg",
+    "docsrs",
+]
+targets = []
 
 [features]
 AI = []
@@ -679,8 +691,3 @@ Win32_Web_InternetExplorer = []
 default = []
 deprecated = []
 implement = []
-
-[package.metadata.docs.rs]
-default-target = "x86_64-pc-windows-msvc"
-rustc-args = [ "--cfg", "docsrs",]
-targets = []

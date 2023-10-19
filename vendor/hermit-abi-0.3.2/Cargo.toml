@@ -2,11 +2,18 @@
 edition = "2021"
 name = "hermit-abi"
 version = "0.3.2"
-authors = [ "Stefan Lankes",]
+authors = [
+    "Stefan Lankes",
+]
 description = "Empty crate that should not build."
 readme = "README.md"
-keywords = [ "unikernel", "libos",]
-categories = [ "os",]
+keywords = [
+    "unikernel",
+    "libos",
+]
+categories = [
+    "os",
+]
 license = "Apache-2.0"
 repository = "https://github.com/hermitcore/rusty-hermit"
 

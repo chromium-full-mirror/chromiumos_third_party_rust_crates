@@ -2,13 +2,25 @@
 edition = "2018"
 name = "bindgen"
 version = "0.57.0"
-authors = [ "Jyun-Yan You <jyyou.tw@gmail.com>", "Emilio Cobos Álvarez <emilio@crisal.io>", "Nick Fitzgerald <fitzgen@gmail.com>", "The Servo project developers",]
+authors = [
+    "Jyun-Yan You <jyyou.tw@gmail.com>",
+    "Emilio Cobos Álvarez <emilio@crisal.io>",
+    "Nick Fitzgerald <fitzgen@gmail.com>",
+    "The Servo project developers",
+]
 description = "Empty crate that should not build."
 homepage = "https://rust-lang.github.io/rust-bindgen/"
 documentation = "https://docs.rs/bindgen"
 readme = "README.md"
-keywords = [ "bindings", "ffi", "code-generation",]
-categories = [ "external-ffi-bindings", "development-tools::ffi",]
+keywords = [
+    "bindings",
+    "ffi",
+    "code-generation",
+]
+categories = [
+    "external-ffi-bindings",
+    "development-tools::ffi",
+]
 license = "Apache-2.0"
 repository = "https://github.com/rust-lang/rust-bindgen"
 

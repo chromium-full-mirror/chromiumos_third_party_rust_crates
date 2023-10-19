@@ -3,15 +3,24 @@ edition = "2018"
 rust-version = "1.56"
 name = "wasm-bindgen"
 version = "0.2.87"
-authors = [ "The wasm-bindgen Developers",]
+authors = [
+    "The wasm-bindgen Developers",
+]
 description = "Empty crate that should not build."
 homepage = "https://rustwasm.github.io/"
 documentation = "https://docs.rs/wasm-bindgen"
 readme = "README.md"
-categories = [ "wasm",]
+categories = [
+    "wasm",
+]
 license = "Apache-2.0"
 repository = "https://github.com/rustwasm/wasm-bindgen"
 resolver = "2"
+
+[package.metadata.docs.rs]
+features = [
+    "serde-serialize",
+]
 
 [lib]
 test = false
@@ -25,6 +34,3 @@ spans = []
 std = []
 strict-macro = []
 xxx_debug_only_print_generated_code = []
-
-[package.metadata.docs.rs]
-features = [ "serde-serialize",]

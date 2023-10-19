@@ -3,14 +3,29 @@ edition = "2021"
 rust-version = "1.60.0"
 name = "bumpalo"
 version = "3.13.0"
-authors = [ "Nick Fitzgerald <fitzgen@gmail.com>",]
-exclude = [ "/.github/*", "/benches", "/tests", "valgrind.supp", "bumpalo.png",]
+authors = [
+    "Nick Fitzgerald <fitzgen@gmail.com>",
+]
+exclude = [
+    "/.github/*",
+    "/benches",
+    "/tests",
+    "valgrind.supp",
+    "bumpalo.png",
+]
 description = "Empty crate that should not build."
 documentation = "https://docs.rs/bumpalo"
 readme = "README.md"
-categories = [ "memory-management", "rust-patterns", "no-std",]
+categories = [
+    "memory-management",
+    "rust-patterns",
+    "no-std",
+]
 license = "Apache-2.0"
 repository = "https://github.com/fitzgen/bumpalo"
+
+[package.metadata.docs.rs]
+all-features = true
 
 [lib]
 bench = false
@@ -20,6 +35,3 @@ allocator_api = []
 boxed = []
 collections = []
 default = []
-
-[package.metadata.docs.rs]
-all-features = true
