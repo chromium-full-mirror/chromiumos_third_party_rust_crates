@@ -21,10 +21,11 @@ def die_if_not_running_in_chroot():
         sys.exit("This script can only be run within the chroot.")
 
 
-def install_toml_and_reexec_if_unavailable():
-    """Installs the toml module & restarts the program if necessary."""
+def install_tomli_and_reexec_if_unavailable():
+    """Installs the tomli{,_w} modules & restarts the program if necessary."""
     try:
-        import toml
+        import tomli
+        import tomli_w
 
         return
     except ImportError:
@@ -51,27 +52,37 @@ def install_toml_and_reexec_if_unavailable():
             check=True,
         )
 
-    tempdir = Path(tempfile.mkdtemp(prefix="pip-install-toml"))
-    bz2_whl_name = Path("toml-0.10.2-py2.py3-none-any.whl.bz2")
-    download_gs_file_to(
-        target_path=tempdir / bz2_whl_name,
-        gs_path=f"gs://chromeos-localmirror/distfiles/{bz2_whl_name}",
-        sha256="551b18190d11c683bdbda020c007792e80dcc2665e454f67c325aec9c6e9efbf",
-    )
+    tempdir = Path(tempfile.mkdtemp(prefix="pip-install-tomli"))
 
-    subprocess.run(["bzip2", "-d", bz2_whl_name], check=True, cwd=tempdir)
-    subprocess.run(
-        [
-            "python",
-            "-m",
-            "pip",
-            "--disable-pip-version-check",
-            "install",
-            "--user",
-            tempdir / bz2_whl_name.stem,
-        ],
-        check=True,
+    tomli_wheels = (
+        (
+            "tomli-2.0.1-py3-none-any.whl.bz2",
+            "218bc14a227cce9a113d6e67e9713e9ce5272325b37373329e673f9f217832e7",
+        ),
+        (
+            "tomli_w-1.0.0-py3-none-any.whl.bz2",
+            "e00d7fc56ce3072cc348e4583642848e41f7c795630f004027c4f778f729576c",
+        ),
     )
+    for bz2_whl_name, sha in tomli_wheels:
+        download_gs_file_to(
+            target_path=tempdir / bz2_whl_name,
+            gs_path=f"gs://chromeos-localmirror/distfiles/{bz2_whl_name}",
+            sha256=sha,
+        )
+        subprocess.run(["bzip2", "-d", bz2_whl_name], check=True, cwd=tempdir)
+        subprocess.run(
+            [
+                "python",
+                "-m",
+                "pip",
+                "--disable-pip-version-check",
+                "install",
+                "--user",
+                tempdir / Path(bz2_whl_name).stem,
+            ],
+            check=True,
+        )
 
     # Only clean this up on successful installs. It's useful for debugging, and
     # lands in /tmp anyway.

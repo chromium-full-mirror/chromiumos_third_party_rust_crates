@@ -24,9 +24,9 @@ import rust_crates
 
 
 rust_crates.die_if_not_running_in_chroot()
-rust_crates.install_toml_and_reexec_if_unavailable()
+rust_crates.install_tomli_and_reexec_if_unavailable()
 
-import toml
+import tomli
 
 
 WORKSPACE_FILE_HEADER = """\
@@ -74,15 +74,15 @@ def update_cargo_vet_info(
     cargo_vet_config = projects_dir.parent / "cargo-vet" / "config.toml"
     config = cargo_vet_config.read_text(encoding="utf-8")
 
-    cargo_vet_policy = toml.loads(config).get("policy", ())
+    cargo_vet_policy = tomli.loads(config).get("policy", ())
     project_names = []
     unseen_io_deps = set(
         x for x in NON_CRATES_IO_DEPS if x not in cargo_vet_policy
     )
     for project in projects:
         cargo_toml = projects_dir / project / "Cargo.toml"
-        with cargo_toml.open(encoding="utf-8") as f:
-            project_name = toml.load(f)["package"]["name"]
+        with cargo_toml.open("rb") as f:
+            project_name = tomli.load(f)["package"]["name"]
         project_names.append((project, project_name))
         unseen_io_deps.discard(project_name)
 

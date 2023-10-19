@@ -31,9 +31,10 @@ import rust_crates
 
 
 rust_crates.die_if_not_running_in_chroot()
-rust_crates.install_toml_and_reexec_if_unavailable()
+rust_crates.install_tomli_and_reexec_if_unavailable()
 
-import toml
+import tomli
+import tomli_w
 
 
 # Eg. crate(-1.2.3+blah)?
@@ -817,8 +818,8 @@ class CrateDestroyer:
         self.vendor_dir = vendor_dir
 
     def _modify_cargo_toml(self, pkg_path):
-        with open(os.path.join(pkg_path, "Cargo.toml"), "r") as cargo:
-            contents = toml.load(cargo)
+        with open(os.path.join(pkg_path, "Cargo.toml"), "rb") as cargo:
+            contents = tomli.load(cargo)
 
         package = contents["package"]
 
@@ -850,8 +851,8 @@ class CrateDestroyer:
         # source-related keys.
         clean_source_related_lines_in_place(contents)
 
-        with open(os.path.join(pkg_path, "Cargo.toml"), "w") as cargo:
-            toml.dump(contents, cargo)
+        with open(os.path.join(pkg_path, "Cargo.toml"), "wb") as cargo:
+            tomli_w.dump(contents, cargo)
 
     def _replace_source_contents(self, package_path, compile_error):
         # First load the checksum file before starting
@@ -1190,8 +1191,8 @@ def generate_annotations_file(
         )
 
     package_versions = collections.defaultdict(set)
-    with (cargo_dir / "Cargo.lock").open() as f:
-        for package in toml.load(f)["package"]:
+    with (cargo_dir / "Cargo.lock").open("rb") as f:
+        for package in tomli.load(f)["package"]:
             package_versions[package["name"]].add(package["version"])
     for package, versions in package_versions.items():
         # All of these versions are treated as "*" and are always valid
@@ -1218,8 +1219,8 @@ def generate_metallurgy_crates(
     print(
         "Ensuring metallurgy crates are in sync with non-metallurgy crates..."
     )
-    with (bazel_artifacts_dir / "annotations.toml").open(encoding="utf-8") as f:
-        annotations = toml.load(f)
+    with (bazel_artifacts_dir / "annotations.toml").open("rb") as f:
+        annotations = tomli.load(f)
 
     generate_annotations_file(
         cargo_dir=vendor_artifacts_dir / "alchemy",
