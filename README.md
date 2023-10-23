@@ -78,7 +78,7 @@ apply to. All other files are ignored.
 
 Updates to this repo will be captured by the CQ. To directly test changes,
 either build the `net-wireless/floss` package, or run
-`cros_workon --board=${BOARD} dev-rust/third-party-crates-src` and build
+`cros_workon --board=${BOARD} start dev-rust/third-party-crates-src` and build
 packages + run tests for your board of choice.
 
 ## Adding a first-party package
