@@ -236,8 +236,8 @@ num-integer = { "version" = "0.1.45", features = ['i128'] }
 num-traits = { "version" = "0.2.15", features = ['i128'] }
 num_cpus = "1.13.0"
 num_enum = "0.5.7"
-object = { "version" = "0.31.1", "default-features" = false, features = ['archive', 'coff', 'elf', 'macho', 'pe', 'read_core', 'unaligned'] }
-once_cell = { "version" = "1.17.0", features = ['alloc', 'race'] }
+object = { "version" = "0.31.1", "default-features" = false, features = ['archive', 'coff', 'crc32fast', 'elf', 'hashbrown', 'indexmap', 'macho', 'pe', 'read_core', 'unaligned', 'write_core'] }
+once_cell = { "version" = "1.17.0", features = ['alloc', 'race', 'unstable'] }
 open-enum = "0.3.0"
 openssl = "0.10.55"
 p9 = "0.2.3"

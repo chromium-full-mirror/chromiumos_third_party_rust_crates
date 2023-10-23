@@ -13,6 +13,7 @@ uefi-services = "0.22"
 uguid = "2.0"
 
 [dev-dependencies]
+object = { version = "0.31.1", default-features = false, features = ["write_core"] }
 regex = "1.6.0"
 
 [build-dependencies]
