@@ -395,5 +395,5 @@ xml-rs = "0.8.4"
 # Used by libchromeos-0.1.0
 # Used by spdm-core-0.1.0
 zerocopy-0-6-1 = { package = "zerocopy", "version" = "0.6.1" }
-zerocopy = { "version" = "0.7.8", features = ['derive', 'zerocopy-derive'] }
+zerocopy = { "version" = "0.7.8", features = ['derive', 'simd', 'zerocopy-derive'] }
 zeroize = { "version" = "1.5.7", features = ['zeroize_derive'] }

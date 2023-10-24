@@ -74,6 +74,11 @@ Note on does-not-implement-crypto: the aHash documentation explicitly
 states it is not a cryptographically secure hash.
 """
 
+[[audits.ahash]]
+who = "Nicholas Bishop <nicholasbishop@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.8.3 -> 0.8.5"
+
 [[audits.aho-corasick]]
 who = "Android Legacy"
 criteria = "safe-to-run"
