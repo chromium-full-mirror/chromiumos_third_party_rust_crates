@@ -114,6 +114,11 @@ criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Only safe-to-run is required, as this is a host tool."
 
+[policy.flexor]
+criteria = ["safe-to-run", "crypto-safe"]
+dev-criteria = ["safe-to-run", "crypto-safe"]
+notes = "This goes through first party code review."
+
 [policy.floss]
 criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
