@@ -2,6 +2,7 @@
 # Copyright 2023 The ChromiumOS Authors
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
+
 """Runs `cargo-audit` for rust_crates, and outputs results.
 
 Exits unsuccessfully if a problem happens, or if advisories are identified.
@@ -23,14 +24,15 @@ import hashlib
 import json
 import logging
 import os
+from pathlib import Path
 import shutil
 import subprocess
 import sys
 import tempfile
-from pathlib import Path
 from typing import Any, List, NamedTuple, Set, Union
 
 import cargo
+
 
 # The CPU arches that we care about.
 SUPPORTED_ARCHES = (
