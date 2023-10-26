@@ -75,6 +75,11 @@ states it is not a cryptographically secure hash.
 """
 
 [[audits.ahash]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.8.3 -> 0.7.7"
+
+[[audits.ahash]]
 who = "Nicholas Bishop <nicholasbishop@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.8.3 -> 0.8.5"

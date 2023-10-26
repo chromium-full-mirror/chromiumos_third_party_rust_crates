@@ -316,10 +316,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.ahash]]
-version = "0.7.6"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.alsa-sys]]
 version = "0.2.1"
 criteria = ["safe-to-run", "crypto-safe"]
