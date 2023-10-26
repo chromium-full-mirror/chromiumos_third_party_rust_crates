@@ -2060,8 +2060,10 @@ dependencies = [
 name = "flexor"
 version = "1.0.0"
 dependencies = [
+ "anyhow",
  "libchromeos",
- "thiserror",
+ "log",
+ "stderrlog",
 ]
 
 [[package]]
