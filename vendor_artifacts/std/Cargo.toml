@@ -215,6 +215,7 @@ multimap = { "version" = "0.8.3", features = ['serde'] }
 named-lock = "0.3.0"
 nb = "1.0.0"
 # Used by factory_installer-0.1.0
+# Used by flexor-1.0.0
 # Used by floss-0.0.1
 # Used by gpio-cdev-0.5.1
 # Used by i2cdev-0.5.1

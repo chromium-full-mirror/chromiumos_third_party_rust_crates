@@ -2063,7 +2063,9 @@ dependencies = [
  "anyhow",
  "libchromeos",
  "log",
+ "nix 0.23.1",
  "stderrlog",
+ "tempfile",
 ]
 
 [[package]]
