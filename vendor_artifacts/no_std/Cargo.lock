@@ -178,6 +178,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a3e2c3daef883ecc1b5d58c15adae93470a91d425f3532ba1695849656af3fc1"
 
 [[package]]
+name = "bytemuck"
+version = "1.13.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "17febce684fd15d89027105661fec94afb475cb995fbc59d2865198446ba2eea"
+dependencies = [
+ "bytemuck_derive",
+]
+
+[[package]]
+name = "bytemuck_derive"
+version = "1.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "965ab7eb5f8f97d2a083c799f3a1b994fc397b2fe2da5d1da1626ce15a39f2b1"
+dependencies = [
+ "proc-macro2 1.0.69",
+ "quote 1.0.32",
+ "syn 2.0.38",
+]
+
+[[package]]
 name = "byteorder"
 version = "1.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -398,7 +418,16 @@ version = "2.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "49fc9a695bca7f35f5f4c15cddc84415f66a74ea78eef08e90c5024f2b540e23"
 dependencies = [
- "crc-catalog",
+ "crc-catalog 1.1.1",
+]
+
+[[package]]
+name = "crc"
+version = "3.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "86ec7a15cbe22e59248fc7eadb1907dab5ba09372595da4d73dd805ed4417dfe"
+dependencies = [
+ "crc-catalog 2.2.0",
 ]
 
 [[package]]
@@ -406,6 +435,12 @@ name = "crc-catalog"
 version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ccaeedb56da03b09f598226e25e80088cb4cd25f316e6e4df7d695f0feeb1403"
+
+[[package]]
+name = "crc-catalog"
+version = "2.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9cace84e55f07e7301bae1c519df89cdad8cc3cd868413d3fdbdeca9ff3db484"
 
 [[package]]
 name = "crc32fast"
@@ -847,6 +882,28 @@ dependencies = [
 ]
 
 [[package]]
+name = "gpt_disk_io"
+version = "0.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c0720412ced14f41683dd3149f0797a54ccf760913b16f5aa571e6edea57c3dc"
+dependencies = [
+ "bytemuck",
+ "gpt_disk_types",
+]
+
+[[package]]
+name = "gpt_disk_types"
+version = "0.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1c9cec52cc9bb7305e0178834c310519a4d602952fb65a31bdf60aed797fbf47"
+dependencies = [
+ "bytemuck",
+ "crc 3.0.1",
+ "ucs2",
+ "uguid",
+]
+
+[[package]]
 name = "hash32"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1135,7 +1192,7 @@ dependencies = [
  "cortex-m",
  "cortex-m-rt",
  "cortex-m-rtic",
- "crc",
+ "crc 2.1.0",
  "crc32fast",
  "crossbeam-channel",
  "crossbeam-utils",
@@ -1158,6 +1215,8 @@ dependencies = [
  "gdbstub_arch",
  "getopts",
  "getrandom 0.2.10",
+ "gpt_disk_io",
+ "gpt_disk_types",
  "hex",
  "hmac-sha256",
  "httparse",
@@ -2228,6 +2287,9 @@ name = "uguid"
 version = "2.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1ef516f0806c5f61da6aa95125d0eb2d91cc95b2df426c06bde8be657282aee5"
+dependencies = [
+ "bytemuck",
+]
 
 [[package]]
 name = "unicode-ident"
