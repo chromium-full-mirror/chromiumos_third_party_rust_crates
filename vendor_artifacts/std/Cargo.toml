@@ -301,6 +301,7 @@ rustyline = { "version" = "10.0.0", features = ['dirs-next', 'radix_trie'] }
 # Used by floss-0.0.1
 rustyline-derive-0-4-0 = { package = "rustyline-derive", "version" = "0.4.0" }
 rustyline-derive = "0.6.0"
+sbat = { "version" = "0.5.0", features = ['alloc'] }
 scoped-tls = "1.0.0"
 scudo = "0.1.2"
 serde = { "version" = "1.0.152", features = ['derive', 'rc', 'serde_derive'] }

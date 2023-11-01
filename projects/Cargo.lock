@@ -179,6 +179,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "arrayvec"
+version = "0.7.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "96d30a06541fbafbc7f82ed10c06164cfbd2c401138f6addd8404629c4b16711"
+
+[[package]]
 name = "ascii"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1092,9 +1098,11 @@ version = "1.0.0"
 dependencies = [
  "bindgen 0.64.0",
  "log",
+ "mockall",
  "object",
  "printf-compat",
  "regex",
+ "sbat",
  "uefi",
  "uefi-services",
  "uguid",
@@ -5400,6 +5408,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502"
 dependencies = [
  "winapi-util",
+]
+
+[[package]]
+name = "sbat"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2d2e47fa91fe4dafea3ad8ba76db770b609d65f48cc7255e112a8441c2be9b65"
+dependencies = [
+ "arrayvec",
+ "ascii",
+ "log",
 ]
 
 [[package]]

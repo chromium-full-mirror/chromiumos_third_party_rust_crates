@@ -147,6 +147,7 @@ remain = "0.2.4"
 riscv = "0.7.0"
 riscv-rt = "0.8.0"
 rtt-target = { "version" = "0.3.1", features = ['cortex-m'] }
+sbat = { "version" = "0.5.0", features = ['alloc'] }
 serde = { "version" = "1.0.152", "default-features" = false, features = ['derive', 'rc', 'serde_derive'] }
 serde_bytes = { "version" = "0.10.5", "default-features" = false, features = [] }
 serde_json = { "version" = "1.0.96", "default-features" = false, features = [] }

@@ -174,6 +174,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.1.10 -> 0.1.12"
 
+[[audits.arrayvec]]
+who = "Nicholas Bishop <nicholasbishop@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.4"
+
 [[audits.ascii]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2614,6 +2619,11 @@ version = "1.0.5"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.6"
+
+[[audits.sbat]]
+who = "Nicholas Bishop <nicholasbishop@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.0"
 
 [[audits.scoped-tls]]
 who = "George Burgess IV <gbiv@google.com>"

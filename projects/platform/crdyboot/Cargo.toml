@@ -8,11 +8,13 @@ edition = "2021"
 log = "0.4"
 object = { version = "0.31.1", default-features = false, features = ["pe", "read_core", "unaligned"] }
 printf-compat = { version = "0.1", default-features = false }
+sbat = { version = "0.5.0", features = ["alloc"] }
 uefi = { version = "0.25", default-features = false, features = ["alloc"] }
 uefi-services = "0.22"
 uguid = "2.0"
 
 [dev-dependencies]
+mockall = "0.11.4"
 object = { version = "0.31.1", default-features = false, features = ["write_core"] }
 regex = "1.6.0"
 

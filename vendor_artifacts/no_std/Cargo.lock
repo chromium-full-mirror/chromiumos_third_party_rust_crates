@@ -45,6 +45,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a4668cab20f66d8d020e1fbc0ebe47217433c1b6c8f2040faf858554e394ace6"
 
 [[package]]
+name = "arrayvec"
+version = "0.7.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "96d30a06541fbafbc7f82ed10c06164cfbd2c401138f6addd8404629c4b16711"
+
+[[package]]
 name = "ascii"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1250,6 +1256,7 @@ dependencies = [
  "riscv 0.7.0",
  "riscv-rt",
  "rtt-target",
+ "sbat",
  "serde",
  "serde_bytes",
  "serde_json",
@@ -1940,6 +1947,17 @@ name = "ryu"
 version = "1.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "71d301d4193d031abdd79ff7e3dd721168a9572ef3fe51a1517aba235bd8f86e"
+
+[[package]]
+name = "sbat"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2d2e47fa91fe4dafea3ad8ba76db770b609d65f48cc7255e112a8441c2be9b65"
+dependencies = [
+ "arrayvec",
+ "ascii",
+ "log",
+]
 
 [[package]]
 name = "scopeguard"
