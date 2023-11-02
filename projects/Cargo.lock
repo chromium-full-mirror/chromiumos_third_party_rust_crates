@@ -1097,6 +1097,7 @@ name = "crdyboot"
 version = "1.0.0"
 dependencies = [
  "bindgen 0.64.0",
+ "ed25519-compact",
  "log",
  "mockall",
  "object",
