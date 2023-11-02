@@ -2101,7 +2101,6 @@ dependencies = [
  "anyhow",
  "gpt_disk_io",
  "gpt_disk_types",
- "libchromeos",
  "log",
  "nix 0.23.1",
  "stderrlog",
