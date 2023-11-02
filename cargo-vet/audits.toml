@@ -2169,6 +2169,18 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.4"
 
+[[audits.pdl-compiler]]
+who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.2"
+notes = "Google first-party code (source already has rule of two enforced)."
+
+[[audits.pdl-runtime]]
+who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.2"
+notes = "Google first-party code (source already has rule of two enforced)."
+
 [[audits.peeking_take_while]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = "does-not-implement-crypto"
@@ -2841,10 +2853,20 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.23"
 
+[[audits.thiserror]]
+who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.50"
+
 [[audits.thiserror-impl]]
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.23"
+
+[[audits.thiserror-impl]]
+who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.50"
 
 [[audits.threadpool]]
 who = "Dennis Kempin <denniskempin@google.com>"

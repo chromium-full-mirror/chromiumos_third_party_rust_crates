@@ -6,7 +6,9 @@ edition = "2018"
 
 [build-dependencies]
 protoc-rust = "2.24.1"
-pdl-compiler = "0.1.1"
+# TODO(phuleh) - Remove pdl-compiler 0.1.1 once uwbd is updated
+pdlc-01 = { package = "pdl-compiler", version = "0.1.1" }
+pdlc-02 = { package = "pdl-compiler", version = "0.2.2" }
 
 [dependencies]
 dbus = "0.9.3"
