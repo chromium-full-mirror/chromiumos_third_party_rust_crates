@@ -9,5 +9,6 @@ edition = "2018"
 libc = "0.2.44"
 
 [build-dependencies]
+bindgen = "0.64"
+anyhow = "1.0"
 pkg-config = "0.3"
-which = "4.0.0"

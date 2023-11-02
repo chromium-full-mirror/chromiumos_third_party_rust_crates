@@ -6751,9 +6751,10 @@ dependencies = [
 name = "vboot_reference-sys"
 version = "1.0.0"
 dependencies = [
+ "anyhow",
+ "bindgen 0.64.0",
  "libc",
  "pkg-config",
- "which",
 ]
 
 [[package]]
