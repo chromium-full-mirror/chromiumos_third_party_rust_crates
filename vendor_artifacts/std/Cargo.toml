@@ -252,6 +252,8 @@ panic-halt = "0.2.0"
 parking_lot-0-11-1 = { package = "parking_lot", "version" = "0.11.1" }
 paste = "1.0.4"
 pcap-file = "1.1.1"
+pdl-compiler = "0.2.2"
+pdl-runtime = "0.2.2"
 pest = "2.7.0"
 pest_derive = "2.7.0"
 pin-utils = "0.1.0"
@@ -334,7 +336,6 @@ svd2rust = "0.20.0"
 # Used by derive-getters-0.1.1
 # Used by ext-trait-proc_macros-1.0.1
 # Used by failure_derive-0.1.8
-# Used by floss-0.0.1
 # Used by include_dir_impl-0.6.2
 # Used by indoc-impl-0.3.6
 # Used by inventory-impl-0.1.11
@@ -363,7 +364,6 @@ svd2rust = "0.20.0"
 # Used by structopt-derive-0.4.18
 # Used by svd2rust-0.20.0
 # Used by synstructure-0.12.4
-# Used by thiserror-impl-1.0.38
 # Used by tonic-build-0.8.2
 # Used by tracing-attributes-0.1.22
 # Used by zerocopy-derive-0.3.2
@@ -376,7 +376,7 @@ tempfile = "3.4.0"
 # Used by clap-2.34.0
 # Used by crosh-0.24.52
 textwrap-0-11-0 = { package = "textwrap", "version" = "0.11.0" }
-thiserror = "1.0.38"
+thiserror = "1.0.50"
 time = { "version" = "0.3.14", features = ['alloc', 'formatting', 'itoa', 'local-offset', 'macros', 'parsing', 'time-macros'] }
 tiny_http = "0.8.2"
 tokio = { "version" = "1.29.1", features = ['bytes', 'fs', 'io-std', 'io-util', 'libc', 'macros', 'mio', 'net', 'num_cpus', 'rt', 'rt-multi-thread', 'signal', 'signal-hook-registry', 'socket2', 'sync', 'time', 'tokio-macros', 'windows-sys'] }

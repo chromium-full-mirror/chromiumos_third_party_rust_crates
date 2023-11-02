@@ -3014,6 +3014,8 @@ dependencies = [
  "parking_lot 0.11.1",
  "paste 1.0.4",
  "pcap-file",
+ "pdl-compiler",
+ "pdl-runtime",
  "pest",
  "pest_derive",
  "pin-utils",
@@ -3714,6 +3716,35 @@ checksum = "6ad13fed1a83120159aea81b265074f21d753d157dd16b10cc3790ecba40a341"
 dependencies = [
  "byteorder",
  "derive-into-owned",
+ "thiserror",
+]
+
+[[package]]
+name = "pdl-compiler"
+version = "0.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d8cf00c8a2fd6c4a03575c9d60ef71d85775d4fb19965d8877c19dfa7aeabd8e"
+dependencies = [
+ "argh",
+ "codespan-reporting",
+ "heck 0.4.1",
+ "pest",
+ "pest_derive",
+ "prettyplease 0.2.6",
+ "proc-macro2 1.0.69",
+ "quote 1.0.32",
+ "serde",
+ "serde_json",
+ "syn 2.0.38",
+]
+
+[[package]]
+name = "pdl-runtime"
+version = "0.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "39c698c6a598a92221ca8d67f53fb88e7df6ab6ce9cba574b0def52100457599"
+dependencies = [
+ "bytes",
  "thiserror",
 ]
 
@@ -5445,22 +5476,22 @@ checksum = "222a222a5bfe1bba4a77b45ec488a741b3cb8872e5e499451fd7d0129c9c7c3d"
 
 [[package]]
 name = "thiserror"
-version = "1.0.38"
+version = "1.0.50"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6a9cd18aa97d5c45c6603caea1da6628790b37f7a34b6ca89522331c5180fed0"
+checksum = "f9a7210f5c9a7156bb50aa36aed4c95afb51df0df00713949448cf9e97d382d2"
 dependencies = [
  "thiserror-impl",
 ]
 
 [[package]]
 name = "thiserror-impl"
-version = "1.0.38"
+version = "1.0.50"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1fb327af4685e4d03fa8cbcf1716380da910eeb2bb8be417e7f9fd3fb164f36f"
+checksum = "266b2e40bc00e5a6c09c3584011e08b06f123c00362c92b975ba9843aaaa14b8"
 dependencies = [
  "proc-macro2 1.0.69",
  "quote 1.0.32",
- "syn 1.0.107",
+ "syn 2.0.38",
 ]
 
 [[package]]
