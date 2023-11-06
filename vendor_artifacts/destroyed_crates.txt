@@ -20,6 +20,7 @@ ntapi 0.3.6
 rand_hc 0.2.0
 rdrand 0.4.0
 redox_syscall 0.2.16
+redox_syscall 0.3.5
 redox_users 0.4.0
 socket2 0.3.19
 str-buf 1.0.5

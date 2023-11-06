@@ -65,6 +65,7 @@ bindgen = { "version" = "0.64.0", features = ['log', 'which'] }
 # Used by procfs-0.15.1
 # Used by pulldown-cmark-0.6.1
 # Used by redox_syscall-0.2.16
+# Used by redox_syscall-0.3.5
 # Used by ron-0.5.1
 # Used by rustix-0.36.7
 # Used by rustyline-9.1.2
@@ -372,6 +373,7 @@ syn-1-0-107 = { package = "syn", "version" = "1.0.107", features = ['extra-trait
 syn = { "version" = "2.0.38", features = ['full', 'quote', 'visit', 'visit-mut'] }
 sys-info = "0.9.1"
 syslog = "6.0.1"
+tar = "0.4.40"
 tempfile = "3.4.0"
 # Used by clap-2.34.0
 # Used by crosh-0.24.52

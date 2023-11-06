@@ -48,6 +48,7 @@ base64 = { "version" = "0.13.1", "default-features" = false, features = [] }
 # Used by procfs-0.15.1
 # Used by pulldown-cmark-0.6.1
 # Used by redox_syscall-0.2.16
+# Used by redox_syscall-0.3.5
 # Used by ron-0.5.1
 # Used by rustix-0.36.7
 # Used by rustyline-9.1.2

@@ -1141,6 +1141,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "3.0.9 -> 3.0.13"
 
+[[audits.filetime]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.22"
+
 [[audits.fixedbitset]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2808,6 +2813,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.1"
 
+[[audits.tar]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.40"
+
 [[audits.tempfile]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -3247,6 +3257,11 @@ version = "4.0.2"
 who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.2.0"
+
+[[audits.xattr]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.1"
 
 [[audits.zerocopy]]
 who = "ChromeOS"
