@@ -399,6 +399,7 @@ vsock = "0.3.0"
 walkdir = "2.3.2"
 which = "4.3.0"
 xml-rs = "0.8.4"
+xz2 = "0.1.7"
 # Used by libchromeos-0.1.0
 # Used by spdm-core-0.1.0
 zerocopy-0-6-1 = { package = "zerocopy", "version" = "0.6.1" }
