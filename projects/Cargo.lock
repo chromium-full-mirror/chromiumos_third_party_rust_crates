@@ -2111,6 +2111,7 @@ name = "flexor"
 version = "1.0.0"
 dependencies = [
  "anyhow",
+ "clap 4.1.14",
  "gpt_disk_io",
  "gpt_disk_types",
  "log",
