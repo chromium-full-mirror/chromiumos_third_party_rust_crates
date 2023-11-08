@@ -140,10 +140,10 @@
       ],
       "patch_tool": "patch",
       "patches": [
-        "@@//third_party/rust_crates/patches:grpcio-sys/0001-patch-yaml-load.patch",
-        "@@//third_party/rust_crates/patches:grpcio-sys/0002-use-bindgen-0.63.patch"
+        "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0001-use-bindgen-0.63.patch",
+        "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0002-grpc-unused-protos.patch"
       ],
-      "version": "*"
+      "version": "0.13.0+1.56.2-patched"
     },
     {
       "patch_args": [
@@ -151,7 +151,9 @@
       ],
       "patch_tool": "patch",
       "patches": [
-        "@@//third_party/rust_crates/patches:grpcio-sys-0.9.1+1.38.0/001-grpc-vsock-support.patch"
+        "@@//third_party/rust_crates/patches:grpcio-sys-0.9.1+1.38.0/0001-patch-yaml-load.patch",
+        "@@//third_party/rust_crates/patches:grpcio-sys-0.9.1+1.38.0/0002-use-bindgen-0.63.patch",
+        "@@//third_party/rust_crates/patches:grpcio-sys-0.9.1+1.38.0/0003-grpc-vsock-support.patch"
       ],
       "version": "0.9.1+1.38.0"
     }
