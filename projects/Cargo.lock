@@ -585,6 +585,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "boringssl-src"
+version = "0.6.0+e46383f"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5edec42197c014d84ea2396589f0da14b2257f63f319442b5e8475a077b90457"
+dependencies = [
+ "cmake",
+]
+
+[[package]]
 name = "built"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2148,8 +2157,10 @@ dependencies = [
  "env_logger 0.8.4",
  "futures",
  "glob",
- "grpcio",
- "grpcio-sys",
+ "grpcio 0.13.0",
+ "grpcio 0.9.1",
+ "grpcio-sys 0.13.0+1.56.2-patched",
+ "grpcio-sys 0.9.1+1.38.0",
  "hex",
  "inotify",
  "lazy_static",
@@ -2165,8 +2176,10 @@ dependencies = [
  "pdl-compiler 0.2.2",
  "pdl-runtime",
  "proc-macro2 1.0.69",
- "protobuf 2.27.1",
- "protoc-grpcio",
+ "protobuf 2.28.0",
+ "protobuf 3.2.0",
+ "protoc-grpcio 2.0.0",
+ "protoc-grpcio 3.0.0",
  "protoc-rust",
  "quote 1.0.32",
  "rand 0.8.5",
@@ -2484,11 +2497,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "24d99e00eed7e0a04ee2705112e7cfdbe1a3cc771147f22f016a8cd2d002187b"
 dependencies = [
  "futures",
- "grpcio-sys",
+ "grpcio-sys 0.9.1+1.38.0",
  "libc",
  "log",
  "parking_lot 0.11.1",
- "protobuf 2.27.1",
+ "protobuf 2.28.0",
+]
+
+[[package]]
+name = "grpcio"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9e398946b5721d72478eb647260a1b7c1d5f70f0de35399846c3913bd369a33e"
+dependencies = [
+ "futures-executor",
+ "futures-util",
+ "grpcio-sys 0.13.0+1.56.2-patched",
+ "libc",
+ "log",
+ "parking_lot 0.12.1",
+ "protobuf 2.28.0",
 ]
 
 [[package]]
@@ -2497,7 +2525,16 @@ version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ad76ae5de2e2d85fe8f45e072f7909e22fa9ffaf0d53b280825783720dab051c"
 dependencies = [
- "protobuf 2.27.1",
+ "protobuf 2.28.0",
+]
+
+[[package]]
+name = "grpcio-compiler"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f1f1abac9f330ac9ee0950220c10eea84d66479cede4836f0b924407fecf093c"
+dependencies = [
+ "protobuf 2.28.0",
 ]
 
 [[package]]
@@ -2507,7 +2544,23 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9447d1a926beeef466606cc45717f80897998b548e7dc622873d453e1ecb4be4"
 dependencies = [
  "bindgen 0.57.0",
- "boringssl-src",
+ "boringssl-src 0.3.0+688fc5c",
+ "cc",
+ "cmake",
+ "libc",
+ "libz-sys",
+ "pkg-config",
+ "walkdir",
+]
+
+[[package]]
+name = "grpcio-sys"
+version = "0.13.0+1.56.2-patched"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b3dae9132320ae1b03ea55b5ddc88ca72a31fb85fa631a241a40157f5feffe43"
+dependencies = [
+ "bindgen 0.59.2",
+ "boringssl-src 0.6.0+e46383f",
  "cc",
  "cmake",
  "libc",
@@ -4606,9 +4659,9 @@ dependencies = [
 
 [[package]]
 name = "protobuf"
-version = "2.27.1"
+version = "2.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cf7e6d18738ecd0902d30d1ad232c9125985a3422929b16c65517b38adc14f96"
+checksum = "106dd99e98437432fed6519dedecfade6a06a73bb7b2a1e019fdd2bee5778d94"
 
 [[package]]
 name = "protobuf"
@@ -4623,11 +4676,11 @@ dependencies = [
 
 [[package]]
 name = "protobuf-codegen"
-version = "2.27.1"
+version = "2.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "aec1632b7c8f2e620343439a7dfd1f3c47b18906c4be58982079911482b5d707"
+checksum = "033460afb75cf755fcfc16dfaed20b86468082a2ea24e05ac35ab4a099a017d6"
 dependencies = [
- "protobuf 2.27.1",
+ "protobuf 2.28.0",
 ]
 
 [[package]]
@@ -4672,9 +4725,9 @@ dependencies = [
 
 [[package]]
 name = "protoc"
-version = "2.27.1"
+version = "2.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c2ef1dc036942fac2470fdb8a911f125404ee9129e9e807f3d12d8589001a38f"
+checksum = "a0218039c514f9e14a5060742ecd50427f8ac4f85a6dc58f2ddb806e318c55ee"
 dependencies = [
  "log",
  "which",
@@ -4687,21 +4740,35 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "af5d484461b7f14e103742f21014cc519f6f3711b05d50b3e86d912467a3f8b7"
 dependencies = [
  "failure",
- "grpcio-compiler",
- "protobuf 2.27.1",
- "protobuf-codegen 2.27.1",
+ "grpcio-compiler 0.6.0",
+ "protobuf 2.28.0",
+ "protobuf-codegen 2.28.0",
+ "protoc",
+ "tempfile",
+]
+
+[[package]]
+name = "protoc-grpcio"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "980d0ed845138df84f72beb72faf6d726c70c99d0debb2b5e1e7dee61f853df7"
+dependencies = [
+ "failure",
+ "grpcio-compiler 0.7.0",
+ "protobuf 2.28.0",
+ "protobuf-codegen 2.28.0",
  "protoc",
  "tempfile",
 ]
 
 [[package]]
 name = "protoc-rust"
-version = "2.27.1"
+version = "2.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1a9e315121c8e7e21396e940a3d27f92280a6d28e3931213bf6cbfea76c5cc94"
+checksum = "22f8a182bb17c485f20bdc4274a8c39000a61024cfe461c799b50fec77267838"
 dependencies = [
- "protobuf 2.27.1",
- "protobuf-codegen 2.27.1",
+ "protobuf 2.28.0",
+ "protobuf-codegen 2.28.0",
  "protoc",
  "tempfile",
 ]
@@ -6755,7 +6822,7 @@ dependencies = [
  "log",
  "pdl-compiler 0.1.1",
  "pdl-compiler 0.2.2",
- "protobuf 2.27.1",
+ "protobuf 2.28.0",
  "protoc-rust",
  "syslog",
 ]

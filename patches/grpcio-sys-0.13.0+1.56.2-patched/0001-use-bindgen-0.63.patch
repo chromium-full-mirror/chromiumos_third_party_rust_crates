@@ -1,0 +1,26 @@
+The net-wireless/floss ebuild pulls in bindgen versions < 0.63
+through its dependencies. These bindgen versions do not work correctly
+with newer versions of LLVM. Since upstream grpc specifies an old bindgen
+version, patch it to use a newer one.
+
+BUG=b/271837931
+
+diff --git a/Cargo.toml b/Cargo.toml
+index 5f3f4c25..595e9cd5 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -84,7 +84,7 @@ features = ["vendored"]
+ optional = true
+ 
+ [build-dependencies.bindgen]
+-version = "0.59.0"
++version = "0.63.0"
+ features = ["runtime"]
+ optional = true
+ default-features = false
+@@ -121,4 +121,4 @@ openssl-vendored = [
+ ]
+ 
+ [target."cfg(not(all(any(target_os = \"linux\", target_os = \"macos\"), any(target_arch = \"x86_64\", target_arch = \"aarch64\"))))".build-dependencies.bindgen]
+-version = "0.59.0"
++version = "0.63.0"
