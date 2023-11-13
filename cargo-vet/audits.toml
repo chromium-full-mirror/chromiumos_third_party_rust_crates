@@ -354,6 +354,11 @@ who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.63.0 -> 0.64.0"
 
+[[audits.bindgen]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.64.0 -> 0.68.1"
+
 [[audits.bit_field]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
@@ -3228,10 +3233,27 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.5.0"
 
+[[audits.userfaultfd]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.5.0 -> 0.7.0"
+
 [[audits.userfaultfd-sys]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.2"
+
+[[audits.userfaultfd-sys]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto"]
+delta = "0.4.2 -> 0.5.0"
+notes = "First party code managed by Googlers on github"
+
+[[audits.userfaultfd-sys]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-deploy", "does-not-implement-crypto"]
+delta = "0.4.2 -> 0.5.0"
+notes = "First party code, managed by Googlers on GitHub"
 
 [[audits.utf8parse]]
 who = "George Burgess IV <gbiv@google.com>"

@@ -21,7 +21,6 @@ base64 = { "version" = "0.13.1", "default-features" = false, features = [] }
 # Used by axum-0.5.17
 # Used by bindgen-0.57.0
 # Used by bindgen-0.59.2
-# Used by bindgen-0.60.1
 # Used by bindgen-0.63.0
 # Used by bindgen-0.64.0
 # Used by clap-2.34.0
@@ -57,7 +56,6 @@ base64 = { "version" = "0.13.1", "default-features" = false, features = [] }
 # Used by spidev-0.5.1
 # Used by tower-http-0.3.4
 # Used by uart_16550-0.2.18
-# Used by userfaultfd-0.5.0
 # Used by wayland-server-0.29.0
 # Used by x86_64-0.14.10
 bitflags-1-3-2 = { package = "bitflags", "version" = "1.3.2" }

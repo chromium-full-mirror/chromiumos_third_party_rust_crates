@@ -31,16 +31,6 @@
         "@@//third_party/rust_crates/patches:bindgen-0.59.2/a04acc684e136505f926739a0a89d797309857eb.patch"
       ],
       "version": "0.59.2"
-    },
-    {
-      "patch_args": [
-        "-p1"
-      ],
-      "patch_tool": "patch",
-      "patches": [
-        "@@//third_party/rust_crates/patches:bindgen-0.60.1/a04acc684e136505f926739a0a89d797309857eb.patch"
-      ],
-      "version": "0.60.1"
     }
   ],
   "chrono": [
