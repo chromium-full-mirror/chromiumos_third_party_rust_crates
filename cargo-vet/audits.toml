@@ -1405,6 +1405,11 @@ who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.6.0 -> 0.7.0"
 
+[[audits.grpcio-compiler]]
+who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.0 -> 0.13.0"
+
 [[audits.grpcio-sys]]
 who = "Android Legacy"
 criteria = "safe-to-run"

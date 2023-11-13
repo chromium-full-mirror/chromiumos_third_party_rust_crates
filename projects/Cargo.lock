@@ -2159,6 +2159,7 @@ dependencies = [
  "glob",
  "grpcio 0.13.0",
  "grpcio 0.9.1",
+ "grpcio-compiler 0.13.0",
  "grpcio-sys 0.13.0+1.56.2-patched",
  "grpcio-sys 0.9.1+1.38.0",
  "hex",
@@ -2533,6 +2534,15 @@ name = "grpcio-compiler"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f1f1abac9f330ac9ee0950220c10eea84d66479cede4836f0b924407fecf093c"
+dependencies = [
+ "protobuf 2.28.0",
+]
+
+[[package]]
+name = "grpcio-compiler"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "375292b9a9e3f5f9c6ef978d1f28070a6b56ab78f8be0cfbee16c62d5b0fa361"
 dependencies = [
  "protobuf 2.28.0",
 ]

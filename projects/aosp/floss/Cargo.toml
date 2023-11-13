@@ -23,7 +23,8 @@ glob = "0.3.0"
 grpcio-2 = { package = "grpcio", version = "0.9", features = ["protobuf", "protobuf-codec", "openssl"] }
 grpcio-sys-2 = { package = "grpcio-sys", version = "0.9", features = ["openssl"] }
 grpcio-3 = { package = "grpcio", version = "0.13", features = ["protobuf", "protobuf-codec", "openssl"] }
-grpcio-sys-3 = { package = "grpcio-sys", version = "0.13", features = ["openssl"] }
+grpcio-sys-3 = { package = "grpcio-sys", version = "0.13", features = ["openssl", "bindgen"] }
+grpcio-compiler = "0.13"
 
 hex = "0.4.3"
 inotify = "0.9"
