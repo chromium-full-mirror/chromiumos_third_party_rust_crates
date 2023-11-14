@@ -177,10 +177,11 @@ gpt_disk_types = { "version" = "0.15.0", features = ['bytemuck', 'std'] }
 # Used by floss-0.0.1
 grpcio-0-9-1 = { package = "grpcio", "version" = "0.9.1", features = ['openssl', 'protobuf'] }
 grpcio = { "version" = "0.13.0", features = ['_secure', 'openssl', 'protobuf'] }
+grpcio-compiler = { "version" = "0.13.0", features = ['protobuf'] }
 # Used by floss-0.0.1
 # Used by grpcio-0.9.1
 grpcio-sys-0-9-1-1-38-0 = { package = "grpcio-sys", "version" = "0.9.1+1.38.0", features = ['bindgen', 'boringssl-src', 'openssl', 'secure'] }
-grpcio-sys = { "version" = "0.13.0+1.56.2-patched", features = ['_secure', 'boringssl', 'boringssl-src', 'openssl'] }
+grpcio-sys = { "version" = "0.13.0+1.56.2-patched", features = ['_secure', 'bindgen', 'boringssl', 'boringssl-src', 'openssl'] }
 heck = "0.4.1"
 hex = { "version" = "0.4.3", features = ['alloc'] }
 hmac-sha256 = "0.1.7"
@@ -274,6 +275,7 @@ procfs = "0.15.1"
 # Used by grpcio-0.13.0
 # Used by grpcio-compiler-0.6.0
 # Used by grpcio-compiler-0.7.0
+# Used by grpcio-compiler-0.13.0
 # Used by protobuf-codegen-2.28.0
 # Used by protoc-grpcio-2.0.0
 # Used by protoc-grpcio-3.0.0

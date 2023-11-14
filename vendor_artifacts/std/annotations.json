@@ -133,6 +133,18 @@
       "version": "*"
     }
   ],
+  "grpcio-compiler": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:grpcio-compiler-0.13.0/0001-remove-prost.patch"
+      ],
+      "version": "0.13.0"
+    }
+  ],
   "grpcio-sys": [
     {
       "patch_args": [
