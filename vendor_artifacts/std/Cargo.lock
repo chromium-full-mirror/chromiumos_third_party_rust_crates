@@ -3161,6 +3161,7 @@ dependencies = [
  "syn 2.0.38",
  "sys-info",
  "syslog",
+ "syslog_rfc5424",
  "tar",
  "tempfile",
  "textwrap 0.11.0",
@@ -5541,6 +5542,16 @@ dependencies = [
  "hostname",
  "libc",
  "log",
+ "time 0.3.14",
+]
+
+[[package]]
+name = "syslog_rfc5424"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e9f89eda0701efea38626f5bbbb81a049aeb52ad01d24fe6cfd0eb4d10efc191"
+dependencies = [
+ "thiserror",
  "time 0.3.14",
 ]
 
