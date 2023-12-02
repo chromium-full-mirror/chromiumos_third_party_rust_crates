@@ -348,7 +348,6 @@ svd2rust = "0.20.0"
 # Used by clap_derive-3.2.18
 # Used by cortex-m-rt-macros-0.6.15
 # Used by cortex-m-rtic-macros-1.1.6
-# Used by crosvm-0.1.0
 # Used by ctor-0.1.26
 # Used by defmt-macros-0.2.3
 # Used by derive-getters-0.1.1

@@ -1354,7 +1354,7 @@ dependencies = [
  "slab",
  "smallvec",
  "static_assertions",
- "syn 1.0.107",
+ "syn 2.0.38",
  "tempfile",
  "thiserror",
  "url",
