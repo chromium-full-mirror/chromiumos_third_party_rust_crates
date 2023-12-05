@@ -1,3 +1,19 @@
+# 0.16.0
+
+* Bump MSRV to 1.68.
+* Relax the requirements of `BlockIo::read_blocks` and
+  `BlockIo::write_blocks` such that reading/writing zero blocks is
+  allowed.
+* Add `BlockIoAdapter<T>`. This struct impls `BlockIo` for types that
+  don't have a block size. For example, `&mut [u8]`, `Vec<u8>`, and
+  `File`.
+* Add `alloc` feature. This enables the `BlockIoAdapter<Vec<u8>>` impl.
+* Remove `SliceBlockIo`, `MutSliceBlockIo`, and `StdBlockIo`. Use
+  `BlockIoAdapter` instead.
+* Remove `BlockIo::assert_valid_buffer`. Use
+  `BlockSize::assert_valid_block_buffer` instead.
+* Update to latest `gpt_disk_types`.
+
 # 0.15.0
 
 * Update to latest `gpt_disk_types`.

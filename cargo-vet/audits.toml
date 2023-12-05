@@ -1380,10 +1380,20 @@ who = "Bastian Kersting <bkersting@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.15.0"
 
+[[audits.gpt_disk_io]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.15.0 -> 0.16.0"
+
 [[audits.gpt_disk_types]]
 who = "Bastian Kersting <bkersting@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.15.0"
+
+[[audits.gpt_disk_types]]
+who = "Bastian Kersting <bkersting@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.15.0 -> 0.16.0"
 
 [[audits.grpcio]]
 who = "Android Legacy"

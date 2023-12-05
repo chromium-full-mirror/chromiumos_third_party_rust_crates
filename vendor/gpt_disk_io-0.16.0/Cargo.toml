@@ -11,9 +11,9 @@
 
 [package]
 edition = "2021"
-rust-version = "1.60"
+rust-version = "1.68"
 name = "gpt_disk_io"
-version = "0.15.0"
+version = "0.16.0"
 description = "GPT (GUID Partition Table) disk IO no_std library"
 readme = "README.md"
 keywords = [
@@ -30,7 +30,6 @@ categories = [
 ]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/google/gpt-disk-rs"
-resolver = "1"
 
 [package.metadata.docs.rs]
 all-features = true
@@ -44,14 +43,12 @@ version = "1.4.0"
 default-features = false
 
 [dependencies.gpt_disk_types]
-version = "0.15.0"
+version = "0.16.0"
 features = ["bytemuck"]
 
-[dev-dependencies.anyhow]
-version = "1.0.0"
-
-[dev-dependencies.bzip2-rs]
-version = "0.1.2"
-
 [features]
-std = ["gpt_disk_types/std"]
+alloc = []
+std = [
+    "alloc",
+    "gpt_disk_types/std",
+]

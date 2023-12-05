@@ -100,8 +100,8 @@ gdbstub = { "version" = "0.6.6", "default-features" = false, features = ['alloc'
 gdbstub_arch = "0.2.4"
 getopts = "0.2.21"
 getrandom = "0.2.10"
-gpt_disk_io = "0.15.0"
-gpt_disk_types = { "version" = "0.15.0", features = ['bytemuck'] }
+gpt_disk_io = { "version" = "0.16.0", features = ['alloc'] }
+gpt_disk_types = { "version" = "0.16.0", features = ['bytemuck'] }
 hex = { "version" = "0.4.3", "default-features" = false, features = ['alloc'] }
 hmac-sha256 = "0.1.7"
 httparse = { "version" = "1.8.0", "default-features" = false, features = [] }

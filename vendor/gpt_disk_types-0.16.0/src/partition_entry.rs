@@ -71,6 +71,7 @@ impl Display for GptPartitionType {
 impl FromStr for GptPartitionType {
     type Err = GuidFromStrError;
 
+    /// Parse from a GUID string. See [`Guid::from_str`].
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         Ok(Self(s.parse()?))
     }
@@ -267,6 +268,16 @@ impl Display for GptPartitionNameSetCharError {
 
 /// Human readable partition label encoded as a null-terminated UCS-2
 /// string.
+///
+/// # Examples
+///
+/// Construct from a UTF-8 string:
+///
+/// ```
+/// use gpt_disk_types::GptPartitionName;
+///
+/// let partition_name: GptPartitionName = "hacktheplanet".parse().unwrap();
+/// ```
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Hash, Ord, PartialOrd)]
 #[repr(transparent)]
 pub struct GptPartitionName(pub [u8; 72]);

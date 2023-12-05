@@ -11,9 +11,9 @@
 
 [package]
 edition = "2021"
-rust-version = "1.60"
+rust-version = "1.68"
 name = "gpt_disk_types"
-version = "0.15.0"
+version = "0.16.0"
 description = "GPT (GUID Partition Table) disk data types no_std library"
 readme = "README.md"
 keywords = [
@@ -30,7 +30,6 @@ categories = [
 ]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/google/gpt-disk-rs"
-resolver = "1"
 
 [package.metadata.docs.rs]
 all-features = true
@@ -43,6 +42,7 @@ rustdoc-args = [
 version = "1.4.0"
 features = ["derive"]
 optional = true
+default-features = false
 
 [dependencies.crc]
 version = "3.0.0"
@@ -51,7 +51,7 @@ version = "3.0.0"
 version = "0.3.2"
 
 [dependencies.uguid]
-version = "2.0.0"
+version = "2.1.0"
 
 [features]
 bytemuck = [

@@ -81,3 +81,30 @@ fn test_block_size() {
     assert_eq!(BlockSize::default().to_u32(), 512);
     assert_eq!(BlockSize::default().to_u64(), 512);
 }
+
+#[test]
+fn test_block_size_is_multiple() {
+    assert!(BlockSize::BS_512.is_multiple_of_block_size(0));
+    assert!(BlockSize::BS_512.is_multiple_of_block_size(512));
+    assert!(BlockSize::BS_512.is_multiple_of_block_size(1024));
+
+    assert!(!BlockSize::BS_512.is_multiple_of_block_size(1023));
+    assert!(!BlockSize::BS_512.is_multiple_of_block_size(1025));
+}
+
+#[test]
+#[should_panic]
+fn test_block_size_is_multiple_panic() {
+    let _ = BlockSize::BS_512.is_multiple_of_block_size(u128::MAX);
+}
+
+#[test]
+fn test_block_size_assert_valid_block_buffer() {
+    BlockSize::BS_512.assert_valid_block_buffer(&[0; 512]);
+}
+
+#[test]
+#[should_panic]
+fn test_block_size_assert_valid_block_buffer_painc() {
+    BlockSize::BS_512.assert_valid_block_buffer(&[0; 513]);
+}

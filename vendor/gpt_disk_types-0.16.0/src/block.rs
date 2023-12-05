@@ -200,6 +200,22 @@ impl LbaRangeInclusive {
         let r = self.to_byte_range(block_size)?;
         r.end().checked_sub(*r.start())?.checked_add(1)
     }
+
+    /// Get the number of blocks in the LBA range.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use gpt_disk_types::{Lba, LbaRangeInclusive};
+    ///
+    /// let r = LbaRangeInclusive::new(Lba(1), Lba(2)).unwrap();
+    /// assert_eq!(r.num_blocks(), 2);
+    /// ```
+    #[must_use]
+    pub fn num_blocks(self) -> u64 {
+        // Add one here since the range is inclusive.
+        self.end().to_u64() - self.start.to_u64() + 1
+    }
 }
 
 impl Display for LbaRangeInclusive {
@@ -275,6 +291,34 @@ impl BlockSize {
     #[must_use]
     pub fn to_usize(self) -> Option<usize> {
         self.0.get().try_into().ok()
+    }
+
+    /// Check if `value` is an even multiple of the block size.
+    ///
+    /// # Panics
+    ///
+    /// Panics if `value` does not fit in a [`u64`].
+    #[must_use]
+    pub fn is_multiple_of_block_size<T>(&self, value: T) -> bool
+    where
+        T: TryInto<u64>,
+    {
+        if let Ok(value) = value.try_into() {
+            let block_size = self.to_u64();
+            (value % block_size) == 0
+        } else {
+            panic!("value does not fit in a u64");
+        }
+    }
+
+    /// Assert that the `buffer` size is an even multiple of the block size.
+    ///
+    /// # Panics
+    ///
+    /// Panics if `buffer.len()` is not an even multiple of the block size.
+    #[track_caller]
+    pub fn assert_valid_block_buffer(&self, buffer: &[u8]) {
+        assert!(self.is_multiple_of_block_size(buffer.len()));
     }
 }
 
