@@ -10,7 +10,6 @@ gpt_disk_io = { version = "0.15.0", features = ["std"] }
 gpt_disk_types = "0.15.0"
 log = "0.4.20"
 nix = "0.23"
-stderrlog = "0.5.0"
 tar = "0.4.40"
 tempfile = "3.0"
 xz2 = "0.1.7"
