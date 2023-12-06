@@ -8,6 +8,7 @@ edition = "2021"
 anyhow = "1.0"
 gpt_disk_io = { version = "0.16.0", features = ["std"] }
 gpt_disk_types = "0.16.0"
+uuid = { version = "1", features = ["v4"] }
 log = "0.4.20"
 nix = "0.23"
 tar = "0.4.40"
