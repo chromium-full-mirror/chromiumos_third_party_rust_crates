@@ -2682,6 +2682,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "kernlog"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f0dd79b6ea06a97c93bc5587fba4c2ed6d723b939d35d5e3fb3c6870d12e6d17"
+dependencies = [
+ "libc",
+ "log",
+]
+
+[[package]]
 name = "lazy_static"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3060,6 +3070,7 @@ dependencies = [
  "itertools 0.8.2",
  "jobserver",
  "jsonschema",
+ "kernlog",
  "lazy_static",
  "libc",
  "libfuzzer-sys",

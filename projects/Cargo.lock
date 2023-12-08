@@ -2684,6 +2684,7 @@ dependencies = [
  "dbus 0.9.7",
  "dbus-crossroads 0.5.2",
  "getopts",
+ "kernlog",
  "libc",
  "log",
  "once_cell",
@@ -3200,6 +3201,16 @@ dependencies = [
  "derive-getters",
  "thiserror",
  "xml-rs",
+]
+
+[[package]]
+name = "kernlog"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f0dd79b6ea06a97c93bc5587fba4c2ed6d723b939d35d5e3fb3c6870d12e6d17"
+dependencies = [
+ "libc",
+ "log",
 ]
 
 [[package]]
