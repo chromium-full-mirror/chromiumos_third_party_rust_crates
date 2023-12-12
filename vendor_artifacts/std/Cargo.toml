@@ -240,8 +240,11 @@ nb = "1.0.0"
 # Used by wayland-server-0.29.0
 nix-0-23-1 = { package = "nix", "version" = "0.23.1" }
 # Used by adhd-deps-0.1.0
+# Used by chunnel-0.1.0
+# Used by crosh-0.24.52
 # Used by crosvm-0.1.0
 # Used by ctrlc-3.4.0
+# Used by libchromeos-0.1.0
 nix-0-26-2 = { package = "nix", "version" = "0.26.2", features = ['memoffset', 'pin-utils'] }
 nix = { "version" = "0.27.1", features = ['ioctl'] }
 nom = { "version" = "7.1.1", features = ['alloc'] }
