@@ -408,7 +408,7 @@ tonic = { "version" = "0.8.1", features = ['async-trait', 'axum', 'channel', 'h2
 tonic-build = { "version" = "0.8.2", features = ['prost-build'] }
 uefi = { "version" = "0.25.0", features = ['alloc', 'global_allocator', 'logger'] }
 uefi-services = "0.22.0"
-uguid = { "version" = "2.1.0", features = ['bytemuck', 'std'] }
+uguid = { "version" = "2.2.0", features = ['bytemuck', 'std'] }
 uhid-virt = "0.0.6"
 uninit = { "version" = "0.5.1", features = ['alloc'] }
 url = "2.3.1"

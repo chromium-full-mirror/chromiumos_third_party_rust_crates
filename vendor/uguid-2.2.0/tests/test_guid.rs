@@ -7,7 +7,7 @@
 // except according to those terms.
 
 use core::mem;
-use uguid::{guid, Guid, GuidFromStrError};
+use uguid::{guid, Guid, GuidFromStrError, Variant};
 
 #[test]
 fn test_guid() {
@@ -70,6 +70,23 @@ fn test_guid() {
 }
 
 #[test]
+fn test_from_random_bytes() {
+    let random_bytes = [
+        0x68, 0xc0, 0x5f, 0xd7, 0x78, 0x21, 0xf9, 0x01, 0x66, 0x15, 0xab, 0x54,
+        0xe9, 0xcc, 0x44, 0xb0,
+    ];
+    let expected_bytes = [
+        0x68, 0xc0, 0x5f, 0xd7, 0x78, 0x21, 0xf9, 0x4f, 0xa6, 0x15, 0xab, 0x54,
+        0xe9, 0xcc, 0x44, 0xb0,
+    ];
+
+    let guid = Guid::from_random_bytes(random_bytes);
+    assert_eq!(guid.to_bytes(), expected_bytes);
+    assert_eq!(guid.variant(), Variant::Rfc4122);
+    assert_eq!(guid.version(), 4);
+}
+
+#[test]
 fn test_parse_or_panic_success() {
     let _g = Guid::parse_or_panic("01234567-89ab-cdef-0123-456789abcdef");
 }
@@ -125,6 +142,40 @@ fn test_guid_error() {
         GuidFromStrError::Hex(10).to_string(),
         "GUID string contains invalid ASCII hex at index 10"
     );
+}
+
+#[test]
+fn test_guid_variant() {
+    assert_eq!(
+        guid!("00000000-0000-0000-0000-000000000000").variant(),
+        Variant::ReservedNcs
+    );
+    assert_eq!(
+        guid!("00000000-0000-0000-8000-000000000000").variant(),
+        Variant::Rfc4122
+    );
+    assert_eq!(
+        guid!("00000000-0000-0000-c000-000000000000").variant(),
+        Variant::ReservedMicrosoft
+    );
+    assert_eq!(
+        guid!("00000000-0000-0000-e000-000000000000").variant(),
+        Variant::ReservedFuture
+    );
+}
+
+#[test]
+fn test_guid_version() {
+    assert_eq!(guid!("00000000-0000-0000-8000-000000000000").version(), 0);
+    assert_eq!(guid!("00000000-0000-1000-8000-000000000000").version(), 1);
+    assert_eq!(guid!("00000000-0000-2000-8000-000000000000").version(), 2);
+    assert_eq!(guid!("00000000-0000-4000-8000-000000000000").version(), 4);
+}
+
+#[test]
+fn test_guid_is_zero() {
+    assert!(guid!("00000000-0000-0000-0000-000000000000").is_zero());
+    assert!(!guid!("308bbc16-a308-47e8-8977-5e5646c5291f").is_zero());
 }
 
 /// Inner module that only imports the `guid!` macro.

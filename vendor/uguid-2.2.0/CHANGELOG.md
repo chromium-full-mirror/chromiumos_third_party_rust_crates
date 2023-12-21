@@ -1,3 +1,13 @@
+# 2.2.0
+
+* Added `Variant` enum and `Guid::variant` method.
+* Added `Guid::from_random_bytes` constructor.
+* Added `Guid::is_zero` method.
+* Added `Guid::version` method.
+* Conversions of the `time_low` field to/from bytes now treat that field
+  as native endian rather than little endian.
+* Fix non-upper-case-globals linter warning.
+
 # 2.1.0
 
 * Bump MSRV to 1.68.

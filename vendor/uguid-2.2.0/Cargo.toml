@@ -13,7 +13,7 @@
 edition = "2021"
 rust-version = "1.68"
 name = "uguid"
-version = "2.1.0"
+version = "2.2.0"
 description = "GUID (Globally Unique Identifier) no_std library"
 readme = "README.md"
 keywords = [
@@ -41,6 +41,7 @@ rustdoc-args = [
 version = "1.4.0"
 features = ["derive"]
 optional = true
+default-features = false
 
 [dependencies.serde]
 version = "1.0.0"
