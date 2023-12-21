@@ -20,6 +20,7 @@ This differs from a simple invocation of `cargo-audit` in that:
 
 import argparse
 import dataclasses
+import enum
 import hashlib
 import json
 import logging
@@ -29,7 +30,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from typing import Any, List, NamedTuple, Set, Union
+from typing import Any, Iterable, List, Set
 
 import cargo
 
@@ -59,38 +60,26 @@ class Crate:
     version: str
 
 
-@dataclasses.dataclass(frozen=True, eq=True, order=True)
-class DepAdvisory:
-    """An advisory with a RUSTSEC advisory ID."""
+class AdvisoryType(enum.IntEnum):
+    """The kinds of advisories/warnings an Advisory can have."""
 
-    crate: Crate
-    id: str
-
-
-@dataclasses.dataclass(frozen=True, eq=True, order=True)
-class DepUnsound:
-    """A warning noting that the given crate is unsound."""
-
-    crate: Crate
+    ADVISORY = 1  # An advisory with a RUSTSEC advisory ID.
+    UNSOUND = 2  # A warning noting that the given crate is unsound.
+    UNMAINTAINED = 3  # A warning noting that the given crate is unmaintained.
+    YANKED = 4  # A warning noting that the given crate has been yanked.
 
 
 @dataclasses.dataclass(frozen=True, eq=True, order=True)
-class DepUnmaintained:
-    """A warning noting that the given crate is unmaintained."""
+class Advisory:
+    """Defines advisories and warnings for a given crate.
+
+    A union of problems that should be surfaced to the user. These must be
+    insertable into a set.
+    """
 
     crate: Crate
-
-
-@dataclasses.dataclass(frozen=True, eq=True, order=True)
-class DepYanked:
-    """A warning noting that the given crate has been yanked."""
-
-    crate: Crate
-
-
-# A union of problems that should be surfaced to the user. These must be
-# insertable into a set, must have a `.crate` member, and must be orderable.
-Advisory = Union[DepAdvisory, DepUnmaintained, DepUnsound, DepYanked]
+    advisory_type: AdvisoryType
+    id: str = ""  # Only set for DepAdvisory
 
 
 def parse_cargo_audit_json(output: str) -> List[Advisory]:
@@ -108,9 +97,10 @@ def parse_cargo_audit_json(output: str) -> List[Advisory]:
     # Even if the output is empty, this path should exist in audit_results.
     for vuln in audit_results["vulnerabilities"]["list"]:
         advisories.append(
-            DepAdvisory(
+            Advisory(
                 id=vuln["advisory"]["id"],
                 crate=parse_crate(vuln["package"]),
+                advisory_type=AdvisoryType.ADVISORY,
             )
         )
 
@@ -118,14 +108,27 @@ def parse_cargo_audit_json(output: str) -> List[Advisory]:
     warnings = audit_results["warnings"]
     for unmaintained in warnings.pop("unmaintained", ()):
         advisories.append(
-            DepUnmaintained(crate=parse_crate(unmaintained["package"]))
+            Advisory(
+                crate=parse_crate(unmaintained["package"]),
+                advisory_type=AdvisoryType.UNMAINTAINED,
+            )
         )
 
     for yanked in warnings.pop("yanked", ()):
-        advisories.append(DepYanked(crate=parse_crate(yanked["package"])))
+        advisories.append(
+            Advisory(
+                crate=parse_crate(yanked["package"]),
+                advisory_type=AdvisoryType.YANKED,
+            )
+        )
 
     for unsound in warnings.pop("unsound", ()):
-        advisories.append(DepUnsound(crate=parse_crate(unsound["package"])))
+        advisories.append(
+            Advisory(
+                crate=parse_crate(unsound["package"]),
+                advisory_type=AdvisoryType.UNSOUND,
+            )
+        )
 
     if warnings:
         raise ValueError(
@@ -136,7 +139,7 @@ def parse_cargo_audit_json(output: str) -> List[Advisory]:
 
 
 def run_cargo_audit(
-    rust_crates: Path, arches: List[str], ignored_advisories: List[str]
+    rust_crates: Path, arches: Iterable[str], ignored_advisories: Iterable[str]
 ) -> Set[Advisory]:
     """Runs cargo-audit on the given arch list."""
     projects_dir = rust_crates / "projects"
@@ -283,7 +286,7 @@ def main(argv: List[str]):
     complaint_lines = []
     # Sort by prioritizing the crate name+version, but sort on `x` itself if we
     # have multiple issues.
-    for advisory in sorted(advisories, key=lambda x: (x.crate, x)):
+    for advisory in sorted(advisories):
         crate = advisory.crate
         if crate in empty_crates:
             logging.info(
@@ -291,26 +294,28 @@ def main(argv: List[str]):
             )
             continue
 
-        if isinstance(advisory, DepAdvisory):
+        if advisory.advisory_type == AdvisoryType.ADVISORY:
             complaint_lines.append(
                 f"crate {crate.name!r} version {crate.version!r} has advisory "
                 f"https://rustsec.org/advisories/{advisory.id}.html"
             )
-        elif isinstance(advisory, DepYanked):
+        elif advisory.advisory_type == AdvisoryType.YANKED:
             complaint_lines.append(
                 f"crate {crate.name!r} version {crate.version!r} "
                 "has been yanked"
             )
-        elif isinstance(advisory, DepUnsound):
+        elif advisory.advisory_type == AdvisoryType.UNSOUND:
             complaint_lines.append(
                 f"crate {crate.name!r} version {crate.version!r} is unsound"
             )
-        elif isinstance(advisory, DepUnmaintained):
+        elif advisory.advisory_type == AdvisoryType.UNMAINTAINED:
             logging.info(
                 "Ignoring unmaintained advisory for %s", advisory.crate
             )
         else:
-            raise ValueError(f"Unexpected advisory type: {type(advisory)}")
+            raise ValueError(
+                f"Unexpected advisory type: {advisory.advisory_type}"
+            )
 
     if not complaint_lines:
         logging.info("No fatal advisories found. Exiting cleanly.")
