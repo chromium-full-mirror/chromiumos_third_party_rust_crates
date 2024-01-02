@@ -3376,9 +3376,19 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.7.0-alpha.1 -> 0.6.1"
 
 [[audits.zerocopy]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.0-alpha.1 -> 0.6.6"
+
+[[audits.zerocopy]]
 who = "Daniel Verkamp <dverkamp@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.7.0-alpha.1 -> 0.7.8"
+
+[[audits.zerocopy]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.8 -> 0.7.32"
 
 [[audits.zerocopy-derive]]
 who = "ChromeOS"
@@ -3389,3 +3399,13 @@ version = "0.3.2"
 who = "Daniel Verkamp <dverkamp@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.3.2 -> 0.7.8"
+
+[[audits.zerocopy-derive]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.8 -> 0.6.6"
+
+[[audits.zerocopy-derive]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.8 -> 0.7.32"
