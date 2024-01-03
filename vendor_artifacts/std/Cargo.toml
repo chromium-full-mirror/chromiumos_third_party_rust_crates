@@ -182,7 +182,7 @@ grpcio-compiler = { "version" = "0.13.0", features = ['protobuf'] }
 # Used by floss-0.0.1
 # Used by grpcio-0.9.1
 grpcio-sys-0-9-1-1-38-0 = { package = "grpcio-sys", "version" = "0.9.1+1.38.0", features = ['bindgen', 'boringssl-src', 'openssl', 'secure'] }
-grpcio-sys = { "version" = "0.13.0+1.56.2-patched", features = ['_secure', 'bindgen', 'boringssl', 'boringssl-src', 'openssl'] }
+grpcio-sys = { "version" = "0.13.0+1.56.2-patched", features = ['_secure', 'boringssl', 'boringssl-src', 'openssl'] }
 heck = "0.4.1"
 hex = { "version" = "0.4.3", features = ['alloc'] }
 hmac-sha256 = "0.1.7"
