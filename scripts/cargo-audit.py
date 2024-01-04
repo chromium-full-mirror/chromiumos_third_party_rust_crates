@@ -305,6 +305,17 @@ def main(argv: List[str]):
                 "has been yanked"
             )
         elif advisory.advisory_type == AdvisoryType.UNSOUND:
+            if (
+                advisory.crate.name == "inventory"
+                and advisory.crate.version.startswith("0.1")
+            ):
+                logging.info(
+                    "Ignoring unsoundness advisory for %r version %r: "
+                    "b/318697301",
+                    advisory.crate.name,
+                    advisory.crate.version,
+                )
+                continue
             complaint_lines.append(
                 f"crate {crate.name!r} version {crate.version!r} is unsound"
             )
