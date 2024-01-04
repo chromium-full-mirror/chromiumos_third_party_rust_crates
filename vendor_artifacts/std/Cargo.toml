@@ -62,7 +62,6 @@ bindgen-0-64-0 = { package = "bindgen", "version" = "0.64.0", features = ['log',
 # Used by nix-0.23.1
 # Used by nix-0.24.2
 # Used by nix-0.26.2
-# Used by openssl-0.10.55
 # Used by png-0.16.8
 # Used by printf-compat-0.1.1
 # Used by procfs-0.15.1
@@ -259,7 +258,7 @@ num_enum = "0.5.7"
 object = { "version" = "0.31.1", "default-features" = false, features = ['archive', 'coff', 'crc32fast', 'elf', 'hashbrown', 'indexmap', 'macho', 'pe', 'read_core', 'unaligned', 'write_core'] }
 once_cell = { "version" = "1.17.0", features = ['alloc', 'race', 'unstable'] }
 open-enum = "0.3.0"
-openssl = "0.10.55"
+openssl = "0.10.62"
 p9 = "0.2.3"
 panic-halt = "0.2.0"
 # Used by grpcio-0.9.1

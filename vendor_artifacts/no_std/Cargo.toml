@@ -41,7 +41,6 @@ base64 = { "version" = "0.13.1", "default-features" = false, features = [] }
 # Used by nix-0.23.1
 # Used by nix-0.24.2
 # Used by nix-0.26.2
-# Used by openssl-0.10.55
 # Used by png-0.16.8
 # Used by printf-compat-0.1.1
 # Used by procfs-0.15.1
