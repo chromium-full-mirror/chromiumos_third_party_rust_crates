@@ -53,7 +53,6 @@ bindgen-0-64-0 = { package = "bindgen", "version" = "0.64.0", features = ['log',
 # Used by croscomp-0.1.0
 # Used by crosh-0.24.52
 # Used by flexbuffers-2.0.0
-# Used by gdbstub-0.6.6
 # Used by gpio-cdev-0.5.1
 # Used by hps-firmware-0.1.0
 # Used by i2cdev-0.5.1
@@ -166,8 +165,8 @@ futures = { "version" = "0.3.28", features = ['alloc', 'futures-executor'] }
 futures-executor = { "version" = "0.3.28", features = ['num_cpus', 'thread-pool'] }
 futures-util = { "version" = "0.3.28", features = ['alloc', 'channel', 'futures-channel', 'futures-io', 'futures-macro', 'futures-sink', 'io', 'memchr', 'sink', 'slab'] }
 gag = "1.0.0"
-gdbstub = { "version" = "0.6.6", features = ['alloc'] }
-gdbstub_arch = "0.2.4"
+gdbstub = { "version" = "0.7.0", features = ['alloc'] }
+gdbstub_arch = "0.3.0"
 getopts = "0.2.21"
 getrandom = { "version" = "0.2.10", features = ['std'] }
 glob = "0.3.1"

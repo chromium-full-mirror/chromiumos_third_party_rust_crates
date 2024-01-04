@@ -1316,6 +1316,16 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.6.6"
 
+[[audits.gdbstub]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.6.6 -> 0.7.0"
+
+[[audits.gdbstub_arch]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.2.4 -> 0.3.0"
+
 [[audits.getrandom]]
 who = "Android Legacy"
 criteria = "safe-to-run"

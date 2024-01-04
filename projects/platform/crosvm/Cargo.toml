@@ -37,8 +37,8 @@ fnv = "1"
 futures = "0.3"
 futures-executor = { version = "0.3", features = ["thread-pool"] }
 futures-util = "0.3"
-gdbstub = "0.6.1"
-gdbstub_arch = "0.2.2"
+gdbstub = "0.7.0"
+gdbstub_arch = "0.3.0"
 intrusive-collections = "0.9"
 io-uring = { version = "0.5", features = ["unstable"] }
 lazy_static = "1.4"
