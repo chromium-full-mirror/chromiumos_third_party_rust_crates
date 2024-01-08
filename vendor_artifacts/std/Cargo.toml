@@ -221,7 +221,10 @@ merge = { "version" = "0.1.0", features = ['merge_derive', 'num-traits'] }
 miniz_oxide-0-4-4 = { package = "miniz_oxide", "version" = "0.4.4", features = ['no_extern_crate_alloc'] }
 # Used by crosvm-0.1.0
 mio-0-7-14 = { package = "mio", "version" = "0.7.14", features = ['os-ext', 'os-poll'] }
-mockall = "0.11.4"
+# Used by crdyboot-1.0.0
+# Used by shadercached-0.2.0
+mockall-0-11-4 = { package = "mockall", "version" = "0.11.4" }
+mockall = "0.12.1"
 mocktopus = "0.8.0"
 multi_log = "0.1.2"
 multimap = { "version" = "0.8.3", features = ['serde'] }

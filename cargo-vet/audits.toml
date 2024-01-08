@@ -99,6 +99,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.12.1"
 
+[[audits.anstyle]]
+who = "Yu-An Wang <wyuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.4"
+
 [[audits.anyhow]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -1685,6 +1690,11 @@ who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.10.5"
 
+[[audits.itertools]]
+who = "Yu-An Wang <wyuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.10.5 -> 0.11.0"
+
 [[audits.itoa]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -1998,10 +2008,20 @@ who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.11.4"
 
+[[audits.mockall]]
+who = "Yu-An Wang <wyuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.11.4 -> 0.12.1"
+
 [[audits.mockall_derive]]
 who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.11.4"
+
+[[audits.mockall_derive]]
+who = "Yu-An Wang <wyuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.11.4 -> 0.12.1"
 
 [[audits.mocktopus]]
 who = "Howard Yang <hcyang@google.com>"
@@ -2346,6 +2366,11 @@ version = "0.2.10"
 who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "2.1.5"
+
+[[audits.predicates]]
+who = "Yu-An Wang <wyuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "2.1.5 -> 3.0.4"
 
 [[audits.predicates-core]]
 who = "Max Lee <endlesspring@google.com>"
