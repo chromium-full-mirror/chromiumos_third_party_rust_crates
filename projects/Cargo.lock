@@ -1964,6 +1964,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "ext2"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eaf75934d2704bcc3dba5dc398c9df660f7a8642de4f8d85cf031fc5c0f2b993"
+dependencies = [
+ "bit_field",
+ "bitflags 2.4.0",
+ "lazy_static",
+ "libc",
+ "nix 0.26.2",
+]
+
+[[package]]
 name = "extension-traits"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2684,6 +2697,7 @@ dependencies = [
  "anyhow",
  "dbus 0.9.7",
  "dbus-crossroads 0.5.2",
+ "ext2",
  "getopts",
  "kernlog",
  "libc",
