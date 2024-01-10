@@ -1877,6 +1877,12 @@ who = "Howard Chung <howardchung@google.com>"
 criteria = ["safe-to-run", "crypto-safe"]
 version = "2.1.0"
 
+[[audits.lz4_flex]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.11.1"
+notes = "Frequently makes use of unsafe for performance reasons. Most behind feature flags, but not all. Not entirely sure how memory safe those optimizations are."
+
 [[audits.lzma-sys]]
 who = "Bastian Kersting <bkersting@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -3077,6 +3083,12 @@ version = "0.2.3"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.3"
+
+[[audits.twox-hash]]
+who = "Dennis Kempin <denniskempin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.6.3"
+notes = "Non-cyptographic hashing function"
 
 [[audits.uart_16550]]
 who = "George Burgess IV <gbiv@google.com>"

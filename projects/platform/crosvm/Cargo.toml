@@ -48,6 +48,7 @@ libfuzzer-sys = "=0.4.4"
 libslirp-sys = "4.2.1"
 libtest-mimic = "0.6.0"
 log = "0.4"
+lz4_flex = "0.11"
 memoffset = "0.6"
 merge = "0.1.0"
 mio = { version = "0.7", features = ["os-ext"] }
