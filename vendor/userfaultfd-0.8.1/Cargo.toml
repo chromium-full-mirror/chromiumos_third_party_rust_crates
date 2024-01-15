@@ -12,7 +12,7 @@
 [package]
 edition = "2018"
 name = "userfaultfd"
-version = "0.7.0"
+version = "0.8.1"
 authors = ["The Wasmtime Project Developers"]
 description = "Rust bindings for the Linux userfaultfd functionality"
 readme = "README.md"
@@ -20,7 +20,7 @@ license = "MIT OR Apache-2.0"
 repository = "https://github.com/bytecodealliance/userfaultfd-rs"
 
 [dependencies.bitflags]
-version = "2.2.1"
+version = "2.4.0"
 
 [dependencies.cfg-if]
 version = "^1.0.0"

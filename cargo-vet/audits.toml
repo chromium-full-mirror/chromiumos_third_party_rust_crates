@@ -3315,6 +3315,11 @@ who = "Dennis Kempin <denniskempin@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.5.0 -> 0.7.0"
 
+[[audits.userfaultfd]]
+who = "Shintaro Kawamura <kawasin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.0 -> 0.8.1"
+
 [[audits.userfaultfd-sys]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]

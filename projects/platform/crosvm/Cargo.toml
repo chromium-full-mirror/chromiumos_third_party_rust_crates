@@ -83,7 +83,7 @@ syn = { version = "2", features = ["extra-traits", "full"] }
 tempfile = "3"
 thiserror = "1.0.20"
 url = "2.3"
-userfaultfd = "0.7.0"
+userfaultfd = "0.8.1"
 uuid = { version = "1", features = ["v4", "serde"] }
 which = "4.3"
 zerocopy = { version = "0.7", features = ["derive"] }
