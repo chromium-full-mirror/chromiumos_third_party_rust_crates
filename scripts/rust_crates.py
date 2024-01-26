@@ -21,6 +21,12 @@ def die_if_not_running_in_chroot():
         sys.exit("This script can only be run within the chroot.")
 
 
+def die_if_running_as_root():
+    """Exit with an error if this script is being run as root."""
+    if os.geteuid() == 0:
+        sys.exit("Don't run this as root and/or with sudo.")
+
+
 def install_tomli_and_reexec_if_unavailable():
     """Installs the tomli{,_w} modules & restarts the program if necessary."""
     try:
