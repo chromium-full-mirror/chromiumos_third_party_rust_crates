@@ -14,11 +14,32 @@ import subprocess
 import sys
 import tempfile
 
+# This sets up the paths for chromite
+import chromite_init
 
-def die_if_not_running_in_chroot():
-    """Exit with an error if this script is not being run within the chroot."""
-    if not Path("/etc/cros_chroot_version").exists():
-        sys.exit("This script can only be run within the chroot.")
+from chromite.lib import commandline
+from chromite.lib import constants
+from chromite.lib import cros_build_lib
+
+
+def run_inside_chroot():
+    """Restart the command inside the chroot if it isn't already."""
+    try:
+        commandline.RunInsideChroot()
+    except commandline.ChrootRequiredError as e:
+        sys.exit(
+            cros_build_lib.run(
+                e.cmd,
+                check=False,
+                enter_chroot=True,
+                chroot_args=e.chroot_args,
+                extra_env=e.extra_env,
+                cwd=constants.SOURCE_ROOT
+                / "src"
+                / "third_party"
+                / "rust_crates",
+            ).returncode
+        )
 
 
 def die_if_running_as_root():

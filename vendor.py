@@ -31,7 +31,7 @@ import rust_crates
 
 
 rust_crates.die_if_running_as_root()
-rust_crates.die_if_not_running_in_chroot()
+rust_crates.run_inside_chroot()
 rust_crates.install_tomli_and_reexec_if_unavailable()
 
 import tomli
