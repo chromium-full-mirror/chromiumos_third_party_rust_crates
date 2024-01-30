@@ -588,10 +588,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.12.3"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.heapless]]
-version = "0.7.16"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.hmac-sha256]]
 version = "0.1.7"
 criteria = ["safe-to-run", "crypto-safe"]

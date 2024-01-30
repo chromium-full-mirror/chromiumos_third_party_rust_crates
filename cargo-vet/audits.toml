@@ -269,6 +269,11 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.11"
 
+[[audits.atomic-polyfill]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.1.11 -> 1.0.3"
+
 [[audits.atty]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -1504,6 +1509,15 @@ version = "0.13.2"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.13.2 -> 0.14.3"
+
+[[audits.heapless]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.17"
+notes = """
+does-not-implement-crypto: Hashing containers (e.g., IndexMap) defer to other
+machinery like the hash32 crate for hashing.
+"""
 
 [[audits.heck]]
 who = "ChromeOS"
