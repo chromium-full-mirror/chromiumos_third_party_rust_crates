@@ -15,7 +15,7 @@ macro_rules! atomic_int {
         unsafe impl Send for $atomic_type {}
         #[cfg($cfg)]
         unsafe impl Sync for $atomic_type {}
-        #[cfg(all($cfg, not(missing_refunwindsafe)))]
+        #[cfg($cfg)]
         impl core::panic::RefUnwindSafe for $atomic_type {}
 
         #[cfg($cfg)]
@@ -211,7 +211,7 @@ impl core::fmt::Debug for AtomicBool {
 unsafe impl Send for AtomicBool {}
 #[cfg(polyfill_bool)]
 unsafe impl Sync for AtomicBool {}
-#[cfg(all(polyfill_bool, not(missing_refunwindsafe)))]
+#[cfg(polyfill_bool)]
 impl core::panic::RefUnwindSafe for AtomicBool {}
 
 #[cfg(polyfill_bool)]
@@ -231,11 +231,11 @@ impl AtomicBool {
     }
 
     pub fn load(&self, _order: Ordering) -> bool {
-        return critical_section::with(|_| unsafe { *self.inner.get() });
+        critical_section::with(|_| unsafe { *self.inner.get() })
     }
 
     pub fn store(&self, val: bool, _order: Ordering) {
-        return critical_section::with(|_| unsafe { *self.inner.get() = val });
+        critical_section::with(|_| unsafe { *self.inner.get() = val });
     }
 
     pub fn swap(&self, val: bool, order: Ordering) -> bool {
@@ -370,7 +370,7 @@ impl<T> core::fmt::Pointer for AtomicPtr<T> {
 unsafe impl<T> Sync for AtomicPtr<T> {}
 #[cfg(polyfill_ptr)]
 unsafe impl<T> Send for AtomicPtr<T> {}
-#[cfg(all(polyfill_ptr, not(missing_refunwindsafe)))]
+#[cfg(polyfill_ptr)]
 impl<T> core::panic::RefUnwindSafe for AtomicPtr<T> {}
 
 #[cfg(polyfill_ptr)]
@@ -390,11 +390,11 @@ impl<T> AtomicPtr<T> {
     }
 
     pub fn load(&self, _order: Ordering) -> *mut T {
-        return critical_section::with(|_| unsafe { *self.inner.get() });
+        critical_section::with(|_| unsafe { *self.inner.get() })
     }
 
     pub fn store(&self, val: *mut T, _order: Ordering) {
-        return critical_section::with(|_| unsafe { *self.inner.get() = val });
+        critical_section::with(|_| unsafe { *self.inner.get() = val });
     }
 
     pub fn swap(&self, val: *mut T, order: Ordering) -> *mut T {

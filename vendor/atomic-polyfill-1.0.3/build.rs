@@ -25,11 +25,12 @@ fn main() {
     use PolyfillLevel::*;
 
     let patterns = [
+        ("avr-*", (Polyfill, Polyfill)),
+        ("msp430-none-elf", (Polyfill, Polyfill)),
         ("riscv32imac-*", (Native, Polyfill)),
         ("riscv32gc-*", (Native, Polyfill)),
         ("riscv32imc-*-espidf", (Native, Native)),
         ("riscv32*", (Polyfill, Polyfill)),
-        ("avr-*", (Polyfill, Polyfill)),
         ("thumbv4t-*", (Polyfill, Polyfill)),
         ("thumbv6m-*", (Polyfill, Polyfill)),
         ("thumbv7m-*", (Native, Polyfill)),
@@ -68,10 +69,6 @@ fn main() {
         // If we don't know about the target, just reexport the entire `core::atomic::*`
         // This doesn't polyfill anything, but it's guaranteed to never fail build.
         println!("cargo:rustc-cfg=reexport_core");
-    }
-
-    if target.starts_with("avr-") {
-        println!("cargo:rustc-cfg=missing_refunwindsafe")
     }
 }
 
