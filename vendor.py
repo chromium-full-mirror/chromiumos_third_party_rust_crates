@@ -918,6 +918,9 @@ class CrateDestroyer:
                 # b/288421251: The failure crate is no longer maintained and
                 # has an open CVE, so we patched the only user while we wait
                 # for a pull requrest to be accepted upstream.
+                #
+                # b/321669037: shlex 0.1 is affected by RUSTSEC-2024-0006. The
+                # only user is bindgen 0.57, which is patched out.
                 force_destroy_crate = (
                     (
                         package_name == "time"
@@ -928,6 +931,10 @@ class CrateDestroyer:
                         and package_version.startswith("0.57")
                     )
                     or (package_name == "failure")
+                    or (
+                        package_name == "shlex"
+                        and package_version.startswith("0.1")
+                    )
                 )
                 if not force_destroy_crate:
                     continue
