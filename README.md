@@ -91,8 +91,14 @@ necessary) a minimal set of features/annotations. Dependency sections outside of
 what would build for ChromeOS, like `[target.'cfg(windows)'.dependencies]`, are
 also removed.
 
+Create a new directory mirroring where your Rust crate lives in the ChromeOS
+tree. Add the minimal `Cargo.toml` file to the folder you just created.
 Once your `Cargo.toml` seems correct and you're ready to test, run
 `projects/populate-workspace.py` to add it to the workspace.
+No need to create any other files, the script will do this for you.
+
+After adding the crate to the workspace, continue with the [Updating
+packages](#updating-packages) section.
 
 Admittedly, it's sort of awkward to have two `Cargo.toml`s for each first-party
 project. It may be worth trying to consolidate this in the future, though our
