@@ -1644,6 +1644,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.23.14"
 
+[[audits.image]]
+who = "Chih-Yao Chuang <jasonchuang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.23.14 -> 0.24.8"
+
 [[audits.include_dir]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]

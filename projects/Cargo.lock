@@ -1997,6 +1997,7 @@ dependencies = [
  "clap 3.2.23",
  "glob",
  "hmac-sha256",
+ "image 0.24.8",
  "libc",
  "mockall 0.12.1",
  "nix 0.23.1",
@@ -2774,7 +2775,7 @@ dependencies = [
  "ftdi",
  "gpio-cdev",
  "hmac-sha256",
- "image",
+ "image 0.23.14",
  "indicatif",
  "linux-embedded-hal",
  "linux-raw-sys 0.1.4",
@@ -2940,6 +2941,18 @@ dependencies = [
  "num-rational 0.3.2",
  "num-traits",
  "png",
+]
+
+[[package]]
+name = "image"
+version = "0.24.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "034bbe799d1909622a74d1193aa50147769440040ff36cb2baa947609b0a4e23"
+dependencies = [
+ "bytemuck",
+ "byteorder",
+ "color_quant",
+ "num-traits",
 ]
 
 [[package]]

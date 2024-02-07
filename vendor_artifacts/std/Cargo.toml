@@ -187,7 +187,9 @@ hex = { "version" = "0.4.3", features = ['alloc'] }
 hmac-sha256 = "0.1.7"
 hound = "3.5.0"
 httparse = "1.8.0"
-image = { "version" = "0.23.14", "default-features" = false, features = ['png'] }
+# Used by hps-firmware-0.1.0
+image-0-23-14 = { package = "image", "version" = "0.23.14", "default-features" = false, features = ['png'] }
+image = { "version" = "0.24.8", "default-features" = false }
 include_dir = { "version" = "0.6.2", features = ['glob'] }
 indicatif = "0.16.2"
 inotify = { "version" = "0.9.6", features = ['futures-core', 'tokio'] }
