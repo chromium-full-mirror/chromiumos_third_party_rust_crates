@@ -987,6 +987,11 @@ who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.0"
 
+[[audits.dirs-sys-next]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.2"
+
 [[audits.document-features]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -1199,6 +1204,16 @@ Further, it's only used in tests internal to this crate.
 who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.9.0"
+
+[[audits.fnv]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.7"
+notes = """
+fnv explicitly documents that it does not attempt to be crypto-secure, nor
+does it try to guard against collisions. Hence, this does not implement
+crypto.
+"""
 
 [[audits.foreign-types]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -1644,10 +1659,24 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.9.3 -> 2.1.0"
 
+[[audits.indoc]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "0.3.6"
+notes = """
+This crate simply reexports indoc_impl. There's therefore no code
+specific to this crate to audit.
+"""
+
 [[audits.indoc-impl]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
 version = "0.3.6"
+
+[[audits.inflections]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.1"
 
 [[audits.inotify]]
 who = "ChromeOS"
@@ -2188,6 +2217,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.6"
 
+[[audits.number_prefix]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+version = "0.4.0"
+
 [[audits.object]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2298,6 +2332,11 @@ version = "0.8.3"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.4"
+
+[[audits.paste-impl]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.18"
 
 [[audits.pdl-compiler]]
 who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
@@ -2445,6 +2484,11 @@ version = "0.3.3"
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.1"
+
+[[audits.proc-macro-crate]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.2.1"
 
 [[audits.proc-macro-error-attr]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -2720,6 +2764,16 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.6"
 
+[[audits.riscv-target]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.2"
+
+[[audits.rtic-core]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.0"
+
 [[audits.rtic-monotonic]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2744,6 +2798,11 @@ version = "0.1.0"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.1.0"
+
+[[audits.rustc_version]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.3"
 
 [[audits.rustfft]]
 who = "Li-Yu Yu <aaronyu@google.com>"

@@ -502,10 +502,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "2.0.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.dirs-sys-next]]
-version = "0.1.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.downcast-rs]]
 version = "1.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -536,10 +532,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.flexbuffers]]
 version = "2.0.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.fnv]]
-version = "1.0.7"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.fraction]]
@@ -628,14 +620,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.indicatif]]
 version = "0.16.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.indoc]]
-version = "0.3.6"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.inflections]]
-version = "1.1.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.inotify-sys]]
@@ -802,10 +786,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.5.7"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.number_prefix]]
-version = "0.4.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.openssl]]
 version = "0.10.62"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -834,10 +814,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.0.4"
 criteria = "crypto-safe"
 
-[[exemptions.paste-impl]]
-version = "0.1.18"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.pcap-file]]
 version = "1.1.1"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -864,10 +840,6 @@ criteria = "crypto-safe"
 
 [[exemptions.prettyplease]]
 version = "0.2.6"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.proc-macro-crate]]
-version = "1.2.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.proc-macro-error]]
@@ -1030,10 +1002,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.8.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.riscv-target]]
-version = "0.1.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.ron]]
 version = "0.5.1"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1044,10 +1012,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.roxmltree]]
 version = "0.14.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.rtic-core]]
-version = "1.0.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.rtt-target]]
@@ -1065,10 +1029,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 [[exemptions.rustc-hash]]
 version = "1.1.0"
 criteria = "crypto-safe"
-
-[[exemptions.rustc_version]]
-version = "0.2.3"
-criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.rustc_version]]
 version = "0.4.0"
