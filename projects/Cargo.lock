@@ -1657,9 +1657,9 @@ checksum = "bc621c2b4f5f5635e34021c38af2ccb0c1dae38ba11ebee25258de8bb1cee9fe"
 
 [[package]]
 name = "deqp-runner"
-version = "0.13.1"
+version = "0.18.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1d166822eb96b5f168ecdd0cefd5da38db23455c2feb172eba4886a6f7b59c7f"
+checksum = "252b511ef4b621ad0f116bc21f6c266f62bd0f3d244e8edbad912aa133bcf2a7"
 dependencies = [
  "anyhow",
  "crossbeam-utils",
@@ -1667,6 +1667,7 @@ dependencies = [
  "junit-report",
  "lazy_static",
  "log",
+ "mio 0.8.8",
  "rand 0.7.3",
  "rayon 1.5.3",
  "regex",
@@ -1675,7 +1676,6 @@ dependencies = [
  "serde-tuple-vec-map",
  "stderrlog",
  "structopt",
- "timeout-readwrite",
  "toml",
 ]
 
@@ -3754,6 +3754,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "927a765cd3fc26206e66b296465fa9d3e5ab003e651c1b3c060e7956d96b19d2"
 dependencies = [
  "libc",
+ "log",
  "wasi 0.11.0+wasi-snapshot-preview1",
  "windows-sys 0.48.0",
 ]
@@ -6445,15 +6446,6 @@ name = "time-macros"
 version = "0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "42657b1a6f4d817cda8e7a0ace261fe0cc946cf3a80314390b22cc61ae080792"
-
-[[package]]
-name = "timeout-readwrite"
-version = "0.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "61e9b6279ee83562e5f8ac37bbd4ca032016616c9f5688b0d1b7775619619dce"
-dependencies = [
- "nix 0.23.1",
-]
 
 [[package]]
 name = "tiny_http"

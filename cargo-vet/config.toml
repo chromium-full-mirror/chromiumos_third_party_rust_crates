@@ -1246,10 +1246,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.2.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.timeout-readwrite]]
-version = "0.3.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.tiny_http]]
 version = "0.8.2"
 criteria = ["safe-to-run", "crypto-safe"]

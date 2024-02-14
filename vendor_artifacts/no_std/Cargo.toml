@@ -135,7 +135,7 @@ printf-compat = { "version" = "0.1.1", "default-features" = false }
 # Used by flashrom_tester-deps-1.6.0
 rand-0-6-5 = { package = "rand", "version" = "0.6.5", "default-features" = false, features = ['alloc', 'rand_os'] }
 # Used by crosh-0.24.52
-# Used by deqp-runner-0.13.1
+# Used by deqp-runner-0.18.0
 # Used by riscv-rt-macros-deps-0.1.0
 rand-0-7-3 = { package = "rand", "version" = "0.7.3", "default-features" = false, features = ['alloc', 'getrandom', 'getrandom_package', 'libc', 'rand_pcg', 'small_rng'] }
 rand = { "version" = "0.8.5", "default-features" = false, features = ['alloc', 'getrandom', 'libc', 'rand_chacha', 'small_rng', 'std_rng'] }
