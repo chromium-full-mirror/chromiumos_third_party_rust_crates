@@ -2524,6 +2524,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "gravedigger"
+version = "0.1.0"
+
+[[package]]
 name = "grpcio"
 version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"

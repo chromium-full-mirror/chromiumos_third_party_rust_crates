@@ -46,6 +46,7 @@ members = [
     "platform2/sirenia/libsirenia/sirenia-rpc-macros",
     "platform2/sirenia/manatee-client",
     "platform2/sirenia/manatee-runtime",
+    "platform2/soul/gravedigger",
     "platform2/soul/reaper",
     "platform2/system_api",
     "platform2/uwbd",
