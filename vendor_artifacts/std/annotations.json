@@ -395,5 +395,12 @@
       ],
       "version": "*"
     }
+  ],
+  "zstd-sys": [
+    {
+      "build_script_env": {
+        "FORCE_C_COMPILER": "1"
+      }
+    }
   ]
 }

@@ -3510,3 +3510,19 @@ delta = "0.7.8 -> 0.6.6"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.7.8 -> 0.7.32"
+
+[[audits.zstd]]
+who = "Matt Turner <msturner@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.13.0"
+
+[[audits.zstd-safe]]
+who = "Matt Turner <msturner@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "7.0.0"
+
+[[audits.zstd-sys]]
+who = "Matt Turner <msturner@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.0.9+zstd.1.5.5"
+notes = "Includes an implementation of xxhash (a non-cyptographic hashing function) as part of the zstd C sources"

@@ -8,3 +8,4 @@ edition = "2018"
 
 [dependencies]
 deqp-runner = "=0.18.0"
+zstd = "0.13.0"

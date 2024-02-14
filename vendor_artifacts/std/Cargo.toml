@@ -428,3 +428,4 @@ xz2 = "0.1.7"
 zerocopy-0-6-6 = { package = "zerocopy", "version" = "0.6.6" }
 zerocopy = { "version" = "0.7.32", features = ['derive', 'simd', 'zerocopy-derive'] }
 zeroize = { "version" = "1.5.7", features = ['zeroize_derive'] }
+zstd = "0.13.0"
