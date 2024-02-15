@@ -58,11 +58,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Using relaxed target criteria to help with migration."
 
-[policy.crostini_client]
-criteria = ["safe-to-run", "crypto-safe"]
-dev-criteria = ["safe-to-run", "crypto-safe"]
-notes = "Using relaxed target criteria to help with migration."
-
 [policy.crosvm]
 criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
@@ -290,6 +285,11 @@ dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Using relaxed target criteria to help with migration."
 
 [policy.vboot_reference-sys]
+criteria = ["safe-to-run", "crypto-safe"]
+dev-criteria = ["safe-to-run", "crypto-safe"]
+notes = "Using relaxed target criteria to help with migration."
+
+[policy.vmc]
 criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Using relaxed target criteria to help with migration."

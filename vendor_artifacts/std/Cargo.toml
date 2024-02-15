@@ -132,8 +132,8 @@ dasp_interpolate = "0.11.0"
 dasp_sample = "0.11.0"
 # Used by memd-0.1.0
 dbus-0-6-5 = { package = "dbus", "version" = "0.6.5" }
-# Used by crostini_client-0.1.0
 # Used by os_install_service-1.0.0
+# Used by vmc-0.1.0
 dbus-0-8-4 = { package = "dbus", "version" = "0.8.4" }
 dbus = { "version" = "0.9.7", features = ['futures', 'futures-channel', 'futures-util'] }
 dbus-codegen = "0.10.0"
