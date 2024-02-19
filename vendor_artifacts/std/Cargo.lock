@@ -3204,6 +3204,7 @@ dependencies = [
  "protoc-rust",
  "pulldown-cmark",
  "pyo3",
+ "qrcode",
  "quote 1.0.32",
  "rand 0.6.5",
  "rand 0.7.3",
@@ -4480,6 +4481,15 @@ dependencies = [
  "proc-macro2 1.0.69",
  "quote 1.0.32",
  "syn 1.0.107",
+]
+
+[[package]]
+name = "qrcode"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "166f136dfdb199f98186f3649cf7a0536534a61417a1a30221b492b4fb60ce3f"
+dependencies = [
+ "image 0.24.8",
 ]
 
 [[package]]

@@ -2003,6 +2003,7 @@ dependencies = [
  "nix 0.23.1",
  "num-derive",
  "num-traits",
+ "qrcode",
  "regex",
  "serde",
  "serde_json",
@@ -4997,6 +4998,15 @@ name = "pyprjoxide-deps"
 version = "0.1.0"
 dependencies = [
  "pyo3",
+]
+
+[[package]]
+name = "qrcode"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "166f136dfdb199f98186f3649cf7a0536534a61417a1a30221b492b4fb60ce3f"
+dependencies = [
+ "image 0.24.8",
 ]
 
 [[package]]
