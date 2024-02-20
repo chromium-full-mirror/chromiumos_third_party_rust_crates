@@ -3217,6 +3217,11 @@ who = "Li-Yu Yu <aaronyu@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.2"
 
+[[audits.transpose]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.2.2 -> 0.2.3"
+
 [[audits.try-lock]]
 who = "ChromeOS"
 criteria = "safe-to-run"
