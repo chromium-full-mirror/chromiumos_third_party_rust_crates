@@ -11,10 +11,10 @@
 
 [package]
 name = "transpose"
-version = "0.2.2"
+version = "0.2.3"
 authors = ["Elliott Mahler <join.together@gmail.com>"]
 description = "Utility for transposing multi-dimensional data"
-documentation = "http://docs.rs/transpose"
+documentation = "https://docs.rs/transpose"
 readme = "README.md"
 keywords = [
     "array",
@@ -27,7 +27,7 @@ categories = [
     "no-std",
 ]
 license = "MIT OR Apache-2.0"
-repository = "http://github.com/ejmahler/transpose"
+repository = "https://github.com/ejmahler/transpose"
 
 [[bench]]
 name = "transpose_benchmarks"
