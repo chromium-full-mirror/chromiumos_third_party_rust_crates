@@ -88,7 +88,7 @@ capnpc = "0.14.9"
 cbindgen = "0.24.5"
 cc = { "version" = "1.0.83", features = ['jobserver', 'parallel'] }
 cfg-if = "1.0.0"
-chrono = { "version" = "0.4.26", features = ['iana-time-zone', 'js-sys', 'serde', 'time', 'wasm-bindgen', 'winapi'] }
+chrono = { "version" = "0.4.34", features = ['alloc', 'android-tzdata', 'iana-time-zone', 'js-sys', 'now', 'serde', 'wasm-bindgen', 'winapi', 'windows-targets'] }
 chunked_transfer = "1.4.1"
 # Used by bindgen-0.59.2
 # Used by bindgen-deps-0.63.0

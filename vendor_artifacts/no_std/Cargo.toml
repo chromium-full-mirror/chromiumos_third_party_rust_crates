@@ -62,7 +62,7 @@ bitreader = { "version" = "0.3.7", "default-features" = false, features = [] }
 byteorder = { "version" = "1.4.3", "default-features" = false, features = ['i128'] }
 bytes = { "version" = "1.4.0", "default-features" = false, features = [] }
 capnp = { "version" = "0.14.11", "default-features" = false, features = [] }
-chrono = { "version" = "0.4.26", "default-features" = false, features = ['clock', 'iana-time-zone', 'js-sys', 'oldtime', 'serde', 'time', 'wasm-bindgen', 'wasmbind', 'winapi'] }
+chrono = { "version" = "0.4.34", "default-features" = false, features = ['alloc', 'android-tzdata', 'clock', 'iana-time-zone', 'js-sys', 'now', 'oldtime', 'serde', 'wasm-bindgen', 'wasmbind', 'winapi', 'windows-targets'] }
 # Used by adhd-deps-0.1.0
 # Used by cbindgen-0.24.5
 # Used by factory_installer-0.1.0
