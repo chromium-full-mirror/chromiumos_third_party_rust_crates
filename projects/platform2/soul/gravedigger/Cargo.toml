@@ -3,5 +3,8 @@ name = "gravedigger"
 version = "0.1.0"
 edition = "2021"
 authors = ["The ChromiumOS Authors"]
-
 [dependencies]
+cxx = "1.0"
+log = "0.4"
+[dev-dependencies]
+tempfile = "3.4"
