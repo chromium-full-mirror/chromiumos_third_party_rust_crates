@@ -132,7 +132,6 @@ dasp_interpolate = "0.11.0"
 dasp_sample = "0.11.0"
 # Used by memd-0.1.0
 dbus-0-6-5 = { package = "dbus", "version" = "0.6.5" }
-# Used by os_install_service-1.0.0
 # Used by vmc-0.1.0
 dbus-0-8-4 = { package = "dbus", "version" = "0.8.4" }
 dbus = { "version" = "0.9.7", features = ['futures', 'futures-channel', 'futures-util'] }
@@ -237,7 +236,6 @@ nb = "1.0.0"
 # Used by floss-0.0.1
 # Used by gpio-cdev-0.5.1
 # Used by i2cdev-0.5.1
-# Used by os_install_service-1.0.0
 # Used by rustyline-9.1.2
 # Used by spidev-0.5.1
 # Used by sysfs_gpio-0.6.1
@@ -252,7 +250,7 @@ nix-0-23-1 = { package = "nix", "version" = "0.23.1" }
 # Used by ext2-0.1.1
 # Used by libchromeos-0.1.0
 nix-0-26-2 = { package = "nix", "version" = "0.26.2", features = ['memoffset', 'pin-utils'] }
-nix = { "version" = "0.27.1", features = ['ioctl'] }
+nix = { "version" = "0.27.1", features = ['ioctl', 'mount', 'uio'] }
 nom = { "version" = "7.1.1", features = ['alloc'] }
 num = { "version" = "0.2.1", features = ['num-bigint'] }
 num-bigint = "0.4.3"
