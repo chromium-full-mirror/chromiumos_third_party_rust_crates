@@ -1,0 +1,41 @@
+[package]
+edition = "2021"
+rust-version = "1.70"
+name = "half"
+version = "2.4.0"
+authors = [
+    "Kathryn Long <squeeself@gmail.com>",
+]
+exclude = [
+    ".git*",
+    ".editorconfig",
+    ".circleci",
+]
+description = "Empty crate that should not build."
+readme = "README.md"
+keywords = [
+    "f16",
+    "bfloat16",
+    "no_std",
+]
+categories = [
+    "no-std",
+    "data-structures",
+    "encoding",
+]
+license = "Apache-2.0"
+repository = "https://github.com/starkat99/half-rs"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = [
+    "--cfg",
+    "docsrs",
+]
+
+[features]
+alloc = []
+default = []
+rand_distr = []
+std = []
+use-intrinsics = []

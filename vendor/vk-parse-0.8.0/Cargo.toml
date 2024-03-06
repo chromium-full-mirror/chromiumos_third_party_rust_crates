@@ -1,0 +1,25 @@
+[package]
+name = "vk-parse"
+version = "0.8.0"
+authors = [
+    "Martin Krošlák <kroslakma@gmail.com>",
+]
+description = "Empty crate that should not build."
+documentation = "https://docs.rs/vk-parse"
+readme = "README.md"
+keywords = [
+    "vulkan",
+    "parser",
+]
+categories = [
+    "parser-implementations",
+    "rendering::graphics-api",
+]
+license = "Apache-2.0"
+repository = "https://github.com/krolli/vk-parse"
+
+[features]
+serialize = []
+vkxml-convert = []
+
+[badges]

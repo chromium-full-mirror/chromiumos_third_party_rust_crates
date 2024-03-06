@@ -48,6 +48,7 @@ bindgen-0-64-0 = { package = "bindgen", "version" = "0.64.0", features = ['log',
 # Used by clap-3.2.23
 # Used by clap_builder-4.1.14
 # Used by cloudabi-0.0.3
+# Used by core-graphics-types-0.1.2
 # Used by cros-libva-0.0.3
 # Used by cros-libva-0.0.4
 # Used by croscomp-0.1.0

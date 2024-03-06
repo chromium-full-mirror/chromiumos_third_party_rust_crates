@@ -1,0 +1,13 @@
+[package]
+name = "malloc_buf"
+version = "0.0.6"
+authors = [
+    "Steven Sheldon",
+]
+description = "Empty crate that should not build."
+repository = "https://github.com/SSheldon/malloc_buf"
+documentation = "http://ssheldon.github.io/malloc_buf/malloc_buf/"
+license = "Apache-2.0"
+exclude = [
+    ".gitignore",
+]
