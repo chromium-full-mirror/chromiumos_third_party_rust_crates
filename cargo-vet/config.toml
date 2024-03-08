@@ -184,6 +184,11 @@ criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Using relaxed target criteria to help with migration."
 
+[policy.mini_udisks]
+criteria = ["safe-to-run", "crypto-safe"]
+dev-criteria = ["safe-to-run", "crypto-safe"]
+notes = "Using relaxed target criteria to help with migration."
+
 [policy.minijail]
 criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]

@@ -3758,6 +3758,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2a60c7ce501c71e03a9c9c0d35b861413ae925bd979cc7a4e30d060069aaac8d"
 
 [[package]]
+name = "mini_udisks"
+version = "1.0.0"
+dependencies = [
+ "anyhow",
+ "dbus 0.9.7",
+ "dbus-crossroads 0.5.2",
+ "log",
+]
+
+[[package]]
 name = "minijail"
 version = "0.2.3"
 dependencies = [
