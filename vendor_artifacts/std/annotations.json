@@ -40,9 +40,9 @@
       ],
       "patch_tool": "patch",
       "patches": [
-        "@@//third_party/rust_crates/patches:chrono-0.4.34/remove-old-time-feature.patch"
+        "@@//third_party/rust_crates/patches:chrono/remove-old-time-feature.patch"
       ],
-      "version": "0.4.34"
+      "version": "*"
     }
   ],
   "clang-sys": [

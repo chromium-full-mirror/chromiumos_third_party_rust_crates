@@ -33,7 +33,6 @@ redox_users 0.4.0
 shlex 0.1.1
 socket2 0.3.19
 str-buf 1.0.5
-time 0.1.43
 vk-parse 0.8.0
 vulkano 0.31.1
 wasi 0.9.0+wasi-snapshot-preview1
