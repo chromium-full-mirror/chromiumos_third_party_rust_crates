@@ -5391,6 +5391,13 @@ dependencies = [
 [[package]]
 name = "reaper"
 version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "env_logger 0.9.3",
+ "log",
+ "serde",
+ "toml",
+]
 
 [[package]]
 name = "redox_syscall"

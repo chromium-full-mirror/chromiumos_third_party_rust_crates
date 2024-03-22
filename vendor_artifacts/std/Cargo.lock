@@ -3258,6 +3258,7 @@ dependencies = [
  "tokio",
  "tokio-macros",
  "tokio-stream",
+ "toml",
  "tonic",
  "tonic-build",
  "uefi",
