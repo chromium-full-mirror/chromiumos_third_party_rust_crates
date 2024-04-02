@@ -201,7 +201,7 @@ jobserver = "0.1.26"
 jsonschema = { "version" = "0.15.2", "default-features" = false }
 kernlog = "0.3.1"
 lazy_static = "1.4.0"
-libc = { "version" = "0.2.147", features = ['align', 'extra_traits'] }
+libc = { "version" = "0.2.153", features = ['align', 'extra_traits'] }
 libfuzzer-sys = "0.4.4"
 libloading = "0.7.4"
 libslirp-sys = "4.2.1"
@@ -246,12 +246,15 @@ nix-0-23-1 = { package = "nix", "version" = "0.23.1" }
 # Used by adhd-deps-0.1.0
 # Used by chunnel-0.1.0
 # Used by crosh-0.24.52
-# Used by crosvm-0.1.0
 # Used by ctrlc-3.4.0
 # Used by ext2-0.1.1
 # Used by libchromeos-0.1.0
 nix-0-26-2 = { package = "nix", "version" = "0.26.2", features = ['memoffset', 'pin-utils'] }
-nix = { "version" = "0.27.1", features = ['ioctl', 'mount', 'uio'] }
+# Used by croscomp-0.1.0
+# Used by os_install_service-1.0.0
+# Used by userfaultfd-0.8.1
+nix-0-27-1 = { package = "nix", "version" = "0.27.1", features = ['ioctl', 'mount', 'uio'] }
+nix = "0.28.0"
 nom = { "version" = "7.1.1", features = ['alloc'] }
 num = { "version" = "0.2.1", features = ['num-bigint'] }
 num-bigint = "0.4.3"

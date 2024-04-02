@@ -509,6 +509,11 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.0"
 
+[[audits.cfg_aliases]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.1"
+
 [[audits.chrono]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -1862,6 +1867,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.2.146 -> 0.2.147"
 
+[[audits.libc]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.2.147 -> 0.2.153"
+
 [[audits.libdbus-sys]]
 who = "ChromeOS Legacy"
 criteria = "safe-to-run"
@@ -2200,6 +2210,11 @@ delta = "0.25.0 -> 0.26.2"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.26.2 -> 0.27.1"
+
+[[audits.nix]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.27.1 -> 0.28.0"
 
 [[audits.nom]]
 who = "Android Legacy"
