@@ -29,6 +29,7 @@ members = [
     "platform/spdm",
     "platform/tast-tests/helpers/local",
     "platform/vboot_reference/rust/vboot_reference-sys",
+    "platform2/arc-setup-rs",
     "platform2/chromeos-dbus-bindings",
     "platform2/cronista",
     "platform2/crosh",
