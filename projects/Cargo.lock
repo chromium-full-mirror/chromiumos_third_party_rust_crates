@@ -1483,6 +1483,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "cxx-build"
+version = "1.0.97"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5c0c11acd0e63bae27dcd2afced407063312771212b7a823b4fd72d633be30fb"
+dependencies = [
+ "cc",
+ "codespan-reporting",
+ "once_cell",
+ "proc-macro2 1.0.69",
+ "quote 1.0.32",
+ "scratch",
+ "syn 2.0.38",
+]
+
+[[package]]
 name = "cxxbridge-cmd"
 version = "1.0.97"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2228,6 +2243,7 @@ dependencies = [
  "bytes",
  "configparser",
  "cxx",
+ "cxx-build",
  "dbus 0.9.7",
  "dbus-crossroads 0.4.0",
  "dbus-tokio",
@@ -2244,6 +2260,7 @@ dependencies = [
  "lazy_static",
  "log",
  "log-panics",
+ "memmap2",
  "nix 0.23.1",
  "num-bigint 0.4.3",
  "num-derive",
@@ -3708,6 +3725,15 @@ dependencies = [
  "syslog",
  "tempfile",
  "time",
+]
+
+[[package]]
+name = "memmap2"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "43a5a03cefb0d953ec0be133036f14e109412fa594edc2f77227249db66cc3ed"
+dependencies = [
+ "libc",
 ]
 
 [[package]]
@@ -5855,6 +5881,12 @@ name = "scopeguard"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d29ab0c6d3fc0ee92fe66e2d99f700eab17a8d57d1c1d3b748380fb20baa78cd"
+
+[[package]]
+name = "scratch"
+version = "1.0.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a3cf7c11c38cb994f3d40e8a8cde3bbd1f72a435e4c49e85d6553d8312306152"
 
 [[package]]
 name = "scudo"

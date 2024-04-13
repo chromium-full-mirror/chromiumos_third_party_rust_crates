@@ -882,6 +882,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.106 -> 1.0.107"
 
+[[audits.cxx-build]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.97"
+
 [[audits.cxxbridge-flags]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -2051,6 +2056,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "2.6.3"
 
+[[audits.memmap2]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.0"
+
 [[audits.memoffset]]
 who = "Dennis Kempin <denniskempin@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2955,6 +2965,11 @@ version = "1.0.0"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.1.0"
+
+[[audits.scratch]]
+who = "Ying Hsu <yinghsu@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.7"
 
 [[audits.scudo]]
 who = "George Burgess IV <gbiv@google.com>"
