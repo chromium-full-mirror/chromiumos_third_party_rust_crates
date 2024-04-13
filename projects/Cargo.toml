@@ -9,6 +9,7 @@ store = { path = '../cargo-vet' }
 
 [workspace]
 members = [
+    "aosp/aconfig",
     "aosp/floss",
     "pinned_crates",
     "platform/crdyboot",

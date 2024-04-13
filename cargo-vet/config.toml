@@ -8,6 +8,11 @@ version = "0.9"
 [imports.fuchsia]
 url = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
 
+[policy.aconfig]
+criteria = ["safe-to-run", "crypto-safe"]
+dev-criteria = ["safe-to-run", "crypto-safe"]
+notes = "Using relaxed target criteria to help with migration."
+
 [policy.adhd-deps]
 criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
@@ -663,10 +668,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.1.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.linux-raw-sys]]
-version = "0.4.5"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.litrs]]
 version = "0.2.3"
 criteria = "crypto-safe"
@@ -778,10 +779,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 [[exemptions.paste]]
 version = "0.1.18"
 criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.paste]]
-version = "1.0.4"
-criteria = "crypto-safe"
 
 [[exemptions.pcap-file]]
 version = "1.1.1"
@@ -941,14 +938,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.rayon-core]]
 version = "1.9.3"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.regex]]
-version = "1.6.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.regex-syntax]]
-version = "0.6.27"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.remain]]

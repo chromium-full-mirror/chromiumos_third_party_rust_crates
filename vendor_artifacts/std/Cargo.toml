@@ -46,7 +46,6 @@ bindgen-0-64-0 = { package = "bindgen", "version" = "0.64.0", features = ['log',
 # Used by bindgen-0.64.0
 # Used by clap-2.34.0
 # Used by clap-3.2.23
-# Used by clap_builder-4.1.14
 # Used by cloudabi-0.0.3
 # Used by core-graphics-types-0.1.2
 # Used by cros-libva-0.0.3
@@ -106,7 +105,7 @@ clap-2-34-0 = { package = "clap", "version" = "2.34.0", features = ['ansi_term',
 # Used by lego-controller-0.1.0
 # Used by prjoxide-deps-0.1.0
 clap-3-2-23 = { package = "clap", "version" = "3.2.23", features = ['atty', 'clap_derive', 'derive', 'once_cell', 'strsim', 'termcolor'] }
-clap = { "version" = "4.1.14", features = ['derive'] }
+clap = { "version" = "4.5.4", features = ['derive'] }
 # Used by clap-3.2.23
 # Used by hps-firmware-0.1.0
 clap_derive-3-2-18 = { package = "clap_derive", "version" = "3.2.18" }
@@ -128,7 +127,7 @@ crossbeam-utils = "0.8.16"
 ctor = "0.1.26"
 ctrlc = "3.4.0"
 cxx = { "version" = "1.0.106", features = ['alloc', 'c++17'] }
-cxx-build = "1.0.97"
+cxx-build = "1.0.121"
 dasp_frame = "0.11.0"
 dasp_interpolate = "0.11.0"
 dasp_sample = "0.11.0"
@@ -183,7 +182,13 @@ grpcio-compiler = { "version" = "0.13.0", features = ['protobuf'] }
 # Used by grpcio-0.9.1
 grpcio-sys-0-9-1-1-38-0 = { package = "grpcio-sys", "version" = "0.9.1+1.38.0", features = ['bindgen', 'boringssl-src', 'openssl', 'secure'] }
 grpcio-sys = { "version" = "0.13.0+1.56.2-patched", features = ['_secure', 'boringssl', 'boringssl-src', 'openssl'] }
-heck = "0.4.1"
+# Used by cbindgen-0.24.5
+# Used by clap_derive-3.2.18
+# Used by pdl-compiler-0.2.2
+# Used by pdl-compiler-deps-0.1.1
+# Used by prost-build-0.11.1
+# Used by vulkano-0.31.1
+heck-0-4-1 = { package = "heck", "version" = "0.4.1" }
 hex = { "version" = "0.4.3", features = ['alloc'] }
 hmac-sha256 = "0.1.7"
 hound = "3.5.0"
@@ -198,6 +203,11 @@ intrusive-collections = "0.9.6"
 io-uring = { "version" = "0.5.13", features = ['unstable'] }
 # Used by prjoxide-deps-0.1.0
 itertools-0-8-2 = { package = "itertools", "version" = "0.8.2", features = [] }
+# Used by aconfig-0.1.0
+# Used by predicates-2.1.5
+# Used by prost-build-0.11.1
+# Used by prost-derive-0.11.0
+itertools-0-10-5 = { package = "itertools", "version" = "0.10.5", features = ['use_alloc'] }
 jobserver = "0.1.26"
 jsonschema = { "version" = "0.15.2", "default-features" = false }
 kernlog = "0.3.1"
@@ -255,7 +265,7 @@ nix-0-26-2 = { package = "nix", "version" = "0.26.2", features = ['memoffset', '
 # Used by os_install_service-1.0.0
 # Used by userfaultfd-0.8.1
 nix-0-27-1 = { package = "nix", "version" = "0.27.1", features = ['ioctl', 'mount', 'uio'] }
-nix = { "version" = "0.28.0", features = ['event', 'feature', 'fs', 'ioctl', 'memoffset', 'mman', 'socket', 'uio'] }
+nix = { "version" = "0.28.0", features = ['event', 'feature', 'fs', 'ioctl', 'memoffset', 'mman', 'socket', 'uio', 'user'] }
 nom = { "version" = "7.1.1", features = ['alloc'] }
 num = { "version" = "0.2.1", features = ['num-bigint'] }
 num-bigint = "0.4.3"
@@ -265,7 +275,7 @@ num-traits = { "version" = "0.2.15", features = ['i128'] }
 num_cpus = "1.13.0"
 num_enum = "0.5.7"
 object = { "version" = "0.31.1", "default-features" = false, features = ['archive', 'coff', 'crc32fast', 'elf', 'hashbrown', 'indexmap', 'macho', 'pe', 'read_core', 'unaligned', 'write_core'] }
-once_cell = { "version" = "1.17.0", features = ['alloc', 'race', 'unstable'] }
+once_cell = { "version" = "1.19.0", features = ['alloc', 'race', 'unstable'] }
 open-enum = "0.3.0"
 openssl = "0.10.62"
 p9 = "0.2.3"
@@ -274,7 +284,7 @@ panic-halt = "0.2.0"
 # Used by pyo3-0.13.2
 # Used by wayland-server-0.29.0
 parking_lot-0-11-1 = { package = "parking_lot", "version" = "0.11.1" }
-paste = "1.0.4"
+paste = "1.0.14"
 pcap-file = "1.1.1"
 pdl-compiler = "0.2.2"
 pdl-runtime = "0.2.2"
@@ -284,7 +294,7 @@ pin-utils = "0.1.0"
 pkg-config = "0.3.26"
 prettyplease = "0.2.6"
 printf-compat = { "version" = "0.1.1", "default-features" = false }
-proc-macro2 = { "version" = "1.0.69", features = ['span-locations'] }
+proc-macro2 = { "version" = "1.0.79", features = ['span-locations'] }
 procfs = "0.15.1"
 # Used by floss-0.0.1
 # Used by grpcio-0.9.1
@@ -309,6 +319,7 @@ pyo3 = { "version" = "0.13.2", features = ['ctor', 'extension-module', 'indoc', 
 qrcode = "0.13.0"
 quick-xml = "0.30.0"
 quote = "1.0.32"
+quote = "1.0.36"
 # Used by flashrom_tester-deps-1.6.0
 rand-0-6-5 = { package = "rand", "version" = "0.6.5", features = ['alloc', 'rand_os'] }
 # Used by crosh-0.24.52
@@ -318,7 +329,7 @@ rand-0-7-3 = { package = "rand", "version" = "0.7.3", features = ['alloc', 'getr
 rand = { "version" = "0.8.5", features = ['alloc', 'getrandom', 'libc', 'rand_chacha', 'small_rng'] }
 rand_core = { "version" = "0.6.4", features = ['alloc', 'getrandom', 'std'] }
 rayon = "1.5.3"
-regex = { "version" = "1.6.0", features = ['aho-corasick', 'memchr', 'perf-cache', 'perf-dfa', 'perf-inline', 'perf-literal', 'unicode-age', 'unicode-bool', 'unicode-case', 'unicode-gencat', 'unicode-perl', 'unicode-script', 'unicode-segment'] }
+regex = { "version" = "1.10.4", features = ['perf-backtrack', 'perf-cache', 'perf-dfa', 'perf-inline', 'perf-literal', 'perf-onepass', 'unicode-age', 'unicode-bool', 'unicode-case', 'unicode-gencat', 'unicode-perl', 'unicode-script', 'unicode-segment'] }
 remain = "0.2.4"
 riscv = "0.7.0"
 riscv-rt = "0.8.0"
@@ -399,16 +410,16 @@ svd2rust = "0.20.0"
 # Used by tracing-attributes-0.1.22
 # Used by zeroize_derive-1.3.2
 syn-1-0-107 = { package = "syn", "version" = "1.0.107", features = ['extra-traits', 'full', 'quote', 'visit', 'visit-mut'] }
-syn = { "version" = "2.0.38", features = ['extra-traits', 'full', 'quote', 'visit', 'visit-mut'] }
+syn = { "version" = "2.0.58", features = ['extra-traits', 'full', 'visit', 'visit-mut'] }
 sys-info = "0.9.1"
 syslog = "6.0.1"
 syslog_rfc5424 = "0.9.0"
 tar = "0.4.40"
-tempfile = "3.4.0"
+tempfile = "3.10.1"
 # Used by clap-2.34.0
 # Used by crosh-0.24.52
 textwrap-0-11-0 = { package = "textwrap", "version" = "0.11.0" }
-thiserror = "1.0.50"
+thiserror = "1.0.58"
 time = { "version" = "0.3.14", features = ['alloc', 'formatting', 'itoa', 'local-offset', 'macros', 'parsing', 'time-macros'] }
 tiny_http = "0.8.2"
 tinytemplate = "1.2.1"
