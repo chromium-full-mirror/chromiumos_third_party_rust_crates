@@ -64,3 +64,6 @@ tokio = { version = "1.0", features = ['bytes', 'fs', 'io-util', 'libc', 'macros
 tokio-stream = "0.1"
 walkdir = "2.2"
 uhid-virt = "0.0.6"
+
+[target.'cfg(android)'.dependencies]
+jni = "*"
