@@ -63,7 +63,6 @@ byteorder = { "version" = "1.4.3", "default-features" = false, features = ['i128
 bytes = { "version" = "1.4.0", "default-features" = false, features = [] }
 capnp = { "version" = "0.14.11", "default-features" = false, features = [] }
 chrono = { "version" = "0.4.34", "default-features" = false, features = ['alloc', 'android-tzdata', 'clock', 'iana-time-zone', 'js-sys', 'now', 'oldtime', 'serde', 'wasm-bindgen', 'wasmbind', 'winapi', 'windows-targets'] }
-# Used by adhd-deps-0.1.0
 # Used by cbindgen-0.24.5
 # Used by factory_installer-0.1.0
 # Used by hps-firmware-0.1.0
@@ -86,6 +85,7 @@ dasp_sample = { "version" = "0.11.0", "default-features" = false, features = [] 
 defmt = "0.2.3"
 downcast-rs = { "version" = "1.2.0", "default-features" = false, features = [] }
 ed25519-compact = { "version" = "1.0.16", "default-features" = false, features = ['ct-codecs', 'pem'] }
+either = { "version" = "1.9.0", "default-features" = false, features = [] }
 embedded-hal = { "version" = "0.2.7", features = ['unproven'] }
 enumn = "0.1.11"
 euclid = { "version" = "0.22.9", "default-features" = false, features = [] }
@@ -111,6 +111,7 @@ itertools-0-8-2 = { package = "itertools", "version" = "0.8.2", "default-feature
 # Used by prost-build-0.11.1
 # Used by prost-derive-0.11.0
 itertools-0-10-5 = { package = "itertools", "version" = "0.10.5", "default-features" = false, features = ['use_alloc'] }
+itertools = { "version" = "0.11.0", "default-features" = false, features = ['use_alloc'] }
 lazy_static = "1.4.0"
 libc = { "version" = "0.2.153", "default-features" = false, features = ['align', 'extra_traits'] }
 # Used by hps-firmware-0.1.0

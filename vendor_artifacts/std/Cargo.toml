@@ -98,7 +98,6 @@ chunked_transfer = "1.4.1"
 # Used by structopt-0.3.26
 # Used by svd2rust-0.20.0
 clap-2-34-0 = { package = "clap", "version" = "2.34.0", features = ['ansi_term', 'atty', 'strsim'] }
-# Used by adhd-deps-0.1.0
 # Used by cbindgen-0.24.5
 # Used by factory_installer-0.1.0
 # Used by hps-firmware-0.1.0
@@ -148,6 +147,7 @@ diff = "0.1.13"
 document-features = "0.2.7"
 downcast-rs = "1.2.0"
 ed25519-compact = { "version" = "1.0.16", "default-features" = false, features = ['ct-codecs', 'pem', 'std'] }
+either = "1.9.0"
 embedded-hal = { "version" = "0.2.7", features = ['unproven'] }
 embedded-hal-mock = "0.8.0"
 enumn = "0.1.11"
@@ -208,6 +208,7 @@ itertools-0-8-2 = { package = "itertools", "version" = "0.8.2", features = [] }
 # Used by prost-build-0.11.1
 # Used by prost-derive-0.11.0
 itertools-0-10-5 = { package = "itertools", "version" = "0.10.5", features = ['use_alloc'] }
+itertools = { "version" = "0.11.0", features = ['use_alloc'] }
 jobserver = "0.1.26"
 jsonschema = { "version" = "0.15.2", "default-features" = false }
 kernlog = "0.3.1"
@@ -310,6 +311,7 @@ procfs = "0.15.1"
 protobuf-2-28-0 = { package = "protobuf", "version" = "2.28.0" }
 protobuf = "3.2.0"
 protobuf-codegen = "3.2.0"
+protobuf-parse = "3.2.0"
 # Used by floss-0.0.1
 protoc-grpcio-2-0-0 = { package = "protoc-grpcio", "version" = "2.0.0" }
 protoc-grpcio = "3.0.0"
@@ -318,7 +320,6 @@ pulldown-cmark = "0.6.1"
 pyo3 = { "version" = "0.13.2", features = ['ctor', 'extension-module', 'indoc', 'inventory', 'paste', 'pyo3-macros', 'unindent'] }
 qrcode = "0.13.0"
 quick-xml = "0.30.0"
-quote = "1.0.32"
 quote = "1.0.36"
 # Used by flashrom_tester-deps-1.6.0
 rand-0-6-5 = { package = "rand", "version" = "0.6.5", features = ['alloc', 'rand_os'] }
