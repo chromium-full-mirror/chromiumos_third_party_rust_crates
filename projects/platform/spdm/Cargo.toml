@@ -6,8 +6,9 @@ edition = "2021"
 
 [dependencies]
 open-enum = "0.3.0"
-uninit = "0.5"
+uninit = "0.6"
 zerocopy = "0.6.1"
+openssl = "0.10"
 
 [dev-dependencies]
 mocktopus = "0.8.0"

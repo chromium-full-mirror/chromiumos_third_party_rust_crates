@@ -3703,6 +3703,11 @@ who = "Howard Yang <hcyang@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.5.1"
 
+[[audits.uninit]]
+who = "Howard Yang <hcyang@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.2"
+
 [[audits.url]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
