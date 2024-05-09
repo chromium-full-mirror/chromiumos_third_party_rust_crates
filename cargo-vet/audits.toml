@@ -5,50 +5,98 @@
 description = """
 All crypto algorithms in this crate have been reviewed by a relevant expert.
 
+Please see the full text at:
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#crypto-safe
+
 **Note**: If a crate does not implement crypto, use `does-not-implement-crypto`,
 which implies `crypto-safe`, but does not require expert review in order to
-audit for."""
+audit for.
+"""
 
 [criteria.does-not-implement-crypto]
 description = """
-Inspection reveals that the crate in question does not attempt to implement any
-cryptographic algorithms on its own.
+Crates with this criteria do not implement cryptographic algorithms.
 
-Note that certification of this does not require an expert on all forms of
-cryptography: it's expected for crates we import to be \"good enough\" citizens,
-so they'll at least be forthcoming if they try to implement something
-cryptographic. When in doubt, please ask an expert."""
+Please see the full text at:
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#does-not-implement-crypto
+
+When in doubt, please ask an expert.
+"""
 implies = "crypto-safe"
 
 [criteria.rule-of-two-safe-to-deploy]
 description = """
-This is a stronger requirement than the built-in safe-to-deploy criteria,
-motivated by Chromium's rule-of-two related requirements:
-https://chromium.googlesource.com/chromium/src/+/master/docs/security/rule-of-2.md#unsafe-code-in-safe-languages
-
-This crate will not introduce a serious security vulnerability to production
-software exposed to untrusted input.
-
-Auditors are not required to perform a full logic review of the entire crate.
-Rather, they must review enough to fully reason about the behavior of all unsafe
-blocks and usage of powerful imports. For any reasonable usage of the crate in
-real-world software, an attacker must not be able to manipulate the runtime
-behavior of these sections in an exploitable or surprising way.
-
-Ideally, ambient capabilities (e.g. filesystem access) are hardened against
-manipulation and consistent with the advertised behavior of the crate. However,
-some discretion is permitted. In such cases, the nature of the discretion should
-be recorded in the `notes` field of the audit record.
-
-Any unsafe code in this crate must, in general, be kept well-contained, and
-documentation must exist to describe how Rust's invariants are being upheld
-despite the unsafe block(s). Nontrivial uses of unsafe must be reviewed by an
-expert in Rust's unsafety guarantees/non-guarantees.
-
-For crates which generate deployed code (e.g. build dependencies or procedural
-macros), reasonable usage of the crate should output code which meets the above
-criteria."""
+This criterium is **deprecated**. Please do not certify it on new crates.
+Uses of it will be replaced with a mix of `safe-to-deploy` and `ub-risk-${N}`
+over time.
+"""
 implies = "safe-to-deploy"
+
+[criteria.ub-risk-0]
+description = """
+No unsafe code is in this crate.
+
+Please see the full text at:
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-0
+"""
+implies = "ub-risk-1"
+
+[criteria.ub-risk-1]
+description = """
+It's extremely hard - or impossible - to induce unsoundness using this crate.
+
+Please see the full text at:
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-1
+"""
+implies = "ub-risk-2"
+
+[criteria.ub-risk-1-thorough]
+description = """
+ub-risk-1 with additional thoroughness.
+
+Please see ub-risk-1 text at:
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-1
+and the thoroughness text at:
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#thorough-soundness-reviews
+"""
+implies = ["ub-risk-1", "ub-risk-2-thorough"]
+
+[criteria.ub-risk-2]
+description = """
+Potential unsoundness from using this crate is relatively small.
+
+Please see the full text at:
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-2
+"""
+implies = "ub-risk-3"
+
+[criteria.ub-risk-2-thorough]
+description = """
+ub-risk-2 with additional thoroughness.
+
+Please see ub-risk-2 text at:
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-2
+and the thoroughness text at:
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#thorough-soundness-reviews
+"""
+implies = "ub-risk-2"
+
+[criteria.ub-risk-3]
+description = """
+Some potential for unsoundness; crate is trickier to use than it ideally should be.
+
+Please see the full text at:
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-3
+"""
+implies = "ub-risk-4"
+
+[criteria.ub-risk-4]
+description = """
+Extreme unsoundness; crate is very risky to use.
+
+Please see the full text at:
+https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md#ub-risk-4
+"""
 
 [[audits.addr2line]]
 who = "George Burgess IV <gbiv@google.com>"
