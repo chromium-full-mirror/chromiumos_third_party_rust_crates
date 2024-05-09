@@ -84,13 +84,14 @@ convenience, the [audit content](#audit-content) section tries to reproduce this
 all concisely.
 
 If you would like to consult descriptions of the criteria, the built-in criteria
-(safe-to-run, safe-to-deploy) are located [located on an upstream webpage]. Our
-custom criteria (rule-of-two-safe-to-deploy, crypto-safe,
-does-not-implement-crypto) have descriptions listed in `audits.toml` in this
-directory.
+(`safe-to-run`, `safe-to-deploy`) are located [located on an upstream webpage].
+Our custom criteria (`crypto-safe`, `does-not-implement-crypto`, `ub-risk-*`)
+have individual descriptions listed in `audits.toml` in this directory, and have
+much more detail [available upstream].
 
 `cargo-vet` has [more information on auditing here].
 
+[available upstream]: https://github.com/google/rust-crate-audits/blob/main/auditing_standards.md
 [located on an upstream webpage]: https://mozilla.github.io/cargo-vet/built-in-criteria.html
 [more information on auditing here]: https://mozilla.github.io/cargo-vet/performing-audits.html#performing-audits
 
@@ -194,14 +195,16 @@ may upload their review on top of mine, which would placate `cargo-vet`.
 
 For folks wondering what the plans are with `cargo-vet`, the general consensus
 seems to be that we should first get most crates reviewed as `safe-to-run` and
-`crypto-safe`, since this catches most egregious classes of errors. As we reach
-that goal, raising the bar to include `rule-of-two-safe-to-deploy` audits seems
-appropriate for packages that end up on ChromeOS devices. However,
-`rule-of-two-safe-to-deploy` audit velocity is meaningfully less than
-`safe-to-run`, so low-hanging fruit and all.
+`crypto-safe`, since this catches most egregious classes of errors.
 
-If a reviewer would like to provide reviews for `rule-of-two-safe-to-deploy`,
-that's highly appreciated! But it is also not required at this time.
+In the future, we hope to have more ub-risk reviews available through crates
+(both locally, and sourced from the upstream Google audits repo), so folks with
+correctness-critical applications can consult those to guide their crate
+choices.
+
+If a reviewer would like to provide reviews for any of the `ub-risk-*` levels
+or `safe-to-deploy`, that's highly appreciated! But it is also not required at
+this time.
 
 ### Isn't this all quite burdensome?
 
