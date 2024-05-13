@@ -5536,6 +5536,8 @@ dependencies = [
  "log",
  "num_enum",
  "serde",
+ "tempfile",
+ "thiserror",
  "tokio",
  "toml",
 ]
