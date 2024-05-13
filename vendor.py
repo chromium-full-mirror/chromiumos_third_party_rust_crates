@@ -1300,6 +1300,12 @@ def main():
         help="Don't run cargo-vendor. Please don't upload changes that skip "
         "this check. This flag is for local development use only.",
     )
+    parser.add_argument(
+        "--skip-metallurgy",
+        action="store_true",
+        help="Skip metallurgy file generation. Please don't upload changes "
+        "that skip this step. This flag is for local development use only.",
+    )
     args = parser.parse_args()
 
     current_path = pathlib.Path(__file__).parent.absolute()
@@ -1336,23 +1342,24 @@ def main():
         )
         destroyed_crates = set(destroyed_crates)
 
-    patches_manifest = generate_patches_manifest(
-        {
-            "@@//third_party/rust_crates/patches:{patch}": pathlib.Path(
-                patches
-            ),
-            "@@//bazel/rust/alchemy_crates/patches:{patch}": (
-                vendor_artifacts / "alchemy/patches"
-            ),
-        }
-    )
-    generate_metallurgy_crates(
-        current_path / "projects",
-        vendor_artifacts,
-        current_path / "bazel_files",
-        patches_manifest,
-        destroyed_crates,
-    )
+    if not args.skip_metallurgy:
+        patches_manifest = generate_patches_manifest(
+            {
+                "@@//third_party/rust_crates/patches:{patch}": pathlib.Path(
+                    patches
+                ),
+                "@@//bazel/rust/alchemy_crates/patches:{patch}": (
+                    vendor_artifacts / "alchemy/patches"
+                ),
+            }
+        )
+        generate_metallurgy_crates(
+            current_path / "projects",
+            vendor_artifacts,
+            current_path / "bazel_files",
+            patches_manifest,
+            destroyed_crates,
+        )
 
     if not args.skip_cargo_vendor:
         # Combine license file and check for any bad licenses
@@ -1370,9 +1377,16 @@ def main():
         # extra reminder to rerun this without skipping cargo-vet.
         return
 
-    # audit all packages
+    # Audit all packages.
     cargo_vet_py = scripts_dir / "cargo-vet.py"
     rc = subprocess.run([cargo_vet_py]).returncode
+
+    if args.skip_metallurgy:
+        print("Skipped metallurgy checks. This is for local dev only.")
+        # Don't remove `in_progress_stamp`; it should hopefully serve as an
+        # extra reminder to rerun this without skipping cargo-vet.
+        return
+
     if not rc:
         # If the audit is successful, make sure all files are cleanly
         # formatted. In particular, `projects/populate-workspace.py` may leave
