@@ -2279,6 +2279,7 @@ dependencies = [
  "gpt_disk_types",
  "log",
  "nix 0.23.1",
+ "rand 0.8.5",
  "serde",
  "serde_json",
  "tar",
