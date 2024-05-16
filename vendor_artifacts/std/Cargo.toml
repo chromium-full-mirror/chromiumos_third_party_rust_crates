@@ -416,6 +416,7 @@ syslog = "6.0.1"
 syslog_rfc5424 = "0.9.0"
 tar = "0.4.40"
 tempfile = "3.10.1"
+testing_logger = "0.1.1"
 # Used by clap-2.34.0
 # Used by crosh-0.24.52
 textwrap-0-11-0 = { package = "textwrap", "version" = "0.11.0" }

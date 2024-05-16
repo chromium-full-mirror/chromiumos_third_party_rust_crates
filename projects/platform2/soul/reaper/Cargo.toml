@@ -16,3 +16,4 @@ tokio = { version = "1.29", features = [ "macros", "net", "rt-multi-thread", "sy
 toml = "0.5"
 [dev-dependencies]
 tempfile = "3"
+testing_logger = "0.1"

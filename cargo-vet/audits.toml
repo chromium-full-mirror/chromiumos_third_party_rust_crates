@@ -3379,6 +3379,11 @@ who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.1"
 
+[[audits.testing_logger]]
+who = "Christoph Schlosser <cschlosser@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.1"
+
 [[audits.textwrap]]
 who = "Android Legacy"
 criteria = "safe-to-run"
