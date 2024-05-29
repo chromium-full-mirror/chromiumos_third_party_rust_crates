@@ -3605,6 +3605,11 @@ who = "Joseph Sussman <josephsussman@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.25.0 -> 0.27.0"
 
+[[audits.uefi]]
+who = "Andre Braga <andrebraga@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.27.0 -> 0.28.0"
+
 [[audits.uefi-macros]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -3639,6 +3644,11 @@ version = "0.4.0"
 who = "Joseph Sussman <josephsussman@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.4.0 -> 0.5.1"
+
+[[audits.uefi-raw]]
+who = "Andre Braga <andrebraga@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.5.1 -> 0.5.2"
 
 [[audits.uefi-services]]
 who = "ChromeOS"
