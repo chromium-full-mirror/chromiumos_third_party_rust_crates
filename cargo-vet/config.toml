@@ -350,10 +350,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Using relaxed target criteria to help with migration."
 
-[[exemptions.adler]]
-version = "1.0.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.adler32]]
 version = "1.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -414,16 +410,8 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.14.9"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.cast]]
-version = "0.3.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.cexpr]]
 version = "0.6.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.clap_conf]]
-version = "0.1.5"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.codespan-reporting]]
@@ -431,10 +419,6 @@ version = "0.11.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.cortex-m-rt]]
-version = "0.6.15"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.cortex-m-rt-macros]]
 version = "0.6.15"
 criteria = ["safe-to-run", "crypto-safe"]
 
@@ -490,16 +474,8 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.2.3"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.defmt-parser]]
-version = "0.2.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.deqp-runner]]
 version = "0.13.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.derive-getters]]
-version = "0.1.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.diff]]
@@ -508,10 +484,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.digest]]
 version = "0.10.7"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.downcast-rs]]
-version = "1.2.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.ed25519-compact]]
@@ -544,10 +516,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.fraction]]
 version = "0.10.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.ftdi]]
-version = "0.1.3"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.ftdi-mpsse]]
@@ -650,10 +618,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.5.6"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.linux-embedded-hal]]
-version = "0.3.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.linux-raw-sys]]
 version = "0.1.4"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -664,14 +628,6 @@ criteria = "crypto-safe"
 
 [[exemptions.managed]]
 version = "0.8.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.matchit]]
-version = "0.5.0"
-criteria = "crypto-safe"
-
-[[exemptions.memoffset]]
-version = "0.6.5"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.minimal-lexical]]
@@ -746,19 +702,11 @@ criteria = "crypto-safe"
 version = "0.9.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.paste]]
-version = "0.1.18"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.pcap-file]]
 version = "1.1.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.pin-project]]
-version = "1.0.12"
-criteria = "crypto-safe"
-
-[[exemptions.pin-project-internal]]
 version = "1.0.12"
 criteria = "crypto-safe"
 
@@ -787,10 +735,6 @@ version = "0.4.30"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.prost]]
-version = "0.11.0"
-criteria = "crypto-safe"
-
-[[exemptions.prost-derive]]
 version = "0.11.0"
 criteria = "crypto-safe"
 
@@ -918,10 +862,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.7.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.riscv-rt]]
-version = "0.8.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.ron]]
 version = "0.5.1"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -932,10 +872,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.roxmltree]]
 version = "0.14.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.rtt-target]]
-version = "0.3.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.rusb]]
@@ -978,24 +914,12 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.7.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.serde_bytes]]
-version = "0.10.5"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.serde_yaml]]
 version = "0.8.26"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.serial-core]]
-version = "0.4.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.sha2]]
 version = "0.10.6"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.signal-hook-registry]]
-version = "1.4.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.smallvec]]
@@ -1004,10 +928,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.spi-memory]]
 version = "0.2.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.spidev]]
-version = "0.5.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.stderrlog]]
@@ -1068,18 +988,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.sysfs_gpio]]
 version = "0.6.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.syslog]]
-version = "6.0.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.termios]]
-version = "0.2.2"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.thread_local]]
-version = "1.1.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.time]]
@@ -1154,10 +1062,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.8.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.walkdir]]
-version = "2.3.2"
-criteria = "crypto-safe"
-
 [[exemptions.which]]
 version = "4.3.0"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -1180,8 +1084,4 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.zeroize]]
 version = "1.5.7"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.zeroize_derive]]
-version = "1.3.2"
 criteria = ["safe-to-run", "crypto-safe"]
