@@ -4154,6 +4154,11 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.3.0"
 notes = "Randomness and hashing involved in UUID generation is sourced from other crates."
 
+[[audits.uuid]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.3.0 -> 1.8.0"
+
 [[audits.vcell]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
