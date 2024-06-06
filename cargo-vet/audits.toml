@@ -380,6 +380,11 @@ who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.8"
 
+[[audits.autocfg]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.1.8 -> 1.1.0"
+
 [[audits.axum]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -449,6 +454,11 @@ version = "0.60.1"
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.63.0"
+
+[[audits.bindgen]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.60.1 -> 0.59.2"
 
 [[audits.bindgen]]
 who = "Abhishek Pandit-Subedi <abhishekpandit@google.com>"
@@ -586,6 +596,11 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.82 -> 1.0.83"
 
 [[audits.cexpr]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "does-not-implement-crypto"
+version = "0.4.0"
+
+[[audits.cexpr]]
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.4.0"
@@ -594,6 +609,11 @@ version = "0.4.0"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "0.5.0"
+
+[[audits.cexpr]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.4.0 -> 0.6.0"
 
 [[audits.cfg-if]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -849,6 +869,16 @@ delta = "0.2.8 -> 0.2.9"
 who = "Bastian Kersting <bkersting@google.com>"
 criteria = ["safe-to-run", "crypto-safe"]
 delta = "2.1.0 -> 3.0.1"
+
+[[audits.crc-catalog]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.1.1"
+notes = """
+crc-catalog has no actual functions or logic implementing crypto; it's just a
+few types and `const`s that outline different CRC configurations. Hence, this
+doesn't implement crypto.
+"""
 
 [[audits.crc-catalog]]
 who = "Bastian Kersting <bkersting@google.com>"
@@ -1147,6 +1177,11 @@ version = "0.7.5"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.7.6"
+
+[[audits.defmt-macros]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.3"
 
 [[audits.defmt-parser]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -2049,6 +2084,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.26"
 
+[[audits.junit-report]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.0"
+
 [[audits.kernlog]]
 who = "Matthias Kaehlcke <mka@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2557,6 +2597,11 @@ version = "1.13.0"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.13.0"
+
+[[audits.num_enum_derive]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.7"
 
 [[audits.num_threads]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -3241,6 +3286,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.2.3"
 
+[[audits.rustc_version]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.2.3 -> 0.4.0"
+
 [[audits.rustfft]]
 who = "Li-Yu Yu <aaronyu@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -3334,6 +3384,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.16"
 
+[[audits.semver-parser]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.0"
+
 [[audits.serde]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -3403,6 +3458,11 @@ version = "2.0.0"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
 version = "1.1.0"
+
+[[audits.shlex]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "does-not-implement-crypto"
+version = "0.1.1"
 
 [[audits.shlex]]
 who = "Android Legacy"
@@ -3493,6 +3553,16 @@ version = "0.10.0"
 who = "Ying Hsu <yinghsu@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.11.1"
+
+[[audits.strsim]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.10.0 -> 0.8.0"
+
+[[audits.svd-parser]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.12.0"
 
 [[audits.syn]]
 who = "Android Legacy"
@@ -4156,6 +4226,11 @@ version = "3.1.1"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "4.0.2"
+
+[[audits.which]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "4.3.0"
 
 [[audits.wyz]]
 who = "ChromeOS"
