@@ -924,6 +924,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "command-fds"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7bb11bd1378bf3731b182997b40cefe00aba6a6cc74042c8318c1b271d3badf7"
+dependencies = [
+ "nix 0.27.1",
+ "thiserror",
+]
+
+[[package]]
 name = "configparser"
 version = "3.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3105,6 +3115,7 @@ dependencies = [
  "codespan-reporting",
  "colored",
  "com_logger",
+ "command-fds",
  "configparser",
  "cortex-m",
  "cortex-m-rt",

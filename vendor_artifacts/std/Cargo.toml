@@ -111,6 +111,7 @@ clap_derive-3-2-18 = { package = "clap_derive", "version" = "3.2.18" }
 codespan-reporting = "0.11.1"
 colored = "2.0.0"
 com_logger = "0.1.1"
+command-fds = "0.3.0"
 configparser = "3.0.2"
 cortex-m = "0.7.7"
 cortex-m-rt = { "version" = "0.6.15", features = ['device'] }
@@ -256,17 +257,17 @@ nb = "1.0.0"
 # Used by wayland-commons-0.29.0
 # Used by wayland-server-0.29.0
 nix-0-23-1 = { package = "nix", "version" = "0.23.1" }
-# Used by adhd-deps-0.1.0
 # Used by chunnel-0.1.0
 # Used by crosh-0.24.52
 # Used by ctrlc-3.4.0
 # Used by ext2-0.1.1
 # Used by libchromeos-0.1.0
 nix-0-26-2 = { package = "nix", "version" = "0.26.2", features = ['memoffset', 'pin-utils'] }
+# Used by command-fds-0.3.0
 # Used by os_install_service-1.0.0
 # Used by userfaultfd-0.8.1
-nix-0-27-1 = { package = "nix", "version" = "0.27.1", features = ['ioctl', 'mount', 'uio'] }
-nix = { "version" = "0.28.0", features = ['event', 'feature', 'fs', 'ioctl', 'memoffset', 'mman', 'socket', 'uio', 'user'] }
+nix-0-27-1 = { package = "nix", "version" = "0.27.1", features = ['fs', 'ioctl', 'mount', 'uio'] }
+nix = { "version" = "0.28.0", features = ['event', 'feature', 'fs', 'ioctl', 'memoffset', 'mman', 'resource', 'socket', 'uio', 'user'] }
 nom = { "version" = "7.1.1", features = ['alloc'] }
 num = { "version" = "0.2.1", features = ['num-bigint'] }
 num-bigint = "0.4.3"
