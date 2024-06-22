@@ -480,6 +480,7 @@ class LicenseManager:
     # license isn't updated in each sub-crate. In these cases, we can just
     # ignore these packages.
     MAP_LICENSE_TO_OTHER = {
+        "blazesym-c": "blazesym",
         "failure_derive": "failure",
         "grpcio-compiler": "grpcio",
         "grpcio-sys": "grpcio",
@@ -921,6 +922,10 @@ class CrateDestroyer:
                 #
                 # b/321669037: shlex 0.1 is affected by RUSTSEC-2024-0006. The
                 # only user is bindgen 0.57, which is patched out.
+                #
+                # b/347443966: blazesym by default uses simd-adler32. We'd
+                # rather patch it to avoid using "custom" crypto. Unfortunately
+                # this happens after vendoring, so remove it.
                 force_destroy_crate = (
                     (
                         package_name == "time"
@@ -935,6 +940,7 @@ class CrateDestroyer:
                         package_name == "shlex"
                         and package_version.startswith("0.1")
                     )
+                    or (package_name == "simd-adler32")
                 )
                 if not force_destroy_crate:
                     continue

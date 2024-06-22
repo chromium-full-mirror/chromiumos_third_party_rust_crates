@@ -50,6 +50,11 @@ criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Only safe-to-run is required, as this is a host tool."
 
+[policy.blazesym-c]
+criteria = ["safe-to-run", "crypto-safe"]
+dev-criteria = ["safe-to-run", "crypto-safe"]
+notes = "Using relaxed target criteria to help with migration."
+
 [policy.chromeos-dbus-bindings]
 criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]

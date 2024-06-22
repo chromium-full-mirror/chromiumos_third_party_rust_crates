@@ -61,6 +61,7 @@ members = [
     "third_party/adhd-deps",
     "third_party/bindgen-cli-deps",
     "third_party/bindgen-deps",
+    "third_party/blazesym-c-deps",
     "third_party/cxxbridge-cmd-deps",
     "third_party/dbus-codegen-deps",
     "third_party/deqp-runner-deps",

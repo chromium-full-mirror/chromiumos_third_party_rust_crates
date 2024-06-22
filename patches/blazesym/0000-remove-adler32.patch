@@ -1,0 +1,23 @@
+diff --git a/vendor/blazesym-0.2.0-rc.0/Cargo.toml b/vendor/blazesym-0.2.0-rc.0/Cargo.toml
+index 055f1775..6885ced6 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -91,7 +91,6 @@ version = "0.2.137"
+ [dependencies.miniz_oxide]
+ version = "0.7"
+ features = [
+-    "simd",
+     "with-alloc",
+ ]
+ optional = true
+@@ -116,10 +115,6 @@ version = "0.13.1"
+ optional = true
+ default-features = false
+ 
+-[dev-dependencies._simd-adler32_unused]
+-version = "0.3.3"
+-package = "simd-adler32"
+-
+ [dev-dependencies.addr2line]
+ version = "=0.23.0"
+ 
