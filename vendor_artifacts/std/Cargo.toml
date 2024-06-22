@@ -80,6 +80,7 @@ bindgen-0-64-0 = { package = "bindgen", "version" = "0.64.0", features = ['log',
 bitflags-1-3-2 = { package = "bitflags", "version" = "1.3.2" }
 bitflags = { "version" = "2.4.0", features = ['std'] }
 bitreader = "0.3.7"
+blazesym-c = "0.1.0-rc.0"
 built = { "version" = "0.5.2", features = ['chrono'] }
 byteorder = { "version" = "1.4.3", features = ['i128'] }
 bytes = "1.4.0"

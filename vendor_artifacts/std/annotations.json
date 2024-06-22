@@ -33,6 +33,30 @@
       "version": "0.59.2"
     }
   ],
+  "blazesym": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:blazesym/0000-remove-adler32.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "blazesym-c": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:blazesym-c/0001-cargo.toml-Remove-optional-build-dependencies.patch"
+      ],
+      "version": "*"
+    }
+  ],
   "chrono": [
     {
       "patch_args": [
