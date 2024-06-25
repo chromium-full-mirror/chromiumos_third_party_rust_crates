@@ -479,6 +479,12 @@ criteria = [
 ]
 version = "0.10.2"
 
+[[audits.bit_field]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.10.2"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
 [[audits.bitflags]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -517,6 +523,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.3.7"
+
+[[audits.bitreader]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.3.7"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.bitvec]]
 who = "ChromeOS"
@@ -637,6 +649,12 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.0"
 
+[[audits.cfg-if]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
 [[audits.cfg_aliases]]
 who = "Daniel Verkamp <dverkamp@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -670,6 +688,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "1.4.1"
+
+[[audits.chunked_transfer]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.4.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.clang-sys]]
 who = "Android Legacy"
@@ -819,6 +843,12 @@ criteria = [
 ]
 version = "1.1.0"
 
+[[audits.color_quant]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.1.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
 [[audits.colorchoice]]
 who = "Ying Hsu <yinghsu@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -858,6 +888,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "3.0.2"
+
+[[audits.configparser]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "3.0.2"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.console]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -1263,6 +1299,12 @@ criteria = [
 ]
 version = "2.0.0"
 
+[[audits.dirs-next]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "2.0.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
 [[audits.dirs-sys-next]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -1281,6 +1323,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.2.7"
+
+[[audits.document-features]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.2.7"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.downcast]]
 who = "Max Lee <endlesspring@google.com>"
@@ -1348,6 +1396,12 @@ version = "0.1.8"
 
 [[audits.enumn]]
 who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.11"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
+[[audits.enumn]]
+who = "George Burgess IV <gbiv@google.com>"
 criteria = [
     "does-not-implement-crypto",
     "safe-to-deploy",
@@ -1396,6 +1450,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "1.0.1"
+
+[[audits.equivalent]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.errno]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -1683,6 +1743,12 @@ criteria = [
 ]
 version = "1.0.0"
 
+[[audits.gag]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
 [[audits.gdbstub]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -1760,6 +1826,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.3.1"
+
+[[audits.glob]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.3.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.gpt_disk_io]]
 who = "Bastian Kersting <bkersting@google.com>"
@@ -1954,6 +2026,12 @@ criteria = [
 ]
 version = "0.3.1"
 
+[[audits.http-range-header]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.3.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
 [[audits.httparse]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2037,6 +2115,12 @@ criteria = [
 ]
 version = "0.6.2"
 
+[[audits.include_dir_impl]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.6.2"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
 [[audits.indexmap]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2060,6 +2144,12 @@ This crate simply reexports indoc_impl. There's therefore no code
 specific to this crate to audit.
 """
 
+[[audits.indoc]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.3.6"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
 [[audits.indoc-impl]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = [
@@ -2068,6 +2158,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.3.6"
+
+[[audits.indoc-impl]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.3.6"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.inflections]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -2354,6 +2450,12 @@ This crate exists simply to link with libcxx or libstdcxx. No assertions
 are made about the safety of either of those libraries. :)
 """
 
+[[audits.link-cplusplus]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.9"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
 [[audits.linux-embedded-hal]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2423,6 +2525,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.1.0"
+
+[[audits.match_cfg]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.matchit]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -2502,6 +2610,12 @@ version = "0.1.0"
 who = "ChromeOS"
 criteria = "safe-to-run"
 version = "0.1.0"
+
+[[audits.merge_derive]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.mime]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -2595,12 +2709,24 @@ version = "0.3.0"
 
 [[audits.nb]]
 who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.3"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
+[[audits.nb]]
+who = "George Burgess IV <gbiv@google.com>"
 criteria = [
     "does-not-implement-crypto",
     "safe-to-deploy",
     "rule-of-two-safe-to-deploy",
 ]
 version = "1.0.0"
+
+[[audits.nb]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.nb]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -2690,6 +2816,12 @@ criteria = [
 version = "0.2.1"
 notes = "This crate just reexports subcrates, so it's trivially safe in isolation."
 
+[[audits.num]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.2.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
 [[audits.num-cmp]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2718,6 +2850,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.1.43"
+
+[[audits.num-iter]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.43"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.num-traits]]
 who = "Android Legacy"
@@ -2820,6 +2958,12 @@ version = "0.1.0"
 
 [[audits.openssl-macros]]
 who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
+[[audits.openssl-macros]]
+who = "George Burgess IV <gbiv@google.com>"
 criteria = [
     "does-not-implement-crypto",
     "safe-to-deploy",
@@ -2865,6 +3009,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.2.0"
+
+[[audits.panic-halt]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.2.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.parking_lot]]
 who = "Android Legacy"
@@ -3076,6 +3226,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "1.0.4"
+
+[[audits.proc-macro-error-attr]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.4"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.proc-macro-hack]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -3586,6 +3742,12 @@ criteria = [
 ]
 version = "1.0.1"
 
+[[audits.serde-tuple-vec-map]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.1"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
 [[audits.serde_bytes]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -3933,6 +4095,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.1.0"
+
+[[audits.tinyvec_macros]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.0"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.tokio]]
 who = "Android Legacy"
@@ -4291,6 +4459,12 @@ criteria = [
 ]
 version = "0.1.10"
 
+[[audits.unindent]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.10"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
+
 [[audits.uninit]]
 who = "Howard Yang <hcyang@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4377,6 +4551,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.9.4"
+
+[[audits.version_check]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.9.4"
+notes = "`rg -i unsafe` resulted in zero hits for this package."
 
 [[audits.void]]
 who = "George Burgess IV <gbiv@google.com>"
