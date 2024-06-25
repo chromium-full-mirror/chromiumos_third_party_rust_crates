@@ -472,7 +472,11 @@ delta = "0.64.0 -> 0.68.1"
 
 [[audits.bit_field]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.10.2"
 
 [[audits.bitflags]]
@@ -507,7 +511,11 @@ version = "0.3.6"
 
 [[audits.bitreader]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.3.7"
 
 [[audits.bitvec]]
@@ -617,7 +625,11 @@ delta = "0.4.0 -> 0.6.0"
 
 [[audits.cfg-if]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.0"
 
 [[audits.cfg-if]]
@@ -652,7 +664,11 @@ delta = "0.4.26 -> 0.4.34"
 
 [[audits.chunked_transfer]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.4.1"
 
 [[audits.clang-sys]]
@@ -782,7 +798,11 @@ version = "0.1.48"
 
 [[audits.cmake]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.49"
 
 [[audits.cmake]]
@@ -792,7 +812,11 @@ delta = "0.1.49 -> 0.1.50"
 
 [[audits.color_quant]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.1.0"
 
 [[audits.colorchoice]]
@@ -828,7 +852,11 @@ version = "3.0.0"
 
 [[audits.configparser]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "3.0.2"
 
 [[audits.console]]
@@ -1071,12 +1099,20 @@ version = "1.0.42"
 
 [[audits.cxxbridge-flags]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.92"
 
 [[audits.cxxbridge-flags]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "1.0.92 -> 1.0.94"
 
 [[audits.cxxbridge-flags]]
@@ -1091,7 +1127,11 @@ delta = "1.0.97 -> 1.0.106"
 
 [[audits.cxxbridge-flags]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "1.0.106 -> 1.0.107"
 
 [[audits.cxxbridge-macro]]
@@ -1216,7 +1256,11 @@ version = "0.4.0"
 
 [[audits.dirs-next]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "2.0.0"
 
 [[audits.dirs-sys-next]]
@@ -1231,7 +1275,11 @@ version = "0.2.6"
 
 [[audits.document-features]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.2.7"
 
 [[audits.downcast]]
@@ -1291,22 +1339,38 @@ version = "0.7.7"
 
 [[audits.enumn]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.8"
 
 [[audits.enumn]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "0.1.8 -> 0.1.10"
 
 [[audits.enumn]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "0.1.10 -> 0.1.11"
 
 [[audits.enumn]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "0.1.11 -> 0.1.12"
 
 [[audits.env_logger]]
@@ -1326,7 +1390,11 @@ delta = "0.9.3 -> 0.8.4"
 
 [[audits.equivalent]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.1"
 
 [[audits.errno]]
@@ -1391,7 +1459,11 @@ version = "1.0.1"
 
 [[audits.fastrand]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.9.0"
 notes = """
 `does-not-implement-crypto` is certified because this crate explicitly says
@@ -1504,7 +1576,11 @@ version = "0.3.14"
 
 [[audits.futures]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.3.28"
 notes = """
 `futures` has no logic other than tests - it simply `pub use`s things from
@@ -1600,7 +1676,11 @@ crypto.
 
 [[audits.gag]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.0"
 
 [[audits.gdbstub]]
@@ -1674,7 +1754,11 @@ version = "0.3.0"
 
 [[audits.glob]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.3.1"
 
 [[audits.gpt_disk_io]]
@@ -1863,7 +1947,11 @@ version = "0.3.0"
 
 [[audits.http-range-header]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.3.1"
 
 [[audits.httparse]]
@@ -1878,7 +1966,11 @@ version = "1.0.2"
 
 [[audits.httpdate]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.3"
 
 [[audits.hyper]]
@@ -1938,7 +2030,11 @@ version = "0.6.2"
 
 [[audits.include_dir_impl]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.6.2"
 
 [[audits.indexmap]]
@@ -1953,7 +2049,11 @@ delta = "1.9.3 -> 2.1.0"
 
 [[audits.indoc]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.3.6"
 notes = """
 This crate simply reexports indoc_impl. There's therefore no code
@@ -1962,7 +2062,11 @@ specific to this crate to audit.
 
 [[audits.indoc-impl]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.3.6"
 
 [[audits.inflections]]
@@ -2012,7 +2116,11 @@ version = "0.1.11"
 
 [[audits.inventory-impl]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.11"
 
 [[audits.io-lifetimes]]
@@ -2235,7 +2343,11 @@ version = "1.0.5"
 
 [[audits.link-cplusplus]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.9"
 notes = """
 This crate exists simply to link with libcxx or libstdcxx. No assertions
@@ -2305,7 +2417,11 @@ version = "0.1.20"
 
 [[audits.match_cfg]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.0"
 
 [[audits.matchit]]
@@ -2375,7 +2491,11 @@ version = "0.1.0"
 
 [[audits.merge_derive]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.0"
 
 [[audits.merge_derive]]
@@ -2475,17 +2595,29 @@ version = "0.3.0"
 
 [[audits.nb]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.0"
 
 [[audits.nb]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "1.0.0 -> 0.1.3"
 
 [[audits.nb]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "1.0.0 -> 1.1.0"
 
 [[audits.nibble_vec]]
@@ -2550,7 +2682,11 @@ version = "0.3.0"
 
 [[audits.num]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.2.1"
 notes = "This crate just reexports subcrates, so it's trivially safe in isolation."
 
@@ -2576,7 +2712,11 @@ version = "0.3.3"
 
 [[audits.num-iter]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.43"
 
 [[audits.num-traits]]
@@ -2616,7 +2756,11 @@ version = "0.1.6"
 
 [[audits.number_prefix]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.4.0"
 
 [[audits.object]]
@@ -2667,12 +2811,20 @@ version = "0.3.0"
 
 [[audits.openssl-macros]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.0"
 
 [[audits.openssl-macros]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "0.1.0 -> 0.1.1"
 
 [[audits.os_str_bytes]]
@@ -2707,7 +2859,11 @@ version = "0.2.3"
 
 [[audits.panic-halt]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.2.0"
 
 [[audits.parking_lot]]
@@ -2914,7 +3070,11 @@ version = "1.2.1"
 
 [[audits.proc-macro-error-attr]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.4"
 
 [[audits.proc-macro-hack]]
@@ -2929,7 +3089,11 @@ version = "0.5.19"
 
 [[audits.proc-macro-nested]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.7"
 
 [[audits.proc-macro-nested]]
@@ -3054,7 +3218,11 @@ version = "3.2.0"
 
 [[audits.protoc]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "2.27.1"
 
 [[audits.protoc]]
@@ -3074,7 +3242,11 @@ delta = "2.0.0 -> 3.0.0"
 
 [[audits.protoc-rust]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "2.27.1"
 
 [[audits.protoc-rust]]
@@ -3407,7 +3579,11 @@ version = "1.0.152"
 
 [[audits.serde-tuple-vec-map]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.1"
 
 [[audits.serde_bytes]]
@@ -3462,7 +3638,11 @@ version = "2.0.0"
 
 [[audits.shell-words]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.1.0"
 
 [[audits.shlex]]
@@ -3747,7 +3927,11 @@ version = "1.2.1"
 
 [[audits.tinyvec_macros]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.0"
 
 [[audits.tokio]]
@@ -4068,7 +4252,11 @@ version = "0.1.9"
 
 [[audits.unicode-xid]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.0"
 
 [[audits.unicode-xid]]
@@ -4078,17 +4266,29 @@ version = "0.2.1"
 
 [[audits.unicode-xid]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.2.4"
 
 [[audits.unicode-xid]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 delta = "0.1.0 -> 0.0.4"
 
 [[audits.unindent]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.1.10"
 
 [[audits.uninit]]
@@ -4171,12 +4371,20 @@ version = "0.2.11"
 
 [[audits.version_check]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "0.9.4"
 
 [[audits.void]]
 who = "George Burgess IV <gbiv@google.com>"
-criteria = ["does-not-implement-crypto", "rule-of-two-safe-to-deploy"]
+criteria = [
+    "does-not-implement-crypto",
+    "safe-to-deploy",
+    "rule-of-two-safe-to-deploy",
+]
 version = "1.0.2"
 
 [[audits.volatile]]
