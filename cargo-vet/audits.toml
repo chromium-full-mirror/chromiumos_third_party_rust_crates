@@ -1647,6 +1647,16 @@ notes = """
 other crates.
 """
 
+[[audits.futures]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.3.28"
+notes = """
+`rg -i unsafe` in this crate had one hit: a comment in a test
+mentioning UnsafeFutureObj. UnsafeFutureObj is implemented in
+futures-task-0.3.28, not here.
+"""
+
 [[audits.futures-channel]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -2051,6 +2061,12 @@ criteria = [
 ]
 version = "1.0.3"
 
+[[audits.httpdate]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.3"
+notes = "`rg -i unsafe` had exactly one hit: `#![forbid(unsafe_code)]`"
+
 [[audits.hyper]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -2218,6 +2234,17 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.1.11"
+
+[[audits.inventory-impl]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.11"
+notes = """
+This crate has an instance of `unsafe {` in a comment. The comment
+is referencing a future potential implementation of this code, once
+a desired rustc feature is stabilized. There's otherwise no mention
+of `unsafe` flagged by `rg -i unsafe`.
+"""
 
 [[audits.io-lifetimes]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -2900,6 +2927,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.4.0"
+
+[[audits.number_prefix]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.4.0"
+notes = "`rg -i unsafe` had exactly one hit: `#![deny(unsafe_code)]`"
 
 [[audits.object]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -3807,6 +3840,12 @@ criteria = [
 ]
 version = "1.1.0"
 
+[[audits.shell-words]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.1.0"
+notes = "`rg -i unsafe` had exactly one hit: `#![forbid(unsafe_code)]`"
+
 [[audits.shlex]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = "does-not-implement-crypto"
@@ -4420,12 +4459,24 @@ version = "0.1.9"
 
 [[audits.unicode-xid]]
 who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.0.4"
+notes = "`rg -i unsafe` had exactly one hit: `#![deny(missing_docs, unsafe_code)]`"
+
+[[audits.unicode-xid]]
+who = "George Burgess IV <gbiv@google.com>"
 criteria = [
     "does-not-implement-crypto",
     "safe-to-deploy",
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.1.0"
+
+[[audits.unicode-xid]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.1.0"
+notes = "`rg -i unsafe` had exactly one hit: `#![deny(missing_docs, unsafe_code)]`"
 
 [[audits.unicode-xid]]
 who = "Android Legacy"
@@ -4440,6 +4491,12 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "0.2.4"
+
+[[audits.unicode-xid]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "0.2.4"
+notes = "`rg -i unsafe` had exactly one hit: `#![forbid(unsafe_code)]`"
 
 [[audits.unicode-xid]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -4566,6 +4623,17 @@ criteria = [
     "rule-of-two-safe-to-deploy",
 ]
 version = "1.0.2"
+
+[[audits.void]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = "ub-risk-0"
+version = "1.0.2"
+notes = """
+`rg -i unsafe` in this crate had one hit: a comment on a function
+mentioning that the aforementioned function should be impossible
+to call _unless_ `unsafe` was used to incorrectly construct an
+object.
+"""
 
 [[audits.volatile]]
 who = "George Burgess IV <gbiv@google.com>"
