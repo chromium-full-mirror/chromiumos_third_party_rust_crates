@@ -163,7 +163,7 @@ static_assertions = "1.1.0"
 stm32g0 = { "version" = "0.13.0", features = ['cortex-m-rt', 'rt', 'stm32g071'] }
 stm32g0xx-hal = { "version" = "0.1.5", features = ['device-selected', 'rt', 'stm32g071', 'stm32g0x1'] }
 time = { "version" = "0.3.14", "default-features" = false, features = ['alloc', 'formatting', 'itoa', 'local-offset', 'macros', 'parsing', 'time-macros'] }
-uefi = { "version" = "0.28.0", "default-features" = false, features = ['alloc'] }
+uefi = { "version" = "0.29.0", "default-features" = false, features = ['alloc'] }
 uguid = { "version" = "2.2.0", features = ['bytemuck'] }
 uninit = { "version" = "0.6.2", "default-features" = false, features = ['alloc'] }
 uuid = { "version" = "1.8.0", "default-features" = false, features = ['rng', 'serde', 'v4'] }
