@@ -42,7 +42,7 @@ gdbstub_arch = "0.3.0"
 intrusive-collections = "0.9"
 io-uring = { version = "0.5", features = ["unstable"] }
 lazy_static = "1.4"
-libc = "0.2.93"
+libc = "0.2.153"
 # TODO: Remove this `=` constraint. It matches what crosvm currently has.
 libfuzzer-sys = "=0.4.4"
 libslirp-sys = "4.2.1"
@@ -96,3 +96,6 @@ winapi = "0.3"
 windows = "0.39"
 wio = "0.2"
 wmi = "0.9"
+
+[target.'cfg(target_os = "android")'.dependencies]
+android_log-sys = "0.3.1"
