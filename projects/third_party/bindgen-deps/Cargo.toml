@@ -3,13 +3,11 @@
 [package]
 edition = "2018"
 name = "bindgen-deps"
-version = "0.63.0"
+version = "0.69.4"
 
 [dependencies]
-bindgen = "0.63"
+bindgen = "0.69.4"
 
 [dev-dependencies]
-clap = "2"
-diff = "0.1"
+clap = "4"
 shlex = "1"
-tempfile = "3"
