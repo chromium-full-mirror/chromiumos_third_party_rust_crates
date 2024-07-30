@@ -1325,10 +1325,10 @@ dependencies = [
 name = "crdyboot"
 version = "1.0.0"
 dependencies = [
- "bindgen 0.64.0",
+ "bindgen 0.69.4",
  "ed25519-compact",
  "log",
- "mockall 0.11.4",
+ "mockall 0.12.1",
  "object",
  "printf-compat",
  "regex",

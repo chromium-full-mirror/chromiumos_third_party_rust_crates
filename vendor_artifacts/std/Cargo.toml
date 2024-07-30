@@ -34,7 +34,6 @@ bindgen-0-59-2 = { package = "bindgen", "version" = "0.59.2", features = ['env_l
 # Used by minijail-sys-0.0.13
 # Used by uhidrs-sys-1.0.2
 bindgen-0-63-0 = { package = "bindgen", "version" = "0.63.0", features = ['log', 'which'] }
-# Used by crdyboot-1.0.0
 # Used by floss-0.0.1
 # Used by vboot_reference-sys-1.0.0
 bindgen-0-64-0 = { package = "bindgen", "version" = "0.64.0", features = ['log', 'which'] }
@@ -236,7 +235,6 @@ merge = { "version" = "0.1.0", features = ['merge_derive', 'num-traits'] }
 miniz_oxide-0-4-4 = { package = "miniz_oxide", "version" = "0.4.4", features = ['no_extern_crate_alloc'] }
 # Used by crosvm-0.1.0
 mio-0-7-14 = { package = "mio", "version" = "0.7.14", features = ['os-ext', 'os-poll'] }
-# Used by crdyboot-1.0.0
 # Used by shadercached-0.2.0
 mockall-0-11-4 = { package = "mockall", "version" = "0.11.4" }
 mockall = "0.12.1"

@@ -14,9 +14,9 @@ uefi = { version = "0.29", default-features = false, features = ["alloc"] }
 uguid = "2.0"
 
 [dev-dependencies]
-mockall = "0.11.4"
+mockall = "0.12.1"
 object = { version = "0.31.1", default-features = false, features = ["write_core"] }
 regex = "1.6.0"
 
 [build-dependencies]
-bindgen = "0.64.0"
+bindgen = "0.69.4"
