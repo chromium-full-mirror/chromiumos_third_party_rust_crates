@@ -1506,6 +1506,11 @@ who = "Edward O'Callaghan <quasisec@google.com>"
 criteria = ["safe-to-run", "crypto-safe"]
 version = "0.1.1"
 
+[[audits.ext4-view]]
+who = "Andre Braga <andrebraga@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.0"
+
 [[audits.extension-traits]]
 who = "Howard Yang <hcyang@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]

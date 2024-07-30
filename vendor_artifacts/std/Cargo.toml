@@ -155,6 +155,7 @@ env_logger-0-8-4 = { package = "env_logger", "version" = "0.8.4", features = [] 
 env_logger = "0.9.3"
 euclid = "0.22.9"
 ext2 = "0.1.1"
+ext4-view = "0.4.0"
 fd-lock = "3.0.10"
 fixedbitset = "0.4.2"
 flate2 = { "version" = "1.0.27", features = ['any_impl', 'miniz_oxide'] }

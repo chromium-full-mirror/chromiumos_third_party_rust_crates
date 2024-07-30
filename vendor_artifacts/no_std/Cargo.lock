@@ -716,6 +716,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "ext4-view"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2bafa6e9d9c744fd159e93a272745881bbfe4539cc9fc799e64a96a35e0128f4"
+dependencies = [
+ "bitflags 2.4.0",
+ "crc 3.0.1",
+]
+
+[[package]]
 name = "fixedbitset"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1224,6 +1234,7 @@ dependencies = [
  "embedded-hal",
  "enumn",
  "euclid",
+ "ext4-view",
  "fixedbitset",
  "fnv",
  "futures",

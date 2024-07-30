@@ -1327,6 +1327,7 @@ version = "1.0.0"
 dependencies = [
  "bindgen 0.69.4",
  "ed25519-compact",
+ "ext4-view",
  "log",
  "mockall 0.12.1",
  "object",
@@ -2193,6 +2194,16 @@ dependencies = [
  "lazy_static",
  "libc",
  "nix 0.26.2",
+]
+
+[[package]]
+name = "ext4-view"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2bafa6e9d9c744fd159e93a272745881bbfe4539cc9fc799e64a96a35e0128f4"
+dependencies = [
+ "bitflags 2.4.0",
+ "crc 3.0.1",
 ]
 
 [[package]]

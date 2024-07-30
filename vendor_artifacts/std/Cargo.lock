@@ -1774,6 +1774,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "ext4-view"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2bafa6e9d9c744fd159e93a272745881bbfe4539cc9fc799e64a96a35e0128f4"
+dependencies = [
+ "bitflags 2.4.0",
+ "crc 3.0.1",
+]
+
+[[package]]
 name = "failure"
 version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3222,6 +3232,7 @@ dependencies = [
  "env_logger 0.9.3",
  "euclid",
  "ext2",
+ "ext4-view",
  "fd-lock",
  "fixedbitset",
  "flate2",
