@@ -1,0 +1,17 @@
+[package]
+edition = "2021"
+rust-version = "1.65"
+name = "drm-sys"
+version = "0.7.0"
+authors = [
+    "Tyler Slabinski <tslabinski@slabity.net>",
+]
+description = "Empty crate that should not build."
+readme = "README.md"
+license = "Apache-2.0"
+repository = "https://github.com/Smithay/drm-rs"
+
+[features]
+default = []
+update_bindings = []
+use_bindgen = []

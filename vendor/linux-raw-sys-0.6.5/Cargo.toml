@@ -1,0 +1,84 @@
+[package]
+edition = "2021"
+rust-version = "1.63"
+name = "linux-raw-sys"
+version = "0.6.5"
+authors = [
+    "Dan Gohman <dev@sunfishcode.online>",
+]
+exclude = [
+    "/gen",
+    "/.*",
+]
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
+description = "Empty crate that should not build."
+documentation = "https://docs.rs/linux-raw-sys"
+readme = "README.md"
+keywords = [
+    "linux",
+    "uapi",
+    "ffi",
+]
+categories = [
+    "external-ffi-bindings",
+]
+license = "Apache-2.0"
+repository = "https://github.com/sunfishcode/linux-raw-sys"
+
+[package.metadata.docs.rs]
+features = [
+    "default",
+    "bootparam",
+    "ioctl",
+    "netlink",
+    "io_uring",
+    "if_arp",
+    "if_ether",
+    "if_packet",
+    "net",
+    "prctl",
+    "elf",
+    "xdp",
+    "mempolicy",
+    "system",
+    "loop_device",
+]
+targets = [
+    "x86_64-unknown-linux-gnu",
+    "i686-unknown-linux-gnu",
+]
+
+[lib]
+name = "linux_raw_sys"
+
+[features]
+bootparam = []
+default = []
+elf = []
+errno = []
+general = []
+if_arp = []
+if_ether = []
+if_packet = []
+io_uring = []
+ioctl = []
+loop_device = []
+mempolicy = []
+net = []
+netlink = []
+no_std = []
+prctl = []
+rustc-dep-of-std = []
+std = []
+system = []
+xdp = []
+
+[lints.rust.unexpected_cfgs]
+level = "warn"
+priority = 0
+check-cfg = [
+    "cfg(target_arch, values(\"xtensa\"))",
+]
