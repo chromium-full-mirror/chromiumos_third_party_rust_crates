@@ -70,6 +70,8 @@ members = [
     "third_party/flashrom/flashrom_tester-deps",
     "third_party/flashrom/libflashrom-deps",
     "third_party/flashrom/libflashrom-sys-deps",
+    "third_party/hbm/hbm-deps",
+    "third_party/hbm/hbm-minigbm-deps",
     "third_party/pdl-compiler-deps",
     "third_party/prjoxide/prjoxide-deps",
     "third_party/prjoxide/pyprjoxide-deps",

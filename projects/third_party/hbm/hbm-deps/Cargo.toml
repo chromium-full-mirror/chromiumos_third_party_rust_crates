@@ -1,0 +1,21 @@
+[package]
+name = "hbm-deps"
+authors = []
+version = "0.1.3"
+edition = "2021"
+
+[dependencies]
+ash = "0.38"
+bitflags = "2"
+log = "0.4"
+nix = { version = "0.28", features = ["fs", "ioctl", "mman", "poll"] }
+thiserror = "1"
+
+[dev-dependencies]
+env_logger = "0.9"
+
+# optional dependencies that CrOS does not need
+[target.'cfg(windows)'.dependencies]
+drm = "0.12"
+[target.'cfg(windows)'.dev-dependencies]
+drm-fourcc = "2"

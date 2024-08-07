@@ -161,6 +161,16 @@ criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Using relaxed target criteria to help with migration."
 
+[policy.hbm-deps]
+criteria = ["safe-to-run", "crypto-safe"]
+dev-criteria = ["safe-to-run", "crypto-safe"]
+notes = "Using relaxed target criteria to help with migration."
+
+[policy.hbm-minigbm-deps]
+criteria = ["safe-to-run", "crypto-safe"]
+dev-criteria = ["safe-to-run", "crypto-safe"]
+notes = "Using relaxed target criteria to help with migration."
+
 [policy.hiberman]
 criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
