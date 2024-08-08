@@ -13,12 +13,17 @@
 edition = "2021"
 rust-version = "1.73"
 name = "ext4-view"
-version = "0.4.0"
+version = "0.4.2"
+build = false
 include = [
     "src/*.rs",
     "LICENSE-APACHE",
     "LICENSE-MIT",
 ]
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
 description = "No-std compatible Rust library for reading ext4 filesystems"
 readme = "README.md"
 keywords = [
@@ -40,6 +45,10 @@ rustdoc-args = [
     "--cfg",
     "docsrs",
 ]
+
+[lib]
+name = "ext4_view"
+path = "src/lib.rs"
 
 [dependencies.bitflags]
 version = "2.0.0"

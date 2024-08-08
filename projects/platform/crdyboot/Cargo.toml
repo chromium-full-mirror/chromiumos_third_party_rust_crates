@@ -6,7 +6,7 @@ edition = "2021"
 
 [dependencies]
 ed25519-compact = { version = "1.0.0", default-features = false }
-ext4-view = "0.4.0"
+ext4-view = "0.4.2"
 log = "0.4"
 object = { version = "0.31.1", default-features = false, features = ["pe", "read_core", "unaligned"] }
 printf-compat = { version = "0.1", default-features = false }

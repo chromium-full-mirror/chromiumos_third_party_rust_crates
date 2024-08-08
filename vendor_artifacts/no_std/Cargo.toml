@@ -89,7 +89,7 @@ either = { "version" = "1.9.0", "default-features" = false, features = [] }
 embedded-hal = { "version" = "0.2.7", features = ['unproven'] }
 enumn = "0.1.11"
 euclid = { "version" = "0.22.9", "default-features" = false, features = [] }
-ext4-view = "0.4.0"
+ext4-view = "0.4.2"
 fixedbitset = { "version" = "0.4.2", "default-features" = false, features = [] }
 fnv = { "version" = "1.0.7", "default-features" = false, features = [] }
 futures = { "version" = "0.3.28", "default-features" = false, features = ['alloc', 'async-await', 'executor', 'futures-executor'] }

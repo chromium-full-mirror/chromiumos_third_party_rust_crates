@@ -1511,6 +1511,11 @@ who = "Andre Braga <andrebraga@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.0"
 
+[[audits.ext4-view]]
+who = "Ted Brandston <tbrandston@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.4.0 -> 0.4.2"
+
 [[audits.extension-traits]]
 who = "Howard Yang <hcyang@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
