@@ -1,0 +1,19 @@
+[package]
+edition = "2018"
+name = "str-buf"
+version = "1.0.6"
+authors = [
+    "Douman <douman@gmx.se>",
+]
+description = "Empty crate that should not build."
+readme = "README.md"
+keywords = [
+    "str",
+    "string",
+    "static",
+]
+categories = [
+    "no-std",
+]
+license = "Apache-2.0"
+repository = "https://github.com/DoumanAsh/str-buf"

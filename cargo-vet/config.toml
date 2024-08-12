@@ -591,10 +591,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "1.1.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.libusb1-sys]]
-version = "0.5.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.linked-hash-map]]
 version = "0.5.6"
 criteria = ["safe-to-run", "crypto-safe"]
@@ -849,10 +845,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.roxmltree]]
 version = "0.14.1"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.rusb]]
-version = "0.8.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.rustc-demangle]]

@@ -2410,6 +2410,30 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.6.0 -> 0.6.1"
 
+[[audits.libusb1-sys]]
+who = "Benjamin Gordon <bmgordon@chromium.org>"
+criteria = "does-not-implement-crypto"
+version = "0.7.0"
+notes = """
+* The libusb subdirectory contains a partial copy of libusb-1.0.27.  I downloaded a copy from upstream
+  and confirmed that there are no diffs.
+* build.rs calls pkg_config to probe for libusb-1.0 and sets up some build variables.
+* The files under src contain constants, extern declarations for libusb functions, and small helper
+  functions that fill in some structs.
+"""
+
+[[audits.libusb1-sys]]
+who = "Benjamin Gordon <bmgordon@chromium.org>"
+criteria = "safe-to-run"
+version = "0.7.0"
+notes = """
+* The libusb subdirectory contains a partial copy of libusb-1.0.27.  I downloaded a copy from upstream
+  and confirmed that there are no diffs.
+* build.rs calls pkg_config to probe for libusb-1.0 and sets up some build variables.
+* The files under src contain constants, extern declarations for libusb functions, and small helper
+  functions that fill in some structs.
+"""
+
 [[audits.libz-sys]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -3581,6 +3605,22 @@ version = "1.0.3"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.1"
+
+[[audits.rusb]]
+who = "Benjamin Gordon <bmgordon@chromium.org>"
+criteria = "does-not-implement-crypto"
+version = "0.9.4"
+notes = "Files are straightforward wrappers around libusb functions."
+
+[[audits.rusb]]
+who = "Benjamin Gordon <bmgordon@chromium.org>"
+criteria = "safe-to-run"
+version = "0.9.4"
+notes = """
+* build.rs reads version info from libusb.h
+* Files in src are straightforward wrappers around libusb functions and don't do anything extra beyond
+  tracking lifetimes.
+"""
 
 [[audits.rustc-demangle]]
 who = "Android Legacy"

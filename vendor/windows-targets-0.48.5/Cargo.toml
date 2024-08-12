@@ -1,0 +1,11 @@
+[package]
+edition = "2018"
+name = "windows-targets"
+version = "0.48.5"
+authors = [
+    "Microsoft",
+]
+description = "Empty crate that should not build."
+readme = "readme.md"
+license = "Apache-2.0"
+repository = "https://github.com/microsoft/windows-rs"
