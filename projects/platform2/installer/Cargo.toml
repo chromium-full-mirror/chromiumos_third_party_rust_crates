@@ -1,0 +1,7 @@
+[package]
+name = "chromeos-installer"
+version = "0.1.0"
+authors = ["The ChromiumOS Authors"]
+edition = "2021"
+
+[dependencies]

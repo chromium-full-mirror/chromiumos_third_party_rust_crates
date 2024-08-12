@@ -907,6 +907,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "chromeos-installer"
+version = "0.1.0"
+
+[[package]]
 name = "chrono"
 version = "0.4.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"

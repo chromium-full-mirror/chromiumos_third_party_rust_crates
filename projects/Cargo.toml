@@ -37,6 +37,7 @@ members = [
     "platform2/flexor",
     "platform2/hiberman",
     "platform2/hwsec-utils",
+    "platform2/installer",
     "platform2/ippusb_bridge",
     "platform2/libchromeos-rs",
     "platform2/metrics/memd",
