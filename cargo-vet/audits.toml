@@ -4648,6 +4648,11 @@ The crate provides a simple wrapper to mimick the TcpListener/TcpStream APIs
 with vsock sockets.
 """
 
+[[audits.vsock]]
+who = "Eri Sawada <erisawada@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.0"
+
 [[audits.wait-timeout]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]

@@ -59,6 +59,7 @@ members = [
     "platform2/vm_tools/chunnel",
     "platform2/vm_tools/chunnel/system_api",
     "platform2/vm_tools/vmc",
+    "platform2/vm_tools/vmmms_client",
     "third_party/adhd-deps",
     "third_party/bindgen-cli-deps",
     "third_party/bindgen-deps",

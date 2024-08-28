@@ -1,0 +1,11 @@
+[package]
+name = "vmmms_client"
+version = "0.1.0"
+authors = ["The ChromiumOS Authors"]
+edition = "2021"
+
+[dependencies]
+log = "0.4"
+protobuf = "3.2"
+vsock = "0.5"
+nix = { version = "0.28.0", features = ["poll"] }
