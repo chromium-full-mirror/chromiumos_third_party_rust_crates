@@ -5,4 +5,5 @@ authors = ["The ChromiumOS Authors"]
 edition = "2021"
 
 [dependencies]
-nix = { version = "0.28.0", features = ["user"]}
+nix = { version = "0.28.0", features = ["user"] }
+clap = { version = "4.5.4", features = ["derive"] }
