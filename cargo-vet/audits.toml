@@ -613,6 +613,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.24.5"
 
+[[audits.cbindgen]]
+who = "Hung-Hsien Chen <hunghsienchen@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.24.5 -> 0.27.0"
+
 [[audits.cc]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -3316,6 +3321,11 @@ who = "Daniel Verkamp <dverkamp@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.0.66 -> 1.0.69"
 
+[[audits.proc-macro2]]
+who = "Hung-Hsien Chen <hunghsienchen@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.79 -> 1.0.86"
+
 [[audits.procfs]]
 who = "Youssef Esmat <youssefesmat@chromium.org>"
 criteria = "does-not-implement-crypto"
@@ -3808,6 +3818,11 @@ who = "Harshad Phule <phuleh@google.com>"
 criteria = "safe-to-run"
 version = "1.0.96"
 
+[[audits.serde_spanned]]
+who = "Hung-Hsien Chen <hunghsienchen@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.7"
+
 [[audits.serde_urlencoded]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -3988,6 +4003,11 @@ delta = "2.0.18 -> 2.0.28"
 who = "Daniel Verkamp <dverkamp@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "2.0.28 -> 2.0.38"
+
+[[audits.syn]]
+who = "Hung-Hsien Chen <hunghsienchen@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "2.0.58 -> 2.0.77"
 
 [[audits.sync_wrapper]]
 who = "ChromeOS"
@@ -4179,6 +4199,21 @@ version = "0.7.3"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.5.10"
+
+[[audits.toml]]
+who = "Hung-Hsien Chen <hunghsienchen@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.5.10 -> 0.8.19"
+
+[[audits.toml_datetime]]
+who = "Hung-Hsien Chen <hunghsienchen@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.8"
+
+[[audits.toml_edit]]
+who = "Hung-Hsien Chen <hunghsienchen@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.22.20"
 
 [[audits.tonic]]
 who = "ChromeOS"
@@ -4708,6 +4743,11 @@ version = "4.0.2"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "4.3.0"
+
+[[audits.winnow]]
+who = "Hung-Hsien Chen <hunghsienchen@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.18"
 
 [[audits.wyz]]
 who = "ChromeOS"

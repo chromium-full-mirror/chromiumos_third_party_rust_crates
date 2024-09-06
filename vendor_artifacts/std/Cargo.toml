@@ -86,7 +86,11 @@ byteorder = { "version" = "1.4.3", features = ['i128'] }
 bytes = "1.4.0"
 capnp = "0.14.11"
 capnpc = "0.14.9"
-cbindgen = "0.24.5"
+# Used by arc-setup-rs-0.1.0
+# Used by crosvm-0.1.0
+# Used by hbm-minigbm-deps-0.1.3
+cbindgen-0-24-5 = { package = "cbindgen", "version" = "0.24.5", features = [] }
+cbindgen = "0.27.0"
 cc = { "version" = "1.0.83", features = ['jobserver', 'parallel'] }
 cfg-if = "1.0.0"
 chrono = { "version" = "0.4.34", features = ['alloc', 'android-tzdata', 'iana-time-zone', 'js-sys', 'now', 'serde', 'wasm-bindgen', 'winapi', 'windows-targets'] }
@@ -184,6 +188,7 @@ grpcio-compiler = { "version" = "0.13.0", features = ['protobuf'] }
 grpcio-sys-0-9-1-1-38-0 = { package = "grpcio-sys", "version" = "0.9.1+1.38.0", features = ['bindgen', 'boringssl-src', 'openssl', 'secure'] }
 grpcio-sys = { "version" = "0.13.0+1.56.2-patched", features = ['_secure', 'boringssl', 'boringssl-src', 'openssl'] }
 # Used by cbindgen-0.24.5
+# Used by cbindgen-0.27.0
 # Used by clap_derive-3.2.18
 # Used by pdl-compiler-0.2.2
 # Used by pdl-compiler-deps-0.1.1
@@ -299,7 +304,7 @@ pin-utils = "0.1.0"
 pkg-config = "0.3.26"
 prettyplease = { "version" = "0.2.17", features = ['verbatim'] }
 printf-compat = { "version" = "0.1.1", "default-features" = false }
-proc-macro2 = { "version" = "1.0.79", features = ['span-locations'] }
+proc-macro2 = { "version" = "1.0.86", features = ['span-locations'] }
 procfs = "0.15.1"
 # Used by floss-0.0.1
 # Used by grpcio-0.9.1
@@ -414,7 +419,7 @@ svd2rust = "0.20.0"
 # Used by tracing-attributes-0.1.22
 # Used by zeroize_derive-1.3.2
 syn-1-0-107 = { package = "syn", "version" = "1.0.107", features = ['extra-traits', 'full', 'quote', 'visit', 'visit-mut'] }
-syn = { "version" = "2.0.58", features = ['extra-traits', 'full', 'visit', 'visit-mut'] }
+syn = { "version" = "2.0.77", features = ['extra-traits', 'fold', 'full', 'visit', 'visit-mut'] }
 sys-info = "0.9.1"
 syslog = "6.0.1"
 syslog_rfc5424 = "0.9.0"
@@ -431,7 +436,13 @@ tinytemplate = "1.2.1"
 tokio = { "version" = "1.29.1", features = ['bytes', 'fs', 'io-std', 'io-util', 'libc', 'macros', 'mio', 'net', 'num_cpus', 'rt', 'rt-multi-thread', 'signal', 'signal-hook-registry', 'socket2', 'sync', 'time', 'tokio-macros', 'windows-sys'] }
 tokio-macros = "2.1.0"
 tokio-stream = "0.1.3"
-toml = "0.5.10"
+# Used by cargo-lock-8.0.3
+# Used by cbindgen-0.24.5
+# Used by clap_conf-0.1.5
+# Used by deqp-runner-0.18.0
+# Used by proc-macro-crate-1.2.1
+# Used by reaper-0.1.0
+toml-0-5-10 = { package = "toml", "version" = "0.5.10" }
 tonic = { "version" = "0.8.1", features = ['async-trait', 'axum', 'channel', 'h2', 'hyper', 'hyper-timeout', 'prost-derive', 'prost1', 'tokio', 'tower', 'tracing-futures'] }
 tonic-build = { "version" = "0.8.2", features = ['prost-build'] }
 uefi = { "version" = "0.31.0", "default-features" = false, features = ['alloc'] }

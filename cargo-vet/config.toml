@@ -488,10 +488,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.13.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.diff]]
-version = "0.1.13"
-criteria = ["safe-to-run", "crypto-safe"]
-
 [[exemptions.digest]]
 version = "0.10.7"
 criteria = ["safe-to-run", "crypto-safe"]
