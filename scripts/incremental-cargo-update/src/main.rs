@@ -11,6 +11,8 @@ use anyhow::{anyhow, bail, Context, Result};
 use clap::Parser;
 use log::{debug, error, info};
 
+const CRATES_IO_INDEX: &str = "https://github.com/rust-lang/crates.io-index";
+
 /// Convenience trait to replace this repetitive pattern:
 /// ```ignore
 /// let foo = Command::new(bar).status()?;
@@ -131,7 +133,12 @@ impl std::fmt::Display for PackageInfo {
     }
 }
 
-fn parse_cargo_lock_packages(path: &Path) -> Result<Vec<PackageInfo>> {
+fn is_crates_io_package(source_id: &cargo_lock::package::SourceId) -> bool {
+    source_id.is_remote_registry() && source_id.url().as_str() == CRATES_IO_INDEX
+}
+
+/// Parses packages from Cargo.lock that come from crates.io.
+fn parse_cargo_lock_crates_io_packages(path: &Path) -> Result<Vec<PackageInfo>> {
     let lockfile = cargo_lock::Lockfile::load(path)
         .with_context(|| format!("loading lockfile at {}", path.display()))?;
     let mut lockfile_packages = lockfile.packages;
@@ -144,7 +151,7 @@ fn parse_cargo_lock_packages(path: &Path) -> Result<Vec<PackageInfo>> {
     Ok(lockfile_packages
         .into_iter()
         .filter_map(|package| {
-            if package.source?.is_default_registry() {
+            if is_crates_io_package(&package.source?) {
                 let v = &package.version;
                 Some(PackageInfo {
                     name: package.name.to_string(),
@@ -185,7 +192,7 @@ fn cargo_update_packages(lock_file: &Path, package: PackageSpec<'_>, ty: UpdateT
 
     if let PackageSpec::Only(package) = package {
         cmd.arg("--package");
-        cmd.arg(package.to_string());
+        cmd.arg(format!("{}#{}", CRATES_IO_INDEX, package));
     }
 
     if matches!(ty, UpdateType::Offline) {
@@ -291,14 +298,14 @@ fn perform_cargo_update(
     max_updates: usize,
     small_updates_are_updates: bool,
 ) -> Result<usize> {
-    let initial_cargo_lock = parse_cargo_lock_packages(cargo_lock)?;
+    let initial_cargo_lock = parse_cargo_lock_crates_io_packages(cargo_lock)?;
     debug!("Parsed {} Cargo.lock packages.", initial_cargo_lock.len());
 
     info!("Running initial `cargo update`...");
     cargo_update_packages(cargo_lock, PackageSpec::All, UpdateType::Online)?;
 
     let newly_updated_packages: Vec<&PackageInfo> = {
-        let fully_updated_cargo_lock = parse_cargo_lock_packages(cargo_lock)?;
+        let fully_updated_cargo_lock = parse_cargo_lock_crates_io_packages(cargo_lock)?;
         let (update_counts, updated) =
             count_package_updates(&initial_cargo_lock, &fully_updated_cargo_lock);
         let total_updates = if small_updates_are_updates {
@@ -328,7 +335,7 @@ fn perform_cargo_update(
     // one-at-a-time approach.
     revert_file_to_head(cargo_lock)?;
 
-    let mut current_cargo_lock = parse_cargo_lock_packages(cargo_lock)?;
+    let mut current_cargo_lock = parse_cargo_lock_crates_io_packages(cargo_lock)?;
     for package in &newly_updated_packages {
         // Crates may disappear if an update of a prior crate required an update of `package`.
         // `cargo-update` will fail if `package` is not in `Cargo.lock`.
@@ -348,7 +355,7 @@ fn perform_cargo_update(
             UpdateType::Online
         };
         cargo_update_packages(cargo_lock, PackageSpec::Only(package), update_type)?;
-        current_cargo_lock = parse_cargo_lock_packages(cargo_lock)?;
+        current_cargo_lock = parse_cargo_lock_crates_io_packages(cargo_lock)?;
         let (update_counts, _) = count_package_updates(&initial_cargo_lock, &current_cargo_lock);
         let total_updates = if small_updates_are_updates {
             update_counts.small + update_counts.large
