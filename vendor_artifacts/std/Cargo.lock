@@ -3394,6 +3394,7 @@ dependencies = [
  "rusb",
  "rustc-demangle-capi",
  "rustfft",
+ "rustversion",
  "rusty-fork",
  "rustyline 10.0.0",
  "rustyline 9.1.2",

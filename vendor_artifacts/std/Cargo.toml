@@ -348,6 +348,7 @@ rtt-target = { "version" = "0.3.1", features = ['cortex-m'] }
 rusb = "0.9.4"
 rustc-demangle-capi = "0.1.0"
 rustfft = "6.1.0"
+rustversion = "1.0.9"
 rusty-fork = { "version" = "0.3.0", features = ['wait-timeout'] }
 # Used by crosh-0.24.52
 # Used by lego-controller-0.1.0
