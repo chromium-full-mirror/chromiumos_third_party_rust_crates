@@ -940,6 +940,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "clap 4.5.4",
+ "log",
  "nix 0.28.0",
 ]
 
