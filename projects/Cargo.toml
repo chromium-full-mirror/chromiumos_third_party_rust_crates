@@ -41,7 +41,6 @@ members = [
     "platform2/installer",
     "platform2/ippusb_bridge",
     "platform2/libchromeos-rs",
-    "platform2/metrics/memd",
     "platform2/mini_udisks",
     "platform2/os_install_service",
     "platform2/resourced",

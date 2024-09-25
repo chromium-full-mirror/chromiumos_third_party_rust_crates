@@ -231,11 +231,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Using relaxed target criteria to help with migration."
 
-[policy.memd]
-criteria = ["safe-to-run", "crypto-safe"]
-dev-criteria = ["safe-to-run", "crypto-safe"]
-notes = "Using relaxed target criteria to help with migration."
-
 [policy.mini_udisks]
 criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
@@ -458,10 +453,6 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.dasp_sample]]
 version = "0.11.0"
-criteria = ["safe-to-run", "crypto-safe"]
-
-[[exemptions.dbus]]
-version = "0.6.5"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.dbus]]

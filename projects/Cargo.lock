@@ -1783,16 +1783,6 @@ checksum = "0c87e182de0887fd5361989c677c4e8f5000cd9491d6d563161a8f3a5519fc7f"
 
 [[package]]
 name = "dbus"
-version = "0.6.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "48b5f0f36f1eebe901b0e6bee369a77ed3396334bf3f09abd46454a576f71819"
-dependencies = [
- "libc",
- "libdbus-sys",
-]
-
-[[package]]
-name = "dbus"
 version = "0.8.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5cd9e78c210146a1860f897db03412fd5091fd73100778e43ee255cca252cf32"
@@ -3989,22 +3979,6 @@ name = "memchr"
 version = "2.7.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6c8640c5d730cb13ebd907d8d04b52f55ac9a2eec55b440c8892f40d56c76c1d"
-
-[[package]]
-name = "memd"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "dbus 0.6.5",
- "env_logger 0.9.3",
- "libc",
- "log",
- "protobuf 3.2.0",
- "protobuf-codegen 3.2.0",
- "syslog",
- "tempfile",
- "time",
-]
 
 [[package]]
 name = "memmap2"
