@@ -408,6 +408,30 @@
       "version": "*"
     }
   ],
+  "v4l2r": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:v4l2r/0001-add-license.patch"
+      ],
+      "version": "*"
+    }
+  ],
+  "virtio-media": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:virtio-media/0001-add-license.patch"
+      ],
+      "version": "*"
+    }
+  ],
   "void": [
     {
       "patch_args": [

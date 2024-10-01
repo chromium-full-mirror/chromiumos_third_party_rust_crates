@@ -92,7 +92,7 @@
 //!
 //! # Discriminants
 //!
-//! The conversion respects explictly specified enum discriminants. Consider
+//! The conversion respects explicitly specified enum discriminants. Consider
 //! this enum:
 //!
 //! ```
@@ -105,7 +105,7 @@
 //!
 //! Here `Letter::n(65)` would return `Some(Letter::A)`.
 
-#![doc(html_root_url = "https://docs.rs/enumn/0.1.11")]
+#![doc(html_root_url = "https://docs.rs/enumn/0.1.14")]
 #![allow(
     clippy::missing_panics_doc,
     clippy::needless_doctest_main,
@@ -191,6 +191,7 @@ pub fn derive(input: TokenStream) -> TokenStream {
     TokenStream::from(quote! {
         impl #ident {
             pub #signature -> Option<Self> {
+                #[allow(non_camel_case_types)]
                 struct discriminant;
                 #[allow(non_upper_case_globals)]
                 impl discriminant {
