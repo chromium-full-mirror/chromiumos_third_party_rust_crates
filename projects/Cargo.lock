@@ -3671,7 +3671,6 @@ dependencies = [
  "multi_log",
  "nix 0.26.2",
  "pkg-config",
- "rustversion",
  "serde",
  "stderrlog",
  "syslog",
