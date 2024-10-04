@@ -1370,16 +1370,6 @@ checksum = "0c87e182de0887fd5361989c677c4e8f5000cd9491d6d563161a8f3a5519fc7f"
 
 [[package]]
 name = "dbus"
-version = "0.6.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "48b5f0f36f1eebe901b0e6bee369a77ed3396334bf3f09abd46454a576f71819"
-dependencies = [
- "libc",
- "libdbus-sys",
-]
-
-[[package]]
-name = "dbus"
 version = "0.8.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5cd9e78c210146a1860f897db03412fd5091fd73100778e43ee255cca252cf32"
@@ -3222,7 +3212,6 @@ dependencies = [
  "dasp_frame",
  "dasp_interpolate",
  "dasp_sample",
- "dbus 0.6.5",
  "dbus 0.8.4",
  "dbus 0.9.7",
  "dbus-codegen",
@@ -3401,7 +3390,6 @@ dependencies = [
  "testing_logger",
  "textwrap 0.11.0",
  "thiserror",
- "time",
  "tiny_http",
  "tinytemplate",
  "tokio",
