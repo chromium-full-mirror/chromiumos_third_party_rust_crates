@@ -1694,6 +1694,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.28"
 
+[[audits.futures-channel]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.28 -> 0.3.31"
+
 [[audits.futures-core]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -1703,6 +1708,11 @@ version = "0.3.14"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.28"
+
+[[audits.futures-core]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.28 -> 0.3.31"
 
 [[audits.futures-executor]]
 who = "Android Legacy"
@@ -1724,6 +1734,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.28"
 
+[[audits.futures-io]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.28 -> 0.3.31"
+
 [[audits.futures-macro]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -1733,6 +1748,11 @@ version = "0.3.14"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.28"
+
+[[audits.futures-macro]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.28 -> 0.3.31"
 
 [[audits.futures-sink]]
 who = "Android Legacy"
@@ -1744,6 +1764,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.28"
 
+[[audits.futures-sink]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.28 -> 0.3.31"
+
 [[audits.futures-task]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -1753,6 +1778,11 @@ version = "0.3.14"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.28"
+
+[[audits.futures-task]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.28 -> 0.3.31"
 
 [[audits.futures-util]]
 who = "Android Legacy"
@@ -1770,6 +1800,11 @@ that `futures-macro::select` can be unbiased. Sicne xorshift is explicitly not
 intended to be a cryptographically secure algorithm, it is not considered
 crypto.
 """
+
+[[audits.futures-util]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.28 -> 0.3.31"
 
 [[audits.gag]]
 who = "George Burgess IV <gbiv@google.com>"

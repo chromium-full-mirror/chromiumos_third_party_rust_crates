@@ -164,7 +164,7 @@ fnv = "1.0.7"
 ftdi = "0.1.3"
 futures = { "version" = "0.3.28", features = ['alloc', 'futures-executor'] }
 futures-executor = { "version" = "0.3.28", features = ['num_cpus', 'thread-pool'] }
-futures-util = { "version" = "0.3.28", features = ['alloc', 'channel', 'futures-channel', 'futures-io', 'futures-macro', 'futures-sink', 'io', 'memchr', 'sink', 'slab'] }
+futures-util = { "version" = "0.3.31", features = ['alloc', 'channel', 'futures-channel', 'futures-io', 'futures-macro', 'futures-sink', 'io', 'memchr', 'sink', 'slab'] }
 gag = "1.0.0"
 gdbstub = { "version" = "0.7.0", features = ['alloc'] }
 gdbstub_arch = "0.3.0"
