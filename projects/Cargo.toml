@@ -77,4 +77,5 @@ members = [
     "third_party/prjoxide/pyprjoxide-deps",
     "third_party/riscv-rt-macros-deps",
     "third_party/rustc-demangle-capi-deps",
+    "third_party/thin-provisioning-tools",
 ]

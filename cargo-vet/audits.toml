@@ -1517,6 +1517,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.22.9"
 
+[[audits.exitcode]]
+who = "Gwendal Grignou <gwendal@chromium.org>"
+criteria = ["safe-to-run", "crypto-safe"]
+version = "1.1.2"
+
 [[audits.ext-trait]]
 who = "Howard Yang <hcyang@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -3662,6 +3667,11 @@ who = "Ying Hsu <yinghsu@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.8.3"
 
+[[audits.retain_mut]]
+who = "Gwendal Grignou <gwendal@chromium.org>"
+criteria = ["safe-to-run", "crypto-safe"]
+version = "0.1.7"
+
 [[audits.riscv-rt]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -3790,6 +3800,11 @@ delta = "0.6.0 -> 0.4.0"
 who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.0.5"
+
+[[audits.safemem]]
+who = "Gwendal Grignou <gwendal@chromium.org>"
+criteria = ["safe-to-run", "crypto-safe"]
+version = "0.3.3"
 
 [[audits.same-file]]
 who = "George Burgess IV <gbiv@google.com>"

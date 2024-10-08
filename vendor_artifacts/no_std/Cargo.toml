@@ -18,7 +18,13 @@ assert_matches = "1.5.0"
 async-task = { "version" = "4.4.0", "default-features" = false, features = [] }
 async-trait = "0.1.73"
 bare-metal = "1.0.0"
-base64 = { "version" = "0.13.1", "default-features" = false, features = [] }
+# Used by floss-0.0.1
+# Used by jsonschema-0.15.2
+# Used by libsirenia-0.1.0
+# Used by shadercached-0.2.0
+# Used by tonic-0.8.1
+base64-0-13-1 = { package = "base64", "version" = "0.13.1", "default-features" = false, features = [] }
+base64 = { "version" = "0.22.1", "default-features" = false, features = ['alloc'] }
 # Used by axum-0.5.17
 # Used by bindgen-0.57.0
 # Used by bindgen-0.59.2
@@ -82,6 +88,7 @@ cxx = { "version" = "1.0.106", "default-features" = false, features = ['alloc', 
 dasp_frame = { "version" = "0.11.0", "default-features" = false, features = [] }
 dasp_interpolate = { "version" = "0.11.0", "default-features" = false, features = [] }
 dasp_sample = { "version" = "0.11.0", "default-features" = false, features = [] }
+data-encoding = { "version" = "2.6.0", "default-features" = false, features = ['alloc'] }
 defmt = "0.2.3"
 downcast-rs = { "version" = "1.2.0", "default-features" = false, features = [] }
 ed25519-compact = { "version" = "1.0.16", "default-features" = false, features = ['ct-codecs', 'pem'] }
@@ -151,6 +158,7 @@ remain = "0.2.4"
 riscv = "0.7.0"
 riscv-rt = "0.8.0"
 rtt-target = { "version" = "0.3.1", features = ['cortex-m'] }
+safemem = { "version" = "0.3.3", "default-features" = false, features = [] }
 sbat = { "version" = "0.5.0", features = ['alloc'] }
 serde = { "version" = "1.0.152", "default-features" = false, features = ['derive', 'rc', 'serde_derive'] }
 serde_bytes = { "version" = "0.10.5", "default-features" = false, features = [] }
