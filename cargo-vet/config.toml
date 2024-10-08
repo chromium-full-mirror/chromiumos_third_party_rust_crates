@@ -3,7 +3,7 @@
 default-criteria = "safe-to-run"
 
 [cargo-vet]
-version = "0.9"
+version = "0.10"
 
 [imports.fuchsia]
 url = "https://fuchsia.googlesource.com/fuchsia/+/refs/heads/main/third_party/rust_crates/supply-chain/audits.toml?format=TEXT"
