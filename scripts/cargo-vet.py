@@ -109,7 +109,9 @@ def ensure_cargo_vet_is_installed():
     want_version = "v0.10.0+cros"
     cargo.ensure_cargo_utility_is_installed(
         utility_name="cargo-vet",
-        want_version=want_version,
+        # b/372723132: cargo-vet's tags contain a leading "v", but the version
+        # reported by the CLI doesn't.
+        want_version=want_version.lstrip("v"),
         gs_path=f"gs://chromeos-localmirror/distfiles/cargo-vet-{want_version}.tar.bz2",
         sha256="e9428abb2ecfb478479687af462b54e053dc2cb4448249d26b87b682ac87dda3",
         build_subdir=Path("cargo-vet"),
