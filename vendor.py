@@ -16,7 +16,7 @@ import hashlib
 import itertools
 import json
 import os
-import pathlib
+from pathlib import Path
 import re
 import shutil
 import subprocess
@@ -25,7 +25,7 @@ import textwrap
 from typing import Any, Dict, List, Optional, Sequence, Set, Tuple
 
 
-sys.path.append(str(pathlib.Path(__file__).resolve().parent / "scripts"))
+sys.path.append(str(Path(__file__).resolve().parent / "scripts"))
 
 import rust_crates
 
@@ -110,7 +110,7 @@ def _rerun_checksums(package_path):
     """
     hashes = dict()
     checksum_path = os.path.join(package_path, ".cargo-checksum.json")
-    if not pathlib.Path(checksum_path).is_file():
+    if not Path(checksum_path).is_file():
         return False
 
     with open(checksum_path, "r") as fread:
@@ -153,7 +153,7 @@ def _remove_OWNERS_checksum(root):
         True if OWNERS was found and cleaned up. Otherwise False.
     """
     checksum_path = os.path.join(root, ".cargo-checksum.json")
-    if not pathlib.Path(checksum_path).is_file():
+    if not Path(checksum_path).is_file():
         return False
 
     with open(checksum_path, "r") as fread:
@@ -251,7 +251,7 @@ def apply_patches(patches_path, vendor_path):
     checksums_for = {}
 
     # Don't bother running if patches directory is empty
-    if not pathlib.Path(patches_path).is_dir():
+    if not Path(patches_path).is_dir():
         return
 
     patches_failed = False
@@ -310,7 +310,7 @@ def apply_patches(patches_path, vendor_path):
 
 
 def generate_patches_manifest(
-    patch_dirs: Dict[str, pathlib.Path],
+    patch_dirs: Dict[str, Path],
 ) -> Dict[str, List[BazelAnnotation]]:
     """Returns a dictionary containing json configuration of the patch file."""
     patches = collections.defaultdict(list)
@@ -887,7 +887,7 @@ class CrateDestroyer:
             json.dump(checksum_contents, csum)
 
     def destroy_unused_crates(
-        self, destroyed_crates_file: pathlib.Path
+        self, destroyed_crates_file: Path
     ) -> List[Tuple[str, str]]:
         metadata = [
             (x["name"], x["version"])
@@ -987,7 +987,7 @@ class InProgressStamp:
     similar.
     """
 
-    def __init__(self, vendor_artifacts: pathlib.Path):
+    def __init__(self, vendor_artifacts: Path):
         in_progress_stamp = vendor_artifacts / "vendor_script_in_progress"
         message = "\n".join(
             (
@@ -1199,7 +1199,7 @@ def merge_annotation_maps(
 
 
 def generate_annotations_file(
-    cargo_dir: pathlib.Path,
+    cargo_dir: Path,
     mode,
     all_annotations: Sequence[Dict[str, List[BazelAnnotation]]],
 ):
@@ -1229,9 +1229,9 @@ def generate_annotations_file(
 
 
 def generate_metallurgy_crates(
-    projects_dir: pathlib.Path,
-    vendor_artifacts_dir: pathlib.Path,
-    bazel_artifacts_dir: pathlib.Path,
+    projects_dir: Path,
+    vendor_artifacts_dir: Path,
+    bazel_artifacts_dir: Path,
     available_patches: Dict[str, List[BazelAnnotation]],
     destroyed_crates: Set[Tuple[str, str]],
 ):
@@ -1314,7 +1314,7 @@ def main():
     )
     args = parser.parse_args()
 
-    current_path = pathlib.Path(__file__).parent.absolute()
+    current_path = Path(__file__).parent.absolute()
     if not args.skip_version_check:
         rust_crates.exit_if_head_is_not_up_to_date(
             current_path, disable_check_flag="--skip-version-check"
@@ -1351,9 +1351,7 @@ def main():
     if not args.skip_metallurgy:
         patches_manifest = generate_patches_manifest(
             {
-                "@@//third_party/rust_crates/patches:{patch}": pathlib.Path(
-                    patches
-                ),
+                "@@//third_party/rust_crates/patches:{patch}": Path(patches),
                 "@@//bazel/rust/alchemy_crates/patches:{patch}": (
                     vendor_artifacts / "alchemy/patches"
                 ),
