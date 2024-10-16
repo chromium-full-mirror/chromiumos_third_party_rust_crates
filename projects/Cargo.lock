@@ -1382,6 +1382,7 @@ dependencies = [
  "printf-compat",
  "regex",
  "sbat",
+ "sha2",
  "uefi",
  "uguid",
 ]

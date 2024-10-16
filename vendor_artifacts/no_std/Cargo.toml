@@ -155,6 +155,7 @@ sbat = { "version" = "0.5.0", features = ['alloc'] }
 serde = { "version" = "1.0.152", "default-features" = false, features = ['derive', 'rc', 'serde_derive'] }
 serde_bytes = { "version" = "0.10.5", "default-features" = false, features = [] }
 serde_json = { "version" = "1.0.96", "default-features" = false, features = [] }
+sha2 = { "version" = "0.10.6", "default-features" = false }
 shell-words = { "version" = "1.1.0", "default-features" = false, features = [] }
 shlex = { "version" = "1.3.0", "default-features" = false, features = [] }
 slab = { "version" = "0.4.7", "default-features" = false, features = [] }
