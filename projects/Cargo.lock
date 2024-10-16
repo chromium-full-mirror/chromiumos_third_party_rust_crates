@@ -15,8 +15,8 @@ dependencies = [
  "nix 0.28.0",
  "once_cell",
  "paste 1.0.14",
- "protobuf 3.2.0",
- "protobuf-codegen 3.2.0",
+ "protobuf 3.6.0",
+ "protobuf-codegen 3.6.0",
  "regex",
  "serde",
  "serde_json",
@@ -68,8 +68,8 @@ dependencies = [
  "once_cell",
  "openssl",
  "proc-macro2 1.0.86",
- "protobuf 3.2.0",
- "protobuf-codegen 3.2.0",
+ "protobuf 3.6.0",
+ "protobuf-codegen 3.6.0",
  "protobuf-parse",
  "quote 1.0.36",
  "regex",
@@ -975,8 +975,8 @@ dependencies = [
  "libc",
  "log",
  "nix 0.26.2",
- "protobuf 3.2.0",
- "protobuf-codegen 3.2.0",
+ "protobuf 3.6.0",
+ "protobuf-codegen 3.6.0",
  "remain",
  "tempfile",
  "vsock",
@@ -1580,8 +1580,8 @@ dependencies = [
  "pin-utils",
  "pkg-config",
  "proc-macro2 1.0.86",
- "protobuf 3.2.0",
- "protobuf-codegen 3.2.0",
+ "protobuf 3.6.0",
+ "protobuf-codegen 3.6.0",
  "quote 1.0.36",
  "rand 0.8.5",
  "rand_core 0.6.4",
@@ -2476,7 +2476,7 @@ dependencies = [
  "pdl-runtime",
  "proc-macro2 1.0.86",
  "protobuf 2.28.0",
- "protobuf 3.2.0",
+ "protobuf 3.6.0",
  "protoc-grpcio 2.0.0",
  "protoc-grpcio 3.0.0",
  "protoc-rust",
@@ -3048,7 +3048,7 @@ dependencies = [
  "log",
  "once_cell",
  "openssl",
- "protobuf 3.2.0",
+ "protobuf 3.6.0",
  "serde",
  "serde_json",
  "syslog",
@@ -3750,7 +3750,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4979f22fdb869068da03c9f7528f8297c6fd2606bc3a4affe42e6a823fdb8da4"
 dependencies = [
  "cfg-if",
- "windows-targets 0.52.0",
+ "windows-targets 0.48.5",
 ]
 
 [[package]]
@@ -5204,9 +5204,9 @@ checksum = "106dd99e98437432fed6519dedecfade6a06a73bb7b2a1e019fdd2bee5778d94"
 
 [[package]]
 name = "protobuf"
-version = "3.2.0"
+version = "3.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b55bad9126f378a853655831eb7363b7b01b81d19f8cb1218861086ca4a1a61e"
+checksum = "3018844a02746180074f621e847703737d27d89d7f0721a7a4da317f88b16385"
 dependencies = [
  "once_cell",
  "protobuf-support",
@@ -5224,13 +5224,13 @@ dependencies = [
 
 [[package]]
 name = "protobuf-codegen"
-version = "3.2.0"
+version = "3.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0dd418ac3c91caa4032d37cb80ff0d44e2ebe637b2fb243b6234bf89cdac4901"
+checksum = "411c15a212b4de05eb8bc989fd066a74c86bd3c04e27d6e86bd7703b806d7734"
 dependencies = [
  "anyhow",
  "once_cell",
- "protobuf 3.2.0",
+ "protobuf 3.6.0",
  "protobuf-parse",
  "regex",
  "tempfile",
@@ -5239,14 +5239,14 @@ dependencies = [
 
 [[package]]
 name = "protobuf-parse"
-version = "3.2.0"
+version = "3.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9d39b14605eaa1f6a340aec7f320b34064feb26c93aec35d6a9a2272a8ddfa49"
+checksum = "06f45f16b522d92336e839b5e40680095a045e36a1e7f742ba682ddc85236772"
 dependencies = [
  "anyhow",
- "indexmap 1.9.3",
+ "indexmap 2.1.0",
  "log",
- "protobuf 3.2.0",
+ "protobuf 3.6.0",
  "protobuf-support",
  "tempfile",
  "thiserror",
@@ -5255,9 +5255,9 @@ dependencies = [
 
 [[package]]
 name = "protobuf-support"
-version = "3.2.0"
+version = "3.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a5d4d7b8601c814cfb36bcebb79f0e61e45e1e93640cf778837833bbed05c372"
+checksum = "faf96d872914fcda2b66d66ea3fff2be7c66865d31c7bb2790cff32c0e714880"
 dependencies = [
  "thiserror",
 ]
@@ -5797,7 +5797,7 @@ dependencies = [
  "log",
  "once_cell",
  "procfs",
- "protobuf 3.2.0",
+ "protobuf 3.6.0",
  "regex",
  "tempfile",
  "tokio",
@@ -6345,7 +6345,7 @@ dependencies = [
  "libc",
  "mockall 0.11.4",
  "openssl",
- "protobuf 3.2.0",
+ "protobuf 3.6.0",
  "rand 0.8.5",
  "regex",
  "serial_test",
@@ -6773,16 +6773,16 @@ name = "system_api"
 version = "0.24.53"
 dependencies = [
  "dbus 0.9.7",
- "protobuf 3.2.0",
- "protobuf-codegen 3.2.0",
+ "protobuf 3.6.0",
+ "protobuf-codegen 3.6.0",
 ]
 
 [[package]]
 name = "system_api_chunnel"
 version = "0.1.0"
 dependencies = [
- "protobuf 3.2.0",
- "protobuf-codegen 3.2.0",
+ "protobuf 3.6.0",
+ "protobuf-codegen 3.6.0",
 ]
 
 [[package]]
@@ -7563,8 +7563,8 @@ dependencies = [
  "dbus 0.8.4",
  "getopts",
  "libc",
- "protobuf 3.2.0",
- "protobuf-codegen 3.2.0",
+ "protobuf 3.6.0",
+ "protobuf-codegen 3.6.0",
 ]
 
 [[package]]
@@ -7573,7 +7573,7 @@ version = "0.1.0"
 dependencies = [
  "log",
  "nix 0.28.0",
- "protobuf 3.2.0",
+ "protobuf 3.6.0",
  "vsock",
 ]
 

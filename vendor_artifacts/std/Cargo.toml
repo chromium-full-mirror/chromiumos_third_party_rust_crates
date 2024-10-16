@@ -312,9 +312,9 @@ procfs = "0.15.1"
 # Used by protoc-rust-2.28.0
 # Used by uwbd-0.0.1
 protobuf-2-28-0 = { package = "protobuf", "version" = "2.28.0" }
-protobuf = "3.2.0"
-protobuf-codegen = "3.2.0"
-protobuf-parse = "3.2.0"
+protobuf = "3.6.0"
+protobuf-codegen = "3.6.0"
+protobuf-parse = "3.6.0"
 # Used by floss-0.0.1
 protoc-grpcio-2-0-0 = { package = "protoc-grpcio", "version" = "2.0.0" }
 protoc-grpcio = "3.0.0"
