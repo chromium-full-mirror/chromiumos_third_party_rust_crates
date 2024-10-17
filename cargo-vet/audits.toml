@@ -985,6 +985,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.1.1 -> 1.1.2"
 
+[[audits.critical-section]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.1.2 -> 1.2.0"
+
 [[audits.cros-codecs]]
 who = "Alexandre Courbot <acourbot@chromium.org>"
 criteria = "does-not-implement-crypto"

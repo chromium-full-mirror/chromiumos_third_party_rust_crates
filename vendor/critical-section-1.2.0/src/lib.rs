@@ -16,6 +16,10 @@ pub use self::mutex::Mutex;
 #[derive(Clone, Copy, Debug)]
 pub struct CriticalSection<'cs> {
     _private: PhantomData<&'cs ()>,
+
+    // Prevent CriticalSection from being Send or Sync
+    // https://github.com/rust-embedded/critical-section/issues/55
+    _not_send_sync: PhantomData<*mut ()>,
 }
 
 impl<'cs> CriticalSection<'cs> {
@@ -40,6 +44,7 @@ impl<'cs> CriticalSection<'cs> {
     pub unsafe fn new() -> Self {
         CriticalSection {
             _private: PhantomData,
+            _not_send_sync: PhantomData,
         }
     }
 }
@@ -54,21 +59,27 @@ impl<'cs> CriticalSection<'cs> {
     all(feature = "restore-state-bool", feature = "restore-state-u16"),
     all(feature = "restore-state-bool", feature = "restore-state-u32"),
     all(feature = "restore-state-bool", feature = "restore-state-u64"),
+    all(feature = "restore-state-bool", feature = "restore-state-usize"),
     all(feature = "restore-state-u8", feature = "restore-state-u16"),
     all(feature = "restore-state-u8", feature = "restore-state-u32"),
     all(feature = "restore-state-u8", feature = "restore-state-u64"),
+    all(feature = "restore-state-u8", feature = "restore-state-usize"),
     all(feature = "restore-state-u16", feature = "restore-state-u32"),
     all(feature = "restore-state-u16", feature = "restore-state-u64"),
+    all(feature = "restore-state-u16", feature = "restore-state-usize"),
     all(feature = "restore-state-u32", feature = "restore-state-u64"),
+    all(feature = "restore-state-u32", feature = "restore-state-usize"),
+    all(feature = "restore-state-u64", feature = "restore-state-usize"),
 ))]
-compile_error!("You must set at most one of these Cargo features: restore-state-none, restore-state-bool, restore-state-u8, restore-state-u16, restore-state-u32, restore-state-u64");
+compile_error!("You must set at most one of these Cargo features: restore-state-none, restore-state-bool, restore-state-u8, restore-state-u16, restore-state-u32, restore-state-u64, restore-state-usize");
 
 #[cfg(not(any(
     feature = "restore-state-bool",
     feature = "restore-state-u8",
     feature = "restore-state-u16",
     feature = "restore-state-u32",
-    feature = "restore-state-u64"
+    feature = "restore-state-u64",
+    feature = "restore-state-usize"
 )))]
 type RawRestoreStateInner = ();
 
@@ -87,6 +98,9 @@ type RawRestoreStateInner = u32;
 #[cfg(feature = "restore-state-u64")]
 type RawRestoreStateInner = u64;
 
+#[cfg(feature = "restore-state-usize")]
+type RawRestoreStateInner = usize;
+
 // We have RawRestoreStateInner and RawRestoreState so that we don't have to copypaste the docs 5 times.
 // In the docs this shows as `pub type RawRestoreState = u8` or whatever the selected type is, because
 // the "inner" type alias is private.
@@ -100,6 +114,7 @@ type RawRestoreStateInner = u64;
 /// - `restore-state-u16`
 /// - `restore-state-u32`
 /// - `restore-state-u64`
+/// - `restore-state-usize`
 ///
 /// See [`RestoreState`].
 ///
@@ -135,7 +150,8 @@ impl RestoreState {
             feature = "restore-state-u8",
             feature = "restore-state-u16",
             feature = "restore-state-u32",
-            feature = "restore-state-u64"
+            feature = "restore-state-u64",
+            feature = "restore-state-usize"
         )))]
         return Self(());
 
@@ -152,6 +168,9 @@ impl RestoreState {
         return Self(0);
 
         #[cfg(feature = "restore-state-u64")]
+        return Self(0);
+
+        #[cfg(feature = "restore-state-usize")]
         return Self(0);
     }
 }

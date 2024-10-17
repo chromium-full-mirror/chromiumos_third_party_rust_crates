@@ -12,7 +12,13 @@
 [package]
 edition = "2018"
 name = "critical-section"
-version = "1.1.2"
+version = "1.2.0"
+build = false
+autolib = false
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
 description = "Cross-platform critical section"
 readme = "README.md"
 categories = [
@@ -23,6 +29,10 @@ categories = [
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/rust-embedded/critical-section"
 
+[lib]
+name = "critical_section"
+path = "src/lib.rs"
+
 [features]
 restore-state-bool = []
 restore-state-none = []
@@ -30,4 +40,5 @@ restore-state-u16 = []
 restore-state-u32 = []
 restore-state-u64 = []
 restore-state-u8 = []
+restore-state-usize = []
 std = ["restore-state-bool"]
