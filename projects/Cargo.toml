@@ -32,6 +32,7 @@ members = [
     "platform2/arc-setup-rs",
     "platform2/chromeos-dbus-bindings",
     "platform2/cronista",
+    "platform2/cros-codecs",
     "platform2/crosh",
     "platform2/featured/rust-client",
     "platform2/ferrochrome/clipboard",
