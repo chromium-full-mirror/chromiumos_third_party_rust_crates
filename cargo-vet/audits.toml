@@ -503,6 +503,11 @@ criteria = "safe-to-run"
 version = "1.2.1"
 
 [[audits.bitflags]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.6.0"
+
+[[audits.bitflags]]
 who = "Dennis Kempin <denniskempin@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.3.2 -> 2.2.1"
@@ -1021,6 +1026,11 @@ criteria = "safe-to-run"
 version = "0.0.3"
 
 [[audits.cros-libva]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.0.7"
+
+[[audits.cros-libva]]
 who = "Alexandre Courbot <acourbot@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.0.3 -> 0.0.4"
@@ -1356,6 +1366,26 @@ version = "0.11.0"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.2.0"
+
+[[audits.drm]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.12.0"
+
+[[audits.drm-ffi]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.0"
+
+[[audits.drm-fourcc]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.2.0"
+
+[[audits.drm-sys]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.0"
 
 [[audits.ed25519-compact]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -1831,6 +1861,16 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = "ub-risk-0"
 version = "1.0.0"
 notes = "`rg -i unsafe` resulted in zero hits for this package."
+
+[[audits.gbm]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.15.0"
+
+[[audits.gbm-sys]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.1"
 
 [[audits.gdbstub]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -2568,6 +2608,11 @@ who = "Ying Hsu <yinghsu@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.13"
 
+[[audits.linux-raw-sys]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.6.5"
+
 [[audits.litrs]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -2638,6 +2683,11 @@ version = "0.5.0"
 [[audits.matchit]]
 who = "ChromeOS"
 criteria = "safe-to-run"
+version = "0.5.0"
+
+[[audits.matroska-demuxer]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.5.0"
 
 [[audits.memchr]]
