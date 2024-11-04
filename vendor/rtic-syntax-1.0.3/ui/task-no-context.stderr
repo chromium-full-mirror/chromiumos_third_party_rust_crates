@@ -1,5 +1,0 @@
-error: this task handler must have type signature `fn(foo::Context, ..)`
- --> $DIR/task-no-context.rs:6:8
-  |
-6 |     fn foo() {}
-  |        ^^^

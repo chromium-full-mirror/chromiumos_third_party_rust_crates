@@ -123,6 +123,18 @@
       "version": "*"
     }
   ],
+  "drm-fourcc": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:drm-fourcc-2.2.0/add_license.patch"
+      ],
+      "version": "2.2.0"
+    }
+  ],
   "filedescriptor": [
     {
       "patch_args": [

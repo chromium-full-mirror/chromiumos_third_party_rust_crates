@@ -90,6 +90,12 @@ criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
 notes = "Using relaxed target criteria to help with migration."
 
+[policy.cros-codecs]
+audit-as-crates-io = false
+criteria = ["safe-to-run", "crypto-safe"]
+dev-criteria = ["safe-to-run", "crypto-safe"]
+notes = "Using relaxed target criteria to help with migration."
+
 [policy.croscomp]
 criteria = ["safe-to-run", "crypto-safe"]
 dev-criteria = ["safe-to-run", "crypto-safe"]
@@ -1139,15 +1145,3 @@ criteria = ["safe-to-run", "crypto-safe"]
 [[exemptions.zeroize]]
 version = "1.5.7"
 criteria = ["safe-to-run", "crypto-safe"]
-
-[policy.cros-codecs]
-audit-as-crates-io = false
-criteria = [
-    "safe-to-run",
-    "crypto-safe",
-]
-dev-criteria = [
-    "safe-to-run",
-    "crypto-safe",
-]
-notes = "Using relaxed target criteria to help with migration."

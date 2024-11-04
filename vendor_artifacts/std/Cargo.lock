@@ -492,7 +492,7 @@ version = "0.68.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "726e4313eb6ec35d2730258ad4e15b547ee75d6afaa1361a922e78e59b7d8078"
 dependencies = [
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "cexpr 0.6.0",
  "clang-sys",
  "lazy_static",
@@ -512,7 +512,7 @@ version = "0.69.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a00dc851838a2120612785d195287475a3ac45514741da670b735818822129a0"
 dependencies = [
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "cexpr 0.6.0",
  "clang-sys",
  "itertools 0.11.0",
@@ -564,9 +564,9 @@ checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
 
 [[package]]
 name = "bitflags"
-version = "2.4.0"
+version = "2.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b4682ae6287fcf752ecaabbfcc7b6f9b72aa33933dc23a554d853aea8eea8635"
+checksum = "b048fb63fd8b5923fc5aa7b340d8e156aec7ec02f0c78fa8a6ddc2613f6f71de"
 
 [[package]]
 name = "bitreader"
@@ -1604,6 +1604,45 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9ea835d29036a4087793836fa931b08837ad5e957da9e23886b29586fb9b6650"
 
 [[package]]
+name = "drm"
+version = "0.12.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "98888c4bbd601524c11a7ed63f814b8825f420514f78e96f752c437ae9cbb5d1"
+dependencies = [
+ "bitflags 2.6.0",
+ "bytemuck",
+ "drm-ffi",
+ "drm-fourcc",
+ "rustix 0.38.32",
+]
+
+[[package]]
+name = "drm-ffi"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "97c98727e48b7ccb4f4aea8cfe881e5b07f702d17b7875991881b41af7278d53"
+dependencies = [
+ "drm-sys",
+ "rustix 0.38.32",
+]
+
+[[package]]
+name = "drm-fourcc"
+version = "2.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0aafbcdb8afc29c1a7ee5fbe53b5d62f4565b35a042a662ca9fecd0b54dae6f4"
+
+[[package]]
+name = "drm-sys"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fd39dde40b6e196c2e8763f23d119ddb1a8714534bf7d77fa97a65b0feda3986"
+dependencies = [
+ "libc",
+ "linux-raw-sys 0.6.5",
+]
+
+[[package]]
 name = "ed25519-compact"
 version = "1.0.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1785,7 +1824,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "eaf75934d2704bcc3dba5dc398c9df660f7a8642de4f8d85cf031fc5c0f2b993"
 dependencies = [
  "bit_field",
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "lazy_static",
  "libc",
  "nix 0.26.2",
@@ -1797,7 +1836,7 @@ version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "01c0f839e2ebf1d8b94d1c4b3aae27e7688d8f0a230f62b268926f76b6831488"
 dependencies = [
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "crc 3.0.1",
 ]
 
@@ -2090,12 +2129,34 @@ dependencies = [
 ]
 
 [[package]]
+name = "gbm"
+version = "0.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "45bf55ba6dd53ad0ac115046ff999c5324c283444ee6e0be82454c4e8eb2f36a"
+dependencies = [
+ "bitflags 2.6.0",
+ "drm",
+ "drm-fourcc",
+ "gbm-sys",
+ "libc",
+]
+
+[[package]]
+name = "gbm-sys"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a9cc2f64de9fa707b5c6b2d2f10d7a7e49e845018a9f5685891eb40d3bab2538"
+dependencies = [
+ "libc",
+]
+
+[[package]]
 name = "gdbstub"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "09a8b954f9d02b74fe8e89a1c77bd9a6b8206713ebf1b272bfad9573b4a86f88"
 dependencies = [
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "cfg-if",
  "log",
  "managed",
@@ -2974,7 +3035,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4979f22fdb869068da03c9f7528f8297c6fd2606bc3a4affe42e6a823fdb8da4"
 dependencies = [
  "cfg-if",
- "windows-targets 0.48.5",
+ "windows-targets 0.52.0",
 ]
 
 [[package]]
@@ -3067,6 +3128,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "01cda141df6706de531b6c46c3a33ecca755538219bd484262fa09410c13539c"
 
 [[package]]
+name = "linux-raw-sys"
+version = "0.6.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2a385b1be4e5c3e362ad2ffa73c392e53f031eaa5b7d648e64cd87f27f6063d7"
+
+[[package]]
 name = "litrs"
 version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3138,6 +3205,12 @@ name = "matchit"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "73cbba799671b762df5a175adf59ce145165747bb891505c43d09aefbbf38beb"
+
+[[package]]
+name = "matroska-demuxer"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "329a4d8d9b4366dd12dcc99c8916f08a011a7a48aab40b5dcaead6174c8e7a90"
 
 [[package]]
 name = "memchr"
@@ -3226,7 +3299,7 @@ dependencies = [
  "bindgen 0.64.0",
  "bindgen 0.69.4",
  "bitflags 1.3.2",
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "bitreader",
  "blazesym-c",
  "built",
@@ -3277,6 +3350,8 @@ dependencies = [
  "deqp-runner",
  "document-features",
  "downcast-rs",
+ "drm",
+ "drm-fourcc",
  "ed25519-compact",
  "either",
  "embedded-hal",
@@ -3298,6 +3373,7 @@ dependencies = [
  "futures-executor",
  "futures-util",
  "gag",
+ "gbm",
  "gdbstub",
  "gdbstub_arch",
  "getopts",
@@ -3342,6 +3418,7 @@ dependencies = [
  "log",
  "log-panics",
  "lz4_flex",
+ "matroska-demuxer",
  "memmap2",
  "memoffset 0.6.5",
  "merge",
@@ -3731,7 +3808,7 @@ version = "0.27.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2eb04e9c688eff1c89d72b407f168cf79bb9e867a9d3323ed6c01519eb9cc053"
 dependencies = [
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "cfg-if",
  "libc",
 ]
@@ -3742,7 +3819,7 @@ version = "0.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ab2156c4fce2f8df6c499cc1c763e4394b7482525bf2a9701c9d79d215f519e4"
 dependencies = [
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "cfg-if",
  "cfg_aliases",
  "libc",
@@ -4010,7 +4087,7 @@ version = "0.10.66"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9529f4786b70a3e8c61e11179af17ab6188ad8d0ded78c5529441ed39d4bd9c1"
 dependencies = [
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "cfg-if",
  "foreign-types",
  "libc",
@@ -5324,7 +5401,7 @@ version = "0.38.32"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "65e04861e65f21776e67888bfbea442b3642beaa0138fdb1dd7a84a52dffdb89"
 dependencies = [
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "errno 0.3.8",
  "libc",
  "linux-raw-sys 0.4.13",
@@ -6484,7 +6561,7 @@ version = "0.32.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "91f17ea8502a6bd414acb2bf5194f90ca4c48e33a2d18cb57eab3294d2050d99"
 dependencies = [
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "cfg-if",
  "log",
  "ptr_meta",
@@ -6511,7 +6588,7 @@ version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b463030b802e1265a3800fab24df95d3229c202c2e408832a206f05b4d1496ca"
 dependencies = [
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "ptr_meta",
  "uguid",
 ]
@@ -6640,7 +6717,7 @@ version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "18d8b176d4d3e420685e964f87c25df5fdd5b26d7eb0d0e7c892d771f5b81035"
 dependencies = [
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "cfg-if",
  "libc",
  "nix 0.27.1",
@@ -6689,7 +6766,7 @@ checksum = "4dbef75deba5f801229a648f72cffc2007befa7732fedfe05ca73ace030f597a"
 dependencies = [
  "anyhow",
  "bindgen 0.69.4",
- "bitflags 2.4.0",
+ "bitflags 2.6.0",
  "enumn",
  "log",
  "nix 0.28.0",
