@@ -4094,6 +4094,11 @@ who = "Hung-Hsien Chen <hunghsienchen@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "2.0.58 -> 2.0.77"
 
+[[audits.syn]]
+who = "Nicholas Bishop <nicholasbishop@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "2.0.77 -> 2.0.87"
+
 [[audits.sync_wrapper]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -4194,6 +4199,11 @@ who = "Ying Hsu <yinghsu@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.58"
 
+[[audits.thiserror]]
+who = "Nicholas Bishop <nicholasbishop@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.58 -> 2.0.0"
+
 [[audits.thiserror-impl]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -4208,6 +4218,11 @@ version = "1.0.50"
 who = "Ying Hsu <yinghsu@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.0.58"
+
+[[audits.thiserror-impl]]
+who = "Nicholas Bishop <nicholasbishop@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.0.58 -> 2.0.0"
 
 [[audits.thread_local]]
 who = "George Burgess IV <gbiv@google.com>"
