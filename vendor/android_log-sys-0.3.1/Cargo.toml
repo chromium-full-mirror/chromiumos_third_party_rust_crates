@@ -1,0 +1,22 @@
+[package]
+name = "android_log-sys"
+version = "0.3.1"
+authors = [
+    "The android_log_sys Developers",
+]
+description = "Empty crate that should not build."
+documentation = "https://docs.rs/android_log-sys"
+readme = "README.md"
+keywords = [
+    "ffi",
+    "android",
+    "log",
+]
+categories = [
+    "external-ffi-bindings",
+]
+license = "Apache-2.0"
+repository = "https://github.com/rust-mobile/android_log-sys-rs"
+
+[lib]
+name = "android_log_sys"

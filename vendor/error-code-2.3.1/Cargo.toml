@@ -1,0 +1,19 @@
+[package]
+edition = "2018"
+name = "error-code"
+version = "2.3.1"
+authors = [
+    "Douman <douman@gmx.se>",
+]
+description = "Empty crate that should not build."
+readme = "README.md"
+license = "Apache-2.0"
+repository = "https://github.com/DoumanAsh/error-code"
+
+[package.metadata.docs.rs]
+features = [
+    "std",
+]
+
+[features]
+std = []

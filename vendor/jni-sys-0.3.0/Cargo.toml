@@ -1,0 +1,24 @@
+[package]
+name = "jni-sys"
+version = "0.3.0"
+authors = [
+    "Steven Fackler <sfackler@gmail.com>",
+]
+description = "Empty crate that should not build."
+documentation = "https://docs.rs/jni-sys/0.3.0/jni_sys"
+readme = "README.md"
+keywords = [
+    "java",
+    "jni",
+]
+categories = [
+    "external-ffi-bindings",
+]
+license = "Apache-2.0"
+repository = "https://github.com/sfackler/rust-jni-sys"
+
+[badges.travis-ci]
+repository = "sfackler/rust-jni-sys"
+
+[badges.appveyor]
+repository = "sfackler/rust-jni-sys"

@@ -1,0 +1,18 @@
+[package]
+name = "crunchy"
+version = "0.2.2"
+authors = [
+    "Vurich <jackefransham@hotmail.co.uk>",
+]
+description = "Empty crate that should not build."
+license = "Apache-2.0"
+
+[features]
+default = []
+limit_1024 = []
+limit_128 = []
+limit_2048 = []
+limit_256 = []
+limit_512 = []
+limit_64 = []
+std = []

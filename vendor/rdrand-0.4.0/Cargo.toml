@@ -1,0 +1,20 @@
+[package]
+name = "rdrand"
+version = "0.4.0"
+authors = [
+    "Simonas Kazlauskas <rdrand@kazlauskas.me>",
+]
+description = "Empty crate that should not build."
+documentation = "https://docs.rs/rdrand/0.4.0/"
+keywords = [
+    "rand",
+    "rdrand",
+    "rdseed",
+    "random",
+]
+license = "Apache-2.0"
+repository = "https://github.com/nagisa/rust_rdrand/"
+
+[features]
+default = []
+std = []

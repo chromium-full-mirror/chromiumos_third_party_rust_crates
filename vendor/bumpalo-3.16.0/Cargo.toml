@@ -1,0 +1,39 @@
+[package]
+edition = "2021"
+rust-version = "1.73.0"
+name = "bumpalo"
+version = "3.16.0"
+authors = [
+    "Nick Fitzgerald <fitzgen@gmail.com>",
+]
+exclude = [
+    "/.github/*",
+    "/benches",
+    "/tests",
+    "valgrind.supp",
+    "bumpalo.png",
+]
+description = "Empty crate that should not build."
+documentation = "https://docs.rs/bumpalo"
+readme = "README.md"
+categories = [
+    "memory-management",
+    "rust-patterns",
+    "no-std",
+]
+license = "Apache-2.0"
+repository = "https://github.com/fitzgen/bumpalo"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[lib]
+bench = false
+
+[features]
+allocator_api = []
+boxed = []
+collections = []
+default = []
+serde = []
+std = []

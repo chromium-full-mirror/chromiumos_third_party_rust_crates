@@ -1,0 +1,19 @@
+[package]
+name = "failure"
+version = "0.1.8"
+authors = [
+    "Without Boats <boats@mozilla.com>",
+]
+description = "Empty crate that should not build."
+homepage = "https://rust-lang-nursery.github.io/failure/"
+documentation = "https://docs.rs/failure"
+license = "Apache-2.0"
+repository = "https://github.com/rust-lang-nursery/failure"
+
+[features]
+default = []
+derive = []
+std = []
+
+[badges.maintenance]
+status = "deprecated"

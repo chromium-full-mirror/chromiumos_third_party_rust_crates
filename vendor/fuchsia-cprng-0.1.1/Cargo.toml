@@ -1,0 +1,12 @@
+[package]
+edition = "2018"
+name = "fuchsia-cprng"
+version = "0.1.1"
+authors = [
+    "Erick Tryzelaar <etryzelaar@google.com>",
+]
+description = "Empty crate that should not build."
+readme = "README.md"
+license-file = "LICENSE"
+repository = "https://fuchsia.googlesource.com/fuchsia/+/master/garnet/public/rust/fuchsia-cprng"
+license = "Apache-2.0"

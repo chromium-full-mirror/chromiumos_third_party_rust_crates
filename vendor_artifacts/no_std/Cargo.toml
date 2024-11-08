@@ -63,7 +63,7 @@ base64 = { "version" = "0.22.1", "default-features" = false, features = ['alloc'
 # Used by wayland-server-0.29.0
 # Used by x86_64-0.14.10
 bitflags-1-3-2 = { package = "bitflags", "version" = "1.3.2" }
-bitflags = "2.6.0"
+bitflags = "2.4.0"
 bitreader = { "version" = "0.3.7", "default-features" = false, features = [] }
 byteorder = { "version" = "1.4.3", "default-features" = false, features = ['i128'] }
 bytes = { "version" = "1.4.0", "default-features" = false, features = [] }
@@ -91,7 +91,6 @@ dasp_sample = { "version" = "0.11.0", "default-features" = false, features = [] 
 data-encoding = { "version" = "2.6.0", "default-features" = false, features = ['alloc'] }
 defmt = "0.2.3"
 downcast-rs = { "version" = "1.2.0", "default-features" = false, features = [] }
-drm-fourcc = { "version" = "2.2.0", "default-features" = false, features = [] }
 ed25519-compact = { "version" = "1.0.16", "default-features" = false, features = ['ct-codecs', 'pem'] }
 either = { "version" = "1.9.0", "default-features" = false, features = [] }
 embedded-hal = { "version" = "0.2.7", features = ['unproven'] }
@@ -126,7 +125,7 @@ libc = { "version" = "0.2.153", "default-features" = false, features = ['align',
 # Used by hps-firmware-0.1.0
 # Used by rustix-0.36.7
 linux-raw-sys-0-1-4 = { package = "linux-raw-sys", "version" = "0.1.4", features = ['ioctl', 'no_std'] }
-log = { "version" = "0.4.20", features = ['release_max_level_debug', 'release_max_level_off', 'serde'] }
+log = { "version" = "0.4.20", features = ['release_max_level_debug', 'serde'] }
 lz4_flex = { "version" = "0.11.1", "default-features" = false, features = ['frame', 'safe-decode', 'safe-encode'] }
 # Used by crosvm-0.1.0
 # Used by nix-0.23.1

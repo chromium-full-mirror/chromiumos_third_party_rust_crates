@@ -1,0 +1,18 @@
+[package]
+edition = "2018"
+name = "redox_syscall"
+version = "0.3.5"
+authors = [
+    "Jeremy Soller <jackpot51@gmail.com>",
+]
+description = "Empty crate that should not build."
+documentation = "https://docs.rs/redox_syscall"
+readme = "README.md"
+license = "Apache-2.0"
+repository = "https://gitlab.redox-os.org/redox-os/syscall"
+
+[lib]
+name = "syscall"
+
+[features]
+rustc-dep-of-std = []

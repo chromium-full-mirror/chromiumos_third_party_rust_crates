@@ -1,0 +1,26 @@
+[package]
+edition = "2018"
+name = "android_system_properties"
+version = "0.1.5"
+authors = [
+    "Nicolas Silva <nical@fastmail.com>",
+]
+description = "Empty crate that should not build."
+homepage = "https://github.com/nical/android_system_properties"
+documentation = "https://docs.rs/android_system_properties"
+readme = "README.md"
+keywords = [
+    "android",
+]
+license = "Apache-2.0"
+repository = "https://github.com/nical/android_system_properties"
+
+[package.metadata.docs.rs]
+targets = [
+    "arm-linux-androideabi",
+    "armv7-linux-androideabi",
+    "aarch64-linux-android",
+    "i686-linux-android",
+    "x86_64-linux-android",
+    "x86_64-unknown-linux-gnu",
+]

@@ -1,0 +1,30 @@
+[package]
+name = "objc"
+version = "0.2.7"
+authors = [
+    "Steven Sheldon",
+]
+exclude = [
+    ".gitignore",
+    ".travis.yml",
+    "doc.sh",
+    "travis_install.sh",
+    "travis_test.sh",
+    "tests-ios/**",
+]
+description = "Empty crate that should not build."
+documentation = "http://ssheldon.github.io/rust-objc/objc/"
+readme = "README.md"
+keywords = [
+    "objective-c",
+    "osx",
+    "ios",
+    "cocoa",
+    "uikit",
+]
+license = "Apache-2.0"
+repository = "http://github.com/SSheldon/rust-objc"
+
+[features]
+exception = []
+verify_message = []

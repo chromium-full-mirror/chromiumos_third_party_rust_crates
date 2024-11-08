@@ -1,0 +1,20 @@
+[package]
+edition = "2018"
+name = "socket2"
+version = "0.3.19"
+authors = [
+    "Alex Crichton <alex@alexcrichton.com>",
+]
+description = "Empty crate that should not build."
+homepage = "https://github.com/alexcrichton/socket2-rs"
+readme = "README.md"
+license = "Apache-2.0"
+repository = "https://github.com/alexcrichton/socket2-rs"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[features]
+pair = []
+reuseport = []
+unix = []

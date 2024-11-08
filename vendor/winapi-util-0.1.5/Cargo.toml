@@ -1,0 +1,28 @@
+[package]
+edition = "2018"
+name = "winapi-util"
+version = "0.1.5"
+authors = [
+    "Andrew Gallant <jamslam@gmail.com>",
+]
+description = "Empty crate that should not build."
+homepage = "https://github.com/BurntSushi/winapi-util"
+documentation = "https://docs.rs/winapi-util"
+readme = "README.md"
+keywords = [
+    "windows",
+    "winapi",
+    "util",
+    "win",
+]
+categories = [
+    "os::windows-apis",
+    "external-ffi-bindings",
+]
+license = "Apache-2.0"
+repository = "https://github.com/BurntSushi/winapi-util"
+
+[package.metadata.docs.rs]
+targets = [
+    "x86_64-pc-windows-msvc",
+]

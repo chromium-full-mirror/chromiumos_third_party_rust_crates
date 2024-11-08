@@ -1,0 +1,36 @@
+[package]
+edition = "2018"
+rust-version = "1.56"
+name = "wasm-bindgen"
+version = "0.2.87"
+authors = [
+    "The wasm-bindgen Developers",
+]
+description = "Empty crate that should not build."
+homepage = "https://rustwasm.github.io/"
+documentation = "https://docs.rs/wasm-bindgen"
+readme = "README.md"
+categories = [
+    "wasm",
+]
+license = "Apache-2.0"
+repository = "https://github.com/rustwasm/wasm-bindgen"
+resolver = "2"
+
+[package.metadata.docs.rs]
+features = [
+    "serde-serialize",
+]
+
+[lib]
+test = false
+
+[features]
+default = []
+enable-interning = []
+gg-alloc = []
+serde-serialize = []
+spans = []
+std = []
+strict-macro = []
+xxx_debug_only_print_generated_code = []

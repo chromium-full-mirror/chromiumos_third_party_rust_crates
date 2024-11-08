@@ -1,0 +1,31 @@
+[package]
+edition = "2018"
+name = "wmi"
+version = "0.9.3"
+authors = [
+    "Ohad Ravid <ohad.rv@gmail.com>",
+]
+description = "Empty crate that should not build."
+homepage = "https://github.com/ohadravid/wmi-rs"
+documentation = "https://docs.rs/crate/wmi"
+readme = "README.md"
+keywords = [
+    "wmi",
+    "com",
+    "win32",
+]
+categories = [
+    "api-bindings",
+    "os::windows-apis",
+]
+license = "Apache-2.0"
+repository = "https://github.com/ohadravid/wmi-rs"
+resolver = "2"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+
+[features]
+async-query = []
+default = []
+test = []

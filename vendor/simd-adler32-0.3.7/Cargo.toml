@@ -1,0 +1,35 @@
+[package]
+edition = "2018"
+name = "simd-adler32"
+version = "0.3.7"
+authors = [
+    "Marvin Countryman <me@maar.vin>",
+]
+exclude = [
+    "bench",
+]
+description = "Empty crate that should not build."
+readme = "README.md"
+keywords = [
+    "simd",
+    "avx2",
+    "ssse3",
+    "adler",
+    "adler32",
+]
+categories = [
+    "algorithms",
+    "no-std",
+]
+license = "Apache-2.0"
+repository = "https://github.com/mcountryman/simd-adler32"
+
+[profile.release]
+opt-level = 2
+debug = 2
+
+[features]
+const-generics = []
+default = []
+nightly = []
+std = []

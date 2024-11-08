@@ -1,0 +1,22 @@
+[package]
+edition = "2021"
+name = "hermit-abi"
+version = "0.3.2"
+authors = [
+    "Stefan Lankes",
+]
+description = "Empty crate that should not build."
+readme = "README.md"
+keywords = [
+    "unikernel",
+    "libos",
+]
+categories = [
+    "os",
+]
+license = "Apache-2.0"
+repository = "https://github.com/hermitcore/rusty-hermit"
+
+[features]
+default = []
+rustc-dep-of-std = []

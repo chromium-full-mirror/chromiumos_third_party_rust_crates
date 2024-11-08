@@ -1,0 +1,20 @@
+[package]
+edition = "2018"
+name = "iana-time-zone-haiku"
+version = "0.1.2"
+authors = [
+    "René Kijewski <crates.io@k6i.de>",
+]
+description = "Empty crate that should not build."
+readme = "README.md"
+keywords = [
+    "IANA",
+    "time",
+]
+categories = [
+    "date-and-time",
+    "internationalization",
+    "os",
+]
+license = "Apache-2.0"
+repository = "https://github.com/strawlab/iana-time-zone"

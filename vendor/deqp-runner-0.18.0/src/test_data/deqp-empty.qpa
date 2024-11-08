@@ -1,0 +1,8 @@
+#sessionInfo releaseName git-31c5eed5b15ac535a166339474ef8b9cbd6a6a32
+#sessionInfo releaseId 0x31c5eed5
+#sessionInfo targetName "Surfaceless"
+#sessionInfo commandLineParameters "--deqp-surface-type=fbo --deqp-runmode=txt-caselist"
+
+#beginSession
+
+#endSession

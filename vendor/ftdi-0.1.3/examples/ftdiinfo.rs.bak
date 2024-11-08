@@ -1,0 +1,8 @@
+use std::io;
+
+fn main() -> io::Result<()> {
+    let lib_version = ftdi::libftdi_version();
+    println!("ftdiinfo from ftdi-rs, using libftdi {}", lib_version);
+
+    Ok(())
+}

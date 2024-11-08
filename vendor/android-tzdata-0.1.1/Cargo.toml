@@ -1,0 +1,19 @@
+[package]
+edition = "2018"
+name = "android-tzdata"
+version = "0.1.1"
+authors = [
+    "RumovZ",
+]
+description = "Empty crate that should not build."
+readme = "README.md"
+keywords = [
+    "parser",
+    "android",
+    "timezone",
+]
+categories = [
+    "date-and-time",
+]
+license = "Apache-2.0"
+repository = "https://github.com/RumovZ/android-tzdata"

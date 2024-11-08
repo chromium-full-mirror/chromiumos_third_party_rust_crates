@@ -1,0 +1,28 @@
+[package]
+edition = "2018"
+rust-version = "1.38"
+name = "crossbeam-queue"
+version = "0.3.8"
+description = "Empty crate that should not build."
+homepage = "https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-queue"
+readme = "README.md"
+keywords = [
+    "queue",
+    "mpmc",
+    "lock-free",
+    "producer",
+    "consumer",
+]
+categories = [
+    "concurrency",
+    "data-structures",
+    "no-std",
+]
+license = "Apache-2.0"
+repository = "https://github.com/crossbeam-rs/crossbeam"
+
+[features]
+alloc = []
+default = []
+nightly = []
+std = []

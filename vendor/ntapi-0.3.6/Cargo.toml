@@ -1,0 +1,43 @@
+[package]
+edition = "2018"
+name = "ntapi"
+version = "0.3.6"
+authors = [
+    "MSxDOS <melcodos@gmail.com>",
+]
+description = "Empty crate that should not build."
+documentation = "https://docs.rs/ntapi/*/x86_64-pc-windows-msvc/ntapi/"
+readme = "README.md"
+keywords = [
+    "windows",
+    "ffi",
+    "ntapi",
+    "native",
+    "win32",
+]
+categories = [
+    "external-ffi-bindings",
+    "no-std",
+    "os::windows-apis",
+]
+license = "Apache-2.0"
+repository = "https://github.com/MSxDOS/ntapi"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+features = [
+    "nightly",
+]
+targets = [
+    "aarch64-pc-windows-msvc",
+    "i686-pc-windows-msvc",
+    "x86_64-pc-windows-msvc",
+]
+
+[features]
+default = []
+func-types = []
+impl-default = []
+kernel = []
+nightly = []
+user = []

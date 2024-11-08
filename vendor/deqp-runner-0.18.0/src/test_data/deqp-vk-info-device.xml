@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseResult Version="0.3.4" CasePath="dEQP-VK.info.device" CaseType="SelfValidate">
+ <Text>Using --deqp-vk-device-id=1</Text>
+ <Text>apiVersion: 1.2.190
+driverVersion: 0x05402063
+deviceName: AMD RADV VEGA10
+vendorID: 0x00001002
+deviceID: 0x0000687f
+</Text>
+ <Number Name="TestDuration" Description="Test case duration in microseconds" Tag="Time" Unit="us">24</Number>
+ <Result StatusCode="Pass">Not validated</Result>
+</TestCaseResult>

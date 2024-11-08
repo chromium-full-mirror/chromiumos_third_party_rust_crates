@@ -1,0 +1,38 @@
+[package]
+edition = "2021"
+rust-version = "1.58"
+name = "widestring"
+version = "1.0.2"
+exclude = [
+    ".git*",
+    ".editorconfig",
+]
+description = "Empty crate that should not build."
+readme = "README.md"
+keywords = [
+    "wide",
+    "string",
+    "win32",
+    "utf-16",
+    "utf-32",
+]
+categories = [
+    "text-processing",
+    "encoding",
+    "development-tools::ffi",
+    "no-std",
+]
+license = "Apache-2.0"
+repository = "https://github.com/starkat99/widestring-rs"
+resolver = "2"
+
+[package.metadata.docs.rs]
+rustc-args = [
+    "--cfg",
+    "docsrs",
+]
+
+[features]
+alloc = []
+default = []
+std = []

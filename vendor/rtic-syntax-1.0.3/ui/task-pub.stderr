@@ -1,0 +1,5 @@
+error: this task handler must have type signature `fn(foo::Context, ..)`
+ --> $DIR/task-pub.rs:6:12
+  |
+6 |     pub fn foo(_: foo::Context) {}
+  |            ^^^
