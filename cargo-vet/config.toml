@@ -1139,14 +1139,3 @@ criteria = ["safe-to-run", "crypto-safe"]
 [[exemptions.zeroize]]
 version = "1.5.7"
 criteria = ["safe-to-run", "crypto-safe"]
-
-[policy.cros-codecs]
-criteria = [
-    "safe-to-run",
-    "crypto-safe",
-]
-dev-criteria = [
-    "safe-to-run",
-    "crypto-safe",
-]
-notes = "Using relaxed target criteria to help with migration."
