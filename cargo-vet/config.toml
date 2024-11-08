@@ -1141,7 +1141,6 @@ version = "1.5.7"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [policy.cros-codecs]
-audit-as-crates-io = false
 criteria = [
     "safe-to-run",
     "crypto-safe",
