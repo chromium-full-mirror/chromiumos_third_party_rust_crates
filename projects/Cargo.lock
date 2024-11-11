@@ -1452,6 +1452,7 @@ dependencies = [
  "log",
  "matroska-demuxer",
  "nix 0.28.0",
+ "serde_json",
  "thiserror 1.0.58",
  "v4l2r",
 ]
