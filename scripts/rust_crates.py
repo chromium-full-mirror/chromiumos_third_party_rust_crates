@@ -50,6 +50,26 @@ def die_if_running_as_root():
 
 def install_tomli_and_reexec_if_unavailable():
     """Installs the tomli{,_w} modules & restarts the program if necessary."""
+    # TODO(b/378878747): once tomli + tomli_w have a story for py3.11 in CrOS,
+    # remove this forcible downgrade. Note that we can't simply `#!/usr/bin/env
+    # python3.8`, as non-chroot environments may not have that version.
+    py38 = "python3.8"
+    if sys.version_info[:2] > (3, 8):
+        print("Reexec'ing under python3.8...")
+        argv = sys.argv[:]
+        with open(argv[0], "rb") as f:
+            # If argv[0] is a script itself, run py3.8 instead. Otherwise,
+            # replace the executable with py3.8. This is fragile, yes, but:
+            # 1. this function is already fragile
+            # 2. there are two scripts that use this function, and this
+            #    approach seems to work fine for both of them.
+            # 3. this hack should exist for less than a week.
+            if f.read(2) == b"#!":
+                argv = [py38] + argv
+            else:
+                argv[0] = py38
+        os.execvp(argv[0], argv)
+
     try:
         import tomli
         import tomli_w
@@ -72,7 +92,7 @@ def install_tomli_and_reexec_if_unavailable():
         # about version checks there.
         subprocess.run(
             [
-                "python",
+                py38,
                 "-m",
                 "ensurepip",
             ],
@@ -100,7 +120,7 @@ def install_tomli_and_reexec_if_unavailable():
         subprocess.run(["bzip2", "-d", bz2_whl_name], check=True, cwd=tempdir)
         subprocess.run(
             [
-                "python",
+                py38,
                 "-m",
                 "pip",
                 "--disable-pip-version-check",
