@@ -4808,6 +4808,11 @@ who = "Alexandre Courbot <acourbot@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.0.4"
 
+[[audits.v4l2r]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.0.5"
+
 [[audits.vcell]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]

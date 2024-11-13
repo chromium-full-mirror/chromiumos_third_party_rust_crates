@@ -245,7 +245,7 @@ linux-embedded-hal = { "version" = "0.3.2", features = ['gpio-cdev', 'sysfs_gpio
 # Used by hps-firmware-0.1.0
 # Used by rustix-0.36.7
 linux-raw-sys-0-1-4 = { package = "linux-raw-sys", "version" = "0.1.4", features = ['ioctl', 'no_std'] }
-log = { "version" = "0.4.20", features = ['release_max_level_debug', 'release_max_level_off', 'serde', 'std'] }
+log = { "version" = "0.4.20", features = ['release_max_level_debug', 'serde', 'std'] }
 log-panics = { "version" = "2.1.0", features = ['backtrace', 'with-backtrace'] }
 lz4_flex = "0.11.1"
 matroska-demuxer = "0.5.0"
