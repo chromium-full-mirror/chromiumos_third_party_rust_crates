@@ -4516,6 +4516,11 @@ who = "Andre Braga <andrebraga@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.31.0 -> 0.32.0"
 
+[[audits.uefi]]
+who = "Andre Braga <andrebraga@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.32.0 -> 0.33.0"
+
 [[audits.uefi-macros]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4551,6 +4556,11 @@ who = "Andre Braga <andrebraga@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.15.0 -> 0.16.0"
 
+[[audits.uefi-macros]]
+who = "Andre Braga <andrebraga@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.16.0 -> 0.17.0"
+
 [[audits.uefi-raw]]
 who = "Nicholas Bishop <nicholasbishop@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4585,6 +4595,11 @@ delta = "0.6.0 -> 0.7.0"
 who = "Andre Braga <andrebraga@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.7.0 -> 0.8.0"
+
+[[audits.uefi-raw]]
+who = "Andre Braga <andrebraga@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.8.0 -> 0.9.0"
 
 [[audits.uefi-services]]
 who = "ChromeOS"
