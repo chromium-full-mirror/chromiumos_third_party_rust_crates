@@ -306,7 +306,9 @@ object = { "version" = "0.31.1", "default-features" = false, features = ['archiv
 once_cell = { "version" = "1.19.0", features = ['alloc', 'race'] }
 open-enum = "0.3.0"
 openssl = "0.10.66"
-p9 = "0.2.3"
+# Used by crosvm-0.1.0
+p9-0-2-3 = { package = "p9", "version" = "0.2.3" }
+p9 = "0.3.1"
 panic-halt = "0.2.0"
 # Used by grpcio-0.9.1
 # Used by pyo3-0.13.2
