@@ -909,6 +909,11 @@ criteria = "ub-risk-0"
 version = "3.0.2"
 notes = "`rg -i unsafe` resulted in zero hits for this package."
 
+[[audits.configparser]]
+who = "Li-Yu Yu <aaronyu@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "3.0.2 -> 3.1.0"
+
 [[audits.console]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2248,6 +2253,11 @@ version = "1.9.3"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.9.3 -> 2.1.0"
+
+[[audits.indexmap]]
+who = "Li-Yu Yu <aaronyu@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "2.1.0 -> 2.2.6"
 
 [[audits.indoc]]
 who = "George Burgess IV <gbiv@google.com>"

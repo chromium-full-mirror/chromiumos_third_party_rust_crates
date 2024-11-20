@@ -49,22 +49,27 @@ dependencies = [
  "cfg-if",
  "clap 4.5.4",
  "command-fds",
+ "configparser",
  "dasp_frame",
  "dasp_interpolate",
  "dasp_sample",
  "dbus 0.9.7",
  "dbus-tokio",
  "either",
+ "env_logger 0.9.3",
  "fixedbitset",
+ "float-cmp",
  "futures",
  "getopts",
  "getrandom 0.2.10",
  "glob",
  "hound",
+ "indexmap 2.2.6",
  "itertools 0.11.0",
  "libc",
  "log",
  "nix 0.28.0",
+ "num-traits",
  "once_cell",
  "openssl",
  "proc-macro2 1.0.86",
@@ -78,6 +83,7 @@ dependencies = [
  "serde",
  "serde_json",
  "serde_yaml",
+ "static_assertions",
  "syn 1.0.107",
  "syslog",
  "tempfile",
@@ -695,6 +701,9 @@ name = "bitflags"
 version = "2.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b048fb63fd8b5923fc5aa7b340d8e156aec7ec02f0c78fa8a6ddc2613f6f71de"
+dependencies = [
+ "serde",
+]
 
 [[package]]
 name = "bitreader"
@@ -876,7 +885,7 @@ checksum = "3fce8dd7fcfcbf3a0a87d8f515194b49d6135acab73e18bd380d1d93bb1a15eb"
 dependencies = [
  "clap 4.5.4",
  "heck 0.4.1",
- "indexmap 2.1.0",
+ "indexmap 2.2.6",
  "log",
  "proc-macro2 1.0.86",
  "quote 1.0.36",
@@ -1210,9 +1219,12 @@ dependencies = [
 
 [[package]]
 name = "configparser"
-version = "3.0.2"
+version = "3.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5458d9d1a587efaf5091602c59d299696a3877a439c8f6d461a2d3cce11df87a"
+checksum = "e57e3272f0190c3f1584272d613719ba5fc7df7f4942fe542e63d949cf3a649b"
+dependencies = [
+ "indexmap 2.2.6",
+]
 
 [[package]]
 name = "console"
@@ -2840,7 +2852,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e2e1d97fbe9722ba9bbd0c97051c2956e726562b61f86a25a4360398a40edfc9"
 dependencies = [
  "fallible-iterator",
- "indexmap 2.1.0",
+ "indexmap 2.2.6",
  "stable_deref_trait",
 ]
 
@@ -2992,7 +3004,7 @@ dependencies = [
  "futures-sink",
  "futures-util",
  "http",
- "indexmap 2.1.0",
+ "indexmap 2.2.6",
  "slab",
  "tokio",
  "tokio-util",
@@ -3403,9 +3415,9 @@ dependencies = [
 
 [[package]]
 name = "indexmap"
-version = "2.1.0"
+version = "2.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d530e1a18b1cb4c484e6e34556a0d948706958449fca0cab753d649f2bce3d1f"
+checksum = "168fb715dda47215e360912c096649d23d58bf392ac62f73919e831745e40f26"
 dependencies = [
  "equivalent",
  "hashbrown 0.14.3",
@@ -5372,7 +5384,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "06f45f16b522d92336e839b5e40680095a045e36a1e7f742ba682ddc85236772"
 dependencies = [
  "anyhow",
- "indexmap 2.1.0",
+ "indexmap 2.2.6",
  "log",
  "protobuf 3.6.0",
  "protobuf-support",
@@ -7267,7 +7279,7 @@ version = "0.22.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "583c44c02ad26b0c3f3066fe629275e50627026c51ac2e595cca4c230ce1ce1d"
 dependencies = [
- "indexmap 2.1.0",
+ "indexmap 2.2.6",
  "serde",
  "serde_spanned",
  "toml_datetime",
