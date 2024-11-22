@@ -321,7 +321,7 @@ pdl-runtime = "0.2.2"
 pest = "2.7.0"
 pest_derive = "2.7.0"
 pin-utils = "0.1.0"
-pkg-config = "0.3.26"
+pkg-config = "0.3.31"
 prettyplease = { "version" = "0.2.17", features = ['verbatim'] }
 printf-compat = { "version" = "0.1.1", "default-features" = false }
 proc-macro2 = { "version" = "1.0.86", features = ['span-locations'] }
@@ -362,7 +362,7 @@ rand = { "version" = "0.8.5", features = ['alloc', 'getrandom', 'libc', 'rand_ch
 rand_core = { "version" = "0.6.4", features = ['alloc', 'getrandom', 'std'] }
 rangemap = "1.5.1"
 rayon = "1.5.3"
-regex = { "version" = "1.10.4", features = ['perf-backtrack', 'perf-cache', 'perf-dfa', 'perf-inline', 'perf-literal', 'perf-onepass', 'unicode-age', 'unicode-bool', 'unicode-case', 'unicode-gencat', 'unicode-perl', 'unicode-script', 'unicode-segment'] }
+regex = { "version" = "1.11.1", features = ['perf-backtrack', 'perf-cache', 'perf-dfa', 'perf-inline', 'perf-literal', 'perf-onepass', 'unicode-age', 'unicode-bool', 'unicode-case', 'unicode-gencat', 'unicode-perl', 'unicode-script', 'unicode-segment'] }
 remain = "0.2.4"
 riscv = "0.7.0"
 riscv-rt = "0.8.0"

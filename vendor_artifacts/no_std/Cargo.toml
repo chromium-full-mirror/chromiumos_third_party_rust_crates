@@ -156,7 +156,7 @@ rand-0-6-5 = { package = "rand", "version" = "0.6.5", "default-features" = false
 rand-0-7-3 = { package = "rand", "version" = "0.7.3", "default-features" = false, features = ['alloc', 'getrandom', 'getrandom_package', 'libc', 'rand_pcg', 'small_rng'] }
 rand = { "version" = "0.8.5", "default-features" = false, features = ['alloc', 'getrandom', 'libc', 'rand_chacha', 'small_rng', 'std_rng'] }
 rand_core = { "version" = "0.6.4", features = ['alloc', 'getrandom'] }
-regex = { "version" = "1.10.4", "default-features" = false, features = ['perf', 'perf-backtrack', 'perf-cache', 'perf-dfa', 'perf-inline', 'perf-literal', 'perf-onepass', 'unicode', 'unicode-age', 'unicode-bool', 'unicode-case', 'unicode-gencat', 'unicode-perl', 'unicode-script', 'unicode-segment'] }
+regex = { "version" = "1.11.1", "default-features" = false, features = ['perf', 'perf-backtrack', 'perf-cache', 'perf-dfa', 'perf-inline', 'perf-literal', 'perf-onepass', 'unicode', 'unicode-age', 'unicode-bool', 'unicode-case', 'unicode-gencat', 'unicode-perl', 'unicode-script', 'unicode-segment'] }
 remain = "0.2.4"
 riscv = "0.7.0"
 riscv-rt = "0.8.0"

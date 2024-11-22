@@ -467,6 +467,11 @@ criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.63.0"
 
 [[audits.bindgen]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.70.1"
+
+[[audits.bindgen]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.60.1 -> 0.59.2"
@@ -1034,6 +1039,16 @@ version = "0.0.3"
 who = "Justin Green <greenjustin@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.0.7"
+
+[[audits.cros-libva]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.0.11"
+
+[[audits.cros-libva]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.0.12"
 
 [[audits.cros-libva]]
 who = "Alexandre Courbot <acourbot@chromium.org>"
@@ -3309,6 +3324,11 @@ who = "Alexandre Courbot <acourbot@chromium.org>"
 criteria = "safe-to-run"
 version = "0.3.26"
 
+[[audits.pkg-config]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.3.31"
+
 [[audits.ppv-lite86]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -3722,10 +3742,20 @@ who = "Ying Hsu <yinghsu@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.10.4"
 
+[[audits.regex]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.11.1"
+
 [[audits.regex-automata]]
 who = "Ying Hsu <yinghsu@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.4.6"
+
+[[audits.regex-automata]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.4.9"
 
 [[audits.regex-syntax]]
 who = "Android Legacy"
@@ -3736,6 +3766,11 @@ version = "0.6.25"
 who = "Ying Hsu <yinghsu@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.8.3"
+
+[[audits.regex-syntax]]
+who = "Justin Green <greenjustin@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.8.5"
 
 [[audits.retain_mut]]
 who = "Gwendal Grignou <gwendal@chromium.org>"
