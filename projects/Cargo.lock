@@ -123,6 +123,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e89da841a80418a9b391ebaea17f5c112ffaaa96f621d2c285b5174da76b9011"
 dependencies = [
  "cfg-if",
+ "getrandom 0.2.10",
  "once_cell",
  "version_check",
  "zerocopy 0.7.32",
@@ -1690,7 +1691,8 @@ dependencies = [
  "userfaultfd",
  "uuid 1.8.0",
  "virtio-media",
- "vulkano",
+ "vulkano 0.31.1",
+ "vulkano 0.33.0",
  "which",
  "winapi",
  "windows 0.39.0",
@@ -3044,6 +3046,7 @@ version = "2.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6dd08c532ae367adf81c312a4580bc67f1d0fe8bc9c460520283f4c0ff277888"
 dependencies = [
+ "bytemuck",
  "cfg-if",
  "crunchy",
 ]
@@ -7909,6 +7912,47 @@ dependencies = [
  "serde_json",
  "smallvec",
  "vk-parse",
+]
+
+[[package]]
+name = "vulkano"
+version = "0.33.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1e1f15eeb9d93a05eb3c237332a10806eac1eb82444e54485bfcc1859c483c23"
+dependencies = [
+ "ahash 0.8.11",
+ "ash 0.37.3+1.3.251",
+ "bytemuck",
+ "core-graphics-types",
+ "crossbeam-queue",
+ "half",
+ "heck 0.4.1",
+ "indexmap 1.9.3",
+ "libloading 0.7.4",
+ "objc",
+ "once_cell",
+ "parking_lot 0.12.1",
+ "proc-macro2 1.0.86",
+ "quote 1.0.36",
+ "regex",
+ "serde",
+ "serde_json",
+ "smallvec",
+ "thread_local",
+ "vk-parse",
+ "vulkano-macros",
+]
+
+[[package]]
+name = "vulkano-macros"
+version = "0.33.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "895b8a2cac1e7650d2d0552f2392da0970a358515ac11a34adaf19bfdc771b98"
+dependencies = [
+ "proc-macro-crate",
+ "proc-macro2 1.0.86",
+ "quote 1.0.36",
+ "syn 1.0.107",
 ]
 
 [[package]]

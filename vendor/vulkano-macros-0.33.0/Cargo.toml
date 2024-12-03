@@ -1,0 +1,18 @@
+[package]
+edition = "2021"
+name = "vulkano-macros"
+version = "0.33.0"
+authors = [
+    "Pierre Krieger <pierre.krieger1708@gmail.com>",
+    "The vulkano contributors",
+]
+publish = true
+description = "Empty crate that should not build."
+homepage = "https://vulkano.rs"
+documentation = "https://docs.rs/vulkano"
+license = "Apache-2.0"
+repository = "https://github.com/vulkano-rs/vulkano"
+resolver = "1"
+
+[lib]
+proc-macro = true

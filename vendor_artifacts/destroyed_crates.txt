@@ -42,6 +42,8 @@ socket2 0.3.19
 str-buf 1.0.6
 vk-parse 0.8.0
 vulkano 0.31.1
+vulkano 0.33.0
+vulkano-macros 0.33.0
 wasi 0.9.0+wasi-snapshot-preview1
 wasi 0.11.0+wasi-snapshot-preview1
 wasm-bindgen 0.2.87

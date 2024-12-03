@@ -91,6 +91,7 @@ zerocopy = { version = "0.7", features = ["derive"] }
 # be used in ChromeOS builds. Bonus: No `cargo vet` review needed either.
 [target.'cfg(windows)'.dependencies]
 vulkano = "0.31.1"
+vulkano_0_33 = { package = "vulkano", version = "0.33.0" }
 winapi = "0.3"
 windows = "0.39"
 wio = "0.2"
