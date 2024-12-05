@@ -180,7 +180,8 @@
       "patches": [
         "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0001-use-bindgen-0.63.patch",
         "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0002-grpc-unused-protos.patch",
-        "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0003-fix-uncommon-linux-build.patch"
+        "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0003-fix-uncommon-linux-build.patch",
+        "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0004-fix-Wmissing-template-arg-list-after-template-kw.patch"
       ],
       "version": "0.13.0+1.56.2-patched"
     },
