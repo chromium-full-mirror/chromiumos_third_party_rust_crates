@@ -62,6 +62,12 @@ applied to the crate. If such a directory does not exist, `patches/${crate}` is
 checked. Similarly, if this exists, patches are applied; otherwise, the crate
 is left unpatched.
 
+After putting the patch into the appropriate directory, run the script `./vendor.py`.
+The script will re-download crates, apply all relevant patches and regenerate
+`.cargo-checksum.json` files and files under `vendor_artifacts/`. You will need
+to commit these changes when submitting a patch, since patches will not be
+applied later during the package build.
+
 If `./vendor.py` complains about a specific directory in `patches/` not having
 a corresponding `vendor/` directory, the most likely fixes are:
 
