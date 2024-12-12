@@ -400,11 +400,7 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.base64]]
 version = "0.22.1"
-criteria = "crypto-safe"
-
-[[exemptions.base64]]
-version = "0.22.1"
-criteria = "safe-to-run"
+criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.bayer]]
 version = "0.1.5"
@@ -456,11 +452,7 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.crc32c]]
 version = "0.6.8"
-criteria = "crypto-safe"
-
-[[exemptions.crc32c]]
-version = "0.6.8"
-criteria = "safe-to-run"
+criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.crypto-common]]
 version = "0.1.6"
@@ -472,11 +464,7 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.data-encoding]]
 version = "2.6.0"
-criteria = "crypto-safe"
-
-[[exemptions.data-encoding]]
-version = "2.6.0"
-criteria = "safe-to-run"
+criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.dbus]]
 version = "0.8.4"
@@ -504,6 +492,10 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.digest]]
 version = "0.10.7"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.displaydoc]]
+version = "0.2.5"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.ed25519-compact]]
@@ -582,17 +574,33 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.5.1"
 criteria = ["safe-to-run", "crypto-safe"]
 
+[[exemptions.icu_collections]]
+version = "1.5.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.icu_locid]]
+version = "1.5.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.icu_normalizer]]
+version = "1.5.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.icu_properties]]
+version = "1.5.1"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.icu_properties_data]]
+version = "1.5.0"
+criteria = ["safe-to-run", "crypto-safe"]
+
 [[exemptions.indicatif]]
 version = "0.16.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.indicatif]]
 version = "0.17.8"
-criteria = "crypto-safe"
-
-[[exemptions.indicatif]]
-version = "0.17.8"
-criteria = "safe-to-run"
+criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.iso8601]]
 version = "0.4.2"
@@ -616,6 +624,10 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.linux-raw-sys]]
 version = "0.1.4"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.litemap]]
+version = "0.7.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.litrs]]
@@ -700,11 +712,7 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.portable-atomic]]
 version = "1.9.0"
-criteria = "crypto-safe"
-
-[[exemptions.portable-atomic]]
-version = "1.9.0"
-criteria = "safe-to-run"
+criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.ppv-lite86]]
 version = "0.2.10"
@@ -748,11 +756,7 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.quick-xml]]
 version = "0.36.2"
-criteria = "crypto-safe"
-
-[[exemptions.quick-xml]]
-version = "0.36.2"
-criteria = "safe-to-run"
+criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.quote]]
 version = "0.6.13"
@@ -832,11 +836,7 @@ criteria = "crypto-safe"
 
 [[exemptions.rangemap]]
 version = "1.5.1"
-criteria = "crypto-safe"
-
-[[exemptions.rangemap]]
-version = "1.5.1"
-criteria = "safe-to-run"
+criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.rayon]]
 version = "0.8.2"
@@ -860,11 +860,7 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.roaring]]
 version = "0.10.2"
-criteria = "crypto-safe"
-
-[[exemptions.roaring]]
-version = "0.10.2"
-criteria = "safe-to-run"
+criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.ron]]
 version = "0.5.1"
@@ -970,8 +966,8 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "0.8.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.tinyvec]]
-version = "1.6.0"
+[[exemptions.tinystr]]
+version = "0.7.6"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.tokio-stream]]
@@ -1018,8 +1014,8 @@ criteria = ["safe-to-run", "crypto-safe"]
 version = "2.6.0"
 criteria = ["safe-to-run", "crypto-safe"]
 
-[[exemptions.unicode-bidi]]
-version = "0.3.8"
+[[exemptions.url]]
+version = "2.5.4"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.uuid]]
@@ -1040,4 +1036,12 @@ criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.yaml-rust]]
 version = "0.4.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.yoke]]
+version = "0.7.5"
+criteria = ["safe-to-run", "crypto-safe"]
+
+[[exemptions.zerovec]]
+version = "0.10.4"
 criteria = ["safe-to-run", "crypto-safe"]

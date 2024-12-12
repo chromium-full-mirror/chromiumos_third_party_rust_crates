@@ -454,6 +454,7 @@ class LicenseManager:
         "MIT": "MIT",
         "MPL-2.0": "MPL-2.0",
         "unicode": "unicode",
+        "Unicode-3.0": "unicode",
         "Zlib": "ZLIB",
     }
 

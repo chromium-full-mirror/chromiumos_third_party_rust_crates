@@ -163,14 +163,14 @@ riscv-rt = "0.8.0"
 rtt-target = { "version" = "0.3.1", features = ['cortex-m'] }
 safemem = { "version" = "0.3.3", "default-features" = false, features = [] }
 sbat = { "version" = "0.5.0", features = ['alloc'] }
-serde = { "version" = "1.0.152", "default-features" = false, features = ['derive', 'rc', 'serde_derive'] }
+serde = { "version" = "1.0.152", "default-features" = false, features = ['alloc', 'derive', 'rc', 'serde_derive'] }
 serde_bytes = { "version" = "0.10.5", "default-features" = false, features = [] }
 serde_json = { "version" = "1.0.96", "default-features" = false, features = [] }
 sha2 = { "version" = "0.10.6", "default-features" = false }
 shell-words = { "version" = "1.1.0", "default-features" = false, features = [] }
 shlex = { "version" = "1.3.0", "default-features" = false, features = [] }
 slab = { "version" = "0.4.7", "default-features" = false, features = [] }
-smallvec = "1.10.0"
+smallvec = { "version" = "1.13.2", features = ['const_generics'] }
 static_assertions = "1.1.0"
 stm32g0 = { "version" = "0.13.0", features = ['cortex-m-rt', 'rt', 'stm32g071'] }
 stm32g0xx-hal = { "version" = "0.1.5", features = ['device-selected', 'rt', 'stm32g071', 'stm32g0x1'] }
@@ -178,6 +178,7 @@ thiserror = { "version" = "2.0.0", "default-features" = false }
 uefi = { "version" = "0.33.0", "default-features" = false, features = ['alloc'] }
 uguid = { "version" = "2.2.0", features = ['bytemuck'] }
 uninit = { "version" = "0.6.2", "default-features" = false, features = ['alloc'] }
+url = { "version" = "2.5.4", "default-features" = false, features = [] }
 uuid = { "version" = "1.8.0", "default-features" = false, features = ['rng', 'serde', 'v4'] }
 vcell = "0.1.3"
 zeroize = { "version" = "1.5.7", features = ['zeroize_derive'] }

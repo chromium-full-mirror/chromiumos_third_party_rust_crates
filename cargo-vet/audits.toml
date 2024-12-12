@@ -1734,6 +1734,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "1.1.0 -> 1.2.0"
 
+[[audits.form_urlencoded]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.2.0 -> 1.2.1"
+
 [[audits.fragile]]
 who = "Max Lee <endlesspring@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -2267,10 +2272,50 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.1.56 -> 0.1.57"
 
+[[audits.icu_locid_transform]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.5.0"
+
+[[audits.icu_locid_transform_data]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.5.0"
+
+[[audits.icu_normalizer_data]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.5.0"
+
+[[audits.icu_provider]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.5.0"
+notes = """
+This crate contains a custom impl of FxHash. The maintainers needed a custom
+hashing function that was `const` and self-contained. Since FxHash isn't built
+to be crypto secure, this does-not-implement-crypto.
+"""
+
+[[audits.icu_provider_macros]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.5.0"
+
 [[audits.idna]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.3.0"
+
+[[audits.idna]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.3.0 -> 1.0.3"
+
+[[audits.idna_adapter]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.2.0"
 
 [[audits.image]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -3333,6 +3378,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "2.2.0 -> 2.3.0"
 
+[[audits.percent-encoding]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "2.3.0 -> 2.3.1"
+
 [[audits.pest]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4203,6 +4253,11 @@ who = "Android Legacy"
 criteria = "safe-to-run"
 version = "1.6.1"
 
+[[audits.smallvec]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "1.10.0 -> 1.13.2"
+
 [[audits.socket2]]
 who = "Vovo Yang <vovoy@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -4317,6 +4372,11 @@ version = "0.1.1"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.1"
+
+[[audits.synstructure]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.12.4 -> 0.13.1"
 
 [[audits.sysfs_gpio]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -4961,6 +5021,16 @@ criteria = ["safe-to-deploy", "does-not-implement-crypto"]
 delta = "0.4.2 -> 0.5.0"
 notes = "First party code, managed by Googlers on GitHub"
 
+[[audits.utf16_iter]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.5"
+
+[[audits.utf8_iter]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.4"
+
 [[audits.utf8parse]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -5128,6 +5198,16 @@ who = "Hung-Hsien Chen <hunghsienchen@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.6.18"
 
+[[audits.write16]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "1.0.0"
+
+[[audits.writeable]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.5.5"
+
 [[audits.wyz]]
 who = "ChromeOS"
 criteria = "safe-to-run"
@@ -5142,6 +5222,11 @@ version = "1.0.1"
 who = "Bastian Kersting <bkersting@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.1.7"
+
+[[audits.yoke-derive]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.7.5"
 
 [[audits.zerocopy]]
 who = "ChromeOS"
@@ -5188,6 +5273,16 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.7.8 -> 0.7.32"
 
+[[audits.zerofrom]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.5"
+
+[[audits.zerofrom-derive]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.1.5"
+
 [[audits.zeroize]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -5197,6 +5292,11 @@ version = "1.5.7"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "1.3.2"
+
+[[audits.zerovec-derive]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.10.3"
 
 [[audits.zstd]]
 who = "Matt Turner <msturner@google.com>"
