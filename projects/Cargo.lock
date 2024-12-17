@@ -979,6 +979,9 @@ dependencies = [
  "log",
  "mockall 0.12.1",
  "nix 0.28.0",
+ "serde",
+ "serde_json",
+ "tempfile",
 ]
 
 [[package]]
