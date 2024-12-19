@@ -292,7 +292,7 @@ nix-0-26-2 = { package = "nix", "version" = "0.26.2", features = ['memoffset', '
 # Used by os_install_service-1.0.0
 # Used by userfaultfd-0.8.1
 nix-0-27-1 = { package = "nix", "version" = "0.27.1", features = ['fs', 'ioctl', 'mount', 'uio'] }
-nix = { "version" = "0.28.0", features = ['event', 'feature', 'fs', 'ioctl', 'memoffset', 'mman', 'poll', 'process', 'resource', 'signal', 'socket', 'uio', 'user'] }
+nix = { "version" = "0.28.0", features = ['event', 'feature', 'fs', 'ioctl', 'memoffset', 'mman', 'mount', 'poll', 'process', 'resource', 'signal', 'socket', 'uio', 'user'] }
 nom = { "version" = "7.1.1", features = ['alloc'] }
 num = { "version" = "0.2.1", features = ['num-bigint'] }
 num-bigint = "0.4.3"
