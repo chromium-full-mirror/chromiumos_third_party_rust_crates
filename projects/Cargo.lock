@@ -976,6 +976,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "clap 4.5.4",
+ "fs-err",
  "log",
  "mockall 0.12.1",
  "nix 0.28.0",
@@ -2658,6 +2659,15 @@ name = "fragile"
 version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6c2141d6d6c8512188a7891b4b01590a45f6dac67afb4f255c4124dbb86d4eaa"
+
+[[package]]
+name = "fs-err"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8bb60e7409f34ef959985bc9d9c5ee8f5db24ee46ed9775850548021710f807f"
+dependencies = [
+ "autocfg 1.1.0",
+]
 
 [[package]]
 name = "ftdi"
