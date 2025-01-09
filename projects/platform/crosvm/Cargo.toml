@@ -84,8 +84,10 @@ url = "2.3"
 userfaultfd = "0.8.1"
 uuid = { version = "1", features = ["v4", "serde"] }
 virtio-media = "0.0.6"
+virtio-media-0-0-7 = { package = "virtio-media", version = "0.0.7" }
 which = "4.3"
 zerocopy = { version = "0.7", features = ["derive"] }
+zerocopy_0_8 = { package = "zerocopy", version = "0.8", features = ["derive"] }
 
 # Any dependencies added here will be replaced with empty crates as they won't actually
 # be used in ChromeOS builds. Bonus: No `cargo vet` review needed either.

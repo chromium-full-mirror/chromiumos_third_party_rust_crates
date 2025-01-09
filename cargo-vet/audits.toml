@@ -5266,6 +5266,11 @@ who = "Justin Green <greenjustin@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 version = "0.0.5"
 
+[[audits.v4l2r]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.0.5 -> 0.0.6"
+
 [[audits.vcell]]
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -5311,6 +5316,16 @@ version = "0.0.5"
 who = "Alexandre Courbot <acourbot@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.0.5 -> 0.0.6"
+
+[[audits.virtio-media]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "crypto-safe"]
+delta = "0.0.6 -> 0.0.7"
+
+[[audits.virtio-media]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.0.6 -> 0.0.7"
 
 [[audits.void]]
 who = "George Burgess IV <gbiv@google.com>"
@@ -5462,6 +5477,11 @@ who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.7.8 -> 0.7.32"
 
+[[audits.zerocopy]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.32 -> 0.8.14"
+
 [[audits.zerocopy-derive]]
 who = "ChromeOS"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -5481,6 +5501,11 @@ delta = "0.7.8 -> 0.6.6"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.7.8 -> 0.7.32"
+
+[[audits.zerocopy-derive]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "0.7.32 -> 0.8.14"
 
 [[audits.zerofrom]]
 who = "George Burgess IV <gbiv@google.com>"
