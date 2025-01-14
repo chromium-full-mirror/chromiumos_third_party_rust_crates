@@ -977,6 +977,7 @@ dependencies = [
  "anyhow",
  "clap 4.5.4",
  "fs-err",
+ "glob",
  "log",
  "mockall 0.12.1",
  "nix 0.28.0",
