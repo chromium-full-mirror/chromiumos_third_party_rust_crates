@@ -197,7 +197,7 @@ def determine_empty_crates(rust_crates: Path) -> Set[Crate]:
             # an empty crate.
             continue
 
-        # Crate directories are formatted as f"{crate_name}-{verison}".
+        # Crate directories are formatted as f"{crate_name}-{version}".
         # crate_name may have instances of '-' in it, but '.' isn't allowed.
         # `version` matches the regex /^\d+\./, so find the sep by looking
         # before the first '.' in the directory name.
@@ -232,12 +232,12 @@ def determine_empty_crates(rust_crates: Path) -> Set[Crate]:
 #   8. Upload to gs://; don't forget the `-a public-read`.
 def ensure_cargo_audit_is_installed():
     """Ensures that `cargo-audit` is installed."""
-    want_version = "0.21.0+cros"
+    want_version = "0.21.1+cros"
     cargo.ensure_cargo_utility_is_installed(
         utility_name="cargo-audit",
         want_version=want_version,
         gs_path=f"gs://chromeos-localmirror/distfiles/rustsec-{want_version}.tar.bz2",
-        sha256="2100a9abd503b2ddb6ea8a057e2976a21368043fb75f0071a92c03e824c779dc",
+        sha256="76b3a0543c460c8b0088bcebcc5364d9bbf493d22825b25550778f85ece89a33",
         build_subdir=Path("rustsec") / "cargo-audit",
     )
 
