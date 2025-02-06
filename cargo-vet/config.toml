@@ -587,11 +587,11 @@ version = "0.3.2"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.openssl]]
-version = "0.10.66"
+version = "0.10.70"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.openssl-sys]]
-version = "0.9.103"
+version = "0.9.105"
 criteria = ["safe-to-run", "crypto-safe"]
 
 [[exemptions.parking_lot_core]]
