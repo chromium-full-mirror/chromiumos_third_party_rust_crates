@@ -295,6 +295,19 @@ def main(argv: List[str]):
             continue
 
         if advisory.advisory_type == AdvisoryType.ADVISORY:
+            if (
+                advisory.id == "RUSTSEC-2024-0437"
+                and advisory.crate.name == "protobuf"
+                and advisory.crate.version.startswith("2.")
+            ):
+                logging.info(
+                    "Ignoring advisory %r for %r version %r: "
+                    "b/401976739#comment4",
+                    advisory.id,
+                    advisory.crate.name,
+                    advisory.crate.version,
+                )
+                continue
             complaint_lines.append(
                 f"crate {crate.name!r} version {crate.version!r} has advisory "
                 f"https://rustsec.org/advisories/{advisory.id}.html"
