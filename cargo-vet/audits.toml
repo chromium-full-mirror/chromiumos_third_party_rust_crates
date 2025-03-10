@@ -3799,6 +3799,11 @@ who = "Daniel Verkamp <dverkamp@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "3.2.0 -> 3.6.0"
 
+[[audits.protobuf]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "3.6.0 -> 3.7.2"
+
 [[audits.protobuf-codegen]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -3819,6 +3824,11 @@ who = "Daniel Verkamp <dverkamp@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "3.2.0 -> 3.6.0"
 
+[[audits.protobuf-codegen]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "3.6.0 -> 3.7.2"
+
 [[audits.protobuf-parse]]
 who = "ChromeOS Audio"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -3829,6 +3839,11 @@ who = "Daniel Verkamp <dverkamp@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "3.2.0 -> 3.6.0"
 
+[[audits.protobuf-parse]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "3.6.0 -> 3.7.2"
+
 [[audits.protobuf-support]]
 who = "ChromeOS Audio"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
@@ -3838,6 +3853,11 @@ version = "3.2.0"
 who = "Daniel Verkamp <dverkamp@chromium.org>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "3.2.0 -> 3.6.0"
+
+[[audits.protobuf-support]]
+who = "George Burgess IV <gbiv@google.com>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+delta = "3.6.0 -> 3.7.2"
 
 [[audits.protoc]]
 who = "George Burgess IV <gbiv@google.com>"
