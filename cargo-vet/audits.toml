@@ -769,6 +769,21 @@ criteria = "ub-risk-0"
 version = "1.4.1"
 notes = "`rg -i unsafe` resulted in zero hits for this package."
 
+[[audits.ciborium]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.2"
+
+[[audits.ciborium-io]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.2"
+
+[[audits.ciborium-ll]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "0.2.2"
+
 [[audits.clang-sys]]
 who = "Android Legacy"
 criteria = "safe-to-run"
@@ -2229,6 +2244,11 @@ delta = "0.3.21 -> 0.3.24"
 who = "George Burgess IV <gbiv@google.com>"
 criteria = ["safe-to-run", "does-not-implement-crypto"]
 delta = "0.3.24 -> 0.3.26"
+
+[[audits.half]]
+who = "Daniel Verkamp <dverkamp@chromium.org>"
+criteria = ["safe-to-run", "does-not-implement-crypto"]
+version = "2.4.1"
 
 [[audits.hashbrown]]
 who = "Nicholas Bishop <nicholasbishop@google.com>"

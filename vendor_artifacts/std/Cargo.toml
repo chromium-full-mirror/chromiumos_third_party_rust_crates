@@ -104,6 +104,7 @@ cc = { "version" = "1.0.83", features = ['jobserver', 'parallel'] }
 cfg-if = "1.0.0"
 chrono = { "version" = "0.4.34", features = ['alloc', 'android-tzdata', 'iana-time-zone', 'js-sys', 'now', 'serde', 'wasm-bindgen', 'winapi', 'windows-targets'] }
 chunked_transfer = "1.4.1"
+ciborium = "0.2.2"
 # Used by bindgen-0.59.2
 # Used by clap_conf-0.1.5
 # Used by dbus-codegen-0.10.0

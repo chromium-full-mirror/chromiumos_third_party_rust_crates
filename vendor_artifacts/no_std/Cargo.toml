@@ -69,6 +69,7 @@ byteorder = { "version" = "1.4.3", "default-features" = false, features = ['i128
 bytes = { "version" = "1.4.0", "default-features" = false, features = [] }
 capnp = { "version" = "0.14.11", "default-features" = false, features = [] }
 chrono = { "version" = "0.4.34", "default-features" = false, features = ['alloc', 'android-tzdata', 'clock', 'iana-time-zone', 'js-sys', 'now', 'oldtime', 'serde', 'wasm-bindgen', 'wasmbind', 'winapi', 'windows-targets'] }
+ciborium = { "version" = "0.2.2", "default-features" = false, features = [] }
 # Used by cbindgen-0.24.5
 # Used by factory_installer-0.1.0
 # Used by hps-firmware-0.1.0
