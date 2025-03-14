@@ -1,6 +1,8 @@
 This license is located at the root of the repo; the crate itself is
 not: https://github.com/Michael-F-Bryan/include_dir/blob/master/LICENSE
 
+Upstream-Status: Unresponsive [https://github.com/Michael-F-Bryan/include_dir/pull/107]
+
 diff --git a/LICENSE b/LICENSE
 new file mode 100644
 index 0000000..be6d221
