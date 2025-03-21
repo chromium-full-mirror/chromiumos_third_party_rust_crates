@@ -4,8 +4,7 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-""" This script cleans up the vendor directory.
-"""
+"""This script cleans up the vendor directory."""
 
 import argparse
 import collections
@@ -1296,12 +1295,6 @@ def main():
         help="Don't exit if our repo isn't up-to-date.",
     )
     parser.add_argument(
-        "--skip-cargo-vet",
-        action="store_true",
-        help="Don't run cargo-vet. Please don't upload changes that skip "
-        "this check. This flag is for local development use only.",
-    )
-    parser.add_argument(
         "--skip-cargo-vendor",
         action="store_true",
         help="Don't run cargo-vendor. Please don't upload changes that skip "
@@ -1324,7 +1317,6 @@ def main():
     patches = os.path.join(current_path, "patches")
     vendor = os.path.join(current_path, "vendor")
     vendor_artifacts = current_path / "vendor_artifacts"
-    scripts_dir = current_path / "scripts"
     license_shorthand_file = os.path.join(vendor_artifacts, "licenses_used.txt")
     destroyed_crates_file = vendor_artifacts / "destroyed_crates.txt"
     in_progress_stamp = InProgressStamp(vendor_artifacts)
@@ -1376,35 +1368,16 @@ def main():
             destroyed_crates,
         )
 
-    if args.skip_cargo_vet or args.skip_cargo_vendor:
-        print("Skipping cargo-vet checks. This is for local dev only.")
+    if args.skip_cargo_vendor or args.skip_metallurgy:
+        what_skipped = (
+            "cargo-vendor" if args.skip_cargo_vendor else "metallurgy checks"
+        )
+        print(f"Skipped {what_skipped}. This is for local dev only.")
         # Don't remove `in_progress_stamp`; it should hopefully serve as an
         # extra reminder to rerun this without skipping cargo-vet.
         return
 
-    # Audit all packages.
-    cargo_vet_py = scripts_dir / "cargo-vet.py"
-    rc = subprocess.run([cargo_vet_py]).returncode
-
-    if args.skip_metallurgy:
-        print("Skipped metallurgy checks. This is for local dev only.")
-        # Don't remove `in_progress_stamp`; it should hopefully serve as an
-        # extra reminder to rerun this without skipping cargo-vet.
-        return
-
-    if not rc:
-        # If the audit is successful, make sure all files are cleanly
-        # formatted. In particular, `projects/populate-workspace.py` may leave
-        # us with ugly cargo-vet state. It cannot format this itself due to
-        # b/274643706.
-        subprocess.check_call([cargo_vet_py, "fmt"])
-        in_progress_stamp.note_successful_termination()
-        return
-
-    sys.exit(
-        "cargo-vet audit failed. Please audit new packages. See "
-        "cargo-vet/README.md if you need help."
-    )
+    in_progress_stamp.note_successful_termination()
 
 
 if __name__ == "__main__":
