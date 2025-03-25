@@ -4,6 +4,14 @@ use std::env;
 
 fn main() {
     println!("cargo:rerun-if-changed=build.rs");
+    if let Some(channel) = version_check::Channel::read() {
+        if channel.supports_features() {
+            println!("cargo:rustc-cfg=feature=\"specialize\"");
+            if version_check::Version::read().map_or(false, |v| v.at_most("1.77.9")) {
+                println!("cargo:rustc-cfg=feature=\"stdsimd\"");
+            }
+        }
+    }
     let os = env::var("CARGO_CFG_TARGET_OS").expect("CARGO_CFG_TARGET_OS was not set");
     if os.eq_ignore_ascii_case("linux")
         || os.eq_ignore_ascii_case("android")
