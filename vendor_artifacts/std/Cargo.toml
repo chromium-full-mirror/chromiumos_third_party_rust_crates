@@ -290,7 +290,6 @@ nix-0-23-1 = { package = "nix", "version" = "0.23.1" }
 # Used by crosh-0.24.52
 # Used by ctrlc-3.4.0
 # Used by ext2-0.1.1
-# Used by libchromeos-0.1.0
 nix-0-26-2 = { package = "nix", "version" = "0.26.2", features = ['memoffset', 'pin-utils'] }
 # Used by command-fds-0.3.0
 # Used by os_install_service-1.0.0
@@ -308,7 +307,7 @@ nix-0-27-1 = { package = "nix", "version" = "0.27.1", features = ['fs', 'ioctl',
 # Used by vmmms_client-0.1.0
 # Used by vsock-0.5.0
 nix-0-28-0 = { package = "nix", "version" = "0.28.0", features = ['event', 'feature', 'fs', 'ioctl', 'memoffset', 'mman', 'mount', 'poll', 'process', 'resource', 'signal', 'socket', 'uio', 'user'] }
-nix = { "version" = "0.29.0", features = ['memoffset', 'socket', 'uio'] }
+nix = { "version" = "0.29.0", features = ['fs', 'memoffset', 'mount', 'process', 'signal', 'socket', 'uio'] }
 nom = { "version" = "7.1.1", features = ['alloc'] }
 num = { "version" = "0.2.1", features = ['num-bigint'] }
 num-bigint = "0.4.3"

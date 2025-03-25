@@ -4008,7 +4008,7 @@ dependencies = [
  "libc",
  "log",
  "multi_log",
- "nix 0.26.2",
+ "nix 0.29.0",
  "pkg-config",
  "serde",
  "stderrlog",
