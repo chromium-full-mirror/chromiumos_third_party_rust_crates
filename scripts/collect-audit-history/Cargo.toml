@@ -10,7 +10,7 @@ panic = "abort"
 
 [dependencies]
 anyhow = "1.0.70"
-cargo-lock = "8"
+cargo-lock = "10"
 chrono = "0.4.24"
 clap = { version = "4", features = ["derive"] }
 csv = "1"
