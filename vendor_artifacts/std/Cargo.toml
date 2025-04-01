@@ -172,7 +172,7 @@ env_logger = "0.9.3"
 euclid = "0.22.9"
 exitcode = "1.1.2"
 ext2 = "0.1.1"
-ext4-view = "0.4.2"
+ext4-view = "0.9.1"
 fd-lock = "3.0.10"
 fixedbitset = "0.4.2"
 flate2 = { "version" = "1.0.27", features = ['any_impl', 'miniz_oxide'] }
@@ -299,7 +299,6 @@ nix-0-27-1 = { package = "nix", "version" = "0.27.1", features = ['fs', 'ioctl',
 # Used by aconfig-0.1.0
 # Used by adhd-deps-0.1.0
 # Used by chromeos-installer-0.1.0
-# Used by croscomp-0.1.0
 # Used by crosvm-0.1.0
 # Used by hbm-deps-0.1.3
 # Used by v4l2r-0.0.5
