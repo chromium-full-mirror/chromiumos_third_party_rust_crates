@@ -192,8 +192,8 @@ getopts = "0.2.21"
 getrandom = { "version" = "0.2.10", features = ['std'] }
 glob = "0.3.1"
 gpio-cdev = "0.5.1"
-gpt_disk_io = { "version" = "0.16.0", features = ['alloc', 'std'] }
-gpt_disk_types = { "version" = "0.16.0", features = ['bytemuck', 'std'] }
+gpt_disk_io = { "version" = "0.16.2", features = ['alloc', 'std'] }
+gpt_disk_types = { "version" = "0.16.1", features = ['bytemuck', 'std'] }
 # Used by floss-0.0.1
 grpcio-0-9-1 = { package = "grpcio", "version" = "0.9.1", features = ['openssl', 'protobuf'] }
 grpcio = { "version" = "0.13.0", features = ['_secure', 'openssl', 'protobuf'] }

@@ -20,14 +20,11 @@ No features are enabled by default.
 * `bytemuck`: Implements bytemuck's `Pod` and `Zeroable` traits for many
   of the types in this crate. Also enables some methods that rely on
   byte access.
-* `std`: Provides `std::error::Error` implementations for all of the
-  error types.
+* `std`: Currently has no effect.
   
 ## Minimum Supported Rust Version (MSRV)
 
-The current MSRV is 1.68.
-
-[`dep:`]: https://blog.rust-lang.org/2022/04/07/Rust-1.60.0.html#new-syntax-for-cargo-features
+The current MSRV is 1.81.
 
 ## License
 

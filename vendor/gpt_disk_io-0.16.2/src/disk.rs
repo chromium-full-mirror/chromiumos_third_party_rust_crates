@@ -74,9 +74,7 @@ impl<'disk, 'buf, Io: BlockIo> GptPartitionEntryIter<'disk, 'buf, Io> {
     }
 }
 
-impl<'disk, 'buf, Io: BlockIo> Iterator
-    for GptPartitionEntryIter<'disk, 'buf, Io>
-{
+impl<Io: BlockIo> Iterator for GptPartitionEntryIter<'_, '_, Io> {
     type Item = Result<GptPartitionEntry, DiskError<Io::Error>>;
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -101,11 +99,11 @@ impl<'disk, 'buf, Io: BlockIo> Iterator
 /// <https://stackoverflow.com/a/50548538>.
 pub trait Captures<'a, 'b> {}
 
-impl<'a, 'b, T: ?Sized> Captures<'a, 'b> for T {}
+impl<T: ?Sized> Captures<'_, '_> for T {}
 
 /// Error type used by [`Disk`] methods.
 #[allow(clippy::module_name_repetitions)]
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub enum DiskError<IoError: Debug + Display> {
     /// The storage buffer is not large enough.
     BufferTooSmall,
@@ -146,6 +144,11 @@ where
             Self::Io(io) => Display::fmt(io, f),
         }
     }
+}
+
+impl<IoError> core::error::Error for DiskError<IoError> where
+    IoError: Debug + Display
+{
 }
 
 /// Read and write GPT disk data.
@@ -287,6 +290,7 @@ impl<Io: BlockIo> Disk<Io> {
     /// [`GptPartitionEntryArrayLayout`] for more.
     ///
     /// `block_buf` is a mutable byte buffer with a length of at least one block.
+    #[allow(clippy::type_complexity)]
     pub fn gpt_partition_entry_array_iter<'disk, 'buf>(
         &'disk mut self,
         layout: GptPartitionEntryArrayLayout,

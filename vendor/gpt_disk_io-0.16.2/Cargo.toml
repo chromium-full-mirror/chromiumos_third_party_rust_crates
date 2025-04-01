@@ -11,9 +11,15 @@
 
 [package]
 edition = "2021"
-rust-version = "1.68"
+rust-version = "1.81"
 name = "gpt_disk_io"
-version = "0.16.0"
+version = "0.16.2"
+build = false
+autolib = false
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
 description = "GPT (GUID Partition Table) disk IO no_std library"
 readme = "README.md"
 keywords = [
@@ -38,6 +44,65 @@ rustdoc-args = [
     "docsrs",
 ]
 
+[features]
+alloc = []
+std = [
+    "alloc",
+    "gpt_disk_types/std",
+]
+
+[lib]
+name = "gpt_disk_io"
+path = "src/lib.rs"
+
+[[example]]
+name = "reader"
+path = "examples/reader.rs"
+
+[[test]]
+name = "test_block"
+path = "tests/test_block.rs"
+
+[[test]]
+name = "test_block_io"
+path = "tests/test_block_io.rs"
+
+[[test]]
+name = "test_crc32"
+path = "tests/test_crc32.rs"
+
+[[test]]
+name = "test_disk"
+path = "tests/test_disk.rs"
+
+[[test]]
+name = "test_guid"
+path = "tests/test_guid.rs"
+
+[[test]]
+name = "test_header"
+path = "tests/test_header.rs"
+
+[[test]]
+name = "test_layout"
+path = "tests/test_layout.rs"
+
+[[test]]
+name = "test_mbr"
+path = "tests/test_mbr.rs"
+
+[[test]]
+name = "test_num"
+path = "tests/test_num.rs"
+
+[[test]]
+name = "test_partition_array"
+path = "tests/test_partition_array.rs"
+
+[[test]]
+name = "test_partition_entry"
+path = "tests/test_partition_entry.rs"
+
 [dependencies.bytemuck]
 version = "1.4.0"
 default-features = false
@@ -45,10 +110,3 @@ default-features = false
 [dependencies.gpt_disk_types]
 version = "0.16.0"
 features = ["bytemuck"]
-
-[features]
-alloc = []
-std = [
-    "alloc",
-    "gpt_disk_types/std",
-]

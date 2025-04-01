@@ -11,9 +11,15 @@
 
 [package]
 edition = "2021"
-rust-version = "1.68"
+rust-version = "1.81"
 name = "gpt_disk_types"
-version = "0.16.0"
+version = "0.16.1"
+build = false
+autolib = false
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
 description = "GPT (GUID Partition Table) disk data types no_std library"
 readme = "README.md"
 keywords = [
@@ -38,6 +44,17 @@ rustdoc-args = [
     "docsrs",
 ]
 
+[features]
+bytemuck = [
+    "dep:bytemuck",
+    "uguid/bytemuck",
+]
+std = ["uguid/std"]
+
+[lib]
+name = "gpt_disk_types"
+path = "src/lib.rs"
+
 [dependencies.bytemuck]
 version = "1.4.0"
 features = ["derive"]
@@ -52,10 +69,3 @@ version = "0.3.2"
 
 [dependencies.uguid]
 version = "2.1.0"
-
-[features]
-bytemuck = [
-    "dep:bytemuck",
-    "uguid/bytemuck",
-]
-std = ["uguid/std"]

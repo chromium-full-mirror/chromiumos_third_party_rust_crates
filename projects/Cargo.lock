@@ -2966,9 +2966,9 @@ dependencies = [
 
 [[package]]
 name = "gpt_disk_io"
-version = "0.16.0"
+version = "0.16.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "37958986d2da6ca0d3c2f182ccfc8efe038183d1692217f2b05ad5c4251555c1"
+checksum = "cb194b955ba40423510e4342a077df49c70a599cf692cd0e30a86a32d8a9c7b1"
 dependencies = [
  "bytemuck",
  "gpt_disk_types",
@@ -2976,9 +2976,9 @@ dependencies = [
 
 [[package]]
 name = "gpt_disk_types"
-version = "0.16.0"
+version = "0.16.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9165f25c3cb4e30437743a410755999f5c753324dfd487d84a30a0858a149021"
+checksum = "3972298dc4cef533492b66bdd75747133618917f44885a11dc8abd24c4e3f1f0"
 dependencies = [
  "bytemuck",
  "crc 3.0.1",

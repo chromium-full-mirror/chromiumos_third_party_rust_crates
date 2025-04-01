@@ -18,13 +18,13 @@
 //! ```
 //!
 //! 1. The first block of the disk contains a protective MBR. See
-//! [`MasterBootRecord::protective_mbr`].
+//!    [`MasterBootRecord::protective_mbr`].
 //! 2. The second block of the disk contains the primary GPT header. See
-//! [`GptHeader`].
+//!    [`GptHeader`].
 //! 3. Additional blocks after the header contain the partition entry
-//! array. See [`GptPartitionEntry`] and [`GptPartitionEntryArray`].
+//!    array. See [`GptPartitionEntry`] and [`GptPartitionEntryArray`].
 //! 4. At the end of the disk is a secondary GPT header and partition
-//! entry array.
+//!    entry array.
 //!
 //! # Endianness
 //!
@@ -42,10 +42,9 @@
 //! # Features
 //!
 //! * `bytemuck`: Implements bytemuck's `Pod` and `Zeroable` traits for
-//!    many of the types in this crate. Also enables some methods that
-//!    rely on byte access.
-//! * `std`: Provides `std::error::Error` implementations for all of the
-//!   error types. Off by default.
+//!   many of the types in this crate. Also enables some methods that
+//!   rely on byte access.
+//! * `std`: Currently has no effect.
 //!
 //! # Examples
 //!
@@ -85,7 +84,7 @@
 //! };
 //! ```
 
-#![cfg_attr(not(feature = "std"), no_std)]
+#![no_std]
 #![cfg_attr(docsrs, feature(doc_auto_cfg))]
 #![warn(missing_copy_implementations)]
 #![warn(missing_debug_implementations)]
@@ -107,8 +106,6 @@ mod mbr;
 mod num;
 mod partition_array;
 mod partition_entry;
-#[cfg(feature = "std")]
-mod std_support;
 
 // Re-export dependencies.
 pub use crc;
