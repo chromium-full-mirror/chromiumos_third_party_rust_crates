@@ -1022,7 +1022,7 @@ dependencies = [
  "getopts",
  "libc",
  "log",
- "nix 0.26.2",
+ "nix 0.29.0",
  "protobuf 3.7.2",
  "protobuf-codegen 3.7.2",
  "remain",

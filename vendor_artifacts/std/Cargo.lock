@@ -3666,7 +3666,6 @@ dependencies = [
  "named-lock",
  "nb 1.0.0",
  "nix 0.23.1",
- "nix 0.26.2",
  "nix 0.27.1",
  "nix 0.28.0",
  "nix 0.29.0",

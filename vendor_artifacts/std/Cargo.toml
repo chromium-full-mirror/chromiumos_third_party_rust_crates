@@ -286,10 +286,6 @@ nb = "1.0.0"
 # Used by wayland-commons-0.29.0
 # Used by wayland-server-0.29.0
 nix-0-23-1 = { package = "nix", "version" = "0.23.1" }
-# Used by chunnel-0.1.0
-# Used by ctrlc-3.4.0
-# Used by ext2-0.1.1
-nix-0-26-2 = { package = "nix", "version" = "0.26.2", features = ['memoffset', 'pin-utils'] }
 # Used by command-fds-0.3.0
 # Used by os_install_service-1.0.0
 # Used by userfaultfd-0.8.1
