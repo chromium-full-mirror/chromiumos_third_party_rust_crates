@@ -9,11 +9,11 @@
 import argparse
 import collections
 import copy
-import dataclasses
 import functools
 import hashlib
 import itertools
 import json
+import logging
 import os
 from pathlib import Path
 import re
@@ -132,8 +132,8 @@ def _rerun_checksums(package_path):
                 hashes[key] = d
 
     if hashes:
-        print(
-            "{} regenerated {} hashes".format(package_path, len(hashes.keys()))
+        logging.info(
+            "%s regenerated %d hashes", package_path, len(hashes.keys())
         )
         contents["files"] = hashes
         with open(checksum_path, "w") as fwrite:
@@ -167,7 +167,7 @@ def _remove_OWNERS_checksum(root):
         del contents["files"][key]
 
     if del_keys:
-        print("{} deleted: {}".format(root, del_keys))
+        logging.info("%s deleted: %s", root, del_keys)
         with open(checksum_path, "w") as fwrite:
             json.dump(contents, fwrite, sort_keys=True)
 
@@ -193,7 +193,7 @@ def cleanup_owners(vendor_path):
                 deps_cleaned.append(d)
 
     if deps_cleaned:
-        print("Cleanup owners:\n {}".format("\n".join(deps_cleaned)))
+        logging.info("Cleanup owners:\n%s", "\n".join(deps_cleaned))
 
 
 def apply_single_patch(patch, workdir):
@@ -293,9 +293,9 @@ def apply_patches(patches_path, vendor_path):
             for target_name in patch_targets:
                 checksums_for[target_name] = True
                 target = os.path.join(vendor_path, target_name)
-                print(f"-- Applying {file_path} to {target}")
+                logging.info("Applying %s to %s", file_path, target)
                 if not apply(file_path, target):
-                    print(f"Failed to apply {file_path} to {target}")
+                    logging.error("Failed to apply %s to %s", file_path, target)
                     patches_failed = True
 
     # Do this late, so we can report all of the failing patches in one
@@ -577,10 +577,9 @@ class LicenseManager:
             pkg_name = package["name"]
             pkg_version = package["version"]
             if pkg_name in skip_license_check:
-                print(
-                    "Skipped license check on {}. Reason: Skipped from command line".format(
-                        pkg_name
-                    )
+                logging.info(
+                    "Skipped license check on %s. Reason: Skipped from command line",
+                    pkg_name,
                 )
                 continue
 
@@ -589,10 +588,10 @@ class LicenseManager:
                 continue
 
             if pkg_name in self.MAP_LICENSE_TO_OTHER:
-                print(
-                    "Skipped license check on {}. Reason: License already in {}".format(
-                        pkg_name, self.MAP_LICENSE_TO_OTHER[pkg_name]
-                    )
+                logging.info(
+                    "Skipped license check on %s. Reason: License already in %s",
+                    pkg_name,
+                    self.MAP_LICENSE_TO_OTHER[pkg_name],
                 )
                 continue
 
@@ -702,10 +701,8 @@ class LicenseManager:
         # If we had any bad licenses, we need to abort
         if bad_licenses:
             for k in bad_licenses.keys():
-                print(
-                    "{} had no acceptable licenses: {}".format(
-                        k, bad_licenses[k]
-                    )
+                logging.error(
+                    "%s had no acceptable licenses: %s", k, bad_licenses[k]
                 )
             raise Exception("Bad licenses in vendored packages.")
 
@@ -724,10 +721,9 @@ class LicenseManager:
                 and v.get("license", "") != self.APACHE_LICENSE
             ):
                 raise_missing_license = True
-                print(
-                    "  {}: Missing license file. Fix or add to ignorelist.".format(
-                        name
-                    )
+                logging.error(
+                    "  %s: Missing license file. Fix or add to ignorelist.",
+                    name,
                 )
 
         if raise_missing_license:
@@ -748,7 +744,7 @@ class LicenseManager:
                 )
 
         sorted_licenses = sorted(has_license_types)
-        print("The following licenses are in use:", sorted_licenses)
+        logging.info("The following licenses are in use: %s", sorted_licenses)
         header = textwrap.dedent(
             """\
             # File to describe the licenses used by this registry.
@@ -944,7 +940,9 @@ class CrateDestroyer:
                 )
                 if not force_destroy_crate:
                     continue
-                print(f"Forcibly emptying {package_name}@{package_version}")
+                logging.info(
+                    f"Forcibly emptying %s@%s", package_name, package_version
+                )
 
             # Detect the correct package path to destroy
             pkg_path = os.path.join(
@@ -952,7 +950,9 @@ class CrateDestroyer:
                 "{}-{}".format(package_name, package_version),
             )
             if not os.path.isdir(pkg_path):
-                print(f"Crate {package_name} not found at {pkg_path}")
+                logging.info(
+                    f"Crate %s not found at %s", package_name, pkg_path
+                )
                 continue
 
             self._replace_source_contents(
@@ -963,7 +963,7 @@ class CrateDestroyer:
             cleaned_packages.append((package_name, package_version))
 
         for pkg, ver in cleaned_packages:
-            print(f"Removed unused crate {pkg}@{ver}")
+            logging.info("Removed unused crate %s@%s", pkg, ver)
 
         # Write a list of crates that've been destroyed. This is used by
         # `scripts/cargo-vet.py`.
@@ -1235,7 +1235,7 @@ def generate_metallurgy_crates(
     available_patches: Dict[str, List[BazelAnnotation]],
     destroyed_crates: Set[Tuple[str, str]],
 ):
-    print(
+    logging.info(
         "Ensuring metallurgy crates are in sync with non-metallurgy crates..."
     )
     with (bazel_artifacts_dir / "annotations.toml").open("rb") as f:
@@ -1250,7 +1250,7 @@ def generate_metallurgy_crates(
     metadata = load_single_metadata(projects_dir.parent, filter_platform=None)
     crates = Package.from_metadata(metadata)
     for subdir, std in [("std", True), ("no_std", False)]:
-        print(f"Syncing {subdir} crates")
+        logging.info("Syncing %s crates", subdir)
         cargo_dir = vendor_artifacts_dir / subdir
         metallurgy_crates = cargo_dir / "Cargo.toml"
         with metallurgy_crates.open("w", encoding="utf-8") as f:
@@ -1277,10 +1277,16 @@ def generate_metallurgy_crates(
             all_annotations=[available_patches, annotations],
         )
 
-    print("Crates in sync.")
+    logging.info("Crates in sync.")
 
 
 def main():
+    logging.basicConfig(
+        format=">> %(asctime)s: %(levelname)s: %(filename)s:%(lineno)d: "
+        "%(message)s",
+        level=logging.INFO,
+    )
+
     parser = argparse.ArgumentParser(description="Vendor packages properly")
     parser.add_argument(
         "--skip-license-check",
@@ -1372,7 +1378,9 @@ def main():
         what_skipped = (
             "cargo-vendor" if args.skip_cargo_vendor else "metallurgy checks"
         )
-        print(f"Skipped {what_skipped}. This is for local dev only.")
+        logging.warning(
+            f"Skipped %s. This is for local dev only.", what_skipped
+        )
         # Don't remove `in_progress_stamp`; it should hopefully serve as an
         # extra reminder to rerun this without skipping cargo-vet.
         return
