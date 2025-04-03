@@ -49,10 +49,8 @@ base64 = { "version" = "0.22.1", "default-features" = false, features = ['alloc'
 # Used by png-0.16.8
 # Used by printf-compat-0.1.1
 # Used by procfs-0.15.1
-# Used by pulldown-cmark-0.6.1
 # Used by redox_syscall-0.2.16
 # Used by redox_syscall-0.3.5
-# Used by ron-0.5.1
 # Used by rustix-0.36.7
 # Used by rustyline-9.1.2
 # Used by rustyline-10.0.0
@@ -67,14 +65,12 @@ bitflags = { "version" = "2.6.0", features = ['serde'] }
 bitreader = { "version" = "0.3.7", "default-features" = false, features = [] }
 byteorder = { "version" = "1.4.3", "default-features" = false, features = ['i128'] }
 bytes = { "version" = "1.4.0", "default-features" = false, features = [] }
-capnp = { "version" = "0.14.11", "default-features" = false, features = [] }
 chrono = { "version" = "0.4.34", "default-features" = false, features = ['alloc', 'android-tzdata', 'clock', 'iana-time-zone', 'js-sys', 'now', 'oldtime', 'serde', 'wasm-bindgen', 'wasmbind', 'winapi', 'windows-targets'] }
 ciborium = { "version" = "0.2.2", "default-features" = false, features = [] }
 # Used by cbindgen-0.24.5
 # Used by factory_installer-0.1.0
 # Used by hps-firmware-0.1.0
 # Used by lego-controller-0.1.0
-# Used by prjoxide-deps-0.1.0
 clap-3-2-23 = { package = "clap", "version" = "3.2.23", "default-features" = false, features = ['atty', 'clap_derive', 'color', 'derive', 'once_cell', 'strsim', 'suggestions', 'termcolor'] }
 clap = { "version" = "4.5.4", "default-features" = false, features = ['color', 'derive', 'error-context', 'help', 'suggestions', 'usage'] }
 cortex-m = "0.7.7"
@@ -116,8 +112,6 @@ hmac-sha256 = "0.1.7"
 httparse = { "version" = "1.8.0", "default-features" = false, features = [] }
 indexmap = { "version" = "2.2.6", "default-features" = false, features = [] }
 intrusive-collections = "0.9.6"
-# Used by prjoxide-deps-0.1.0
-itertools-0-8-2 = { package = "itertools", "version" = "0.8.2", "default-features" = false, features = [] }
 # Used by aconfig-0.1.0
 # Used by predicates-2.1.5
 # Used by prost-build-0.11.1
