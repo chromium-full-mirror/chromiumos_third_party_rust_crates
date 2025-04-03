@@ -1464,6 +1464,7 @@ dependencies = [
  "bindgen 0.69.4",
  "ed25519-compact",
  "ext4-view",
+ "gpt_disk_io",
  "log",
  "mockall 0.12.1",
  "object",
