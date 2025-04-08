@@ -87,7 +87,7 @@ bindgen-0-69-4 = { package = "bindgen", "version" = "0.69.4", features = [] }
 bitflags-1-3-2 = { package = "bitflags", "version" = "1.3.2" }
 bitflags = { "version" = "2.6.0", features = ['serde', 'std'] }
 bitreader = "0.3.7"
-blazesym-c = "0.1.0-rc.0"
+blazesym-c = "0.1.0-rc.2"
 built = { "version" = "0.5.2", features = ['chrono'] }
 byteorder = { "version" = "1.4.3", features = ['i128'] }
 bytes = "1.4.0"
@@ -251,7 +251,8 @@ log = { "version" = "0.4.20", features = ['release_max_level_debug', 'serde', 's
 log-panics = { "version" = "2.1.0", features = ['backtrace', 'with-backtrace'] }
 lz4_flex = "0.11.1"
 matroska-demuxer = "0.5.0"
-memmap2 = "0.8.0"
+# Used by aconfig-0.1.0
+memmap2-0-8-0 = { package = "memmap2", "version" = "0.8.0" }
 # Used by crosvm-0.1.0
 # Used by nix-0.23.1
 # Used by wayland-sys-0.29.0

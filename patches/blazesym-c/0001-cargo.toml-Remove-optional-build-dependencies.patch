@@ -6,26 +6,30 @@ Subject: [PATCH] cargo.toml: Remove optional build dependencies
 The cargo version that we use in ChromeOS insists in use these two
 optional depenencies. Remove them from Cargo.toml for now.
 
-diff --git a/vendor/blazesym-c-0.1.0-rc.0/Cargo.toml b/vendor/blazesym-c-0.1.0-rc.0/Cargo.toml
-index 6671faff..03e9dbf1 100644
+diff --git a/vendor/blazesym-c-0.1.0-rc.2/Cargo.toml b/vendor/blazesym-c-0.1.0-rc.2/Cargo.toml
+index 5bd437b5f..e4c614c50 100644
 --- a/Cargo.toml
 +++ b/Cargo.toml
-@@ -82,18 +82,3 @@ default-features = false
- 
+@@ -86,22 +86,9 @@ default-features = false
  [dev-dependencies.test-tag]
  version = "0.1"
--
+ 
 -[build-dependencies.cbindgen]
--version = "0.26"
+-version = "0.27"
 -optional = true
 -
 -[build-dependencies.which]
--version = "6.0.0"
+-version = "7.0.0"
 -optional = true
 -
--[features]
+ [features]
 -check-doc-snippets = []
+ default = ["dwarf"]
+ dwarf = ["blazesym/dwarf"]
 -generate-c-header = [
 -    "dep:cbindgen",
 -    "dep:which",
 -]
+ 
+ [target.'cfg(any(target_os = "linux", target_os = "android"))'.dependencies.blazesym]
+ version = "=0.2.0-rc.2"
