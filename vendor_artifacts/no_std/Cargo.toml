@@ -119,7 +119,7 @@ intrusive-collections = "0.9.6"
 itertools-0-10-5 = { package = "itertools", "version" = "0.10.5", "default-features" = false, features = ['use_alloc'] }
 itertools = { "version" = "0.11.0", "default-features" = false, features = ['use_alloc'] }
 lazy_static = "1.4.0"
-libc = { "version" = "0.2.170", "default-features" = false, features = ['align', 'extra_traits'] }
+libc = { "version" = "0.2.171", "default-features" = false, features = ['align', 'extra_traits'] }
 # Used by hps-firmware-0.1.0
 # Used by rustix-0.36.7
 linux-raw-sys-0-1-4 = { package = "linux-raw-sys", "version" = "0.1.4", features = ['ioctl', 'no_std'] }
