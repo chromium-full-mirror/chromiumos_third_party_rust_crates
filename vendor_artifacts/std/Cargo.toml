@@ -310,7 +310,7 @@ num_enum = "0.5.7"
 object = { "version" = "0.31.1", "default-features" = false, features = ['archive', 'coff', 'crc32fast', 'elf', 'hashbrown', 'indexmap', 'macho', 'pe', 'read_core', 'unaligned', 'write_core'] }
 once_cell = { "version" = "1.19.0", features = ['alloc', 'race'] }
 open-enum = "0.3.0"
-openssl = "0.10.70"
+openssl = "0.10.72"
 # Used by crosvm-0.1.0
 p9-0-2-3 = { package = "p9", "version" = "0.2.3" }
 p9 = "0.3.1"
