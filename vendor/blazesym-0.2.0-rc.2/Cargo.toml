@@ -150,7 +150,6 @@ default-features = false
 [dependencies.miniz_oxide]
 version = "0.8"
 features = [
-    "simd",
     "with-alloc",
 ]
 optional = true
