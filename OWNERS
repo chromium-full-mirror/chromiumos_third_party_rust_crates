@@ -1,4 +1,8 @@
-abhishekpandit@chromium.org
+abhishekpandit@google.com
 allenwebb@google.com
 dverkamp@chromium.org
 gbiv@chromium.org
+
+# Toolchain team owns this as N+1/last resort. Please prefer the people above
+# when assigning OWNERS reviews.
+include chromiumos/third_party/toolchain-utils:/OWNERS.toolchain
