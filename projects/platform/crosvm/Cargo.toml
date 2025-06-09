@@ -96,7 +96,7 @@ zerocopy_0_8 = { package = "zerocopy", version = "0.8", features = ["derive"] }
 vulkano = "0.31.1"
 vulkano_0_33 = { package = "vulkano", version = "0.33.0" }
 winapi = "0.3"
-windows = "0.39"
+windows = "0.61.1"
 wio = "0.2"
 wmi = "0.9"
 
