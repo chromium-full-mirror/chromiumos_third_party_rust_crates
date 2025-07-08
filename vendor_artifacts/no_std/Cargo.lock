@@ -1471,7 +1471,6 @@ name = "metallurgy-crates"
 version = "0.0.1"
 dependencies = [
  "anyhow",
- "ascii",
  "ash",
  "assert_matches",
  "async-task",

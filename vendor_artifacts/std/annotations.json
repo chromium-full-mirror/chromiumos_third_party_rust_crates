@@ -384,19 +384,6 @@
       "version": "0.3.26"
     }
   ],
-  "tiny_http": [
-    {
-      "patch_args": [
-        "-p1"
-      ],
-      "patch_tool": "patch",
-      "patches": [
-        "@@//third_party/rust_crates/patches:tiny_http/tiny_http-0.7.0-0002-remove-ssl-dependency.patch",
-        "@@//third_party/rust_crates/patches:tiny_http/tiny_http-0.8.0-0001-unix-socket-support.patch"
-      ],
-      "version": "*"
-    }
-  ],
   "uhidrs-sys": [
     {
       "patch_args": [

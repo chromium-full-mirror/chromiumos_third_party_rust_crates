@@ -3729,16 +3729,34 @@ dependencies = [
 ]
 
 [[package]]
+name = "ippusb"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dd99d32a86ae1fa987a5b688e03badb5bc62aa03e35b2950b27b705b3de9eee1"
+dependencies = [
+ "chunked_transfer",
+ "httparse",
+ "hyper",
+ "log",
+ "rusb",
+ "tokio",
+]
+
+[[package]]
 name = "ippusb_bridge"
 version = "0.1.0"
 dependencies = [
- "ascii",
  "chunked_transfer",
+ "dbus 0.9.7",
  "getopts",
  "httparse",
+ "hyper",
+ "ippusb",
  "libc",
+ "log",
  "rusb",
- "tiny_http",
+ "syslog",
+ "tokio",
 ]
 
 [[package]]
@@ -7248,19 +7266,6 @@ name = "time-macros"
 version = "0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "42657b1a6f4d817cda8e7a0ace261fe0cc946cf3a80314390b22cc61ae080792"
-
-[[package]]
-name = "tiny_http"
-version = "0.8.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9ce51b50006056f590c9b7c3808c3bd70f0d1101666629713866c227d6e58d39"
-dependencies = [
- "ascii",
- "chrono",
- "chunked_transfer",
- "log",
- "url",
-]
 
 [[package]]
 name = "tinystr"

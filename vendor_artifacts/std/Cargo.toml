@@ -14,7 +14,6 @@ version = "0.0.1"
 alsa-sys = "0.2.1"
 anyhow = "1.0.75"
 argh = "0.1.12"
-ascii = { "version" = "1.1.0", features = ['alloc'] }
 ash = { "version" = "0.38.0+1.3.281", features = ['libloading'] }
 assert_matches = "1.5.0"
 async-task = "4.4.0"
@@ -210,6 +209,7 @@ hex = { "version" = "0.4.3", features = ['alloc'] }
 hmac-sha256 = "0.1.7"
 hound = "3.5.0"
 httparse = "1.8.0"
+hyper = { "version" = "0.14.27", features = ['backports', 'client', 'deprecated', 'full', 'h2', 'http1', 'http2', 'runtime', 'server', 'socket2', 'stream', 'tcp'] }
 # Used by hps-firmware-0.1.0
 image-0-23-14 = { package = "image", "version" = "0.23.14", "default-features" = false, features = ['png'] }
 image = { "version" = "0.24.8", "default-features" = false }
@@ -223,6 +223,7 @@ inotify = { "version" = "0.9.6", features = ['futures-core', 'tokio'] }
 intrusive-collections = "0.9.6"
 io-uring = { "version" = "0.5.13", features = ['unstable'] }
 iovec = "0.1.4"
+ippusb = "0.4.0"
 # Used by aconfig-0.1.0
 # Used by predicates-2.1.5
 # Used by prost-build-0.11.1
@@ -497,7 +498,6 @@ textwrap-0-11-0 = { package = "textwrap", "version" = "0.11.0" }
 thiserror-1-0-58 = { package = "thiserror", "version" = "1.0.58" }
 thiserror = { "version" = "2.0.0", "default-features" = false }
 threadpool = "1.8.1"
-tiny_http = "0.8.2"
 tinytemplate = "1.2.1"
 tokio = { "version" = "1.38.2", features = ['bytes', 'fs', 'io-std', 'io-util', 'libc', 'macros', 'mio', 'net', 'num_cpus', 'rt', 'rt-multi-thread', 'signal', 'signal-hook-registry', 'socket2', 'sync', 'time', 'tokio-macros', 'windows-sys'] }
 tokio-macros = "2.3.0"
