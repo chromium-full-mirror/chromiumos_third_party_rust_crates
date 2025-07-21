@@ -1,0 +1,229 @@
+From b30ee7db8aacefde73ba59b4a9b2496499a73d57 Mon Sep 17 00:00:00 2001
+From: Benjamin Gordon <bmgordon@chromium.org>
+Date: Mon, 21 Jul 2025 16:02:55 -0600
+Subject: [PATCH] Prefer lowest-numbered interfaces
+
+Currently, incoming requests are distributed across all available
+IPP-USB interfaces in order. The IPP-USB spec does not prescribe any
+particular order for using interfaces, so there is nothing conceptually
+wrong with this logic. However, some printers seem to be sensitive to
+the order in which interfaces are used.
+
+By always using the lowest-numbered available interface, these printers
+seem happy without causing regressions in any of the other test devices
+in our lab.  This is achieved by switching out the VecDeque for a
+BinaryHeap with a custom Ord that prioritizes ClaimedInterface by lowest
+number.  Because BinaryHeap does not provide a non-consuming mutable
+iterator, the heap has to be rebuilt each time it is walked to claim or
+release interfaces.  This makes operations O(n*lg n) and O(lg n) instead
+of O(n) and O(1), but this shouldn't matter because a typical printer
+only has a couple of IPP-USB interfaces anyway.
+---
+ src/device.rs      | 64 +++++++++++++++++++++++++++++++++++++---------
+ src/device_info.rs | 45 +++++++++++++++++++++++++++++++-
+ 2 files changed, 96 insertions(+), 13 deletions(-)
+
+diff --git a/src/device.rs b/src/device.rs
+index 76061ef..e7db09c 100644
+--- a/src/device.rs
++++ b/src/device.rs
+@@ -2,7 +2,8 @@
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
+-use std::collections::VecDeque;
++use std::cmp::{Ord, Ordering};
++use std::collections::BinaryHeap;
+ use std::io::{self, Read, Write};
+ 
+ #[cfg(target_os = "android")]
+@@ -113,10 +114,39 @@ impl ClaimedInterface {
+     }
+ }
+ 
++impl Ord for ClaimedInterface {
++    /// Order claimed interfaces based purely on interface descriptors, but sorted in reverse
++    /// order.  This allows a BinaryHeap<ClaimedInterface> to always pick the lowest-numbered
++    /// interface.  The handle field is ignored because two IPP-USB interfaces on the same device
++    /// can't have the same interface number and alternate.  If ClaimedInterface values from
++    /// different devices are compared, the result is logically consistent, but not meaningful.
++    fn cmp(&self, other: &Self) -> Ordering {
++        match self.descriptor.cmp(&other.descriptor) {
++            Ordering::Less => Ordering::Greater,
++            Ordering::Greater => Ordering::Less,
++            Ordering::Equal => Ordering::Equal,
++        }
++    }
++}
++
++impl PartialOrd for ClaimedInterface {
++    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
++        Some(self.cmp(other))
++    }
++}
++
++impl PartialEq for ClaimedInterface {
++    fn eq(&self, other: &Self) -> bool {
++        self.descriptor == other.descriptor && self.handle.device() == other.handle.device()
++    }
++}
++
++impl Eq for ClaimedInterface {}
++
+ /// InterfaceManagerState contains the internal state of InterfaceManager.  It is intended to
+ /// be shared across InterfaceManager instances and protected by a mutex.
+ struct InterfaceManagerState {
+-    interfaces: VecDeque<ClaimedInterface>,
++    interfaces: BinaryHeap<ClaimedInterface>,
+     handle: Arc<rusb::DeviceHandle<Context>>,
+     usb_config: u8,
+     active: usize,
+@@ -140,7 +170,9 @@ impl InterfaceManagerState {
+             set_device_config(self.handle.as_ref(), self.usb_config)?;
+         }
+ 
+-        for interface in &mut self.interfaces {
++        let mut heap = BinaryHeap::with_capacity(self.interfaces.len());
++        let mut res = Ok(());
++        for mut interface in self.interfaces.drain() {
+             if let Err(e) = interface.claim() {
+                 // We don't bother to free any successfully claimed interfaces because
+                 // it's not an error to try to claim them again when the next connection
+@@ -149,19 +181,25 @@ impl InterfaceManagerState {
+                     "Failed to reclaim interface {}: {}",
+                     interface.descriptor.interface_number, e
+                 );
+-                return Err(e);
++                res = res.and(Err(e));
+             }
++            // Every interface goes back into the heap regardless of success.
++            heap.push(interface);
+         }
+-        Ok(())
++        self.interfaces = heap;
++        res
+     }
+ 
+     /// Call release on all interfaces.  Return Ok if all calls succeeded, or the first Err if any
+     /// call failed.
+     fn release_all(&mut self) -> Result<()> {
+         let mut res = Ok(());
+-        for interface in &mut self.interfaces {
++        let mut heap = BinaryHeap::with_capacity(self.interfaces.len());
++        for mut interface in self.interfaces.drain() {
+             res = res.and(interface.release());
++            heap.push(interface);
+         }
++        self.interfaces = heap;
+         res
+     }
+ }
+@@ -208,21 +246,23 @@ impl InterfaceManager {
+     fn new(
+         handle: Arc<rusb::DeviceHandle<Context>>,
+         usb_config: u8,
+-        interfaces: Vec<ClaimedInterface>,
++        mut interfaces: Vec<ClaimedInterface>,
+     ) -> Self {
+-        let mut deque: VecDeque<ClaimedInterface> = interfaces.into();
+-        for interface in &mut deque {
++        let mut heap: BinaryHeap<ClaimedInterface> = BinaryHeap::with_capacity(interfaces.len());
++        for mut interface in interfaces.drain(..) {
+             interface.release().unwrap_or_else(|e| {
+                 error!(
+                     "Failed to release interface {}: {}",
+                     interface.descriptor.interface_number, e
+                 );
+             });
++            // Every interface goes into the heap regardless of success.
++            heap.push(interface);
+         }
+         Self {
+             interface_available: Arc::new(Condvar::new()),
+             state: Arc::new(Mutex::new(InterfaceManagerState {
+-                interfaces: deque,
++                interfaces: heap,
+                 handle,
+                 usb_config,
+                 active: 0,
+@@ -380,7 +420,7 @@ impl InterfaceManager {
+         state.active += 1;
+ 
+         loop {
+-            if let Some(interface) = state.interfaces.pop_front() {
++            if let Some(interface) = state.interfaces.pop() {
+                 debug!(
+                     "* Using interface {}",
+                     interface.descriptor.interface_number
+@@ -399,7 +439,7 @@ impl InterfaceManager {
+             interface.descriptor.interface_number
+         );
+         let mut state = self.state.lock().unwrap();
+-        state.interfaces.push_back(interface);
++        state.interfaces.push(interface);
+         state.next_cleanup = Instant::now() + USB_CLEANUP_TIMEOUT;
+         state.pending_cleanup = true;
+         state.active -= 1;
+diff --git a/src/device_info.rs b/src/device_info.rs
+index 5720546..cd2adcd 100644
+--- a/src/device_info.rs
++++ b/src/device_info.rs
+@@ -43,7 +43,7 @@ pub fn device_supports_ippusb<T: UsbContext>(device: &rusb::Device<T>) -> Result
+ /// The information for an interface descriptor that supports IPP-USB.
+ ///
+ /// Bulk transfers can be read/written to the in/out endpoints, respectively.
+-#[derive(Copy, Clone)]
++#[derive(Copy, Clone, Eq, Ord, PartialEq, PartialOrd)]
+ pub(crate) struct IppusbDescriptor {
+     pub interface_number: u8,
+     pub alternate_setting: u8,
+@@ -143,3 +143,46 @@ impl IppusbDeviceInfo {
+         Err(Error::NotIppUsb)
+     }
+ }
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    // The IppusbDescriptor tests just restate what the generated Ord implementation will do.  They
++    // are useful to capture the expectation that interface_number and alternate_setting are the
++    // most important sort fields even if somebody reorders the struct members.
++
++    #[test]
++    fn compare_lowest_interface_first() {
++        let lhs = IppusbDescriptor {
++            interface_number: 1,
++            alternate_setting: 1,
++            in_endpoint: 1,
++            out_endpoint: 2,
++        };
++        let rhs = IppusbDescriptor {
++            interface_number: 0,
++            alternate_setting: 2,
++            in_endpoint: 3,
++            out_endpoint: 4,
++        };
++        assert!(rhs < lhs);
++    }
++
++    #[test]
++    fn compare_lowest_alternate_first() {
++        let lhs = IppusbDescriptor {
++            interface_number: 1,
++            alternate_setting: 2,
++            in_endpoint: 1,
++            out_endpoint: 2,
++        };
++        let rhs = IppusbDescriptor {
++            interface_number: 1,
++            alternate_setting: 1,
++            in_endpoint: 3,
++            out_endpoint: 4,
++        };
++        assert!(rhs < lhs);
++    }
++}
+-- 
+2.50.0.727.gbf7dc18ff4-goog
+

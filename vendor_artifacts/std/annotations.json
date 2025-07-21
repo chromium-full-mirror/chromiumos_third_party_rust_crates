@@ -222,6 +222,18 @@
       "version": "*"
     }
   ],
+  "ippusb": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:ippusb/0001-Prefer-lowest-numbered-interfaces.patch"
+      ],
+      "version": "*"
+    }
+  ],
   "jsonschema": [
     {
       "patch_args": [
