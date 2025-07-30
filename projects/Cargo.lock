@@ -3730,9 +3730,9 @@ dependencies = [
 
 [[package]]
 name = "ippusb"
-version = "0.4.0"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dd99d32a86ae1fa987a5b688e03badb5bc62aa03e35b2950b27b705b3de9eee1"
+checksum = "3756134af3bc54751e185928ee96849f99b73bf2cb4d00d1a1bd494cd8aafa4b"
 dependencies = [
  "chunked_transfer",
  "httparse",
