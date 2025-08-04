@@ -10,7 +10,7 @@ ext4-view = "0.9.1"
 gpt_disk_io = "0.16.2"
 log = "0.4"
 object = { version = "0.31.1", default-features = false, features = ["pe", "read_core", "unaligned"] }
-printf-compat = { version = "0.1", default-features = false }
+printf-compat = { version = "0.2", default-features = false }
 sbat = { version = "0.5.0", features = ["alloc"] }
 sha2 = { version = "0.10.6", default-features = false }
 thiserror = { version = "2.0.0", default-features = false }
