@@ -346,6 +346,16 @@
       "rustc_flags": [
         "-L$(location :static_libs)"
       ]
+    },
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:rustix-1.0.8/0001-build-Use-temporary-file-for-can_compile.patch"
+      ],
+      "version": "1.0.8"
     }
   ],
   "simple_logger": [

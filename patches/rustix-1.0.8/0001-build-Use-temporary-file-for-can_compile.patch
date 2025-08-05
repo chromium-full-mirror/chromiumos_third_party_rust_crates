@@ -1,0 +1,36 @@
+From 0f73e2afd916d6fa80ebd51f7ca34dbe295a9142 Mon Sep 17 00:00:00 2001
+From: Keiichi Watanabe <keiichiw@chromium.org>
+Date: Wed, 6 Aug 2025 13:20:34 +0900
+Subject: [PATCH] build: Use temporary file for can_compile
+
+The can_compile function in build.rs previously invoked rustc with
+-o -, which causes rustc to attempt to create a temporary metadata
+directory in the current working directory.
+
+When building with Portage for ChromeOS, this happens in a sandbox where
+the current working directory is not writeable, resulting in a sandbox
+access violation.
+
+This change modifies the can_compile function to use a temporary
+directory for the output file. This forces rustc to create the temporary
+file in a writeable location, avoiding the sandbox issue.
+---
+ build.rs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/build.rs b/build.rs
+index 5440b603..15514195 100644
+--- a/build.rs
++++ b/build.rs
+@@ -258,7 +258,7 @@ fn can_compile<T: AsRef<str>>(test: T) -> bool {
+         .arg("--target")
+         .arg(target)
+         .arg("-o")
+-        .arg("-")
++        .arg(std::env::temp_dir().join("rustix_test_can_compile"))
+         .stdout(Stdio::null()); // We don't care about the output (only whether it builds or not)
+ 
+     // If Cargo wants to set RUSTFLAGS, use that.
+-- 
+2.50.1.565.gc32cd1483b-goog
+
