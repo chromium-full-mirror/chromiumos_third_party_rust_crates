@@ -3439,6 +3439,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "mesa3d_util"
+version = "0.1.73"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ad6e3627f79c204d829628a8fdf46ea3e5368cd22e8c9d824acdc5c885d84813"
+dependencies = [
+ "cfg-if",
+ "libc",
+ "log",
+ "remain",
+ "rustix 1.0.8",
+ "thiserror 1.0.58",
+ "zerocopy 0.8.14",
+]
+
+[[package]]
 name = "metallurgy-crates"
 version = "0.0.1"
 dependencies = [
@@ -3659,6 +3674,7 @@ dependencies = [
  "rustyline 9.1.2",
  "rustyline-derive 0.4.0",
  "rustyline-derive 0.6.0",
+ "rutabaga_gfx",
  "safemem",
  "sbat",
  "scoped-tls",
@@ -5627,6 +5643,24 @@ checksum = "bb35a55ab810b5c0fe31606fe9b47d1354e4dc519bec0a102655f78ea2b38057"
 dependencies = [
  "quote 1.0.36",
  "syn 1.0.107",
+]
+
+[[package]]
+name = "rutabaga_gfx"
+version = "0.1.71"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "438f98a3a20d40edd01467737b2d67ddedc89dcde55de4adccf8e4688b628fb2"
+dependencies = [
+ "cfg-if",
+ "libc",
+ "log",
+ "mesa3d_util",
+ "pkg-config",
+ "remain",
+ "serde",
+ "serde_json",
+ "thiserror 1.0.58",
+ "zerocopy 0.8.14",
 ]
 
 [[package]]
