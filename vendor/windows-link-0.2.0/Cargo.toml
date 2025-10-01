@@ -1,0 +1,30 @@
+[package]
+edition = "2021"
+rust-version = "1.71"
+name = "windows-link"
+version = "0.2.0"
+autolib = false
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
+description = "Empty crate that should not build."
+readme = "README.md"
+categories = [
+    "os::windows-apis",
+]
+license = "Apache-2.0"
+repository = "https://github.com/microsoft/windows-rs"
+
+[lib]
+name = "windows_link"
+
+[lints.rust]
+missing_unsafe_on_extern = "warn"
+
+[lints.rust.unexpected_cfgs]
+level = "warn"
+priority = 0
+check-cfg = [
+    "cfg(windows_raw_dylib, windows_slim_errors)",
+]

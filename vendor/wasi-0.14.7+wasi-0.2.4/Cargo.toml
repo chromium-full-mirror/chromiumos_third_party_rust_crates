@@ -1,0 +1,76 @@
+[package]
+edition = "2021"
+rust-version = "1.82.0"
+name = "wasi"
+version = "0.14.7+wasi-0.2.4"
+autolib = false
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
+description = "Empty crate that should not build."
+documentation = "https://docs.rs/wasi"
+readme = "README.md"
+keywords = [
+    "webassembly",
+    "wasm",
+]
+categories = [
+    "no-std",
+    "wasm",
+]
+license = "Apache-2.0"
+repository = "https://github.com/bytecodealliance/wasi-rs"
+
+[features]
+bitflags = []
+default = []
+std = []
+
+[lib]
+name = "wasi"
+
+[[example]]
+name = "cli-command"
+crate-type = [
+    "cdylib",
+]
+path = "examples/cli-command.rs"
+required-features = [
+    "std",
+]
+
+[[example]]
+name = "cli-command-no_std"
+crate-type = [
+    "cdylib",
+]
+path = "examples/cli-command-no_std.rs"
+
+[[example]]
+name = "hello-world"
+path = "examples/hello-world.rs"
+required-features = [
+    "std",
+]
+
+[[example]]
+name = "hello-world-no_std"
+path = "examples/hello-world-no_std.rs"
+
+[[example]]
+name = "http-proxy"
+crate-type = [
+    "cdylib",
+]
+path = "examples/http-proxy.rs"
+required-features = [
+    "std",
+]
+
+[[example]]
+name = "http-proxy-no_std"
+crate-type = [
+    "cdylib",
+]
+path = "examples/http-proxy-no_std.rs"

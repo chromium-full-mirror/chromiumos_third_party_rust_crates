@@ -1,0 +1,33 @@
+[package]
+edition = "2021"
+rust-version = "1.82.0"
+name = "wit-bindgen"
+version = "0.46.0"
+authors = [
+    "Alex Crichton <alex@alexcrichton.com>",
+]
+autolib = false
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
+description = "Empty crate that should not build."
+homepage = "https://github.com/bytecodealliance/wit-bindgen"
+readme = "README.md"
+license = "Apache-2.0"
+repository = "https://github.com/bytecodealliance/wit-bindgen"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[features]
+async = []
+bitflags = []
+default = []
+macros = []
+realloc = []
+rustc-dep-of-std = []
+std = []
+
+[lib]
+name = "wit_bindgen"

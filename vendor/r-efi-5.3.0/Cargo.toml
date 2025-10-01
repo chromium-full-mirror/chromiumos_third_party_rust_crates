@@ -1,0 +1,58 @@
+[package]
+edition = "2018"
+rust-version = "1.68"
+name = "r-efi"
+version = "5.3.0"
+autolib = false
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
+description = "Empty crate that should not build."
+homepage = "https://github.com/r-efi/r-efi/wiki"
+readme = "README.md"
+keywords = [
+    "boot",
+    "efi",
+    "firmware",
+    "specification",
+    "uefi",
+]
+categories = [
+    "embedded",
+    "hardware-support",
+    "no-std",
+    "os",
+]
+license = "Apache-2.0"
+repository = "https://github.com/r-efi/r-efi"
+
+[features]
+efiapi = []
+examples = []
+native = []
+rustc-dep-of-std = []
+
+[lib]
+name = "r_efi"
+
+[[example]]
+name = "freestanding"
+path = "examples/freestanding.rs"
+required-features = [
+    "native",
+]
+
+[[example]]
+name = "gop-query"
+path = "examples/gop-query.rs"
+required-features = [
+    "native",
+]
+
+[[example]]
+name = "hello-world"
+path = "examples/hello-world.rs"
+required-features = [
+    "native",
+]

@@ -1,0 +1,31 @@
+[package]
+edition = "2018"
+rust-version = "1.71.0"
+name = "schannel"
+version = "0.1.28"
+authors = [
+    "Steven Fackler <sfackler@gmail.com>",
+    "Steffen Butzer <steffen.butzer@outlook.com>",
+]
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
+description = "Empty crate that should not build."
+documentation = "https://docs.rs/schannel/0.1.19/schannel/"
+readme = "README.md"
+keywords = [
+    "windows",
+    "schannel",
+    "tls",
+    "ssl",
+    "https",
+]
+license = "Apache-2.0"
+repository = "https://github.com/steffengy/schannel-rs"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+
+[lib]
+name = "schannel"

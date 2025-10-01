@@ -1,0 +1,22 @@
+[package]
+edition = "2021"
+name = "system-configuration"
+version = "0.5.1"
+authors = [
+    "Mullvad VPN",
+]
+description = "Empty crate that should not build."
+readme = "README.md"
+keywords = [
+    "macos",
+    "system",
+    "configuration",
+    "bindings",
+]
+categories = [
+    "api-bindings",
+    "os::macos-apis",
+]
+license = "Apache-2.0"
+repository = "https://github.com/mullvad/system-configuration-rs"
+resolver = "1"
