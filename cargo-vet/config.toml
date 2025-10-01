@@ -897,3 +897,14 @@ criteria = ["safe-to-run", "crypto-safe"]
 [[exemptions.zerovec]]
 version = "0.10.4"
 criteria = ["safe-to-run", "crypto-safe"]
+
+[policy.sturgeon]
+criteria = [
+    "safe-to-run",
+    "crypto-safe",
+]
+dev-criteria = [
+    "safe-to-run",
+    "crypto-safe",
+]
+notes = "Using relaxed target criteria to help with migration."
