@@ -560,6 +560,7 @@ class LicenseManager:
         metadata = load_all_package_metadata(self.working_dir)
 
         special_unicode_license = "(MIT OR Apache-2.0) AND Unicode-DFS-2016"
+        special_whatwg_license = "(Apache-2.0 OR MIT) AND BSD-3-Clause"
         bad_licenses = {}
 
         # Keep license map ordered so it generates a consistent license map
@@ -635,6 +636,26 @@ class LicenseManager:
                 else:
                     raise ValueError(
                         "No LICENSE-UNICODE found in " f"{license_files}"
+                    )
+                license_map[pkg_name] = {
+                    "license": license,
+                    "license_file": license_file,
+                }
+                continue
+            # FIXME(b/240953811): This it the same hack as above for
+            # `unicode-ident`, except this time it handles the license of the
+            # `encoding_rs` crate.
+            if license == special_whatwg_license:
+                has_whatwg_license = True
+                # We'll check later to be sure MIT or Apache-2.0 is represented
+                # properly.
+                for x in license_files:
+                    if os.path.basename(x) == "LICENSE-WHATWG":
+                        license_file = x
+                        break
+                else:
+                    raise ValueError(
+                        "No LICENSE-WHATWG found in " f"{license_files}"
                     )
                 license_map[pkg_name] = {
                     "license": license,
@@ -737,6 +758,15 @@ class LicenseManager:
             # Replace this license with the actual SPDX license we plan to use.
             has_license_types.remove(special_unicode_license)
             has_license_types.add("unicode")
+            if self.APACHE_LICENSE not in has_license_types:
+                raise ValueError(
+                    "Need the apache license; currently have: "
+                    f"{sorted(has_license_types)}"
+                )
+        if has_whatwg_license:
+            # Replace this license with the actual SPDX license we plan to use.
+            has_license_types.remove(special_whatwg_license)
+            has_license_types.add("BSD-3")
             if self.APACHE_LICENSE not in has_license_types:
                 raise ValueError(
                     "Need the apache license; currently have: "
