@@ -401,7 +401,7 @@ rustyline = { "version" = "10.0.0", features = ['dirs-next', 'radix_trie'] }
 # Used by floss-0.0.1
 rustyline-derive-0-4-0 = { package = "rustyline-derive", "version" = "0.4.0" }
 rustyline-derive = "0.6.0"
-rutabaga_gfx = "0.1.75"
+rutabaga_gfx = "0.1.75-chromeos"
 safemem = "0.3.3"
 sbat = { "version" = "0.5.0", features = ['alloc'] }
 scoped-tls = "1.0.0"
@@ -504,7 +504,7 @@ textwrap-0-11-0 = { package = "textwrap", "version" = "0.11.0" }
 # Used by protobuf-parse-3.7.2
 # Used by protobuf-support-3.7.2
 # Used by reaper-0.1.0
-# Used by rutabaga_gfx-0.1.75
+# Used by rutabaga_gfx-0.1.75-chromeos
 # Used by sirenia-0.24.52
 # Used by svd-parser-0.12.0
 # Used by svd-rs-0.12.1
