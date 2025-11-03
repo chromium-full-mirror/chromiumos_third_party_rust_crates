@@ -908,3 +908,14 @@ dev-criteria = [
     "crypto-safe",
 ]
 notes = "Using relaxed target criteria to help with migration."
+
+[policy.flexor-xtask]
+criteria = [
+    "safe-to-run",
+    "crypto-safe",
+]
+dev-criteria = [
+    "safe-to-run",
+    "crypto-safe",
+]
+notes = "Using relaxed target criteria to help with migration."
