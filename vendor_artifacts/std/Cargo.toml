@@ -28,7 +28,7 @@ bare-metal = "1.0.0"
 base64-0-13-1 = { package = "base64", "version" = "0.13.1", features = [] }
 base64 = { "version" = "0.22.1", features = ['alloc'] }
 bayer = "0.1.5"
-bincode = "1.0.1"
+bincode = "1.3.3"
 # Used by floss-0.0.1
 # Used by grpcio-sys-0.13.0+1.56.2-patched
 bindgen-0-59-2 = { package = "bindgen", "version" = "0.59.2", features = ['env_logger', 'log', 'which'] }
