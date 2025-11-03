@@ -7,7 +7,7 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0"
 clap = { version = "4.5.4", features = ["derive"] }
-# fatfs = { version = "0.3.6" }
+fatfs = { version = "0.3.6" }
 fs-err = "3.0.0"
 gpt_disk_types = { version = "0.16.0" , features = ["std"] }
 # gptman = { version = "1.0.0", default-features = false }

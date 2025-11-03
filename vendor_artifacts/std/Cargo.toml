@@ -60,6 +60,7 @@ bindgen-0-69-4 = { package = "bindgen", "version" = "0.69.4", features = [] }
 # Used by cros-libva-0.0.4
 # Used by croscomp-0.1.0
 # Used by crosh-0.24.52
+# Used by fatfs-0.3.6
 # Used by flexbuffers-2.0.0
 # Used by gpio-cdev-0.5.1
 # Used by hps-firmware-0.1.0
@@ -168,6 +169,7 @@ euclid = "0.22.9"
 exitcode = "1.1.2"
 ext2 = "0.1.1"
 ext4-view = "0.9.1"
+fatfs = "0.3.6"
 fd-lock = "3.0.10"
 fixedbitset = "0.4.2"
 flate2 = { "version" = "1.0.27", features = ['any_impl', 'miniz_oxide'] }
