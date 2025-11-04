@@ -2597,6 +2597,7 @@ dependencies = [
  "fatfs",
  "fs-err",
  "gpt_disk_types",
+ "gptman",
 ]
 
 [[package]]
@@ -3001,6 +3002,18 @@ dependencies = [
  "crc 3.0.1",
  "ucs2",
  "uguid",
+]
+
+[[package]]
+name = "gptman"
+version = "1.1.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d344ce89f41a128e74337a4830507927f1f378b4ae69a26d949d1d1cce55c048"
+dependencies = [
+ "bincode",
+ "crc 3.0.1",
+ "serde",
+ "thiserror 1.0.58",
 ]
 
 [[package]]

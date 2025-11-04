@@ -2381,6 +2381,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "gptman"
+version = "1.1.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d344ce89f41a128e74337a4830507927f1f378b4ae69a26d949d1d1cce55c048"
+dependencies = [
+ "bincode",
+ "crc 3.0.1",
+ "serde",
+ "thiserror 1.0.58",
+]
+
+[[package]]
 name = "grpcio"
 version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3732,6 +3744,7 @@ dependencies = [
  "gpio-cdev",
  "gpt_disk_io",
  "gpt_disk_types",
+ "gptman",
  "grpcio 0.13.0",
  "grpcio 0.9.1",
  "grpcio-compiler 0.13.0",
