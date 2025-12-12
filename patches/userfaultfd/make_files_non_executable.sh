@@ -4,4 +4,4 @@
 # found in the LICENSE file.
 #
 # This crate has executable md files. Remove the x bit.
-chmod -x *.md
+find . -name "*.md" -exec chmod -x {} \;

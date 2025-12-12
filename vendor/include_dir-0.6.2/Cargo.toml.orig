@@ -1,0 +1,36 @@
+[package]
+authors = ["Michael Bryan <michaelfbryan@gmail.com>"]
+name = "include_dir"
+version = "0.6.2"
+description = "Embed the contents of a directory in your binary"
+license = "MIT"
+readme = "../README.md"
+keywords = ["assets", "include", "embed", "dir"]
+repository = "https://github.com/Michael-F-Bryan/include_dir"
+categories = ["development-tools", "web-programming", "game-engines"]
+edition = "2018"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[badges.appveyor]
+branch = "master"
+repository = "Michael-F-Bryan/include-dir"
+service = "github"
+
+[badges.travis-ci]
+branch = "master"
+repository = "Michael-F-Bryan/include_dir"
+
+[dependencies]
+glob = { version = "0.3", optional = true }
+proc-macro-hack = "0.5"
+include_dir_impl = { version = "=0.6.2", path = "../include_dir_impl" }
+
+[dev-dependencies]
+tempdir = "0.3"
+
+[features]
+default = [ "search" ]
+example-output = []
+search = [ "glob" ]

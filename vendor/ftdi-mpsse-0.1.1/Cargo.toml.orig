@@ -1,0 +1,18 @@
+[package]
+name = "ftdi-mpsse"
+version = "0.1.1"
+authors = ["Alex Martens <alex@thinglab.org>", "Sergey Matyukevich <geomatsi@gmail.com>"]
+edition = "2018"
+description = "Rust helpers for the MPSSE on FTDI chips."
+keywords = ["ftdi", "mpsse"]
+categories = ["hardware-support"]
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/ftdi-rs/ftdi-mpsse"
+documentation = "https://docs.rs/ftdi-mpsse"
+
+[dependencies]
+static_assertions = "^1.1.0"
+
+[dev-dependencies]
+libftd2xx = "~0.32.0"

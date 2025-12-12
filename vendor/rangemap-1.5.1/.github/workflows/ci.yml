@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [main, staging, trying]
+  pull_request:
+    branches: [main]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        toolchain:
+          # Don't forget to update the README when bumping MSRV.
+          - 1.66.0
+          - stable
+          - beta
+          - nightly
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: install toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: ${{ matrix.toolchain }}
+          default: true
+          profile: minimal
+      - name: stable test without serde
+        uses: actions-rs/cargo@v1
+        if: matrix.toolchain != 'nightly'
+        with:
+          command: test
+      # We just need to make sure we haven't broken it in some obvious way
+      # either with or without serde enabled, so only test with serde on stable.
+      - name: stable test with serde
+        uses: actions-rs/cargo@v1
+        if: matrix.toolchain == 'stable'
+        with:
+          command: test
+          args: --features serde1
+      # Make sure we haven't broken the const_fn feature.
+      - name: stable test with const_fn
+        uses: actions-rs/cargo@v1
+        if: matrix.toolchain == 'stable'
+        with:
+          command: test
+          args: --features const_fn
+      - name: nightly test
+        uses: actions-rs/cargo@v1
+        if: matrix.toolchain == 'nightly'
+        with:
+          command: test
+          args: --features nightly
+  ci-success:
+    name: ci
+    if: ${{ success() }}
+    needs:
+      - test
+    runs-on: ubuntu-20.04
+    steps:
+      - name: CI succeeded
+        run: exit 0

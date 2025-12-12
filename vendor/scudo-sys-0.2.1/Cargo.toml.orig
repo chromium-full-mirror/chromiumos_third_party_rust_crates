@@ -1,0 +1,18 @@
+[package]
+name = "scudo-sys"
+version = "0.2.1"
+edition = "2018"
+license = "Apache-2.0"
+readme = "README.md"
+authors = ["Google LLC"]
+description = "C/FFI Bindings for the Scudo Hardened Allocator"
+homepage = "https://llvm.org/docs/ScudoHardenedAllocator.html"
+repository = "https://github.com/google/rust-scudo"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libc = "0.2.104"
+
+[build-dependencies]
+cc = "1.0.71"

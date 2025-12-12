@@ -1,0 +1,63 @@
+[package]
+name = "deqp-runner"
+version = "0.18.0"
+authors = ["Emma Anholt <emma@anholt.net>"]
+edition = "2018"
+description = "A VK-GL-CTS/dEQP wrapper program to parallelize it across CPUs and report results against a baseline."
+repository = "https://gitlab.freedesktop.org/anholt/deqp-runner"
+license = "MIT"
+keywords = ["graphics", "deqp"]
+categories = ["command-line-utilities", "concurrency", "development-tools::testing"]
+
+[lib]
+name = "deqp_runner"
+path = "src/lib.rs"
+
+[[bin]]
+name = "deqp-runner"
+path = "src/bin/deqp.rs"
+doc = false
+
+[[bin]]
+name = "gtest-runner"
+path = "src/bin/gtest.rs"
+
+[[bin]]
+name = "piglit-runner"
+path = "src/bin/piglit.rs"
+
+[[bin]]
+name = "igt-runner"
+path = "src/bin/igt.rs"
+
+[[bin]]
+name = "skqp-runner"
+path = "src/bin/skqp.rs"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bench]]
+name = "overhead"
+harness = false
+
+[dependencies]
+anyhow = "1"
+crossbeam-utils = "0.8"
+rayon = "1"
+lazy_static = "1.4"
+log = "0.4"
+stderrlog = ">= 0.4, < 0.6"
+rand = ">= 0.6, <= 0.7"
+regex = "1"
+structopt = "0.3"
+mio = { version = "0.8", features = ["os-ext", "os-poll"] }
+junit-report = "=0.4.0"
+roxmltree = "0.13.0"
+flate2 = "1.0.18"
+toml = "0.5"
+serde = { version = "1.0", features = ["derive"] }
+serde-tuple-vec-map = "1.0.0"
+[dev-dependencies]
+criterion = "0.3.0"
+tempfile = "3.2"

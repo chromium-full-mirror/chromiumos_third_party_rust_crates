@@ -1,0 +1,93 @@
+on:
+  push:
+    branches: [ staging, trying, master ]
+  pull_request:
+
+name: Continuous integration
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    needs: [ci-linux]
+    steps: 
+      - name: Done
+        run: exit 0
+  ci-linux:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # All generated code should be running on stable now
+        rust: [stable]
+
+        # All vendor files we want to test on stable
+        vendor: [rustfmt, Atmel, Freescale, Fujitsu, Holtek, Microchip, Nordic, Nuvoton, NXP, RISC-V, SiliconLabs, Spansion, STMicro, Toshiba]
+
+        # The default target we're compiling on and for
+        TARGET: [x86_64-unknown-linux-gnu]
+
+        # Temporary hack as long as we use the current CI script
+        TRAVIS_OS_NAME: [linux]
+
+        FEATURES: [""]
+
+        # Options are all, none, strict and const
+        options: [all, none]
+        exclude:
+          - vendor: Fujitsu
+            options: all
+          - vendor: Spansion
+            options: all
+          - vendor: STMicro
+            options: all
+          - vendor: Nuvoton
+            options: all
+        include:
+          # Test MSRV
+          - rust: 1.46.0
+            vendor: Nordic
+            TARGET: x86_64-unknown-linux-gnu
+            TRAVIS_OS_NAME: linux
+
+          # Use nightly for architectures which don't support stable
+          - rust: nightly
+            experimental: true
+            vendor: OTHER
+            TARGET: x86_64-unknown-linux-gnu
+            TRAVIS_OS_NAME: linux
+
+            # Use nightly for architectures which don't support stable
+          - rust: nightly
+            experimental: true
+            vendor: Espressif
+            TARGET: x86_64-unknown-linux-gnu
+            TRAVIS_OS_NAME: linux
+
+          # OSX
+          - rust: stable
+            TARGET: x86_64-apple-darwin
+            TRAVIS_OS_NAME: osx
+
+          # Windows
+          - rust: stable
+            TARGET: x86_64-pc-windows-msvc
+            TRAVIS_OS_NAME: windows
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          target: ${{ matrix.TARGET }}
+          override: true
+          components: rustfmt
+      - name: Run CI script for `${{ matrix.vendor }}` under rust `${{ matrix.rust }}` with options=`${{ matrix.options }}`
+        env:
+          TARGET: ${{ matrix.TARGET }}
+          VENDOR: ${{ matrix.vendor }}
+          FEATURES: ${{ matrix.FEATURES }}
+          OPTIONS: ${{ matrix.options }} 
+          TRAVIS_OS_NAME: ${{ matrix.TRAVIS_OS_NAME }}
+        run: bash ci/script.sh

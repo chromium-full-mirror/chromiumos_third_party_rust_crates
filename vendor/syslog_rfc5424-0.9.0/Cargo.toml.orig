@@ -1,0 +1,26 @@
+[package]
+name = "syslog_rfc5424"
+version = "0.9.0"
+authors = ["James Brown <roguelazer@roguelazer.com>"]
+description = "Parser for RFC5424 (IETF-format) syslog messages"
+documentation = "https://docs.rs/syslog_rfc5424/"
+homepage = "https://github.com/Roguelazer/rust-syslog-rfc5424"
+repository = "https://github.com/Roguelazer/rust-syslog-rfc5424"
+license = "ISC"
+readme = "README.md"
+edition = "2018"
+
+[dependencies]
+time = "0.3"
+serde = { version = "1.0", optional = true, features=["derive"] }
+serde_json = { version = "1.0", optional = true }
+thiserror = "1.0"
+
+[dev-dependencies]
+timeit = { version = "0.1", git = "https://github.com/Roguelazer/timeit", rev = "9e9f2e1b9ab9537a72fc4e59ccfc1e89b5b51239" }
+
+[features]
+serde-serialize = ["serde", "serde_json"]
+
+[package.metadata.docs.rs]
+all-features = true

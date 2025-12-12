@@ -1,0 +1,18 @@
+[package]
+name = "dbus-crossroads"
+version = "0.4.0"
+authors = ["David Henningsson <diwic@ubuntu.com>"]
+edition = "2018"
+description = "Framework for writing D-Bus method handlers"
+repository = "https://github.com/diwic/dbus-rs/"
+documentation = "http://docs.rs/dbus-crossroads"
+keywords = ["D-Bus", "DBus", "IPC"]
+license = "Apache-2.0/MIT"
+categories = ["os::unix-apis", "api-bindings"]
+readme = "README.md"
+
+[dependencies]
+dbus = { path = "../dbus", version = "0.9.3" }
+
+[badges]
+maintenance = { status = "actively-developed" }

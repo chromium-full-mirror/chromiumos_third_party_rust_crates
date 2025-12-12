@@ -1,0 +1,16 @@
+dist: trusty
+sudo: required
+language: rust
+rust:
+  - stable
+  - beta
+  - nightly
+matrix:
+  allow_failures:
+    - rust: nightly
+
+# https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise
+before_install:
+  - sudo apt-get update -qq
+install:
+  - sudo apt-get install -qq -y libsdl2-dev libsdl2-image-dev

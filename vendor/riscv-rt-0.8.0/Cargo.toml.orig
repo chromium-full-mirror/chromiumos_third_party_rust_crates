@@ -1,0 +1,23 @@
+[package]
+name = "riscv-rt"
+version = "0.8.0"
+repository = "https://github.com/rust-embedded/riscv-rt"
+authors = ["The RISC-V Team <risc-v@teams.rust-embedded.org>"]
+categories = ["embedded", "no-std"]
+description = "Minimal runtime / startup for RISC-V CPU's"
+keywords = ["riscv", "runtime", "startup"]
+license = "ISC"
+
+[dependencies]
+r0 = "1.0.0"
+riscv = "0.6"
+riscv-rt-macros = { path = "macros", version = "0.1.6" }
+
+[features]
+inline-asm = ["riscv/inline-asm"]
+
+[dev-dependencies]
+panic-halt = "0.2.0"
+
+[build-dependencies]
+riscv-target = "0.1.2"

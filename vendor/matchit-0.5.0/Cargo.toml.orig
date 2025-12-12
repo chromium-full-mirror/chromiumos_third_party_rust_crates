@@ -1,0 +1,36 @@
+[package]
+name = "matchit"
+version = "0.5.0"
+license = "MIT"
+authors = ["ibraheem <ibrah1440@gmail.com>"]
+edition = "2018"
+description = "A blazing fast URL router."
+categories = ["network-programming", "algorithms"]
+keywords = ["router", "path", "tree", "match", "url"]
+repository = "https://github.com/ibraheemdev/matchit"
+readme = "README.md"
+
+[dependencies]
+# None :)
+
+[dev-dependencies]
+# Benchmarks
+criterion = "0.3.4"
+actix-router = "0.2.7"
+regex = "1.5.4"
+route-recognizer = "0.3.0"
+gonzales = "0.0.3-beta"
+path-tree = "0.2.2"
+
+[features]
+default = []
+__test_helpers = []
+
+[[bench]]
+name = "bench"
+harness = false
+
+[profile.release]
+lto = true
+opt-level = 3
+codegen-units = 1

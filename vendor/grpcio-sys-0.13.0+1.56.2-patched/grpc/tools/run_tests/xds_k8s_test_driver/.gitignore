@@ -1,0 +1,4 @@
+config/local-*.cfg
+src/proto
+venv/
+out/

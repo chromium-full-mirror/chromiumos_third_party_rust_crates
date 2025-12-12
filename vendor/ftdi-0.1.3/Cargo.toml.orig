@@ -1,0 +1,23 @@
+[package]
+name = "ftdi"
+version = "0.1.3"
+edition = "2018"
+
+description = "A Rust wrapper over libftdi1 library for FTDI devices"
+#documentation = ""
+#readme = ""
+homepage = "https://github.com/tanriol/ftdi-rs"
+repository = "https://github.com/tanriol/ftdi-rs"
+
+license = "MIT"
+keywords = ["hardware", "ftdi", "libftdi1"]
+categories = ["api-bindings", "hardware-support"]
+
+[features]
+libusb1-sys = ["libftdi1-sys/libusb1-sys"]
+vendored = ["libftdi1-sys/vendored"]
+
+[dependencies]
+libftdi1-sys = "1.1"
+thiserror = "1.0.15"
+ftdi-mpsse = "0.1.0"

@@ -1,0 +1,57 @@
+[package]
+authors = ["The Knurling-rs developers"]
+categories = ["embedded", "no-std", "development-tools::debugging", "value-formatting"]
+description = "A highly efficient logging framework that targets resource-constrained devices, like microcontrollers"
+edition = "2018"
+keywords = ["knurling", "logging", "logger", "formatting", "formatter"]
+license = "MIT OR Apache-2.0"
+links = "defmt" # Prevent multiple versions of defmt being linked
+name = "defmt"
+readme = "README.md"
+repository = "https://github.com/knurling-rs/defmt"
+homepage = "https://knurling.ferrous-systems.com/"
+version = "0.2.3"
+
+[features]
+alloc = []
+
+# WARNING: for internal use only, not covered by semver guarantees
+unstable-test = ["defmt-macros/unstable-test"]
+
+[dependencies]
+defmt-macros = { path = "macros", version = "0.2.2" }
+
+[dev-dependencies]
+rustc_version = "0.4"
+trybuild = "1.0.42"
+
+[workspace]
+members = [
+  ".",
+  "decoder",
+  "macros",
+  "parser",
+  "print",
+  "qemu-run",
+  "xtask",
+]
+exclude = [
+  "firmware/*",
+]
+
+[profile.release]
+codegen-units = 1
+debug = 2
+debug-assertions = false
+incremental = false
+lto = "fat"
+opt-level = 3
+overflow-checks = false
+
+[build-dependencies]
+semver = "1.0"
+
+[package.metadata.docs.rs]
+features = ["alloc"]
+rustdoc-args = [ "--cfg=docsrs" ]
+targets = ["thumbv6m-none-eabi", "thumbv7em-none-eabihf"]

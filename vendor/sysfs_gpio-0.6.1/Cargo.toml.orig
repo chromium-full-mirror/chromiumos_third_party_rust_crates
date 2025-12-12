@@ -1,0 +1,31 @@
+[package]
+name = "sysfs_gpio"
+version = "0.6.1"
+authors = [
+    "Paul Osborne <osbpau@gmail.com>",
+    "The Embedded Linux Team <embedded-linux@teams.rust-embedded.org>",
+]
+license = "MIT/Apache-2.0"
+repository = "https://github.com/rust-embedded/rust-sysfs-gpio"
+homepage = "https://github.com/rust-embedded/rust-sysfs-gpio"
+documentation = "https://docs.rs/sysfs_gpio/"
+description = "Provides access to GPIOs using the Linux sysfs interface."
+readme = "README.md"
+edition = "2018"
+
+[features]
+mio-evented = ["mio"]
+async-tokio = ["futures", "tokio", "mio-evented"]
+
+[dependencies]
+futures = { version = "0.3", optional = true }
+nix = "0.23"
+mio = { version = "0.8", optional = true, features = ["os-ext"]}
+tokio = { version = "1", optional = true, features = ["net"] }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+
+[[example]]
+name = "tokio"
+required-features = ["async-tokio"]

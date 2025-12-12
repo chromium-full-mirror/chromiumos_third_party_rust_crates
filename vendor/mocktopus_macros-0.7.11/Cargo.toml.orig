@@ -1,0 +1,21 @@
+[package]
+name = "mocktopus_macros"
+version = "0.7.11"
+authors = [
+    "CodeSandwich <igor.zuk@protonmail.com>",
+    "gregdhill <gregorydhill@outlook.com>"
+]
+description = "Mocktopus procedural macros"
+readme = "crates_io_readme.md"
+repository = "https://github.com/CodeSandwich/Mocktopus"
+license = "MIT"
+edition = "2018"
+
+[lib]
+proc-macro = true
+doctest = false
+
+[dependencies]
+syn = { version = "1.0", features = ["full"] }
+quote = "1.0"
+proc-macro2 = "1.0"

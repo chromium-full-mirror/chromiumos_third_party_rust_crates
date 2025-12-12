@@ -1,0 +1,15 @@
+[package]
+name = "libslirp-sys"
+version = "4.2.1"
+authors = ["Marc-André Lureau <marcandre.lureau@redhat.com>"]
+repository = "https://gitlab.freedesktop.org/slirp/libslirp-sys"
+homepage = "https://gitlab.freedesktop.org/slirp"
+description = "FFI bindings for libslirp."
+license-file = "LICENSE"
+keywords = ["network", "bindings"]
+build = "build.rs"
+links = "slirp"
+edition = "2018"
+
+[build-dependencies]
+pkg-config = "0.3.2"

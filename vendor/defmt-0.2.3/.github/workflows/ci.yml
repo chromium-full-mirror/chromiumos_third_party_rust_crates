@@ -1,0 +1,144 @@
+name: CI
+
+on:
+  push:
+    branches: [main, staging, trying]
+  pull_request:
+    branches: [main]
+    # don't run CI when changing md-files, except they are part of the book
+    paths-ignore:
+      - "*.md"
+      - "!book/src/**"
+  schedule:
+    # runs 1 min after 2 or 1 AM (summer/winter) berlin time
+    - cron: "1 0 * * *"
+
+env:
+  CARGO_TERM_COLOR: always
+  NO_STD_CHECK_TARGETS: thumbv6m-none-eabi thumbv8m.base-none-eabi riscv32i-unknown-none-elf
+  NO_STD_TARGET: thumbv7em-none-eabi # firmware uses atomics
+  QEMU_TARGET: thumbv7m-none-eabi
+
+jobs:
+  host:
+    strategy:
+      matrix:
+        rust:
+          - stable
+          - nightly
+        os:
+          - ubuntu-latest
+          - macOS-latest
+          - windows-latest
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          override: true
+      - name: Install C libraries for tooling on ubuntu
+        if: matrix.os == 'ubuntu-latest'
+        run: sudo apt-get update && sudo apt-get install libudev-dev libusb-1.0-0-dev
+      - name: Check that all crates that can be compiled for the host build, check that defmt compiles with different features, run all unit tests on the host
+        run: cargo xtask -d test-host
+
+  cross:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+          target: ${{ env.NO_STD_TARGET }}
+      - name: Install Rust targets, build defmt crates for no_std targets, build defmt dependent crates for cortex-m targets, build panic-probe with different features
+        run: cargo xtask test-cross
+
+  lint:
+    strategy:
+      matrix:
+        rust:
+          - stable
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          override: true
+      - name: Run rustfmt & clippy
+        run: cargo xtask test-lint
+
+  mdbook:
+    strategy:
+      matrix:
+        rust:
+          - stable
+        os:
+          - ubuntu-latest
+          # as of 2021-04 github SIGKILLs us on macos for unknown reasons (possible OOM)
+          # - macOS-latest
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          override: true
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: latest
+      - name: Run book tests
+        timeout-minutes: 10
+        run: cargo xtask test-book
+
+  qemu-snapshot:
+    strategy:
+      matrix:
+        rust:
+          - stable
+          - nightly
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          override: true
+          target: ${{ env.QEMU_TARGET }}
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install qemu qemu-system-arm
+      - name: Run QEMU snapshot tests
+        run: cargo xtask test-snapshot
+      - name: install decoder v0.2.0
+        run: cargo install --debug --path qemu-run
+      - name: Backward compatibility check against decoder v0.2.0
+        env:
+          CARGO_TARGET_THUMBV7M_NONE_EABI_RUNNER: qemu-run
+          QEMU_RUN_IGNORE_VERSION: 1
+        run: cargo xtask test-snapshot
+  # Refs: https://github.com/rust-lang/crater/blob/9ab6f9697c901c4a44025cf0a39b73ad5b37d198/.github/workflows/bors.yml#L125-L149
+  # bors.tech integration
+  ci-success:
+    name: ci
+    if: ${{ success() }}
+    needs:
+      - host
+      - cross
+      - lint
+      - mdbook
+      - qemu-snapshot
+    runs-on: ubuntu-20.04
+    steps:
+      - name: CI succeeded
+        run: exit 0

@@ -1,0 +1,25 @@
+[package]
+name = "ext2"
+version = "0.1.1"
+authors = ["bmickael <bmickael@proton.me>", "Vincent Combey <vcombey@student.42.fr>", "Sebastien Clolus <sclolus@student.42.fr>"]
+edition = "2021"
+license = "MIT/Apache-2.0"
+
+repository = "https://gitlab.com/mordaklavache/ext2.git"
+description = "Read and write on Ext2 partitions without mount"
+readme = "README.md"
+keywords = ["ext2", "docker"]
+
+[dependencies]
+bitflags = "2.3.2"
+bit_field = "0.10.2"
+nix = {version = "0.26.2", features = ["fs"] }
+libc = "0.2.146"
+lazy_static = "1.4.0"
+
+[dev-dependencies]
+rand = "0.8.5"
+
+[features]
+# Enable on nightly builds to allow use of unstable features
+unstable = []

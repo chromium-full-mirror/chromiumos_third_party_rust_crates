@@ -1,0 +1,20 @@
+[package]
+name = "iso8601"
+version = "0.4.2"
+authors = ["Jan-Erik Rediger <janerik@fnordig.de>", "Hendrik Sollich <hendrik@hoodie.de>"]
+
+description = "Parsing ISO8601 dates using nom"
+
+repository = "https://github.com/badboy/iso8601"
+documentation = "https://docs.rs/iso8601/"
+license = "MIT"
+readme = "README.md"
+
+edition = "2018"
+
+[dependencies]
+nom = { version = "7", default-features = false }
+
+[features]
+default = ["std"]
+std = ["nom/std"]

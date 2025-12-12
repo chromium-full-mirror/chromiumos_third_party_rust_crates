@@ -1,0 +1,17 @@
+language: rust
+rust:
+  - stable
+  - beta
+  - nightly
+env:
+  - PROTOBUF_VERSION=3.0.0
+  - PROTOBUF_VERSION=3.5.1
+  - PROTOBUF_VERSION=3.6.1
+matrix:
+  allow_failures:
+    - rust: nightly
+before_install:
+    - ./install_dependencies.sh
+script:
+    - PATH=/home/travis/bin:$PATH cargo test
+    - PATH=/home/travis/bin:$PATH cargo build --manifest-path example/Cargo.toml

@@ -1,0 +1,160 @@
+on: [pull_request]
+
+name: CI
+
+jobs:
+  check:
+    name: Check+Test default features
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rust:
+          - stable
+          - beta
+          - nightly
+          - 1.37
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Install toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          override: true
+
+      - name: Run cargo check
+        uses: actions-rs/cargo@v1
+        with:
+          command: check
+
+      - name: Run cargo test
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+  fmt:
+    name: Rustfmt
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+      
+      - name: Install toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: nightly # required for the "ignore" entry in rustfmt.toml, switch to stable asap
+          override: true
+          components: rustfmt
+      
+      - name: Print rustfmt version
+        uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: -- --version
+      
+      - name: Run cargo fmt
+        uses: actions-rs/cargo@v1
+        with:
+          command: fmt
+          args: -- --check
+
+  check_no_features:
+    name: Check+Test no features
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rust:
+          - stable
+          - beta
+          - nightly
+          - 1.37
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Install toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          override: true
+
+      - name: Run cargo check
+        uses: actions-rs/cargo@v1
+        with:
+          command: check
+          args: --no-default-features
+
+      - name: Run cargo test
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+          args: --no-default-features
+
+  check_arm64_neon:
+    name: Check and test Linux arm 64bit with neon
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        rust:
+          - stable
+          - beta
+          - nightly
+          - 1.61
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Install toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          target: aarch64-unknown-linux-gnu
+          override: true
+
+      - name: Run cargo check
+        uses: actions-rs/cargo@v1
+        with:
+          command: check
+          use-cross: true
+          args: --features neon --target aarch64-unknown-linux-gnu
+
+      - name: Run cargo test for arm
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+          use-cross: true
+          args: --release --features neon --target aarch64-unknown-linux-gnu
+
+  check_x86:
+    name: Check and test Linux x86 32bit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Install stable toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          target: i586-unknown-linux-gnu
+          override: true
+
+      - name: Run cargo check
+        uses: actions-rs/cargo@v1
+        with:
+          command: check
+          use-cross: true
+          args: --target i586-unknown-linux-gnu
+
+      - name: Run cargo test for i586
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+          use-cross: true
+          args: --target i586-unknown-linux-gnu
+        

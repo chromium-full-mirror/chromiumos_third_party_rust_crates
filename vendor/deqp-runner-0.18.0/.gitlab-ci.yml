@@ -1,0 +1,143 @@
+variables:
+  RUST_BACKTRACE: "FULL"
+  FDO_UPSTREAM_REPO: anholt/deqp-runner
+  # Package version can only contain numbers (0-9), and dots (.).
+  # Must be in the format of X.Y.Z, i.e. should match /\A\d+\.\d+\.\d+\z/ regular expresion.
+  # See https://docs.gitlab.com/ee/user/packages/generic_packages/#publish-a-package-file
+  PACKAGE_VERSION: "0.18.0"
+  PACKAGE_REGISTRY_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/deqp-runner/${PACKAGE_VERSION}"
+  AMD64_DEB: "deqp-runner_${PACKAGE_VERSION}_amd64.deb"
+  ARM32_DEB: "deqp-runner_${PACKAGE_VERSION}_armhf.deb"
+  ARM64_DEB: "deqp-runner_${PACKAGE_VERSION}_arm64.deb"
+
+default:
+  before_script:
+    - export PATH="$HOME/.cargo/bin:$PATH"
+
+stages:
+  - container
+  - build
+  - upload
+  - release
+
+test:
+  stage: build
+  image: "rust:1.72.0-buster"
+  script:
+    # Make sure PACKAGE_VERSION gets bumped with Cargo.toml.
+    - grep -q "version = .$PACKAGE_VERSION" Cargo.toml
+    - rustup component add rustfmt clippy
+    - cargo test -j ${FDO_CI_CONCURRENT:-4}
+    - cargo fmt -- --check
+    - cargo clippy -- --deny warnings
+
+  needs: []
+
+deb:
+  stage: build
+  image: "rust:1.72.0-buster"
+  script:
+    - cargo install cargo-deb --version 1.44.1
+    - cargo deb
+  artifacts:
+    paths:
+      - target/debian/*.deb
+  needs: []
+
+deb-arm64:
+  stage: build
+  image: "arm64v8/rust:1.72.0-buster"
+  script:
+    - cargo install cargo-deb --version 1.44.1
+    - cargo deb
+  artifacts:
+    paths:
+      - target/debian/*.deb
+  tags:
+    - aarch64
+  needs: []
+
+deb-armhf:
+  stage: build
+  image: "arm32v7/rust:1.72.0-buster"
+  script:
+    - cargo install cargo-deb --version 1.44.1
+    - cargo deb -Z gz # fails with "cargo-deb: lzma compression error: Mem" without the -Z
+  artifacts:
+    paths:
+      - target/debian/*.deb
+  tags:
+    - aarch64
+  needs: []
+
+test-stable:
+  stage: build
+  image: "rust:1.63.0-buster"
+  script:
+    # Integration tests require newer compiler features so we can only build.
+    - cargo build -j ${FDO_CI_CONCURRENT:-4}
+  needs: []
+
+.windows_docker:
+  variables:
+    DEQP_RUNNER_IMAGE_PATH: "windows/x64"
+    DEQP_RUNNER_IMAGE_TAG: "2022-10-14"
+    DEQP_RUNNER_IMAGE: "$CI_REGISTRY_IMAGE/${DEQP_RUNNER_IMAGE_PATH}:${DEQP_RUNNER_IMAGE_TAG}"
+    DEQP_RUNNER_UPSTREAM_IMAGE: "$CI_REGISTRY/$FDO_UPSTREAM_REPO/${DEQP_RUNNER_IMAGE_PATH}:${DEQP_RUNNER_IMAGE_TAG}"
+
+windows_container:
+  stage: container
+  timeout: 120m
+  inherit:
+    default: false
+  tags:
+    - windows
+    - shell
+    - "2022"
+  extends:
+    - .windows_docker
+  script:
+    - .\.gitlab-ci\windows\deqp_runner_container.ps1 $CI_REGISTRY $CI_REGISTRY_USER $CI_REGISTRY_PASSWORD $DEQP_RUNNER_IMAGE $DEQP_RUNNER_UPSTREAM_IMAGE Dockerfile
+
+test-windows:
+  stage: build
+  inherit:
+    default: false
+  extends:
+    - .windows_docker
+  tags:
+    - windows
+    - docker
+    - "2022"
+  image: "$DEQP_RUNNER_IMAGE"
+  needs:
+    - windows_container
+  script:
+    - cargo test -j4
+  needs: 
+    - windows_container
+
+upload:
+  stage: upload
+  image: curlimages/curl:latest
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - |
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file target/debian/${AMD64_DEB} "${PACKAGE_REGISTRY_URL}/${AMD64_DEB}"
+    - |
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file target/debian/${ARM32_DEB} "${PACKAGE_REGISTRY_URL}/${ARM32_DEB}"
+    - |
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file target/debian/${ARM64_DEB} "${PACKAGE_REGISTRY_URL}/${ARM64_DEB}"
+
+release:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - |
+      release-cli create --name "Release $CI_COMMIT_TAG" --tag-name $CI_COMMIT_TAG \
+        --assets-link "{\"name\":\"${AMD64_DEB}\",\"url\":\"${PACKAGE_REGISTRY_URL}/${AMD64_DEB}\"}" \
+        --assets-link "{\"name\":\"${ARM32_DEB}\",\"url\":\"${PACKAGE_REGISTRY_URL}/${ARM32_DEB}\"}" \
+        --assets-link "{\"name\":\"${ARM64_DEB}\",\"url\":\"${PACKAGE_REGISTRY_URL}/${ARM64_DEB}\"}"

@@ -1,0 +1,32 @@
+[package]
+authors = [
+  "The Real-Time Interrupt-driven Concurrency developers",
+  "Jorge Aparicio <jorge@japaric.io>",
+]
+categories = ["concurrency", "embedded", "no-std"]
+description = "The Real-Time Interrupt-driven Concurrency (RTIC) meta language"
+documentation = "https://docs.rs/rtic-syntax"
+edition = "2021"
+keywords = []
+license = "MIT OR Apache-2.0"
+name = "rtic-syntax"
+repository = "https://github.com/rtic-rs/rtic-syntax"
+version = "1.0.3"
+
+[dependencies]
+indexmap = "1.0.2"
+proc-macro2 = "1"
+quote = "1"
+
+[dependencies.syn]
+features = ["extra-traits", "full"]
+version = "1.0.12"
+
+[dev-dependencies]
+mock = { path = "mock" }
+trybuild = "1"
+
+[workspace]
+members = [
+  "mock",
+]
