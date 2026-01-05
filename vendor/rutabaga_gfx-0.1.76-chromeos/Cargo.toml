@@ -13,7 +13,7 @@
 edition = "2021"
 rust-version = "1.81.0"
 name = "rutabaga_gfx"
-version = "0.1.75-chromeos"
+version = "0.1.76-chromeos"
 authors = ["Magma GPU project"]
 build = "build.rs"
 autobins = false

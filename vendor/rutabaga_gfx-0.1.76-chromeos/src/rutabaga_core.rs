@@ -22,6 +22,7 @@ use serde::Serialize;
 use crate::cross_domain::CrossDomain;
 #[cfg(feature = "gfxstream")]
 use crate::gfxstream::Gfxstream;
+use crate::handle::RutabagaHandle;
 use crate::magma::MagmaVirtioGpu;
 use crate::rutabaga_2d::Rutabaga2D;
 use crate::rutabaga_utils::GfxstreamFlags;
@@ -82,7 +83,7 @@ struct Rutabaga2DSnapshot {
 /// A Rutabaga resource, supporting 2D and 3D rutabaga features.  Assumes a single-threaded library.
 pub struct RutabagaResource {
     pub resource_id: u32,
-    pub handle: Option<Arc<MesaHandle>>,
+    pub handle: Option<Arc<RutabagaHandle>>,
     pub blob: bool,
     pub blob_mem: u32,
     pub blob_flags: u32,
@@ -244,7 +245,7 @@ pub trait RutabagaComponent {
     fn import(
         &self,
         _resource_id: u32,
-        _import_handle: MesaHandle,
+        _import_handle: RutabagaHandle,
         _import_data: RutabagaImportData,
     ) -> RutabagaResult<Option<RutabagaResource>> {
         Err(MesaError::Unsupported.into())
@@ -302,7 +303,7 @@ pub trait RutabagaComponent {
         _resource_id: u32,
         _resource_create_blob: ResourceCreateBlob,
         _iovec_opt: Option<Vec<RutabagaIovec>>,
-        _handle_opt: Option<MesaHandle>,
+        _handle_opt: Option<RutabagaHandle>,
     ) -> RutabagaResult<RutabagaResource> {
         Err(MesaError::Unsupported.into())
     }
@@ -373,7 +374,7 @@ pub trait RutabagaContext {
         &mut self,
         _resource_id: u32,
         _resource_create_blob: ResourceCreateBlob,
-        _handle_opt: Option<MesaHandle>,
+        _handle_opt: Option<RutabagaHandle>,
     ) -> RutabagaResult<RutabagaResource> {
         Err(MesaError::Unsupported.into())
     }
@@ -771,7 +772,7 @@ impl Rutabaga {
     pub fn resource_import(
         &mut self,
         resource_id: u32,
-        import_handle: MesaHandle,
+        import_handle: RutabagaHandle,
         import_data: RutabagaImportData,
     ) -> RutabagaResult<()> {
         let component = self
@@ -915,7 +916,7 @@ impl Rutabaga {
         resource_id: u32,
         resource_create_blob: ResourceCreateBlob,
         iovecs: Option<Vec<RutabagaIovec>>,
-        handle: Option<MesaHandle>,
+        handle: Option<RutabagaHandle>,
     ) -> RutabagaResult<()> {
         if self.resources.contains_key(&resource_id) {
             return Err(RutabagaError::InvalidResourceId);
@@ -964,32 +965,36 @@ impl Rutabaga {
             let handle_opt = resource.handle.take();
             match handle_opt {
                 Some(handle) => {
-                    if handle.handle_type != MESA_HANDLE_TYPE_MEM_SHM {
-                        return Err(
-                            MesaError::WithContext("expected a shared memory handle").into()
-                        );
+                    if let Some(mesa_handle) = handle.as_mesa_handle() {
+                        if mesa_handle.handle_type != MESA_HANDLE_TYPE_MEM_SHM {
+                            return Err(
+                                MesaError::WithContext("expected a shared memory handle").into()
+                            );
+                        }
+
+                        let clone = mesa_handle.try_clone()?;
+                        let resource_size: usize = resource
+                            .size
+                            .try_into()
+                            .map_err(MesaError::TryFromIntError)?;
+                        let map_info = resource
+                            .map_info
+                            .ok_or(MesaError::WithContext("no map info available"))?;
+
+                        // Creating the mapping closes the cloned descriptor.
+                        let mapping = MemoryMapping::from_safe_descriptor(
+                            clone.os_handle,
+                            resource_size,
+                            map_info,
+                        )?;
+                        let mesa_mapping = mapping.as_mesa_mapping();
+                        resource.handle = Some(handle);
+                        resource.mapping = Some(mapping);
+
+                        return Ok(mesa_mapping);
+                    } else {
+                        return Err(MesaError::WithContext("mesa handle is expected").into());
                     }
-
-                    let clone = handle.try_clone()?;
-                    let resource_size: usize = resource
-                        .size
-                        .try_into()
-                        .map_err(MesaError::TryFromIntError)?;
-                    let map_info = resource
-                        .map_info
-                        .ok_or(MesaError::WithContext("no map info available"))?;
-
-                    // Creating the mapping closes the cloned descriptor.
-                    let mapping = MemoryMapping::from_safe_descriptor(
-                        clone.os_handle,
-                        resource_size,
-                        map_info,
-                    )?;
-                    let mesa_mapping = mapping.as_mesa_mapping();
-                    resource.handle = Some(handle);
-                    resource.mapping = Some(mapping);
-
-                    return Ok(mesa_mapping);
                 }
                 None => return Err(MesaError::WithContext("expected a handle to map").into()),
             }
@@ -1071,7 +1076,7 @@ impl Rutabaga {
     }
 
     /// Exports a blob resource.  See virtio-gpu spec for blob flag use flags.
-    pub fn export_blob(&mut self, resource_id: u32) -> RutabagaResult<MesaHandle> {
+    pub fn export_blob(&mut self, resource_id: u32) -> RutabagaResult<RutabagaHandle> {
         let resource = self
             .resources
             .get_mut(&resource_id)

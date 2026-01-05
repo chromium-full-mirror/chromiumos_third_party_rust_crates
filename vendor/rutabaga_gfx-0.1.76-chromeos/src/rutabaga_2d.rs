@@ -12,6 +12,7 @@ use std::io::IoSliceMut;
 
 use mesa3d_util::MesaError;
 
+use crate::handle::RutabagaHandle;
 use crate::rutabaga_core::Rutabaga2DInfo;
 use crate::rutabaga_core::RutabagaComponent;
 use crate::rutabaga_core::RutabagaResource;
@@ -200,6 +201,8 @@ impl RutabagaComponent for Rutabaga2D {
             guest_cpu_mappable: false,
         })
     }
+
+
 
     fn transfer_write(
         &self,

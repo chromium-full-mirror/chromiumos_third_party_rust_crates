@@ -36,6 +36,7 @@ use serde::Serialize;
 use crate::generated::virgl_renderer_bindings::iovec;
 use crate::generated::virgl_renderer_bindings::virgl_box;
 use crate::generated::virgl_renderer_bindings::virgl_renderer_resource_create_args;
+use crate::handle::RutabagaHandle;
 use crate::renderer_utils::ret_to_res;
 use crate::renderer_utils::RutabagaCookie;
 use crate::renderer_utils::VirglBox;
@@ -58,6 +59,7 @@ use crate::rutabaga_utils::RutabagaResult;
 use crate::rutabaga_utils::Transfer3D;
 use crate::rutabaga_utils::VulkanInfo;
 use crate::rutabaga_utils::RUTABAGA_FLAG_FENCE_HOST_SHAREABLE;
+use crate::rutabaga_utils::RUTABAGA_HANDLE_TYPE_PLATFORM_AHB;
 use crate::rutabaga_utils::RUTABAGA_IMPORT_FLAG_RESOURCE_EXISTS;
 use crate::rutabaga_utils::RUTABAGA_IMPORT_FLAG_VULKAN_INFO;
 use crate::rutabaga_utils::RUTABAGA_MAP_ACCESS_RW;
@@ -519,23 +521,68 @@ impl Gfxstream {
         })
     }
 
-    fn export_blob(&self, resource_id: u32) -> RutabagaResult<Arc<MesaHandle>> {
+    fn export_blob(&self, resource_id: u32) -> RutabagaResult<Arc<RutabagaHandle>> {
         let mut stream_handle: stream_renderer_handle = Default::default();
         // TODO(b/315870313): Add safety comment
         #[allow(clippy::undocumented_unsafe_blocks)]
         let ret = unsafe { stream_renderer_export_blob(resource_id, &mut stream_handle) };
         ret_to_res(ret)?;
 
-        let raw_descriptor = stream_handle.os_handle as RawDescriptor;
-        // SAFETY:
-        // Safe because the handle was just returned by a successful gfxstream call so it must be
-        // valid and owned by us.
-        let handle = unsafe { OwnedDescriptor::from_raw_descriptor(raw_descriptor) };
+        if stream_handle.handle_type == RUTABAGA_HANDLE_TYPE_PLATFORM_AHB {
+            #[cfg(target_os = "android")]
+            {
+                use crate::handle::AhbInfo;
+                use nativewindow::AhbInfo as NativeAhbInfo;
+                use nativewindow::HardwareBuffer;
+                use std::os::fd::IntoRawFd;
+                use std::ptr::NonNull;
 
-        Ok(Arc::new(MesaHandle {
-            os_handle: handle,
-            handle_type: stream_handle.handle_type,
-        }))
+                let buffer_ptr = NonNull::new(stream_handle.os_handle as *mut c_void)
+                    .ok_or(RutabagaError::InvalidResourceId)?;
+
+                // SAFETY:
+                // Safe because `buffer_ptr` is a valid AHardwareBuffer pointer.
+                let buffer = unsafe { HardwareBuffer::clone_from_raw(buffer_ptr.cast()) };
+
+                let ahb_info: NativeAhbInfo = buffer
+                    .try_into()
+                    .map_err(|_| RutabagaError::InvalidResourceId)?;
+
+                // Convert nativewindow::AhbInfo to RutabagaHandle::AhbInfo
+                let fds = ahb_info
+                    .fds
+                    .into_iter()
+                    .map(|fd| {
+                        // SAFETY:
+                        // Safe because the file descriptor is valid and owned.
+                        unsafe { OwnedDescriptor::from_raw_descriptor(fd.into_raw_fd()) }
+                    })
+                    .collect();
+
+                Ok(Arc::new(RutabagaHandle::from(AhbInfo {
+                    fds,
+                    metadata: ahb_info.data,
+                })))
+            }
+            #[cfg(not(target_os = "android"))]
+            {
+                Err(RutabagaError::InvalidResourceId)
+            }
+        } else {
+            let raw_descriptor = stream_handle.os_handle as RawDescriptor;
+            // SAFETY:
+            // Safe because the handle was just returned by a successful gfxstream call so it must be
+            // valid and owned by us.
+            let handle = unsafe { OwnedDescriptor::from_raw_descriptor(raw_descriptor) };
+
+            Ok(Arc::new(
+                MesaHandle {
+                    os_handle: handle,
+                    handle_type: stream_handle.handle_type,
+                }
+                .into(),
+            ))
+        }
     }
 }
 
@@ -628,9 +675,10 @@ impl RutabagaComponent for Gfxstream {
     fn import(
         &self,
         resource_id: u32,
-        import_handle: MesaHandle,
+        import_handle: RutabagaHandle,
         import_data: RutabagaImportData,
     ) -> RutabagaResult<Option<RutabagaResource>> {
+        let import_handle = MesaHandle::try_from(import_handle)?;
         let stream_handle = stream_renderer_handle {
             os_handle: import_handle.os_handle.into_raw_descriptor() as i64,
             handle_type: import_handle.handle_type,
@@ -843,7 +891,7 @@ impl RutabagaComponent for Gfxstream {
         resource_id: u32,
         resource_create_blob: ResourceCreateBlob,
         mut iovec_opt: Option<Vec<RutabagaIovec>>,
-        handle_opt: Option<MesaHandle>,
+        handle_opt: Option<RutabagaHandle>,
     ) -> RutabagaResult<RutabagaResource> {
         let mut iovec_ptr = null_mut();
         let mut num_iovecs = 0;
@@ -855,6 +903,7 @@ impl RutabagaComponent for Gfxstream {
         let mut handle_ptr = null();
         let mut stream_handle: stream_renderer_handle = Default::default();
         if let Some(handle) = handle_opt {
+            let handle = MesaHandle::try_from(handle)?;
             stream_handle.handle_type = handle.handle_type;
             stream_handle.os_handle = handle.os_handle.into_raw_descriptor() as i64;
             handle_ptr = &stream_handle;
