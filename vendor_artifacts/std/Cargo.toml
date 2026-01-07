@@ -332,6 +332,7 @@ object = { "version" = "0.31.1", "default-features" = false, features = ['archiv
 once_cell = { "version" = "1.19.0", features = ['alloc', 'race'] }
 open-enum = "0.3.0"
 openssl = "0.10.72"
+p256 = { "version" = "0.13.2", "default-features" = false, features = ['arithmetic', 'digest', 'ecdsa', 'ecdsa-core', 'sha2', 'sha256'] }
 # Used by crosvm-0.1.0
 p9-0-2-3 = { package = "p9", "version" = "0.2.3" }
 p9 = "0.3.1"
@@ -389,8 +390,13 @@ rand-0-7-3 = { package = "rand", "version" = "0.7.3", features = ['alloc', 'getr
 rand-0-8-5 = { package = "rand", "version" = "0.8.5", features = ['alloc', 'getrandom', 'libc', 'rand_chacha', 'small_rng'] }
 rand = { "version" = "0.9.2", features = ['alloc'] }
 # Used by crosvm-0.1.0
+# Used by crypto-bigint-0.5.5
+# Used by elliptic-curve-0.13.8
+# Used by ff-0.13.1
+# Used by group-0.13.0
 # Used by rand-0.8.5
 # Used by rand_chacha-0.3.1
+# Used by signature-2.2.0
 rand_core-0-6-4 = { package = "rand_core", "version" = "0.6.4", features = ['alloc', 'getrandom', 'std'] }
 rangemap = "1.5.1"
 rayon = "1.5.3"
