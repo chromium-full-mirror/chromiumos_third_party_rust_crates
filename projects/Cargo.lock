@@ -1465,7 +1465,6 @@ name = "crdyboot"
 version = "1.0.0"
 dependencies = [
  "bindgen 0.69.4",
- "ed25519-compact",
  "ext4-view",
  "gpt_disk_io",
  "log",

@@ -5,7 +5,6 @@ authors = ["The Chromium OS Authors"]
 edition = "2021"
 
 [dependencies]
-ed25519-compact = { version = "1.0.0", default-features = false }
 ext4-view = "0.9.1"
 gpt_disk_io = "0.16.2"
 log = "0.4"
