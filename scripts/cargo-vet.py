@@ -54,7 +54,7 @@ def fetch_destroyed_crates(rust_crates: Path) -> List[Tuple[str, str]]:
 
 
 def build_cargo_vet_exclude_expr(
-    destroyed_crates: List[Tuple[str, str]]
+    destroyed_crates: List[Tuple[str, str]],
 ) -> str:
     """Builds the --filter-graph expression for `destroyed_crates`."""
     package_clauses = (
@@ -106,14 +106,14 @@ def run_cargo_vet(
 #   8. Upload to gs://; don't forget the `-a public-read`.
 def ensure_cargo_vet_is_installed():
     """Ensures that `cargo-vet` is installed."""
-    want_version = "v0.10.1+cros"
+    want_version = "v0.10.2+cros"
     cargo.ensure_cargo_utility_is_installed(
         utility_name="cargo-vet",
         # b/372723132: cargo-vet's tags contain a leading "v", but the version
         # reported by the CLI doesn't.
         want_version=want_version.lstrip("v"),
         gs_path=f"gs://chromeos-localmirror/distfiles/cargo-vet-{want_version}.tar.bz2",
-        sha256="d71c18522811e278a47e5deea0c37331bc58e3339b2f452310b2abaffcf34534",
+        sha256="3a92893854536dcf2cfbe6fede0e324125b90926a598e66f8fd51a323df8e2bc",
         build_subdir=Path("cargo-vet"),
     )
 
