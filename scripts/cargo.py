@@ -86,10 +86,25 @@ def ensure_cargo_utility_is_installed(
     logging.info(
         "Building and installing %s (this may take a bit)...", utility_name
     )
+    env = dict(os.environ)
+    # cargo-audit fails to build due to a dependency complaining about old GCCs:
+    # b/485820420. Prefer Clang since it's not impacted by the bug, and Clang
+    # is better-supported in ChromeOS anyway.
+    if shutil.which("clang"):
+        env["CC"] = "clang"
+        env["CXX"] = "clang++"
+    else:
+        logging.warning(
+            "No Clang detected on $PATH; leaving default CC/CXX. "
+            "This may lead to build failures due to "
+            "https://gcc.gnu.org/bugzilla/show_bug.cgi?id=95189. Rerun in the "
+            "chroot if so."
+        )
     subprocess.run(
         ["cargo", "install", "--locked", "--offline", "--path=.", "--quiet"],
         check=True,
         cwd=tempdir / build_subdir,
+        env=env,
     )
     logging.info("`%s` installed successfully.", utility_name)
 
