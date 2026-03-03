@@ -3976,7 +3976,8 @@ dependencies = [
  "scoped-tls",
  "scudo",
  "serde",
- "serde_bytes",
+ "serde_bytes 0.10.5",
+ "serde_bytes 0.11.19",
  "serde_json",
  "serde_yaml",
  "serial_test",
@@ -6288,6 +6289,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "defbb8a83d7f34cc8380751eeb892b825944222888aff18996ea7901f24aec88"
 dependencies = [
  "serde",
+]
+
+[[package]]
+name = "serde_bytes"
+version = "0.11.19"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a5d440709e79d88e51ac01c4b72fc6cb7314017bb7da9eeff678aa94c10e3ea8"
+dependencies = [
+ "serde",
+ "serde_core",
 ]
 
 [[package]]

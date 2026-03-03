@@ -425,7 +425,12 @@ sbat = { "version" = "0.5.0", features = ['alloc'] }
 scoped-tls = "1.0.0"
 scudo = "0.1.2"
 serde = { "version" = "1.0.228", features = ['alloc', 'derive', 'rc', 'serde_derive'] }
-serde_bytes = "0.10.5"
+# Used by libsirenia-0.1.0
+# Used by manatee-runtime-0.1.0
+# Used by sirenia-0.24.52
+# Used by sirenia-rpc-macros-0.1.0
+serde_bytes-0-10-5 = { package = "serde_bytes", "version" = "0.10.5", features = [] }
+serde_bytes = "0.11.19"
 serde_json = "1.0.96"
 serde_yaml = "0.8.26"
 serial_test = { "version" = "2.0.0", features = ['futures', 'log'] }

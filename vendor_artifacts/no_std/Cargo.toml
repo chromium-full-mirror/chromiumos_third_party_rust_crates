@@ -188,7 +188,12 @@ rustix = { "version" = "1.0.8", "default-features" = false, features = ['alloc',
 safemem = { "version" = "0.3.3", "default-features" = false, features = [] }
 sbat = { "version" = "0.5.0", features = ['alloc'] }
 serde = { "version" = "1.0.228", "default-features" = false, features = ['alloc', 'derive', 'rc', 'serde_derive'] }
-serde_bytes = { "version" = "0.10.5", "default-features" = false, features = [] }
+# Used by libsirenia-0.1.0
+# Used by manatee-runtime-0.1.0
+# Used by sirenia-0.24.52
+# Used by sirenia-rpc-macros-0.1.0
+serde_bytes-0-10-5 = { package = "serde_bytes", "version" = "0.10.5", "default-features" = false, features = [] }
+serde_bytes = { "version" = "0.11.19", "default-features" = false, features = [] }
 serde_json = { "version" = "1.0.96", "default-features" = false, features = [] }
 sha2 = { "version" = "0.10.6", "default-features" = false }
 shell-words = { "version" = "1.1.0", "default-features" = false, features = [] }

@@ -1725,6 +1725,7 @@ dependencies = [
  "rutabaga_gfx",
  "scudo",
  "serde",
+ "serde_bytes 0.11.19",
  "serde_json",
  "shlex 1.3.0",
  "slab",
@@ -4322,7 +4323,7 @@ dependencies = [
  "log",
  "openssl",
  "serde",
- "serde_bytes",
+ "serde_bytes 0.10.5",
  "serde_json",
  "thiserror 1.0.58",
 ]
@@ -4526,7 +4527,7 @@ dependencies = [
  "log",
  "once_cell",
  "serde",
- "serde_bytes",
+ "serde_bytes 0.10.5",
  "stderrlog",
 ]
 
@@ -7054,6 +7055,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "serde_bytes"
+version = "0.11.19"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a5d440709e79d88e51ac01c4b72fc6cb7314017bb7da9eeff678aa94c10e3ea8"
+dependencies = [
+ "serde",
+ "serde_core",
+]
+
+[[package]]
 name = "serde_core"
 version = "1.0.228"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -7264,7 +7275,7 @@ dependencies = [
  "getopts",
  "libc",
  "log",
- "serde_bytes",
+ "serde_bytes 0.10.5",
  "serde_json",
  "stderrlog",
  "thiserror 1.0.58",
@@ -7280,7 +7291,7 @@ dependencies = [
  "proc-macro2 1.0.86",
  "quote 1.0.36",
  "serde",
- "serde_bytes",
+ "serde_bytes 0.10.5",
  "syn 1.0.107",
 ]
 
