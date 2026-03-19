@@ -35,18 +35,6 @@
       "version": "0.1.7"
     }
   ],
-  "lz4_flex": [
-    {
-      "patch_args": [
-        "-p1"
-      ],
-      "patch_tool": "patch",
-      "patches": [
-        "@@//third_party/rust_crates/patches:lz4_flex-0.11.1/add_license.patch"
-      ],
-      "version": "0.11.1"
-    }
-  ],
   "regex-syntax": [
     {
       "crate_features": [
