@@ -1,0 +1,40 @@
+[package]
+edition = "2021"
+rust-version = "1.70"
+name = "jiff-static"
+version = "0.2.23"
+authors = [
+    "Andrew Gallant <jamslam@gmail.com>",
+]
+autolib = false
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
+description = "Empty crate that should not build."
+homepage = "https://github.com/BurntSushi/jiff/tree/master/crates/jiff-static"
+documentation = "https://docs.rs/jiff-tzdb"
+readme = "README.md"
+keywords = [
+    "date",
+    "time",
+    "static",
+    "zone",
+    "iana",
+]
+categories = [
+    "date-and-time",
+]
+license = "Apache-2.0"
+repository = "https://github.com/BurntSushi/jiff"
+
+[features]
+default = []
+perf-inline = []
+tz-fat = []
+tzdb = []
+
+[lib]
+name = "jiff_static"
+bench = false
+proc-macro = true
