@@ -294,6 +294,28 @@
       "version": "*"
     }
   ],
+  "rand": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:rand-0.7.3/remove-log-from-reseed.patch"
+      ],
+      "version": "0.7.3"
+    },
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:rand-0.8.5/remove-log-from-reseed.patch"
+      ],
+      "version": "0.8.5"
+    }
+  ],
   "riscv-rt-macros": [
     {
       "patch_args": [

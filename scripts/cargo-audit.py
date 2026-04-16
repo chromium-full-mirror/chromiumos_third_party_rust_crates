@@ -329,6 +329,18 @@ def main(argv: List[str]):
                     advisory.crate.version,
                 )
                 continue
+            if advisory.crate.name == "rand" and (
+                advisory.crate.version.startswith("0.7.")
+                or advisory.crate.version.startswith("0.8.")
+            ):
+                logging.info(
+                    "Ignoring unsoundness advisory for %r version %r; "
+                    "we have a local patch: b/502125873",
+                    advisory.crate.name,
+                    advisory.crate.version,
+                )
+                continue
+
             complaint_lines.append(
                 f"crate {crate.name!r} version {crate.version!r} is unsound"
             )

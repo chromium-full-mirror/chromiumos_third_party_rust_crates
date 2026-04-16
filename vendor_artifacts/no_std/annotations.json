@@ -35,6 +35,28 @@
       "version": "0.1.7"
     }
   ],
+  "rand": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:rand-0.7.3/remove-log-from-reseed.patch"
+      ],
+      "version": "0.7.3"
+    },
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:rand-0.8.5/remove-log-from-reseed.patch"
+      ],
+      "version": "0.8.5"
+    }
+  ],
   "regex-syntax": [
     {
       "crate_features": [
