@@ -169,7 +169,7 @@ rand-0-7-3 = { package = "rand", "version" = "0.7.3", "default-features" = false
 # Used by thinp-1.0.13
 # Used by tower-0.4.13
 rand-0-8-5 = { package = "rand", "version" = "0.8.5", "default-features" = false, features = ['alloc', 'getrandom', 'libc', 'rand_chacha', 'small_rng', 'std_rng'] }
-rand = { "version" = "0.9.2", "default-features" = false, features = ['alloc', 'os_rng', 'small_rng', 'std_rng', 'thread_rng'] }
+rand = { "version" = "0.9.4", "default-features" = false, features = ['alloc', 'os_rng', 'small_rng', 'std_rng', 'thread_rng'] }
 # Used by crosvm-0.1.0
 # Used by crypto-bigint-0.5.5
 # Used by elliptic-curve-0.13.8
