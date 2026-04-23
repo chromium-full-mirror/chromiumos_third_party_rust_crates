@@ -9,7 +9,7 @@ edition = "2018"
 # among other tools) will consider it an invalid dependency. Hence, have it as a
 # dependency here so `cargo vendor` will pull it in, but also mirror its
 # dependencies so `cargo metadata` will correctly account for their liveness.
-cxxbridge-cmd = "1.0.94"
+cxxbridge-cmd = "1.0.194"
 
 # Copied directly from cxxbridge-cmd's Cargo.toml.
 [dependencies.clap]
