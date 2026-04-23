@@ -6,16 +6,6 @@
       ],
       "patch_tool": "patch",
       "patches": [
-        "@@//third_party/rust_crates/patches:bindgen-0.57.0/a04acc684e136505f926739a0a89d797309857eb.patch"
-      ],
-      "version": "0.57.0"
-    },
-    {
-      "patch_args": [
-        "-p1"
-      ],
-      "patch_tool": "patch",
-      "patches": [
         "@@//third_party/rust_crates/patches:bindgen-0.59.2/a04acc684e136505f926739a0a89d797309857eb.patch"
       ],
       "version": "0.59.2"
@@ -173,18 +163,6 @@
         "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0005-fix-missing-includes.patch"
       ],
       "version": "0.13.0+1.56.2-patched"
-    },
-    {
-      "patch_args": [
-        "-p1"
-      ],
-      "patch_tool": "patch",
-      "patches": [
-        "@@//third_party/rust_crates/patches:grpcio-sys-0.9.1+1.38.0/0001-patch-yaml-load.patch",
-        "@@//third_party/rust_crates/patches:grpcio-sys-0.9.1+1.38.0/0002-use-bindgen-0.63.patch",
-        "@@//third_party/rust_crates/patches:grpcio-sys-0.9.1+1.38.0/0003-grpc-vsock-support.patch"
-      ],
-      "version": "0.9.1+1.38.0"
     }
   ],
   "hmac-sha256": [
