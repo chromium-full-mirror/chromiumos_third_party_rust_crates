@@ -1,0 +1,24 @@
+commit f959f6ba970d9b2fef4fd2eb084668651dacf961
+Author: Abseil Team <absl-team@google.com>
+Date:   Mon Mar 20 08:05:04 2023 -0700
+
+    Add missing #include <exception> for std::terminate
+    
+    It was previously included transitively through some other header,
+    but with recent libc++ versions that's no longer the case.
+    
+    PiperOrigin-RevId: 517969848
+    Change-Id: I83c5c1853ae27b64a53a75a0f2faead37a70c145
+
+diff --git a/grpc/third_party/abseil-cpp/absl/functional/internal/any_invocable.h b/grpc/third_party/abseil-cpp/absl/functional/internal/any_invocable.h
+index 7845e17a..49a46c14 100644
+--- a/grpc/third_party/abseil-cpp/absl/functional/internal/any_invocable.h
++++ b/grpc/third_party/abseil-cpp/absl/functional/internal/any_invocable.h
+@@ -56,6 +56,7 @@
+ #include <cassert>
+ #include <cstddef>
+ #include <cstring>
++#include <exception>
+ #include <functional>
+ #include <initializer_list>
+ #include <memory>
