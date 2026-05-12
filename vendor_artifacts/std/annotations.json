@@ -161,7 +161,8 @@
         "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0003-fix-uncommon-linux-build.patch",
         "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0004-fix-Wmissing-template-arg-list-after-template-kw.patch",
         "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0005-fix-missing-includes.patch",
-        "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0006-PR-1739-container-internal-Explicitly-include-cstdin.patch"
+        "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0006-PR-1739-container-internal-Explicitly-include-cstdin.patch",
+        "@@//third_party/rust_crates/patches:grpcio-sys-0.13.0+1.56.2-patched/0007-cares-update-CMAKE_MINIMUM_REQUIRED-to-3.8.patch"
       ],
       "version": "0.13.0+1.56.2-patched"
     }

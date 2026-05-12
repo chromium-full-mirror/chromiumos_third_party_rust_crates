@@ -1,0 +1,16 @@
+Floss container is running CMake 4.3.1 where the compatibility with
+CMake < 3.5 has been removed.
+
+This patch updates third_party/cares's version to be the same as
+grpc/CMakeLists.txt.
+
+diff --git a/grpc/third_party/cares/cares/CMakeLists.txt b/grpc/third_party/cares/cares/CMakeLists.txt
+index e2290af10..039eee4e8 100644
+--- a/grpc/third_party/cares/cares/CMakeLists.txt
++++ b/grpc/third_party/cares/cares/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-CMAKE_MINIMUM_REQUIRED (VERSION 3.1.0)
++CMAKE_MINIMUM_REQUIRED (VERSION 3.8)
+ 
+ INCLUDE (CheckIncludeFiles)
+ INCLUDE (CheckTypeSize)
