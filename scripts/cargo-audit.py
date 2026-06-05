@@ -232,12 +232,12 @@ def determine_empty_crates(rust_crates: Path) -> Set[Crate]:
 #   8. Upload to gs://; don't forget the `-a public-read`.
 def ensure_cargo_audit_is_installed():
     """Ensures that `cargo-audit` is installed."""
-    want_version = "0.22.1+cros"
+    want_version = "0.22.2+cros"
     cargo.ensure_cargo_utility_is_installed(
         utility_name="cargo-audit",
         want_version=want_version,
         gs_path=f"gs://chromeos-localmirror/distfiles/rustsec-{want_version}.tar.bz2",
-        sha256="f16e46cdd6ba63741ad058dc987509215eb2941bdad383b92218fb7c0d1efbc8",
+        sha256="63fea57e2c7f9480b658377ebb6f468891b6112705c00c1e44abeb66ea6526b1",
         build_subdir=Path("rustsec") / "cargo-audit",
     )
 
