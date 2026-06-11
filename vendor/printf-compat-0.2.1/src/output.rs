@@ -306,10 +306,23 @@ pub fn fmt_write(w: &mut impl fmt::Write) -> impl FnMut(Argument) -> c_int + '_ 
 /// # Safety
 ///
 /// [`VaList`]s are *very* unsafe. The passed `format` and `args` parameter must be a valid [`printf` format string](http://www.cplusplus.com/reference/cstdio/printf/).
+#[cfg(cros_va_list_2_lifetimes)]
 pub unsafe fn display<'a, 'b>(
     format: *const c_char,
     va_list: VaList<'a, 'b>,
 ) -> VaListDisplay<'a, 'b> {
+    VaListDisplay {
+        format,
+        va_list,
+        written: Cell::new(0),
+    }
+}
+
+#[cfg(not(cros_va_list_2_lifetimes))]
+pub unsafe fn display<'a>(
+    format: *const c_char,
+    va_list: VaList<'a>,
+) -> VaListDisplay<'a> {
     VaListDisplay {
         format,
         va_list,
@@ -333,12 +346,21 @@ pub unsafe fn display<'a, 'b>(
 ///     format.bytes_written()
 /// }
 /// ```
+#[cfg(cros_va_list_2_lifetimes)]
 pub struct VaListDisplay<'a, 'b> {
     format: *const c_char,
     va_list: VaList<'a, 'b>,
     written: Cell<c_int>,
 }
 
+#[cfg(not(cros_va_list_2_lifetimes))]
+pub struct VaListDisplay<'a> {
+    format: *const c_char,
+    va_list: VaList<'a>,
+    written: Cell<c_int>,
+}
+
+#[cfg(cros_va_list_2_lifetimes)]
 impl VaListDisplay<'_, '_> {
     /// Get the number of bytes written, or 0 if there was an error.
     pub fn bytes_written(&self) -> c_int {
@@ -346,10 +368,34 @@ impl VaListDisplay<'_, '_> {
     }
 }
 
+#[cfg(not(cros_va_list_2_lifetimes))]
+impl VaListDisplay<'_> {
+    /// Get the number of bytes written, or 0 if there was an error.
+    pub fn bytes_written(&self) -> c_int {
+        self.written.get()
+    }
+}
+
+#[cfg(cros_va_list_2_lifetimes)]
 impl<'a, 'b> fmt::Display for VaListDisplay<'a, 'b> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         unsafe {
             let bytes = crate::format(self.format, self.va_list.clone().as_va_list(), fmt_write(f));
+            self.written.set(bytes);
+            if bytes < 0 {
+                Err(fmt::Error)
+            } else {
+                Ok(())
+            }
+        }
+    }
+}
+
+#[cfg(not(cros_va_list_2_lifetimes))]
+impl<'a> fmt::Display for VaListDisplay<'a> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        unsafe {
+            let bytes = crate::format(self.format, self.va_list.clone(), fmt_write(f));
             self.written.set(bytes);
             if bytes < 0 {
                 Err(fmt::Error)
