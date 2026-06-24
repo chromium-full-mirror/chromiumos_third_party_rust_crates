@@ -511,6 +511,7 @@ class LicenseManager:
         "riscv-rt": ("ISC", "README.md"),
         "zerocopy": ("BSD-2", "LICENSE"),
         "zerocopy-derive": ("BSD-2", "LICENSE"),
+        "v4l2r": ("MIT", "LICENSE"),
     }
 
     def __init__(self, working_dir, vendor_dir):

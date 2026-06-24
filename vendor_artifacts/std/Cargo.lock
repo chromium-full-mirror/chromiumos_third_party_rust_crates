@@ -3440,9 +3440,9 @@ checksum = "830d08ce1d1d941e6b30645f1a0eb5643013d835ce3779a5fc208261dbe10f55"
 
 [[package]]
 name = "libc"
-version = "0.2.171"
+version = "0.2.186"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c19937216e9d3aa9956d9bb8dfc0b0c8beb6058fc4f7a4dc4d850edf86a237d6"
+checksum = "68ab91017fe16c622486840e4c83c9a37afeff978bd239b5293d61ece587de66"
 
 [[package]]
 name = "libdbus-sys"
@@ -4045,8 +4045,7 @@ dependencies = [
  "userfaultfd",
  "uuid 1.8.0",
  "vcell",
- "virtio-media 0.0.6",
- "virtio-media 0.0.7",
+ "virtio-media",
  "vsock",
  "walkdir",
  "which",
@@ -4361,6 +4360,18 @@ dependencies = [
  "cfg_aliases 0.2.1",
  "libc",
  "memoffset 0.9.0",
+]
+
+[[package]]
+name = "nix"
+version = "0.31.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cf20d2fde8ff38632c426f1165ed7436270b44f199fc55284c38276f9db47c3d"
+dependencies = [
+ "bitflags 2.9.1",
+ "cfg-if",
+ "cfg_aliases 0.2.1",
+ "libc",
 ]
 
 [[package]]
@@ -7527,24 +7538,9 @@ dependencies = [
 
 [[package]]
 name = "v4l2r"
-version = "0.0.5"
+version = "0.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fe1d612d2df2a0802020c49a1b029282c45991cdfff1731b5fc61ed3dce4168a"
-dependencies = [
- "anyhow",
- "bindgen 0.69.4",
- "bitflags 2.9.1",
- "enumn",
- "log",
- "nix 0.28.0",
- "thiserror 1.0.58",
-]
-
-[[package]]
-name = "v4l2r"
-version = "0.0.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b4f8945ec08a0f9c9b3596c3437bfc8ed1e5c4feefcc230ecf5641aa9b44392b"
+checksum = "2b609e6cc820e3f95dac66f8ef4efbdf1f39b8d119ec16e6476f797ec95ebaa7"
 dependencies = [
  "anyhow",
  "bindgen 0.70.1",
@@ -7552,6 +7548,7 @@ dependencies = [
  "enumn",
  "log",
  "nix 0.28.0",
+ "paste",
  "thiserror 1.0.58",
 ]
 
@@ -7581,33 +7578,17 @@ checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
 
 [[package]]
 name = "virtio-media"
-version = "0.0.6"
+version = "0.0.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "986653f821d3a3ed13543c37ba0819877457101855454e7d08611784eb63fa0c"
+checksum = "0984f4a5a7104e17e083d697e6219dfee642582c4a28e745febe66def6e3bcea"
 dependencies = [
  "anyhow",
  "enumn",
  "libc",
  "log",
- "nix 0.28.0",
+ "nix 0.31.3",
  "thiserror 1.0.58",
- "v4l2r 0.0.5",
- "zerocopy 0.7.32",
-]
-
-[[package]]
-name = "virtio-media"
-version = "0.0.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a6fe4fe1401316867eda765926fe6742849ca33dd4ea4f887036661c3cd15625"
-dependencies = [
- "anyhow",
- "enumn",
- "libc",
- "log",
- "nix 0.28.0",
- "thiserror 1.0.58",
- "v4l2r 0.0.6",
+ "v4l2r",
  "zerocopy 0.8.27",
 ]
 

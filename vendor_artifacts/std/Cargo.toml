@@ -42,7 +42,6 @@ bindgen-0-63-0 = { package = "bindgen", "version" = "0.63.0", features = ['log',
 bindgen-0-64-0 = { package = "bindgen", "version" = "0.64.0", features = ['log', 'which'] }
 # Used by bindgen-deps-0.69.4
 # Used by crdyboot-1.0.0
-# Used by v4l2r-0.0.5
 bindgen-0-69-4 = { package = "bindgen", "version" = "0.69.4", features = [] }
 bindgen = "0.72.1"
 # Used by axum-0.5.17
@@ -259,7 +258,7 @@ jobserver = "0.1.34"
 jsonschema = { "version" = "0.15.2", "default-features" = false }
 kernlog = "0.3.1"
 lazy_static = "1.5.0"
-libc = { "version" = "0.2.171", features = ['align', 'extra_traits'] }
+libc = { "version" = "0.2.186", features = ['align', 'extra_traits'] }
 libfuzzer-sys = "0.4.4"
 # Used by ash-0.37.3+1.3.251
 # Used by clang-sys-1.6.1
@@ -314,14 +313,17 @@ nix-0-27-1 = { package = "nix", "version" = "0.27.1", features = ['fs', 'ioctl',
 # Used by chromeos-installer-0.1.0
 # Used by crosvm-0.1.0
 # Used by hbm-deps-0.1.3
-# Used by v4l2r-0.0.5
-# Used by v4l2r-0.0.6
-# Used by virtio-media-0.0.6
-# Used by virtio-media-0.0.7
+# Used by v4l2r-0.0.7
 # Used by vmmms_client-0.1.0
 # Used by vsock-0.5.0
 nix-0-28-0 = { package = "nix", "version" = "0.28.0", features = ['event', 'feature', 'fs', 'ioctl', 'memoffset', 'mman', 'mount', 'poll', 'process', 'resource', 'signal', 'socket', 'uio', 'user'] }
-nix = { "version" = "0.29.0", features = ['event', 'fs', 'memoffset', 'mount', 'poll', 'process', 'signal', 'socket', 'uio'] }
+# Used by chunnel-0.1.0
+# Used by croscomp-0.1.0
+# Used by crosh-0.24.52
+# Used by floss-0.0.1
+# Used by libchromeos-0.1.0
+# Used by sturgeon-0.1.0
+nix-0-29-0 = { package = "nix", "version" = "0.29.0", features = ['event', 'fs', 'memoffset', 'mount', 'poll', 'process', 'signal', 'socket', 'uio'] }
 nom = { "version" = "7.1.1", features = ['alloc'] }
 num = { "version" = "0.2.1", features = ['num-bigint'] }
 # Used by factory_installer-0.1.0
@@ -531,10 +533,8 @@ textwrap-0-11-0 = { package = "textwrap", "version" = "0.11.0" }
 # Used by syslog_rfc5424-0.9.0
 # Used by thinp-1.0.13
 # Used by userfaultfd-0.8.1
-# Used by v4l2r-0.0.5
-# Used by v4l2r-0.0.6
-# Used by virtio-media-0.0.6
-# Used by virtio-media-0.0.7
+# Used by v4l2r-0.0.7
+# Used by virtio-media-0.0.8
 # Used by wmi-0.9.3
 thiserror-1-0-58 = { package = "thiserror", "version" = "1.0.58" }
 thiserror = { "version" = "2.0.0", "default-features" = false }
@@ -560,9 +560,7 @@ url = "2.5.4"
 userfaultfd = "0.8.1"
 uuid = { "version" = "1.8.0", features = ['rng', 'serde', 'v4'] }
 vcell = "0.1.3"
-# Used by crosvm-0.1.0
-virtio-media-0-0-6 = { package = "virtio-media", "version" = "0.0.6", features = [] }
-virtio-media = "0.0.7"
+virtio-media = "0.0.8"
 vsock = "0.5.0"
 walkdir = "2.3.2"
 which = "4.3.0"
@@ -575,7 +573,6 @@ zerocopy-0-6-6 = { package = "zerocopy", "version" = "0.6.6" }
 # Used by ahash-0.8.11
 # Used by crosvm-0.1.0
 # Used by lego-controller-0.1.0
-# Used by virtio-media-0.0.6
 zerocopy-0-7-32 = { package = "zerocopy", "version" = "0.7.32", features = ['derive', 'simd', 'zerocopy-derive'] }
 zerocopy = { "version" = "0.8.27", features = ['derive', 'simd', 'zerocopy-derive'] }
 zeroize = { "version" = "1.8.2", features = ['zeroize_derive'] }
