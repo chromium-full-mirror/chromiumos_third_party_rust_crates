@@ -239,6 +239,18 @@
       "version": "*"
     }
   ],
+  "memmap2": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:memmap2-0.8.0/bounds-checks.patch"
+      ],
+      "version": "0.8.0"
+    }
+  ],
   "number_prefix": [
     {
       "patch_args": [

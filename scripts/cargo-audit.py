@@ -341,6 +341,18 @@ def main(argv: List[str]):
                 )
                 continue
 
+            if (
+                advisory.crate.name == "memmap2"
+                and advisory.crate.version == "0.8.0"
+            ):
+                logging.info(
+                    "Ignoring unsoundness advisory for %r version %r; "
+                    "we have a local patch: RUSTSEC-2026-0186",
+                    advisory.crate.name,
+                    advisory.crate.version,
+                )
+                continue
+
             complaint_lines.append(
                 f"crate {crate.name!r} version {crate.version!r} is unsound"
             )

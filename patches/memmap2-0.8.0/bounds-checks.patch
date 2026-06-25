@@ -1,0 +1,39 @@
+This patch backports bounds checking fixes to memmap2 0.8.0 to resolve RUSTSEC-2026-0186.
+The changes are a backport from https://github.com/RazrFalcon/memmap2-rs/commit/cee7cf03a9ee095982a3c37b7aac8e3f68f1a00c.
+Specifically, it adds bounds checks to `flush`, `flush_async`, and `advise` in `unix.rs`.
+Windows changes (to `windows.rs`) are ignored/omitted since we do not ship for Windows.
+
+diff --git a/src/unix.rs b/src/unix.rs
+index 3761b27ca..82b0905af 100644
+--- a/src/unix.rs
++++ b/src/unix.rs
+@@ -276,6 +276,9 @@ impl MmapInner {
+     }
+ 
+     pub fn flush(&self, offset: usize, len: usize) -> io::Result<()> {
++        if offset > self.len || len > self.len - offset {
++            return Err(io::ErrorKind::InvalidInput.into());
++        }
+         let alignment = (self.ptr as usize + offset) % page_size();
+         let offset = offset as isize - alignment as isize;
+         let len = len + alignment;
+@@ -289,6 +292,9 @@ impl MmapInner {
+     }
+ 
+     pub fn flush_async(&self, offset: usize, len: usize) -> io::Result<()> {
++        if offset > self.len || len > self.len - offset {
++            return Err(io::ErrorKind::InvalidInput.into());
++        }
+         let alignment = (self.ptr as usize + offset) % page_size();
+         let offset = offset as isize - alignment as isize;
+         let len = len + alignment;
+@@ -343,6 +349,9 @@ impl MmapInner {
+     }
+ 
+     pub fn advise(&self, advice: Advice, offset: usize, len: usize) -> io::Result<()> {
++        if offset > self.len || len > self.len {
++            return Err(io::ErrorKind::InvalidInput.into());
++        }
+         let alignment = (self.ptr as usize + offset) % page_size();
+         let offset = offset as isize - alignment as isize;
+         let len = len + alignment;
