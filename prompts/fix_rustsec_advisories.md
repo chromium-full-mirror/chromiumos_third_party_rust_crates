@@ -43,6 +43,11 @@ BUG=FIXME
 TEST=CQ+1
 """
 
+**NOTE**: The `Cargo.toml` files in `projects/` are _pinned_, as they reference
+dependencies cloned from other codebases. The dependency constraints listed in
+them should be considered immutable; if the issue can't be fixed without
+modifying them, that is a failure you should report to the user.
+
 ### Commit message examples
 
 """
