@@ -11,6 +11,18 @@
       "version": "*"
     }
   ],
+  "cxx": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:cxx/uninit-string-drop-on-panic.patch"
+      ],
+      "version": "*"
+    }
+  ],
   "drm-fourcc": [
     {
       "patch_args": [

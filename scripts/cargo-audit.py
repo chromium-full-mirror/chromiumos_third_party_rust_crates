@@ -353,6 +353,18 @@ def main(argv: List[str]):
                 )
                 continue
 
+            if (
+                advisory.crate.name == "cxx"
+                and advisory.crate.version == "1.0.194"
+            ):
+                logging.info(
+                    "Ignoring unsoundness advisory for %r version %r; "
+                    "we have a local patch: dtolnay/cxx#1729",
+                    advisory.crate.name,
+                    advisory.crate.version,
+                )
+                continue
+
             complaint_lines.append(
                 f"crate {crate.name!r} version {crate.version!r} is unsound"
             )
