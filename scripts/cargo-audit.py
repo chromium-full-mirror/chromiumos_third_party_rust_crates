@@ -308,6 +308,24 @@ def main(argv: List[str]):
                     advisory.crate.version,
                 )
                 continue
+            # b/530513076: this version of quick-xml is only used by the
+            # third-party thinp dep, which doesn't have a version with a
+            # new-enough quick-xml. Since these RUSTSEC advisories are about bad
+            # performance characteristics on pathological input, just ignore for
+            # now.
+            if (
+                advisory.id in ("RUSTSEC-2026-0194", "RUSTSEC-2026-0195")
+                and advisory.crate.name == "quick-xml"
+                and advisory.crate.version.startswith("0.36.")
+            ):
+                logging.info(
+                    "Ignoring advisory %r for %r version %r: "
+                    "thinp's use of quick-xml 0.36",
+                    advisory.id,
+                    advisory.crate.name,
+                    advisory.crate.version,
+                )
+                continue
             complaint_lines.append(
                 f"crate {crate.name!r} version {crate.version!r} has advisory "
                 f"https://rustsec.org/advisories/{advisory.id}.html"
