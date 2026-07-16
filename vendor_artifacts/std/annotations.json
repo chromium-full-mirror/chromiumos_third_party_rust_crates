@@ -287,18 +287,6 @@
       "version": "0.16.8"
     }
   ],
-  "printf-compat": [
-    {
-      "patch_args": [
-        "-p1"
-      ],
-      "patch_tool": "patch",
-      "patches": [
-        "@@//third_party/rust_crates/patches:printf-compat/va_list_lifetimes.patch"
-      ],
-      "version": "*"
-    }
-  ],
   "protoc-grpcio": [
     {
       "patch_args": [

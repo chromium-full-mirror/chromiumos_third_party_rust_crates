@@ -352,7 +352,7 @@ pest_derive = "2.7.0"
 pin-utils = "0.1.0"
 pkg-config = "0.3.31"
 prettyplease = { "version" = "0.2.17", features = ['verbatim'] }
-printf-compat = { "version" = "0.2.1", "default-features" = false }
+printf-compat = { "version" = "0.3.1", "default-features" = false }
 proc-macro2 = { "version" = "1.0.106", features = ['span-locations'] }
 procfs = "0.15.1"
 # Used by grpcio-0.13.0

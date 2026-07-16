@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 (December 7, 2025)
+
+* Fix compilation errors on recent nightlies due to changes in the std
+  [`VaList` implementation](https://github.com/rust-lang/rust/pull/141980).
+  <https://github.com/lights0123/printf-compat/pull/45>
+* Switch to the 2024 edition.
+  <https://github.com/lights0123/printf-compat/pull/46>
+
 ## 0.2.1 (July 20, 2025)
 
 * Remove dependency on `alloc`.

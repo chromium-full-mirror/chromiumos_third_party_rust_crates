@@ -10,10 +10,9 @@
 # See Cargo.toml.orig for the original contents.
 
 [package]
-edition = "2021"
+edition = "2024"
 name = "printf-compat"
-version = "0.2.1"
-authors = ["lights0123 <developer@lights0123.com>"]
+version = "0.3.1"
 build = false
 autolib = false
 autobins = false
@@ -22,6 +21,12 @@ autotests = false
 autobenches = false
 description = "printf reimplemented in Rust"
 readme = "README.md"
+categories = [
+    "development-tools::ffi",
+    "embedded",
+    "no-std",
+    "no-std::no-alloc",
+]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/lights0123/printf-compat"
 
