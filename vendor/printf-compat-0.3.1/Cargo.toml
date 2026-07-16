@@ -13,7 +13,7 @@
 edition = "2024"
 name = "printf-compat"
 version = "0.3.1"
-build = false
+build = "build.rs"
 autolib = false
 autobins = false
 autoexamples = false

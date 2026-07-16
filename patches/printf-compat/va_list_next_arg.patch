@@ -1,0 +1,183 @@
+Cherry-pick c8cdff509b29231e9159f6b485ecc8d3f543df04 from upstream, but with compat for pre-1.97
+
+Once Rust 1.97 lands, we can convert to a pure cherry-pick. Until then, this unstable API changed, so we need a patch.
+
+diff --git a/Cargo.toml b/Cargo.toml
+index 282d82608..ac314e92d 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -13,7 +13,7 @@
+ edition = "2024"
+ name = "printf-compat"
+ version = "0.3.1"
+-build = false
++build = "build.rs"
+ autolib = false
+ autobins = false
+ autoexamples = false
+diff --git a/build.rs b/build.rs
+new file mode 100644
+index 000000000..52985f4d5
+--- /dev/null
++++ b/build.rs
+@@ -0,0 +1,41 @@
++use std::env;
++use std::process::Command;
++
++fn main() {
++    let rustc = env::var_os("RUSTC").unwrap_or_else(|| "rustc".into());
++    let out_dir = env::var_os("OUT_DIR").expect("OUT_DIR not set");
++
++    let test_code = r#"
++        #![no_std]
++        #![feature(c_variadic)]
++        use core::ffi::{VaArgSafe, VaList};
++        unsafe fn test(mut args: VaList) {
++            let _ = args.next_arg::<core::ffi::c_int>();
++        }
++        fn main() {}
++    "#;
++
++    let mut cmd = Command::new(rustc);
++    cmd.arg("--crate-type=lib");
++    cmd.arg(format!("--out-dir={}", out_dir.to_str().unwrap()));
++    cmd.arg("-");
++
++    let mut child = cmd
++        .stdin(std::process::Stdio::piped())
++        .stdout(std::process::Stdio::piped())
++        .stderr(std::process::Stdio::piped())
++        .spawn()
++        .expect("failed to execute rustc");
++
++    {
++        use std::io::Write;
++        let mut stdin = child.stdin.take().expect("failed to open stdin");
++        stdin.write_all(test_code.as_bytes()).expect("failed to write to stdin");
++    }
++
++    let output = child.wait_with_output().expect("failed to wait for rustc");
++
++    if output.status.success() {
++        println!("cargo:rustc-cfg=cros_va_list_next_arg");
++    }
++}
+diff --git a/src/parser.rs b/src/parser.rs
+index beb2b3e5d..ed372657d 100644
+--- a/src/parser.rs
++++ b/src/parser.rs
+@@ -3,6 +3,24 @@ use core::ffi::*;
+ use crate::{Argument, DoubleFormat, Flags, SignedInt, Specifier, UnsignedInt};
+ use itertools::Itertools;
+ 
++trait VaListExt {
++    unsafe fn get_arg<T: VaArgSafe>(&mut self) -> T;
++}
++
++#[cfg(cros_va_list_next_arg)]
++impl VaListExt for VaList<'_> {
++    unsafe fn get_arg<T: VaArgSafe>(&mut self) -> T {
++        self.next_arg::<T>()
++    }
++}
++
++#[cfg(not(cros_va_list_next_arg))]
++impl VaListExt for VaList<'_> {
++    unsafe fn get_arg<T: VaArgSafe>(&mut self) -> T {
++        self.arg::<T>()
++    }
++}
++
+ fn next_char(sub: &[u8]) -> &[u8] {
+     sub.get(1..).unwrap_or(&[])
+ }
+@@ -29,7 +47,7 @@ fn parse_flags(mut sub: &[u8]) -> (Flags, &[u8]) {
+ unsafe fn parse_width<'a>(mut sub: &'a [u8], args: &mut VaList) -> (c_int, &'a [u8]) {
+     let mut width: c_int = 0;
+     if sub.first() == Some(&b'*') {
+-        return (unsafe { args.arg() }, next_char(sub));
++        return (unsafe { args.get_arg() }, next_char(sub));
+     }
+     while let Some(&ch) = sub.first() {
+         match ch {
+@@ -73,24 +91,24 @@ enum Length {
+ impl Length {
+     unsafe fn parse_signed(self, args: &mut VaList) -> SignedInt {
+         match self {
+-            Length::Int => SignedInt::Int(unsafe { args.arg() }),
+-            Length::Char => SignedInt::Char(unsafe { args.arg::<c_int>() } as c_schar),
+-            Length::Short => SignedInt::Short(unsafe { args.arg::<c_int>() } as c_short),
+-            Length::Long => SignedInt::Long(unsafe { args.arg() }),
+-            Length::LongLong => SignedInt::LongLong(unsafe { args.arg() }),
++            Length::Int => SignedInt::Int(unsafe { args.get_arg() }),
++            Length::Char => SignedInt::Char(unsafe { args.get_arg::<c_int>() } as c_schar),
++            Length::Short => SignedInt::Short(unsafe { args.get_arg::<c_int>() } as c_short),
++            Length::Long => SignedInt::Long(unsafe { args.get_arg() }),
++            Length::LongLong => SignedInt::LongLong(unsafe { args.get_arg() }),
+             // for some reason, these exist as different options, yet produce the same output
+-            Length::Usize | Length::Isize => SignedInt::Isize(unsafe { args.arg() }),
++            Length::Usize | Length::Isize => SignedInt::Isize(unsafe { args.get_arg() }),
+         }
+     }
+     unsafe fn parse_unsigned(self, args: &mut VaList) -> UnsignedInt {
+         match self {
+-            Length::Int => UnsignedInt::Int(unsafe { args.arg() }),
+-            Length::Char => UnsignedInt::Char(unsafe { args.arg::<c_uint>() } as c_uchar),
+-            Length::Short => UnsignedInt::Short(unsafe { args.arg::<c_uint>() } as c_ushort),
+-            Length::Long => UnsignedInt::Long(unsafe { args.arg() }),
+-            Length::LongLong => UnsignedInt::LongLong(unsafe { args.arg() }),
++            Length::Int => UnsignedInt::Int(unsafe { args.get_arg() }),
++            Length::Char => UnsignedInt::Char(unsafe { args.get_arg::<c_uint>() } as c_uchar),
++            Length::Short => UnsignedInt::Short(unsafe { args.get_arg::<c_uint>() } as c_ushort),
++            Length::Long => UnsignedInt::Long(unsafe { args.get_arg() }),
++            Length::LongLong => UnsignedInt::LongLong(unsafe { args.get_arg() }),
+             // for some reason, these exist as different options, yet produce the same output
+-            Length::Usize | Length::Isize => UnsignedInt::Isize(unsafe { args.arg() }),
++            Length::Usize | Length::Isize => UnsignedInt::Isize(unsafe { args.get_arg() }),
+         }
+     }
+ }
+@@ -172,23 +190,23 @@ pub unsafe fn format(
+                 b'u' => Specifier::Uint(unsafe { length.parse_unsigned(&mut args) }),
+                 b'o' => Specifier::Octal(unsafe { length.parse_unsigned(&mut args) }),
+                 b'f' | b'F' => Specifier::Double {
+-                    value: unsafe { args.arg() },
++                    value: unsafe { args.get_arg() },
+                     format: DoubleFormat::Normal.set_upper(ch.is_ascii_uppercase()),
+                 },
+                 b'e' | b'E' => Specifier::Double {
+-                    value: unsafe { args.arg() },
++                    value: unsafe { args.get_arg() },
+                     format: DoubleFormat::Scientific.set_upper(ch.is_ascii_uppercase()),
+                 },
+                 b'g' | b'G' => Specifier::Double {
+-                    value: unsafe { args.arg() },
++                    value: unsafe { args.get_arg() },
+                     format: DoubleFormat::Auto.set_upper(ch.is_ascii_uppercase()),
+                 },
+                 b'a' | b'A' => Specifier::Double {
+-                    value: unsafe { args.arg() },
++                    value: unsafe { args.get_arg() },
+                     format: DoubleFormat::Hex.set_upper(ch.is_ascii_uppercase()),
+                 },
+                 b's' => {
+-                    let arg: *mut c_char = unsafe { args.arg() };
++                    let arg: *mut c_char = unsafe { args.get_arg() };
+                     // As a common extension supported by glibc, musl, and
+                     // others, format a NULL pointer as "(null)".
+                     if arg.is_null() {
+@@ -211,11 +229,11 @@ pub unsafe fn format(
+                     }
+ 
+                     Specifier::Char(
+-                        unsafe { args.arg::<<c_char as CharToInt>::IntType>() } as c_char
++                        unsafe { args.get_arg::<<c_char as CharToInt>::IntType>() } as c_char
+                     )
+                 }
+-                b'p' => Specifier::Pointer(unsafe { args.arg() }),
+-                b'n' => Specifier::WriteBytesWritten(written, unsafe { args.arg() }),
++                b'p' => Specifier::Pointer(unsafe { args.get_arg() }),
++                b'n' => Specifier::WriteBytesWritten(written, unsafe { args.get_arg() }),
+                 _ => return -1,
+             },
+         }));
