@@ -73,7 +73,7 @@ rayon = "1"
 regex = "1"
 remain = "0.2"
 rustix = { version = "1.0.7", features = ["event", "fs", "mm", "net", "param", "pipe", "use-libc", "use-libc-auxv", "libc_errno"] }
-rutabaga_gfx = "=0.1.76-chromeos"
+rutabaga_gfx = "=0.1.80-chromeos"
 scudo = "0.1.2"
 serde = { version = "1", features = ["derive"] }
 serde_bytes = "0.11"

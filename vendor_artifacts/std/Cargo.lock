@@ -6115,9 +6115,9 @@ dependencies = [
 
 [[package]]
 name = "rutabaga_gfx"
-version = "0.1.76-chromeos"
+version = "0.1.80-chromeos"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5a806736e3d23fb7c430b67f8a3162233d98a9a34790a3f533278bcc140041af"
+checksum = "dd86a782e35802aae4822c8904ab6feab1eb0ca7841528bcc94010b2bbd53de9"
 dependencies = [
  "cfg-if",
  "libc",
