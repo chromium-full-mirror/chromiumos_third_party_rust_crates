@@ -258,7 +258,7 @@ jobserver = "0.1.34"
 jsonschema = { "version" = "0.15.2", "default-features" = false }
 kernlog = "0.3.1"
 lazy_static = "1.5.0"
-libc = { "version" = "0.2.186", features = ['align', 'extra_traits'] }
+libc = { "version" = "0.2.189", features = ['align', 'extra_traits'] }
 libfuzzer-sys = "0.4.4"
 # Used by ash-0.37.3+1.3.251
 # Used by clang-sys-1.6.1
