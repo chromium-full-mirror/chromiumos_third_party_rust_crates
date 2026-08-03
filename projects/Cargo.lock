@@ -3561,6 +3561,7 @@ dependencies = [
  "http 1.3.1",
  "http-body 1.0.1",
  "httparse",
+ "httpdate",
  "itoa",
  "pin-project-lite",
  "smallvec",
@@ -3979,13 +3980,15 @@ checksum = "469fb0b9cefa57e3ef31275ee7cacb78f2fdca44e4765491884a2b119d4eb130"
 
 [[package]]
 name = "ippusb"
-version = "0.5.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3756134af3bc54751e185928ee96849f99b73bf2cb4d00d1a1bd494cd8aafa4b"
+checksum = "316e8589be179edea823272c50f6b54d12d7f7c84fcd5f4b68d057ebcda77f2a"
 dependencies = [
  "chunked_transfer",
+ "http-body-util",
  "httparse",
- "hyper 0.14.27",
+ "hyper 1.5.2",
+ "hyper-util",
  "log",
  "rusb",
  "tokio",
@@ -3993,13 +3996,13 @@ dependencies = [
 
 [[package]]
 name = "ippusb_bridge"
-version = "0.1.0"
+version = "0.4.0"
 dependencies = [
  "chunked_transfer",
  "dbus 0.9.7",
  "getopts",
  "httparse",
- "hyper 0.14.27",
+ "hyper 1.5.2",
  "ippusb",
  "libc",
  "log",

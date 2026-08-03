@@ -222,12 +222,7 @@ hex = { "version" = "0.4.3", features = ['alloc'] }
 hmac-sha256 = "0.1.7"
 hound = "3.5.0"
 httparse = "1.8.0"
-# Used by axum-0.5.17
-# Used by hyper-timeout-0.4.1
-# Used by ippusb-0.5.0
-# Used by ippusb_bridge-0.1.0
-# Used by tonic-0.8.1
-hyper-0-14-27 = { package = "hyper", "version" = "0.14.27", features = ['backports', 'client', 'deprecated', 'full', 'h2', 'http1', 'http2', 'runtime', 'server', 'socket2', 'stream', 'tcp'] }
+hyper = { "version" = "1.5.2", features = ['client', 'http1', 'http2', 'server'] }
 # Used by hps-firmware-0.1.0
 image-0-23-14 = { package = "image", "version" = "0.23.14", "default-features" = false, features = ['png'] }
 image = { "version" = "0.24.8", "default-features" = false }
@@ -241,7 +236,7 @@ inotify = { "version" = "0.9.6", features = ['futures-core', 'tokio'] }
 intrusive-collections = "0.9.6"
 io-uring = { "version" = "0.5.13", features = ['unstable'] }
 iovec = "0.1.4"
-ippusb = "0.5.0"
+ippusb = "0.6.0"
 # Used by aconfig-0.1.0
 # Used by predicates-2.1.5
 # Used by prost-build-0.11.1

@@ -4,12 +4,13 @@
 
 use std::fmt;
 use std::io::{self, BufRead, BufReader, BufWriter, Read, Write};
-use std::thread;
-use std::time::Duration;
+use std::pin::Pin;
+use std::task::{Context, Poll};
 
-use hyper::body::{self, Buf, Bytes, HttpBody};
+use http_body_util::{combinators::BoxBody, BodyExt};
+use hyper::body::{Buf, Bytes, Frame, Incoming};
 use hyper::header::{self, HeaderMap, HeaderName, HeaderValue};
-use hyper::{Body, Method, Response, StatusCode};
+use hyper::{Method, Response, StatusCode};
 use log::{debug, error, info, trace};
 use tokio::runtime::Handle as AsyncHandle;
 use tokio::sync::mpsc::{self, Receiver};
@@ -62,6 +63,8 @@ impl fmt::Display for Error {
 }
 
 type Result<T> = std::result::Result<T, Error>;
+pub(crate) type ResponseBody = BoxBody<Bytes, Error>;
+type BodyFrameResult = Result<Frame<Bytes>>;
 
 #[derive(Copy, Clone, Debug, PartialEq)]
 enum BodyLength {
@@ -120,8 +123,7 @@ where
                 for header in headers.iter().take_while(|&&h| h != httparse::EMPTY_HEADER) {
                     let name = HeaderName::from_bytes(header.name.as_bytes());
                     let val = HeaderValue::from_bytes(header.value);
-                    if name.is_ok() && val.is_ok() {
-                        let val = val.unwrap();
+                    if let (Ok(name), Ok(val)) = (name, val) {
                         if self.verbose_log {
                             debug!(
                                 "<  {}: {}",
@@ -129,7 +131,7 @@ where
                                 val.to_str().unwrap_or("Binary data")
                             );
                         }
-                        parsed_headers.append(name.unwrap(), val);
+                        parsed_headers.append(name, val);
                     } else {
                         error!(
                             "Ignoring malformed header {}:{:#?}",
@@ -227,7 +229,7 @@ struct Request {
 // Converts a hyper::Request into our internal Request format.
 // Filter out Hop-by-hop headers and add Content-Length or Transfer-Encoding
 // headers as needed.
-fn rewrite_request(request: &hyper::Request<Body>) -> Request {
+fn rewrite_request<B>(request: &hyper::Request<B>) -> Request {
     let mut headers = HeaderMap::with_capacity(request.headers().len());
     // If the incoming request specifies a Transfer-Encoding, it must be chunked.
     let request_is_chunked = request.headers().contains_key(header::TRANSFER_ENCODING);
@@ -280,7 +282,7 @@ fn rewrite_request(request: &hyper::Request<Body>) -> Request {
     }
 }
 
-fn content_type(request: &hyper::Request<Body>) -> Option<&str> {
+fn content_type<B>(request: &hyper::Request<B>) -> Option<&str> {
     request.headers().get(header::CONTENT_TYPE)?.to_str().ok()
 }
 
@@ -351,11 +353,29 @@ fn serialize_request_header(
     Ok(())
 }
 
+/// An adapter that implements `hyper::body::Body` over a Tokio MPSC receiver yielding body frames
+/// produced by synchronous USB read tasks.
+struct ResponseBodyStream {
+    rx: Receiver<BodyFrameResult>,
+}
+
+impl hyper::body::Body for ResponseBodyStream {
+    type Data = Bytes;
+    type Error = Error;
+
+    fn poll_frame(
+        mut self: Pin<&mut Self>,
+        cx: &mut Context<'_>,
+    ) -> Poll<Option<std::result::Result<Frame<Self::Data>, Self::Error>>> {
+        self.rx.poll_recv(cx)
+    }
+}
+
 // Read the response body from `response_reader` in chunks and send them to the client via
 // `sender`.
 fn copy_response_body<R: BufRead + Sized>(
     mut response_reader: ResponseReader<R>,
-    sender: &mut body::Sender,
+    sender: &mpsc::Sender<BodyFrameResult>,
 ) -> Result<usize> {
     let mut reader = match response_reader.body_reader() {
         Ok(r) => r,
@@ -379,30 +399,15 @@ fn copy_response_body<R: BufRead + Sized>(
             }
             Ok(num) => {
                 trace!("Read {} bytes from USB", num);
-                let mut to_send = Bytes::copy_from_slice(&buf[0..num]);
-                let mut tries = 10;
-                loop {
-                    match sender.try_send_data(to_send) {
-                        Ok(_) => {
-                            trace!("Sent {} bytes to body channel", num);
-                            copied += num;
-                            break;
-                        }
-                        Err(remaining) => {
-                            error!(
-                                "Tried to send {} bytes.  Body channel did not accept bytes: {}",
-                                num,
-                                remaining.len()
-                            );
-                            // Give the remote side a brief time to read what was previously sent.
-                            thread::sleep(Duration::from_millis(10));
-                            to_send = remaining;
-                            tries -= 1;
-                            if tries == 0 {
-                                error!("Failed to send bytes after 10 tries");
-                                return Err(Error::ResponseBodyTimeout);
-                            }
-                        }
+                let to_send = Bytes::copy_from_slice(&buf[0..num]);
+                match sender.blocking_send(Ok(Frame::data(to_send))) {
+                    Ok(_) => {
+                        trace!("Sent {} bytes to body channel", num);
+                        copied += num;
+                    }
+                    Err(_) => {
+                        error!("Body channel closed by remote client");
+                        return Err(Error::ResponseBodyTimeout);
                     }
                 }
             }
@@ -458,9 +463,9 @@ fn send_request_body<R: Read>(
 pub(crate) async fn handle_request(
     verbose_log: bool,
     mut usb: Connection,
-    request: hyper::Request<Body>,
+    request: hyper::Request<Incoming>,
     handle: AsyncHandle,
-) -> Result<Response<Body>> {
+) -> Result<Response<ResponseBody>> {
     info!(
         "Request: {} {} {:?}",
         request.method(),
@@ -481,8 +486,11 @@ pub(crate) async fn handle_request(
             // forward the request. If we didn't and the client were to drop in the middle of
             // forwarding a request, we would have no way of cleanly terminating the connection.
             let mut buf = Vec::with_capacity(length);
-            while let Some(chunk) = body.data().await {
-                buf.extend(chunk.map_err(Error::ReadRequestBody)?);
+            while let Some(frame_res) = body.frame().await {
+                let frame = frame_res.map_err(Error::ReadRequestBody)?;
+                if let Ok(chunk) = frame.into_data() {
+                    buf.extend(chunk);
+                }
             }
             Bytes::from(buf)
         }
@@ -490,9 +498,12 @@ pub(crate) async fn handle_request(
             // If we're using chunked, just read enough of the body to have an initial buffer for
             // the loop below.  This is a streaming format, so we don't have any good way to buffer
             // up the exact right amount.
-            match body.data().await {
+            match body.frame().await {
                 None => Err(Error::MalformedRequest),
-                Some(result) => result.map_err(Error::ReadRequestBody),
+                Some(frame_res) => {
+                    let frame = frame_res.map_err(Error::ReadRequestBody)?;
+                    frame.into_data().map_err(|_| Error::MalformedRequest)
+                }
             }?
         }
     };
@@ -518,13 +529,15 @@ pub(crate) async fn handle_request(
             error!("Failed to send request body chunk");
             Error::WriteRequestBody(io::Error::from(io::ErrorKind::UnexpectedEof))
         })?;
-        while let Some(chunk) = body.data().await {
-            let next_buf = chunk.map_err(Error::ReadRequestBody)?;
-            trace!("Copying {} bytes to USB", next_buf.remaining());
-            tx.send(next_buf.reader()).await.map_err(|_| {
-                error!("Failed to send request body chunk");
-                Error::WriteRequestBody(io::Error::from(io::ErrorKind::UnexpectedEof))
-            })?;
+        while let Some(frame_res) = body.frame().await {
+            let frame = frame_res.map_err(Error::ReadRequestBody)?;
+            if let Ok(next_buf) = frame.into_data() {
+                trace!("Copying {} bytes to USB", next_buf.remaining());
+                tx.send(next_buf.reader()).await.map_err(|_| {
+                    error!("Failed to send request body chunk");
+                    Error::WriteRequestBody(io::Error::from(io::ErrorKind::UnexpectedEof))
+                })?;
+            }
         }
         drop(tx); // Close the channel to tell the writer to finish.
         let body_result = body_task.await.map_err(Error::AsyncTaskFailure)?;
@@ -562,13 +575,14 @@ pub(crate) async fn handle_request(
     builder = builder.header(header::CONNECTION, "close");
 
     debug!("* Forwarding printer response body");
-    let (mut sender, body) = Body::channel();
+    let (tx, rx) = mpsc::channel::<BodyFrameResult>(2);
+    let body = ResponseBodyStream { rx }.boxed();
     handle.spawn_blocking(
-        move || match copy_response_body(response_reader, &mut sender) {
+        move || match copy_response_body(response_reader, &tx) {
             Ok(num) => debug!("Copied {} bytes of response body", num),
             Err(err) => {
                 error!("Failed to copy response body: {}", err);
-                sender.abort();
+                let _ = tx.blocking_send(Err(err));
             }
         },
     );
@@ -628,6 +642,7 @@ fn read_until_delimiter(reader: &mut dyn BufRead, delimiter: &[u8]) -> io::Resul
 #[cfg(test)]
 mod tests {
     use super::*;
+    use http_body_util::Empty;
     use hyper::Version;
     use std::io::Cursor;
 
@@ -726,7 +741,7 @@ Content-Type: text/plain\r
             .version(Version::HTTP_11)
             .uri("/eSCL/ScannerCapabilities")
             .header("Content-Type", "text/plain")
-            .body(Body::empty())
+            .body(Empty::<Bytes>::new())
             .unwrap();
 
         let request_out = rewrite_request(&request_in);
@@ -746,7 +761,7 @@ Content-Type: text/plain\r
             .version(Version::HTTP_11)
             .uri("/eSCL/ScannerCapabilities")
             .header("Content-Length", "4")
-            .body(Body::empty())
+            .body(Empty::<Bytes>::new())
             .unwrap();
 
         let request_out = rewrite_request(&request_in);
@@ -766,7 +781,7 @@ Content-Type: text/plain\r
             .version(Version::HTTP_11)
             .uri("/eSCL/ScannerCapabilities")
             .header("Content-Length", format!("{}", CHUNKED_THRESHOLD))
-            .body(Body::empty())
+            .body(Empty::<Bytes>::new())
             .unwrap();
 
         let request_out = rewrite_request(&request_in);
@@ -786,7 +801,7 @@ Content-Type: text/plain\r
             .version(Version::HTTP_11)
             .uri("/eSCL/ScannerCapabilities")
             .header("Transfer-Encoding", "chunked")
-            .body(Body::empty())
+            .body(Empty::<Bytes>::new())
             .unwrap();
 
         let request_out = rewrite_request(&request_in);
@@ -820,12 +835,12 @@ Content-Type: text/plain\r
 
     #[test]
     fn extract_content_type() {
-        let request = hyper::Request::builder().body(Body::empty()).unwrap();
+        let request = hyper::Request::builder().body(Empty::<Bytes>::new()).unwrap();
         assert!(content_type(&request).is_none());
 
         let request = hyper::Request::builder()
             .header("content-TYPE", "text/html")
-            .body(Body::empty())
+            .body(Empty::<Bytes>::new())
             .unwrap();
         assert!(content_type(&request).is_some());
     }
@@ -872,11 +887,11 @@ Content-Type: text/plain\r
         assert_eq!(status, StatusCode::OK);
         assert_eq!(headers.len(), 0);
 
-        let (mut sender, body) = Body::channel();
-        #[allow(deprecated)]
-        let bytes_task = tokio::spawn(async move { hyper::body::to_bytes(body).await });
+        let (tx, rx) = mpsc::channel::<BodyFrameResult>(2);
+        let body = ResponseBodyStream { rx };
+        let bytes_task = tokio::spawn(async move { body.collect().await.unwrap().to_bytes() });
 
-        let len = tokio::task::spawn_blocking(move || copy_response_body(reader, &mut sender))
+        let len = tokio::task::spawn_blocking(move || copy_response_body(reader, &tx))
             .await
             .expect("failed to join copy_response_body task")
             .expect("failed to copy body");
@@ -884,8 +899,7 @@ Content-Type: text/plain\r
 
         let bytes = bytes_task
             .await
-            .expect("failed to join to_bytes task")
-            .expect("failed to read body");
+            .expect("failed to join to_bytes task");
         assert_eq!(bytes, b""[..]);
     }
 
@@ -907,11 +921,11 @@ Content-Type: text/plain\r
             "8"
         );
 
-        let (mut sender, body) = Body::channel();
-        #[allow(deprecated)]
-        let bytes_task = tokio::spawn(async move { hyper::body::to_bytes(body).await });
+        let (tx, rx) = mpsc::channel::<BodyFrameResult>(2);
+        let body = ResponseBodyStream { rx };
+        let bytes_task = tokio::spawn(async move { body.collect().await.unwrap().to_bytes() });
 
-        let len = tokio::task::spawn_blocking(move || copy_response_body(reader, &mut sender))
+        let len = tokio::task::spawn_blocking(move || copy_response_body(reader, &tx))
             .await
             .expect("failed to join copy_response_body task")
             .expect("failed to copy body");
@@ -919,8 +933,7 @@ Content-Type: text/plain\r
 
         let bytes = bytes_task
             .await
-            .expect("failed to join to_bytes task")
-            .expect("failed to read body");
+            .expect("failed to join to_bytes task");
         assert_eq!(bytes, b"testbody"[..]);
     }
 
@@ -951,11 +964,11 @@ body\r
             "chunked"
         );
 
-        let (mut sender, body) = Body::channel();
-        #[allow(deprecated)]
-        let bytes_task = tokio::spawn(async move { hyper::body::to_bytes(body).await });
+        let (tx, rx) = mpsc::channel::<BodyFrameResult>(2);
+        let body = ResponseBodyStream { rx };
+        let bytes_task = tokio::spawn(async move { body.collect().await.unwrap().to_bytes() });
 
-        let len = tokio::task::spawn_blocking(move || copy_response_body(reader, &mut sender))
+        let len = tokio::task::spawn_blocking(move || copy_response_body(reader, &tx))
             .await
             .expect("failed to join copy_response_body task")
             .expect("failed to copy body");
@@ -963,8 +976,7 @@ body\r
 
         let bytes = bytes_task
             .await
-            .expect("failed to join to_bytes task")
-            .expect("failed to read body");
+            .expect("failed to join to_bytes task");
         assert_eq!(bytes, b"testbody"[..]);
     }
 

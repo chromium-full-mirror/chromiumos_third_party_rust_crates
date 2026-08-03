@@ -4,10 +4,13 @@
 
 use std::convert::Infallible;
 
+use http_body_util::{BodyExt, Empty};
+use hyper::body::Bytes;
 use hyper::http::StatusCode;
 use hyper::server::conn::http1;
 use hyper::service::service_fn;
-use hyper::{Body, Request, Response};
+use hyper::{Request, Response};
+use hyper_util::rt::TokioIo;
 use log::{debug, error, info};
 use tokio::net::{TcpListener, TcpStream};
 use tokio::runtime::Handle as AsyncHandle;
@@ -15,7 +18,7 @@ use tokio::sync::mpsc;
 
 use crate::device::{Connection, Device};
 use crate::error::Error;
-use crate::http::handle_request;
+use crate::http::{handle_request, ResponseBody};
 
 /// Reason for shutting down the proxy.
 ///
@@ -54,7 +57,7 @@ impl Bridge {
     /// called.
     ///
     /// * `verbose_log`: If true, log HTTP headers, additional info about HTTP bodies, and progress
-    ///    messages.
+    ///   messages.
     /// * `shutdown`: When this receives a value, stop processing new connections.
     /// * `listener`: A listening TCP socket for new incoming connections.
     /// * `usb`: An open device that supports IPP-USB.
@@ -126,30 +129,31 @@ impl Bridge {
     async fn service_request(
         verbose: bool,
         usb: Option<Connection>,
-        request: Request<Body>,
+        request: Request<hyper::body::Incoming>,
         handle: AsyncHandle,
-    ) -> std::result::Result<Response<Body>, Infallible> {
-        if usb.is_none() {
+    ) -> std::result::Result<Response<ResponseBody>, Infallible> {
+        let Some(usb) = usb else {
+            let body = Empty::<Bytes>::new().map_err(|e| match e {});
             return Ok(Response::builder()
                 .status(StatusCode::INTERNAL_SERVER_ERROR)
-                .body(Body::empty())
+                .body(body.boxed())
                 .unwrap());
-        }
-        let usb = usb.unwrap();
+        };
 
         handle_request(verbose, usb, request, handle)
             .await
             .or_else(|err| {
                 error!("Request failed: {}", err);
+                let body = Empty::<Bytes>::new().map_err(|e| match e {});
                 Ok(Response::builder()
                     .status(StatusCode::INTERNAL_SERVER_ERROR)
-                    .body(Body::empty())
+                    .body(body.boxed())
                     .unwrap())
             })
     }
 
     fn handle_connection(&mut self, stream: TcpStream) {
-        let mut thread_usb = self.usb.clone();
+        let thread_usb = self.usb.clone();
         let verbose = self.verbose_log;
         self.num_clients += 1;
         let client_num = self.num_clients;
@@ -164,8 +168,8 @@ impl Bridge {
                 .preserve_header_case(true)
                 .keep_alive(false)
                 .serve_connection(
-                    stream,
-                    service_fn(move |req| {
+                    TokioIo::new(stream),
+                    service_fn(move |req: Request<hyper::body::Incoming>| {
                         // We would normally want to extract usb_conn and return early if it's an
                         // error, but that doesn't work here because we can't match the return type
                         // of Bridge::service_request.  Instead, convert to an Option and handle a
