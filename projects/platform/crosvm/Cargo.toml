@@ -38,7 +38,8 @@ futures-executor = { version = "0.3", features = ["thread-pool"] }
 futures-util = "0.3"
 gdbstub = "0.7.0"
 gdbstub_arch = "0.3.0"
-intrusive-collections = "0.9"
+intrusive-collections-0-9 = { package = "intrusive-collections", version = "0.9" }
+intrusive-collections-0-10 = { package = "intrusive-collections", version = "0.10" }
 io-uring = { version = "0.5", features = ["unstable"] }
 lazy_static = "1.4"
 libc = "0.2.188"
@@ -48,7 +49,7 @@ libslirp-sys = "4.2.1"
 libtest-mimic = "0.6.0"
 log = "0.4"
 lz4_flex = "0.11"
-memoffset = "0.6"
+memoffset = "0.9.1"
 merge = "0.1.0"
 mio = { version = "0.7", features = ["os-ext"] }
 named-lock = "0.3"
