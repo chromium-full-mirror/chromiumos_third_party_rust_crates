@@ -233,7 +233,9 @@ indexmap = "2.14.0"
 indicatif-0-16-2 = { package = "indicatif", "version" = "0.16.2" }
 indicatif = "0.17.8"
 inotify = { "version" = "0.9.6", features = ['futures-core', 'tokio'] }
-intrusive-collections = "0.9.6"
+# Used by crosvm-0.1.0
+intrusive-collections-0-9-7 = { package = "intrusive-collections", "version" = "0.9.7", features = [] }
+intrusive-collections = "0.10.3"
 io-uring = { "version" = "0.5.13", features = ['unstable'] }
 iovec = "0.1.4"
 ippusb = "0.6.0"
@@ -273,10 +275,10 @@ lz4_flex = "0.11.6"
 matroska-demuxer = "0.5.0"
 # Used by aconfig-0.1.0
 memmap2-0-8-0 = { package = "memmap2", "version" = "0.8.0" }
-# Used by crosvm-0.1.0
 # Used by nix-0.23.1
 # Used by wayland-sys-0.29.0
 memoffset-0-6-5 = { package = "memoffset", "version" = "0.6.5" }
+memoffset = "0.9.1"
 merge = { "version" = "0.1.0", features = ['merge_derive', 'num-traits'] }
 # Used by pinned_crates-0.0.1
 miniz_oxide-0-4-4 = { package = "miniz_oxide", "version" = "0.4.4", features = ['no_extern_crate_alloc'] }

@@ -118,7 +118,9 @@ hex = { "version" = "0.4.3", "default-features" = false, features = ['alloc'] }
 hmac-sha256 = "0.1.7"
 httparse = { "version" = "1.8.0", "default-features" = false, features = [] }
 indexmap = { "version" = "2.14.0", "default-features" = false, features = [] }
-intrusive-collections = "0.9.6"
+# Used by crosvm-0.1.0
+intrusive-collections-0-9-7 = { package = "intrusive-collections", "version" = "0.9.7", features = [] }
+intrusive-collections = "0.10.3"
 # Used by aconfig-0.1.0
 # Used by predicates-2.1.5
 # Used by prost-build-0.11.1
@@ -138,10 +140,10 @@ libc = { "version" = "0.2.189", "default-features" = false, features = ['align',
 linux-raw-sys-0-1-4 = { package = "linux-raw-sys", "version" = "0.1.4", features = ['ioctl', 'no_std'] }
 log = { "version" = "0.4.29", features = ['release_max_level_debug', 'serde', 'serde_core'] }
 lz4_flex = { "version" = "0.11.6", "default-features" = false, features = ['checked-decode', 'frame', 'safe-decode', 'safe-encode'] }
-# Used by crosvm-0.1.0
 # Used by nix-0.23.1
 # Used by wayland-sys-0.29.0
 memoffset-0-6-5 = { package = "memoffset", "version" = "0.6.5" }
+memoffset = "0.9.1"
 merge = { "version" = "0.1.0", "default-features" = false, features = ['derive', 'merge_derive', 'num', 'num-traits'] }
 nb = "1.0.0"
 nom = { "version" = "7.1.1", "default-features" = false, features = ['alloc'] }
