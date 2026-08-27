@@ -35,4 +35,8 @@ pub const DEFAULT_REMOTE_RESET_STREAM_MAX: usize = 20;
 pub const DEFAULT_LOCAL_RESET_COUNT_MAX: usize = 1024;
 pub const DEFAULT_RESET_STREAM_MAX: usize = 10;
 pub const DEFAULT_RESET_STREAM_SECS: u64 = 30;
+// Approximately the memory occupied by one buffered DATA event. Payloads
+// smaller than this consume more internal bookkeeping than useful data.
+pub const DEFAULT_DATA_FRAME_OVERHEAD_THRESHOLD: usize = 256;
+pub const DEFAULT_DATA_FRAME_BUDGET: usize = DEFAULT_DATA_FRAME_OVERHEAD_THRESHOLD * 100;
 pub const DEFAULT_MAX_SEND_BUFFER_SIZE: usize = 1024 * 400;

@@ -179,6 +179,18 @@
       "version": "0.13.0+1.56.2-patched"
     }
   ],
+  "h2": [
+    {
+      "patch_args": [
+        "-p1"
+      ],
+      "patch_tool": "patch",
+      "patches": [
+        "@@//third_party/rust_crates/patches:h2-0.3.26/empty-data-frames.patch"
+      ],
+      "version": "0.3.26"
+    }
+  ],
   "hmac-sha256": [
     {
       "patch_args": [

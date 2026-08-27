@@ -326,6 +326,19 @@ def main(argv: List[str]):
                     advisory.crate.version,
                 )
                 continue
+            if (
+                advisory.id == "RUSTSEC-2026-0258"
+                and advisory.crate.name == "h2"
+                and advisory.crate.version.startswith("0.3.")
+            ):
+                logging.info(
+                    "Ignoring advisory %r for %r version %r; "
+                    "we have a local patch: b/549620162",
+                    advisory.id,
+                    advisory.crate.name,
+                    advisory.crate.version,
+                )
+                continue
             complaint_lines.append(
                 f"crate {crate.name!r} version {crate.version!r} has advisory "
                 f"https://rustsec.org/advisories/{advisory.id}.html"
