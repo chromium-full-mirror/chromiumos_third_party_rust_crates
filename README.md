@@ -212,10 +212,6 @@ combined with `git rebase -i --autosquash` might be helpful to you. Please see
 
 # FAQ
 
-## Why is `vendor.py` complaining about `cargo-vet` audits?
-
-Please see [the cargo-vet readme](cargo-vet/README.md).
-
 ## How do I make my changes go live in `dev-rust/third-party-crates-src`?
 
 `dev-rust/third-party-crates-src` is a `cros_workon` package. If you'd like to
@@ -261,9 +257,6 @@ block:
 # By putting this in a cfg(windows) block, a package for wasi-0.10.* will be
 # installed in the registry, but it won't actually contain any code from the
 # package.
-#
-# As a side-effect from the above, this package will be exempt from audit
-# requirements.
 [target.'cfg(windows)'.dependencies]
 wasi = "0.10"
 ```

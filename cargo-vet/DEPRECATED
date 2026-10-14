@@ -1,0 +1,6 @@
+`cargo-vet` is deprecated in ChromeOS and is no longer actively used to track
+third-party Rust crate audits (see b/573535647).
+
+This directory is retained solely because automated pipelines export
+our historical audits in `audits.toml` to the FOSS community:
+https://github.com/google/rust-crate-audits

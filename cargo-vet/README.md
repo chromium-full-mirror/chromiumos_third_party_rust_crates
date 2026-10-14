@@ -1,5 +1,7 @@
 # cargo-vet
 
+**NOTE**: `cargo-vet` is deprecated in ChromeOS; see [DEPRECATED](DEPRECATED).
+
 This directory contains files that [cargo-vet] needs in order to run.
 
 (Just want to see how to placate the tool so `./vendor.py` will terminate
