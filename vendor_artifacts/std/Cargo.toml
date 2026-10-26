@@ -618,4 +618,6 @@ zerocopy-0-6-6 = { package = "zerocopy", "version" = "0.6.6" }
 zerocopy-0-7-32 = { package = "zerocopy", "version" = "0.7.32", features = ['derive', 'simd', 'zerocopy-derive'] }
 zerocopy = { "version" = "0.8.27", features = ['derive', 'simd', 'zerocopy-derive'] }
 zeroize = { "version" = "1.8.2", features = ['zeroize_derive'] }
-zstd = "0.13.0"
+# Used by crosvm-0.1.0
+zstd-0-13-0 = { package = "zstd", "version" = "0.13.0", features = [] }
+zstd = "0.14.3"

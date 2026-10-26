@@ -93,6 +93,8 @@ virtio-media = "0.0.8"
 which = "4.3"
 zerocopy = { version = "0.7", features = ["derive"] }
 zerocopy_0_8 = { package = "zerocopy", version = "0.8", features = ["derive"] }
+zstd = "0.13"
+zstd_0_14 = { package = "zstd", version = "0.14" }
 
 # Any dependencies added here will be replaced with empty crates as they won't actually
 # be used in ChromeOS builds. Bonus: No `cargo vet` review needed either.
