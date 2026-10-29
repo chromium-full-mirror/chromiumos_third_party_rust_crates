@@ -326,14 +326,16 @@ num = { "version" = "0.2.1", features = ['num-bigint'] }
 # Used by factory_installer-0.1.0
 num-derive-0-3-3 = { package = "num-derive", "version" = "0.3.3" }
 num-derive = "0.4.2"
-num-traits = { "version" = "0.2.15", features = ['i128'] }
+num-traits = { "version" = "0.2.19", features = ['i128'] }
 num_cpus = "1.16.0"
 num_enum = "0.5.7"
 object = { "version" = "0.31.1", "default-features" = false, features = ['archive', 'coff', 'crc32fast', 'elf', 'hashbrown', 'indexmap', 'macho', 'pe', 'read_core', 'unaligned', 'write_core'] }
 once_cell = { "version" = "1.19.0", features = ['alloc', 'race'] }
 open-enum = "0.3.0"
 openssl = "0.10.72"
-p256 = { "version" = "0.13.2", "default-features" = false, features = ['arithmetic', 'digest', 'ecdsa', 'ecdsa-core', 'sha2', 'sha256'] }
+# Used by crdyboot-1.0.0
+p256-0-13-2 = { package = "p256", "version" = "0.13.2", "default-features" = false, features = ['arithmetic', 'digest', 'ecdsa', 'ecdsa-core', 'sha2', 'sha256'] }
+p256 = { "version" = "0.14.0", "default-features" = false, features = ['arithmetic', 'digest', 'ecdsa', 'ecdsa-core', 'sha2', 'sha256'] }
 # Used by crosvm-0.1.0
 p9-0-2-3 = { package = "p9", "version" = "0.2.3" }
 p9 = "0.3.1"
@@ -428,7 +430,10 @@ serde_bytes = "0.11.19"
 serde_json = "1.0.96"
 serde_yaml = "0.8.26"
 serial_test = { "version" = "2.0.0", features = ['futures', 'log'] }
-sha2 = { "version" = "0.10.6", "default-features" = false }
+# Used by crdyboot-1.0.0
+# Used by p256-0.13.2
+# Used by pest_meta-2.7.0
+sha2-0-10-6 = { package = "sha2", "version" = "0.10.6", "default-features" = false }
 shell-words = "1.1.0"
 shlex = "1.3.0"
 signal-hook-registry = "1.4.0"
