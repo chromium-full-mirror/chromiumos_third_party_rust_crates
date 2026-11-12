@@ -62,7 +62,7 @@ base64 = { "version" = "0.22.1", "default-features" = false, features = ['alloc'
 # Used by wayland-server-0.29.0
 # Used by x86_64-0.14.10
 bitflags-1-3-2 = { package = "bitflags", "version" = "1.3.2" }
-bitflags = { "version" = "2.9.1", features = ['serde'] }
+bitflags = { "version" = "2.13.2", features = ['serde', 'serde_core'] }
 bitreader = { "version" = "0.3.7", "default-features" = false, features = [] }
 bitvec = { "version" = "1.1.1", "default-features" = false, features = ['alloc', 'atomic'] }
 bytemuck = { "version" = "1.13.1", features = ['bytemuck_derive', 'derive', 'extern_crate_alloc', 'extern_crate_std', 'min_const_generics'] }
@@ -184,7 +184,7 @@ remain = "0.2.4"
 riscv = "0.7.0"
 riscv-rt = "0.8.0"
 rtt-target = { "version" = "0.3.1", features = ['cortex-m'] }
-rustix = { "version" = "1.0.8", "default-features" = false, features = ['alloc', 'event', 'fs', 'libc', 'libc_errno', 'mm', 'net', 'param', 'pipe', 'use-libc', 'use-libc-auxv'] }
+rustix = { "version" = "1.1.6", "default-features" = false, features = ['alloc', 'event', 'fs', 'libc', 'libc_errno', 'mm', 'net', 'param', 'pipe', 'use-libc', 'use-libc-auxv'] }
 safemem = { "version" = "0.3.3", "default-features" = false, features = [] }
 sbat = { "version" = "0.5.0", features = ['alloc'] }
 scopeguard = { "version" = "1.1.0", "default-features" = false, features = [] }
