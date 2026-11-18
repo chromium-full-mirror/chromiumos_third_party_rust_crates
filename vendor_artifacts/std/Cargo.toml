@@ -259,7 +259,11 @@ miniz_oxide-0-4-4 = { package = "miniz_oxide", "version" = "0.4.4", features = [
 mio-0-7-14 = { package = "mio", "version" = "0.7.14", features = ['os-ext', 'os-poll'] }
 # Used by shadercached-0.2.0
 mockall-0-11-4 = { package = "mockall", "version" = "0.11.4" }
-mockall = "0.12.1"
+# Used by chromeos-installer-0.1.0
+# Used by crdyboot-1.0.0
+# Used by factory_installer-0.1.0
+mockall-0-12-1 = { package = "mockall", "version" = "0.12.1" }
+mockall = "0.15.0"
 mocktopus = "0.8.0"
 multi_log = "0.1.2"
 named-lock = "0.3.0"
@@ -284,12 +288,11 @@ nix-0-27-1 = { package = "nix", "version" = "0.27.1", features = ['fs', 'ioctl',
 nix-0-28-0 = { package = "nix", "version" = "0.28.0", features = ['event', 'feature', 'fs', 'ioctl', 'memoffset', 'mman', 'mount', 'poll', 'process', 'resource', 'signal', 'socket', 'uio', 'user'] }
 # Used by chunnel-0.1.0
 # Used by crosh-0.24.52
-# Used by ectool-deps-0.1.0
 # Used by floss-0.0.1
 # Used by libchromeos-0.1.0
 # Used by sturgeon-0.1.0
-nix-0-29-0 = { package = "nix", "version" = "0.29.0", features = ['event', 'fs', 'ioctl', 'memoffset', 'mount', 'poll', 'process', 'signal', 'socket', 'uio'] }
-nix = { "version" = "0.31.3", features = ['fs', 'mman'] }
+nix-0-29-0 = { package = "nix", "version" = "0.29.0", features = ['event', 'fs', 'memoffset', 'mount', 'poll', 'process', 'signal', 'socket', 'uio'] }
+nix = { "version" = "0.31.3", features = ['event', 'fs', 'ioctl', 'mman', 'poll', 'process', 'signal'] }
 nom = { "version" = "7.1.1", features = ['alloc'] }
 num = { "version" = "0.2.1", features = ['num-bigint'] }
 # Used by factory_installer-0.1.0
@@ -457,6 +460,7 @@ syn-1-0-107 = { package = "syn", "version" = "1.0.107", features = ['extra-trait
 # Used by icu_provider_macros-1.5.0
 # Used by jiff-static-0.2.23
 # Used by mockall_derive-0.12.1
+# Used by mockall_derive-0.15.0
 # Used by num-derive-0.4.2
 # Used by openssl-macros-0.1.1
 # Used by p9_wire_format_derive-0.3.0
