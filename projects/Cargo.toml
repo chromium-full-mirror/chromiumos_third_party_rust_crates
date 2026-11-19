@@ -19,7 +19,6 @@ members = [
     "platform/croscomp/third_party/wayland-sys",
     "platform/crosvm",
     "platform/factory_installer/rust",
-    "platform/hps-firmware",
     "platform/lego-controller",
     "platform/minijail/rust/minijail",
     "platform/minijail/rust/minijail-sys",
@@ -74,7 +73,7 @@ members = [
     "third_party/hbm/hbm-deps",
     "third_party/hbm/hbm-minigbm-deps",
     "third_party/pdl-compiler-deps",
-    "third_party/riscv-rt-macros-deps",
     "third_party/rustc-demangle-capi-deps",
+    "third_party/svd2rust-deps",
     "third_party/thin-provisioning-tools",
 ]

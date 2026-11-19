@@ -1,0 +1,9 @@
+# Mirrors crate installed by dev-rust/svd2rust
+
+[package]
+name = "svd2rust-deps"
+version = "0.20.0"
+edition = "2018"
+
+[dependencies]
+svd2rust = "=0.20.0"
