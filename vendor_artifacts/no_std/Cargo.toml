@@ -17,7 +17,6 @@ ash = { "version" = "0.38.0+1.3.281", "default-features" = false, features = ['d
 assert_matches = "1.5.0"
 async-task = { "version" = "4.4.0", "default-features" = false, features = [] }
 async-trait = "0.1.73"
-bare-metal = "1.0.0"
 # Used by floss-0.0.1
 # Used by jsonschema-0.15.2
 # Used by libsirenia-0.1.0
@@ -38,9 +37,6 @@ base64 = { "version" = "0.22.1", "default-features" = false, features = ['alloc'
 # Used by crosh-0.24.52
 # Used by fatfs-0.3.6
 # Used by flexbuffers-2.0.0
-# Used by gpio-cdev-0.5.1
-# Used by hps-firmware-0.1.0
-# Used by i2cdev-0.5.1
 # Used by inotify-0.9.6
 # Used by io-uring-0.5.13
 # Used by nix-0.23.1
@@ -54,8 +50,6 @@ base64 = { "version" = "0.22.1", "default-features" = false, features = ['alloc'
 # Used by rustyline-9.1.2
 # Used by rustyline-10.0.0
 # Used by security-framework-2.10.0
-# Used by spi-memory-0.2.0
-# Used by spidev-0.5.1
 # Used by system-configuration-0.5.1
 # Used by tower-http-0.3.4
 # Used by uart_16550-0.2.18
@@ -72,15 +66,9 @@ chrono = { "version" = "0.4.34", "default-features" = false, features = ['alloc'
 ciborium = { "version" = "0.2.2", "default-features" = false, features = [] }
 # Used by cbindgen-0.24.5
 # Used by factory_installer-0.1.0
-# Used by hps-firmware-0.1.0
 # Used by lego-controller-0.1.0
 clap-3-2-23 = { package = "clap", "version" = "3.2.23", "default-features" = false, features = ['atty', 'clap_derive', 'color', 'derive', 'once_cell', 'strsim', 'suggestions', 'termcolor'] }
 clap = { "version" = "4.5.4", "default-features" = false, features = ['color', 'derive', 'error-context', 'help', 'suggestions', 'usage'] }
-cortex-m = "0.7.7"
-cortex-m-rt = { "version" = "0.6.15", features = ['device'] }
-cortex-m-rtic = "1.1.4"
-# Used by hps-firmware-0.1.0
-crc-2-1-0 = { package = "crc", "version" = "2.1.0" }
 crc32fast = { "version" = "1.3.2", "default-features" = false, features = [] }
 crossbeam-channel = { "version" = "0.5.8", "default-features" = false, features = ['crossbeam-utils'] }
 crossbeam-utils = { "version" = "0.8.22", "default-features" = false, features = [] }
@@ -89,12 +77,9 @@ dasp_frame = { "version" = "0.11.0", "default-features" = false, features = [] }
 dasp_interpolate = { "version" = "0.11.0", "default-features" = false, features = [] }
 dasp_sample = { "version" = "0.11.0", "default-features" = false, features = [] }
 data-encoding = { "version" = "2.6.0", "default-features" = false, features = ['alloc'] }
-defmt = "0.2.3"
 downcast-rs = { "version" = "1.2.0", "default-features" = false, features = [] }
 drm-fourcc = { "version" = "2.2.0", "default-features" = false, features = [] }
-ed25519-compact = { "version" = "1.0.16", "default-features" = false, features = ['ct-codecs', 'pem'] }
 either = { "version" = "1.9.0", "default-features" = false, features = [] }
-embedded-hal = { "version" = "0.2.7", features = ['unproven'] }
 enumn = "0.1.14"
 euclid = { "version" = "0.22.9", "default-features" = false, features = [] }
 ext4-view = "0.9.1"
@@ -138,9 +123,6 @@ itertools-0-10-5 = { package = "itertools", "version" = "0.10.5", "default-featu
 itertools-0-11-0 = { package = "itertools", "version" = "0.11.0", "default-features" = false, features = ['use_alloc'] }
 lazy_static = "1.5.0"
 libc = { "version" = "0.2.189", "default-features" = false, features = ['align', 'extra_traits'] }
-# Used by hps-firmware-0.1.0
-# Used by rustix-0.36.7
-linux-raw-sys-0-1-4 = { package = "linux-raw-sys", "version" = "0.1.4", features = ['ioctl', 'no_std'] }
 log = { "version" = "0.4.29", features = ['release_max_level_debug', 'serde', 'serde_core'] }
 lz4_flex = { "version" = "0.11.6", "default-features" = false, features = ['checked-decode', 'frame', 'safe-decode', 'safe-encode'] }
 memchr = { "version" = "2.7.2", "default-features" = false, features = ['alloc'] }
@@ -149,7 +131,6 @@ memchr = { "version" = "2.7.2", "default-features" = false, features = ['alloc']
 memoffset-0-6-5 = { package = "memoffset", "version" = "0.6.5" }
 memoffset = "0.9.1"
 merge = { "version" = "0.1.0", "default-features" = false, features = ['derive', 'merge_derive', 'num', 'num-traits'] }
-nb = "1.0.0"
 nom = { "version" = "7.1.1", "default-features" = false, features = ['alloc'] }
 num-traits = { "version" = "0.2.19", "default-features" = false, features = ['i128'] }
 num_enum = { "version" = "0.5.7", "default-features" = false, features = [] }
@@ -157,7 +138,6 @@ object = { "version" = "0.31.1", "default-features" = false, features = ['archiv
 once_cell = { "version" = "1.19.0", "default-features" = false, features = ['alloc', 'race'] }
 open-enum = "0.3.0"
 p256 = { "version" = "0.14.0", "default-features" = false, features = ['arithmetic', 'digest', 'ecdsa', 'ecdsa-core', 'sha2', 'sha256'] }
-panic-halt = "0.2.0"
 paste = "1.0.14"
 pest = { "version" = "2.7.0", "default-features" = false, features = [] }
 pest_derive = { "version" = "2.7.0", "default-features" = false, features = [] }
@@ -166,8 +146,7 @@ printf-compat = { "version" = "0.3.1", "default-features" = false }
 rand-0-6-5 = { package = "rand", "version" = "0.6.5", "default-features" = false, features = ['alloc', 'rand_os'] }
 # Used by crosh-0.24.52
 # Used by deqp-runner-0.18.0
-# Used by riscv-rt-macros-deps-0.1.0
-rand-0-7-3 = { package = "rand", "version" = "0.7.3", "default-features" = false, features = ['alloc', 'getrandom', 'getrandom_package', 'libc', 'rand_pcg', 'small_rng'] }
+rand-0-7-3 = { package = "rand", "version" = "0.7.3", "default-features" = false, features = ['alloc', 'getrandom', 'getrandom_package', 'libc'] }
 # Used by flexor-1.0.0
 # Used by floss-0.0.1
 # Used by shadercached-0.2.0
@@ -181,9 +160,6 @@ rand = { "version" = "0.9.4", "default-features" = false, features = ['alloc', '
 rand_core-0-6-4 = { package = "rand_core", "version" = "0.6.4", features = ['alloc', 'getrandom'] }
 regex = { "version" = "1.12.3", "default-features" = false, features = ['perf', 'perf-backtrack', 'perf-cache', 'perf-dfa', 'perf-inline', 'perf-literal', 'perf-onepass', 'unicode', 'unicode-age', 'unicode-bool', 'unicode-case', 'unicode-gencat', 'unicode-perl', 'unicode-script', 'unicode-segment'] }
 remain = "0.2.4"
-riscv = "0.7.0"
-riscv-rt = "0.8.0"
-rtt-target = { "version" = "0.3.1", features = ['cortex-m'] }
 rustix = { "version" = "1.1.6", "default-features" = false, features = ['alloc', 'event', 'fs', 'libc', 'libc_errno', 'mm', 'net', 'param', 'pipe', 'use-libc', 'use-libc-auxv'] }
 safemem = { "version" = "0.3.3", "default-features" = false, features = [] }
 sbat = { "version" = "0.5.0", features = ['alloc'] }
@@ -204,8 +180,6 @@ shlex = { "version" = "1.3.0", "default-features" = false, features = [] }
 slab = { "version" = "0.4.7", "default-features" = false, features = [] }
 smallvec = { "version" = "1.13.2", features = ['const_generics', 'const_new'] }
 static_assertions = "1.1.0"
-stm32g0 = { "version" = "0.13.0", features = ['cortex-m-rt', 'rt', 'stm32g071'] }
-stm32g0xx-hal = { "version" = "0.1.5", features = ['device-selected', 'rt', 'stm32g071', 'stm32g0x1'] }
 strum = { "version" = "0.28.0", "default-features" = false, features = ['derive', 'strum_macros'] }
 thiserror = { "version" = "2.0.0", "default-features" = false, features = [] }
 uefi = { "version" = "0.34.1", "default-features" = false, features = ['alloc'] }
@@ -213,6 +187,5 @@ uguid = { "version" = "2.2.0", features = ['bytemuck'] }
 uninit = { "version" = "0.6.2", "default-features" = false, features = ['alloc'] }
 url = { "version" = "2.5.4", "default-features" = false, features = [] }
 uuid = { "version" = "1.8.0", "default-features" = false, features = ['rng', 'serde', 'v4'] }
-vcell = "0.1.3"
 zerocopy = { "version" = "0.8.27", features = ['derive', 'simd', 'zerocopy-derive'] }
 zeroize = { "version" = "1.8.2", features = ['zeroize_derive'] }

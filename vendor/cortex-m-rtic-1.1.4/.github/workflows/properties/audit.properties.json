@@ -1,6 +1,0 @@
-{
-    "name": "Audit",
-    "description": "Cargo audit",
-    "iconName": "rust",
-    "categories": ["Rust"]
-}

@@ -88,30 +88,6 @@
       ]
     }
   ],
-  "riscv-rt-macros": [
-    {
-      "patch_args": [
-        "-p1"
-      ],
-      "patch_tool": "patch",
-      "patches": [
-        "@@//third_party/rust_crates/patches:riscv-rt-macros/riscv-rt-macros-0.1.6-update-dependencies.patch"
-      ],
-      "version": "*"
-    }
-  ],
-  "rtt-target": [
-    {
-      "patch_args": [
-        "-p1"
-      ],
-      "patch_tool": "patch",
-      "patches": [
-        "@@//third_party/rust_crates/patches:rtt-target/add-license.patch"
-      ],
-      "version": "*"
-    }
-  ],
   "rustix": [
     {
       "additive_build_file_content": "load(\"@@//bazel/module_extensions/private:symlink.bzl\", \"symlink_without_target\")\n\nconfig_setting(\n  name = \"is_release\",\n  values = {\"compilation_mode\": \"opt\"}\n)\n\nsymlink_without_target(\n    name = \"static_libs\",\n    actual = select({\n        \":is_release\": \"src/backend/linux_raw/arch/outline/release\",\n        \"//conditions:default\": \"src/backend/linux_raw/arch/outline/debug\",\n    }),\n    out = \"static_libs\",\n)\n",
@@ -135,18 +111,6 @@
       "crate_features": [
         "alloc"
       ]
-    }
-  ],
-  "void": [
-    {
-      "patch_args": [
-        "-p1"
-      ],
-      "patch_tool": "patch",
-      "patches": [
-        "@@//third_party/rust_crates/patches:void/relicense-to-dual-mit-apache.patch"
-      ],
-      "version": "*"
     }
   ]
 }

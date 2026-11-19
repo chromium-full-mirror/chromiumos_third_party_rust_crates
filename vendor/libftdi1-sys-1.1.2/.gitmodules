@@ -1,3 +1,0 @@
-[submodule "libftdi1-source-lgpl/libftdi"]
-	path = libftdi1-source-lgpl/libftdi
-	url = git://developer.intra2net.com/libftdi
